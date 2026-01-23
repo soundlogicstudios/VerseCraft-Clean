@@ -1,0 +1,82 @@
+{
+  "version": "1.0.0",
+  "start_screen": "splash",
+
+  "screens_order": [
+    "splash",
+    "tos",
+    "menu",
+    "library",
+    "library1",
+    "library2",
+    "launcher",
+    "story",
+    "character",
+    "inventory",
+    "settings"
+  ],
+
+  "screens": {
+    "splash": {
+      "css": "styles/screens/splash.css",
+      "hitboxes": "content/hitboxes/splash.json",
+      "controller": null
+    },
+    "tos": {
+      "css": "styles/screens/tos.css",
+      "hitboxes": "content/hitboxes/tos.json",
+      "controller": null
+    },
+    "menu": {
+      "css": "styles/screens/menu.css",
+      "hitboxes": "content/hitboxes/menu.json",
+      "controller": null
+    },
+    "settings": {
+      "css": "styles/screens/settings.css",
+      "hitboxes": "content/hitboxes/settings.json",
+      "controller": null
+    },
+
+    "library": {
+      "css": "styles/screens/library.css",
+      "hitboxes": "content/hitboxes/library.json",
+      "controller": null,
+      "library_slots": [0, 1, 2, 3]
+    },
+    "library1": {
+      "css": "styles/screens/library1.css",
+      "hitboxes": "content/hitboxes/library1.json",
+      "controller": null,
+      "library_slots": [4, 5, 6, 7]
+    },
+    "library2": {
+      "css": "styles/screens/library2.css",
+      "hitboxes": "content/hitboxes/library2.json",
+      "controller": null,
+      "library_slots": [8, 9, 10, 11]
+    },
+
+    "launcher": {
+      "css": "styles/screens/launcher.css",
+      "hitboxes": "content/hitboxes/launcher.json",
+      "controller": null
+    },
+
+    "story": {
+      "css": "styles/screens/story.css",
+      "hitboxes": "content/hitboxes/story.json",
+      "controller": null
+    },
+    "character": {
+      "css": "styles/screens/character.css",
+      "hitboxes": "content/hitboxes/character.json",
+      "controller": null
+    },
+    "inventory": {
+      "css": "styles/screens/inventory.css",
+      "hitboxes": "content/hitboxes/inventory.json",
+      "controller": null
+    }
+  }
+}
