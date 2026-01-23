@@ -1,1 +1,8 @@
+/* styles/screens/splash.css */
 
+.screen[data-screen="splash"] {
+  background-image: url("../../ui/global/ui/splash.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
