@@ -1,5 +1,13 @@
 {
   "hitboxes": [
-    { "id": "tap_to_start", "x": 0, "y": 0, "w": 100, "h": 100, "action": "go", "arg": "tos" }
+    {
+      "id": "tap_to_start",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "h": 100,
+      "action": "go",
+      "arg": "tos"
+    }
   ]
 }
