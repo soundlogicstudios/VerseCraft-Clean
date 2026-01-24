@@ -9,8 +9,35 @@
     "library",
     "library1",
     "library2",
+
     "launcher",
+    "launcher_backrooms",
+    "launcher_timecop",
+    "launcher_relic_of_cylara",
+    "launcher_world_of_lorecraft",
+    "launcher_oregon_trail",
+    "launcher_wastelands",
+    "launcher_tale_of_icarus",
+    "launcher_crimson_seagull",
+    "launcher_code_blue",
+    "launcher_king_solomon",
+    "launcher_cosmos",
+    "launcher_dead_drop_protocol",
+
     "story",
+    "story_backrooms",
+    "story_timecop",
+    "story_relic_of_cylara",
+    "story_world_of_lorecraft",
+    "story_oregon_trail",
+    "story_wastelands",
+    "story_tale_of_icarus",
+    "story_crimson_seagull",
+    "story_code_blue",
+    "story_king_solomon",
+    "story_cosmos",
+    "story_dead_drop_protocol",
+
     "character",
     "inventory",
     "settings"
@@ -68,6 +95,7 @@
       "hitboxes": "content/hitboxes/story.json",
       "controller": null
     },
+
     "character": {
       "css": "styles/screens/character.css",
       "hitboxes": "content/hitboxes/character.json",
@@ -76,6 +104,132 @@
     "inventory": {
       "css": "styles/screens/inventory.css",
       "hitboxes": "content/hitboxes/inventory.json",
+      "controller": null
+    },
+
+    "launcher_backrooms": {
+      "css": "styles/screens/launcher_backrooms.css",
+      "hitboxes": "content/hitboxes/launcher_backrooms.json",
+      "controller": null
+    },
+    "launcher_timecop": {
+      "css": "styles/screens/launcher_timecop.css",
+      "hitboxes": "content/hitboxes/launcher_timecop.json",
+      "controller": null
+    },
+    "launcher_relic_of_cylara": {
+      "css": "styles/screens/launcher_relic_of_cylara.css",
+      "hitboxes": "content/hitboxes/launcher_relic_of_cylara.json",
+      "controller": null
+    },
+    "launcher_world_of_lorecraft": {
+      "css": "styles/screens/launcher_world_of_lorecraft.css",
+      "hitboxes": "content/hitboxes/launcher_world_of_lorecraft.json",
+      "controller": null
+    },
+
+    "launcher_oregon_trail": {
+      "css": "styles/screens/launcher_oregon_trail.css",
+      "hitboxes": "content/hitboxes/launcher_oregon_trail.json",
+      "controller": null
+    },
+    "launcher_wastelands": {
+      "css": "styles/screens/launcher_wastelands.css",
+      "hitboxes": "content/hitboxes/launcher_wastelands.json",
+      "controller": null
+    },
+    "launcher_tale_of_icarus": {
+      "css": "styles/screens/launcher_tale_of_icarus.css",
+      "hitboxes": "content/hitboxes/launcher_tale_of_icarus.json",
+      "controller": null
+    },
+    "launcher_crimson_seagull": {
+      "css": "styles/screens/launcher_crimson_seagull.css",
+      "hitboxes": "content/hitboxes/launcher_crimson_seagull.json",
+      "controller": null
+    },
+
+    "launcher_code_blue": {
+      "css": "styles/screens/launcher_code_blue.css",
+      "hitboxes": "content/hitboxes/launcher_code_blue.json",
+      "controller": null
+    },
+    "launcher_king_solomon": {
+      "css": "styles/screens/launcher_king_solomon.css",
+      "hitboxes": "content/hitboxes/launcher_king_solomon.json",
+      "controller": null
+    },
+    "launcher_cosmos": {
+      "css": "styles/screens/launcher_cosmos.css",
+      "hitboxes": "content/hitboxes/launcher_cosmos.json",
+      "controller": null
+    },
+    "launcher_dead_drop_protocol": {
+      "css": "styles/screens/launcher_dead_drop_protocol.css",
+      "hitboxes": "content/hitboxes/launcher_dead_drop_protocol.json",
+      "controller": null
+    },
+
+    "story_backrooms": {
+      "css": "styles/screens/story_backrooms.css",
+      "hitboxes": "content/hitboxes/story_backrooms.json",
+      "controller": null
+    },
+    "story_timecop": {
+      "css": "styles/screens/story_timecop.css",
+      "hitboxes": "content/hitboxes/story_timecop.json",
+      "controller": null
+    },
+    "story_relic_of_cylara": {
+      "css": "styles/screens/story_relic_of_cylara.css",
+      "hitboxes": "content/hitboxes/story_relic_of_cylara.json",
+      "controller": null
+    },
+    "story_world_of_lorecraft": {
+      "css": "styles/screens/story_world_of_lorecraft.css",
+      "hitboxes": "content/hitboxes/story_world_of_lorecraft.json",
+      "controller": null
+    },
+
+    "story_oregon_trail": {
+      "css": "styles/screens/story_oregon_trail.css",
+      "hitboxes": "content/hitboxes/story_oregon_trail.json",
+      "controller": null
+    },
+    "story_wastelands": {
+      "css": "styles/screens/story_wastelands.css",
+      "hitboxes": "content/hitboxes/story_wastelands.json",
+      "controller": null
+    },
+    "story_tale_of_icarus": {
+      "css": "styles/screens/story_tale_of_icarus.css",
+      "hitboxes": "content/hitboxes/story_tale_of_icarus.json",
+      "controller": null
+    },
+    "story_crimson_seagull": {
+      "css": "styles/screens/story_crimson_seagull.css",
+      "hitboxes": "content/hitboxes/story_crimson_seagull.json",
+      "controller": null
+    },
+
+    "story_code_blue": {
+      "css": "styles/screens/story_code_blue.css",
+      "hitboxes": "content/hitboxes/story_code_blue.json",
+      "controller": null
+    },
+    "story_king_solomon": {
+      "css": "styles/screens/story_king_solomon.css",
+      "hitboxes": "content/hitboxes/story_king_solomon.json",
+      "controller": null
+    },
+    "story_cosmos": {
+      "css": "styles/screens/story_cosmos.css",
+      "hitboxes": "content/hitboxes/story_cosmos.json",
+      "controller": null
+    },
+    "story_dead_drop_protocol": {
+      "css": "styles/screens/story_dead_drop_protocol.css",
+      "hitboxes": "content/hitboxes/story_dead_drop_protocol.json",
       "controller": null
     }
   }
