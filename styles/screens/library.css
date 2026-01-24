@@ -1,13 +1,10 @@
 /* styles/screens/library.css */
-
 .screen[data-screen="library"].is-active{
-  background-color: #000 !important;
-  background-image: url("../../ui/global/ui/library-pre-render-page1.webp") !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-size: cover !important;
+  background-image: url("../../ui/global/ui/library-pre-render-page1.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
 }
-
-/* baked art must never intercept taps */
 .screen[data-screen="library"]{ pointer-events:none; }
 .screen[data-screen="library"] .hitbox-layer{ pointer-events:auto; }
