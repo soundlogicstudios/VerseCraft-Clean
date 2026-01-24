@@ -5,6 +5,12 @@ import { init_screen_manager } from "../core/screen-manager.js";
 import { init_input } from "../core/input.js";
 import { init_debug_ui } from "../core/debug_ui.js";
 
+(async function boot() {
+  init_debug_ui();
+  init_input();
+  await init_screen_manager();
+})();
+
 function on_ready(fn) {
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", fn, { once: true });
