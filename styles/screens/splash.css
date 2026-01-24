@@ -1,8 +1,10 @@
 /* styles/screens/splash.css */
-
-.screen[data-screen="splash"] {
+.screen[data-screen="splash"].is-active{
   background-image: url("../../ui/global/ui/splash.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color:#000;
 }
+.screen[data-screen="splash"]{ pointer-events:none; }
+.screen[data-screen="splash"] .hitbox-layer{ pointer-events:auto; }
