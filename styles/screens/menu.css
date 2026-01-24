@@ -1,19 +1,10 @@
 /* styles/screens/menu.css */
-
-.screen[data-screen="menu"] {
+.screen[data-screen="menu"].is-active{
   background-image: url("../../ui/global/ui/main-menu-no-save.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color:#000;
 }
-
-/* Ensure baked art never intercepts taps */
-.screen[data-screen="menu"] {
-  pointer-events: none;
-}
-
-/* Hitbox layer MUST remain interactive */
-.screen[data-screen="menu"] .hitbox-layer {
-  pointer-events: auto;
-}
+.screen[data-screen="menu"]{ pointer-events:none; }
+.screen[data-screen="menu"] .hitbox-layer{ pointer-events:auto; }
