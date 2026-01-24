@@ -2,14 +2,8 @@
 // versecraft phase 1: on-screen diagnostic suite (no console needed)
 // gated behind ?debug=1 or ?=debug1
 //
-// features:
-// - debug pill + panel
-// - auto snapshot when panel opens + on screen change
-// - show/hide cyan outlines
-// - red inlay paint (first/all/clear)
-// - list hitboxes (id/action/arg + rect + inline style values)
-// - tap test: alerts which hitbox was tapped (and blocks navigation while enabled)
-// - audits: screen exists? css link present? hitbox json fetch status? bg image fetch status?
+// IMPORTANT: this version scopes hitbox diagnostics to the ACTIVE screen
+// and also reports TOTAL hitboxes across the DOM to detect leaks.
 
 import { go, get_current_screen } from "./screen-manager.js";
 
@@ -33,14 +27,19 @@ function active_screen_el() {
   return q(".screen.is-active");
 }
 
-// IMPORTANT: use per-screen class-based layer
 function active_layer() {
   const s = active_screen_el();
-  return s?.querySelector(".hitbox-layer") || q(".hitbox-layer");
+  return s?.querySelector(".hitbox-layer") || null;
 }
 
-function hitboxes() {
+function all_hitboxes() {
   return qa(".hitbox");
+}
+
+function active_hitboxes() {
+  const s = active_screen_el();
+  if (!s) return [];
+  return qa(".hitbox", s);
 }
 
 function safe_rect(el) {
@@ -90,10 +89,11 @@ function current_screen_id() {
 
 function snapshot() {
   const layer = active_layer();
-  const hbs = hitboxes();
-  const layer_cs = layer ? getComputedStyle(layer) : null;
+  const hbs_active = active_hitboxes();
+  const hbs_total = all_hitboxes();
 
-  const first = hbs[0] || null;
+  const layer_cs = layer ? getComputedStyle(layer) : null;
+  const first = hbs_active[0] || null;
 
   return {
     screen: current_screen_id(),
@@ -104,8 +104,11 @@ function snapshot() {
     layer_pointer_events: layer_cs ? layer_cs.pointerEvents : null,
     layer_z_index: layer_cs ? layer_cs.zIndex : null,
     layer_rect: layer ? safe_rect(layer) : null,
-    hitbox_count: hbs.length,
-    first_hitbox: first
+
+    hitbox_count_active: hbs_active.length,
+    hitbox_count_total: hbs_total.length,
+
+    first_hitbox_active: first
       ? {
           dataset: { ...first.dataset },
           rect: safe_rect(first),
@@ -116,8 +119,8 @@ function snapshot() {
   };
 }
 
-function list_hitboxes() {
-  return hitboxes().map((hb, i) => ({
+function list_active_hitboxes() {
+  return active_hitboxes().map((hb, i) => ({
     i,
     id: hb.getAttribute("data-hitbox-id") || hb.getAttribute("aria-label") || "",
     action: hb.dataset.action || "",
@@ -200,13 +203,13 @@ function inject_styles() {
 
 function set_outlines(on) {
   const layer = active_layer();
-  if (!layer) return { ok: false, reason: "no .hitbox-layer found" };
+  if (!layer) return { ok: false, reason: "no .hitbox-layer on active screen" };
   layer.classList.toggle("debug-hitboxes", !!on);
   return { ok: true, on: !!on };
 }
 
 function clear_paint() {
-  hitboxes().forEach((hb) => {
+  active_hitboxes().forEach((hb) => {
     hb.style.background = "";
     hb.style.outline = "";
     hb.style.zIndex = "";
@@ -215,8 +218,8 @@ function clear_paint() {
 }
 
 function paint_hitbox(index = 0) {
-  const hb = hitboxes()[index];
-  if (!hb) return { ok: false, reason: "no hitbox at index" };
+  const hb = active_hitboxes()[index];
+  if (!hb) return { ok: false, reason: "no active hitbox at index" };
 
   hb.style.background = "rgba(255,0,0,0.28)";
   hb.style.outline = "3px solid rgba(255,0,0,0.95)";
@@ -226,67 +229,16 @@ function paint_hitbox(index = 0) {
 }
 
 function paint_all() {
-  const hbs = hitboxes();
-  if (!hbs.length) return { ok: false, reason: "no hitboxes to paint" };
+  const hbs = active_hitboxes();
+  if (!hbs.length) return { ok: false, reason: "no active hitboxes to paint" };
+
   hbs.forEach((hb) => {
     hb.style.background = "rgba(255,0,0,0.18)";
     hb.style.outline = "2px solid rgba(255,0,0,0.85)";
     hb.style.zIndex = "9999998";
   });
+
   return { ok: true, count: hbs.length };
-}
-
-async function fetch_status(path) {
-  try {
-    const res = await fetch(path, { cache: "no-store" });
-    return { path, ok: res.ok, status: res.status };
-  } catch (_) {
-    return { path, ok: false, status: "fetch_error" };
-  }
-}
-
-function css_link_present(href_fragment) {
-  const links = qa('link[rel="stylesheet"]');
-  return links.some((l) => (l.getAttribute("href") || "").includes(href_fragment));
-}
-
-async function audit_screen(screen_id) {
-  let reg;
-  try {
-    reg = await (await fetch("./sec/screen_registry.json", { cache: "no-store" })).json();
-  } catch (_) {
-    return { ok: false, reason: "registry_load_failed" };
-  }
-
-  const cfg = reg?.screens?.[screen_id];
-  if (!cfg) return { ok: false, reason: "screen_not_in_registry", screen_id };
-
-  const el = q(`.screen[data-screen="${screen_id}"]`);
-  const exists = !!el;
-
-  const css = cfg.css ? `./${String(cfg.css).replace(/^\.?\//, "")}` : null;
-  const hit = cfg.hitboxes ? `./${String(cfg.hitboxes).replace(/^\.?\//, "")}` : null;
-
-  const css_fetch = css ? await fetch_status(css) : null;
-  const hit_fetch = hit ? await fetch_status(hit) : null;
-
-  let bg = null;
-  if (exists) {
-    const cs = getComputedStyle(el);
-    bg = cs.backgroundImage || null;
-  }
-
-  return {
-    ok: true,
-    screen_id,
-    element_exists: exists,
-    css_path: css,
-    css_link_present: cfg.css ? css_link_present(cfg.css) : false,
-    css_fetch,
-    hitboxes_path: hit,
-    hitboxes_fetch: hit_fetch,
-    computed_background_image: bg
-  };
 }
 
 function render_outputs(panel) {
@@ -294,7 +246,7 @@ function render_outputs(panel) {
   const listEl = q("#vcDbgListOut", panel);
 
   const snap = snapshot();
-  const list = list_hitboxes();
+  const list = list_active_hitboxes();
 
   if (snapEl) snapEl.textContent = JSON.stringify(snap, null, 2);
   if (listEl) listEl.textContent = JSON.stringify(list, null, 2);
@@ -321,6 +273,10 @@ function handle_tap_test(e) {
   const hb = e.target?.closest?.(".hitbox");
   if (!hb) return;
 
+  // Only respond if the hitbox is on the active screen
+  const s = active_screen_el();
+  if (!s || !s.contains(hb)) return;
+
   e.stopPropagation();
   e.preventDefault();
 
@@ -331,7 +287,7 @@ function handle_tap_test(e) {
   const inline = inline_box_style(hb);
 
   alert(
-    `HITBOX TAP\nid: ${id}\naction: ${action}\narg: ${arg}\nrect: ${rect?.w}x${rect?.h}\nstyle: ${inline?.left},${inline?.top},${inline?.width},${inline?.height}`
+    `HITBOX TAP (ACTIVE)\nid: ${id}\naction: ${action}\narg: ${arg}\nrect: ${rect?.w}x${rect?.h}\nstyle: ${inline?.left},${inline?.top},${inline?.width},${inline?.height}`
   );
 }
 
@@ -341,7 +297,6 @@ export function init_debug_ui() {
   mounted = true;
 
   inject_styles();
-
   document.addEventListener("pointerup", handle_tap_test, true);
 
   const pill = document.createElement("button");
@@ -373,23 +328,17 @@ export function init_debug_ui() {
     <div class="row">
       <button id="vcDbgGoSplash" type="button">Go Splash</button>
       <button id="vcDbgGoTos" type="button">Go ToS</button>
-      <button id="vcDbgAuditTos" type="button">Audit ToS</button>
     </div>
 
-    <div class="note">Snapshot (auto-updates)</div>
+    <div class="note">Snapshot (ACTIVE vs TOTAL)</div>
     <pre id="vcDbgSnapOut"></pre>
 
-    <div class="note">Hitboxes (auto-updates)</div>
+    <div class="note">Active Screen Hitboxes</div>
     <pre id="vcDbgListOut"></pre>
-
-    <div class="note">Audit Output</div>
-    <pre id="vcDbgAuditOut"></pre>
   `;
 
   document.body.appendChild(panel);
   document.body.appendChild(pill);
-
-  const auditOut = () => q("#vcDbgAuditOut", panel);
 
   function refresh() {
     render_outputs(panel);
@@ -448,14 +397,9 @@ export function init_debug_ui() {
     refresh();
   });
 
-  q("#vcDbgAuditTos", panel)?.addEventListener("click", async () => {
-    const result = await audit_screen("tos");
-    if (auditOut()) auditOut().textContent = JSON.stringify(result, null, 2);
-  });
-
   window.addEventListener("vc:screenchange", () => {
     if (is_panel_open(panel)) refresh();
   });
 
-  console.log("[debug_ui] enabled (query gated)");
+  console.log("[debug_ui] enabled (query gated, active-scoped)");
 }
