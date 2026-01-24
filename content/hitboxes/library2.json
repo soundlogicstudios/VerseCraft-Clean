@@ -1,1 +1,11 @@
+{
+  "hitboxes": [
+    { "id": "slot_8",  "x": 5, "y": 18, "w": 90, "h": 16, "action": "go", "arg": "launcher_code_blue" },
+    { "id": "slot_9",  "x": 5, "y": 36, "w": 90, "h": 16, "action": "go", "arg": "launcher_king_solomon" },
+    { "id": "slot_10", "x": 5, "y": 54, "w": 90, "h": 16, "action": "go", "arg": "launcher_cosmos" },
+    { "id": "slot_11", "x": 5, "y": 72, "w": 90, "h": 16, "action": "go", "arg": "launcher_dead_drop_protocol" },
 
+    { "id": "prev_page", "x": 3, "y": 92, "w": 22, "h": 7, "action": "go", "arg": "library1" },
+    { "id": "back_to_menu", "x": 3, "y": 3, "w": 22, "h": 8, "action": "go", "arg": "menu" }
+  ]
+}
