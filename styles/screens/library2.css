@@ -1,17 +1,10 @@
 /* styles/screens/library2.css */
-
-.screen[data-screen="library2"]{
+.screen[data-screen="library2"].is-active{
   background-image: url("../../ui/global/ui/library-pre-render-page3.webp");
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color:#000;
 }
-
-/* baked art must never intercept taps */
-.screen[data-screen="library2"]{
-  pointer-events: none;
-}
-.screen[data-screen="library2"] .hitbox-layer{
-  pointer-events: auto;
-}
+.screen[data-screen="library2"]{ pointer-events:none; }
+.screen[data-screen="library2"] .hitbox-layer{ pointer-events:auto; }
