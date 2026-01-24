@@ -1,1 +1,9 @@
-
+/* styles/screens/story.css (legacy generic placeholder) */
+.screen[data-screen="story"].is-active{
+  background-color:#000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.screen[data-screen="story"]{ pointer-events:none; }
+.screen[data-screen="story"] .hitbox-layer{ pointer-events:auto; }
