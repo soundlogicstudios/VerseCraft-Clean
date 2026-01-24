@@ -1,7 +1,7 @@
 /* styles/screens/story_oregon_trail.css */
 
 .screen[data-screen="story_oregon_trail"]{
-  background-image: url("../../content/founders/packs/story-panels/oregon-trail-narrative-panel.webp");
+  background-image: url("../../content/founders/packs/story-panels/oregontrail-narrative-panel.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
