@@ -1,0 +1,12 @@
+/* styles/screens/story_cosmos.css */
+
+.screen[data-screen="story_cosmos"]{
+  background-image: url("../../content/founders/packs/story-panels/cosmos-narrative-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="story_cosmos"]{ pointer-events:none; }
+.screen[data-screen="story_cosmos"] .hitbox-layer{ pointer-events:auto; }
