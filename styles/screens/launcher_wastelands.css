@@ -1,0 +1,12 @@
+/* styles/screens/launcher_wastelands.css */
+
+.screen[data-screen="launcher_wastelands"]{
+  background-image: url("../../ui/global/ui/launcher-panel-background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="launcher_wastelands"]{ pointer-events:none; }
+.screen[data-screen="launcher_wastelands"] .hitbox-layer{ pointer-events:auto; }
