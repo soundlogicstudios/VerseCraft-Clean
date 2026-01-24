@@ -1,0 +1,11 @@
+/* styles/screens/launcher_TEMPLATE.css */
+.screen[data-screen="launcher_timecop"].is-active{
+  background-image: url("../../ui/global/ui/timecop-narrative-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="launcher_timecop"]{ pointer-events:none; }
+.screen[data-screen="launcher_rimecop"] .hitbox-layer{ pointer-events:auto; }
