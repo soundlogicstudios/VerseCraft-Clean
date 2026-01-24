@@ -1,48 +1,49 @@
 // core/input.js
-// phase 1: single delegated hitbox handler
-// reads data-action and data-arg from .hitbox buttons
-// supports: action="go" (routes to another screen)
+// phase 1: ios-safe delegated hitbox actions (go only)
 
 import { go } from "./screen-manager.js";
 
-let bound = false;
+let _bound = false;
 
-function handle_hitbox_click(e) {
-  const el = e.target?.closest?.(".hitbox");
-  if (!el) return;
+function on_pointerup(e) {
+  const hb = e.target?.closest?.(".hitbox");
+  if (!hb) return;
 
-  const action = (el.dataset.action || "").trim().toLowerCase();
-  const arg = el.dataset.arg;
-
-  if (!action) return;
-
-  // prevent ghost clicks / double tap zoom interference
+  // prevent any overlays from hijacking the tap
   e.preventDefault();
+  e.stopPropagation();
 
-  if (action === "go") {
-    if (!arg) return;
-    go(String(arg).trim().toLowerCase());
+  const action = (hb.dataset.action || "").trim().toLowerCase();
+  const arg = (hb.dataset.arg || "").trim();
+
+  if (action === "go" && arg) {
+    go(arg);
     return;
   }
 
-  console.warn("[input] unknown action:", action, "arg:", arg);
+  console.warn("[input] hitbox missing/unknown action:", { action, arg, hb });
 }
 
 export function init_input() {
-  if (bound) return;
-  bound = true;
+  if (_bound) return;
+  _bound = true;
 
-  // capture phase makes this reliable even with overlays
-  document.addEventListener("click", handle_hitbox_click, true);
+  // capture phase is key on iOS
+  document.addEventListener("pointerup", on_pointerup, true);
 
-  // optional: iOS touchstart for slightly snappier taps
+  // optional: also support click fallback
   document.addEventListener(
-    "touchstart",
+    "click",
     (e) => {
-      const el = e.target?.closest?.(".hitbox");
-      if (el) e.preventDefault();
+      const hb = e.target?.closest?.(".hitbox");
+      if (!hb) return;
+      e.preventDefault();
+      e.stopPropagation();
+      const action = (hb.dataset.action || "").trim().toLowerCase();
+      const arg = (hb.dataset.arg || "").trim();
+      if (action === "go" && arg) go(arg);
     },
-    { passive: false, capture: true }
+    true
   );
 
   console.log("[input] initialized");
