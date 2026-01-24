@@ -1,7 +1,7 @@
 /* styles/screens/story_world_of_lorecraft.css */
 
 .screen[data-screen="story_world_of_lorecraft"]{
-  background-image: url("../../content/founders/packs/story-panels/world_of_lorecraft-narrative-panel.webp");
+  background-image: url("../../content/starter/packs/story-panels/lorecraft-narrative-panel.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
