@@ -1,5 +1,5 @@
 /* styles/base.css */
-/* phase 1: ios-safe fixed viewport + hitboxes */
+/* phase 1: ios-safe fixed viewport + hitboxes (tap-enabled) */
 
 *,
 *::before,
@@ -24,17 +24,14 @@ body {
   color: #fff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* iOS: stop rubber-band */
   overflow: hidden;
 
-  /* hard lock the viewport to prevent “scrolling” feel */
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
 
-  /* prevents pull-to-refresh/overscroll where supported */
   overscroll-behavior: none;
 }
 
@@ -45,14 +42,12 @@ body {
   top: 0;
   width: 100%;
 
-  /* safest baseline */
   height: 100vh;
 
   display: none;
   overflow: hidden;
 }
 
-/* better viewport units when supported (iOS 16+ etc.) */
 @supports (height: 100svh) {
   .screen { height: 100svh; }
 }
@@ -65,12 +60,15 @@ body {
 }
 
 /* ---------- hitbox layer ---------- */
+/* IMPORTANT: must be interactive; do NOT set pointer-events:none here */
 #hitboxLayer {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+
+  pointer-events: auto;
+  z-index: 10;
 }
 
 /* ---------- invisible hitboxes ---------- */
@@ -81,8 +79,6 @@ body {
   border: none;
   padding: 0;
   margin: 0;
-
-  /* iOS tap reliability */
   touch-action: manipulation;
 }
 
