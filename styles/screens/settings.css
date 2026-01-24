@@ -1,1 +1,17 @@
+/* styles/screens/settings.css */
 
+.screen[data-screen="settings"]{
+  background-image: url("../../ui/global/ui/settings.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #000;
+}
+
+/* baked art must never intercept taps */
+.screen[data-screen="settings"]{
+  pointer-events: none;
+}
+.screen[data-screen="settings"] .hitbox-layer{
+  pointer-events: auto;
+}
