@@ -1,17 +1,10 @@
 /* styles/screens/settings.css */
-
-.screen[data-screen="settings"]{
+.screen[data-screen="settings"].is-active{
   background-image: url("../../ui/global/ui/settings.webp");
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color:#000;
 }
-
-/* baked art must never intercept taps */
-.screen[data-screen="settings"]{
-  pointer-events: none;
-}
-.screen[data-screen="settings"] .hitbox-layer{
-  pointer-events: auto;
-}
+.screen[data-screen="settings"]{ pointer-events:none; }
+.screen[data-screen="settings"] .hitbox-layer{ pointer-events:auto; }
