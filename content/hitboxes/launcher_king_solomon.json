@@ -1,0 +1,6 @@
+{
+  "hitboxes": [
+    { "id": "back",  "x": 4, "y": 4, "w": 22, "h": 8,  "action": "go", "arg": "library2" },
+    { "id": "start", "x": 30, "y": 75, "w": 40, "h": 12, "action": "go", "arg": "story_king_solomon" }
+  ]
+}
