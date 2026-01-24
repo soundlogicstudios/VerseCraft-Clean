@@ -1,1 +1,9 @@
-
+/* styles/screens/inventory.css (placeholder) */
+.screen[data-screen="inventory"].is-active{
+  background-color:#000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.screen[data-screen="inventory"]{ pointer-events:none; }
+.screen[data-screen="inventory"] .hitbox-layer{ pointer-events:auto; }
