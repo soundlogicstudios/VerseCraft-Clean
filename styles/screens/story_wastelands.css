@@ -1,0 +1,12 @@
+/* styles/screens/story_wastelands.css */
+
+.screen[data-screen="story_wastelands"]{
+  background-image: url("../../content/founders/packs/story-panels/wastelands-narrative-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="story_wastelands"]{ pointer-events:none; }
+.screen[data-screen="story_wastelands"] .hitbox-layer{ pointer-events:auto; }
