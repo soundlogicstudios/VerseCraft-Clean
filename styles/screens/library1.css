@@ -1,1 +1,17 @@
+/* styles/screens/library1.css */
 
+.screen[data-screen="library1"]{
+  background-image: url("../../ui/global/ui/library-pre-render-page2.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #000;
+}
+
+/* baked art must never intercept taps */
+.screen[data-screen="library1"]{
+  pointer-events: none;
+}
+.screen[data-screen="library1"] .hitbox-layer{
+  pointer-events: auto;
+}
