@@ -1,11 +1,23 @@
-/* styles/screens/launcher_TEMPLATE.css */
-.screen[data-screen="launcher_timecop"].is-active{
-  background-image: url("../../ui/global/ui/timecop-narrative-panel.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color:#000;
+/* styles/screens/launcher_timecop.css */
+
+.screen[data-screen="launcher_timecop"]{
+  /* UI launcher frame */
+  background-image:
+    url("../../ui/global/ui/launcher-panel-background.webp"),
+    url("../../content/founders/packs/covers/timecop.webp");
+
+  /* First image = top layer, second = underneath */
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, center center;
+  background-size: cover, cover;
+
+  background-color: #000;
 }
 
-.screen[data-screen="launcher_timecop"]{ pointer-events:none; }
-.screen[data-screen="launcher_rimecop"] .hitbox-layer{ pointer-events:auto; }
+/* baked art never intercepts taps */
+.screen[data-screen="launcher_timecop"]{
+  pointer-events: none;
+}
+.screen[data-screen="launcher_timecop"] .hitbox-layer{
+  pointer-events: auto;
+}
