@@ -1,0 +1,12 @@
+/* styles/screens/story_oregon_trail.css */
+
+.screen[data-screen="story_oregon_trail"]{
+  background-image: url("../../content/founders/packs/story-panels/oregon_trail-narrative-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="story_oregon_trail"]{ pointer-events:none; }
+.screen[data-screen="story_oregon_trail"] .hitbox-layer{ pointer-events:auto; }
