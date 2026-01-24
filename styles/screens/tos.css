@@ -1,8 +1,10 @@
 /* styles/screens/tos.css */
-
-.screen[data-screen="tos"] {
+.screen[data-screen="tos"].is-active{
   background-image: url("../../ui/global/ui/tos-accept.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color:#000;
 }
+.screen[data-screen="tos"]{ pointer-events:none; }
+.screen[data-screen="tos"] .hitbox-layer{ pointer-events:auto; }
