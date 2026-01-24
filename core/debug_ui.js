@@ -7,7 +7,7 @@
 // - auto snapshot when panel opens + on screen change
 // - show/hide cyan outlines
 // - red inlay paint (first/all/clear)
-// - list hitboxes (id/action/arg + rect)
+// - list hitboxes (id/action/arg + rect + inline style values)
 // - tap test: alerts which hitbox was tapped (and blocks navigation while enabled)
 // - audits: screen exists? css link present? hitbox json fetch status? bg image fetch status?
 
@@ -33,9 +33,10 @@ function active_screen_el() {
   return q(".screen.is-active");
 }
 
+// IMPORTANT: use per-screen class-based layer
 function active_layer() {
   const s = active_screen_el();
-  return s?.querySelector("#hitboxLayer") || q("#hitboxLayer");
+  return s?.querySelector(".hitbox-layer") || q(".hitbox-layer");
 }
 
 function hitboxes() {
@@ -50,6 +51,31 @@ function safe_rect(el) {
     y: Math.round(r.y),
     w: Math.round(r.width),
     h: Math.round(r.height)
+  };
+}
+
+function inline_box_style(el) {
+  if (!el) return null;
+  return {
+    left: el.style.left || "",
+    top: el.style.top || "",
+    width: el.style.width || "",
+    height: el.style.height || ""
+  };
+}
+
+function computed_box_style(el) {
+  if (!el) return null;
+  const cs = getComputedStyle(el);
+  return {
+    left: cs.left,
+    top: cs.top,
+    width: cs.width,
+    height: cs.height,
+    display: cs.display,
+    position: cs.position,
+    pointerEvents: cs.pointerEvents,
+    zIndex: cs.zIndex
   };
 }
 
@@ -77,9 +103,15 @@ function snapshot() {
     layer_found: !!layer,
     layer_pointer_events: layer_cs ? layer_cs.pointerEvents : null,
     layer_z_index: layer_cs ? layer_cs.zIndex : null,
+    layer_rect: layer ? safe_rect(layer) : null,
     hitbox_count: hbs.length,
     first_hitbox: first
-      ? { dataset: { ...first.dataset }, rect: safe_rect(first) }
+      ? {
+          dataset: { ...first.dataset },
+          rect: safe_rect(first),
+          inline: inline_box_style(first),
+          computed: computed_box_style(first)
+        }
       : null
   };
 }
@@ -90,7 +122,9 @@ function list_hitboxes() {
     id: hb.getAttribute("data-hitbox-id") || hb.getAttribute("aria-label") || "",
     action: hb.dataset.action || "",
     arg: hb.dataset.arg ?? "",
-    rect: safe_rect(hb)
+    rect: safe_rect(hb),
+    inline: inline_box_style(hb),
+    computed: computed_box_style(hb)
   }));
 }
 
@@ -131,10 +165,7 @@ function inject_styles() {
     margin-bottom:8px;
   }
 
-  #vcDebugPanel .title{
-    font-weight:900;
-    letter-spacing:.2px;
-  }
+  #vcDebugPanel .title{ font-weight:900; letter-spacing:.2px; }
 
   #vcDebugPanel .row{ display:flex; gap:8px; flex-wrap:wrap; margin:10px 0; }
 
@@ -148,11 +179,7 @@ function inject_styles() {
   }
   #vcDebugPanel button:active{ transform: scale(.99); }
 
-  #vcDebugPanel .note{
-    opacity:.9;
-    font-size:12px;
-    margin:6px 0 2px;
-  }
+  #vcDebugPanel .note{ opacity:.9; font-size:12px; margin:6px 0 2px; }
 
   #vcDebugPanel pre{
     margin:10px 0 0 0;
@@ -163,9 +190,6 @@ function inject_styles() {
     white-space:pre-wrap;
     word-break:break-word;
   }
-
-  #vcDebugPanel .ok{ color: rgba(120,255,180,.95); }
-  #vcDebugPanel .bad{ color: rgba(255,120,120,.95); }
   `;
 
   const style = document.createElement("style");
@@ -176,7 +200,7 @@ function inject_styles() {
 
 function set_outlines(on) {
   const layer = active_layer();
-  if (!layer) return { ok: false, reason: "no hitboxLayer found" };
+  if (!layer) return { ok: false, reason: "no .hitbox-layer found" };
   layer.classList.toggle("debug-hitboxes", !!on);
   return { ok: true, on: !!on };
 }
@@ -198,7 +222,7 @@ function paint_hitbox(index = 0) {
   hb.style.outline = "3px solid rgba(255,0,0,0.95)";
   hb.style.zIndex = "9999998";
 
-  return { ok: true, index, rect: safe_rect(hb) };
+  return { ok: true, index, rect: safe_rect(hb), inline: inline_box_style(hb) };
 }
 
 function paint_all() {
@@ -216,7 +240,7 @@ async function fetch_status(path) {
   try {
     const res = await fetch(path, { cache: "no-store" });
     return { path, ok: res.ok, status: res.status };
-  } catch (e) {
+  } catch (_) {
     return { path, ok: false, status: "fetch_error" };
   }
 }
@@ -227,7 +251,6 @@ function css_link_present(href_fragment) {
 }
 
 async function audit_screen(screen_id) {
-  // Reads registry directly so we can validate tos black-screen causes
   let reg;
   try {
     reg = await (await fetch("./sec/screen_registry.json", { cache: "no-store" })).json();
@@ -247,7 +270,6 @@ async function audit_screen(screen_id) {
   const css_fetch = css ? await fetch_status(css) : null;
   const hit_fetch = hit ? await fetch_status(hit) : null;
 
-  // Also try to infer background image from computed style (after screen is active)
   let bg = null;
   if (exists) {
     const cs = getComputedStyle(el);
@@ -288,10 +310,8 @@ function is_panel_open(panel) {
 
 function enable_tap_test(on) {
   tap_test_enabled = !!on;
-
   const pill = q("#vcDebugPill");
   if (pill) pill.textContent = tap_test_enabled ? "Debug (Tap Test)" : "Debug";
-
   return { ok: true, tap_test: tap_test_enabled };
 }
 
@@ -301,15 +321,18 @@ function handle_tap_test(e) {
   const hb = e.target?.closest?.(".hitbox");
   if (!hb) return;
 
-  // Block navigation while testing and show exactly what was tapped
   e.stopPropagation();
   e.preventDefault();
 
   const id = hb.getAttribute("data-hitbox-id") || hb.getAttribute("aria-label") || "";
   const action = hb.dataset.action || "";
   const arg = hb.dataset.arg ?? "";
+  const rect = safe_rect(hb);
+  const inline = inline_box_style(hb);
 
-  alert(`HITBOX TAP\nid: ${id}\naction: ${action}\narg: ${arg}`);
+  alert(
+    `HITBOX TAP\nid: ${id}\naction: ${action}\narg: ${arg}\nrect: ${rect?.w}x${rect?.h}\nstyle: ${inline?.left},${inline?.top},${inline?.width},${inline?.height}`
+  );
 }
 
 export function init_debug_ui() {
@@ -319,7 +342,6 @@ export function init_debug_ui() {
 
   inject_styles();
 
-  // Install tap tester in capture phase so it can intercept before input routing
   document.addEventListener("pointerup", handle_tap_test, true);
 
   const pill = document.createElement("button");
@@ -435,9 +457,5 @@ export function init_debug_ui() {
     if (is_panel_open(panel)) refresh();
   });
 
-  // Auto-open optional (commented): if you want it always open in debug
-  // set_panel_open(panel, true);
-
-  // initial snapshot if opened later
   console.log("[debug_ui] enabled (query gated)");
 }
