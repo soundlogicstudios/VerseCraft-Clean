@@ -2,28 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
     <title>VerseCraft</title>
 
-    <!-- Base CSS (only global style loaded up front) -->
     <link rel="stylesheet" href="./styles/base.css" />
-
-    <!-- Bootstrap (loads screen manager, nothing else) -->
     <script type="module" src="./src/bootstrap.js"></script>
   </head>
 
   <body>
-    <!-- SPLASH SCREEN -->
     <section class="screen is-active" data-screen="splash">
-      <!-- hitboxes injected here -->
+      <div class="hitbox-layer"></div>
+    </section>
+
     <section class="screen" data-screen="tos">
-  <div id="hitboxLayer"></div>
-</section>
-      <div id="hitboxLayer"></div>
+      <div class="hitbox-layer"></div>
     </section>
   </body>
 </html>
