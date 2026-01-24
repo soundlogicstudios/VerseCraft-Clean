@@ -1,5 +1,5 @@
 /* styles/base.css */
-/* phase 1: ios-safe fixed viewport + hitboxes (tap-enabled) */
+/* phase 1: ios-safe fixed viewport + hitboxes */
 
 *,
 *::before,
@@ -35,15 +35,13 @@ body {
   overscroll-behavior: none;
 }
 
-/* ---------- screen system ---------- */
+/* screens */
 .screen {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-
   height: 100vh;
-
   display: none;
   overflow: hidden;
 }
@@ -59,21 +57,20 @@ body {
   display: block;
 }
 
-/* ---------- hitbox layer ---------- */
-/* IMPORTANT: must be interactive; do NOT set pointer-events:none here */
-#hitboxLayer {
+/* hitbox layer (CLASS, not ID) */
+.hitbox-layer {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-
   pointer-events: auto;
   z-index: 10;
 }
 
-/* ---------- invisible hitboxes ---------- */
+/* hitboxes */
 .hitbox {
   position: absolute;
+  display: block;
   pointer-events: auto;
   background: transparent;
   border: none;
@@ -86,8 +83,8 @@ body {
   outline: none;
 }
 
-/* ---------- debug mode ---------- */
-#hitboxLayer.debug-hitboxes .hitbox {
+/* debug outlines */
+.hitbox-layer.debug-hitboxes .hitbox {
   outline: 2px dashed rgba(0, 255, 255, 0.7);
   background: rgba(0, 255, 255, 0.08);
 }
