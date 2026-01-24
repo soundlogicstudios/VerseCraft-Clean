@@ -1,7 +1,7 @@
 /* styles/screens/story_tale_of_icarus.css */
 
 .screen[data-screen="story_tale_of_icarus"]{
-  background-image: url("../../content/founders/packs/story-panels/tale_of_icarus-narrative-panel.webp");
+  background-image: url("../../content/founders/packs/story-panels/taleoficarus-narrative-panel.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
