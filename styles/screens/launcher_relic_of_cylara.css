@@ -1,0 +1,11 @@
+/* styles/screens/launcher_TEMPLATE.css */
+.screen[data-screen="launcher_relic_of_cylara"].is-active{
+  background-image: url("./content/founders/packs/story-panels/cylara-narrative-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="launcher_relic_of_cylara"]{ pointer-events:none; }
+.screen[data-screen="launcher_relic_of_cylara"] .hitbox-layer{ pointer-events:auto; }
