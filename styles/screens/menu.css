@@ -1,22 +1,19 @@
 /* styles/screens/menu.css */
 
 .screen[data-screen="menu"] {
-  /* baked art background */
   background-image: url("../../ui/global/ui/main-menu-no-save.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* safety */
   background-color: #000;
 }
 
-/* ensure any background-only layers never intercept touch (hitboxes live above) */
-.screen[data-screen="menu"] * {
+/* Ensure baked art never intercepts taps */
+.screen[data-screen="menu"] {
   pointer-events: none;
 }
 
-/* but the hitbox layer MUST remain interactive */
+/* Hitbox layer MUST remain interactive */
 .screen[data-screen="menu"] .hitbox-layer {
   pointer-events: auto;
 }
