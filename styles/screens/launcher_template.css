@@ -1,0 +1,11 @@
+/* styles/screens/launcher_TEMPLATE.css */
+.screen[data-screen="launcher_TEMPLATE"].is-active{
+  background-image: url("../../ui/global/ui/launcher-panel-background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="launcher_TEMPLATE"]{ pointer-events:none; }
+.screen[data-screen="launcher_TEMPLATE"] .hitbox-layer{ pointer-events:auto; }
