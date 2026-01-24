@@ -1,0 +1,12 @@
+/* styles/screens/launcher_crimson_seagull.css */
+
+.screen[data-screen="launcher_crimson_seagull"]{
+  background-image: url("../../ui/global/ui/launcher-panel-background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="launcher_crimson_seagull"]{ pointer-events:none; }
+.screen[data-screen="launcher_crimson_seagull"] .hitbox-layer{ pointer-events:auto; }
