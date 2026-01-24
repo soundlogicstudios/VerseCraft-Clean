@@ -1,1 +1,8 @@
-{ "hitboxes": [] }
+{
+  "hitboxes": [
+    { "id": "go_library",  "x": 15, "y": 35, "w": 70, "h": 12, "action": "go", "arg": "library" },
+    { "id": "go_settings", "x": 15, "y": 50, "w": 70, "h": 12, "action": "go", "arg": "settings" },
+
+    { "id": "back_to_splash", "x": 3, "y": 3, "w": 22, "h": 8, "action": "go", "arg": "splash" }
+  ]
+}
