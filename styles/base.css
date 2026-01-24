@@ -92,3 +92,5 @@ body {
 .hidden {
   display: none !important;
 }
+/* emergency: kill rogue overlay that blocks screens (shows as <div style="all: initial;">) */
+div[style*="all: initial"]{ display:none !important; }
