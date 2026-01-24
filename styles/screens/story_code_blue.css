@@ -1,7 +1,7 @@
 /* styles/screens/story_code_blue.css */
 
 .screen[data-screen="story_code_blue"]{
-  background-image: url("../../content/founders/packs/story-panels/code-blue-narrative-panel.webp");
+  background-image: url("../../content/founders/packs/story-panels/codeblue-narrative-panel.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
