@@ -1,12 +1,18 @@
 /* styles/screens/story_backrooms.css */
 
 .screen[data-screen="story_backrooms"]{
-  background-color: #000;
-  background-size: cover;
-  background-position: center;
+  background-image: url("../../content/founders/packs/story-panels/backrooms-narrative-panel.webp");
   background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  background-color: #000;
 }
 
-/* baked art must never intercept taps */
-.screen[data-screen="story_backrooms"]{ pointer-events:none; }
-.screen[data-screen="story_backrooms"] .hitbox-layer{ pointer-events:auto; }
+/* baked art never intercepts taps */
+.screen[data-screen="story_backrooms"]{
+  pointer-events: none;
+}
+.screen[data-screen="story_backrooms"] .hitbox-layer{
+  pointer-events: auto;
+}
