@@ -1,0 +1,12 @@
+/* styles/screens/launcher_dead_drop_protocol.css */
+
+.screen[data-screen="launcher_dead_drop_protocol"]{
+  background-image: url("../../ui/global/ui/launcher-panel-background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="launcher_dead_drop_protocol"]{ pointer-events:none; }
+.screen[data-screen="launcher_dead_drop_protocol"] .hitbox-layer{ pointer-events:auto; }
