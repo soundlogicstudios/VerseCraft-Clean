@@ -1,1 +1,9 @@
-
+/* styles/screens/character.css (placeholder) */
+.screen[data-screen="character"].is-active{
+  background-color:#000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.screen[data-screen="character"]{ pointer-events:none; }
+.screen[data-screen="character"] .hitbox-layer{ pointer-events:auto; }
