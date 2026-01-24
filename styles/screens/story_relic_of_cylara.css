@@ -1,0 +1,12 @@
+/* styles/screens/story_relic_of_cylara.css */
+
+.screen[data-screen="story_relic_of_cylara"]{
+  background-image: url("../../content/founders/packs/story-panels/cylara-narrative-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="story_relic_of_cylara"]{ pointer-events:none; }
+.screen[data-screen="story_relic_of_cylara"] .hitbox-layer{ pointer-events:auto; }
