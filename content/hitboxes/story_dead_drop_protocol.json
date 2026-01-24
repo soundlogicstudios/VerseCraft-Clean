@@ -1,0 +1,7 @@
+{
+  "hitboxes": [
+    { "id": "back", "x": 4, "y": 4, "w": 22, "h": 8, "action": "go", "arg": "launcher_dead_drop_protocol" },
+    { "id": "character", "x": 72, "y": 4, "w": 24, "h": 8, "action": "go", "arg": "character" },
+    { "id": "inventory", "x": 72, "y": 14, "w": 24, "h": 8, "action": "go", "arg": "inventory" }
+  ]
+}
