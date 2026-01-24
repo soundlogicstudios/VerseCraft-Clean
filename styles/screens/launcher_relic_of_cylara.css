@@ -1,6 +1,7 @@
-/* styles/screens/launcher_TEMPLATE.css */
-.screen[data-screen="launcher_relic_of_cylara"].is-active{
-  background-image: url("./content/founders/packs/story-panels/cylara-narrative-panel.webp");
+/* styles/screens/launcher_relic_of_cylara.css */
+
+.screen[data-screen="launcher_relic_of_cylara"]{
+  background-image: url("../../ui/global/ui/launcher-panel-background.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
