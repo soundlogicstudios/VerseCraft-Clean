@@ -1,0 +1,18 @@
+/* styles/screens/story_timecop.css */
+
+.screen[data-screen="story_timecop"]{
+  background-image: url("../../content/founders/packs/story-panels/timecop-narrative-panel.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  background-color: #000;
+}
+
+/* baked art never intercepts taps */
+.screen[data-screen="story_rimecop"]{
+  pointer-events: none;
+}
+.screen[data-screen="story_timecop"] .hitbox-layer{
+  pointer-events: auto;
+}
