@@ -1,0 +1,12 @@
+/* styles/screens/story_dead_drop_protocol.css */
+
+.screen[data-screen="story_dead_drop_protocol"]{
+  background-image: url("../../content/founders/packs/story-panels/dead_drop_protocol-narrative-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="story_dead_drop_protocol"]{ pointer-events:none; }
+.screen[data-screen="story_dead_drop_protocol"] .hitbox-layer{ pointer-events:auto; }
