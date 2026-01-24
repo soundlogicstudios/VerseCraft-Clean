@@ -1,0 +1,12 @@
+/* styles/screens/launcher_code_blue.css */
+
+.screen[data-screen="launcher_code_blue"]{
+  background-image: url("../../ui/global/ui/launcher-panel-background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="launcher_code_blue"]{ pointer-events:none; }
+.screen[data-screen="launcher_code_blue"] .hitbox-layer{ pointer-events:auto; }
