@@ -1,12 +1,23 @@
 /* styles/screens/launcher_backrooms.css */
 
 .screen[data-screen="launcher_backrooms"]{
+  /* UI launcher frame */
+  background-image:
+    url("../../ui/global/ui/launcher-panel-background.webp"),
+    url("../../content/founders/packs/covers/backrooms.webp");
+
+  /* First image = top layer, second = underneath */
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, center center;
+  background-size: cover, cover;
+
   background-color: #000;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
-/* baked art must never intercept taps */
-.screen[data-screen="launcher_backrooms"]{ pointer-events:none; }
-.screen[data-screen="launcher_backrooms"] .hitbox-layer{ pointer-events:auto; }
+/* baked art never intercepts taps */
+.screen[data-screen="launcher_backrooms"]{
+  pointer-events: none;
+}
+.screen[data-screen="launcher_backrooms"] .hitbox-layer{
+  pointer-events: auto;
+}
