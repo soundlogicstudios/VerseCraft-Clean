@@ -1,1 +1,12 @@
+/* styles/screens/launcher_backrooms.css */
 
+.screen[data-screen="launcher_backrooms"]{
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* baked art must never intercept taps */
+.screen[data-screen="launcher_backrooms"]{ pointer-events:none; }
+.screen[data-screen="launcher_backrooms"] .hitbox-layer{ pointer-events:auto; }
