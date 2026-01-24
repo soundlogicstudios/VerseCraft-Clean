@@ -1,0 +1,12 @@
+/* styles/screens/story_king_solomon.css */
+
+.screen[data-screen="story_king_solomon"]{
+  background-image: url("../../content/founders/packs/story-panels/king_solomon-narrative-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="story_king_solomon"]{ pointer-events:none; }
+.screen[data-screen="story_king_solomon"] .hitbox-layer{ pointer-events:auto; }
