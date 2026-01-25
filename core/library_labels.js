@@ -1,7 +1,6 @@
 // core/launcher_labels.js
 // Phase 2B: Launcher static labels (Title + Start/Continue/Back)
 // Nav-safe, hitbox-safe: pointer-events none; overlays only.
-// Canonical: explicit title map for the 12 known stories (no exceptions logic).
 
 let _inited = false;
 
@@ -14,29 +13,29 @@ function story_id_from_launcher(screen) {
   return String(screen || "").replace(/^launcher_/, "");
 }
 
-// Canonical 12 (explicit, no heuristics)
-const STORY_TITLES = {
-  world_of_lorecraft: "World of Lorecraft",
-  crimson_seagull: "Crimson Seagull",
-  oregon_trail: "Oregon Trail",
-  backrooms: "Backrooms",
-  wastelands: "Wastelands",
-  tale_of_icarus: "Tale of Icarus",
-  code_blue: "Code Blue",
-  relic_of_cylara: "Relic of Cylara",
+function to_title_case(id) {
+  const cleaned = String(id || "").replace(/[-_]+/g, " ").trim();
+  if (!cleaned) return "Untitled";
+  return cleaned
+    .split(/\s+/)
+    .map((w) => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : ""))
+    .join(" ");
+}
+
+const TITLE_OVERRIDES = {
   timecop: "Time Cop",
-  king_solomon: "King Solomon",
-  cosmos: "Cosmos",
-  dead_drop_protocol: "Dead Drop Protocol",
+  relic_of_cylara: "Relic of Cylara",
+  world_of_lorecraft: "World of Lorecraft",
+  code_blue: "Code Blue",
+  oregon_trail: "Oregon Trail",
+  crimson_seagull: "Crimson Seagull",
+  tale_of_icarus: "Tale of Icarus",
+  wastelands: "Wastelands",
+  backrooms: "Backrooms",
 };
 
 function pretty_title(story_id) {
-  const t = STORY_TITLES[story_id];
-  if (!t) {
-    console.warn("[launcher_labels] Unknown storyId:", story_id);
-    return "Untitled";
-  }
-  return t;
+  return TITLE_OVERRIDES[story_id] || to_title_case(story_id);
 }
 
 function get_active_screen_el(screen_id) {
@@ -98,7 +97,6 @@ export function init_launcher_labels() {
     schedule_render(screen);
   });
 
-  // Keep aligned on rotation / iOS URL bar resize changes
   window.addEventListener("resize", () => {
     const active = document.querySelector(".screen.is-active");
     const screen = active?.dataset?.screen;
