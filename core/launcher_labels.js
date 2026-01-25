@@ -1,17 +1,21 @@
 // core/launcher_labels.js
-// Launcher static labels: Title + Start + Continue + Back To Library
-// Safe overlay only. Never touches hitboxes or navigation.
+// Phase 2B — Launcher static labels
+// Title + Start + Continue + Back To Library
+// Overlay-only. Does NOT touch navigation or hitboxes.
 
 let _inited = false;
 
+// Only runs on launcher_* screens
 function is_launcher_screen(screen) {
   return typeof screen === "string" && screen.startsWith("launcher_");
 }
 
 function story_id_from_launcher(screen) {
+  // launcher_code_blue -> code_blue
   return String(screen || "").replace(/^launcher_/, "");
 }
 
+// Canonical explicit titles (ALL 12 — no exceptions, no heuristics)
 const STORY_TITLES = {
   world_of_lorecraft: "World of Lorecraft",
   crimson_seagull: "Crimson Seagull",
@@ -27,17 +31,14 @@ const STORY_TITLES = {
   dead_drop_protocol: "Dead Drop Protocol",
 };
 
-function pretty_title(story_id) {
-  const t = STORY_TITLES[story_id];
-  if (!t) {
-    console.warn("[launcher_labels] Unknown storyId:", story_id);
-    return "Untitled";
-  }
-  return t;
+function get_title(story_id) {
+  return STORY_TITLES[story_id] || "Untitled";
 }
 
 function get_active_screen_el(screen_id) {
-  return document.querySelector(`.screen.is-active[data-screen="${screen_id}"]`);
+  return document.querySelector(
+    `.screen.is-active[data-screen="${screen_id}"]`
+  );
 }
 
 function ensure_ui_layer(screen_el) {
@@ -61,7 +62,7 @@ function render_launcher_labels(screen_id) {
 
   const title = document.createElement("div");
   title.className = "launcher-label launcher-title";
-  title.textContent = pretty_title(story_id);
+  title.textContent = get_title(story_id);
 
   const start = document.createElement("div");
   start.className = "launcher-label launcher-start";
