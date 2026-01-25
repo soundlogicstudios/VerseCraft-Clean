@@ -1,7 +1,7 @@
 /* styles/screens/story_crimson_seagull.css */
 
 .screen[data-screen="story_crimson_seagull"]{
-  background-image: url("../../content/founders/packs/story-panels/crimsonseagull-narrative-panel.webp");
+  background-image: url("../../content/founders/packs/story-panels/crimson-seagull-narrative-panel.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
