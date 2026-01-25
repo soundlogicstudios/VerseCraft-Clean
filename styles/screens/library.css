@@ -6,5 +6,10 @@
   background-repeat: no-repeat;
   background-color:#000;
 }
+.screen[data-screen="library"]{
+  --vc-lib-label-left: 12%;
+  --vc-lib-label-width: 76%;
+  --vc-lib-label-y-offset: 0%;
+}
 .screen[data-screen="library"]{ pointer-events:none; }
 .screen[data-screen="library"] .hitbox-layer{ pointer-events:auto; }
