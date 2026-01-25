@@ -1,6 +1,6 @@
 // core/launcher_labels.js
-// Phase 2B: Launcher static labels (Title + Start/Continue/Back)
-// Nav-safe, hitbox-safe: pointer-events none; overlays only.
+// Launcher static labels: Title + Start + Continue + Back To Library
+// Safe overlay only. Never touches hitboxes or navigation.
 
 let _inited = false;
 
@@ -9,33 +9,31 @@ function is_launcher_screen(screen) {
 }
 
 function story_id_from_launcher(screen) {
-  // "launcher_code_blue" -> "code_blue"
   return String(screen || "").replace(/^launcher_/, "");
 }
 
-function to_title_case(id) {
-  const cleaned = String(id || "").replace(/[-_]+/g, " ").trim();
-  if (!cleaned) return "Untitled";
-  return cleaned
-    .split(/\s+/)
-    .map((w) => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : ""))
-    .join(" ");
-}
-
-const TITLE_OVERRIDES = {
-  timecop: "Time Cop",
-  relic_of_cylara: "Relic of Cylara",
+const STORY_TITLES = {
   world_of_lorecraft: "World of Lorecraft",
-  code_blue: "Code Blue",
-  oregon_trail: "Oregon Trail",
   crimson_seagull: "Crimson Seagull",
-  tale_of_icarus: "Tale of Icarus",
-  wastelands: "Wastelands",
+  oregon_trail: "Oregon Trail",
   backrooms: "Backrooms",
+  wastelands: "Wastelands",
+  tale_of_icarus: "Tale of Icarus",
+  code_blue: "Code Blue",
+  relic_of_cylara: "Relic of Cylara",
+  timecop: "Time Cop",
+  king_solomon: "King Solomon",
+  cosmos: "Cosmos",
+  dead_drop_protocol: "Dead Drop Protocol",
 };
 
 function pretty_title(story_id) {
-  return TITLE_OVERRIDES[story_id] || to_title_case(story_id);
+  const t = STORY_TITLES[story_id];
+  if (!t) {
+    console.warn("[launcher_labels] Unknown storyId:", story_id);
+    return "Untitled";
+  }
+  return t;
 }
 
 function get_active_screen_el(screen_id) {
