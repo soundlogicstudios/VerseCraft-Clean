@@ -1,0 +1,13 @@
+{
+  "hitboxes": [
+    {
+      "id": "back_to_library",
+      "x": 3,
+      "y": 3,
+      "w": 22,
+      "h": 8,
+      "action": "go",
+      "arg": "library"
+    }
+  ]
+}
