@@ -1,30 +1,33 @@
 // src/bootstrap.js
-// phase 1: bootstrap (screen manager + input + debug ui pill)
+// Single-pass bootstrap (screen manager + input + debug UI)
+// Removes redundancy from prior IIFE + on_ready double-init.
 
 import { init_screen_manager } from "../core/screen-manager.js";
 import { init_input } from "../core/input.js";
 import { init_debug_ui } from "../core/debug_ui.js";
 
-(async function boot() {
-  init_debug_ui();
-  init_input();
-  await init_screen_manager();
-})();
+let _booted = false;
 
-function on_ready(fn) {
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", fn, { once: true });
-  } else {
-    fn();
-  }
-}
+async function boot_once() {
+  if (_booted) return;
+  _booted = true;
 
-on_ready(async () => {
   try {
-    init_debug_ui(); // shows only with ?debug=1 or ?=debug1
+    // Debug UI should be safe to call first (it conditionally shows on ?debug=1)
+    init_debug_ui();
     init_input();
     await init_screen_manager();
   } catch (e) {
     console.error("[bootstrap] init failed", e);
+    // Allow retry if something truly catastrophic happens before init completes
+    _booted = false;
   }
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    boot_once();
+  }, { once: true });
+} else {
+  boot_once();
+}
