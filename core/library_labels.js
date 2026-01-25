@@ -23,7 +23,9 @@ const TITLE_OVERRIDES = {
 };
 
 function to_title_case(id) {
-  const cleaned = String(id || "").replace(/[-_]+/g, " ").trim();
+  const cleaned = String(id || "")
+    .replace(/[-_]+/g, " ")
+    .trim();
   if (!cleaned) return "Untitled";
 
   return cleaned
@@ -58,6 +60,26 @@ function extract_story_id_from_launcher_arg(arg) {
   return s.slice("launcher_".length);
 }
 
+function apply_rect_geometry(label_el, target_el, screen_el) {
+  // In this build, hitboxes are commonly positioned via per-screen CSS handles
+  // (not inline styles). So we align labels using DOM rects.
+  const sr = screen_el.getBoundingClientRect();
+  const r = target_el.getBoundingClientRect();
+
+  const left = ((r.left - sr.left) / sr.width) * 100;
+  const top = ((r.top - sr.top) / sr.height) * 100;
+  const width = (r.width / sr.width) * 100;
+  const height = (r.height / sr.height) * 100;
+
+  // Clamp to sane ranges (prevents NaNs from collapsing to top-left).
+  const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+
+  label_el.style.left = clamp(left, -50, 150).toFixed(4) + "%";
+  label_el.style.top = clamp(top, -50, 150).toFixed(4) + "%";
+  label_el.style.width = clamp(width, 0, 200).toFixed(4) + "%";
+  label_el.style.height = clamp(height, 0, 200).toFixed(4) + "%";
+}
+
 function render_library_titles_for(screen_id) {
   const screen_el = get_active_screen_el(screen_id);
   if (!screen_el) return;
@@ -88,11 +110,8 @@ function render_library_titles_for(screen_id) {
     label.className = "library-row-title";
     label.setAttribute("data-slot", slot_id);
 
-    // Align label to the same percent-based geometry as the hitbox
-    label.style.left = btn.style.left || "0%";
-    label.style.top = btn.style.top || "0%";
-    label.style.width = btn.style.width || "100%";
-    label.style.height = btn.style.height || "10%";
+    // Align label to the hitbox geometry (CSS-driven), via rect conversion.
+    apply_rect_geometry(label, btn, screen_el);
 
     label.textContent = pretty_title(story_id);
 
@@ -104,13 +123,26 @@ export function init_library_labels() {
   if (_inited) return;
   _inited = true;
 
+  let _last = null;
+
+  function rerender_if_library_active() {
+    if (!_last || !LIBRARY_SCREENS.has(_last)) return;
+    // Re-align after orientation changes / resize.
+    requestAnimationFrame(() => render_library_titles_for(_last));
+  }
+
   window.addEventListener("vc:screenchange", (e) => {
     const screen = e?.detail?.screen;
     if (!LIBRARY_SCREENS.has(screen)) return;
+
+    _last = screen;
 
     // Defer one frame so hitboxes are guaranteed injected
     requestAnimationFrame(() => {
       render_library_titles_for(screen);
     });
   });
+
+  window.addEventListener("resize", rerender_if_library_active);
+  window.addEventListener("orientationchange", rerender_if_library_active);
 }
