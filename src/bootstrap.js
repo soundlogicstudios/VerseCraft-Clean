@@ -19,6 +19,14 @@ async function boot_once() {
     // Input + router/screen manager
     init_input();
 
+    // Optional UI overlays: load safely so a missing file can't black-screen the app
+try {
+  const mod = await import("../core/launcher_labels.js");
+  mod?.init_launcher_labels?.();
+} catch (e) {
+  console.warn("[bootstrap] launcher labels not loaded", e);
+}
+
     // UI overlays that listen to vc:screenchange
     init_library_labels();
 
