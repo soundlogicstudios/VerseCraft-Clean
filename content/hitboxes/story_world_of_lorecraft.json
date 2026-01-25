@@ -1,13 +1,43 @@
 {
   "hitboxes": [
     {
-      "id": "back_to_library",
+      "id": "back_to_launcher",
       "x": 3,
       "y": 3,
       "w": 22,
       "h": 8,
       "action": "go",
-      "arg": "library"
+      "arg": "launcher_world_of_lorecraft"
+    },
+
+    {
+      "id": "open_character",
+      "x": 3,
+      "y": 86,
+      "w": 22,
+      "h": 10,
+      "action": "go",
+      "arg": "character"
+    },
+
+    {
+      "id": "open_inventory",
+      "x": 75,
+      "y": 86,
+      "w": 22,
+      "h": 10,
+      "action": "go",
+      "arg": "inventory"
+    },
+
+    {
+      "id": "open_settings",
+      "x": 75,
+      "y": 3,
+      "w": 22,
+      "h": 8,
+      "action": "go",
+      "arg": "settings"
     }
   ]
 }
