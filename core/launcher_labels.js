@@ -1,7 +1,10 @@
 // core/launcher_labels.js
-// Phase 2B — Launcher static labels (HITBOX-BOUND)
-// Fix: positions are derived from actual hitbox geometry (getBoundingClientRect),
-// just like the library label fix. No reliance on inline styles or per-screen CSS.
+// Phase 2B — Launcher static labels (HITBOX-BOUND) + Phase B polish
+// - Positions derived from actual hitbox geometry (getBoundingClientRect)
+// - Adds subtle scrims behind text for readability
+// - Makes START label bigger
+// - Centers "Back To Library" text
+// Overlay-only. Does NOT touch navigation or hitboxes.
 
 let _inited = false;
 
@@ -26,7 +29,7 @@ const STORY_TITLES = {
   timecop: "Time Cop",
   king_solomon: "King Solomon",
   cosmos: "Cosmos",
-  dead_drop_protocol: "Dead Drop Protocol",
+  dead_drop_protocol: "Dead Drop Protocol"
 };
 
 function get_title(story_id) {
@@ -48,8 +51,6 @@ function ensure_ui_layer(screen_el) {
 }
 
 function find_hitbox(screen_el, want) {
-  // Hitboxes are injected as: .hitbox[data-hitbox-id="..."]
-  // We'll match by substring to avoid guessing exact ids.
   const boxes = Array.from(screen_el.querySelectorAll(".hitbox-layer .hitbox"));
   const w = String(want).toLowerCase();
   return (
@@ -64,32 +65,58 @@ function rect_to_pct(screen_rect, rect) {
   const top = ((rect.top - screen_rect.top) / screen_rect.height) * 100;
   const width = (rect.width / screen_rect.width) * 100;
   const height = (rect.height / screen_rect.height) * 100;
-
   return { left, top, width, height };
 }
 
-function style_label_box(el, boxPct) {
-  // Inline placement so missing CSS can't send it to 0,0
+function style_box(el, boxPct) {
   el.style.position = "absolute";
   el.style.left = `${boxPct.left}%`;
   el.style.top = `${boxPct.top}%`;
   el.style.width = `${boxPct.width}%`;
   el.style.height = `${boxPct.height}%`;
+}
 
-  // Center text inside the hitbox region
+function make_scrim(boxPct, opts = {}) {
+  const scrim = document.createElement("div");
+  scrim.className = "launcher-scrim";
+
+  style_box(scrim, boxPct);
+
+  // Subtle padding so scrim extends slightly beyond the text bounds
+  const pad = opts.padPct ?? 0.6; // percent of screen height/width-ish; small + safe
+  scrim.style.transform = `translate(-${pad}%, -${pad}%)`;
+  scrim.style.width = `calc(${boxPct.width}% + ${pad * 2}%)`;
+  scrim.style.height = `calc(${boxPct.height}% + ${pad * 2}%)`;
+
+  scrim.style.pointerEvents = "none";
+  scrim.style.background = opts.bg || "rgba(0,0,0,0.38)";
+  scrim.style.borderRadius = opts.radius || "10px";
+
+  // Keep it behind the label text
+  scrim.style.zIndex = "0";
+
+  return scrim;
+}
+
+function style_label(el, boxPct, opts = {}) {
+  style_box(el, boxPct);
+
   el.style.display = "flex";
   el.style.alignItems = "center";
   el.style.justifyContent = "center";
   el.style.pointerEvents = "none";
   el.style.textAlign = "center";
 
-  // Minimal readable styling even if base.css is wrong/missing
-  el.style.color = "rgba(255,255,255,0.95)";
+  el.style.color = "rgba(255,255,255,0.96)";
   el.style.textShadow = "0 2px 6px rgba(0,0,0,0.75)";
-  el.style.fontWeight = "800";
+  el.style.fontWeight = opts.weight || "900";
   el.style.letterSpacing = "0.02em";
   el.style.whiteSpace = "nowrap";
-  el.style.fontSize = "clamp(14px, 2.2vh, 26px)";
+
+  el.style.fontSize = opts.fontSize || "clamp(14px, 2.2vh, 26px)";
+
+  // Ensure the label appears above its scrim
+  el.style.zIndex = "1";
 }
 
 function render_launcher_labels(screen_id) {
@@ -102,29 +129,32 @@ function render_launcher_labels(screen_id) {
   const layer = ensure_ui_layer(screen_el);
   layer.innerHTML = "";
 
+  // Make sure the layer itself establishes a stacking context
+  layer.style.position = "absolute";
+  layer.style.inset = "0";
+  layer.style.pointerEvents = "none";
+
   const story_id = story_id_from_launcher(screen_id);
 
-  // ---- TITLE (not hitbox-bound; safe default at top center) ----
+  // ---- TITLE (safe default box) ----
+  const titleBox = { left: 12, top: 12, width: 76, height: 8 };
+
+  const titleScrim = make_scrim(titleBox, {
+    bg: "rgba(0,0,0,0.34)",
+    radius: "12px",
+    padPct: 0.8
+  });
+
   const title = document.createElement("div");
   title.className = "launcher-label launcher-title";
   title.textContent = get_title(story_id);
-  // Inline fallback placement (top title zone)
-  title.style.position = "absolute";
-  title.style.left = "12%";
-  title.style.top = "12%";
-  title.style.width = "76%";
-  title.style.height = "8%";
-  title.style.display = "flex";
-  title.style.alignItems = "center";
-  title.style.justifyContent = "center";
-  title.style.pointerEvents = "none";
-  title.style.textAlign = "center";
-  title.style.color = "rgba(255,255,255,0.95)";
-  title.style.textShadow = "0 2px 6px rgba(0,0,0,0.75)";
-  title.style.fontWeight = "900";
-  title.style.letterSpacing = "0.02em";
-  title.style.whiteSpace = "nowrap";
-  title.style.fontSize = "clamp(18px, 3vh, 34px)";
+  style_label(title, titleBox, {
+    fontSize: "clamp(18px, 3vh, 34px)",
+    weight: "950"
+  });
+
+  // Add scrim then label
+  layer.appendChild(titleScrim);
   layer.appendChild(title);
 
   // ---- HITBOX-BOUND BUTTON LABELS ----
@@ -135,40 +165,79 @@ function render_launcher_labels(screen_id) {
   if (hbBack) {
     const r = hbBack.getBoundingClientRect();
     const pct = rect_to_pct(screen_rect, r);
+
+    const scrim = make_scrim(pct, {
+      bg: "rgba(0,0,0,0.30)",
+      radius: "10px",
+      padPct: 0.6
+    });
+
     const back = document.createElement("div");
     back.className = "launcher-label launcher-back";
     back.textContent = "Back To Library";
-    style_label_box(back, pct);
-    // Left align looks better for back text
-    back.style.justifyContent = "flex-start";
-    back.style.paddingLeft = "2.5%";
+
+    // Center it (you asked specifically)
+    style_label(back, pct, {
+      fontSize: "clamp(14px, 2.0vh, 22px)",
+      weight: "900"
+    });
+
+    layer.appendChild(scrim);
     layer.appendChild(back);
+  } else {
+    console.warn("[launcher_labels] back hitbox not found (data-hitbox-id contains 'back')");
   }
 
   if (hbStart) {
     const r = hbStart.getBoundingClientRect();
     const pct = rect_to_pct(screen_rect, r);
+
+    const scrim = make_scrim(pct, {
+      bg: "rgba(0,0,0,0.34)",
+      radius: "12px",
+      padPct: 0.7
+    });
+
     const start = document.createElement("div");
     start.className = "launcher-label launcher-start";
     start.textContent = "Start";
-    style_label_box(start, pct);
+
+    // Make START bigger (your request)
+    style_label(start, pct, {
+      fontSize: "clamp(18px, 2.8vh, 34px)",
+      weight: "950"
+    });
+
+    layer.appendChild(scrim);
     layer.appendChild(start);
+  } else {
+    console.warn("[launcher_labels] start hitbox not found (data-hitbox-id contains 'start')");
   }
 
   if (hbContinue) {
     const r = hbContinue.getBoundingClientRect();
     const pct = rect_to_pct(screen_rect, r);
+
+    const scrim = make_scrim(pct, {
+      bg: "rgba(0,0,0,0.30)",
+      radius: "12px",
+      padPct: 0.7
+    });
+
     const cont = document.createElement("div");
     cont.className = "launcher-label launcher-continue";
     cont.textContent = "Continue";
-    style_label_box(cont, pct);
-    layer.appendChild(cont);
-  }
 
-  // If any hitbox wasn't found, log it so you can adjust ids in hitbox JSON.
-  if (!hbBack) console.warn("[launcher_labels] back hitbox not found (data-hitbox-id contains 'back')");
-  if (!hbStart) console.warn("[launcher_labels] start hitbox not found (data-hitbox-id contains 'start')");
-  if (!hbContinue) console.warn("[launcher_labels] continue hitbox not found (data-hitbox-id contains 'continue')");
+    style_label(cont, pct, {
+      fontSize: "clamp(16px, 2.4vh, 28px)",
+      weight: "900"
+    });
+
+    layer.appendChild(scrim);
+    layer.appendChild(cont);
+  } else {
+    console.warn("[launcher_labels] continue hitbox not found (data-hitbox-id contains 'continue')");
+  }
 }
 
 function schedule_render(screen_id) {
