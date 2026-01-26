@@ -6,6 +6,6 @@
     { "id": "slot_3", "x": 5, "y": 72, "w": 90, "h": 16, "action": "go", "arg": "launcher_world_of_lorecraft" },
 
     { "id": "back_to_menu", "x": 3, "y": 3, "w": 22, "h": 8, "action": "go", "arg": "menu" },
-    { "id": "next_page", "x": 75, "y": 92, "w": 22, "h": 7, "action": "go", "arg": "library1" }
+    { "id": "next_page", "x": 75, "y": 3, "w": 22, "h": 8, "action": "go", "arg": "library1" }
   ]
 }
