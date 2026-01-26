@@ -1,5 +1,9 @@
 {
   "hitboxes": [
-    { "id": "back_to_menu", "x": 3, "y": 3, "w": 22, "h": 8, "action": "go", "arg": "menu" }
+    { "id": "back_to_menu", "x": 3, "y": 3, "w": 22, "h": 8, "action": "go", "arg": "menu" },
+
+    { "id": "text_audio", "x": 8, "y": 28, "w": 84, "h": 16, "action": "go", "arg": "settings_text_audio" },
+    { "id": "themes", "x": 8, "y": 48, "w": 84, "h": 16, "action": "go", "arg": "settings_theme" },
+    { "id": "clear_save", "x": 8, "y": 68, "w": 84, "h": 16, "action": "go", "arg": "settings_clear_save" }
   ]
 }
