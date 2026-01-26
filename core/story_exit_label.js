@@ -1,5 +1,5 @@
 // core/story_exit_label.js
-// Additive overlay: show "Exit Story" aligned to an existing story hitbox.
+// Additive overlay: show labels aligned to existing story hitboxes.
 // Never blocks taps (ui-layer pointer-events: none).
 // No storage. No navigation changes.
 
@@ -20,64 +20,67 @@ function ensure_ui_layer(screen_el) {
   return ui;
 }
 
-function find_exit_anchor_hitbox(screen_el) {
-  // Prefer a dedicated exit_story hitbox if it exists; otherwise fall back to back_to_launcher.
-  return (
-    screen_el.querySelector('.hitbox[data-hitbox-id="exit_story"]') ||
-    screen_el.querySelector('.hitbox[data-hitbox-id="back_to_launcher"]') ||
-    null
-  );
+function find_hitbox(screen_el, hitbox_id) {
+  return screen_el.querySelector(`.hitbox[data-hitbox-id="${hitbox_id}"]`);
 }
 
-function apply_label_to_screen(screen_el) {
+function make_label(text) {
+  const label = document.createElement("div");
+  label.className = "story-exit-label";
+  label.textContent = text;
+  return label;
+}
+
+function align_label_to_hitbox(label, hb) {
+  // Align using the existing % styles on the hitbox (contract-safe)
+  if (hb.style.left) label.style.left = hb.style.left;
+  if (hb.style.top) label.style.top = hb.style.top;
+  if (hb.style.width) label.style.width = hb.style.width;
+  if (hb.style.height) label.style.height = hb.style.height;
+}
+
+function apply_labels_to_screen(screen_el) {
   if (!screen_el) return;
 
   const screen_id = screen_el.dataset.screen || "";
   if (!is_story_screen(screen_id)) return;
 
-  const anchor = find_exit_anchor_hitbox(screen_el);
-  if (!anchor) return;
-
   const ui = ensure_ui_layer(screen_el);
 
-  // Remove any prior label for this screen to avoid duplicates
+  // Remove any prior labels for this screen to avoid duplicates
   ui.querySelectorAll(".story-exit-label").forEach((n) => n.remove());
 
-  const label = document.createElement("div");
-  label.className = "story-exit-label";
-  label.textContent = "Exit Story";
+  const map = [
+    { id: "exit_story", text: "Exit Story" },
+    { id: "open_character", text: "Character" },
+    { id: "open_inventory", text: "Inventory" }
+  ];
 
-  // Align using the existing % styles on the hitbox (contract-safe)
-  const left = anchor.style.left || "";
-  const top = anchor.style.top || "";
-  const width = anchor.style.width || "";
-  const height = anchor.style.height || "";
+  map.forEach(({ id, text }) => {
+    const hb = find_hitbox(screen_el, id);
+    if (!hb) return;
 
-  if (left) label.style.left = left;
-  if (top) label.style.top = top;
-  if (width) label.style.width = width;
-  if (height) label.style.height = height;
-
-  ui.appendChild(label);
+    const label = make_label(text);
+    align_label_to_hitbox(label, hb);
+    ui.appendChild(label);
+  });
 }
 
 function refresh_active_screen() {
   const active = document.querySelector(".screen.is-active");
   if (!active) return;
-  apply_label_to_screen(active);
+
+  // schedule a frame to ensure hitboxes are in the DOM (apply_hitboxes runs before vc:screenchange)
+  requestAnimationFrame(() => apply_labels_to_screen(active));
 }
 
 export function init_story_exit_label() {
   if (_mounted) return;
   _mounted = true;
 
-  // On every screen change, re-align label on story screens
-  window.addEventListener("vc:screenchange", () => {
-    refresh_active_screen();
-  });
+  window.addEventListener("vc:screenchange", refresh_active_screen);
 
   // Initial pass (in case boot lands directly on a story hash)
-  // Use a microtask so hitboxes are likely already applied.
   Promise.resolve().then(refresh_active_screen);
 
   console.log("[story_exit_label] initialized");
