@@ -1,5 +1,5 @@
 /* styles/base.css */
-/* VerseCraft — ios-safe fixed viewport + hitboxes + UI overlay labels */
+/* VerseCraft — ios-safe fixed viewport + hitboxes + overlays */
 
 *,
 *::before,
@@ -35,10 +35,7 @@ body {
   overscroll-behavior: none;
 }
 
-/* =========================================================
-   Screens
-   ========================================================= */
-
+/* Screens */
 .screen {
   position: absolute;
   left: 0;
@@ -50,24 +47,15 @@ body {
 }
 
 @supports (height: 100svh) {
-  .screen {
-    height: 100svh;
-  }
+  .screen { height: 100svh; }
 }
 @supports (height: 100dvh) {
-  .screen {
-    height: 100dvh;
-  }
+  .screen { height: 100dvh; }
 }
 
-.screen.is-active {
-  display: block;
-}
+.screen.is-active { display: block; }
 
-/* =========================================================
-   Hitbox layer + Hitboxes
-   ========================================================= */
-
+/* Hitbox layer */
 .hitbox-layer {
   position: absolute;
   inset: 0;
@@ -77,6 +65,7 @@ body {
   z-index: 10;
 }
 
+/* Hitboxes */
 .hitbox {
   position: absolute;
   display: block;
@@ -87,16 +76,9 @@ body {
   margin: 0;
   touch-action: manipulation;
 }
+.hitbox:focus { outline: none; }
 
-.hitbox:focus {
-  outline: none;
-}
-
-/* =========================================================
-   Non-interactive UI overlays (labels, etc.)
-   Always below hitboxes, never blocks taps
-   ========================================================= */
-
+/* UI overlays (never block taps) */
 .ui-layer {
   position: absolute;
   inset: 0;
@@ -106,10 +88,7 @@ body {
   z-index: 9;
 }
 
-/* =========================================================
-   Library row title overlays (Phase 1)
-   ========================================================= */
-
+/* Library row title overlays (Phase 1) */
 .library-row-title {
   position: absolute;
   display: flex;
@@ -121,72 +100,60 @@ body {
   font-weight: 800;
   letter-spacing: 0.02em;
   text-align: center;
-  text-transform: none;
 
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
 }
 
-/* =========================================================
-   Launcher label overlays (Phase 2)
-   If these are missing, labels default to 0,0 (top-left).
-   ========================================================= */
+/* Launcher label overlays (Phase 2) */
+.launcher-label-layer { pointer-events: none; }
 
-.launcher-label-layer {
-  pointer-events: none;
-}
-
-.launcher-label {
+.launcher-label{
   position: absolute;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.75);
   font-weight: 800;
   letter-spacing: 0.02em;
   text-align: center;
   white-space: nowrap;
 }
 
-/* Title */
-.launcher-title {
+/* (Your label positions can stay as-is or be hitbox-bound by JS) */
+
+/* Launcher content overlays (Phase 3) */
+.launcher-content-layer { pointer-events: none; }
+
+.launcher-preview{
+  position: absolute;
   left: 12%;
-  top: 12%;
+  top: 22%;
   width: 76%;
-  font-size: clamp(20px, 3vh, 34px);
+  height: 34%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
-/* Bottom action labels */
-.launcher-start {
+.launcher-blurb{
+  position: absolute;
   left: 12%;
-  top: 78%;
-  width: 30%;
-  font-size: clamp(16px, 2.2vh, 26px);
+  top: 58%;
+  width: 76%;
+  height: 16%;
+  overflow: hidden;
+
+  font-size: clamp(14px, 2.0vh, 20px);
+  line-height: 1.25;
+  font-weight: 650;
+
+  color: rgba(255,255,255,0.93);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.75);
 }
 
-.launcher-continue {
-  left: 58%;
-  top: 78%;
-  width: 30%;
-  font-size: clamp(16px, 2.2vh, 26px);
-}
-
-/* Back label */
-.launcher-back {
-  left: 6%;
-  top: 7.8%;
-  width: 50%;
-  font-size: clamp(14px, 2vh, 22px);
-  text-align: left;
-}
-
-/* =========================================================
-   Debug + Utilities
-   ========================================================= */
-
+/* Debug */
 .hitbox-layer.debug-hitboxes .hitbox {
   outline: 2px dashed rgba(0, 255, 255, 0.7);
   background: rgba(0, 255, 255, 0.08);
 }
 
-.hidden {
-  display: none !important;
-}
+.hidden { display: none !important; }
