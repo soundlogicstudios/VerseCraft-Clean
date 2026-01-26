@@ -5,16 +5,9 @@ import { init_screen_manager } from "../core/screen-manager.js";
 import { init_input } from "../core/input.js";
 import { init_debug_ui } from "../core/debug_ui.js";
 import { init_library_labels } from "../core/library_labels.js";
+import { init_story_exit_label } from "../core/story_exit_label.js";
 
 let _booted = false;
-
-// ============================================================
-// SAFETY GATES (LKG HARDENING)
-// - Keep launcher labels INERT until stable (prevents top-left pileups)
-// - Flip to true when launcher label rendering is re-hardened
-// ============================================================
-const ENABLE_LAUNCHER_LABELS = false;
-const ENABLE_LAUNCHER_CONTENT = true;
 
 async function boot_once() {
   if (_booted) return;
@@ -27,27 +20,22 @@ async function boot_once() {
     // Phase 1 (already working)
     init_library_labels();
 
+    // ADDITIVE: Story Exit label overlay (non-interactive, hitbox-aligned)
+    init_story_exit_label();
+
     // Optional overlays: load safely so they can NEVER kill boot
-    if (ENABLE_LAUNCHER_LABELS) {
-      try {
-        const modLabels = await import("../core/launcher_labels.js");
-        modLabels?.init_launcher_labels?.();
-      } catch (e) {
-        console.warn("[bootstrap] launcher labels not loaded", e);
-      }
-    } else {
-      console.log("[bootstrap] launcher labels disabled (LKG safety gate)");
+    try {
+      const modLabels = await import("../core/launcher_labels.js");
+      modLabels?.init_launcher_labels?.();
+    } catch (e) {
+      console.warn("[bootstrap] launcher labels not loaded", e);
     }
 
-    if (ENABLE_LAUNCHER_CONTENT) {
-      try {
-        const modContent = await import("../core/launcher_content.js");
-        modContent?.init_launcher_content?.();
-      } catch (e) {
-        console.warn("[bootstrap] launcher content not loaded", e);
-      }
-    } else {
-      console.log("[bootstrap] launcher content disabled (LKG safety gate)");
+    try {
+      const modContent = await import("../core/launcher_content.js");
+      modContent?.init_launcher_content?.();
+    } catch (e) {
+      console.warn("[bootstrap] launcher content not loaded", e);
     }
 
     await init_screen_manager();
