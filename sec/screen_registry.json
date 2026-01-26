@@ -1,7 +1,6 @@
 {
   "version": "1.0.0",
   "start_screen": "splash",
-
   "screens_order": [
     "splash",
     "tos",
@@ -40,9 +39,11 @@
 
     "character",
     "inventory",
-    "settings"
+    "settings",
+    "settings_text_audio",
+    "settings_theme",
+    "settings_clear_save"
   ],
-
   "screens": {
     "splash": {
       "css": "styles/screens/splash.css",
@@ -62,6 +63,22 @@
     "settings": {
       "css": "styles/screens/settings.css",
       "hitboxes": "content/hitboxes/settings.json",
+      "controller": null
+    },
+
+    "settings_text_audio": {
+      "css": "styles/screens/settings_text_audio.css",
+      "hitboxes": "content/hitboxes/settings_text_audio.json",
+      "controller": null
+    },
+    "settings_theme": {
+      "css": "styles/screens/settings_theme.css",
+      "hitboxes": "content/hitboxes/settings_theme.json",
+      "controller": null
+    },
+    "settings_clear_save": {
+      "css": "styles/screens/settings_clear_save.css",
+      "hitboxes": "content/hitboxes/settings_clear_save.json",
       "controller": null
     },
 
@@ -89,7 +106,6 @@
       "hitboxes": "content/hitboxes/launcher.json",
       "controller": null
     },
-
     "story": {
       "css": "styles/screens/story.css",
       "hitboxes": "content/hitboxes/story.json",
