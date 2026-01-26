@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "id": "dead_drop_protocol",
+    "title": "Dead Drop Protocol",
+    "author": "VerseCraft",
+    "version": "1.0.0"
+  },
+  "blurb": "A covert exchange. A ticking clock. Dead Drop Protocol throws you into the shadows where trust is lethal and hesitation is fatal.",
+  "assets": {
+    "cover": "dead-drop-protocol",
+    "theme": "espionage"
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "id": "S01",
+      "text": "Rain streaks across the pavement as you approach the drop site. You are not alone.",
+      "choices": [
+        {
+          "label": "Proceed with the drop",
+          "to": "S02"
+        },
+        {
+          "label": "Abort and disappear",
+          "to": "S03"
+        }
+      ]
+    },
+    "S02": {
+      "id": "S02",
+      "text": "The exchange is swift, but eyes are watching from the dark.",
+      "ending": "BAD_END"
+    },
+    "S03": {
+      "id": "S03",
+      "text": "You melt into the crowd. The mission fails, but you live to fight another day.",
+      "ending": "NEUTRAL_END"
+    }
+  }
+}
