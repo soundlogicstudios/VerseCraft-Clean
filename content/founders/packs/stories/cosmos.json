@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "id": "cosmos",
+    "title": "Cosmos",
+    "author": "VerseCraft",
+    "version": "1.0.0"
+  },
+  "blurb": "Drift beyond the edge of known space where ancient signals echo through the void. In Cosmos, every decision shapes your fate among the stars.",
+  "assets": {
+    "cover": "cosmos",
+    "theme": "cosmic"
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "id": "S01",
+      "text": "The stars stretch endlessly before you. Sensors hum softly as an unfamiliar signal bleeds through the static.",
+      "choices": [
+        {
+          "label": "Trace the signal",
+          "to": "S02"
+        },
+        {
+          "label": "Power down and observe",
+          "to": "S03"
+        }
+      ]
+    },
+    "S02": {
+      "id": "S02",
+      "text": "The signal sharpens, revealing a pattern older than any known civilization.",
+      "ending": "LOOP_END"
+    },
+    "S03": {
+      "id": "S03",
+      "text": "Silence envelops the ship. Whatever called out to you waits patiently in the dark.",
+      "ending": "NEUTRAL_END"
+    }
+  }
+}
