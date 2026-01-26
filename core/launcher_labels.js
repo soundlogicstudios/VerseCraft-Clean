@@ -1,10 +1,9 @@
 // core/launcher_labels.js
-// Phase 2B — Launcher static labels (HITBOX-BOUND) + Phase B polish
-// - Positions derived from actual hitbox geometry (getBoundingClientRect)
-// - Adds subtle scrims behind text for readability
-// - Makes START label bigger
-// - Centers "Back To Library" text
-// Overlay-only. Does NOT touch navigation or hitboxes.
+// Launcher labels (hitbox-bound) + Phase B polish
+// FIXES:
+// 1) Scrim actually visible (stronger opacity + border + blur)
+// 2) Back To Library centered (no flex-start, no padding)
+// 3) Start label bigger
 
 let _inited = false;
 
@@ -16,7 +15,6 @@ function story_id_from_launcher(screen) {
   return String(screen || "").replace(/^launcher_/, "");
 }
 
-// Canonical explicit titles (ALL 12)
 const STORY_TITLES = {
   world_of_lorecraft: "World of Lorecraft",
   crimson_seagull: "Crimson Seagull",
@@ -46,6 +44,9 @@ function ensure_ui_layer(screen_el) {
 
   layer = document.createElement("div");
   layer.className = "ui-layer launcher-label-layer";
+  layer.style.position = "absolute";
+  layer.style.inset = "0";
+  layer.style.pointerEvents = "none";
   screen_el.appendChild(layer);
   return layer;
 }
@@ -82,17 +83,16 @@ function make_scrim(boxPct, opts = {}) {
 
   style_box(scrim, boxPct);
 
-  // Subtle padding so scrim extends slightly beyond the text bounds
-  const pad = opts.padPct ?? 0.6; // percent of screen height/width-ish; small + safe
-  scrim.style.transform = `translate(-${pad}%, -${pad}%)`;
-  scrim.style.width = `calc(${boxPct.width}% + ${pad * 2}%)`;
-  scrim.style.height = `calc(${boxPct.height}% + ${pad * 2}%)`;
-
+  // Make it obvious and readable on bright art
   scrim.style.pointerEvents = "none";
-  scrim.style.background = opts.bg || "rgba(0,0,0,0.38)";
-  scrim.style.borderRadius = opts.radius || "10px";
+  scrim.style.background = opts.bg || "rgba(0,0,0,0.60)";
+  scrim.style.borderRadius = opts.radius || "12px";
+  scrim.style.border = "1px solid rgba(255,255,255,0.10)";
+  scrim.style.backdropFilter = "blur(4px)";
+  scrim.style.webkitBackdropFilter = "blur(4px)";
+  scrim.style.boxShadow = "0 6px 16px rgba(0,0,0,0.45)";
 
-  // Keep it behind the label text
+  // Ensure behind label but above art
   scrim.style.zIndex = "0";
 
   return scrim;
@@ -107,15 +107,14 @@ function style_label(el, boxPct, opts = {}) {
   el.style.pointerEvents = "none";
   el.style.textAlign = "center";
 
-  el.style.color = "rgba(255,255,255,0.96)";
-  el.style.textShadow = "0 2px 6px rgba(0,0,0,0.75)";
-  el.style.fontWeight = opts.weight || "900";
-  el.style.letterSpacing = "0.02em";
+  el.style.color = "rgba(255,255,255,0.98)";
+  el.style.textShadow = "0 2px 6px rgba(0,0,0,0.85)";
+  el.style.fontWeight = opts.weight || "950";
+  el.style.letterSpacing = "0.03em";
   el.style.whiteSpace = "nowrap";
 
   el.style.fontSize = opts.fontSize || "clamp(14px, 2.2vh, 26px)";
 
-  // Ensure the label appears above its scrim
   el.style.zIndex = "1";
 }
 
@@ -129,58 +128,38 @@ function render_launcher_labels(screen_id) {
   const layer = ensure_ui_layer(screen_el);
   layer.innerHTML = "";
 
-  // Make sure the layer itself establishes a stacking context
-  layer.style.position = "absolute";
-  layer.style.inset = "0";
-  layer.style.pointerEvents = "none";
-
   const story_id = story_id_from_launcher(screen_id);
 
-  // ---- TITLE (safe default box) ----
+  // TITLE (fixed position, scrim)
   const titleBox = { left: 12, top: 12, width: 76, height: 8 };
-
-  const titleScrim = make_scrim(titleBox, {
-    bg: "rgba(0,0,0,0.34)",
-    radius: "12px",
-    padPct: 0.8
-  });
+  const titleScrim = make_scrim(titleBox, { bg: "rgba(0,0,0,0.55)", radius: "14px" });
 
   const title = document.createElement("div");
   title.className = "launcher-label launcher-title";
   title.textContent = get_title(story_id);
-  style_label(title, titleBox, {
-    fontSize: "clamp(18px, 3vh, 34px)",
-    weight: "950"
-  });
+  style_label(title, titleBox, { fontSize: "clamp(18px, 3.2vh, 36px)" });
 
-  // Add scrim then label
   layer.appendChild(titleScrim);
   layer.appendChild(title);
 
-  // ---- HITBOX-BOUND BUTTON LABELS ----
+  // HITBOX-BOUND: back/start/continue
   const hbBack = find_hitbox(screen_el, "back");
   const hbStart = find_hitbox(screen_el, "start");
   const hbContinue = find_hitbox(screen_el, "continue");
 
   if (hbBack) {
-    const r = hbBack.getBoundingClientRect();
-    const pct = rect_to_pct(screen_rect, r);
+    const pct = rect_to_pct(screen_rect, hbBack.getBoundingClientRect());
 
-    const scrim = make_scrim(pct, {
-      bg: "rgba(0,0,0,0.30)",
-      radius: "10px",
-      padPct: 0.6
-    });
+    const scrim = make_scrim(pct, { bg: "rgba(0,0,0,0.52)", radius: "12px" });
 
     const back = document.createElement("div");
     back.className = "launcher-label launcher-back";
     back.textContent = "Back To Library";
 
-    // Center it (you asked specifically)
-    style_label(back, pct, {
-      fontSize: "clamp(14px, 2.0vh, 22px)",
-      weight: "900"
-    });
+    // FORCE CENTER (no left padding, no flex-start)
+    style_label(back, pct, { fontSize: "clamp(15px, 2.2vh, 24px)" });
+    back.style.justifyContent = "center";
+    back.style.paddingLeft = "0";
 
     layer.appendChild(scrim);
     layer.appendChild(back);
@@ -189,24 +168,14 @@ function render_launcher_labels(screen_id) {
   }
 
   if (hbStart) {
-    const r = hbStart.getBoundingClientRect();
-    const pct = rect_to_pct(screen_rect, r);
+    const pct = rect_to_pct(screen_rect, hbStart.getBoundingClientRect());
 
-    const scrim = make_scrim(pct, {
-      bg: "rgba(0,0,0,0.34)",
-      radius: "12px",
-      padPct: 0.7
-    });
+    const scrim = make_scrim(pct, { bg: "rgba(0,0,0,0.62)", radius: "14px" });
 
     const start = document.createElement("div");
     start.className = "launcher-label launcher-start";
-    start.textContent = "Start";
-
-    // Make START bigger (your request)
-    style_label(start, pct, {
-      fontSize: "clamp(18px, 2.8vh, 34px)",
-      weight: "950"
-    });
+    start.textContent = "START";
+    style_label(start, pct, { fontSize: "clamp(22px, 3.6vh, 44px)" });
 
     layer.appendChild(scrim);
     layer.appendChild(start);
@@ -215,23 +184,14 @@ function render_launcher_labels(screen_id) {
   }
 
   if (hbContinue) {
-    const r = hbContinue.getBoundingClientRect();
-    const pct = rect_to_pct(screen_rect, r);
+    const pct = rect_to_pct(screen_rect, hbContinue.getBoundingClientRect());
 
-    const scrim = make_scrim(pct, {
-      bg: "rgba(0,0,0,0.30)",
-      radius: "12px",
-      padPct: 0.7
-    });
+    const scrim = make_scrim(pct, { bg: "rgba(0,0,0,0.52)", radius: "14px" });
 
     const cont = document.createElement("div");
     cont.className = "launcher-label launcher-continue";
     cont.textContent = "Continue";
-
-    style_label(cont, pct, {
-      fontSize: "clamp(16px, 2.4vh, 28px)",
-      weight: "900"
-    });
+    style_label(cont, pct, { fontSize: "clamp(18px, 2.8vh, 34px)" });
 
     layer.appendChild(scrim);
     layer.appendChild(cont);
@@ -241,7 +201,6 @@ function render_launcher_labels(screen_id) {
 }
 
 function schedule_render(screen_id) {
-  // Two frames gives hitbox injection time in your screen manager flow
   requestAnimationFrame(() => requestAnimationFrame(() => render_launcher_labels(screen_id)));
 }
 
