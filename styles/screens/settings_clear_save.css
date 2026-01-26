@@ -1,0 +1,7 @@
+/* settings_clear_save.css */
+.screen[data-screen="settings_clear_save"] {
+  background-image: url("../../ui/global/ui/settings.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
