@@ -1,26 +1,22 @@
 // core/launcher_labels.js
-// Launcher Labels — render labels FROM hitbox geometry (no hard-coded positions)
+// Launcher Labels — robust mapping to hitboxes
 //
-// Goal:
-// - Labels track launcher hitboxes automatically
-// - Works for launcher + launcher_* screens
-// - Never blocks taps (pointer-events: none)
-// - Safe: does nothing on non-launcher screens
+// Fix for "labels shoved into top-left":
+// - Do NOT rely on hb.style.left/top/width/height (can be empty/overridden).
+// - Compute geometry from getBoundingClientRect and convert to % of hitbox-layer.
+//
+// Behavior:
+// - Only runs on launcher / launcher_* screens
+// - Labels never block taps (ui-layer pointer-events: none)
+// - Labels auto-refresh on screen change + after hitboxes are applied
 
 const LABEL_MAP = {
-  // Preferred launcher IDs (if you adopt these)
   start_story: "Start",
   back_to_library: "Back To Library",
-
-  // Common library paging IDs (if they exist on launcher screens)
   prev_page: "Prev",
   next_page: "Next",
-
-  // If any launcher uses menu/settings etc
   back_to_menu: "Back",
   open_settings: "Settings",
-
-  // If older launcher files still use these IDs
   start: "Start",
   back: "Back"
 };
@@ -40,7 +36,7 @@ function is_launcher_screen(screen_id) {
 function get_active_screen_id() {
   return (
     document.body?.dataset?.screen ||
-    document.documentElement?.dataset?.screen ||
+    document.documentElement?.getAttribute?.("data-screen") ||
     (location.hash || "").replace("#", "") ||
     ""
   );
@@ -60,15 +56,13 @@ function ensure_label_layer(screen_el) {
   return layer;
 }
 
-function clear_labels(screen_el) {
-  const layer = screen_el.querySelector(".ui-layer.launcher-label-layer");
-  if (layer) layer.innerHTML = "";
+function hitbox_id(hb) {
+  return hb?.dataset?.hitboxId || hb?.getAttribute?.("data-hitbox-id") || hb?.getAttribute?.("aria-label") || "";
 }
 
 function pick_label_text(hb_id, action, arg) {
   if (hb_id && LABEL_MAP[hb_id]) return LABEL_MAP[hb_id];
 
-  // Fallbacks based on behavior (only if id is unknown)
   const a = (action || "").toLowerCase().trim();
   const g = (arg || "").trim();
 
@@ -79,7 +73,25 @@ function pick_label_text(hb_id, action, arg) {
     if (g.startsWith("story_")) return "Start";
   }
 
-  return ""; // unknown: do not label
+  return "";
+}
+
+function rect_to_pct(rect, layerRect) {
+  const x = ((rect.left - layerRect.left) / layerRect.width) * 100;
+  const y = ((rect.top - layerRect.top) / layerRect.height) * 100;
+  const w = (rect.width / layerRect.width) * 100;
+  const h = (rect.height / layerRect.height) * 100;
+
+  // clamp to sane bounds
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+  const r2 = (n) => Math.round(n * 100) / 100;
+
+  return {
+    x: r2(clamp(x, 0, 100)),
+    y: r2(clamp(y, 0, 100)),
+    w: r2(clamp(w, 0, 100)),
+    h: r2(clamp(h, 0, 100))
+  };
 }
 
 function render_labels_for_launcher(screen_id) {
@@ -89,54 +101,58 @@ function render_labels_for_launcher(screen_id) {
   const hitbox_layer = screen_el.querySelector(".hitbox-layer");
   if (!hitbox_layer) return;
 
-  const hitboxes = qa(".hitbox", hitbox_layer);
-  if (!hitboxes.length) {
-    clear_labels(screen_el);
-    return;
-  }
+  const layerRect = hitbox_layer.getBoundingClientRect();
+  if (!layerRect.width || !layerRect.height) return;
 
+  const hitboxes = qa(".hitbox", hitbox_layer);
   const label_layer = ensure_label_layer(screen_el);
-  label_layer.innerHTML = ""; // reset each screenchange
+  label_layer.innerHTML = "";
+
+  if (!hitboxes.length) return;
 
   hitboxes.forEach((hb) => {
-    const hb_id = hb.dataset.hitboxId || hb.getAttribute("data-hitbox-id") || hb.getAttribute("aria-label") || "";
-    const action = hb.dataset.action || "";
-    const arg = hb.dataset.arg || "";
-
-    const text = pick_label_text(hb_id, action, arg);
+    const id = hitbox_id(hb);
+    const text = pick_label_text(id, hb.dataset.action || "", hb.dataset.arg || "");
     if (!text) return;
+
+    const hbRect = hb.getBoundingClientRect();
+    const pct = rect_to_pct(hbRect, layerRect);
 
     const label = document.createElement("div");
     label.className = "launcher-label";
     label.textContent = text;
 
-    // **Critical**: tie label geometry to hitbox geometry (percent-based)
-    label.style.left = hb.style.left;
-    label.style.top = hb.style.top;
-    label.style.width = hb.style.width;
-    label.style.height = hb.style.height;
+    // Position label to match real hitbox geometry
+    label.style.left = `${pct.x}%`;
+    label.style.top = `${pct.y}%`;
+    label.style.width = `${pct.w}%`;
+    label.style.height = `${pct.h}%`;
 
-    // Small auto-size hint based on hitbox height (still safe)
-    // Example: 7% height on 9:16 screens is a good "button label"
+    // consistent sizing
     label.style.fontSize = "clamp(14px, 2.2vh, 22px)";
 
     label_layer.appendChild(label);
   });
 }
 
+function render_with_retry(screen_id) {
+  // Hitboxes are applied async after screen change.
+  // Render immediately, then again on next frame to catch newly inserted hitboxes.
+  render_labels_for_launcher(screen_id);
+  requestAnimationFrame(() => render_labels_for_launcher(screen_id));
+}
+
 export function init_launcher_labels() {
-  // Render on every screen change
   window.addEventListener("vc:screenchange", (e) => {
     const screen_id = e?.detail?.screen || get_active_screen_id();
     if (!screen_id || !is_launcher_screen(screen_id)) return;
-    render_labels_for_launcher(screen_id);
+    render_with_retry(screen_id);
   });
 
-  // Render once on boot (if we land on a launcher)
   const initial = get_active_screen_id();
   if (initial && is_launcher_screen(initial)) {
-    render_labels_for_launcher(initial);
+    render_with_retry(initial);
   }
 
-  console.log("[launcher_labels] hitbox-mapped labels enabled");
+  console.log("[launcher_labels] robust hitbox-mapped labels enabled");
 }
