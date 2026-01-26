@@ -11,6 +11,16 @@
     },
 
     {
+      "id": "exit_story",
+      "x": 28,
+      "y": 3,
+      "w": 22,
+      "h": 8,
+      "action": "go",
+      "arg": "last_library"
+    },
+
+    {
       "id": "open_character",
       "x": 3,
       "y": 86,
