@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "id": "king_solomon",
+    "title": "King Solomon",
+    "author": "VerseCraft",
+    "version": "1.0.0"
+  },
+  "blurb": "Legends whisper of wisdom beyond mortal reach. In King Solomon, your judgment will be tested by riddles, power, and the weight of truth.",
+  "assets": {
+    "cover": "king-solomon",
+    "theme": "mythic"
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "id": "S01",
+      "text": "The throne room is silent as two figures step forward, each claiming the same truth.",
+      "choices": [
+        {
+          "label": "Hear the first claimant",
+          "to": "S02"
+        },
+        {
+          "label": "Hear the second claimant",
+          "to": "S03"
+        }
+      ]
+    },
+    "S02": {
+      "id": "S02",
+      "text": "The story is compelling, but something feels incomplete.",
+      "ending": "NEUTRAL_END"
+    },
+    "S03": {
+      "id": "S03",
+      "text": "The second tale contradicts the first, forcing you to weigh wisdom over emotion.",
+      "ending": "NEUTRAL_END"
+    }
+  }
+}
