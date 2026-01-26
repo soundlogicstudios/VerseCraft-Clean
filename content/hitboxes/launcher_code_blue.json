@@ -1,6 +1,6 @@
 {
   "hitboxes": [
-    { "id": "back",  "x": 4, "y": 4, "w": 22, "h": 8,  "action": "go", "arg": "library2" },
-    { "id": "start", "x": 30, "y": 75, "w": 40, "h": 12, "action": "go", "arg": "story_code_blue" }
+    { "id": "back", "x": 25, "y": 4, "w": 50, "h": 7, "action": "go", "arg": "library2" },
+    { "id": "start", "x": 35, "y": 76, "w": 30, "h": 9, "action": "go", "arg": "story_code_blue" }
   ]
 }
