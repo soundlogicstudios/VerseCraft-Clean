@@ -1,16 +1,16 @@
 {
   "hitboxes": [
     {
-      "id": "back",
+      "id": "exit_story",
       "x": 3,
       "y": 3,
       "w": 22,
       "h": 8,
       "action": "go",
-      "arg": "launcher_world_of_lorecraft"
+      "arg": "last_library"
     },
     {
-      "id": "character",
+      "id": "open_character",
       "x": 72,
       "y": 3,
       "w": 25,
@@ -19,7 +19,7 @@
       "arg": "character"
     },
     {
-      "id": "inventory",
+      "id": "open_inventory",
       "x": 72,
       "y": 12,
       "w": 25,
