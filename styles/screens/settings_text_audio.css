@@ -1,0 +1,7 @@
+/* settings_text_audio.css */
+.screen[data-screen="settings_text_audio"] {
+  background-image: url("../../ui/global/ui/text-settings-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
