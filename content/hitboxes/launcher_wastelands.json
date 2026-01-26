@@ -1,6 +1,31 @@
 {
   "hitboxes": [
-    { "id": "back", "x": 25, "y": 4, "w": 50, "h": 7, "action": "go", "arg": "library1" },
-    { "id": "start", "x": 35, "y": 76, "w": 30, "h": 9, "action": "go", "arg": "story_wastelands" }
+    {
+      "id": "exit_story",
+      "x": 25,
+      "y": 4,
+      "w": 50,
+      "h": 7,
+      "action": "go",
+      "arg": "last_library"
+    },
+    {
+      "id": "open_character",
+      "x": 3,
+      "y": 86,
+      "w": 22,
+      "h": 10,
+      "action": "go",
+      "arg": "character"
+    },
+    {
+      "id": "open_inventory",
+      "x": 75,
+      "y": 86,
+      "w": 22,
+      "h": 10,
+      "action": "go",
+      "arg": "inventory"
+    }
   ]
 }
