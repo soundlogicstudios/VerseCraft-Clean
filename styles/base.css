@@ -110,22 +110,15 @@ body {
 
 .launcher-label{
   position: absolute;
-  pointer-events: none;
-
-  /* ADDITIVE: center the label in the hitbox geometry */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   color: rgba(255,255,255,0.95);
   text-shadow: 0 2px 6px rgba(0,0,0,0.75);
   font-weight: 800;
   letter-spacing: 0.02em;
   text-align: center;
-
-  /* safer than nowrap for narrow buttons */
-  white-space: normal;
+  white-space: nowrap;
 }
+
+/* (Your label positions can stay as-is or be hitbox-bound by JS) */
 
 /* Launcher content overlays (Phase 3) */
 .launcher-content-layer { pointer-events: none; }
@@ -155,6 +148,28 @@ body {
 
   color: rgba(255,255,255,0.93);
   text-shadow: 0 2px 6px rgba(0,0,0,0.75);
+}
+
+/* Story: Exit label overlay (non-interactive, aligned to hitbox) */
+.story-exit-label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(12px, 1.8vh, 20px);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
+
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+
+  pointer-events: none;
 }
 
 /* Debug */
