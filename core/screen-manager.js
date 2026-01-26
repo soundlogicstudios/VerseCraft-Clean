@@ -7,6 +7,13 @@ let current_screen = null;
 const loaded_css = new Set();
 const REGISTRY_PATH = "./sec/screen_registry.json";
 
+// ADDITIVE: remember last library page (in-memory only; no storage)
+let last_library_screen = "library";
+const LIBRARY_SCREENS = new Set(["library", "library1", "library2"]);
+
+// ADDITIVE: special token for "return to last library page"
+const LAST_LIBRARY_TOKEN = "last_library";
+
 async function fetch_json(path) {
   const url = new URL(path, window.location.href).toString();
   const res = await fetch(url, { cache: "no-store" });
@@ -102,40 +109,60 @@ export async function init_screen_manager() {
   await go(start);
 }
 
+// ADDITIVE: resolve special navigation tokens before screen lookup
+function resolve_target(screen_id) {
+  if (screen_id === LAST_LIBRARY_TOKEN) {
+    return last_library_screen || "library";
+  }
+  return screen_id;
+}
+
 export async function go(screen_id) {
   if (!registry) {
     await init_screen_manager();
     return;
   }
 
-  const screen_cfg = registry.screens?.[screen_id];
+  const resolved_id = resolve_target(screen_id);
+
+  const screen_cfg = registry.screens?.[resolved_id];
   if (!screen_cfg) {
-    console.warn(`[screen-manager] unknown screen: ${screen_id}`);
+    console.warn(`[screen-manager] unknown screen: ${resolved_id}`);
     return;
   }
 
   hide_all_screens();
   load_css_once(screen_cfg.css);
 
-  current_screen = screen_id;
-  show_screen(screen_id);
+  current_screen = resolved_id;
+  show_screen(resolved_id);
+
+  // ADDITIVE: record last library page when entering any library screen
+  if (LIBRARY_SCREENS.has(resolved_id)) {
+    last_library_screen = resolved_id;
+  }
 
   try {
-    history.replaceState(null, "", `#${screen_id}`);
+    history.replaceState(null, "", `#${resolved_id}`);
   } catch (_) {}
 
   try {
-    await apply_hitboxes(screen_cfg.hitboxes, screen_id);
+    await apply_hitboxes(screen_cfg.hitboxes, resolved_id);
   } catch (err) {
-    console.error(`[screen-manager] hitbox error on ${screen_id}`, err);
+    console.error(`[screen-manager] hitbox error on ${resolved_id}`, err);
   }
 
   window.dispatchEvent(
-    new CustomEvent("vc:screenchange", { detail: { screen: screen_id } })
+    new CustomEvent("vc:screenchange", { detail: { screen: resolved_id } })
   );
 }
 
 export function get_current_screen() {
   return current_screen;
+}
+
+// ADDITIVE: expose last library screen for verification/debug if needed
+export function get_last_library_screen() {
+  return last_library_screen;
 }
 
