@@ -1,11 +1,58 @@
 {
   "hitboxes": [
-    { "id": "slot_4", "x": 5, "y": 18, "w": 90, "h": 16, "action": "go", "arg": "launcher_oregon_trail" },
-    { "id": "slot_5", "x": 5, "y": 36, "w": 90, "h": 16, "action": "go", "arg": "launcher_wastelands" },
-    { "id": "slot_6", "x": 5, "y": 54, "w": 90, "h": 16, "action": "go", "arg": "launcher_tale_of_icarus" },
-    { "id": "slot_7", "x": 5, "y": 72, "w": 90, "h": 16, "action": "go", "arg": "launcher_crimson_seagull" },
-
-    { "id": "prev_page", "x": 3, "y": 3, "w": 22, "h": 8, "action": "go", "arg": "library" },
-    { "id": "next_page", "x": 75, "y": 3, "w": 22, "h": 8, "action": "go", "arg": "library2" }
+    {
+      "id": "slot_4",
+      "x": 5,
+      "y": 18,
+      "w": 90,
+      "h": 16,
+      "action": "go",
+      "arg": "launcher_oregon_trail"
+    },
+    {
+      "id": "slot_5",
+      "x": 5.27,
+      "y": 34.9,
+      "w": 90,
+      "h": 18.51,
+      "action": "go",
+      "arg": "launcher_wastelands"
+    },
+    {
+      "id": "slot_6",
+      "x": 5,
+      "y": 54,
+      "w": 90,
+      "h": 19.77,
+      "action": "go",
+      "arg": "launcher_tale_of_icarus"
+    },
+    {
+      "id": "slot_7",
+      "x": 5,
+      "y": 74.51,
+      "w": 90,
+      "h": 19.45,
+      "action": "go",
+      "arg": "launcher_crimson_seagull"
+    },
+    {
+      "id": "prev_page",
+      "x": 3,
+      "y": 3,
+      "w": 22,
+      "h": 8,
+      "action": "go",
+      "arg": "library"
+    },
+    {
+      "id": "next_page",
+      "x": 75,
+      "y": 3,
+      "w": 22,
+      "h": 8,
+      "action": "go",
+      "arg": "library2"
+    }
   ]
 }
