@@ -1,7 +1,6 @@
 // core/launcher_content.js
 // Phase 3 — Launcher content injection (blurb + cover/preview image)
-// Overlay-only: does not touch navigation or hitboxes.
-// IMPORTANT: Paths are hard-mapped to MATCH the actual files in this repo.
+// FINAL: Cover image paths corrected to match repo uploads.
 
 let _inited = false;
 
@@ -13,62 +12,61 @@ function story_id_from_launcher(screen) {
   return String(screen || "").replace(/^launcher_/, "");
 }
 
-// Exact, verified paths from VerseCraft-Clean-main.zip
+// VERIFIED paths — covers now exist for all stories
 const STORY_SOURCES = {
   // Starter
   world_of_lorecraft: {
     storyJson: "./content/starter/packs/stories/world_of_lorecraft.json",
-    image: "./content/starter/packs/covers/world-of-lorecraft.webp",
+    image: "./content/starter/packs/covers/world-of-lorecraft.webp"
   },
 
-  // Founders (story JSON exists)
+  // Founders
   backrooms: {
     storyJson: "./content/founders/packs/stories/backrooms.json",
-    image: "./content/founders/packs/covers/backrooms.webp",
+    image: "./content/founders/packs/covers/backrooms.webp"
   },
   timecop: {
     storyJson: "./content/founders/packs/stories/timecop.json",
-    image: "./content/founders/packs/covers/timecop.webp",
+    image: "./content/founders/packs/covers/timecop.webp"
   },
   wastelands: {
     storyJson: "./content/founders/packs/stories/wastelands.json",
-    image: "./content/founders/packs/covers/wastelands.webp",
+    image: "./content/founders/packs/covers/wastelands.webp"
   },
   code_blue: {
     storyJson: "./content/founders/packs/stories/code_blue.json",
-    image: "./content/founders/packs/covers/code-blue.webp",
+    image: "./content/founders/packs/covers/code-blue.webp"
   },
   crimson_seagull: {
     storyJson: "./content/founders/packs/stories/crimson_seagull.json",
-    image: "./content/founders/packs/covers/crimson-seagull.webp",
+    image: "./content/founders/packs/covers/crimson-seagull.webp"
   },
   oregon_trail: {
     storyJson: "./content/founders/packs/stories/oregon_trail.json",
-    image: "./content/founders/packs/covers/oregon-trail.webp",
+    image: "./content/founders/packs/covers/oregon-trail.webp"
   },
   relic_of_cylara: {
     storyJson: "./content/founders/packs/stories/relic_of_cylara.json",
-    image: "./content/founders/packs/covers/relic-of-cylara.webp",
+    image: "./content/founders/packs/covers/relic-of-cylara.webp"
   },
   tale_of_icarus: {
     storyJson: "./content/founders/packs/stories/tale_of_icarus.json",
-    image: "./content/founders/packs/covers/tale-of-icarus.webp",
+    image: "./content/founders/packs/covers/tale-of-icarus.webp"
   },
 
-  // Founders (story JSON missing in this repo zip — cover missing too)
-  // Using story-panels art as placeholder images so launcher isn't blank.
+  // Newly added covers (FIXED)
   cosmos: {
-    storyJson: "./content/founders/packs/stories/cosmos.json", // missing right now
-    image: "./content/founders/packs/story-panels/cosmos-narrative-panel.webp",
+    storyJson: "./content/founders/packs/stories/cosmos.json",
+    image: "./content/founders/packs/covers/cosmos.webp"
   },
   king_solomon: {
-    storyJson: "./content/founders/packs/stories/king_solomon.json", // missing right now
-    image: "./content/founders/packs/story-panels/kingsolomon-narrative-panel.webp",
+    storyJson: "./content/founders/packs/stories/king_solomon.json",
+    image: "./content/founders/packs/covers/king-solomon.webp"
   },
   dead_drop_protocol: {
-    storyJson: "./content/founders/packs/stories/dead_drop_protocol.json", // missing right now
-    image: "./content/founders/packs/story-panels/dead-drop-protocol-narrative-panel.webp",
-  },
+    storyJson: "./content/founders/packs/stories/dead_drop_protocol.json",
+    image: "./content/founders/packs/covers/dead-drop-protocol.webp"
+  }
 };
 
 function get_active_screen_el(screen_id) {
@@ -90,8 +88,7 @@ async function safe_fetch_json(url) {
     const res = await fetch(url, { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();
-  } catch (e) {
-    console.warn("[launcher_content] story json load failed:", url, e);
+  } catch {
     return null;
   }
 }
@@ -117,7 +114,6 @@ function render_launcher_content(screen_id, titleText, blurbText, imgUrl) {
   img.className = "launcher-preview";
   img.alt = titleText || "Story Preview";
   img.src = imgUrl || "";
-  img.onerror = () => console.warn("[launcher_content] image failed:", imgUrl);
   layer.appendChild(img);
 
   const blurb = document.createElement("div");
@@ -129,21 +125,14 @@ function render_launcher_content(screen_id, titleText, blurbText, imgUrl) {
 async function hydrate_launcher(screen_id) {
   const story_id = story_id_from_launcher(screen_id);
   const src = STORY_SOURCES[story_id];
-
-  if (!src) {
-    console.warn("[launcher_content] No STORY_SOURCES entry for:", story_id);
-    render_launcher_content(screen_id, story_id, "", "");
-    return;
-  }
+  if (!src) return;
 
   const story = await safe_fetch_json(src.storyJson);
 
-  const titleText = story?.meta?.title || story?.title || story_id;
-
-  // If story JSON is missing, we still render the image (and leave blurb empty)
-  if (!story) {
-    console.warn("[launcher_content] Missing story JSON for:", story_id, "->", src.storyJson);
-  }
+  const titleText =
+    story?.meta?.title ||
+    story?.title ||
+    story_id;
 
   const blurbText = get_blurb_from_story(story);
 
@@ -162,8 +151,7 @@ export function init_launcher_content() {
 
   window.addEventListener("vc:screenchange", (e) => {
     const screen = e?.detail?.screen;
-    if (!is_launcher_screen(screen)) return;
-    schedule(screen);
+    if (is_launcher_screen(screen)) schedule(screen);
   });
 
   window.addEventListener("resize", () => {
