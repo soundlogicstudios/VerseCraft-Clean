@@ -1,0 +1,7 @@
+/* settings_theme.css */
+.screen[data-screen="settings_theme"] {
+  background-image: url("../../ui/global/ui/theme-settings-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
