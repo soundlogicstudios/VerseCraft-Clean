@@ -1,0 +1,13 @@
+{
+  "hitboxes": [
+    {
+      "id": "back_to_settings",
+      "x": 28.07,
+      "y": 92,
+      "w": 43.87,
+      "h": 8,
+      "action": "go",
+      "arg": "settings"
+    }
+  ]
+}
