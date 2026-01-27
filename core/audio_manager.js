@@ -1,15 +1,15 @@
 // core/audio_manager.js
-// VerseCraft — Global BGM wiring (screen-driven, iOS-safe)
+// VerseCraft — Global BGM wiring (screen-driven, iOS-safe) with built-in diagnostics
 //
-// Notes:
-// - iOS Safari blocks autoplay until a user gesture occurs.
-// - We unlock on first pointerup/touchend, then start the current screen's track.
-// - Single audio element, looping, lightweight, additive.
+// What this adds (additive, safe):
+// - Console diagnostics on every screen change: screen_id -> track_key -> src -> fetch status
+// - window.VC_AUDIO_STATUS() helper to inspect current state without guessing
 
 let _audio = null;
 let _unlocked = false;
 let _currentSrc = "";
 let _desiredSrc = "";
+let _last = { screen: "", key: "", src: "", fetch: null, playError: "" };
 
 // Paths/casing are contracts — using EXACT paths you provided.
 // IMPORTANT: Backrooms filename contains a space: "backrooms_ theme.mp3"
@@ -26,7 +26,7 @@ const TRACKS = {
   oregon_trail: "./content/audio/packs/founders/oregon_trail/oregon_trail_theme.mp3"
 };
 
-// Trigger music on these screens.
+// Trigger music on these screens (launcher + story).
 const SCREEN_TO_TRACK = {
   launcher_backrooms: "backrooms",
   story_backrooms: "backrooms",
@@ -70,11 +70,9 @@ function ensure_audio() {
   a.loop = true;
   a.volume = DEFAULT_VOLUME;
 
-  // iOS inline playback
   a.setAttribute("playsinline", "");
   a.setAttribute("webkit-playsinline", "");
 
-  // keep it out of layout
   a.style.position = "fixed";
   a.style.left = "-9999px";
   a.style.top = "-9999px";
@@ -96,6 +94,16 @@ function stop_music() {
   _desiredSrc = "";
 }
 
+async function fetch_status(src) {
+  if (!src) return { ok: false, status: "no_src" };
+  try {
+    const res = await fetch(src, { cache: "no-store" });
+    return { ok: res.ok, status: res.status };
+  } catch (e) {
+    return { ok: false, status: "fetch_error", error: String(e?.message || e) };
+  }
+}
+
 async function try_play(src) {
   const a = ensure_audio();
 
@@ -105,6 +113,7 @@ async function try_play(src) {
   }
 
   _desiredSrc = src;
+  _last.playError = "";
 
   if (_currentSrc !== src) {
     a.pause();
@@ -112,19 +121,28 @@ async function try_play(src) {
     _currentSrc = src;
   }
 
-  if (!_unlocked) return;
+  // Check fetch every time we switch tracks (this catches 404 immediately)
+  _last.fetch = await fetch_status(src);
+  console.log("[audio] fetch", { src, ..._last.fetch });
+
+  if (!_unlocked) {
+    console.log("[audio] armed (waiting for user gesture)", { src });
+    return;
+  }
 
   try {
     await a.play();
+    console.log("[audio] playing", { src });
   } catch (e) {
-    console.warn("[audio] play blocked/failed", e);
+    _last.playError = String(e?.message || e);
+    console.warn("[audio] play failed", { src, error: _last.playError });
   }
 }
 
-function resolve_track_for_screen(screen_id) {
-  const key = SCREEN_TO_TRACK[screen_id];
-  if (!key) return "";
-  return TRACKS[key] || "";
+function resolve_for_screen(screen_id) {
+  const key = SCREEN_TO_TRACK[screen_id] || "";
+  const src = key ? (TRACKS[key] || "") : "";
+  return { key, src };
 }
 
 function get_active_screen_id() {
@@ -139,12 +157,19 @@ function get_active_screen_id() {
 function on_unlock_gesture() {
   if (_unlocked) return;
   _unlocked = true;
+  console.log("[audio] unlocked by gesture");
   if (_desiredSrc) try_play(_desiredSrc);
 }
 
 function on_screen_change(e) {
   const screen_id = e?.detail?.screen || get_active_screen_id();
-  const src = resolve_track_for_screen(screen_id);
+  const { key, src } = resolve_for_screen(screen_id);
+
+  _last.screen = screen_id;
+  _last.key = key;
+  _last.src = src;
+
+  console.log("[audio] screenchange", { screen_id, track_key: key, src });
 
   if (!src) {
     if (STOP_WHEN_UNMAPPED) stop_music();
@@ -157,14 +182,33 @@ function on_screen_change(e) {
 export function init_audio_manager() {
   ensure_audio();
 
+  // Debug helper you can call from console any time
+  window.VC_AUDIO_STATUS = function VC_AUDIO_STATUS() {
+    const a = ensure_audio();
+    return {
+      unlocked: _unlocked,
+      last: { ..._last },
+      desired_src: _desiredSrc,
+      current_src: _currentSrc,
+      audio: {
+        paused: a.paused,
+        readyState: a.readyState,
+        networkState: a.networkState,
+        currentTime: a.currentTime,
+        volume: a.volume
+      }
+    };
+  };
+
   document.addEventListener("pointerup", on_unlock_gesture, { capture: true, once: true });
   document.addEventListener("touchend", on_unlock_gesture, { capture: true, once: true });
 
   window.addEventListener("vc:screenchange", on_screen_change);
 
+  // Arm initial screen if mapped
   const initial = get_active_screen_id();
-  const initialSrc = resolve_track_for_screen(initial);
-  if (initialSrc) try_play(initialSrc);
+  const { src } = resolve_for_screen(initial);
+  if (src) try_play(src);
 
   console.log("[audio] audio manager initialized");
 }
