@@ -1,10 +1,17 @@
+/* styles/screens/character.css */
+/* Global fallback Character screen – Feature Under Construction */
+
 .screen[data-screen="character"]{
-  background-image: url("../../ui/global/ui/character-placeholder.webp");
+  background-image: url("../../ui/global/ui/under-construction.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color:#000;
+  background-color: #000;
 }
+
+/* Visual-only screen; hitboxes remain tappable */
+.screen[data-screen="character"]{ pointer-events: none; }
+.screen[data-screen="character"] .hitbox-layer{ pointer-events: auto; }
 
 .screen[data-screen="character"]{ pointer-events:none; }
 .screen[data-screen="character"] .hitbox-layer{ pointer-events:auto; }
