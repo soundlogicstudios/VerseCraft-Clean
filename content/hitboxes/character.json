@@ -1,13 +1,13 @@
 {
   "hitboxes": [
     {
-      "id": "back_to_menu",
-      "x": 3,
-      "y": 0,
-      "w": 96.13,
-      "h": 100,
+      "id": "back_to_story",
+      "x": 30,
+      "y": 88,
+      "w": 40,
+      "h": 9,
       "action": "go",
-      "arg": "menu"
+      "arg": "last_library"
     }
   ]
 }
