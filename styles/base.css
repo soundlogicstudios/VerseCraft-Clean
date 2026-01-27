@@ -118,8 +118,6 @@ body {
   white-space: nowrap;
 }
 
-/* (Your label positions can stay as-is or be hitbox-bound by JS) */
-
 /* Launcher content overlays (Phase 3) */
 .launcher-content-layer { pointer-events: none; }
 
@@ -159,59 +157,45 @@ body {
 .hidden { display: none !important; }
 
 /* =========================================================
-   Story Panel Labels (GLOBAL REMAP TO CURRENT HITBOX IDS)
-   - No JS
-   - Labels render on hitbox buttons, so custom per-story positions still apply
-   - Remaps ALL current/legacy ids you have in story JSON files
+   Settings Volume Widget (UI overlay)
+   - Positioned ~20% below center (top: 70%)
+   - Only slider captures touches (pointer-events:auto on widget)
    ========================================================= */
 
-/* Only affect story_* screens */
-.screen[data-screen^="story_"] .hitbox{
-  /* allow centering text inside the tap region */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.vc-volume-widget{
+  position: absolute;
+  left: 15%;
+  top: 70%;
+  width: 70%;
+  transform: translateY(-50%);
+  pointer-events: auto;
 
-  color: rgba(255, 255, 255, 0.96);
+  padding: 10px 12px;
+  border-radius: 14px;
+
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(2px);
+}
+
+.vc-volume-title{
   font-weight: 900;
   letter-spacing: 0.02em;
   text-align: center;
-
-  user-select: none;
-  -webkit-user-select: none;
-
-  background: transparent;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.75);
 }
 
-.screen[data-screen^="story_"] .hitbox::after{
-  content: "";
-  font-size: clamp(14px, 2.0vh, 22px);
-  line-height: 1;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.80);
-  padding: 0.35em 0.7em;
-
-  background: rgba(0,0,0,0.30);
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 999px;
-
-  pointer-events: none;
+.vc-volume-slider{
+  width: 100%;
+  margin: 0;
+  touch-action: pan-x;
 }
 
-/* EXIT STORY label — supports multiple ids currently in your repo */
-.screen[data-screen^="story_"] .hitbox[data-hitbox-id="exit_story"]::after,
-.screen[data-screen^="story_"] .hitbox[data-hitbox-id="back"]::after,
-.screen[data-screen^="story_"] .hitbox[data-hitbox-id="back_to_launcher"]::after{
-  content: "Exit Story";
-}
-
-/* CHARACTER label — supports both id variants */
-.screen[data-screen^="story_"] .hitbox[data-hitbox-id="open_character"]::after,
-.screen[data-screen^="story_"] .hitbox[data-hitbox-id="character"]::after{
-  content: "Character";
-}
-
-/* INVENTORY label — supports both id variants */
-.screen[data-screen^="story_"] .hitbox[data-hitbox-id="open_inventory"]::after,
-.screen[data-screen^="story_"] .hitbox[data-hitbox-id="inventory"]::after{
-  content: "Inventory";
+.vc-volume-value{
+  margin-top: 6px;
+  text-align: center;
+  font-weight: 800;
+  opacity: 0.95;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.75);
 }
