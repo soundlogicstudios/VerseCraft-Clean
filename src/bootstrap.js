@@ -42,6 +42,14 @@ async function boot_once() {
       console.warn("[bootstrap] settings volume ui not loaded", e);
     }
 
+    // Story panel labels (Exit Story / Character / Inventory) — safe optional
+    try {
+      const modStoryLabels = await import("../core/story_exit_labels.js");
+      modStoryLabels?.init_story_exit_labels?.();
+    } catch (e) {
+      console.warn("[bootstrap] story exit labels not loaded", e);
+    }
+
     await init_screen_manager();
   } catch (e) {
     console.error("[bootstrap] init failed", e);
