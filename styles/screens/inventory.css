@@ -1,9 +1,10 @@
-/* styles/screens/inventory.css (placeholder) */
-.screen[data-screen="inventory"].is-active{
-  background-color:#000;
+.screen[data-screen="inventory"]{
+  background-image: url("../../ui/global/ui/inventory-placeholder.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color:#000;
 }
+
 .screen[data-screen="inventory"]{ pointer-events:none; }
 .screen[data-screen="inventory"] .hitbox-layer{ pointer-events:auto; }
