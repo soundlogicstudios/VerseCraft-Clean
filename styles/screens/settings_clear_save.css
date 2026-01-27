@@ -1,7 +1,13 @@
-/* settings_clear_save.css */
-.screen[data-screen="settings_clear_save"] {
-  background-image: url("../../ui/global/ui/settings.webp");
+/* styles/screens/settings_clear_save.css */
+
+.screen[data-screen="settings_clear_save"]{
+  background-image: url("../../ui/global/ui/settings-clear-save.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #000; /* fallback */
 }
+
+/* if you disable pointer events on the screen, keep this pattern */
+.screen[data-screen="settings_clear_save"]{ pointer-events:none; }
+.screen[data-screen="settings_clear_save"] .hitbox-layer{ pointer-events:auto; }
