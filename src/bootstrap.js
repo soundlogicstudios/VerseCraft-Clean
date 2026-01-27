@@ -1,12 +1,15 @@
 // src/bootstrap.js
-// Single-pass bootstrap (screen manager + input + debug UI + overlays)
+// Single-pass bootstrap (screen manager + input + debug UI + overlays + audio)
 
 import { init_screen_manager } from "../core/screen-manager.js";
 import { init_input } from "../core/input.js";
 import { init_debug_ui } from "../core/debug_ui.js";
 import { init_library_labels } from "../core/library_labels.js";
+import { init_audio_manager } from "../core/audio_manager.js";
 
 let _booted = false;
+
+const ENABLE_AUDIO = true;
 
 async function boot_once() {
   if (_booted) return;
@@ -18,6 +21,15 @@ async function boot_once() {
 
     // Phase 1 (already working)
     init_library_labels();
+
+    // Audio wiring (iOS-safe: plays only after first user gesture)
+    if (ENABLE_AUDIO) {
+      try {
+        init_audio_manager();
+      } catch (e) {
+        console.warn("[bootstrap] audio manager not loaded", e);
+      }
+    }
 
     // Optional overlays: load safely so they can NEVER kill boot
     try {
@@ -32,22 +44,6 @@ async function boot_once() {
       modContent?.init_launcher_content?.();
     } catch (e) {
       console.warn("[bootstrap] launcher content not loaded", e);
-    }
-
-    // Settings volume slider UI (safe optional)
-    try {
-      const modVol = await import("../core/settings_volume_ui.js");
-      modVol?.init_settings_volume_ui?.();
-    } catch (e) {
-      console.warn("[bootstrap] settings volume ui not loaded", e);
-    }
-
-    // Story panel labels (Exit Story / Character / Inventory) — safe optional
-    try {
-      const modStoryLabels = await import("../core/story_exit_labels.js");
-      modStoryLabels?.init_story_exit_labels?.();
-    } catch (e) {
-      console.warn("[bootstrap] story exit labels not loaded", e);
     }
 
     await init_screen_manager();
