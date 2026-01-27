@@ -2,9 +2,9 @@
   "hitboxes": [
     {
       "id": "exit_story",
-      "x": 0.27,
-      "y": 0.24,
-      "w": 20.94,
+      "x": 1.07,
+      "y": 0.39,
+      "w": 16.14,
       "h": 8,
       "action": "go",
       "arg": "last_library"
