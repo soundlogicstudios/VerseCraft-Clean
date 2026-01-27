@@ -1,4 +1,4 @@
-// core/story_exit_label.js
+// core/story_exit_labels.js
 // Additive overlay: show labels aligned to existing story hitboxes.
 // Never blocks taps (ui-layer pointer-events: none).
 // No storage. No navigation changes.
@@ -21,6 +21,7 @@ function ensure_ui_layer(screen_el) {
 }
 
 function find_hitbox(screen_el, hitbox_id) {
+  // screen-manager sets data-hitbox-id attribute
   return screen_el.querySelector(`.hitbox[data-hitbox-id="${hitbox_id}"]`);
 }
 
@@ -32,7 +33,8 @@ function make_label(text) {
 }
 
 function align_label_to_hitbox(label, hb) {
-  // Align using the existing % styles on the hitbox (contract-safe)
+  // Align using the existing % inline styles on the hitbox (contract-safe)
+  // These are set in screen-manager: left/top/width/height in %
   if (hb.style.left) label.style.left = hb.style.left;
   if (hb.style.top) label.style.top = hb.style.top;
   if (hb.style.width) label.style.width = hb.style.width;
@@ -50,6 +52,7 @@ function apply_labels_to_screen(screen_el) {
   // Remove any prior labels for this screen to avoid duplicates
   ui.querySelectorAll(".story-exit-label").forEach((n) => n.remove());
 
+  // Canonical label targets (must match hitbox JSON ids)
   const map = [
     { id: "exit_story", text: "Exit Story" },
     { id: "open_character", text: "Character" },
@@ -70,11 +73,11 @@ function refresh_active_screen() {
   const active = document.querySelector(".screen.is-active");
   if (!active) return;
 
-  // schedule a frame to ensure hitboxes are in the DOM (apply_hitboxes runs before vc:screenchange)
+  // Wait a frame so hitboxes are present in DOM after screen change
   requestAnimationFrame(() => apply_labels_to_screen(active));
 }
 
-export function init_story_exit_label() {
+export function init_story_exit_labels() {
   if (_mounted) return;
   _mounted = true;
 
@@ -83,5 +86,5 @@ export function init_story_exit_label() {
   // Initial pass (in case boot lands directly on a story hash)
   Promise.resolve().then(refresh_active_screen);
 
-  console.log("[story_exit_label] initialized");
+  console.log("[story_exit_labels] initialized");
 }
