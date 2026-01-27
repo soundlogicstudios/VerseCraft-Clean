@@ -10,3 +10,45 @@
 
 .screen[data-screen="launcher_world_of_lorecraft"]{ pointer-events:none; }
 .screen[data-screen="launcher_world_of_lorecraft"] .hitbox-layer{ pointer-events:auto; }
+/* =========================================================
+   Manual label alignment — launcher_world_of_lorecraft
+   Matches DOM labels (.story-exit-label) to hitbox geometry
+   Order in DOM: 1) Exit  2) Character  3) Inventory
+   ========================================================= */
+
+.screen[data-screen="launcher_world_of_lorecraft"] .story-exit-label{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  pointer-events: none; /* labels never steal taps */
+  user-select: none;
+
+  font-weight: 700;
+}
+
+/* 1) Exit Story */
+.screen[data-screen="launcher_world_of_lorecraft"] .story-exit-label:nth-of-type(1){
+  left: 9.07%;
+  top: 14.30%;
+  width: 20.93%;
+  height: 6.74%;
+}
+
+/* 2) Character */
+.screen[data-screen="launcher_world_of_lorecraft"] .story-exit-label:nth-of-type(2){
+  left: 32.33%;
+  top: 14.42%;
+  width: 28.13%;
+  height: 7.17%;
+}
+
+/* 3) Inventory */
+.screen[data-screen="launcher_world_of_lorecraft"] .story-exit-label:nth-of-type(3){
+  left: 61.13%;
+  top: 14.41%;
+  width: 24.67%;
+  height: 7.01%;
+}
