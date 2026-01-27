@@ -1,18 +1,19 @@
 // core/audio_manager.js
-// VerseCraft — Global BGM wiring (screen-driven, iOS-safe) with built-in diagnostics
+// VerseCraft — Global BGM wiring (screen-driven, iOS-safe) with built-in diagnostics + volume API
 //
 // Adds:
-// - Console diagnostics on every screen change: screen_id -> track_key -> src -> fetch status
-// - window.VC_AUDIO_STATUS() helper to inspect current state
+// - set_volume(v01) / get_volume() (0.0 to 1.0)
+// - window.VC_AUDIO_SET_VOLUME(v01) / window.VC_AUDIO_GET_VOLUME()
+// - Console diagnostics: screen_id -> track_key -> src -> fetch status
+// - window.VC_AUDIO_STATUS()
 
 let _audio = null;
 let _unlocked = false;
 let _currentSrc = "";
 let _desiredSrc = "";
+let _volume01 = 0.85;
 let _last = { screen: "", key: "", src: "", fetch: null, playError: "" };
 
-// Paths/casing are contracts — using EXACT paths you provided.
-// IMPORTANT: Backrooms filename contains a space: "backrooms_ theme.mp3"
 const TRACKS = {
   backrooms: "./content/audio/packs/founders/backrooms/backrooms_ theme.mp3",
   crimson_seagull: "./content/audio/packs/founders/crimson_seagull/crimson_seagull_theme.mp3",
@@ -30,7 +31,6 @@ const TRACKS = {
   world_of_lorecraft: "./content/audio/packs/starter/world_of_lorecraft/world_of_lorecraft_theme.mp3"
 };
 
-// Trigger music on these screens (launcher + story).
 const SCREEN_TO_TRACK = {
   launcher_backrooms: "backrooms",
   story_backrooms: "backrooms",
@@ -69,11 +69,13 @@ const SCREEN_TO_TRACK = {
   story_world_of_lorecraft: "world_of_lorecraft"
 };
 
-// Default volume (0.0 - 1.0)
-const DEFAULT_VOLUME = 0.85;
-
-// If true: stop music when leaving a mapped screen.
 const STOP_WHEN_UNMAPPED = true;
+
+function clamp01(v) {
+  const n = Number(v);
+  if (!Number.isFinite(n)) return 0;
+  return Math.max(0, Math.min(1, n));
+}
 
 function ensure_audio() {
   if (_audio) return _audio;
@@ -81,7 +83,7 @@ function ensure_audio() {
   const a = document.createElement("audio");
   a.preload = "auto";
   a.loop = true;
-  a.volume = DEFAULT_VOLUME;
+  a.volume = _volume01;
 
   a.setAttribute("playsinline", "");
   a.setAttribute("webkit-playsinline", "");
@@ -96,6 +98,16 @@ function ensure_audio() {
   document.body.appendChild(a);
   _audio = a;
   return a;
+}
+
+export function set_volume(v01) {
+  _volume01 = clamp01(v01);
+  const a = ensure_audio();
+  a.volume = _volume01;
+}
+
+export function get_volume() {
+  return _volume01;
 }
 
 function stop_music() {
@@ -117,8 +129,24 @@ async function fetch_status(src) {
   }
 }
 
+function resolve_for_screen(screen_id) {
+  const key = SCREEN_TO_TRACK[screen_id] || "";
+  const src = key ? (TRACKS[key] || "") : "";
+  return { key, src };
+}
+
+function get_active_screen_id() {
+  return (
+    document.body?.dataset?.screen ||
+    document.documentElement?.getAttribute?.("data-screen") ||
+    (location.hash || "").replace("#", "") ||
+    ""
+  );
+}
+
 async function try_play(src) {
   const a = ensure_audio();
+  a.volume = _volume01;
 
   if (!src) {
     stop_music();
@@ -134,7 +162,6 @@ async function try_play(src) {
     _currentSrc = src;
   }
 
-  // Check fetch every time we switch tracks (catches 404 immediately)
   _last.fetch = await fetch_status(src);
   console.log("[audio] fetch", { src, ..._last.fetch });
 
@@ -145,26 +172,11 @@ async function try_play(src) {
 
   try {
     await a.play();
-    console.log("[audio] playing", { src });
+    console.log("[audio] playing", { src, volume: _volume01 });
   } catch (e) {
     _last.playError = String(e?.message || e);
     console.warn("[audio] play failed", { src, error: _last.playError });
   }
-}
-
-function resolve_for_screen(screen_id) {
-  const key = SCREEN_TO_TRACK[screen_id] || "";
-  const src = key ? (TRACKS[key] || "") : "";
-  return { key, src };
-}
-
-function get_active_screen_id() {
-  return (
-    document.body?.dataset?.screen ||
-    document.documentElement?.getAttribute?.("data-screen") ||
-    (location.hash || "").replace("#", "") ||
-    ""
-  );
 }
 
 function on_unlock_gesture() {
@@ -195,7 +207,10 @@ function on_screen_change(e) {
 export function init_audio_manager() {
   ensure_audio();
 
-  // Debug helper you can call from console any time
+  // Window hooks (optional convenience)
+  window.VC_AUDIO_SET_VOLUME = (v01) => set_volume(v01);
+  window.VC_AUDIO_GET_VOLUME = () => get_volume();
+
   window.VC_AUDIO_STATUS = function VC_AUDIO_STATUS() {
     const a = ensure_audio();
     return {
@@ -203,6 +218,7 @@ export function init_audio_manager() {
       last: { ..._last },
       desired_src: _desiredSrc,
       current_src: _currentSrc,
+      volume: _volume01,
       audio: {
         paused: a.paused,
         readyState: a.readyState,
