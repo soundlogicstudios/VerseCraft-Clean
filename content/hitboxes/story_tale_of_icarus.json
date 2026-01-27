@@ -2,17 +2,17 @@
   "hitboxes": [
     {
       "id": "exit_story",
-      "x": 4,
-      "y": 4,
-      "w": 22,
+      "x": 0.27,
+      "y": 0.24,
+      "w": 20.94,
       "h": 8,
       "action": "go",
       "arg": "last_library"
     },
     {
       "id": "open_character",
-      "x": 72,
-      "y": 4,
+      "x": 76,
+      "y": 66.33,
       "w": 24,
       "h": 8,
       "action": "go",
@@ -20,8 +20,8 @@
     },
     {
       "id": "open_inventory",
-      "x": 72,
-      "y": 14,
+      "x": 76,
+      "y": 74.91,
       "w": 24,
       "h": 8,
       "action": "go",
