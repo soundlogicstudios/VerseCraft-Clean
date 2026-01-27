@@ -17,7 +17,9 @@ const TRACKS = {
   backrooms: "./content/audio/packs/founders/backrooms/backrooms_ theme.mp3",
   crimson_seagull: "./content/audio/packs/founders/crimson_seagull/crimson_seagull_theme.mp3",
   relic_of_cylara: "./content/audio/packs/founders/relic_of_cylara/relic-of-cylara-theme.mp3",
-  tale_of_icarus: "./content/audio/packs/founders/tale_of_icarus/tale_of_icarus_theme.mp3"
+  tale_of_icarus: "./content/audio/packs/founders/tale_of_icarus/tale_of_icarus_theme.mp3",
+  code_blue: "./content/audio/packs/founders/code_blue/code_blue_theme.mp3",
+  timecop: "./content/audio/packs/founders/timecop/timecop_theme.mp3"
 };
 
 // Trigger music on these screens.
@@ -33,7 +35,13 @@ const SCREEN_TO_TRACK = {
   story_relic_of_cylara: "relic_of_cylara",
 
   launcher_tale_of_icarus: "tale_of_icarus",
-  story_tale_of_icarus: "tale_of_icarus"
+  story_tale_of_icarus: "tale_of_icarus",
+
+  launcher_code_blue: "code_blue",
+  story_code_blue: "code_blue",
+
+  launcher_timecop: "timecop",
+  story_timecop: "timecop"
 };
 
 // Default volume (0.0 - 1.0)
