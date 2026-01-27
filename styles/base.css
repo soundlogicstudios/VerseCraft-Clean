@@ -150,28 +150,6 @@ body {
   text-shadow: 0 2px 6px rgba(0,0,0,0.75);
 }
 
-/* Story: Exit label overlay (non-interactive, aligned to hitbox) */
-.story-exit-label {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: clamp(12px, 1.8vh, 20px);
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
-
-  background: rgba(0, 0, 0, 0.28);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 10px;
-
-  pointer-events: none;
-}
-
 /* Debug */
 .hitbox-layer.debug-hitboxes .hitbox {
   outline: 2px dashed rgba(0, 255, 255, 0.7);
@@ -179,3 +157,61 @@ body {
 }
 
 .hidden { display: none !important; }
+
+/* =========================================================
+   Story Panel Labels (GLOBAL REMAP TO CURRENT HITBOX IDS)
+   - No JS
+   - Labels render on hitbox buttons, so custom per-story positions still apply
+   - Remaps ALL current/legacy ids you have in story JSON files
+   ========================================================= */
+
+/* Only affect story_* screens */
+.screen[data-screen^="story_"] .hitbox{
+  /* allow centering text inside the tap region */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255, 255, 255, 0.96);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-align: center;
+
+  user-select: none;
+  -webkit-user-select: none;
+
+  background: transparent;
+}
+
+.screen[data-screen^="story_"] .hitbox::after{
+  content: "";
+  font-size: clamp(14px, 2.0vh, 22px);
+  line-height: 1;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.80);
+  padding: 0.35em 0.7em;
+
+  background: rgba(0,0,0,0.30);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px;
+
+  pointer-events: none;
+}
+
+/* EXIT STORY label — supports multiple ids currently in your repo */
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="exit_story"]::after,
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="back"]::after,
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="back_to_launcher"]::after{
+  content: "Exit Story";
+}
+
+/* CHARACTER label — supports both id variants */
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="open_character"]::after,
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="character"]::after{
+  content: "Character";
+}
+
+/* INVENTORY label — supports both id variants */
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="open_inventory"]::after,
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="inventory"]::after{
+  content: "Inventory";
+}
