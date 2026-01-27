@@ -158,8 +158,6 @@ body {
 
 /* =========================================================
    Settings Volume Widget (UI overlay)
-   - Positioned ~20% below center (top: 70%)
-   - Only slider captures touches (pointer-events:auto on widget)
    ========================================================= */
 
 .vc-volume-widget{
@@ -198,4 +196,32 @@ body {
   font-weight: 800;
   opacity: 0.95;
   text-shadow: 0 2px 6px rgba(0,0,0,0.75);
+}
+
+/* =========================================================
+   Story panel labels (Exit Story / Character / Inventory)
+   - Rendered in ui-layer, never blocks taps
+   - Aligned to hitbox % positions
+   ========================================================= */
+
+.story-exit-label{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 2vw;
+
+  font-size: clamp(12px, 1.9vh, 18px);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-align: center;
+
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.80);
+
+  /* subtle readability */
+  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 10px;
 }
