@@ -1,9 +1,9 @@
 // core/audio_manager.js
 // VerseCraft — Global BGM wiring (screen-driven, iOS-safe) with built-in diagnostics
 //
-// What this adds (additive, safe):
+// Adds:
 // - Console diagnostics on every screen change: screen_id -> track_key -> src -> fetch status
-// - window.VC_AUDIO_STATUS() helper to inspect current state without guessing
+// - window.VC_AUDIO_STATUS() helper to inspect current state
 
 let _audio = null;
 let _unlocked = false;
@@ -23,7 +23,11 @@ const TRACKS = {
 
   cosmos: "./content/audio/packs/founders/cosmos/cosmos_theme.mp3",
   dead_drop_protocol: "./content/audio/packs/founders/dead_drop_protocol/dead_drop_protocol_theme.mp3",
-  oregon_trail: "./content/audio/packs/founders/oregon_trail/oregon_trail_theme.mp3"
+  oregon_trail: "./content/audio/packs/founders/oregon_trail/oregon_trail_theme.mp3",
+
+  wastelands: "./content/audio/packs/founders/wastelands/wastelands_theme.mp3",
+  king_solomon: "./content/audio/packs/founders/king_solomon/king_solomon_theme.mp3",
+  world_of_lorecraft: "./content/audio/packs/starter/world_of_lorecraft/world_of_lorecraft_theme.mp3"
 };
 
 // Trigger music on these screens (launcher + story).
@@ -53,7 +57,16 @@ const SCREEN_TO_TRACK = {
   story_dead_drop_protocol: "dead_drop_protocol",
 
   launcher_oregon_trail: "oregon_trail",
-  story_oregon_trail: "oregon_trail"
+  story_oregon_trail: "oregon_trail",
+
+  launcher_wastelands: "wastelands",
+  story_wastelands: "wastelands",
+
+  launcher_king_solomon: "king_solomon",
+  story_king_solomon: "king_solomon",
+
+  launcher_world_of_lorecraft: "world_of_lorecraft",
+  story_world_of_lorecraft: "world_of_lorecraft"
 };
 
 // Default volume (0.0 - 1.0)
@@ -121,7 +134,7 @@ async function try_play(src) {
     _currentSrc = src;
   }
 
-  // Check fetch every time we switch tracks (this catches 404 immediately)
+  // Check fetch every time we switch tracks (catches 404 immediately)
   _last.fetch = await fetch_status(src);
   console.log("[audio] fetch", { src, ..._last.fetch });
 
