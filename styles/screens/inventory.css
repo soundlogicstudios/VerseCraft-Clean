@@ -1,10 +1,17 @@
+/* styles/screens/inventory.css */
+/* Global fallback Inventory screen – Feature Under Construction */
+
 .screen[data-screen="inventory"]{
-  background-image: url("../../ui/global/ui/inventory-placeholder.webp");
+  background-image: url("../../ui/global/ui/under-construction.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color:#000;
+  background-color: #000;
 }
+
+/* Visual-only screen; hitboxes remain tappable */
+.screen[data-screen="inventory"]{ pointer-events: none; }
+.screen[data-screen="inventory"] .hitbox-layer{ pointer-events: auto; }
 
 .screen[data-screen="inventory"]{ pointer-events:none; }
 .screen[data-screen="inventory"] .hitbox-layer{ pointer-events:auto; }
