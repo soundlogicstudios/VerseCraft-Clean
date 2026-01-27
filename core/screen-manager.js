@@ -14,6 +14,19 @@ const LIBRARY_SCREENS = new Set(["library", "library1", "library2"]);
 // ADDITIVE: special token for "return to last library page"
 const LAST_LIBRARY_TOKEN = "last_library";
 
+// ============================================================
+// ADDITIVE (Plan A): remember last STORY screen (in-memory only)
+// - Any screen id that starts with "story_" counts as a story panel
+// - Character/Inventory can route back via "last_story"
+// ============================================================
+
+let last_story_screen = "story_world_of_lorecraft"; // safe default (adjust if you want)
+const LAST_STORY_TOKEN = "last_story";
+
+function is_story_screen(screen_id) {
+  return typeof screen_id === "string" && screen_id.startsWith("story_");
+}
+
 async function fetch_json(path) {
   const url = new URL(path, window.location.href).toString();
   const res = await fetch(url, { cache: "no-store" });
@@ -102,9 +115,7 @@ export async function init_screen_manager() {
 
   registry = await fetch_json(REGISTRY_PATH);
 
-  const start =
-    (location.hash || "").replace("#", "") ||
-    registry.start_screen;
+  const start = (location.hash || "").replace("#", "") || registry.start_screen;
 
   await go(start);
 }
@@ -113,6 +124,9 @@ export async function init_screen_manager() {
 function resolve_target(screen_id) {
   if (screen_id === LAST_LIBRARY_TOKEN) {
     return last_library_screen || "library";
+  }
+  if (screen_id === LAST_STORY_TOKEN) {
+    return last_story_screen || "story_world_of_lorecraft";
   }
   return screen_id;
 }
@@ -142,6 +156,11 @@ export async function go(screen_id) {
     last_library_screen = resolved_id;
   }
 
+  // ADDITIVE: record last story panel when entering any story_* screen
+  if (is_story_screen(resolved_id)) {
+    last_story_screen = resolved_id;
+  }
+
   try {
     history.replaceState(null, "", `#${resolved_id}`);
   } catch (_) {}
@@ -164,5 +183,10 @@ export function get_current_screen() {
 // ADDITIVE: expose last library screen for verification/debug if needed
 export function get_last_library_screen() {
   return last_library_screen;
+}
+
+// ADDITIVE: expose last story screen for verification/debug if needed
+export function get_last_story_screen() {
+  return last_story_screen;
 }
 
