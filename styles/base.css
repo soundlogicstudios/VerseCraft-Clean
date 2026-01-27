@@ -118,6 +118,8 @@ body {
   white-space: nowrap;
 }
 
+/* (Your label positions can stay as-is or be hitbox-bound by JS) */
+
 /* Launcher content overlays (Phase 3) */
 .launcher-content-layer { pointer-events: none; }
 
@@ -157,71 +159,59 @@ body {
 .hidden { display: none !important; }
 
 /* =========================================================
-   Settings Volume Widget (UI overlay)
+   Story Panel Labels (GLOBAL REMAP TO CURRENT HITBOX IDS)
+   - No JS
+   - Labels render on hitbox buttons, so custom per-story positions still apply
+   - Remaps ALL current/legacy ids you have in story JSON files
    ========================================================= */
 
-.vc-volume-widget{
-  position: absolute;
-  left: 15%;
-  top: 70%;
-  width: 70%;
-  transform: translateY(-50%);
-  pointer-events: auto;
-
-  padding: 10px 12px;
-  border-radius: 14px;
-
-  background: rgba(0,0,0,0.35);
-  border: 1px solid rgba(255,255,255,0.18);
-  backdrop-filter: blur(2px);
-}
-
-.vc-volume-title{
-  font-weight: 900;
-  letter-spacing: 0.02em;
-  text-align: center;
-  margin-bottom: 8px;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.75);
-}
-
-.vc-volume-slider{
-  width: 100%;
-  margin: 0;
-  touch-action: pan-x;
-}
-
-.vc-volume-value{
-  margin-top: 6px;
-  text-align: center;
-  font-weight: 800;
-  opacity: 0.95;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.75);
-}
-
-/* =========================================================
-   Story panel labels (Exit Story / Character / Inventory)
-   - Rendered in ui-layer, never blocks taps
-   - Aligned to hitbox % positions
-   ========================================================= */
-
-.story-exit-label{
-  position: absolute;
+/* Only affect story_* screens */
+.screen[data-screen^="story_"] .hitbox{
+  /* allow centering text inside the tap region */
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 0 2vw;
-
-  font-size: clamp(12px, 1.9vh, 18px);
+  color: rgba(255, 255, 255, 0.96);
   font-weight: 900;
   letter-spacing: 0.02em;
   text-align: center;
 
-  color: rgba(255,255,255,0.95);
-  text-shadow: 0 2px 6px rgba(0,0,0,0.80);
+  user-select: none;
+  -webkit-user-select: none;
 
-  /* subtle readability */
-  background: rgba(0,0,0,0.18);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 10px;
+  background: transparent;
+}
+
+.screen[data-screen^="story_"] .hitbox::after{
+  content: "";
+  font-size: clamp(14px, 2.0vh, 22px);
+  line-height: 1;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.80);
+  padding: 0.35em 0.7em;
+
+  background: rgba(0,0,0,0.30);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px;
+
+  pointer-events: none;
+}
+
+/* EXIT STORY label — supports multiple ids currently in your repo */
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="exit_story"]::after,
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="back"]::after,
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="back_to_launcher"]::after{
+  content: "Exit Story";
+}
+
+/* CHARACTER label — supports both id variants */
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="open_character"]::after,
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="character"]::after{
+  content: "Character";
+}
+
+/* INVENTORY label — supports both id variants */
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="open_inventory"]::after,
+.screen[data-screen^="story_"] .hitbox[data-hitbox-id="inventory"]::after{
+  content: "Inventory";
 }
