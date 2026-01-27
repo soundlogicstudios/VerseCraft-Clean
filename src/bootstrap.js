@@ -1,13 +1,15 @@
 // src/bootstrap.js
-// Single-pass bootstrap (screen manager + input + debug UI + overlays)
+// Single-pass bootstrap (screen manager + input + debug UI + overlays + audio)
 
 import { init_screen_manager } from "../core/screen-manager.js";
 import { init_input } from "../core/input.js";
 import { init_debug_ui } from "../core/debug_ui.js";
 import { init_library_labels } from "../core/library_labels.js";
-import { init_story_exit_label } from "../core/story_exit_label.js";
+import { init_audio_manager } from "../core/audio_manager.js";
 
 let _booted = false;
+
+const ENABLE_AUDIO = true;
 
 async function boot_once() {
   if (_booted) return;
@@ -20,8 +22,14 @@ async function boot_once() {
     // Phase 1 (already working)
     init_library_labels();
 
-    // ADDITIVE: Story Exit label overlay (non-interactive, hitbox-aligned)
-    init_story_exit_label();
+    // Audio wiring (iOS-safe: plays only after first user gesture)
+    if (ENABLE_AUDIO) {
+      try {
+        init_audio_manager();
+      } catch (e) {
+        console.warn("[bootstrap] audio manager not loaded", e);
+      }
+    }
 
     // Optional overlays: load safely so they can NEVER kill boot
     try {
