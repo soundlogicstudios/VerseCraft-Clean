@@ -4,6 +4,7 @@
 // 1) Scrim actually visible (stronger opacity + border + blur)
 // 2) Back To Library centered (no flex-start, no padding)
 // 3) Start label bigger
+// 4) ADD: Exit / Character / Inventory labels bound to their hitboxes (launcher top row)
 
 let _inited = false;
 
@@ -142,7 +143,61 @@ function render_launcher_labels(screen_id) {
   layer.appendChild(titleScrim);
   layer.appendChild(title);
 
-  // HITBOX-BOUND: back/start/continue
+  // ==========================================================
+  // TOP BAR (hitbox-bound): Exit Story / Character / Inventory
+  // ==========================================================
+  const hbExit = find_hitbox(screen_el, "exit_story");
+  const hbChar = find_hitbox(screen_el, "open_character");
+  const hbInv = find_hitbox(screen_el, "open_inventory");
+
+  if (hbExit) {
+    const pct = rect_to_pct(screen_rect, hbExit.getBoundingClientRect());
+    const scrim = make_scrim(pct, { bg: "rgba(0,0,0,0.52)", radius: "12px" });
+
+    const el = document.createElement("div");
+    el.className = "launcher-label launcher-exit";
+    el.textContent = "Exit Story";
+    style_label(el, pct, { fontSize: "clamp(14px, 2.0vh, 22px)" });
+
+    layer.appendChild(scrim);
+    layer.appendChild(el);
+  } else {
+    console.warn("[launcher_labels] exit_story hitbox not found (data-hitbox-id must be 'exit_story')");
+  }
+
+  if (hbChar) {
+    const pct = rect_to_pct(screen_rect, hbChar.getBoundingClientRect());
+    const scrim = make_scrim(pct, { bg: "rgba(0,0,0,0.52)", radius: "12px" });
+
+    const el = document.createElement("div");
+    el.className = "launcher-label launcher-character";
+    el.textContent = "Character";
+    style_label(el, pct, { fontSize: "clamp(14px, 2.0vh, 22px)" });
+
+    layer.appendChild(scrim);
+    layer.appendChild(el);
+  } else {
+    console.warn("[launcher_labels] open_character hitbox not found (data-hitbox-id must be 'open_character')");
+  }
+
+  if (hbInv) {
+    const pct = rect_to_pct(screen_rect, hbInv.getBoundingClientRect());
+    const scrim = make_scrim(pct, { bg: "rgba(0,0,0,0.52)", radius: "12px" });
+
+    const el = document.createElement("div");
+    el.className = "launcher-label launcher-inventory";
+    el.textContent = "Inventory";
+    style_label(el, pct, { fontSize: "clamp(14px, 2.0vh, 22px)" });
+
+    layer.appendChild(scrim);
+    layer.appendChild(el);
+  } else {
+    console.warn("[launcher_labels] open_inventory hitbox not found (data-hitbox-id must be 'open_inventory')");
+  }
+
+  // ==========================================================
+  // HITBOX-BOUND: back/start/continue (existing)
+  // ==========================================================
   const hbBack = find_hitbox(screen_el, "back");
   const hbStart = find_hitbox(screen_el, "start");
   const hbContinue = find_hitbox(screen_el, "continue");
