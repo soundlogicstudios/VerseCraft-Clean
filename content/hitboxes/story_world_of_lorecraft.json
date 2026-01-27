@@ -1,27 +1,31 @@
 {
-  "id": "exit_story",
-  "x": 7.47,
-  "y": 13.68,
-  "w": 22,
-  "h": 8,
-  "action": "go",
-  "arg": "last_library"
-},
-{
-  "id": "open_character",
-  "x": 30.2,
-  "y": 13.95,
-  "w": 22,
-  "h": 7.49,
-  "action": "go",
-  "arg": "character"
-},
-{
-  "id": "open_inventory",
-  "x": 53.13,
-  "y": 13,
-  "w": 26.53,
-  "h": 8.9,
-  "action": "go",
-  "arg": "inventory"
+  "hitboxes": [
+    {
+      "id": "exit_story",
+      "x": 7,
+      "y": 14,
+      "w": 22,
+      "h": 8,
+      "action": "go",
+      "arg": "last_library"
+    },
+    {
+      "id": "open_character",
+      "x": 30,
+      "y": 14,
+      "w": 22,
+      "h": 8,
+      "action": "go",
+      "arg": "character"
+    },
+    {
+      "id": "open_inventory",
+      "x": 53,
+      "y": 14,
+      "w": 26,
+      "h": 9,
+      "action": "go",
+      "arg": "inventory"
+    }
+  ]
 }
