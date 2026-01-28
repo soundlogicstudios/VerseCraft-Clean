@@ -16,7 +16,7 @@
       "w": 22.53,
       "h": 8,
       "action": "go",
-      "arg": "character"
+      "arg": "character_world_of_lorecraft"
     },
     {
       "id": "open_inventory",
