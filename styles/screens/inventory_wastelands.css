@@ -1,0 +1,18 @@
+/* styles/screens/inventory_wastelands.css */
+
+.screen[data-screen="inventory_wastelands"]{
+  background-image: url("../../content/founders/packs/story-panels/wastelands-inventory-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+}
+
+/* Match story panel interaction rules */
+.screen[data-screen="inventory_wastelands"]{
+  pointer-events: none;
+}
+
+.screen[data-screen="inventory_wastelands"] .hitbox-layer{
+  pointer-events: auto;
+}
