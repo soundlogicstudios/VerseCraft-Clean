@@ -1,1 +1,12 @@
+/* styles/screens/character_timecop.css */
 
+.screen[data-screen="character_timecop"]{
+  background-image: url("../../content/founders/packs/story-panels/timecop-character-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+.screen[data-screen="character_timecop"]{ pointer-events:none; }
+.screen[data-screen="character_timecop"] .hitbox-layer{ pointer-events:auto; }
