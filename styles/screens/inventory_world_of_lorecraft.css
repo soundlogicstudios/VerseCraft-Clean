@@ -1,0 +1,13 @@
+/* styles/screens/inventory_world_of_lorecraft.css */
+
+.screen[data-screen="inventory_world_of_lorecraft"]{
+  background-image: url("../../content/starter/packs/story-panels/lorecraft-inventory-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+/* Match the interaction pattern you already use on story panels */
+.screen[data-screen="inventory_world_of_lorecraft"]{ pointer-events:none; }
+.screen[data-screen="inventory_world_of_lorecraft"] .hitbox-layer{ pointer-events:auto; }
