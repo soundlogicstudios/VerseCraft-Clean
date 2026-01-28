@@ -1,0 +1,13 @@
+/* styles/screens/character_world_of_lorecraft.css */
+
+.screen[data-screen="character_world_of_lorecraft"]{
+  background-image: url("../../content/starter/packs/story-panels/lorecraft-thief-character-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+/* Match the interaction pattern used on story panels */
+.screen[data-screen="character_world_of_lorecraft"]{ pointer-events:none; }
+.screen[data-screen="character_world_of_lorecraft"] .hitbox-layer{ pointer-events:auto; }
