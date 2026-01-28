@@ -1,6 +1,10 @@
 // core/audio_manager.js
 // VerseCraft — Global BGM wiring (screen-driven, iOS-safe) with built-in diagnostics
 //
+// Required behavior:
+// - Music persists across Story + Character + Inventory (and other unmapped screens)
+// - Music stops ONLY when entering Library screens (library/library1/library2)
+//
 // Adds:
 // - Console diagnostics on every screen change: screen_id -> track_key -> src -> fetch status
 // - window.VC_AUDIO_STATUS() helper to inspect current state
@@ -72,8 +76,12 @@ const SCREEN_TO_TRACK = {
 // Default volume (0.0 - 1.0)
 const DEFAULT_VOLUME = 0.85;
 
+// STOP ONLY on these screens (per requirement)
+const STOP_SCREENS = new Set(["library", "library1", "library2"]);
+
 // If true: stop music when leaving a mapped screen.
-const STOP_WHEN_UNMAPPED = true;
+// IMPORTANT: Must be false to allow persistence across character/inventory.
+const STOP_WHEN_UNMAPPED = false;
 
 function ensure_audio() {
   if (_audio) return _audio;
@@ -176,6 +184,17 @@ function on_unlock_gesture() {
 
 function on_screen_change(e) {
   const screen_id = e?.detail?.screen || get_active_screen_id();
+
+  // REQUIRED: stop only when entering Library screens
+  if (STOP_SCREENS.has(screen_id)) {
+    console.log("[audio] stop (entered library)", { screen_id });
+    stop_music();
+    _last.screen = screen_id;
+    _last.key = "";
+    _last.src = "";
+    return;
+  }
+
   const { key, src } = resolve_for_screen(screen_id);
 
   _last.screen = screen_id;
@@ -184,6 +203,7 @@ function on_screen_change(e) {
 
   console.log("[audio] screenchange", { screen_id, track_key: key, src });
 
+  // Unmapped screens: do NOT stop music (persist across character/inventory/etc)
   if (!src) {
     if (STOP_WHEN_UNMAPPED) stop_music();
     return;
@@ -220,8 +240,12 @@ export function init_audio_manager() {
 
   // Arm initial screen if mapped
   const initial = get_active_screen_id();
-  const { src } = resolve_for_screen(initial);
-  if (src) try_play(src);
+  if (STOP_SCREENS.has(initial)) {
+    stop_music();
+  } else {
+    const { src } = resolve_for_screen(initial);
+    if (src) try_play(src);
+  }
 
-  console.log("[audio] audio manager initialized");
+  console.log("[audio] audio manager initialized (persist until library)");
 }
