@@ -73,6 +73,8 @@ const SCREEN_TO_TRACK = {
   // Oregon Trail
   launcher_oregon_trail: "oregon_trail",
   story_oregon_trail: "oregon_trail",
+  character_oregon_trail: "oregon_trail",
+  inventory_oregon_trail: "oregon_trail",
 
   // Wastelands
   launcher_wastelands: "wastelands",
