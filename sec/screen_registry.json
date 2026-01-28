@@ -132,6 +132,16 @@
       "hitboxes": "content/hitboxes/inventory.json",
       "controller": null
     },
+    "character_backrooms": {
+  "css": "styles/screens/character_backrooms.css",
+  "hitboxes": "content/hitboxes/character_backrooms.json",
+  "controller": null
+},
+"inventory_backrooms": {
+  "css": "styles/screens/inventory_backrooms.css",
+  "hitboxes": "content/hitboxes/inventory_backrooms.json",
+  "controller": null
+},
 
     "character_relic_of_cylara": {
       "css": "styles/screens/character_relic_of_cylara.css",
