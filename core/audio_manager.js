@@ -41,6 +41,8 @@ const SCREEN_TO_TRACK = {
   // Crimson Seagull
   launcher_crimson_seagull: "crimson_seagull",
   story_crimson_seagull: "crimson_seagull",
+  character_crimson_seagull: "crimson_seagull",
+  inventory_crimson_seagull: "crimson_seagull",
 
   // Relic of Cylara
   launcher_relic_of_cylara: "relic_of_cylara",
@@ -51,10 +53,14 @@ const SCREEN_TO_TRACK = {
   // Tale of Icarus
   launcher_tale_of_icarus: "tale_of_icarus",
   story_tale_of_icarus: "tale_of_icarus",
+  character_tale_of_icarus: "tale_of_icarus",
+  inventory_tale_of_icarus: "tale_of_icarus",
 
   // Code Blue
   launcher_code_blue: "code_blue",
   story_code_blue: "code_blue",
+  character_code_blue: "code_blue",
+  inventory_code_blue: "code_blue",
 
   // TimeCop
   launcher_timecop: "timecop",
@@ -79,10 +85,14 @@ const SCREEN_TO_TRACK = {
   // Wastelands
   launcher_wastelands: "wastelands",
   story_wastelands: "wastelands",
+  character_wastelands: "wastelands",
+  inventory_wastelands: "wastelands",
 
   // King Solomon
   launcher_king_solomon: "king_solomon",
   story_king_solomon: "king_solomon",
+  character_king_solomon: "king_solomon",
+  inventory_king_solomon: "king_solomon",
 
   // World of Lorecraft
   launcher_world_of_lorecraft: "world_of_lorecraft",
