@@ -5,6 +5,7 @@
 // Adds (no guessing):
 // - Tap Probe (shows what element actually receives the tap, and whether a hitbox is under it)
 // - Blocker Finder (highlights the top element under your finger + pointer-events/z-index)
+//   IMPORTANT: "Find Blocker" ignores taps on debug UI (panel + pill) and waits for the next REAL game tap.
 // - Audit Active Screen (registry + css/hitboxes fetch status)
 // - Copy Report (clipboard or selectable textarea fallback)
 //
@@ -141,7 +142,15 @@ async function audit_screen(screen_id) {
 ---------------------------- */
 
 let tap_probe_enabled = false;
-let blocker_mode = false;
+
+// Blocker arming state:
+// armed=true means we're waiting for a GAME tap.
+// ignore_debug_ui=true means taps on pill/panel do NOT consume/disarm blocker mode.
+let blocker = {
+  armed: false,
+  ignore_debug_ui: true
+};
+
 let last_tap = null;
 let last_blocker = null;
 
@@ -194,15 +203,26 @@ function highlight_el(el) {
   el.classList.add("vc_dbg_blocker_hit");
 }
 
+function is_debug_ui_tap(el) {
+  if (!el) return false;
+  // Any tap inside the debug panel or on the debug pill counts as debug UI
+  return !!el.closest?.("#vcDebugPanel, #vcDebugPill");
+}
+
 function probe_tap(e) {
-  // Always capture taps when probe enabled OR blocker mode enabled
-  if (!tap_probe_enabled && !blocker_mode) return;
+  // Always capture taps when probe enabled OR blocker armed
+  if (!tap_probe_enabled && !blocker.armed) return;
 
   const x = e.clientX;
   const y = e.clientY;
 
   const screen_id = current_screen_id();
   const top_el = element_from_point(x, y);
+
+  // If blocker is armed and this tap is on debug UI, ignore it and stay armed.
+  if (blocker.armed && blocker.ignore_debug_ui && is_debug_ui_tap(top_el)) {
+    return;
+  }
 
   // Build a short ancestor chain to see pointer-events/z-index up the tree
   const chain = [];
@@ -223,8 +243,8 @@ function probe_tap(e) {
     chain
   };
 
-  // Blocker mode: highlight the top element (what actually receives the tap)
-  if (blocker_mode) {
+  // If blocker is armed, this is the FIRST *non-debug* tap → highlight top element and disarm.
+  if (blocker.armed) {
     highlight_el(top_el);
     last_blocker = {
       when: last_tap.when,
@@ -232,7 +252,7 @@ function probe_tap(e) {
       top_element: element_summary(top_el),
       closest_hitbox: hb
     };
-    blocker_mode = false; // one-shot
+    blocker.armed = false;
   }
 }
 
@@ -316,7 +336,6 @@ function build_report(extra = {}) {
 }
 
 async function copy_text(text) {
-  // Prefer modern clipboard
   try {
     if (navigator.clipboard?.writeText) {
       await navigator.clipboard.writeText(text);
@@ -324,7 +343,6 @@ async function copy_text(text) {
     }
   } catch (_) {}
 
-  // Fallback: execCommand (sometimes works on iOS)
   try {
     const ta = document.createElement("textarea");
     ta.value = text;
@@ -348,7 +366,7 @@ export function init_debug_ui() {
 
   inject_styles();
 
-  // Capture taps for probe/blocker without breaking gameplay (we do not preventDefault here)
+  // Capture taps for probe/blocker without breaking gameplay
   document.addEventListener("pointerup", probe_tap, true);
 
   const pill = document.createElement("button");
@@ -363,7 +381,7 @@ export function init_debug_ui() {
     <button id="dbgCyan" type="button">Toggle Cyan</button>
     <button id="dbgProbeOn" type="button">Tap Probe On</button>
     <button id="dbgProbeOff" type="button">Tap Probe Off</button>
-    <button id="dbgBlocker" type="button">Find Blocker (next tap)</button>
+    <button id="dbgBlocker" type="button">Find Blocker (game tap)</button>
     <button id="dbgAuditActive" type="button">Audit Active Screen</button>
     <button id="dbgCopy" type="button">Copy Report</button>
 
@@ -405,7 +423,8 @@ export function init_debug_ui() {
 
   q("#dbgProbeOn", panel).onclick = () => {
     tap_probe_enabled = true;
-    tapEl.textContent = "Tap Probe ENABLED. Tap anywhere, then reopen/refresh panel to see details.";
+    tapEl.textContent =
+      "Tap Probe ENABLED. Tap anywhere in-game (not the debug UI), then reopen/refresh panel to see details.";
   };
 
   q("#dbgProbeOff", panel).onclick = () => {
@@ -414,8 +433,9 @@ export function init_debug_ui() {
   };
 
   q("#dbgBlocker", panel).onclick = () => {
-    blocker_mode = true;
-    tapEl.textContent = "Blocker mode ARMED. Tap the area that should be clickable. Top element will be highlighted in red.";
+    blocker.armed = true;
+    tapEl.textContent =
+      "Blocker finder ARMED. Close the panel and tap the DEAD area in-game. (Debug UI taps are ignored.)";
   };
 
   q("#dbgAuditActive", panel).onclick = async () => {
@@ -426,7 +446,6 @@ export function init_debug_ui() {
   };
 
   q("#dbgCopy", panel).onclick = async () => {
-    // Include audit (best effort) + current report
     let audit = null;
     try {
       audit = await audit_screen(current_screen_id());
@@ -440,13 +459,12 @@ export function init_debug_ui() {
       copyBox.style.display = "none";
       auditEl.textContent = `Copied report via ${res.method}. Paste it into chat or a note.`;
     } else {
-      // Clipboard failed → show selectable textarea
       copyBox.style.display = "block";
       copyBox.value = text;
       copyBox.focus();
       copyBox.select();
       auditEl.textContent =
-        `Clipboard copy failed (${res.method}). Text is in the box below — tap, hold, Select All, Copy.`;
+        `Clipboard copy failed (${res.method}). Text is in the box below — Select All, Copy.`;
     }
   };
 
@@ -456,6 +474,5 @@ export function init_debug_ui() {
   });
 
   refresh();
-
   console.log("[debug_ui] mounted (Debug Lite+)");
 }
