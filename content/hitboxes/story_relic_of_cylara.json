@@ -11,19 +11,19 @@
     },
     {
       "id": "open_character",
-      "x": 72,
-      "y": 4,
-      "w": 24,
+      "x": 77.47,
+      "y": 71.15,
+      "w": 22.53,
       "h": 8,
       "action": "go",
       "arg": "character_relic_of_cylara"
     },
     {
       "id": "open_inventory",
-      "x": 72,
-      "y": 14,
-      "w": 24,
-      "h": 8,
+      "x": 76.93,
+      "y": 79.46,
+      "w": 23.07,
+      "h": 9,
       "action": "go",
       "arg": "inventory_relic_of_cylara"
     }
