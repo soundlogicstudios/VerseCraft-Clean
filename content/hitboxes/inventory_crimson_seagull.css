@@ -1,0 +1,13 @@
+/* styles/screens/inventory_crimson_seagull.css */
+
+.screen[data-screen="inventory_crimson_seagull"]{
+  background-image: url("../../ui/global/ui/under-construction.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+/* Match interaction pattern used on story panels */
+.screen[data-screen="inventory_crimson_seagull"]{ pointer-events:none; }
+.screen[data-screen="inventory_crimson_seagull"] .hitbox-layer{ pointer-events:auto; }
