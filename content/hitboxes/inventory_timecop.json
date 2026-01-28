@@ -1,1 +1,13 @@
-
+{
+  "hitboxes": [
+    {
+      "id": "back_to_story",
+      "x": 0.27,
+      "y": 0,
+      "w": 96.53,
+      "h": 100,
+      "action": "go",
+      "arg": "last_story"
+    }
+  ]
+}
