@@ -1,0 +1,13 @@
+/* styles/screens/character_tale_of_icarus.css */
+
+.screen[data-screen="character_tale_of_icarus"]{
+  background-image: url("../../content/founders/packs/story-panels/tale-of-icarus-character-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+/* keep overlays from hijacking taps */
+.screen[data-screen="character_tale_of_icarus"]{ pointer-events:none; }
+.screen[data-screen="character_tale_of_icarus"] .hitbox-layer{ pointer-events:auto; }
