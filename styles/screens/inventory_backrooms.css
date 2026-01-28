@@ -1,1 +1,13 @@
-keep
+/* styles/screens/inventory_backrooms.css */
+
+.screen[data-screen="inventory_backrooms"]{
+  background-image: url("../../content/founders/packs/story-panels/backrooms-inventory-panel.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color:#000;
+}
+
+/* Match the interaction pattern used on story panels */
+.screen[data-screen="inventory_backrooms"]{ pointer-events:none; }
+.screen[data-screen="inventory_backrooms"] .hitbox-layer{ pointer-events:auto; }
