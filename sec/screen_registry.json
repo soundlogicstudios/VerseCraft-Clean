@@ -39,8 +39,12 @@
 
     "character",
     "inventory",
+
     "inventory_world_of_lorecraft",
     "character_world_of_lorecraft",
+
+    "inventory_timecop",
+    "character_timecop",
 
     "settings",
     "settings_text_audio",
@@ -131,10 +135,20 @@
       "hitboxes": "content/hitboxes/inventory_world_of_lorecraft.json",
       "controller": null
     },
-
     "character_world_of_lorecraft": {
       "css": "styles/screens/character_world_of_lorecraft.css",
       "hitboxes": "content/hitboxes/character_world_of_lorecraft.json",
+      "controller": null
+    },
+
+    "inventory_timecop": {
+      "css": "styles/screens/inventory_timecop.css",
+      "hitboxes": "content/hitboxes/inventory_timecop.json",
+      "controller": null
+    },
+    "character_timecop": {
+      "css": "styles/screens/character_timecop.css",
+      "hitboxes": "content/hitboxes/character_timecop.json",
       "controller": null
     },
 
