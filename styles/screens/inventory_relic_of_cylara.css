@@ -1,13 +1,18 @@
 /* styles/screens/inventory_relic_of_cylara.css */
 
 .screen[data-screen="inventory_relic_of_cylara"]{
-  background-image: url("../../ui/global/ui/under-construction.webp");
+  background-image: url("../../content/founders/packs/story-panels/relic-of-cylara-inventory-panel.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color:#000;
+  background-color: #000;
 }
 
-/* keep overlays from hijacking taps */
-.screen[data-screen="inventory_relic_of_cylara"]{ pointer-events:none; }
-.screen[data-screen="inventory_relic_of_cylara"] .hitbox-layer{ pointer-events:auto; }
+/* Match story interaction model */
+.screen[data-screen="inventory_relic_of_cylara"]{
+  pointer-events: none;
+}
+
+.screen[data-screen="inventory_relic_of_cylara"] .hitbox-layer{
+  pointer-events: auto;
+}
