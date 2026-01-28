@@ -68,9 +68,13 @@ const SCREEN_TO_TRACK = {
   launcher_world_of_lorecraft: "world_of_lorecraft",
   story_world_of_lorecraft: "world_of_lorecraft",
 
-  // ADDITIVE: keep music persistent when entering Lorecraft's dedicated panels
+  // Lorecraft dedicated panels
   inventory_world_of_lorecraft: "world_of_lorecraft",
-  character_world_of_lorecraft: "world_of_lorecraft"
+  character_world_of_lorecraft: "world_of_lorecraft",
+
+  // ADDITIVE: TimeCop dedicated panels
+  inventory_timecop: "timecop",
+  character_timecop: "timecop"
 };
 
 // Default volume (0.0 - 1.0)
