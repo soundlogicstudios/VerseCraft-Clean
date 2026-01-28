@@ -30,55 +30,63 @@ const TRACKS = {
   world_of_lorecraft: "./content/audio/packs/starter/world_of_lorecraft/world_of_lorecraft_theme.mp3"
 };
 
-// Trigger music on these screens (launcher + story + per-story panels).
+// Trigger music on these screens (launcher + story + per-story character/inventory).
 const SCREEN_TO_TRACK = {
+  // Backrooms
   launcher_backrooms: "backrooms",
   story_backrooms: "backrooms",
+  character_backrooms: "backrooms",
+  inventory_backrooms: "backrooms",
 
+  // Crimson Seagull
   launcher_crimson_seagull: "crimson_seagull",
   story_crimson_seagull: "crimson_seagull",
 
+  // Relic of Cylara
   launcher_relic_of_cylara: "relic_of_cylara",
   story_relic_of_cylara: "relic_of_cylara",
+  character_relic_of_cylara: "relic_of_cylara",
+  inventory_relic_of_cylara: "relic_of_cylara",
 
+  // Tale of Icarus
   launcher_tale_of_icarus: "tale_of_icarus",
   story_tale_of_icarus: "tale_of_icarus",
 
+  // Code Blue
   launcher_code_blue: "code_blue",
   story_code_blue: "code_blue",
 
+  // TimeCop
   launcher_timecop: "timecop",
   story_timecop: "timecop",
+  character_timecop: "timecop",
+  inventory_timecop: "timecop",
 
+  // Cosmos
   launcher_cosmos: "cosmos",
   story_cosmos: "cosmos",
 
+  // Dead Drop Protocol
   launcher_dead_drop_protocol: "dead_drop_protocol",
   story_dead_drop_protocol: "dead_drop_protocol",
 
+  // Oregon Trail
   launcher_oregon_trail: "oregon_trail",
   story_oregon_trail: "oregon_trail",
 
+  // Wastelands
   launcher_wastelands: "wastelands",
   story_wastelands: "wastelands",
 
+  // King Solomon
   launcher_king_solomon: "king_solomon",
   story_king_solomon: "king_solomon",
 
+  // World of Lorecraft
   launcher_world_of_lorecraft: "world_of_lorecraft",
   story_world_of_lorecraft: "world_of_lorecraft",
-
-  // Lorecraft dedicated panels
-  inventory_world_of_lorecraft: "world_of_lorecraft",
   character_world_of_lorecraft: "world_of_lorecraft",
-
-  // ADDITIVE: TimeCop dedicated panels
-  inventory_timecop: "timecop",
-  character_timecop: "timecop",
-
-  // ADDITIVE: Relic of Cylara dedicated panels
-  inventory_relic_of_cylara: "relic_of_cylara",
-  character_relic_of_cylara: "relic_of_cylara"
+  inventory_world_of_lorecraft: "world_of_lorecraft"
 };
 
 // Default volume (0.0 - 1.0)
