@@ -74,7 +74,11 @@ const SCREEN_TO_TRACK = {
 
   // ADDITIVE: TimeCop dedicated panels
   inventory_timecop: "timecop",
-  character_timecop: "timecop"
+  character_timecop: "timecop",
+
+  // ADDITIVE: Relic of Cylara dedicated panels
+  inventory_relic_of_cylara: "relic_of_cylara",
+  character_relic_of_cylara: "relic_of_cylara"
 };
 
 // Default volume (0.0 - 1.0)
