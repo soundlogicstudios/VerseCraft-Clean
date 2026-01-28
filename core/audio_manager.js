@@ -71,10 +71,14 @@ const SCREEN_TO_TRACK = {
   // Cosmos
   launcher_cosmos: "cosmos",
   story_cosmos: "cosmos",
+  character_cosmos: "cosmos",
+  inventory_cosmos: "cosmos",
 
   // Dead Drop Protocol
   launcher_dead_drop_protocol: "dead_drop_protocol",
   story_dead_drop_protocol: "dead_drop_protocol",
+  character_dead_drop_protocol: "dead_drop_protocol",
+  inventory_dead_drop_protocol: "dead_drop_protocol",
 
   // Oregon Trail
   launcher_oregon_trail: "oregon_trail",
