@@ -16,7 +16,7 @@
       "w": 25,
       "h": 8,
       "action": "go",
-      "arg": "character"
+      "arg": "character_crimson_seagull"
     },
     {
       "id": "open_inventory",
@@ -25,7 +25,7 @@
       "w": 25,
       "h": 8,
       "action": "go",
-      "arg": "inventory"
+      "arg": "inventory_crimson_seagull"
     }
   ]
 }
