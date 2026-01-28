@@ -5,14 +5,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #000;
+  background-color:#000;
 }
 
-/* Match interaction pattern used on story panels */
-.screen[data-screen="inventory_crimson_seagull"]{
-  pointer-events: none;
-}
-
-.screen[data-screen="inventory_crimson_seagull"] .hitbox-layer{
-  pointer-events: auto;
-}
+/* keep overlays from hijacking taps */
+.screen[data-screen="inventory_crimson_seagull"]{ pointer-events:none; }
+.screen[data-screen="inventory_crimson_seagull"] .hitbox-layer{ pointer-events:auto; }
