@@ -39,6 +39,8 @@
 
     "character",
     "inventory",
+    "inventory_world_of_lorecraft",
+
     "settings",
     "settings_text_audio",
     "settings_theme",
@@ -120,6 +122,12 @@
     "inventory": {
       "css": "styles/screens/inventory.css",
       "hitboxes": "content/hitboxes/inventory.json",
+      "controller": null
+    },
+
+    "inventory_world_of_lorecraft": {
+      "css": "styles/screens/inventory_world_of_lorecraft.css",
+      "hitboxes": "content/hitboxes/inventory_world_of_lorecraft.json",
       "controller": null
     },
 
