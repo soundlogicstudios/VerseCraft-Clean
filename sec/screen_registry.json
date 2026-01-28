@@ -43,6 +43,9 @@
     "character_relic_of_cylara",
     "inventory_relic_of_cylara",
 
+    "character_world_of_lorecraft",
+    "inventory_world_of_lorecraft",
+
     "settings",
     "settings_text_audio",
     "settings_theme",
@@ -135,6 +138,17 @@
     "inventory_relic_of_cylara": {
       "css": "styles/screens/inventory_relic_of_cylara.css",
       "hitboxes": "content/hitboxes/inventory_relic_of_cylara.json",
+      "controller": null
+    },
+
+    "character_world_of_lorecraft": {
+      "css": "styles/screens/character_world_of_lorecraft.css",
+      "hitboxes": "content/hitboxes/character_world_of_lorecraft.json",
+      "controller": null
+    },
+    "inventory_world_of_lorecraft": {
+      "css": "styles/screens/inventory_world_of_lorecraft.css",
+      "hitboxes": "content/hitboxes/inventory_world_of_lorecraft.json",
       "controller": null
     },
 
