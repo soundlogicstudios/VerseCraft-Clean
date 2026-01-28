@@ -39,6 +39,29 @@
 
     "character",
     "inventory",
+    "character_oregon_trail",
+    "inventory_oregon_trail",
+
+    "character_wastelands",
+    "inventory_wastelands",
+
+    "character_tale_of_icarus",
+    "inventory_tale_of_icarus",
+
+    "character_crimson_seagull",
+    "inventory_crimson_seagull",
+
+    "character_code_blue",
+    "inventory_code_blue",
+
+    "character_king_solomon",
+    "inventory_king_solomon",
+
+    "character_cosmos",
+    "inventory_cosmos",
+
+    "character_dead_drop_protocol",
+    "inventory_dead_drop_protocol",
 
     "character_relic_of_cylara",
     "inventory_relic_of_cylara",
@@ -125,6 +148,93 @@
     "character": {
       "css": "styles/screens/character.css",
       "hitboxes": "content/hitboxes/character.json",
+      "controller": null
+    },
+        "character_oregon_trail": {
+      "css": "styles/screens/character_oregon_trail.css",
+      "hitboxes": "content/hitboxes/character_oregon_trail.json",
+      "controller": null
+    },
+    "inventory_oregon_trail": {
+      "css": "styles/screens/inventory_oregon_trail.css",
+      "hitboxes": "content/hitboxes/inventory_oregon_trail.json",
+      "controller": null
+    },
+
+    "character_wastelands": {
+      "css": "styles/screens/character_wastelands.css",
+      "hitboxes": "content/hitboxes/character_wastelands.json",
+      "controller": null
+    },
+    "inventory_wastelands": {
+      "css": "styles/screens/inventory_wastelands.css",
+      "hitboxes": "content/hitboxes/inventory_wastelands.json",
+      "controller": null
+    },
+
+    "character_tale_of_icarus": {
+      "css": "styles/screens/character_tale_of_icarus.css",
+      "hitboxes": "content/hitboxes/character_tale_of_icarus.json",
+      "controller": null
+    },
+    "inventory_tale_of_icarus": {
+      "css": "styles/screens/inventory_tale_of_icarus.css",
+      "hitboxes": "content/hitboxes/inventory_tale_of_icarus.json",
+      "controller": null
+    },
+
+    "character_crimson_seagull": {
+      "css": "styles/screens/character_crimson_seagull.css",
+      "hitboxes": "content/hitboxes/character_crimson_seagull.json",
+      "controller": null
+    },
+    "inventory_crimson_seagull": {
+      "css": "styles/screens/inventory_crimson_seagull.css",
+      "hitboxes": "content/hitboxes/inventory_crimson_seagull.json",
+      "controller": null
+    },
+
+    "character_code_blue": {
+      "css": "styles/screens/character_code_blue.css",
+      "hitboxes": "content/hitboxes/character_code_blue.json",
+      "controller": null
+    },
+    "inventory_code_blue": {
+      "css": "styles/screens/inventory_code_blue.css",
+      "hitboxes": "content/hitboxes/inventory_code_blue.json",
+      "controller": null
+    },
+
+    "character_king_solomon": {
+      "css": "styles/screens/character_king_solomon.css",
+      "hitboxes": "content/hitboxes/character_king_solomon.json",
+      "controller": null
+    },
+    "inventory_king_solomon": {
+      "css": "styles/screens/inventory_king_solomon.css",
+      "hitboxes": "content/hitboxes/inventory_king_solomon.json",
+      "controller": null
+    },
+
+    "character_cosmos": {
+      "css": "styles/screens/character_cosmos.css",
+      "hitboxes": "content/hitboxes/character_cosmos.json",
+      "controller": null
+    },
+    "inventory_cosmos": {
+      "css": "styles/screens/inventory_cosmos.css",
+      "hitboxes": "content/hitboxes/inventory_cosmos.json",
+      "controller": null
+    },
+
+    "character_dead_drop_protocol": {
+      "css": "styles/screens/character_dead_drop_protocol.css",
+      "hitboxes": "content/hitboxes/character_dead_drop_protocol.json",
+      "controller": null
+    },
+    "inventory_dead_drop_protocol": {
+      "css": "styles/screens/inventory_dead_drop_protocol.css",
+      "hitboxes": "content/hitboxes/inventory_dead_drop_protocol.json",
       "controller": null
     },
     "inventory": {
