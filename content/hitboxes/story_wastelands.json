@@ -16,7 +16,7 @@
       "w": 25.47,
       "h": 7.02,
       "action": "go",
-      "arg": "character"
+      "arg": "character_wastelands"
     },
     {
       "id": "open_inventory",
@@ -25,7 +25,7 @@
       "w": 25.46,
       "h": 7.33,
       "action": "go",
-      "arg": "inventory"
+      "arg": "inventory_wastelands"
     }
   ]
 }
