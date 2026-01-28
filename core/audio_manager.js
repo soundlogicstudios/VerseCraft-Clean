@@ -30,7 +30,7 @@ const TRACKS = {
   world_of_lorecraft: "./content/audio/packs/starter/world_of_lorecraft/world_of_lorecraft_theme.mp3"
 };
 
-// Trigger music on these screens (launcher + story).
+// Trigger music on these screens (launcher + story + per-story panels).
 const SCREEN_TO_TRACK = {
   launcher_backrooms: "backrooms",
   story_backrooms: "backrooms",
@@ -68,8 +68,9 @@ const SCREEN_TO_TRACK = {
   launcher_world_of_lorecraft: "world_of_lorecraft",
   story_world_of_lorecraft: "world_of_lorecraft",
 
-  // ADDITIVE: keep music persistent when entering Lorecraft's dedicated inventory screen
-  inventory_world_of_lorecraft: "world_of_lorecraft"
+  // ADDITIVE: keep music persistent when entering Lorecraft's dedicated panels
+  inventory_world_of_lorecraft: "world_of_lorecraft",
+  character_world_of_lorecraft: "world_of_lorecraft"
 };
 
 // Default volume (0.0 - 1.0)
