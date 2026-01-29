@@ -16,7 +16,7 @@
       "w": 24,
       "h": 8,
       "action": "go",
-      "arg": "character"
+      "arg": "character_dead_drop_protocol"
     },
     {
       "id": "open_inventory",
@@ -25,7 +25,7 @@
       "w": 24,
       "h": 8,
       "action": "go",
-      "arg": "inventory"
+      "arg": "inventory_dead_drop_protocol"
     }
   ]
 }
