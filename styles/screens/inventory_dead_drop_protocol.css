@@ -1,0 +1,9 @@
+/* styles/screens/inventory_dead_drop_protocol.css */
+/* Dead Drop Protocol — Inventory Panel */
+
+.screen[data-screen="inventory_dead_drop_protocol"] {
+  background-image: url("../../content/founders/packs/story-panels/dead-drop-protocol-inventory-panel.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
