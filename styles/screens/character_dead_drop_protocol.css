@@ -1,0 +1,9 @@
+/* styles/screens/character_dead_drop_protocol.css */
+/* Dead Drop Protocol — Character Panel */
+
+.screen[data-screen="character_dead_drop_protocol"] {
+  background-image: url("../../content/founders/packs/story-panels/dead-drop-protocol-character-panel.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
