@@ -1,0 +1,9 @@
+/* styles/screens/inventory_cosmos.css */
+/* Cosmos — Inventory Panel */
+
+.screen[data-screen="inventory_cosmos"] {
+  background-image: url("../../content/founders/packs/story-panels/cosmos-inventory-panel.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
