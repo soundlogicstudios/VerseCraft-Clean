@@ -1,14 +1,9 @@
 /* styles/screens/inventory_oregon_trail.css */
-/* Oregon Trail — Inventory Panel screen */
-/* Additive: uses same DOM/layout as base inventory screen; only swaps background art */
+/* Oregon Trail — Inventory Panel */
 
 .screen[data-screen="inventory_oregon_trail"] {
   background-image: url("../../content/founders/packs/story-panels/oregon-trail-inventory-panel.webp");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-
-  /* safety */
-  width: 100%;
-  height: 100%;
 }
