@@ -1,0 +1,9 @@
+/* styles/screens/character_king_solomon.css */
+/* King Solomon — Character Panel */
+
+.screen[data-screen="character_king_solomon"] {
+  background-image: url("../../content/founders/packs/story-panels/king-solomon-character-panel.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
