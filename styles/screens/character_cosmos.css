@@ -1,0 +1,9 @@
+/* styles/screens/character_cosmos.css */
+/* Cosmos — Character Panel */
+
+.screen[data-screen="character_cosmos"] {
+  background-image: url("../../content/founders/packs/story-panels/cosmos-character-panel.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
