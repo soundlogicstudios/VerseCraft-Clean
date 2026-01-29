@@ -1,0 +1,9 @@
+/* styles/screens/inventory_king_solomon.css */
+/* King Solomon — Inventory Panel */
+
+.screen[data-screen="inventory_king_solomon"] {
+  background-image: url("../../content/founders/packs/story-panels/king-solomon-inventory-panel.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
