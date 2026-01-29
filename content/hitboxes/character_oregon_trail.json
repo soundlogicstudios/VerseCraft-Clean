@@ -1,0 +1,22 @@
+{
+  "hitboxes": [
+    {
+      "id": "character_inventory",
+      "x": 62,
+      "y": 78,
+      "w": 34,
+      "h": 8,
+      "action": "go",
+      "arg": "inventory_oregon_trail"
+    },
+    {
+      "id": "character_back_to_story",
+      "x": 62,
+      "y": 88,
+      "w": 34,
+      "h": 10,
+      "action": "go",
+      "arg": "story_oregon_trail"
+    }
+  ]
+}
