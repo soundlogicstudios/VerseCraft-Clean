@@ -1,0 +1,9 @@
+/* styles/screens/character_code_blue.css */
+/* Code Blue — Character Panel */
+
+.screen[data-screen="character_code_blue"] {
+  background-image: url("../../content/founders/packs/story-panels/code-blue-character-panel.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
