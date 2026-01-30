@@ -1,34 +1,39 @@
 // core/story_runtime.js
-// VerseCraft Story Runtime (Catalog-first, fallback-safe)
+// VerseCraft Clean — Story Runtime (Catalog-first, UI-shell pill reuse)
+// FULL FILE REPLACEMENT
 //
-// Mounts on screens named: story_<storyId>
-// Loads story JSON via:
-//   1) catalog resolver (content/catalog/catalog.json)
-//   2) fallback map (legacy hardcoded paths)
-// Renders into a runtime overlay layer INSIDE the active story screen.
-// Does NOT touch hitbox navigation (exit/character/inventory remain hitboxes).
+// Goals (CANON for Clean repo integration):
+// - Reuse existing UI shell choice pills (#choice0–#choice3) if present (NO duplicates)
+// - Populate pill labels + bind navigation from story JSON (scenes/start/options)
+// - Disable missing options: show "Not a choice" and do NOT allow forward navigation
+// - Lock page scroll; only narrative container scrolls (iOS-friendly)
+// - No story title injection into the narrative panel (title belongs in art/launcher)
+// - Safe caching to avoid repeated slow fetches
 //
-// UI goals (testbed):
-// - Long narrative scrolls INSIDE panel (not whole page)
-// - Always show 4 choice buttons
-// - Missing options render as "Not a choice" (disabled)
-// - No DOM leakage: unmounts when leaving the story screen
+// Expected story JSON (engine-compatible):
+// {
+//   "meta": {...},
+//   "start": "S01",
+//   "scenes": {
+//     "S01": { "text": "...", "options":[{"label":"Short","to":"S02"}] }
+//   }
+// }
+//
+// Dependencies:
+// - catalog resolver: ./core/catalog.js exports resolve_story(storyId) -> { storyJsonUrl, ... } or null
+// - screen manager emits: window.dispatchEvent(new CustomEvent("vc:screenchange",{detail:{screen}}))
+//
+// Note: This runtime does NOT use .hitbox navigation for choices; it binds directly to the pills.
 
 import { resolve_story } from "./catalog.js";
 
 let _inited = false;
 
-// Session caches (speed + less iOS churn)
-const _story_cache = new Map(); // storyJsonUrl -> story JSON
-const _state_by_story = new Map(); // storyId -> { nodeId }
+const STORY_CACHE = new Map(); // url -> story json
+const STATE_BY_STORY = new Map(); // storyId -> { nodeId }
+const BOUND_PILLS = new WeakSet(); // prevent rebinding listeners
 
-// Debug: always on for now (prints source + storyId + node)
 const LOG_PREFIX = "[story-runtime]";
-
-function cache_mode() {
-  const params = new URLSearchParams(location.search);
-  return params.has("nocache") ? "no-store" : "default";
-}
 
 function is_story_screen(screen) {
   return typeof screen === "string" && screen.startsWith("story_");
@@ -58,40 +63,38 @@ function ensure_runtime_css() {
   const style = document.createElement("style");
   style.id = "vc_story_runtime_css";
   style.textContent = `
-    /* Story runtime overlay lives inside the active story screen */
+    /* Runtime layer sits above art but below hitboxes if your hitbox layer is higher. */
     .story-runtime-layer {
       position: absolute;
       inset: 0;
-      z-index: 50;
-      pointer-events: none; /* enable only on our buttons/scroll area */
+      z-index: 40;
+      pointer-events: none; /* runtime enables pointer events only on interactive children */
     }
 
-    /* Scroll container (only this scrolls) */
+    /* Lock page scroll (only narrative scrolls) */
+    body.vc-story-scrolllock {
+      overflow: hidden !important;
+      height: 100% !important;
+      overscroll-behavior: none;
+      touch-action: manipulation;
+    }
+
+    /* Narrative scroller (you can tune these values later) */
     .vc-story-scroll {
       position: absolute;
       left: 6%;
-      top: 18%;
+      top: 23%;
       width: 68%;
-      height: 46%;
+      height: 44%;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
       pointer-events: auto;
 
       /* readability */
-      background: rgba(0,0,0,0.35);
+      background: rgba(0,0,0,0.30);
       border-radius: 14px;
       padding: 14px 14px 18px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-    }
-
-    /* Text formatting */
-    .vc-story-title {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-weight: 800;
-      font-size: 18px;
-      margin: 0 0 10px 0;
-      color: #fff;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
     }
 
     .vc-story-body {
@@ -101,129 +104,25 @@ function ensure_runtime_css() {
       color: #fff;
       text-shadow: 0 2px 6px rgba(0,0,0,0.65);
     }
-
     .vc-story-body p { margin: 0 0 12px 0; }
     .vc-story-body strong { font-weight: 800; }
 
-    /* Choice buttons */
-    .vc-choice-btn {
-      position: absolute;
-      left: 4.36%;
-      width: 71.8%;
-      height: 4.7%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      pointer-events: auto;
-
-      border: 0;
-      border-radius: 14px;
-
-      /* accessible contrast */
-      color: #000;
-      background: rgba(255,255,255,0.55);
-      box-shadow: 0 8px 22px rgba(0,0,0,0.45);
-      text-shadow: none;
-
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-weight: 800;
-      font-size: 16px;
-      letter-spacing: 0.2px;
-
-      padding: 0 10px;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .vc-choice-btn .vc-choice-label {
-      /* black text with subtle scrim behind it */
-      color: #000;
-      background: rgba(220,220,220,0.75);
-      padding: 3px 10px;
+    /* Optional: if your pills are plain elements, this improves readability without changing layout. */
+    .vc-choice-readable {
+      color: #000 !important;
+      background: rgba(220,220,220,0.72) !important;
       border-radius: 10px;
+      padding: 3px 10px;
+      display: inline-block;
       max-width: 95%;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-
-    .vc-choice-btn[disabled] {
-      opacity: 0.55;
-      filter: grayscale(0.3);
-    }
-
-    /* Default calibrated tops (your current numbers) */
-    #vc_choice0 { top: 70.72%; }
-    #vc_choice1 { top: 78.14%; }
-    #vc_choice2 { top: 84.70%; }
-    #vc_choice3 { top: 91.70%; }
-
-    /* Prevent whole-page scroll while story runtime is active */
-    body.vc-story-active {
-      overflow: hidden !important;
-      height: 100% !important;
-      overscroll-behavior: none;
-      touch-action: manipulation;
-    }
   `;
   document.head.appendChild(style);
 }
 
-async function safe_fetch_json(url) {
-  if (!url) return null;
-
-  if (_story_cache.has(url)) return _story_cache.get(url);
-
-  try {
-    const res = await fetch(url, { cache: cache_mode() });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    _story_cache.set(url, data);
-    return data;
-  } catch (e) {
-    console.warn(`${LOG_PREFIX} failed to load json`, url, e);
-    return null;
-  }
-}
-
-// Legacy fallback mapping (same idea as launcher)
-const STORY_SOURCES_FALLBACK = {
-  // Starter
-  world_of_lorecraft: "./content/starter/packs/stories/world_of_lorecraft.json",
-
-  // Founders
-  backrooms: "./content/founders/packs/stories/backrooms.json",
-  timecop: "./content/founders/packs/stories/timecop.json",
-  wastelands: "./content/founders/packs/stories/wastelands.json",
-  code_blue: "./content/founders/packs/stories/code_blue.json",
-  crimson_seagull: "./content/founders/packs/stories/crimson_seagull.json",
-  oregon_trail: "./content/founders/packs/stories/oregon_trail.json",
-  relic_of_cylara: "./content/founders/packs/stories/relic_of_cylara.json",
-  tale_of_icarus: "./content/founders/packs/stories/tale_of_icarus.json",
-  cosmos: "./content/founders/packs/stories/cosmos.json",
-  king_solomon: "./content/founders/packs/stories/king_solomon.json",
-  dead_drop_protocol: "./content/founders/packs/stories/dead_drop_protocol.json"
-};
-
-async function resolve_story_json_url(story_id) {
-  const resolved = await resolve_story(story_id);
-  if (resolved?.storyJsonUrl) {
-    console.log(`${LOG_PREFIX} source=CATALOG`, story_id, resolved.storyJsonUrl);
-    return resolved.storyJsonUrl;
-  }
-  const legacy = STORY_SOURCES_FALLBACK[story_id] || "";
-  if (legacy) console.log(`${LOG_PREFIX} source=FALLBACK`, story_id, legacy);
-  else console.log(`${LOG_PREFIX} source=MISSING`, story_id);
-  return legacy || null;
-}
-
-// ---------- Formatting (simple + safe) ----------
-// Supported:
-// - First line like: "# Title" becomes title
-// - Blank lines split paragraphs
-// - **bold** inside paragraphs
 function escape_html(s) {
   return String(s || "")
     .replaceAll("&", "&amp;")
@@ -234,37 +133,157 @@ function escape_html(s) {
 }
 
 function format_story_text(raw) {
+  // Simple, safe formatting:
+  // - Paragraphs separated by blank lines
+  // - **bold** supported
+  // - Single newlines preserved as <br/>
   const text = String(raw || "");
-  const lines = text.split("\n");
+  const paras = text
+    .trim()
+    .split(/\n\s*\n/g)
+    .map((p) => p.trim())
+    .filter(Boolean);
 
-  let title = "";
-  let startIndex = 0;
+  const html = paras
+    .map((p) => {
+      let safe = escape_html(p);
+      safe = safe.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+      safe = safe.replace(/\n/g, "<br/>");
+      return `<p>${safe}</p>`;
+    })
+    .join("");
 
-  if (lines[0]?.startsWith("# ")) {
-    title = lines[0].slice(2).trim();
-    startIndex = 1;
+  return html;
+}
+
+async function safe_fetch_json(url) {
+  if (!url) return null;
+  if (STORY_CACHE.has(url)) return STORY_CACHE.get(url);
+
+  try {
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    STORY_CACHE.set(url, data);
+    return data;
+  } catch (e) {
+    console.warn(`${LOG_PREFIX} failed to load story json`, url, e);
+    return null;
+  }
+}
+
+async function resolve_story_json_url(story_id) {
+  // Catalog-first resolver
+  try {
+    const resolved = await resolve_story(story_id);
+    if (resolved && resolved.storyJsonUrl) return resolved.storyJsonUrl;
+  } catch (e) {
+    console.warn(`${LOG_PREFIX} catalog resolve failed`, story_id, e);
+  }
+  return null;
+}
+
+function find_choice_pills(screen_el) {
+  // Canon IDs for UI shell pills:
+  const ids = ["choice0", "choice1", "choice2", "choice3"];
+  const pills = ids
+    .map((id) => screen_el.querySelector(`#${id}`))
+    .filter(Boolean);
+
+  return pills;
+}
+
+function set_pill_label(pill, label) {
+  // If pill has an inner label span, prefer it; otherwise set pill text.
+  const labelEl =
+    pill.querySelector?.(".vc-choice-label") ||
+    pill.querySelector?.(".choice-label") ||
+    pill.querySelector?.("[data-choice-label]") ||
+    null;
+
+  if (labelEl) {
+    labelEl.textContent = label;
+    // readability scrim on the label element only
+    labelEl.classList.add("vc-choice-readable");
+  } else {
+    pill.textContent = label;
+    // if this is a plain element, wrap readability via class
+    pill.classList.add("vc-choice-readable");
+  }
+}
+
+function set_pill_disabled(pill, disabled) {
+  // Works for <button>, and also for other elements (we set aria/state).
+  try {
+    pill.disabled = !!disabled;
+  } catch (_) {}
+
+  pill.setAttribute("aria-disabled", disabled ? "true" : "false");
+
+  if (disabled) {
+    pill.dataset.vcTo = "";
+    pill.style.pointerEvents = "auto"; // still allow taps but do nothing (consistent feel)
+    pill.style.opacity = "0.65";
+  } else {
+    pill.style.pointerEvents = "auto";
+    pill.style.opacity = "1";
+  }
+}
+
+function bind_pill_click(pill, get_to) {
+  if (BOUND_PILLS.has(pill)) return;
+
+  // make non-buttons accessible/clickable
+  if (pill.tagName !== "BUTTON") {
+    pill.setAttribute("role", "button");
+    pill.setAttribute("tabindex", "0");
   }
 
-  const body = lines.slice(startIndex).join("\n").trim();
+  const handler = (e) => {
+    // Prevent UI shell hitboxes/overlays from swallowing taps
+    e.preventDefault();
+    e.stopPropagation();
 
-  // paragraph split on blank lines
-  const paras = body.split(/\n\s*\n/g).map(p => p.trim()).filter(Boolean);
+    const to = String(get_to() || "").trim();
+    if (!to) return;
+    pill.dispatchEvent(
+      new CustomEvent("vc:storychoice", { bubbles: true, detail: { to } })
+    );
+  };
 
-  const htmlParas = paras.map(p => {
-    // escape then bold
-    let safe = escape_html(p);
-    safe = safe.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-    // single newlines inside paragraph -> <br>
-    safe = safe.replace(/\n/g, "<br/>");
-    return `<p>${safe}</p>`;
-  });
+  pill.addEventListener("click", handler, true);
+  pill.addEventListener(
+    "pointerup",
+    (e) => {
+      // iOS sometimes behaves better with pointerup capture
+      handler(e);
+    },
+    true
+  );
 
-  return { title, bodyHtml: htmlParas.join("") };
+  // keyboard activation for non-buttons
+  pill.addEventListener(
+    "keydown",
+    (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        handler(e);
+      }
+    },
+    true
+  );
+
+  BOUND_PILLS.add(pill);
+}
+
+function unmount(layer) {
+  if (!layer) return;
+  layer.innerHTML = "";
+  document.body.classList.remove("vc-story-scrolllock");
 }
 
 function normalize_options(options) {
-  const out = [];
   const arr = Array.isArray(options) ? options : [];
+  const out = [];
   for (let i = 0; i < 4; i++) {
     const opt = arr[i];
     if (opt && typeof opt === "object") {
@@ -279,97 +298,82 @@ function normalize_options(options) {
   return out;
 }
 
-// ---------- Runtime Mount/Unmount ----------
-function unmount(layer) {
-  if (!layer) return;
-  layer.innerHTML = "";
-  document.body.classList.remove("vc-story-active");
-}
-
-function render_runtime(layer, story_id, story, node_id) {
+function render(screen_el, layer, story_id, story, node_id) {
   ensure_runtime_css();
-  document.body.classList.add("vc-story-active");
+  document.body.classList.add("vc-story-scrolllock");
 
   const scenes = story?.scenes || {};
-  const node = scenes?.[node_id];
+  const node = scenes?.[node_id] || null;
 
-  const rawText = node?.text || "";
-  const optsRaw = node?.options || [];
+  const text = node?.text || "";
+  const options = normalize_options(node?.options);
 
-  const { title, bodyHtml } = format_story_text(rawText);
-  const options = normalize_options(optsRaw);
-
+  // Render narrative scroll box (runtime owns this)
   layer.innerHTML = "";
 
-  // Scroll box
   const scroll = document.createElement("div");
   scroll.className = "vc-story-scroll";
 
-  const h = document.createElement("div");
-  h.className = "vc-story-title";
-  h.textContent =
-    title ||
-    story?.meta?.title ||
-    story?.title ||
-    story_id;
-
   const body = document.createElement("div");
   body.className = "vc-story-body";
-  body.innerHTML = bodyHtml || "";
+  body.innerHTML = format_story_text(text);
 
-  scroll.appendChild(h);
   scroll.appendChild(body);
   layer.appendChild(scroll);
 
-  // Choice buttons
-  const btns = [];
-  for (let i = 0; i < 4; i++) {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "vc-choice-btn";
-    btn.id = `vc_choice${i}`;
+  // Bind + populate UI shell pills (runtime reuses these)
+  const pills = find_choice_pills(screen_el);
 
-    const span = document.createElement("span");
-    span.className = "vc-choice-label";
-    span.textContent = "Not a choice";
-
-    btn.appendChild(span);
-
-    const opt = options[i];
-    if (opt && opt.to) {
-      span.textContent = opt.label || `Choice ${i + 1}`;
-      btn.disabled = false;
-      btn.dataset.to = opt.to;
-    } else {
-      btn.disabled = true;
-      btn.dataset.to = "";
-    }
-
-    btns.push(btn);
-    layer.appendChild(btn);
+  if (pills.length !== 4) {
+    console.warn(
+      `${LOG_PREFIX} expected 4 pills (#choice0–#choice3) but found ${pills.length}`
+    );
   }
 
-  // Click handling (local; no global leakage)
-  btns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (btn.disabled) return;
+  for (let i = 0; i < 4; i++) {
+    const pill = pills[i];
+    if (!pill) continue;
 
-      const to = String(btn.dataset.to || "").trim();
-      if (!to) return;
+    const opt = options[i];
 
-      const state = _state_by_story.get(story_id) || { nodeId: story.start || "S01" };
-      state.nodeId = to;
-      _state_by_story.set(story_id, state);
+    if (opt && opt.to) {
+      const label = opt.label || `Choice ${i + 1}`;
+      set_pill_label(pill, label);
+      pill.dataset.vcTo = opt.to;
+      set_pill_disabled(pill, false);
+    } else {
+      set_pill_label(pill, "Not a choice");
+      pill.dataset.vcTo = "";
+      set_pill_disabled(pill, true);
+    }
 
-      console.log(`${LOG_PREFIX} ${story_id} -> ${to}`);
-      render_runtime(layer, story_id, story, to);
+    bind_pill_click(pill, () => pill.dataset.vcTo || "");
+  }
 
-      // keep scroll at top on node change
-      try { scroll.scrollTop = 0; } catch {}
-    });
-  });
+  // Choice routing: listen once per screen render (delegated via custom event)
+  // (We attach to screen element so it auto-scopes per story screen.)
+  if (!screen_el.dataset.vcStoryBound) {
+    screen_el.dataset.vcStoryBound = "1";
+
+    screen_el.addEventListener(
+      "vc:storychoice",
+      (e) => {
+        const to = String(e?.detail?.to || "").trim();
+        if (!to) return;
+
+        const state = STATE_BY_STORY.get(story_id) || { nodeId: story.start || "S01" };
+        state.nodeId = to;
+        STATE_BY_STORY.set(story_id, state);
+
+        render(screen_el, layer, story_id, story, to);
+
+        try {
+          scroll.scrollTop = 0;
+        } catch (_) {}
+      },
+      true
+    );
+  }
 
   console.log(`${LOG_PREFIX} rendered`, { story_id, node_id });
 }
@@ -383,37 +387,37 @@ async function mount_story(screen_id) {
 
   const storyUrl = await resolve_story_json_url(story_id);
   if (!storyUrl) {
+    console.warn(`${LOG_PREFIX} no storyJsonUrl for`, story_id);
     unmount(layer);
     return;
   }
 
   const story = await safe_fetch_json(storyUrl);
-  if (!story) {
+  if (!story || !story.scenes) {
+    console.warn(`${LOG_PREFIX} story missing/invalid scenes`, { story_id, storyUrl });
     unmount(layer);
     return;
   }
 
-  // isolate state per storyId
-  let state = _state_by_story.get(story_id);
+  let state = STATE_BY_STORY.get(story_id);
   if (!state) {
     state = { nodeId: story.start || "S01" };
-    _state_by_story.set(story_id, state);
+    STATE_BY_STORY.set(story_id, state);
   }
 
-  render_runtime(layer, story_id, story, state.nodeId);
+  render(screen_el, layer, story_id, story, state.nodeId);
 }
 
 export function init_story_runtime() {
   if (_inited) return;
   _inited = true;
 
-  // Initial CSS injection (once)
   ensure_runtime_css();
 
   window.addEventListener("vc:screenchange", (e) => {
     const screen = e?.detail?.screen;
 
-    // Unmount from any previously active story screen(s)
+    // Unmount runtime layers from inactive story screens
     document.querySelectorAll(".ui-layer.story-runtime-layer").forEach((layer) => {
       const parent = layer.closest(".screen");
       const sid = parent?.dataset?.screen || "";
@@ -424,6 +428,8 @@ export function init_story_runtime() {
 
     if (is_story_screen(screen)) {
       mount_story(screen);
+    } else {
+      document.body.classList.remove("vc-story-scrolllock");
     }
   });
 
