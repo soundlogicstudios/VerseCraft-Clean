@@ -1,18 +1,23 @@
 // src/core/catalog.js
 // VerseCraft Catalog Resolver (Pack-based, derived paths)
+//
 // Loads: ./content/catalog/catalog.json
 // Provides: resolve_story(storyId) -> { storyId, packId, storyJsonUrl, coverUrl }
 //
-// DESIGN GOALS:
-// - Safe on GitHub Pages (case/path sensitive)
-// - Cache-bust friendly (no-store)
-// - Non-fatal: returns null if missing so callers can fallback
+// PERFORMANCE:
+// - Uses normal caching by default (cache: "default")
+// - Debug: add ?nocache=1 to force cache: "no-store"
 
 let _catalog = null;
 let _index = null;
 let _loading = null;
 
 const CATALOG_URL = "./content/catalog/catalog.json";
+
+function cache_mode() {
+  const params = new URLSearchParams(location.search);
+  return params.has("nocache") ? "no-store" : "default";
+}
 
 function norm_join(a, b) {
   const left = String(a || "").trim().replace(/\/+$/, "");
@@ -24,7 +29,7 @@ function norm_join(a, b) {
 
 async function safe_fetch_json(url) {
   try {
-    const res = await fetch(url, { cache: "no-store" });
+    const res = await fetch(url, { cache: cache_mode() });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();
   } catch (e) {
