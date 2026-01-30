@@ -46,6 +46,15 @@ async function boot_once() {
       console.warn("[bootstrap] launcher content not loaded", e);
     }
 
+    // ADDITIVE: Story runtime (catalog-first, fallback-safe)
+    // Mounts on story_* screens only; never touches hitbox navigation.
+    try {
+      const modStory = await import("../core/story_runtime.js");
+      modStory?.init_story_runtime?.();
+    } catch (e) {
+      console.warn("[bootstrap] story runtime not loaded", e);
+    }
+
     await init_screen_manager();
   } catch (e) {
     console.error("[bootstrap] init failed", e);
