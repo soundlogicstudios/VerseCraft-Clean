@@ -509,7 +509,11 @@ export function init_story_runtime() {
     });
 
     if (is_story_screen(screen)) {
-      mount_story(screen);
+      // FIX: iOS/Safari timing — wait for the screen + CSS/layout to settle
+      // before mounting, so pills/options don't require a refresh.
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => mount_story(screen))
+      );
     } else {
       document.body.classList.remove("vc-story-scrolllock");
     }
