@@ -1,0 +1,79 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-01-29T00:00:00Z",
+  "notes": "Canonical catalog for VerseCraft. Source of truth for story locations. Launcher and story runtime may fallback to legacy mappings if a story is missing here.",
+  "packs": [
+    {
+      "packId": "starter",
+      "root": "./content/starter/packs/",
+      "stories": [
+        {
+          "id": "world_of_lorecraft",
+          "storyJson": "stories/world_of_lorecraft.json",
+          "cover": "covers/world-of-lorecraft.webp"
+        }
+      ]
+    },
+    {
+      "packId": "founders",
+      "root": "./content/founders/packs/",
+      "stories": [
+        {
+          "id": "backrooms",
+          "storyJson": "stories/backrooms.json",
+          "cover": "covers/backrooms.webp"
+        },
+        {
+          "id": "timecop",
+          "storyJson": "stories/timecop.json",
+          "cover": "covers/timecop.webp"
+        },
+        {
+          "id": "wastelands",
+          "storyJson": "stories/wastelands.json",
+          "cover": "covers/wastelands.webp"
+        },
+        {
+          "id": "code_blue",
+          "storyJson": "stories/code_blue.json",
+          "cover": "covers/code-blue.webp"
+        },
+        {
+          "id": "crimson_seagull",
+          "storyJson": "stories/crimson_seagull.json",
+          "cover": "covers/crimson-seagull.webp"
+        },
+        {
+          "id": "oregon_trail",
+          "storyJson": "stories/oregon_trail.json",
+          "cover": "covers/oregon-trail.webp"
+        },
+        {
+          "id": "relic_of_cylara",
+          "storyJson": "stories/relic_of_cylara.json",
+          "cover": "covers/relic-of-cylara.webp"
+        },
+        {
+          "id": "tale_of_icarus",
+          "storyJson": "stories/tale_of_icarus.json",
+          "cover": "covers/tale-of-icarus.webp"
+        },
+        {
+          "id": "cosmos",
+          "storyJson": "stories/cosmos.json",
+          "cover": "covers/cosmos.webp"
+        },
+        {
+          "id": "king_solomon",
+          "storyJson": "stories/king_solomon.json",
+          "cover": "covers/king-solomon.webp"
+        },
+        {
+          "id": "dead_drop_protocol",
+          "storyJson": "stories/dead_drop_protocol.json",
+          "cover": "covers/dead-drop-protocol.webp"
+        }
+      ]
+    }
+  ]
+}
