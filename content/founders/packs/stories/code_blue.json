@@ -771,6 +771,105 @@
     { "label": "Change Track", "to": "S44" },
     { "label": "Reverse Course", "to": "S36" }
   ]
+},
+"S40": {
+  "text": "Momentum has a sound.\n\nIt is subtle. A shift in how doors open for you. A pause before someone answers you. The way people wait to see what you will say before they speak.\n\nYou feel it now.\n\nYou are no longer reacting. You are shaping.\n\nRequests escalate. Nothing illegal. Nothing explicit. Just situations where your judgment quietly tips outcomes. A schedule adjusted. A note delayed. A conversation redirected.\n\nYou tell yourself you are still helping patients. That this is how the system actually works.\n\nYou might even be right.\n\nBut you also feel the pressure building. The sense that if you stop pushing, something will snap back.\n\n----------------\nCHOICES\n1) PUSH HARDER - You lean fully into influence and accept that power always collects interest.\n2) SELECTIVE POWER - You choose only the moves that protect patients and yourself.\n3) BRING SOMEONE CLOSE - You involve a trusted person to share the weight.\n4) PULL THE BRAKE - You deliberately disrupt the momentum before it runs away.",
+  "options": [
+    { "label": "Push Harder", "to": "S45" },
+    { "label": "Selective Power", "to": "S41" },
+    { "label": "Bring Close", "to": "S38" },
+    { "label": "Pull Brake", "to": "S39" }
+  ]
+},
+
+"S41": {
+  "text": "You refine your approach.\n\nNot every door needs to be opened. Not every favor needs to be taken.\n\nYou start saying no in ways that still sound like yes. You redirect instead of refusing. You let people save face while quietly protecting your own position.\n\nIt works.\n\nYour reputation stabilizes. You become reliable without being predictable.\n\nThe resident trusts you more. The nurse stops watching for traps and starts watching for intent.\n\nYour rival notices the balance. He cannot decide whether to respect it or resent it.\n\nThis path is sustainable.\n\nIt is also exhausting.\n\n----------------\nCHOICES\n1) MAINTAIN BALANCE - You keep walking the line and accept the constant vigilance.\n2) DEEPEN ALLIANCE - You solidify one key relationship and let others fade.\n3) TAKE A STAND - You make a visible ethical choice that clarifies who you are.\n4) CASH OUT - You use your position to secure something tangible now.",
+  "options": [
+    { "label": "Maintain", "to": "S46" },
+    { "label": "Deepen Alliance", "to": "S47" },
+    { "label": "Take A Stand", "to": "S42" },
+    { "label": "Cash Out", "to": "S48" }
+  ]
+},
+
+"S42": {
+  "text": "You choose clarity.\n\nA situation arises that demands a decision in front of witnesses. No back rooms. No quiet adjustments.\n\nYou speak.\n\nYou choose the clean option. The one that cannot be misread.\n\nThe room reacts immediately. Some relief. Some frustration. A few unreadable expressions.\n\nThe resident nods once.\n\nThe nurse exhales.\n\nSomeone else leaves the room without looking at you.\n\nYou feel lighter.\n\nYou also feel exposed.\n\n----------------\nCHOICES\n1) ACCEPT FALLOUT - You let reactions settle without defending yourself.\n2) EXPLAIN MOTIVE - You clarify your reasoning to preserve relationships.\n3) DOUBLE DOWN - You reinforce the stance and make it unmistakable.\n4) STEP AWAY - You remove yourself before emotions escalate.",
+  "options": [
+    { "label": "Accept Fallout", "to": "S46" },
+    { "label": "Explain Motive", "to": "S47" },
+    { "label": "Double Down", "to": "S45" },
+    { "label": "Step Away", "to": "S39" }
+  ]
+},
+
+"S43": {
+  "text": "You tell the truth.\n\nAll of it.\n\nNot dramatically. Not apologetically.\n\nYou lay out the choices you made and why. You name the risks. You admit where you were tempted.\n\nThe silence afterward is heavy.\n\nWhen they finally speak, it is measured.\n\nThey do not condemn you.\n\nThey do not absolve you either.\n\nThey tell you something important: the hospital forgives results more easily than intentions.\n\nThat knowledge changes everything.\n\n----------------\nCHOICES\n1) ALIGN STRATEGIES - You plan your next moves together.\n2) KEEP SECRETS - You thank them and compartmentalize from here on.\n3) SEEK PROTECTION - You ask for cover if things go wrong.\n4) RECONSIDER PATH - You rethink whether this road is worth it.",
+  "options": [
+    { "label": "Align", "to": "S41" },
+    { "label": "Keep Secrets", "to": "S36" },
+    { "label": "Seek Protection", "to": "S48" },
+    { "label": "Reconsider", "to": "S39" }
+  ]
+},
+
+"S44": {
+  "text": "You look outward.\n\nFor the first time, you imagine a version of yourself that is not defined by hospital politics.\n\nTeaching. Research. Community work. Something quieter.\n\nThe idea is calming.\n\nIt is also dangerous.\n\nOnce you imagine a way out, it becomes harder to justify compromises made to stay.\n\n----------------\nCHOICES\n1) EXPLORE OPTIONS - You quietly investigate alternative paths.\n2) STAY COMMITTED - You reject distraction and recommit fully.\n3) TALK IT THROUGH - You discuss the thought with someone you trust.\n4) IGNORE IT - You bury the idea and move on.",
+  "options": [
+    { "label": "Explore", "to": "S49" },
+    { "label": "Stay Committed", "to": "S45" },
+    { "label": "Talk It Through", "to": "S38" },
+    { "label": "Ignore It", "to": "S41" }
+  ]
+},
+
+"S45": {
+  "text": "You choose ambition.\n\nNot recklessly. Not blindly.\n\nBut without apology.\n\nYou accept that advancement requires friction and that some people will always get burned.\n\nYou start being decisive in ways that leave marks.\n\nYour name rises.\n\nSo do the whispers.\n\n----------------\nCHOICES\n1) EMBRACE REPUTATION - You let the whispers become legend.\n2) MANAGE DAMAGE - You actively contain fallout.\n3) PICK A SIDE - You align openly with power.\n4) HIDE NOTHING - You act transparently and dare anyone to challenge you.",
+  "options": [
+    { "label": "Embrace", "to": "S50" },
+    { "label": "Manage", "to": "S46" },
+    { "label": "Pick Side", "to": "S48" },
+    { "label": "Hide Nothing", "to": "S42" }
+  ]
+},
+
+"S46": {
+  "text": "Stability returns.\n\nNot excitement. Not triumph.\n\nBalance.\n\nYour days become predictable. Your nights quieter.\n\nYou are trusted. You are respected.\n\nYou are also watched.\n\n----------------\nCHOICES\n1) HOLD COURSE - You stay steady and let time work.\n2) SEEK CHANGE - You look for a deliberate shift.\n3) CONNECT PERSONALLY - You deepen a personal relationship.\n4) WAIT - You do nothing and observe.",
+  "options": [
+    { "label": "Hold Course", "to": "S51" },
+    { "label": "Seek Change", "to": "S44" },
+    { "label": "Connect", "to": "S47" },
+    { "label": "Wait", "to": "S39" }
+  ]
+},
+
+"S47": {
+  "text": "You invest in one person.\n\nNot as leverage.\n\nAs choice.\n\nTime spent becomes intentional. Conversations deepen. Boundaries blur.\n\nIt feels grounding.\n\nIt also creates vulnerability.\n\n----------------\nCHOICES\n1) COMMIT - You let it grow openly.\n2) KEEP IT QUIET - You protect it from scrutiny.\n3) SET BOUNDARIES - You define limits now.\n4) STEP BACK - You decide it is too risky.",
+  "options": [
+    { "label": "Commit", "to": "S52" },
+    { "label": "Keep Quiet", "to": "S46" },
+    { "label": "Set Boundaries", "to": "S42" },
+    { "label": "Step Back", "to": "S39" }
+  ]
+},
+
+"S48": {
+  "text": "You trade.\n\nNot crudely.\n\nBut clearly.\n\nYou secure something concrete: protection, opportunity, advancement.\n\nThe cost is invisible for now.\n\nIt will not stay that way.\n\n----------------\nCHOICES\n1) CONSOLIDATE - You lock in gains and prepare for backlash.\n2) EXPAND - You push for more while you can.\n3) HIDE THE TRADE - You bury evidence and limit exposure.\n4) REGRET IT - You immediately question the decision.",
+  "options": [
+    { "label": "Consolidate", "to": "S46" },
+    { "label": "Expand", "to": "S45" },
+    { "label": "Hide It", "to": "S36" },
+    { "label": "Regret", "to": "S39" }
+  ]
+},
+
+"S49": {
+  "text": "You research quietly.\n\nOpportunities exist.\n\nThey just require you to want them.\n\nThe question is whether you are running toward something or away from this.\n\n----------------\nCHOICES\n1) PURSUE EXIT - You seriously prepare to leave this track.\n2) KEEP OPTIONS OPEN - You stay without committing either way.\n3) CONFIDE - You tell someone what you are considering.\n4) ABANDON IDEA - You decide this was fear talking.",
+  "options": [
+    { "label": "Pursue Exit", "to": "S53" },
+    { "label": "Keep Open", "to": "S41" },
+    { "label": "Confide", "to": "S38" },
+    { "label": "Abandon", "to": "S45" }
+  ]
 }
   }
 }
