@@ -305,46 +305,6 @@
         { "label": "Delay Action", "to": "S31" },
         { "label": "Back Out", "to": "S29" }
       ]
-    },
-   ,
-"S31": {
-  "text": "You step away from the moment before it can harden into something permanent.\n\nThe hospital does not protest. It rarely does. It simply absorbs decisions and remembers them.\n\nAs you move down the hallway, you catch fragments of conversations. Someone is being paged. Someone is being warned. Someone is laughing too loudly for how tired they look.\n\nYou realize that tonight did not hinge on one choice.\n\nIt hinged on how visible you made yourself while making it.\n\nYou feel eyes on you that you cannot locate.\n\nNot judgment.\n\nAssessment.\n\n----------------\nCHOICES\n1) SEEK DISTRACTION - You find something else to focus on and let the tension dissipate.\n2) CHECK IN - You look for someone familiar and ground yourself.\n3) HEAD HOME - You leave before the night writes more into you.\n4) STAY ALERT - You remain present and watch what unfolds.",
-  "options": [
-    { "label": "Seek Distraction", "to": "S32" },
-    { "label": "Check In", "to": "S33" },
-    { "label": "Head Home", "to": "S34" },
-    { "label": "Stay Alert", "to": "S32" }
-  ]
-},
-
-"S32": {
-  "text": "You keep moving.\n\nNot aimless. Just uncommitted.\n\nIn a place like this, that is a choice in itself.\n\nYou pass through spaces meant for rest that never quite allow it. Chairs angled wrong. Coffee burned hours ago. A television muttering to no one.\n\nYou overhear a name you recognize.\n\nThen another.\n\nYou start to see how stories form here. Not from facts. From proximity.\n\nSomeone will connect tonight to tomorrow.\n\nYou decide whether that someone is you.\n\n----------------\nCHOICES\n1) INSERT YOURSELF - You step into the conversation and make yourself known.\n2) LISTEN ONLY - You stay silent and learn.\n3) MOVE ON - You choose not to be part of this story.\n4) MESSAGE SOMEONE - You reach out before someone reaches you.",
-  "options": [
-    { "label": "Insert Yourself", "to": "S35" },
-    { "label": "Listen Only", "to": "S33" },
-    { "label": "Move On", "to": "S34" },
-    { "label": "Message Someone", "to": "S33" }
-  ]
-},
-
-"S33": {
-  "text": "You find someone you trust enough to stand near.\n\nThe conversation is normal on the surface. Complaints. Jokes. Fatigue worn like armor.\n\nUnderneath it, you sense calculation.\n\nThey ask how your shift went.\n\nNot what you did.\n\nHow it went.\n\nYou realize that your answer will travel.\n\n----------------\nCHOICES\n1) BE HONEST - You speak plainly and let the truth land where it may.\n2) BE STRATEGIC - You shape the story before it spreads.\n3) DEFLECT - You keep it vague and noncommittal.\n4) TURN QUESTION - You redirect and learn instead.",
-  "options": [
-    { "label": "Be Honest", "to": "S35" },
-    { "label": "Be Strategic", "to": "S35" },
-    { "label": "Deflect", "to": "S34" },
-    { "label": "Turn Question", "to": "S32" }
-  ]
-},
-
-"S34": {
-  "text": "You leave.\n\nNot dramatically. Not hurried.\n\nJust enough to make it clear you chose distance.\n\nOutside, the night feels wider than the hospital ever did. The city hums without urgency. No alarms. No eyes measuring your worth.\n\nYour phone stays quiet longer than you expect.\n\nThen it buzzes.\n\nOne message.\n\nNo context.\n\nJust enough to pull you back if you let it.\n\n----------------\nCHOICES\n1) RESPOND - You open the door again.\n2) IGNORE - You keep the night to yourself.\n3) SAVE IT - You do not answer now, but you do not delete it.\n4) TURN BACK - You change your mind and return.",
-  "options": [
-    { "label": "Respond", "to": "S35" },
-    { "label": "Ignore", "to": "S36" },
-    { "label": "Save It", "to": "S36" },
-    { "label": "Turn Back", "to": "S31" }
-  ]
-} 
+    } 
   }
-}
+
