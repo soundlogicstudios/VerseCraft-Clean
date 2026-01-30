@@ -1,4 +1,4 @@
-// core/screen-manager.js
+// src/core/screen-manager.js
 // phase 1: minimal modular screen manager (explicit registry path)
 
 let registry = null;
@@ -27,9 +27,14 @@ function is_story_screen(screen_id) {
   return typeof screen_id === "string" && screen_id.startsWith("story_");
 }
 
+function cache_mode() {
+  const params = new URLSearchParams(location.search);
+  return params.has("nocache") ? "no-store" : "default";
+}
+
 async function fetch_json(path) {
   const url = new URL(path, window.location.href).toString();
-  const res = await fetch(url, { cache: "no-store" });
+  const res = await fetch(url, { cache: cache_mode() });
   if (!res.ok) {
     throw new Error(`[screen-manager] failed to load ${path} -> ${res.status} (${url})`);
   }
@@ -180,12 +185,10 @@ export function get_current_screen() {
   return current_screen;
 }
 
-// ADDITIVE: expose last library screen for verification/debug if needed
 export function get_last_library_screen() {
   return last_library_screen;
 }
 
-// ADDITIVE: expose last story screen for verification/debug if needed
 export function get_last_story_screen() {
   return last_story_screen;
 }
