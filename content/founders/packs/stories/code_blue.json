@@ -723,6 +723,45 @@
           "to": "S31"
         }
       ]
-    }
+    },
+    "S36": {
+  "text": "You decide not to pretend this was an accident.\n\nIf you are on the map now, then you may as well read it.\n\nYou stop minimizing what happened. You stop treating the favor like a fluke. You pay attention to who suddenly makes time for you and who no longer does. You notice how certain requests come your way quietly, always framed as optional, always paired with an expectation.\n\nYou do not chase them.\n\nYou let them come to you.\n\nIt works.\n\nYour name circulates. Not loudly. Not formally. But enough. You get looped into conversations you used to overhear from the hall. You are asked opinions instead of given instructions. Nothing illegal. Nothing explicit. Just influence.\n\nThe resident starts trusting you with cases that matter. The nurse watches you carefully now, like she is deciding whether you are dangerous or useful or both.\n\nYour rival notices the shift. He does not comment. That makes it worse.\n\nThis path is efficient.\n\nIt is also slippery.\n\nEvery time you say yes, it gets easier to say it again.\n\n----------------\nCHOICES\n1) DOUBLE DOWN - You continue leveraging the momentum and accept bigger asks. This accelerates status but compounds risk and moral erosion.\n2) CONTROL DAMAGE - You slow the pace and start choosing only favors that cannot burn you later. You keep power while limiting exposure.\n3) LOOP SOMEONE IN - You quietly bring one person into your confidence to stabilize the situation. Shared knowledge can protect or destroy you.\n4) STEP BACK - You deliberately reduce visibility before things escalate further. You lose momentum but regain control.",
+  "options": [
+    { "label": "Double Down", "to": "S40" },
+    { "label": "Control Damage", "to": "S41" },
+    { "label": "Loop Someone In", "to": "S38" },
+    { "label": "Step Back", "to": "S39" }
+  ]
+},
+
+"S37": {
+  "text": "You draw the line.\n\nNot dramatically. Not publicly.\n\nYou become precise.\n\nYou stop doing favors that feel vague. You ask questions that make people uncomfortable. You document more carefully. You keep your tone neutral and your actions boring.\n\nSome people respect it immediately.\n\nOthers react like you broke an unspoken agreement.\n\nYou feel the shift in small ways. Fewer side conversations. Fewer casual invitations. A faint cooling in the air when you enter certain rooms.\n\nBut there is something else too.\n\nTrust.\n\nThe kind that does not ask for shortcuts. The kind that comes with heavier responsibility instead of quieter leverage.\n\nThe resident gives you a look one afternoon that says she knows exactly what you are doing. She does not comment.\n\nThe nurse seems relieved. Or disappointed. You cannot tell which.\n\nThis path is slower.\n\nIt is cleaner.\n\n----------------\nCHOICES\n1) HOLD THE LINE - You maintain strict boundaries and let consequences fall where they may. You protect integrity at the cost of influence.\n2) EXPLAIN YOURSELF - You clarify your stance to someone important. You risk misunderstanding but may preserve key relationships.\n3) REASSERT VALUE - You prove your worth through excellence instead of favors. It takes time but builds durable respect.\n4) RECONSIDER - You question whether this rigidity is costing you too much and consider easing up.",
+  "options": [
+    { "label": "Hold Line", "to": "S42" },
+    { "label": "Explain", "to": "S38" },
+    { "label": "Reassert Value", "to": "S41" },
+    { "label": "Reconsider", "to": "S36" }
+  ]
+},
+
+"S38": {
+  "text": "You choose an ally.\n\nNot out of panic. Out of calculation.\n\nYou pick someone you believe understands the difference between confidence and confession. You do not spill everything. You tell just enough to test the ground.\n\nTheir reaction matters more than their words.\n\nThey listen.\n\nThey ask the right questions.\n\nThey do not rush to judge.\n\nYou feel the weight shift off your chest slightly. Shared knowledge changes the geometry of risk. You are no longer the only one holding the shape of the truth.\n\nBut trust is never neutral.\n\nWho you tell defines who you are becoming.\n\nIf this goes wrong, it will not be because you were careless.\n\nIt will be because you chose.\n\n----------------\nCHOICES\n1) FULL DISCLOSURE - You tell them everything and accept the consequences. You gain deep trust or catastrophic exposure.\n2) PARTIAL TRUTH - You keep details vague and protect yourself. You gain limited support and preserve deniability.\n3) ASK ADVICE - You step back and let them guide your next move. You surrender some control for perspective.\n4) PULL BACK - You regret opening up and reduce contact. You contain risk but damage the bond.",
+  "options": [
+    { "label": "Full Disclosure", "to": "S43" },
+    { "label": "Partial Truth", "to": "S41" },
+    { "label": "Ask Advice", "to": "S42" },
+    { "label": "Pull Back", "to": "S39" }
+  ]
+},
+
+"S39": {
+  "text": "You withdraw.\n\nNot abruptly. Not obviously.\n\nYou become harder to reach.\n\nYou stop lingering. You leave on time. You decline invitations with polite excuses that sound reasonable and feel hollow.\n\nAt first, nothing happens.\n\nThen things adjust.\n\nOpportunities stop presenting themselves. Conversations close before you enter them. People assume you are not interested and move on without you.\n\nYou sleep better.\n\nYou also feel smaller.\n\nSafety has a cost, and it is not always visible on paper.\n\nYou are still competent. Still respected.\n\nBut you are no longer shaping anything.\n\n----------------\nCHOICES\n1) STAY WITHDRAWN - You commit to distance and prioritize stability. You avoid risk and accept stagnation.\n2) RE-ENGAGE SLOWLY - You return selectively and test the waters. You risk reopening old doors carefully.\n3) CHANGE TRACK - You look for fulfillment outside hospital politics. You redefine success on your terms.\n4) REVERSE COURSE - You decide withdrawal was a mistake and step back into the current fully.",
+  "options": [
+    { "label": "Stay Withdrawn", "to": "S42" },
+    { "label": "Re-Engage", "to": "S36" },
+    { "label": "Change Track", "to": "S44" },
+    { "label": "Reverse Course", "to": "S36" }
+  ]
+}
   }
 }
