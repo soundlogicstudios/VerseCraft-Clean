@@ -11,11 +11,22 @@ let _booted = false;
 
 const ENABLE_AUDIO = true;
 
+function has_debug_flag() {
+  try {
+    const params = new URLSearchParams(location.search);
+    const v = params.get("debug");
+    return v === "1" || v === "true" || v === "yes";
+  } catch (_) {
+    return false;
+  }
+}
+
 async function boot_once() {
   if (_booted) return;
   _booted = true;
 
   try {
+    // Existing debug UI (your current system) — leave as-is
     init_debug_ui();
     init_input();
 
@@ -28,6 +39,16 @@ async function boot_once() {
         init_audio_manager();
       } catch (e) {
         console.warn("[bootstrap] audio manager not loaded", e);
+      }
+    }
+
+    // HARD-GATED: debug tools ONLY when ?debug=1
+    if (has_debug_flag()) {
+      try {
+        const modDbg = await import("../core/debug_tools.js");
+        modDbg?.init_debug_tools?.();
+      } catch (e) {
+        console.warn("[bootstrap] debug tools not loaded", e);
       }
     }
 
