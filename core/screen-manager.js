@@ -27,6 +27,30 @@ function is_story_screen(screen_id) {
   return typeof screen_id === "string" && screen_id.startsWith("story_");
 }
 
+function has_debug_flag() {
+  try {
+    const params = new URLSearchParams(location.search);
+    const v = params.get("debug");
+    return v === "1" || v === "true" || v === "yes";
+  } catch (_) {
+    return false;
+  }
+}
+
+function dbg_log(msg, extra) {
+  if (!has_debug_flag()) return;
+  try {
+    window.VC_DEBUG?.log?.(msg, extra);
+  } catch (_) {}
+}
+
+function dbg_update(partial) {
+  if (!has_debug_flag()) return;
+  try {
+    window.VC_DEBUG?.update?.(partial);
+  } catch (_) {}
+}
+
 function cache_mode() {
   const params = new URLSearchParams(location.search);
   return params.has("nocache") ? "no-store" : "default";
@@ -71,6 +95,9 @@ function load_css_once(href) {
   document.head.appendChild(link);
 
   loaded_css.add(href);
+
+  dbg_log("load_css_once", { href: link.href });
+  dbg_update({ css_last: link.href });
 }
 
 async function apply_hitboxes(hitbox_path, screen_id) {
@@ -90,6 +117,8 @@ async function apply_hitboxes(hitbox_path, screen_id) {
     return;
   }
 
+  // This is a known “DOM wipe point” for hitboxes only.
+  // If pills vanish, it should NOT be because this touches the wrong container.
   layer.innerHTML = "";
 
   if (!Array.isArray(data.hitboxes)) return;
@@ -113,6 +142,8 @@ async function apply_hitboxes(hitbox_path, screen_id) {
 
     layer.appendChild(btn);
   });
+
+  dbg_log("apply_hitboxes", { screen_id, hitbox_path: normalized, count: data.hitboxes?.length || 0 });
 }
 
 export async function init_screen_manager() {
@@ -122,6 +153,7 @@ export async function init_screen_manager() {
 
   const start = (location.hash || "").replace("#", "") || registry.start_screen;
 
+  dbg_log("init_screen_manager start", { start });
   await go(start);
 }
 
@@ -150,11 +182,15 @@ export async function go(screen_id) {
     return;
   }
 
+  dbg_log("go()", { from: current_screen, to: resolved_id });
+
   hide_all_screens();
   load_css_once(screen_cfg.css);
 
   current_screen = resolved_id;
   show_screen(resolved_id);
+
+  dbg_update({ screen: resolved_id });
 
   // ADDITIVE: record last library page when entering any library screen
   if (LIBRARY_SCREENS.has(resolved_id)) {
@@ -176,9 +212,7 @@ export async function go(screen_id) {
     console.error(`[screen-manager] hitbox error on ${resolved_id}`, err);
   }
 
-  window.dispatchEvent(
-    new CustomEvent("vc:screenchange", { detail: { screen: resolved_id } })
-  );
+  window.dispatchEvent(new CustomEvent("vc:screenchange", { detail: { screen: resolved_id } }));
 }
 
 export function get_current_screen() {
