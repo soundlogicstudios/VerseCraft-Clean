@@ -1,4 +1,4 @@
-// core/story_runtime.js
+// src/core/story_runtime.js
 // VerseCraft Clean — Story Runtime (Catalog-first)
 // FULL FILE REPLACEMENT
 //
@@ -22,15 +22,19 @@
 // - Lock page scroll; only narrative container scrolls (iOS-friendly)
 // - No story title injection into the narrative panel
 // - Cache loaded story JSON to reduce repeated fetch slowness
+//
+// FIX (critical):
+// - Prevent iOS double-fire by binding ONLY ONE pointer event for pills
+//   (removes click + pointerup double dispatch)
 
 import { resolve_story } from "./catalog.js";
 
 let _inited = false;
 
-const STORY_CACHE = new Map();      // url -> normalized story
-const STATE_BY_STORY = new Map();   // storyId -> { nodeId }
-const BOUND_PILLS = new WeakSet();  // prevent rebinding listeners
-const BOUND_SCREENS = new WeakSet();// prevent rebinding screen listener
+const STORY_CACHE = new Map(); // url -> normalized story
+const STATE_BY_STORY = new Map(); // storyId -> { nodeId }
+const BOUND_PILLS = new WeakSet(); // prevent rebinding listeners
+const BOUND_SCREENS = new WeakSet(); // prevent rebinding screen listener
 
 const LOG_PREFIX = "[story-runtime]";
 
@@ -38,8 +42,8 @@ const LOG_PREFIX = "[story-runtime]";
 const DEFAULT_PILL_GEOM = [
   { id: "choice0", left: 4.36, top: 70.72, width: 71.8, height: 4.7 },
   { id: "choice1", left: 4.63, top: 78.14, width: 71.8, height: 4.7 },
-  { id: "choice2", left: 4.37, top: 84.70, width: 71.8, height: 4.7 },
-  { id: "choice3", left: 4.36, top: 91.70, width: 71.8, height: 4.7 }
+  { id: "choice2", left: 4.37, top: 84.7, width: 71.8, height: 4.7 },
+  { id: "choice3", left: 4.36, top: 91.7, width: 71.8, height: 4.7 }
 ];
 
 function has_debug_flag() {
@@ -351,12 +355,14 @@ function bind_pill_click(pill, get_to) {
   const handler = (e) => {
     e.preventDefault();
     e.stopPropagation();
+
     const to = String(get_to() || "").trim();
     if (!to) return;
+
     pill.dispatchEvent(new CustomEvent("vc:storychoice", { bubbles: true, detail: { to } }));
   };
 
-  pill.addEventListener("click", handler, true);
+  // FIX: bind ONLY ONE event to avoid iOS double-fire (click + pointerup)
   pill.addEventListener("pointerup", handler, true);
 
   BOUND_PILLS.add(pill);
@@ -493,7 +499,12 @@ async function mount_story(screen_id) {
   }
 
   dbg_log("mount_story", { screen_id, story_id, node: state.nodeId });
-  dbg_update({ story_id, node_id: state.nodeId, pills: count_pills_for_debug(screen_el), last_event: "mount_story" });
+  dbg_update({
+    story_id,
+    node_id: state.nodeId,
+    pills: count_pills_for_debug(screen_el),
+    last_event: "mount_story"
+  });
 
   render(screen_el, layer, story_id, story, state.nodeId);
 }
