@@ -3,12 +3,13 @@
 // HARD GATE: does NOTHING unless ?debug=1 is present.
 //
 // Usage:
-//   - Enable:  https://.../index.html?debug=1
-//   - Disable: remove debug=1
+//   Enable:  https://.../index.html?debug=1
+//   Disable: remove debug=1
 //
-// Exposes window.VC_DEBUG when enabled:
-//   VC_DEBUG.log("msg")
-//   VC_DEBUG.update({ screen, story_id, node_id, pills, css_last, last_event })
+// Important safety rule:
+// - The HUD MUST NEVER block gameplay UI.
+//   => HUD container uses pointer-events:none
+//   => Only buttons inside HUD use pointer-events:auto
 
 let _enabled = false;
 let _inited = false;
@@ -56,25 +57,23 @@ function push_event(line) {
 }
 
 let hud = null;
+let hud_minimized = false;
 
 function ensure_hud() {
   if (hud) return;
 
   hud = document.createElement("div");
   hud.id = "vc_debug_hud";
+
+  // CRITICAL: never block interaction under HUD
+  // pointer-events:none on container; buttons inside set to auto.
   hud.style.cssText = [
     "position:fixed",
-    "left:0",
-    "right:0",
-    "bottom:0",
-    "max-height:42vh",
-    "overflow:auto",
+    "left:8px",
+    "right:8px",
+    "bottom:8px",
     "z-index:999999",
-    "background:rgba(0,0,0,0.85)",
-    "color:#9f9",
-    "font:12px/1.35 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
-    "padding:8px",
-    "border-top:1px solid rgba(255,255,255,0.18)",
+    "pointer-events:none",
     "display:block"
   ].join(";");
 
@@ -85,26 +84,59 @@ function render() {
   if (!_enabled || !hud) return;
 
   const lines = STATE.events
-    .slice(-10)
-    .map((x) => `<div>${escape_html(x)}</div>`)
+    .slice(-8)
+    .map((x) => `<div style="margin:0 0 2px 0;">${escape_html(x)}</div>`)
     .join("");
 
-  hud.innerHTML = `
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-      <div style="font-weight:800;color:#fff;">VC DEBUG</div>
-      <button id="vcDbgClear" style="padding:4px 8px;border:0;border-radius:8px;background:#234;color:#fff;">Clear</button>
-      <button id="vcDbgHide" style="padding:4px 8px;border:0;border-radius:8px;background:#432;color:#fff;">Hide</button>
-    </div>
+  const header = `
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div style="font-weight:900;color:#fff;">VC DEBUG</div>
+      <div style="opacity:0.85;color:#cfc;">${escape_html(STATE.last_event || "-")}</div>
 
-    <div><b>screen</b>: ${escape_html(STATE.screen || "-")}</div>
-    <div><b>story</b>: ${escape_html(STATE.story_id || "-")} &nbsp; <b>node</b>: ${escape_html(STATE.node_id || "-")}</div>
-    <div><b>pills</b>: ${STATE.pills === null ? "-" : String(STATE.pills)}</div>
-    <div><b>css</b>: ${escape_html(STATE.css_last || "-")}</div>
-    <div><b>last</b>: ${escape_html(STATE.last_event || "-")}</div>
-    <hr style="border:0;border-top:1px solid rgba(255,255,255,0.15);margin:6px 0;" />
-    <div>${lines}</div>
+      <div style="margin-left:auto;display:flex;gap:6px;">
+        <button id="vcDbgMin"
+          style="pointer-events:auto;padding:4px 8px;border:0;border-radius:10px;background:rgba(40,60,90,0.92);color:#fff;">
+          ${hud_minimized ? "Show" : "Min"}
+        </button>
+        <button id="vcDbgClear"
+          style="pointer-events:auto;padding:4px 8px;border:0;border-radius:10px;background:rgba(30,60,40,0.92);color:#fff;">
+          Clear
+        </button>
+      </div>
+    </div>
   `;
 
+  const body_full = `
+    <div style="margin-top:6px;">
+      <div><b>screen</b>: ${escape_html(STATE.screen || "-")}</div>
+      <div><b>story</b>: ${escape_html(STATE.story_id || "-")} &nbsp; <b>node</b>: ${escape_html(STATE.node_id || "-")}</div>
+      <div><b>pills</b>: ${STATE.pills === null ? "-" : String(STATE.pills)}</div>
+      <div style="opacity:0.9;"><b>css</b>: ${escape_html(STATE.css_last || "-")}</div>
+      <hr style="border:0;border-top:1px solid rgba(255,255,255,0.15);margin:6px 0;" />
+      <div style="max-height:22vh;overflow:auto;-webkit-overflow-scrolling:touch;">${lines}</div>
+    </div>
+  `;
+
+  // Visual-only panel: small, translucent, non-obstructive.
+  // (Still cannot block touches due to pointer-events:none on container.)
+  hud.innerHTML = `
+    <div style="
+      background:rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      color:#9f9;
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:14px;
+      padding:8px 10px;
+      font:12px/1.35 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      box-shadow:0 10px 24px rgba(0,0,0,0.35);
+    ">
+      ${header}
+      ${hud_minimized ? "" : body_full}
+    </div>
+  `;
+
+  // Buttons must be clickable
   hud.querySelector("#vcDbgClear")?.addEventListener(
     "click",
     () => {
@@ -116,13 +148,13 @@ function render() {
     { once: true }
   );
 
-  hud.querySelector("#vcDbgHide")?.addEventListener(
+  hud.querySelector("#vcDbgMin")?.addEventListener(
     "click",
     () => {
-      // Hide HUD only (debug still enabled; we keep hooks for continued logging)
-      hud.style.display = "none";
-      push_event("HUD hidden");
-      STATE.last_event = "HUD hidden";
+      hud_minimized = !hud_minimized;
+      push_event(hud_minimized ? "HUD minimized" : "HUD expanded");
+      STATE.last_event = hud_minimized ? "HUD minimized" : "HUD expanded";
+      render();
     },
     { once: true }
   );
@@ -135,7 +167,6 @@ function enable_debug_tools() {
   _enabled = true;
   STATE.enabled = true;
 
-  // Create HUD after DOM is ready
   const ready = () => {
     ensure_hud();
     push_event("debug_tools enabled");
@@ -166,6 +197,7 @@ function enable_debug_tools() {
   } catch (_) {}
 
   // DOM wipe detector (story_* only)
+  // IMPORTANT: still gated by debug flag; never runs otherwise.
   try {
     const ih = Object.getOwnPropertyDescriptor(Element.prototype, "innerHTML");
     if (ih?.set && !window.__VC_DBG_PATCHED_INNERHTML) {
@@ -205,18 +237,7 @@ function enable_debug_tools() {
   window.VC_DEBUG = {
     state: STATE,
     log: debug_log,
-    update: debug_update,
-    showHud() {
-      if (hud) hud.style.display = "block";
-      push_event("HUD shown");
-      STATE.last_event = "HUD shown";
-      render();
-    },
-    hideHud() {
-      if (hud) hud.style.display = "none";
-      push_event("HUD hidden");
-      STATE.last_event = "HUD hidden";
-    }
+    update: debug_update
   };
 }
 
