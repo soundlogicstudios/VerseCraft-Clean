@@ -1,8 +1,22 @@
-// core/launcher_content.js
+// src/core/launcher_content.js
 // Phase 3 — Launcher content injection (blurb + cover/preview image)
-// FINAL: Cover image paths corrected to match repo uploads.
+//
+// UPDATED (Performance + Safety):
+// - Primary source: content/catalog/catalog.json (via core/catalog.js)
+// - Fallback: legacy STORY_SOURCES mapping (prevents breaking live site)
+// - Uses normal caching by default; add ?nocache=1 to force no-store
+// - Memoizes story JSON per storyId to avoid repeat fetches
+
+import { resolve_story } from "./catalog.js";
 
 let _inited = false;
+
+const _story_cache = new Map(); // storyJsonUrl -> story object (session cache)
+
+function cache_mode() {
+  const params = new URLSearchParams(location.search);
+  return params.has("nocache") ? "no-store" : "default";
+}
 
 function is_launcher_screen(screen) {
   return typeof screen === "string" && screen.startsWith("launcher_");
@@ -12,7 +26,79 @@ function story_id_from_launcher(screen) {
   return String(screen || "").replace(/^launcher_/, "");
 }
 
-// VERIFIED paths — covers now exist for all stories
+function get_active_screen_el(screen_id) {
+  return document.querySelector(`.screen.is-active[data-screen="${screen_id}"]`);
+}
+
+function ensure_ui_layer(screen_el) {
+  let layer = screen_el.querySelector(".ui-layer.launcher-content-layer");
+  if (layer) return layer;
+
+  layer = document.createElement("div");
+  layer.className = "ui-layer launcher-content-layer";
+  screen_el.appendChild(layer);
+  return layer;
+}
+
+async function safe_fetch_json(url) {
+  if (!url) return null;
+
+  // in-memory cache first
+  if (_story_cache.has(url)) return _story_cache.get(url);
+
+  try {
+    const res = await fetch(url, { cache: cache_mode() });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    _story_cache.set(url, data);
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+function get_blurb_from_story(story) {
+  return (
+    story?.blurb ||
+    story?.meta?.blurb ||
+    story?.meta?.description ||
+    story?.description ||
+    ""
+  );
+}
+
+function render_launcher_content(screen_id, titleText, blurbText, imgUrl) {
+  const screen_el = get_active_screen_el(screen_id);
+  if (!screen_el) return;
+
+  const layer = ensure_ui_layer(screen_el);
+
+  // Reuse nodes if they exist (avoids image re-decoding churn)
+  let img = layer.querySelector("img.launcher-preview");
+  let blurb = layer.querySelector("div.launcher-blurb");
+
+  if (!img) {
+    img = document.createElement("img");
+    img.className = "launcher-preview";
+    img.alt = titleText || "Story Preview";
+    layer.appendChild(img);
+  }
+
+  if (!blurb) {
+    blurb = document.createElement("div");
+    blurb.className = "launcher-blurb";
+    layer.appendChild(blurb);
+  }
+
+  img.alt = titleText || "Story Preview";
+  if (imgUrl && img.src !== imgUrl) img.src = imgUrl;
+
+  blurb.textContent = blurbText || "";
+}
+
+// ------------------------------------------------------------
+// Legacy fallback mapping (kept for safety / live site)
+// ------------------------------------------------------------
 const STORY_SOURCES = {
   // Starter
   world_of_lorecraft: {
@@ -53,8 +139,6 @@ const STORY_SOURCES = {
     storyJson: "./content/founders/packs/stories/tale_of_icarus.json",
     image: "./content/founders/packs/covers/tale-of-icarus.webp"
   },
-
-  // Newly added covers (FIXED)
   cosmos: {
     storyJson: "./content/founders/packs/stories/cosmos.json",
     image: "./content/founders/packs/covers/cosmos.webp"
@@ -69,62 +153,23 @@ const STORY_SOURCES = {
   }
 };
 
-function get_active_screen_el(screen_id) {
-  return document.querySelector(`.screen.is-active[data-screen="${screen_id}"]`);
-}
-
-function ensure_ui_layer(screen_el) {
-  let layer = screen_el.querySelector(".ui-layer.launcher-content-layer");
-  if (layer) return layer;
-
-  layer = document.createElement("div");
-  layer.className = "ui-layer launcher-content-layer";
-  screen_el.appendChild(layer);
-  return layer;
-}
-
-async function safe_fetch_json(url) {
-  try {
-    const res = await fetch(url, { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return await res.json();
-  } catch {
-    return null;
+async function get_sources_for_story(story_id) {
+  // 1) Catalog-first
+  const resolved = await resolve_story(story_id);
+  if (resolved?.storyJsonUrl) {
+    return {
+      storyJson: resolved.storyJsonUrl,
+      image: resolved.coverUrl || ""
+    };
   }
-}
 
-function get_blurb_from_story(story) {
-  return (
-    story?.blurb ||
-    story?.meta?.blurb ||
-    story?.meta?.description ||
-    story?.description ||
-    ""
-  );
-}
-
-function render_launcher_content(screen_id, titleText, blurbText, imgUrl) {
-  const screen_el = get_active_screen_el(screen_id);
-  if (!screen_el) return;
-
-  const layer = ensure_ui_layer(screen_el);
-  layer.innerHTML = "";
-
-  const img = document.createElement("img");
-  img.className = "launcher-preview";
-  img.alt = titleText || "Story Preview";
-  img.src = imgUrl || "";
-  layer.appendChild(img);
-
-  const blurb = document.createElement("div");
-  blurb.className = "launcher-blurb";
-  blurb.textContent = blurbText || "";
-  layer.appendChild(blurb);
+  // 2) Legacy fallback
+  return STORY_SOURCES[story_id] || null;
 }
 
 async function hydrate_launcher(screen_id) {
   const story_id = story_id_from_launcher(screen_id);
-  const src = STORY_SOURCES[story_id];
+  const src = await get_sources_for_story(story_id);
   if (!src) return;
 
   const story = await safe_fetch_json(src.storyJson);
@@ -154,6 +199,7 @@ export function init_launcher_content() {
     if (is_launcher_screen(screen)) schedule(screen);
   });
 
+  // Keep these, but they can be chatty on iOS; schedule is cheap now.
   window.addEventListener("resize", () => {
     const active = document.querySelector(".screen.is-active");
     const screen = active?.dataset?.screen;
