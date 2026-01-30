@@ -302,7 +302,8 @@ function create_choice_pills_if_missing(screen_el) {
   screen_el.dataset.vcChoicePillsCreated = "1";
 
   DEFAULT_PILL_GEOM.forEach((g) => {
-    if (document.getElementById(g.id)) return;
+    // FIX: scope pill existence to THIS screen, not the whole document
+    if (screen_el.querySelector(`#${g.id}`)) return;
 
     const btn = document.createElement("button");
     btn.type = "button";
