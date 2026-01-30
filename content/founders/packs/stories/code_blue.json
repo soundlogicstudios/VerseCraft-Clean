@@ -6,22 +6,22 @@
     "protagonist": "Dr. Adrian Cole",
     "schema": "versecraft_story_canon_v1",
     "tone": "TV-MA hospital romance / drama",
-    "notes": "ASCII-only. No markdown. Editor-safe."
+    "notes": "Canon layout: long narrative + separator + CHOICES block with pill labels + long descriptions. ASCII-only."
   },
   "start": "S01",
   "scenes": {
     "S01": {
-      "text": "Dr. Adrian Cole pauses just inside the ER doors, badge still stiff against his chest.\n\nThe place is louder than he expected. Not screaming - constant motion. Monitors chirp, stretchers roll, voices overlap like nobody finishes a sentence.\n\nA senior resident cuts through the chaos without breaking stride. An ER nurse catches a falling chart with her foot and does not even look down. Down the hall, another intern laughs too loudly.\n\nNo one stops to welcome you. No one should.\n\nYou are expected to step in.\n\nCHOICES:\nShadow the resident. Help the nurse. Match the intern. Stick to protocol.",
+      "text": "Your first real shift hits you in layers: antiseptic, burnt coffee, sweat under disposable gowns. The ER is not chaos the way movies sell it. It is controlled violence. Alarms chirp in patterns you do not recognize yet. Wheels squeal. Voices overlap. Everyone moves like the building itself is pushing them forward.\n\nDr. Adrian Cole. Intern. The title feels flimsy compared to the weight of the room. You adjust your badge as if tightening it will tighten you.\n\nA senior resident cuts through the bay like a blade. She does not waste words. Orders land and people obey. She clocks you once, the way a predator clocks distance, then keeps moving.\n\nAn ER nurse threads between bodies and equipment without slowing down. She catches a falling chart with her foot and never breaks eye contact with the patient she is calming. When she hands you gloves, her fingers linger just long enough to be intentional. Her expression says: do not embarrass yourself.\n\nDown the hall, another intern laughs too loudly. Too comfortable. Too quick to treat the shift like a stage. He throws a look your way like you are either competition or entertainment.\n\nNo one welcomes you. No one should.\n\nYou have a choice: be seen, be useful, or be safe. None of those are free.\n\n----------------\nCHOICES\n1) SHADOW RESIDENT - Stay tight to the senior resident and learn how power moves in this place. You will earn respect if you keep up, but you will also get blamed if you slow her down.\n2) HELP NURSE - Jump in beside the ER nurse and let her put you to work. You will learn the real rhythm of the room fast, but she will notice every weakness and every excuse.\n3) MATCH INTERN - Keep pace with the other intern and refuse to be outshined on day one. You may gain social footing, but rivalry here turns personal quickly.\n4) STICK TO PROTOCOL - Start with charts, procedures, and safe tasks. You protect your future, but you risk becoming invisible at exactly the wrong moment.",
       "options": [
         { "label": "Shadow Resident", "to": "S02" },
         { "label": "Help Nurse", "to": "S03" },
         { "label": "Match Intern", "to": "S04" },
-        { "label": "Stick To Protocol", "to": "S05" }
+        { "label": "Stick Protocol", "to": "S05" }
       ]
     },
 
     "S02": {
-      "text": "The senior resident does not acknowledge you at first. She hands you a chart mid-stride.\n\nYou skim it while walking. She is fast and efficient.\n\nShe glances back. Not to check your work. To see if you are still there.\n\nYou keeping up?\n\nCHOICES:\nKeep pace. Ask clarity. Take initiative. Stay quiet.",
+      "text": "You fall in behind the senior resident and immediately regret how long your legs feel. She moves like every hallway belongs to her.\n\nShe does not introduce herself. She does not explain. She hands you a chart mid-stride and keeps talking to a respiratory therapist without slowing down.\n\nYou skim while walking. Vitals. History. Allergies. A note from the attending that reads like a warning. The resident glances back once, not at the paper, at you.\n\nYou keeping up?\n\nIt is not unkind. It is a filter.\n\nA patient groans behind the curtain. The resident pushes it aside, steps in, and takes control in three sentences. When she looks at you again, her face is calm but her eyes are sharp.\n\nYou realize something: she does not care if you like her. She cares if you are useful.\n\nAnd still, there is an edge to her attention that is not purely clinical.\n\n----------------\nCHOICES\n1) KEEP PACE - You answer fast, move fast, and accept that you may be wrong for a second as long as you correct fast. It makes you look fearless, and it might get someone hurt.\n2) ASK CLARITY - You slow just enough to confirm your reasoning. You protect the patient and your credibility, but you risk looking soft under pressure.\n3) TAKE INITIATIVE - You propose the next step before she asks. If you are right, you earn her respect. If you are wrong, you earn her memory.\n4) STAY QUIET - You watch and absorb without pushing. You avoid mistakes in public, but you also give up the chance to stand out.",
       "options": [
         { "label": "Keep Pace", "to": "S06" },
         { "label": "Ask Clarity", "to": "S06" },
@@ -31,7 +31,7 @@
     },
 
     "S03": {
-      "text": "The ER nurse sizes you up instantly.\n\nIntern. Gloves. Gauze. Try not to faint.\n\nShe works fast. You notice a charting shortcut. Not dangerous. Not clean.\n\nShe notices you noticing.\n\nCHOICES:\nCover for her. Say something. Let it go. Ask privately.",
+      "text": "You choose the nurse.\n\nShe does not slow down to teach. She teaches by throwing you into the current and seeing whether you drown.\n\nIntern, she says, already moving. Gloves. Gauze. IV kit. If you faint, aim away from the sterile field.\n\nYou do not know if she is joking. The way she says it makes everyone nearby smile like this is a ritual.\n\nA patient starts yelling. The nurse leans in, voice low, and the shouting drops to a ragged whisper. She is good at this. Not just medicine. People.\n\nYou help restrain, clean, steady. Then you notice a charting shortcut on the computer: a time stamp that is not exact, a box checked because it will be checked later. Not dangerous, but not clean.\n\nYour eyes flick to her. Her eyes flick to you.\n\nShe knows you saw it. The question is what you do with that knowledge.\n\n----------------\nCHOICES\n1) COVER FOR HER - You quietly fix the entry later without making it a scene. No one gets hurt, but she learns you will bend rules to protect her, and that has a price.\n2) SAY SOMETHING - You flag it now, in the moment, even if it slows care. You protect the record and your ethics, but you risk her trust and her patience.\n3) LET IT GO - You pretend you did not see it. You keep the peace, but you also teach yourself what you are willing to ignore.\n4) ASK PRIVATELY - You pull her aside away from eyes and ask what happened. You keep her dignity intact, but you still step onto a line that she may push back against.",
       "options": [
         { "label": "Cover For Her", "to": "S06" },
         { "label": "Say Something", "to": "S08" },
@@ -41,7 +41,7 @@
     },
 
     "S04": {
-      "text": "The other intern grins.\n\nFirst shift? Relax.\n\nHe gives a diagnosis. Mostly right.\n\nOthers hear it.\n\nCHOICES:\nCorrect quietly. Let him run. Outperform him. Back him up.",
+      "text": "You fall in alongside the other intern and immediately feel the social physics of the place. He is already orbiting attention.\n\nFirst shift? he says, grinning. Relax. They only eat the nervous ones.\n\nHe talks while walking, like the hospital is a runway. He drops a diagnosis loud enough for two nurses and an attending to hear. It is mostly right. Mostly is not comforting.\n\nYou catch the missing piece. The part that could matter. The part that could make you look smart or make you look like an enemy.\n\nThe attending looks your way, waiting to see who claims the room.\n\nYour rival does not look worried. That worries you.\n\n----------------\nCHOICES\n1) CORRECT QUIETLY - You pull him aside and fix the call without humiliating him. You protect the patient and avoid a public fight, but he may resent you anyway.\n2) LET HIM RUN - You stay out of it and let the system correct him. You keep your hands clean, but you gamble with someone else's outcome.\n3) OUTPERFORM HIM - You step in with the better answer in front of everyone. You gain status fast and make an enemy faster.\n4) BACK HIM UP - You support his call despite doubt. If it goes well, you gain an ally. If it goes wrong, you share the fall.",
       "options": [
         { "label": "Correct Quietly", "to": "S06" },
         { "label": "Let Him Run", "to": "S05" },
@@ -51,7 +51,7 @@
     },
 
     "S05": {
-      "text": "You choose caution.\n\nProtocols. Paperwork.\n\nSafe. Invisible.\n\nCHOICES:\nStep in now. Keep observing. Choose a side. Stay neutral.",
+      "text": "You choose the safe route.\n\nCharts. Protocols. Orders that do not require you to raise your voice.\n\nNo one criticizes you for it. No one praises you either.\n\nFrom the edge, you see how this place really works. Who bends rules. Who enforces them. Who pretends not to notice. You see the resident's gaze track the room like a weapon. You see the nurse hide a smile when someone makes gallows humor about the coffee being stronger than the pain meds.\n\nYou also see the downside: people stop looking for you when things get loud.\n\nSafe becomes invisible.\n\nInvisible becomes replaceable.\n\n----------------\nCHOICES\n1) STEP IN - You choose visibility now, even if you make mistakes in public. It might win respect, or it might paint a target on you.\n2) KEEP OBSERVING - You keep collecting patterns and leverage. Information is power, but waiting too long can turn into cowardice.\n3) CHOOSE A SIDE - You align with someone and accept their enemies with them. It builds loyalty fast and traps you faster.\n4) STAY NEUTRAL - You protect your reputation on paper, but neutrality reads like weakness in a room full of predators.",
       "options": [
         { "label": "Step In", "to": "S06" },
         { "label": "Keep Observing", "to": "S10" },
@@ -61,7 +61,7 @@
     },
 
     "S06": {
-      "text": "The case escalates fast.\n\nYou act.\n\nThe patient stabilizes.\n\nCHOICES:\nDebrief openly. Thank someone. Deflect credit. Say nothing.",
+      "text": "It happens fast.\n\nA patient decompensates. A monitor flips from annoying to screaming. Someone calls for help and suddenly there are too many hands and not enough space.\n\nOrders overlap. Two people talk at once. A nurse swears under her breath. The resident snaps a single command and the noise reshapes around it.\n\nYou move.\n\nNot perfectly. Not elegantly. But decisively.\n\nYou do what you know, and when you do not know, you do not freeze. You ask the right question at the right time. You catch something small before it becomes fatal.\n\nThe patient stabilizes.\n\nAfterward, the break room feels too quiet. Adrenaline lingers in your fingers. Your shirt sticks to your back. Someone laughs, sharp and relieved.\n\nThe resident looks at you like she is recalculating. The nurse looks at you like she is deciding whether to trust you. Your rival looks at you like he just learned your name matters.\n\n----------------\nCHOICES\n1) DEBRIEF OPENLY - You talk the case through with the team. It shows leadership and humility, but it exposes every mistake you made.\n2) THANK SOMEONE - You single out support and build a bond. It is human, and it creates obligation you cannot take back.\n3) DEFLECT CREDIT - You push attention away from yourself. It is safe politics, and it wastes momentum.\n4) SAY NOTHING - You keep your face neutral and let the moment pass. It reads as control to some, and fear to others.",
       "options": [
         { "label": "Debrief Openly", "to": "S07" },
         { "label": "Thank Someone", "to": "S08" },
@@ -71,27 +71,27 @@
     },
 
     "S07": {
-      "text": "The resident closes the door.\n\nDo not do that again. Actually do. Warn me first.\n\nCHOICES:\nAcknowledge trust. Stay professional. Let it linger. Change subject.",
+      "text": "The resident pulls you into a side room and closes the door.\n\nFor a beat, neither of you speaks. The silence is intimate in a way the ER never allows.\n\nDo not do that again, she says.\n\nThen she pauses, eyes on you like she hates that she respects you.\n\nActually... do. Just warn me first.\n\nIt is the closest thing to praise she gives.\n\nHer gaze drops to your mouth for half a second and returns to your eyes like it never happened.\n\nThe air shifts. Professional still, but thinner. A line you both see.\n\n----------------\nCHOICES\n1) EARNED TRUST - You promise competence, not romance. You build something solid, and you keep the risk quiet for now.\n2) STAY CLEAN - You steer away from subtext and keep it strictly professional. You protect both careers, and you may lose the spark.\n3) LET IT LINGER - You do not break the tension. You let the moment breathe, inviting danger without saying a word.\n4) CHANGE TOPIC - You crack a dry joke and move on. You keep control, and you may miss what she was offering.",
       "options": [
-        { "label": "Acknowledge Trust", "to": "S10" },
-        { "label": "Stay Professional", "to": "S10" },
+        { "label": "Earned Trust", "to": "S10" },
+        { "label": "Stay Clean", "to": "S10" },
         { "label": "Let It Linger", "to": "S11" },
-        { "label": "Change Subject", "to": "S10" }
+        { "label": "Change Topic", "to": "S10" }
       ]
     },
 
     "S08": {
-      "text": "The nurse thanks you quietly.\n\nDo not make a habit of it.\n\nCHOICES:\nPlay it off. Acknowledge risk. Ask for coffee. Set boundary.",
+      "text": "The nurse finds you near the supply room, away from the main flow.\n\nThanks, she says. Quiet. Real.\n\nThen, with a smirk: just do not make a habit of it.\n\nYou are not sure if she means the shortcut you noticed, the way you stepped in, or the fact that you looked for her eyes during the worst moment and found them.\n\nShe leans on the doorframe like she belongs there. Like she belongs in your space.\n\nIf you say the wrong thing, this becomes messy.\n\nIf you say nothing, it becomes a question that hangs.\n\n----------------\nCHOICES\n1) PLAY IT OFF - You joke and keep it light. It preserves the moment and hides how much it hit you.\n2) NAME THE RISK - You admit it could have gone wrong. Honesty in this place is rare and it can deepen trust fast.\n3) ASK FOR COFFEE - You keep it casual: one coffee, one conversation. It is a doorway that can turn into a habit.\n4) SET BOUNDARY - You create distance now. It protects you later, and it may sting her pride immediately.",
       "options": [
         { "label": "Play It Off", "to": "S10" },
-        { "label": "Acknowledge Risk", "to": "S10" },
+        { "label": "Name The Risk", "to": "S10" },
         { "label": "Ask For Coffee", "to": "S11" },
         { "label": "Set Boundary", "to": "S10" }
       ]
     },
 
     "S09": {
-      "text": "Your rival notices.\n\nSo does everyone else.\n\nCHOICES:\nStand by it. Smooth it over. Blame pressure. Escalate.",
+      "text": "Your rival laughs it off in public.\n\nGood save, Doc, he says, too loud, too casual.\n\nHis eyes do not match the smile.\n\nYou feel it: the shift from friendly competition to personal scorekeeping. This hospital runs on reputation as much as it runs on blood.\n\nYou do not know who noticed. You only know they did.\n\nSome people will admire you.\n\nSome will wait for you to slip.\n\n----------------\nCHOICES\n1) STAND BY IT - You do not apologize for being right. You gain backbone in the eyes of some and arrogance in the eyes of others.\n2) SMOOTH IT OVER - You speak privately and cool the temperature. You keep the war cold, and you may look weaker publicly.\n3) BLAME PRESSURE - You claim the moment made you act. It shields you and stains you, because excuses become a pattern.\n4) ESCALATE - You bring it to a superior. That is power and it is poison, and it will follow you.",
       "options": [
         { "label": "Stand By It", "to": "S10" },
         { "label": "Smooth It Over", "to": "S10" },
@@ -101,12 +101,12 @@
     },
 
     "S10": {
-      "text": "Your shift ends.\n\nNothing feels finished.\n\nCHOICES:\nStay late. Leave now. Check messages. Reflect quietly.",
+      "text": "Your shift ends on paper. In your head, it keeps running.\n\nYou wash your hands until your skin tightens. You replay the case, the looks, the words that landed and the words you swallowed.\n\nThis hospital will remember you by the stories other people tell about you.\n\nThe resident will remember whether you are reliable.\n\nThe nurse will remember whether you are loyal.\n\nYour rival will remember whether you are a threat.\n\nAnd you will remember the first time you realized how easy it would be to become someone you did not plan to be.\n\nOutside, the night air feels unreal.\n\nYour phone buzzes once. Maybe it is nothing.\n\nMaybe it is the first hook.\n\n----------------\nCHOICES\n1) STAY LATE - You linger and see what happens after the official shift ends. Late hours breed secrets and invitations.\n2) LEAVE NOW - You go home and reset. It protects your head and costs you whatever happens when you are not watching.\n3) CHECK MESSAGES - You look and respond. Whoever reached out first gets the first chance to pull you closer.\n4) THINK IT THROUGH - You sit with the risk and choose your next move carefully. Careful choices build reputation and can starve desire.",
       "options": [
         { "label": "Stay Late", "to": "S11" },
         { "label": "Leave Now", "to": "S12" },
         { "label": "Check Messages", "to": "S11" },
-        { "label": "Reflect Quietly", "to": "S12" }
+        { "label": "Think It Through", "to": "S12" }
       ]
     }
   }
