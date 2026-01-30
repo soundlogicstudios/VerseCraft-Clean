@@ -108,6 +108,105 @@
         { "label": "Check Messages", "to": "S11" },
         { "label": "Think It Through", "to": "S12" }
       ]
+    },
+        "S11": {
+      "text": "You stay after the shift ends.\n\nThe hospital changes once the day crowd thins. The noise lowers, but the tension does not. Conversations slow down. People say what they actually think.\n\nIn the residents lounge, a male intern flips between channels, half watching a game, half watching the room. He nods when you enter.\n\n\"Hell of a shift,\" he says.\n\nYou talk about the case. Then the fight. Then nothing in particular. The conversation loosens.\n\nEventually, he mentions someone by name. Casual. Offhand. Then with a grin, he adds that they do not do subtle. They like who they like, and they do not pretend otherwise.\n\n\"If they are into you,\" he says, \"you will know.\"\n\nIt is not an offer. It is information.\n\nYou file it away.\n\n---\n\nCHOICES\n1) Express interest - You ask a little more, curious but careful.\n2) Joke it off - You laugh and change the subject.\n3) Ask details - You press for specifics and reputation.\n4) Shut it down - You keep things professional.",
+      "options": [
+        { "label": "Express Interest", "to": "S12" },
+        { "label": "Joke It Off", "to": "S13" },
+        { "label": "Ask Details", "to": "S14" },
+        { "label": "Shut It Down", "to": "S15" }
+      ]
+    },
+
+    "S12": {
+      "text": "You keep your tone light, but you do not hide your curiosity.\n\nThe intern notices. He always does.\n\nHe tells you enough to matter and not enough to be useful. Who flirts. Who does not. Who talks. Who listens.\n\nHe does not warn you. He does not encourage you.\n\n\"Just saying,\" he adds, leaning back. \"Some people do not separate work from the rest of their life.\"\n\nThe room hums with the game again.\n\n---\n\nCHOICES\n1) Change subject - You steer away before it gets personal.\n2) Remember names - You quietly commit the information to memory.\n3) Ask risks - You ask what happened to others.\n4) End night - You call it and head out.",
+      "options": [
+        { "label": "Change Subject", "to": "S16" },
+        { "label": "Remember Names", "to": "S17" },
+        { "label": "Ask Risks", "to": "S18" },
+        { "label": "End Night", "to": "S19" }
+      ]
+    },
+
+    "S13": {
+      "text": "You laugh it off.\n\nIf there is one thing you have learned already, it is that rumors travel faster than test results.\n\nThe intern smirks but lets it go. The conversation drifts back to work, to exhaustion, to gallows humor.\n\nYou leave without making a move.\n\nIt feels safe.\n\n---\n\nCHOICES\n1) Leave hospital - You head out for the night.\n2) Grab food - You stop by the kitchen first.\n3) Stay longer - You linger and listen.\n4) Text someone - You check your phone.",
+      "options": [
+        { "label": "Leave Hospital", "to": "S19" },
+        { "label": "Grab Food", "to": "S20" },
+        { "label": "Stay Longer", "to": "S16" },
+        { "label": "Text Someone", "to": "S17" }
+      ]
+    },
+
+    "S14": {
+      "text": "You ask for details.\n\nThe intern studies you for a moment, deciding how much to say.\n\n\"They get what they want,\" he finally says. \"Sometimes they get burned. Sometimes other people do.\"\n\nThat is not a warning. It is a history lesson.\n\n---\n\nCHOICES\n1) Ask more - You want names and stories.\n2) Thank him - You stop before it goes too far.\n3) Play it cool - You pretend it does not matter.\n4) Change topic - You redirect the conversation.",
+      "options": [
+        { "label": "Ask More", "to": "S18" },
+        { "label": "Thank Him", "to": "S16" },
+        { "label": "Play It Cool", "to": "S17" },
+        { "label": "Change Topic", "to": "S15" }
+      ]
+    },
+
+    "S15": {
+      "text": "You shut it down cleanly.\n\nThe intern respects it. Or at least pretends to.\n\nThe message is clear. You are here to work. Anything else is noise.\n\nIt costs you nothing.\n\nIt gains you nothing.\n\n---\n\nCHOICES\n1) Leave now - You end the night.\n2) Stay focused - You review charts.\n3) Get food - You head to the kitchen.\n4) Text home - You disconnect.",
+      "options": [
+        { "label": "Leave Now", "to": "S19" },
+        { "label": "Stay Focused", "to": "S16" },
+        { "label": "Get Food", "to": "S20" },
+        { "label": "Text Home", "to": "S17" }
+      ]
+    },
+
+    "S16": {
+      "text": "Time passes.\n\nConversations overlap. People come and go. You listen more than you speak.\n\nThis place runs on patterns. On favors. On who owes who.\n\nYou begin to see it.\n\n---\n\nCHOICES\n1) Head out - You leave before fatigue wins.\n2) Kitchen stop - You grab something to eat.\n3) Check phone - Messages pile up.\n4) Stay late - You wait and watch.",
+      "options": [
+        { "label": "Head Out", "to": "S19" },
+        { "label": "Kitchen Stop", "to": "S20" },
+        { "label": "Check Phone", "to": "S17" },
+        { "label": "Stay Late", "to": "S18" }
+      ]
+    },
+
+    "S17": {
+      "text": "Your phone buzzes.\n\nMessages from people already home. From people still here. From people watching.\n\nYou realize something.\n\nEven when you are not present, the hospital still has opinions about you.\n\n---\n\nCHOICES\n1) Respond - You engage.\n2) Ignore - You keep distance.\n3) Leave now - You shut it all off.\n4) Get food - You ground yourself.",
+      "options": [
+        { "label": "Respond", "to": "S18" },
+        { "label": "Ignore", "to": "S19" },
+        { "label": "Leave Now", "to": "S19" },
+        { "label": "Get Food", "to": "S20" }
+      ]
+    },
+
+    "S18": {
+      "text": "The night deepens.\n\nPeople are tired enough to be honest. Or careless.\n\nYou hear things you probably were not meant to.\n\nNone of it feels accidental.\n\n---\n\nCHOICES\n1) Act now - You make a move.\n2) File it away - You remember everything.\n3) Leave quietly - You avoid being seen.\n4) Get food - You break away.",
+      "options": [
+        { "label": "Act Now", "to": "S21" },
+        { "label": "File Away", "to": "S19" },
+        { "label": "Leave Quietly", "to": "S19" },
+        { "label": "Get Food", "to": "S20" }
+      ]
+    },
+
+    "S19": {
+      "text": "You leave the hospital.\n\nThe doors slide shut behind you. The noise fades.\n\nTomorrow will remember what you did today.\n\nWhether you want it to or not.\n\n---\n\nCHOICES\n1) Go home - You reset.\n2) Stay out - You avoid sleep.\n3) Reflect - You think it through.\n4) Check phone - You reconnect.",
+      "options": [
+        { "label": "Go Home", "to": "S22" },
+        { "label": "Stay Out", "to": "S23" },
+        { "label": "Reflect", "to": "S24" },
+        { "label": "Check Phone", "to": "S17" }
+      ]
+    },
+
+    "S20": {
+      "text": "The kitchen is quiet.\n\nNight staff move slower. Speak lower.\n\nSomeone recognizes you and nods.\n\nThen they ask for something.\n\nNot a lot.\n\nJust enough to matter.\n\n---\n\nCHOICES\n1) Agree now - You help without hesitation.\n2) Ask details - You want context first.\n3) Decline politely - You draw a line.\n4) Set terms - You accept with limits.",
+      "options": [
+        { "label": "Agree Now", "to": "S27" },
+        { "label": "Ask Details", "to": "S28" },
+        { "label": "Decline", "to": "S29" },
+        { "label": "Set Terms", "to": "S30" }
+      ]
     }
   }
 }
