@@ -42,6 +42,30 @@ const DEFAULT_PILL_GEOM = [
   { id: "choice3", left: 4.36, top: 91.70, width: 71.8, height: 4.7 }
 ];
 
+function has_debug_flag() {
+  try {
+    const params = new URLSearchParams(location.search);
+    const v = params.get("debug");
+    return v === "1" || v === "true" || v === "yes";
+  } catch (_) {
+    return false;
+  }
+}
+
+function dbg_log(msg, extra) {
+  if (!has_debug_flag()) return;
+  try {
+    window.VC_DEBUG?.log?.(msg, extra);
+  } catch (_) {}
+}
+
+function dbg_update(partial) {
+  if (!has_debug_flag()) return;
+  try {
+    window.VC_DEBUG?.update?.(partial);
+  } catch (_) {}
+}
+
 function is_story_screen(screen) {
   return typeof screen === "string" && screen.startsWith("story_");
 }
@@ -175,13 +199,7 @@ function format_story_text(raw) {
 // -------------------------
 
 function pick_text(node) {
-  return (
-    node?.text ??
-    node?.body ??
-    node?.narrative ??
-    node?.content ??
-    ""
-  );
+  return node?.text ?? node?.body ?? node?.narrative ?? node?.content ?? "";
 }
 
 function normalize_choice(ch) {
@@ -191,22 +209,8 @@ function normalize_choice(ch) {
   }
   if (!ch || typeof ch !== "object") return null;
 
-  const label = String(
-    ch.label ??
-    ch.text ??
-    ch.title ??
-    ch.name ??
-    ""
-  ).trim();
-
-  const to = String(
-    ch.to ??
-    ch.next ??
-    ch.go ??
-    ch.target ??
-    ch.id ??
-    ""
-  ).trim();
+  const label = String(ch.label ?? ch.text ?? ch.title ?? ch.name ?? "").trim();
+  const to = String(ch.to ?? ch.next ?? ch.go ?? ch.target ?? ch.id ?? "").trim();
 
   if (!label && !to) return null;
   return { label: label || "Continue", to };
@@ -214,45 +218,29 @@ function normalize_choice(ch) {
 
 function normalize_node(id, node) {
   const text = pick_text(node);
-
-  const rawChoices =
-    node?.options ??
-    node?.choices ??
-    node?.choice ??
-    node?.links ??
-    [];
-
+  const rawChoices = node?.options ?? node?.choices ?? node?.choice ?? node?.links ?? [];
   const arr = Array.isArray(rawChoices) ? rawChoices : [];
   const options = arr.map(normalize_choice).filter(Boolean);
-
   return { id, text, options };
 }
 
 function normalize_story(raw) {
   if (!raw || typeof raw !== "object") return null;
 
-  const start =
-    String(raw.start ?? raw.entry ?? raw.begin ?? raw.root ?? "S01").trim() || "S01";
+  const start = String(raw.start ?? raw.entry ?? raw.begin ?? raw.root ?? "S01").trim() || "S01";
 
-  // Canon: scenes object
   if (raw.scenes && typeof raw.scenes === "object") {
     const scenes = {};
-    for (const [id, node] of Object.entries(raw.scenes)) {
-      scenes[id] = normalize_node(id, node);
-    }
+    for (const [id, node] of Object.entries(raw.scenes)) scenes[id] = normalize_node(id, node);
     return { ...raw, start, scenes };
   }
 
-  // Legacy: nodes object
   if (raw.nodes && typeof raw.nodes === "object") {
     const scenes = {};
-    for (const [id, node] of Object.entries(raw.nodes)) {
-      scenes[id] = normalize_node(id, node);
-    }
+    for (const [id, node] of Object.entries(raw.nodes)) scenes[id] = normalize_node(id, node);
     return { ...raw, start, scenes };
   }
 
-  // Legacy: sections array
   if (Array.isArray(raw.sections)) {
     const scenes = {};
     for (const sec of raw.sections) {
@@ -306,9 +294,7 @@ function create_choice_pills_if_missing(screen_el) {
   let pills = find_choice_pills(screen_el);
   if (pills.length === 4) return pills;
 
-  // Create pills once per screen
   if (screen_el.dataset.vcChoicePillsCreated === "1") {
-    // try again (maybe DOM moved)
     pills = find_choice_pills(screen_el);
     return pills;
   }
@@ -316,7 +302,6 @@ function create_choice_pills_if_missing(screen_el) {
   screen_el.dataset.vcChoicePillsCreated = "1";
 
   DEFAULT_PILL_GEOM.forEach((g) => {
-    // If someone later adds real pills, do not double-create
     if (document.getElementById(g.id)) return;
 
     const btn = document.createElement("button");
@@ -333,12 +318,11 @@ function create_choice_pills_if_missing(screen_el) {
     btn.dataset.vcTo = "";
     btn.setAttribute("aria-disabled", "true");
 
-    // Append directly to the screen so it layers correctly over the art
     screen_el.appendChild(btn);
   });
 
   pills = find_choice_pills(screen_el);
-  console.log(`${LOG_PREFIX} created fallback pills:`, pills.map(p => p.id));
+  console.log(`${LOG_PREFIX} created fallback pills:`, pills.map((p) => p.id));
   return pills;
 }
 
@@ -347,7 +331,9 @@ function set_pill_label(pill, label) {
 }
 
 function set_pill_disabled(pill, disabled) {
-  try { pill.disabled = !!disabled; } catch (_) {}
+  try {
+    pill.disabled = !!disabled;
+  } catch (_) {}
   pill.setAttribute("aria-disabled", disabled ? "true" : "false");
 
   if (disabled) {
@@ -388,6 +374,14 @@ function normalize_options_for_render(options) {
   return out;
 }
 
+function count_pills_for_debug(screen_el) {
+  try {
+    return find_choice_pills(screen_el).length;
+  } catch (_) {
+    return 0;
+  }
+}
+
 function render(screen_el, layer, story_id, story, node_id) {
   ensure_runtime_css();
   document.body.classList.add("vc-story-scrolllock");
@@ -396,7 +390,6 @@ function render(screen_el, layer, story_id, story, node_id) {
   const text = node?.text || "";
   const options = normalize_options_for_render(node?.options);
 
-  // Narrative box
   layer.innerHTML = "";
   const scroll = document.createElement("div");
   scroll.className = "vc-story-scroll";
@@ -408,7 +401,6 @@ function render(screen_el, layer, story_id, story, node_id) {
   scroll.appendChild(body);
   layer.appendChild(scroll);
 
-  // Pills: reuse or create
   const pills = create_choice_pills_if_missing(screen_el);
 
   for (let i = 0; i < 4; i++) {
@@ -432,23 +424,36 @@ function render(screen_el, layer, story_id, story, node_id) {
     bind_pill_click(pill, () => pill.dataset.vcTo || "");
   }
 
-  // Bind delegated story choice handler once per screen element
   if (!BOUND_SCREENS.has(screen_el)) {
-    screen_el.addEventListener("vc:storychoice", (e) => {
-      const to = String(e?.detail?.to || "").trim();
-      if (!to) return;
+    screen_el.addEventListener(
+      "vc:storychoice",
+      (e) => {
+        const to = String(e?.detail?.to || "").trim();
+        if (!to) return;
 
-      const state = STATE_BY_STORY.get(story_id) || { nodeId: story.start || "S01" };
-      state.nodeId = to;
-      STATE_BY_STORY.set(story_id, state);
+        const state = STATE_BY_STORY.get(story_id) || { nodeId: story.start || "S01" };
+        state.nodeId = to;
+        STATE_BY_STORY.set(story_id, state);
 
-      render(screen_el, layer, story_id, story, to);
+        render(screen_el, layer, story_id, story, to);
 
-      try { scroll.scrollTop = 0; } catch (_) {}
-    }, true);
+        try {
+          scroll.scrollTop = 0;
+        } catch (_) {}
+      },
+      true
+    );
 
     BOUND_SCREENS.add(screen_el);
   }
+
+  dbg_update({
+    story_id,
+    node_id,
+    pills: count_pills_for_debug(screen_el),
+    last_event: "story rendered"
+  });
+  dbg_log("story rendered", { story_id, node_id });
 
   console.log(`${LOG_PREFIX} rendered`, { story_id, node_id });
 }
@@ -480,12 +485,14 @@ async function mount_story(screen_id) {
     STATE_BY_STORY.set(story_id, state);
   }
 
-  // If start node missing, fall back to first scene key
   if (!story.scenes[state.nodeId]) {
     const firstKey = Object.keys(story.scenes)[0];
     state.nodeId = firstKey || (story.start || "S01");
     STATE_BY_STORY.set(story_id, state);
   }
+
+  dbg_log("mount_story", { screen_id, story_id, node: state.nodeId });
+  dbg_update({ story_id, node_id: state.nodeId, pills: count_pills_for_debug(screen_el), last_event: "mount_story" });
 
   render(screen_el, layer, story_id, story, state.nodeId);
 }
@@ -509,15 +516,13 @@ export function init_story_runtime() {
     });
 
     if (is_story_screen(screen)) {
-      // FIX: iOS/Safari timing — wait for the screen + CSS/layout to settle
-      // before mounting, so pills/options don't require a refresh.
-      requestAnimationFrame(() =>
-        requestAnimationFrame(() => mount_story(screen))
-      );
+      // wait for screen + css/layout to settle
+      requestAnimationFrame(() => requestAnimationFrame(() => mount_story(screen)));
     } else {
       document.body.classList.remove("vc-story-scrolllock");
     }
   });
 
+  dbg_log("story_runtime initialized");
   console.log(`${LOG_PREFIX} initialized`);
 }
