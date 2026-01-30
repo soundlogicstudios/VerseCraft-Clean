@@ -5,112 +5,108 @@
     "route": "male",
     "protagonist": "Dr. Adrian Cole",
     "schema": "versecraft_story_canon_v1",
-    "tone": "TV-MA hospital romance / drama",
-    "notes": "Rewrite S01–S10. Slow burn. Behavioral choices. Replay-focused."
+    "tone": "TV-MA hospital romance",
+    "notes": "Male intern route. Romance-first. Reputation & Morality gated."
   },
   "start": "S01",
   "scenes": {
     "S01": {
-      "text": "Dr. Adrian Cole stands just inside the ER doors, badge still stiff against his chest.\n\nThe place is louder than he imagined. Not screaming—constant motion. Monitors chirping, stretchers rolling, voices overlapping like no one ever finishes a sentence.\n\nA senior resident moves through it all without breaking stride, issuing orders that land instantly. An ER nurse catches a falling chart with her foot and doesn’t even look down. Down the hall, another intern laughs too loudly, already at ease.\n\nNo one stops to welcome you. No one should.\n\nYou’re expected to step in.\n\n---\n\n**CHOICES**\n1) **Shadow the resident** — You stick close to the senior resident, watching how she commands the room and hoping you don’t get in her way.\n2) **Help the nurse** — You jump in with the ER nurse, taking whatever task she throws at you, no questions asked.\n3) **Match the intern** — You fall in alongside the other intern, keeping pace so you’re not the weakest link.\n4) **Stick to protocol** — You start with charts and procedures, choosing safety over visibility.",
+      "text": "Your first real shift smells like antiseptic and burnt coffee.\n\nDr. Adrian Cole, MD — the letters feel heavier than they did at graduation. You adjust your badge as the ER hums around you, organized chaos stitched together by habit and caffeine.\n\nA senior resident watches you from across the bay. Calm. Assessing. Dangerous in a way that has nothing to do with scalpels.\n\nA nurse brushes past you, fingers lingering a beat too long as she hands you gloves. Her eyes say she’s already figured you out.\n\nAnd somewhere down the hall, another intern laughs too loudly — confident, charming, already treating this place like a stage.\n\nYou take a breath. This is where reputations start.\n\n---\n\n**CHOICES**\n1) **Follow the resident** — Shadow the senior resident and show you’re serious about medicine.\n2) **Help the nurse** — Jump in with the ER nurse and earn trust the hard way.\n3) **Challenge the intern** — Keep pace with your rival and refuse to be outshined.\n4) **Stay professional** — Focus on protocols, keep distance, protect your future.",
       "options": [
-        { "label": "Shadow Resident", "to": "S02" },
+        { "label": "Follow Resident", "to": "S02" },
         { "label": "Help Nurse", "to": "S03" },
-        { "label": "Match Intern", "to": "S04" },
-        { "label": "Stick To Protocol", "to": "S05" }
+        { "label": "Challenge Intern", "to": "S04" },
+        { "label": "Stay Professional", "to": "S05" }
       ]
     },
 
     "S02": {
-      "text": "The senior resident doesn’t acknowledge you at first. She just hands you a chart mid-stride.\n\nYou skim it while walking. She’s fast. Efficient. Every decision sharp enough to cut.\n\nAt one point she glances back. Not to check your work—just to see if you’re still there.\n\n“You keeping up?” she asks.\n\nIt’s not unkind. It’s a filter.\n\n---\n\n**CHOICES**\n1) **Keep pace** — You don’t slow her down, even if it means guessing once or twice.\n2) **Ask clarification** — You risk looking green to make sure you’re right.\n3) **Take initiative** — You suggest a next step before she asks.\n4) **Stay quiet** — You observe and learn without drawing attention.",
+      "text": "The senior resident doesn’t introduce herself. She just hands you a chart and waits.\n\nYou feel it immediately — the test. Not knowledge. Nerve.\n\nShe moves fast, decisive, unafraid to be wrong as long as she corrects it faster than anyone else. When you keep up, her eyebrow lifts. When you hesitate, she notices.\n\nBetween patients, she leans closer than necessary.\n\n“Don’t slow me down,” she says. It’s not a warning. It’s an invitation.\n\n---\n\n**CHOICES**\n1) **Match her pace** — Push yourself to stay sharp and impress her.\n2) **Ask questions** — Risk looking green to understand her reasoning.\n3) **Flirt carefully** — Test the line between professional and personal.\n4) **Hold back** — Respect hierarchy and keep it clean.",
       "options": [
-        { "label": "Keep Pace", "to": "S06" },
-        { "label": "Ask Clarification", "to": "S06" },
-        { "label": "Take Initiative", "to": "S07" },
-        { "label": "Stay Quiet", "to": "S05" }
+        { "label": "Match Pace", "to": "S06" },
+        { "label": "Ask Questions", "to": "S06" },
+        { "label": "Flirt Carefully", "to": "S07" },
+        { "label": "Hold Back", "to": "S05" }
       ]
     },
 
     "S03": {
-      "text": "The ER nurse sizes you up in half a second.\n\n“Intern,” she says, already moving. “Gloves. Gauze. Try not to faint.”\n\nShe works fast, talking the patient down while doing three things at once. At one point she mutters, “They never teach this part in med school,” and snorts.\n\nYou notice a small charting shortcut—nothing dangerous, but not strictly by the book.\n\nShe notices you noticing.\n\n---\n\n**CHOICES**\n1) **Cover for her** — You quietly fix the charting later instead of pointing it out.\n2) **Say something** — You flag the issue now, even if it slows things down.\n3) **Let it go** — You pretend you didn’t see it.\n4) **Ask about it** — You question her privately, not publicly.",
+      "text": "The ER nurse moves like she owns the room — because she does.\n\nShe shows you where things are without explaining why. You’re expected to learn by watching, by doing, by not screwing up.\n\nA patient screams. She doesn’t flinch. She hands you gauze and meets your eyes.\n\n“You good?” she asks.\n\nIt’s not small talk. It’s a challenge.\n\n---\n\n**CHOICES**\n1) **Prove yourself** — Step up without being asked.\n2) **Ask for help** — Admit limits and work as a team.\n3) **Use charm** — Lighten the moment with confidence.\n4) **Focus quietly** — Let actions speak.",
       "options": [
-        { "label": "Cover For Her", "to": "S06" },
-        { "label": "Say Something", "to": "S08" },
-        { "label": "Let It Go", "to": "S05" },
-        { "label": "Ask Privately", "to": "S06" }
+        { "label": "Prove Yourself", "to": "S06" },
+        { "label": "Ask For Help", "to": "S06" },
+        { "label": "Use Charm", "to": "S08" },
+        { "label": "Focus Quietly", "to": "S05" }
       ]
     },
 
     "S04": {
-      "text": "The other intern grins when he sees you fall into step.\n\n“First shift?” he asks, already answering his own question. “Relax. They eat the nervous ones.”\n\nHe rattles off a diagnosis a little too loudly. It’s mostly right—but not complete.\n\nPeople nearby hear it. Including an attending.\n\n---\n\n**CHOICES**\n1) **Correct him quietly** — You pull him aside before it becomes a problem.\n2) **Let him run** — If he’s wrong, he’ll learn.\n3) **Outperform him** — You jump in with a better answer.\n4) **Back him up** — You support his call, even with doubts.",
+      "text": "Your rival intern spots you immediately.\n\nHe grins like this is a game — and maybe for him, it is. Patients become points. Attending approval becomes currency.\n\nHe drops a diagnosis just loudly enough for others to hear. It’s right. Mostly.\n\nYou could correct him. Or outperform him.\n\n---\n\n**CHOICES**\n1) **One-up him** — Outperform without mercy.\n2) **Correct gently** — Save face, earn respect.\n3) **Let it slide** — Pick your battles.\n4) **Expose mistake** — Make it public.",
       "options": [
-        { "label": "Correct Quietly", "to": "S06" },
-        { "label": "Let Him Run", "to": "S05" },
-        { "label": "Outperform Him", "to": "S09" },
-        { "label": "Back Him Up", "to": "S06" }
+        { "label": "One-Up Him", "to": "S06" },
+        { "label": "Correct Gently", "to": "S06" },
+        { "label": "Let It Slide", "to": "S05" },
+        { "label": "Expose Mistake", "to": "S09" }
       ]
     },
 
     "S05": {
-      "text": "You choose caution.\n\nProtocols. Checklists. Paperwork.\n\nNo one criticizes you for it. No one praises you either.\n\nFrom the sidelines, you notice patterns—who bends rules, who enforces them, who pretends not to see either.\n\nBeing invisible feels safe.\n\nIt also feels temporary.\n\n---\n\n**CHOICES**\n1) **Step in now** — You decide it’s time to be seen.\n2) **Keep observing** — Information is power.\n3) **Align with someone** — You choose a side.\n4) **Stay neutral** — You protect yourself.",
+      "text": "You choose restraint.\n\nCharts. Protocols. Quiet competence.\n\nIt’s safe. Smart. And painfully lonely.\n\nYou notice things others miss — the way the resident watches you when she thinks you’re not looking, the nurse’s disappointment when you don’t step in, the rival intern’s smirk.\n\nBeing professional doesn’t mean being invisible. But it can feel like it.\n\n---\n\n**CHOICES**\n1) **Re-engage** — Step back into the fray.\n2) **Stay distant** — Protect your reputation.\n3) **Confide someone** — Choose one person.\n4) **Observe quietly** — Gather leverage.",
       "options": [
-        { "label": "Step In", "to": "S06" },
-        { "label": "Keep Observing", "to": "S10" },
-        { "label": "Choose A Side", "to": "S06" },
-        { "label": "Stay Neutral", "to": "S10" }
+        { "label": "Re-Engage", "to": "S06" },
+        { "label": "Stay Distant", "to": "S10" },
+        { "label": "Confide Someone", "to": "S07" },
+        { "label": "Observe Quietly", "to": "S10" }
       ]
     },
 
     "S06": {
-      "text": "The case escalates fast.\n\nOrders overlap. Someone swears. A monitor alarm screams until it’s silenced.\n\nYou act.\n\nNot perfectly—but decisively.\n\nThe patient stabilizes.\n\nLater, adrenaline lingers in the break room. So does tension. People remember who helped and how.\n\n---\n\n**CHOICES**\n1) **Debrief openly** — You talk through what happened with the team.\n2) **Thank someone** — You acknowledge specific help.\n3) **Deflect credit** — You push attention away from yourself.\n4) **Say nothing** — You let the moment pass.",
+      "text": "The case goes sideways.\n\nA patient crashes. Orders overlap. Voices rise.\n\nYou act — and for a moment, everything aligns. The resident nods. The nurse backs you instinctively. Even your rival pauses.\n\nThe patient stabilizes.\n\nLater, in the break room, adrenaline lingers.\n\nSo does tension.\n\n---\n\n**CHOICES**\n1) **Debrief resident** — Talk it through privately.\n2) **Thank the nurse** — Acknowledge teamwork.\n3) **Confront rival** — Set boundaries now.\n4) **Process alone** — Keep control.",
       "options": [
-        { "label": "Debrief Openly", "to": "S07" },
-        { "label": "Thank Someone", "to": "S08" },
-        { "label": "Deflect Credit", "to": "S10" },
-        { "label": "Say Nothing", "to": "S10" }
+        { "label": "Debrief Resident", "to": "S07" },
+        { "label": "Thank Nurse", "to": "S08" },
+        { "label": "Confront Rival", "to": "S09" },
+        { "label": "Process Alone", "to": "S10" }
       ]
     },
 
     "S07": {
-      "text": "The resident closes the door behind you.\n\n“Don’t do that again,” she says. Then pauses. “Actually… do. Just warn me first.”\n\nIt’s the closest thing to praise she gives.\n\nShe studies you for a moment longer than necessary.\n\n---\n\n**CHOICES**\n1) **Acknowledge trust** — You tell her you won’t let her down.\n2) **Keep it professional** — You steer away from subtext.\n3) **Test the moment** — You let the silence linger.\n4) **Change subject** — You break the tension.",
+      "text": "The resident closes the door behind you.\n\nThe silence is intimate.\n\nShe admits she pushed too hard. You admit you liked it.\n\nHer guard slips — just enough.\n\nThis could become something dangerous. Or something real.\n\n---\n\n**CHOICES**\n1) **Lean in** — Let the tension breathe.\n2) **Pull back** — Protect both of you.\n3) **Talk honestly** — Set expectations.\n4) **Change subject** — Deflect.",
       "options": [
-        { "label": "Acknowledge Trust", "to": "S10" },
-        { "label": "Stay Professional", "to": "S10" },
-        { "label": "Let It Linger", "to": "S11" },
+        { "label": "Lean In", "to": "S11" },
+        { "label": "Pull Back", "to": "S10" },
+        { "label": "Talk Honestly", "to": "S10" },
         { "label": "Change Subject", "to": "S10" }
       ]
     },
 
     "S08": {
-      "text": "The nurse catches you near the supply room.\n\n“Thanks,” she says. Not loud. Not performative.\n\nThen, with a smirk: “Just don’t make a habit of it.”\n\nYou’re not sure if she means the shortcut—or helping her.\n\n---\n\n**CHOICES**\n1) **Play it off** — You joke and move on.\n2) **Acknowledge risk** — You admit it could’ve gone wrong.\n3) **Ask her out** — Just coffee. Nothing serious.\n4) **Set boundary** — You keep things clean.",
+      "text": "The nurse catches you alone.\n\nShe teases you about your serious face, then surprises you by thanking you — sincerely.\n\n“Most interns don’t listen,” she says.\n\nHer hand brushes yours again. This time it’s deliberate.\n\n---\n\n**CHOICES**\n1) **Flirt back** — See where it goes.\n2) **Keep it light** — Enjoy the moment.\n3) **Set boundary** — Avoid complications.\n4) **Open up** — Share doubt.",
       "options": [
-        { "label": "Play It Off", "to": "S10" },
-        { "label": "Acknowledge Risk", "to": "S10" },
-        { "label": "Ask For Coffee", "to": "S11" },
-        { "label": "Set Boundary", "to": "S10" }
+        { "label": "Flirt Back", "to": "S11" },
+        { "label": "Keep Light", "to": "S10" },
+        { "label": "Set Boundary", "to": "S10" },
+        { "label": "Open Up", "to": "S11" }
       ]
     },
 
     "S09": {
-      "text": "Your rival doesn’t appreciate being shown up.\n\nHe laughs it off in public. His eyes don’t.\n\nYou’ve made an impression. Whether that’s good or bad depends on who’s watching.\n\n---\n\n**CHOICES**\n1) **Stand by it** — You don’t apologize for being right.\n2) **Smooth things over** — You talk privately.\n3) **Blame pressure** — You deflect responsibility.\n4) **Escalate** — You bring it to a superior.",
+      "text": "Your rival doesn’t take being corrected well.\n\nWords sharpen. Ego bleeds.\n\nOthers notice.\n\nThis will affect your reputation — one way or another.\n\n---\n\n**CHOICES**\n1) **Stand firm** — Let consequences fall.\n2) **Smooth over** — Preserve optics.\n3) **Apologize** — Even if you’re right.\n4) **Escalate** — Bring in authority.",
       "options": [
-        { "label": "Stand By It", "to": "S10" },
-        { "label": "Smooth It Over", "to": "S10" },
-        { "label": "Blame Pressure", "to": "S10" },
+        { "label": "Stand Firm", "to": "S10" },
+        { "label": "Smooth Over", "to": "S10" },
+        { "label": "Apologize", "to": "S10" },
         { "label": "Escalate", "to": "S12" }
       ]
     },
 
     "S10": {
-      "text": "Your shift ends, but the hospital doesn’t let go that easily.\n\nNames stick. Moments linger.\n\nYou don’t know yet which choices mattered most.\n\nBut you will.\n\n---\n\n**CHOICES**\n1) **Stay late** — You stick around and see what unfolds.\n2) **Leave now** — You go home and reset.\n3) **Check messages** — You see who reached out.\n4) **Reflect quietly** — You take stock before acting.",
+      "text": "Your shift ends, but nothing feels finished.\n\nYou replay conversations. Glances. Almosts.\n\nThis hospital will remember who you choose to be.\n\nAnd so will the people in it.\n\n---\n\n**CHOICES**\n1) **Commit resident** — Pursue intensity.\n2) **Commit nurse** — Choose connection.\n3) **Focus career** — Romance later.\n4) **Keep options** — Risk everything.",
       "options": [
-        { "label": "Stay Late", "to": "S11" },
-        { "label": "Leave Now", "to": "S12" },
-        { "label": "Check Messages", "to": "S11" },
-        { "label": "Reflect Quietly", "to": "S12" }
-      ]
-    }
-  }
-}
+        { "label": "Commit Resident", "to": "S11" },
+        { "label": "Commit Nurse", "to": "S11" },
+        { "label": "Focus Career", "to": "S12" },
+        { "label": "Keep Options", "to": "S12" }
       ]
     }
   }
