@@ -3,7 +3,6 @@
 
 import { init_screen_manager } from "../core/screen-manager.js";
 import { init_input } from "../core/input.js";
-import { init_debug_ui } from "../core/debug_ui.js";
 import { init_library_labels } from "../core/library_labels.js";
 import { init_audio_manager } from "../core/audio_manager.js";
 
