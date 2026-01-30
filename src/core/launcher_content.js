@@ -1,17 +1,22 @@
 // src/core/launcher_content.js
 // Phase 3 — Launcher content injection (blurb + cover/preview image)
 //
-// UPDATED:
+// UPDATED (Performance + Safety):
 // - Primary source: content/catalog/catalog.json (via core/catalog.js)
 // - Fallback: legacy STORY_SOURCES mapping (prevents breaking live site)
-//
-// NOTE:
-// - Launcher screen id format: launcher_<storyId>
-// - This module is display-only; navigation remains hitbox-driven.
+// - Uses normal caching by default; add ?nocache=1 to force no-store
+// - Memoizes story JSON per storyId to avoid repeat fetches
 
 import { resolve_story } from "./catalog.js";
 
 let _inited = false;
+
+const _story_cache = new Map(); // storyJsonUrl -> story object (session cache)
+
+function cache_mode() {
+  const params = new URLSearchParams(location.search);
+  return params.has("nocache") ? "no-store" : "default";
+}
 
 function is_launcher_screen(screen) {
   return typeof screen === "string" && screen.startsWith("launcher_");
@@ -36,10 +41,17 @@ function ensure_ui_layer(screen_el) {
 }
 
 async function safe_fetch_json(url) {
+  if (!url) return null;
+
+  // in-memory cache first
+  if (_story_cache.has(url)) return _story_cache.get(url);
+
   try {
-    const res = await fetch(url, { cache: "no-store" });
+    const res = await fetch(url, { cache: cache_mode() });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return await res.json();
+    const data = await res.json();
+    _story_cache.set(url, data);
+    return data;
   } catch {
     return null;
   }
@@ -60,18 +72,28 @@ function render_launcher_content(screen_id, titleText, blurbText, imgUrl) {
   if (!screen_el) return;
 
   const layer = ensure_ui_layer(screen_el);
-  layer.innerHTML = "";
 
-  const img = document.createElement("img");
-  img.className = "launcher-preview";
+  // Reuse nodes if they exist (avoids image re-decoding churn)
+  let img = layer.querySelector("img.launcher-preview");
+  let blurb = layer.querySelector("div.launcher-blurb");
+
+  if (!img) {
+    img = document.createElement("img");
+    img.className = "launcher-preview";
+    img.alt = titleText || "Story Preview";
+    layer.appendChild(img);
+  }
+
+  if (!blurb) {
+    blurb = document.createElement("div");
+    blurb.className = "launcher-blurb";
+    layer.appendChild(blurb);
+  }
+
   img.alt = titleText || "Story Preview";
-  img.src = imgUrl || "";
-  layer.appendChild(img);
+  if (imgUrl && img.src !== imgUrl) img.src = imgUrl;
 
-  const blurb = document.createElement("div");
-  blurb.className = "launcher-blurb";
   blurb.textContent = blurbText || "";
-  layer.appendChild(blurb);
 }
 
 // ------------------------------------------------------------
@@ -115,12 +137,8 @@ const STORY_SOURCES = {
   },
   tale_of_icarus: {
     storyJson: "./content/founders/packs/stories/tale_of_icarus.json",
-    image: "./content/founders/packs/covers/tale_of_icarus.json".replace(/\.json$/, ".json"), // no-op safety
-    // NOTE: the actual cover line is below (kept consistent)
-    // (this odd line is harmless; final cover is correct)
     image: "./content/founders/packs/covers/tale-of-icarus.webp"
   },
-
   cosmos: {
     storyJson: "./content/founders/packs/stories/cosmos.json",
     image: "./content/founders/packs/covers/cosmos.webp"
@@ -135,9 +153,6 @@ const STORY_SOURCES = {
   }
 };
 
-// ------------------------------------------------------------
-// Catalog-first hydrate, legacy fallback
-// ------------------------------------------------------------
 async function get_sources_for_story(story_id) {
   // 1) Catalog-first
   const resolved = await resolve_story(story_id);
@@ -184,6 +199,7 @@ export function init_launcher_content() {
     if (is_launcher_screen(screen)) schedule(screen);
   });
 
+  // Keep these, but they can be chatty on iOS; schedule is cheap now.
   window.addEventListener("resize", () => {
     const active = document.querySelector(".screen.is-active");
     const screen = active?.dataset?.screen;
