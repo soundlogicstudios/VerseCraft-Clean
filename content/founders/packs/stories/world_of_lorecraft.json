@@ -1,422 +1,506 @@
 {
-  "story_id": "world_of_lorecraft",
-  "title": "World Of Lorecraft",
-  "tagline": "fantasy parchment, ancient guild, arcane relics",
-  "version": "placeholder_v2",
-  "start": "s01",
-  "sections": [
-    {
-      "id": "s01",
-      "text": "World Of Lorecraft: Something shifts, subtle but irreversible. You commit to action before doubt can set in.",
-      "choices": [
+  "meta": {
+    "title": "World of Lorecraft: Ashes of the Everpath",
+    "subtitle": "The World That Notices",
+    "author": "Sound Logic Studios",
+    "version": "1.1.0",
+    "checkpoint": "S01–S30",
+    "buildTimestamp": "2026-01-17T00:00:00Z"
+    "blurb": "The adventure begins. Welcome to the Workd of Lorecraft where the workd watxhes you and notices your choices. enjoy the free content!"
+  },
+  "packId": "world_of_lorecraft",
+  "assets": {
+    "cover": "content/packs/starter/covers/world-of-lorecraft.png",
+    "background": "styles/screens/ui/backgrounds/story-panel/lorecraft-story-panel-narrative.webp",
+    "music": "content/packs/starter/audio/lore_theme.mp3",
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "You stand before the Great Archive of Lorecraft. Lanterns hover like tame stars, and the floor beneath you is a mosaic of old maps. The doors are not locked—they are deciding.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nAt the end of the page, you weigh your options:\n– Step into the Archive and let the doors seal behind you.\n– Study the lantern patterns for warning signs and hidden routes.\n– Step back to the plaza and watch who enters and who leaves.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s02"
+          "label": "Enter",
+          "to": "S02"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s02"
+          "label": "Observe",
+          "to": "S03"
+        },
+        {
+          "label": "Delay",
+          "to": "S04"
         }
       ]
     },
-    {
-      "id": "s02",
-      "text": "A detail you missed now clicks into place. You commit to action before doubt can set in.",
-      "choices": [
+    "S02": {
+      "text": "The doors close with a soft finality. Shelves stretch like cathedral pillars, and every spine hums with the pressure of untold names.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nAt the end of the page, you weigh your options:\n– Follow the loudest humming book deeper into the stacks.\n– Search for a directory map near the entrance hall.\n– Call for a librarian and wait—without flinching.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s03"
+          "label": "Follow",
+          "to": "S05"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s03"
+          "label": "Map",
+          "to": "S06"
+        },
+        {
+          "label": "Call",
+          "to": "S07"
         }
       ]
     },
-    {
-      "id": "s03",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
-      "choices": [
+    "S03": {
+      "text": "Lanterns drift overhead in a slow spiral, tracing invisible routes. One lantern blinks twice—too deliberate to be random.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nAt the end of the page, you weigh your options:\n– Touch the blinking lantern and accept what it shows.\n– Ignore it and walk straight down the central aisle.\n– Stand still and listen for words inside the light.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s04"
+          "label": "Touch",
+          "to": "S06"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s04"
+          "label": "Ignore",
+          "to": "S05"
+        },
+        {
+          "label": "Listen",
+          "to": "S07"
         }
       ]
     },
-    {
-      "id": "s04",
-      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options.",
-      "choices": [
+    "S04": {
+      "text": "You step back into the plaza. The archive’s doors seem to watch you. You can still commit—or choose caution and gather information first.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nAt the end of the page, you weigh your options:\n– Return and enter the Archive anyway.\n– Wait and observe patterns in who comes and goes.\n– Scout the building exterior for service routes.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s05"
+          "label": "Enter",
+          "to": "S02"
         },
         {
-          "text": "Investigate further",
-          "to": "s06"
+          "label": "Wait",
+          "to": "S07"
+        },
+        {
+          "label": "Scout",
+          "to": "S09"
         }
       ]
     },
-    {
-      "id": "s05",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
-      "choices": [
+    "S05": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 5). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s06"
+          "label": "Continue",
+          "to": "S06"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s06"
+          "label": "Inspect",
+          "to": "S07"
+        },
+        {
+          "label": "Steady",
+          "to": "S06"
         }
       ]
     },
-    {
-      "id": "s06",
-      "text": "You realize this moment has been building for a while. You slow your breathing and assess your options.",
-      "choices": [
+    "S06": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 6). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s07"
+          "label": "Continue",
+          "to": "S07"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s07"
+          "label": "Inspect",
+          "to": "S08"
+        },
+        {
+          "label": "Steady",
+          "to": "S07"
         }
       ]
     },
-    {
-      "id": "s07",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options. There\u2019s no neutral ground anymore.",
-      "choices": [
+    "S07": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 7). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s08"
+          "label": "Continue",
+          "to": "S08"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s08"
+          "label": "Inspect",
+          "to": "S09"
+        },
+        {
+          "label": "Steady",
+          "to": "S08"
         }
       ]
     },
-    {
-      "id": "s08",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options.",
-      "choices": [
+    "S08": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 8). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s09"
+          "label": "Continue",
+          "to": "S09"
         },
         {
-          "text": "Investigate further",
-          "to": "s10"
+          "label": "Inspect",
+          "to": "S10"
+        },
+        {
+          "label": "Steady",
+          "to": "S09"
         }
       ]
     },
-    {
-      "id": "s09",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
-      "choices": [
+    "S09": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 9). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s10"
+          "label": "Continue",
+          "to": "S10"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s10"
+          "label": "Inspect",
+          "to": "S11"
+        },
+        {
+          "label": "Steady",
+          "to": "S10"
         }
       ]
     },
-    {
-      "id": "s10",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
-      "choices": [
+    "S10": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 10). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s11"
+          "label": "Continue",
+          "to": "S11"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s11"
+          "label": "Inspect",
+          "to": "S12"
+        },
+        {
+          "label": "Steady",
+          "to": "S11"
         }
       ]
     },
-    {
-      "id": "s11",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in.",
-      "choices": [
+    "S11": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 11). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s12"
+          "label": "Continue",
+          "to": "S12"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s12"
+          "label": "Inspect",
+          "to": "S13"
+        },
+        {
+          "label": "Steady",
+          "to": "S12"
         }
       ]
     },
-    {
-      "id": "s12",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
-      "choices": [
+    "S12": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 12). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s13"
+          "label": "Continue",
+          "to": "S13"
         },
         {
-          "text": "Investigate further",
-          "to": "s14"
+          "label": "Inspect",
+          "to": "S14"
+        },
+        {
+          "label": "Steady",
+          "to": "S13"
         }
       ]
     },
-    {
-      "id": "s13",
-      "text": "A detail you missed now clicks into place. You commit to action before doubt can set in.",
-      "choices": [
+    "S13": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 13). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s14"
+          "label": "Continue",
+          "to": "S14"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s14"
+          "label": "Inspect",
+          "to": "S15"
+        },
+        {
+          "label": "Steady",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s14",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself. This choice will echo farther than you expect.",
-      "choices": [
+    "S14": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 14). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s15"
+          "label": "Continue",
+          "to": "S15"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s15"
+          "label": "Inspect",
+          "to": "S16"
+        },
+        {
+          "label": "Steady",
+          "to": "S15"
         }
       ]
     },
-    {
-      "id": "s15",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself. A revelation reframes everything you thought you understood.",
-      "choices": [
+    "S15": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 15). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s16"
+          "label": "Continue",
+          "to": "S16"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s16"
+          "label": "Inspect",
+          "to": "S17"
+        },
+        {
+          "label": "Steady",
+          "to": "S16"
         }
       ]
     },
-    {
-      "id": "s16",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself.",
-      "choices": [
+    "S16": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 16). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s17"
+          "label": "Continue",
+          "to": "S17"
         },
         {
-          "text": "Investigate further",
-          "to": "s18"
+          "label": "Inspect",
+          "to": "S18"
+        },
+        {
+          "label": "Steady",
+          "to": "S17"
         }
       ]
     },
-    {
-      "id": "s17",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
-      "choices": [
+    "S17": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 17). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s18"
+          "label": "Continue",
+          "to": "S18"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s18"
+          "label": "Inspect",
+          "to": "S19"
+        },
+        {
+          "label": "Steady",
+          "to": "S18"
         }
       ]
     },
-    {
-      "id": "s18",
-      "text": "Something shifts, subtle but irreversible. You observe first, letting the pattern reveal itself.",
-      "choices": [
+    "S18": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 18). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s19"
+          "label": "Continue",
+          "to": "S19"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s19"
+          "label": "Inspect",
+          "to": "S20"
+        },
+        {
+          "label": "Steady",
+          "to": "S19"
         }
       ]
     },
-    {
-      "id": "s19",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
-      "choices": [
+    "S19": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 19). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s20"
+          "label": "Continue",
+          "to": "S20"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s20"
+          "label": "Inspect",
+          "to": "S21"
+        },
+        {
+          "label": "Steady",
+          "to": "S20"
         }
       ]
     },
-    {
-      "id": "s20",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
-      "choices": [
+    "S20": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 20). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s21"
+          "label": "Continue",
+          "to": "S21"
         },
         {
-          "text": "Investigate further",
-          "to": "s22"
+          "label": "Inspect",
+          "to": "S22"
+        },
+        {
+          "label": "Steady",
+          "to": "S21"
         }
       ]
     },
-    {
-      "id": "s21",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself. This choice will echo farther than you expect.",
-      "choices": [
+    "S21": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 21). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s22"
+          "label": "Continue",
+          "to": "S22"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s22"
+          "label": "Inspect",
+          "to": "S23"
+        },
+        {
+          "label": "Steady",
+          "to": "S22"
         }
       ]
     },
-    {
-      "id": "s22",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
-      "choices": [
+    "S22": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 22). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s23"
+          "label": "Continue",
+          "to": "S23"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s23"
+          "label": "Inspect",
+          "to": "S24"
+        },
+        {
+          "label": "Steady",
+          "to": "S23"
         }
       ]
     },
-    {
-      "id": "s23",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
-      "choices": [
+    "S23": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 23). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s24"
+          "label": "Continue",
+          "to": "S24"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s24"
+          "label": "Inspect",
+          "to": "S25"
+        },
+        {
+          "label": "Steady",
+          "to": "S24"
         }
       ]
     },
-    {
-      "id": "s24",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
-      "choices": [
+    "S24": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 24). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s25"
+          "label": "Continue",
+          "to": "S25"
         },
         {
-          "text": "Investigate further",
-          "to": "s26"
+          "label": "Inspect",
+          "to": "S26"
+        },
+        {
+          "label": "Steady",
+          "to": "S25"
         }
       ]
     },
-    {
-      "id": "s25",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
-      "choices": [
+    "S25": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 25). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s26"
+          "label": "Continue",
+          "to": "S26"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s26"
+          "label": "Inspect",
+          "to": "S27"
+        },
+        {
+          "label": "Steady",
+          "to": "S26"
         }
       ]
     },
-    {
-      "id": "s26",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
-      "choices": [
+    "S26": {
+      "text": "You push deeper into Lorecraft’s inner halls (Step 26). Doors appear where none existed, and the floor plan subtly changes under your feet.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nAt the end of the page, you weigh your options:\n– Continue deeper, refusing distraction.\n– Inspect the nearest symbol etched into the wall for meaning.\n– Pause, breathe, and steady your focus before moving.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s27"
+          "label": "Continue",
+          "to": "S27"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s27"
+          "label": "Inspect",
+          "to": "S27"
+        },
+        {
+          "label": "Steady",
+          "to": "S27"
         }
       ]
     },
-    {
-      "id": "s27",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
-      "choices": [
+    "S27": {
+      "text": "At the final door, three seals glow: Gold, Ash, and Violet. Each promises a different ending to the same truth.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nIf you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nAt the end of the page, you weigh your options:\n– Touch the Gold seal—clarity and honor.\n– Touch the Ash seal—cost and consequence.\n– Touch the Violet seal—mystery and transformation.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s28"
+          "label": "Gold",
+          "to": "S28"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s28"
+          "label": "Ash",
+          "to": "S29"
+        },
+        {
+          "label": "Violet",
+          "to": "S30"
         }
       ]
     },
-    {
-      "id": "s28",
-      "text": "A detail you missed now clicks into place. You commit to action before doubt can set in. A wrong move here won\u2019t be forgiven easily.",
-      "choices": [
+    "S28": {
+      "text": "GOOD ENDING: The Gold seal yields. Lorecraft’s core reveals itself as a living index, and you are recorded not as a thief, but as a chosen curator. You leave with knowledge—and the right to return.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nSomewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nAt the end of the page, you weigh your options:\n– Return to the beginning and try another path.",
+      "options": [
         {
-          "text": "Move forward",
-          "to": "s29"
-        },
-        {
-          "text": "Investigate further",
-          "to": "s30"
+          "label": "Restart",
+          "to": "S01"
         }
       ]
     },
-    {
-      "id": "s29",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself. This is the last point where retreat is still possible.",
-      "choices": [
+    "S29": {
+      "text": "BAD ENDING: The Ash seal cracks. Smoke fills your lungs with forgotten names. You stumble out carrying a lesson you can’t quite remember, only the weight of regret and a vow not to repeat it.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. Light gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand.\n\nThe air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nEvery choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning. You slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nAt the end of the page, you weigh your options:\n– Return to the beginning and try another path.",
+      "options": [
         {
-          "text": "See it through to the end",
-          "to": "s30"
-        },
-        {
-          "text": "Pull back at the last second",
-          "to": "s27"
+          "label": "Restart",
+          "to": "S01"
         }
       ]
     },
-    {
-      "id": "s30",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
-      "choices": [],
-      "ending": true,
-      "ending_type": "resolution"
+    "S30": {
+      "text": "SPECIAL ENDING: The Violet seal dissolves. You step through and feel your story thread into the Archive itself—part reader, part page. When you return, you’re not the same, and neither is the world.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. If you listen closely, you can hear the place noticing you back—evaluating, remembering, inviting, warning.\n\nLight gathers in seams and corners, catching on dust and carved edges, turning ordinary surfaces into a map only patience can understand. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nYou slow your breathing on purpose. Not because you feel safe, but because you refuse to let fear write the next sentence for you. Every choice you make seems to leave a faint afterimage, as if the world is keeping notes. The air tastes like old paper and distant rain, the kind that never quite reaches the ground but changes everything anyway. Somewhere in the structure around you, mechanisms of story click into place—quiet, deliberate—like a library deciding what it will allow you to read.\n\nAt the end of the page, you weigh your options:\n– Return to the beginning and try another path.",
+      "options": [
+        {
+          "label": "Restart",
+          "to": "S01"
+        }
+      ]
     }
-  ]
+  }
 }
