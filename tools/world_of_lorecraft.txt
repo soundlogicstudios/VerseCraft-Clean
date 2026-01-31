@@ -1,0 +1,2560 @@
+Lorecraft Tutorial
+{
+  "meta": {
+    "title": "World of LoreCraft V1.0",
+    "subtitle": "The World That Notices"
+  },
+  "start": "S01",
+  "packId": "world_of_lorecraft",
+  "blurb": "An epic first run into a ruin that watches you back. Learn VerseCraft’s rules through choices, consequences, and loot—survive long enough to discover what the world remembers.",
+  "assets": {
+    "cover": "content/packs/starter/covers/world-of-lorecraft.png"
+  },
+  "scenes": {
+    "S01": {
+      "text": "You wake to the sound of trees screaming. They don’t scream in words — they scream in the way dying metal does, warping under unimaginable heat. Light flashes behind your eyelids, and when you wrench them open, the sky above you has been torn into a mosaic of drifting shards.
+ 
+The Shatterfall has come.
+ 
+Every legend said it would happen at the end of the Age of Crowns, when the boundary between the material world and the Everpath would crack open. But legends didn’t mention this much smoke. Or this much ash. Or the faint scent of burnt cinnamon, which is honestly confusing.
+ 
+You sit up. Your camp is gone. Your pack is half-burned. Your hair is singed in a way that would make a stylist both horrified and deeply impressed.
+ 
+A narrow path rises ahead — a trail of blackened stones leading toward a ridge. Another, wider path descends into a valley filled with violet fog.
+,
+      "options": [
+        {
+          "label": "Take the ridge path",
+          "to": "S06"
+        },
+        {
+          "label": "Descend into the valley",
+          "to": "S07"
+        }
+      ]
+    },
+    "S02": {
+      "text": "You sift through the ruins of your campsite, searching for anything that survived. A half-melted compass, a water skin that tastes like charcoal, and a journal whose last two pages are now blank (which is suspicious). A gust of wind scatters the ashes.
+ 
+Something glints near the roots of a fallen tree — a small metal charm etched with a symbol of a shattered crown. It pulses faintly with warmth.
+ 
+You pick it up, and the warmth spreads to your fingertips.
+",
+      "options": [
+        {
+          "label": "Pocket the charm and continue searching",
+          "to": "S08"
+        },
+        {
+          "label": “Immediately try to activate the charm",
+          "to": "S09"
+        }
+      ]
+    },
+    "S03": {
+      "text": "You stand at the edge of a cliff, staring into a landscape that looks like someone tried to blend a fantasy kingdom with a post-apocalyptic wasteland and then spilled glitter on top. Forests burn in slow motion. Rivers flow uphill. A massive, shimmering fracture in the sky pours tendrils of violet lightning into the land.
+ 
+A cloaked figure approaches behind you.
+ 
+“Bad morning, huh?” the figure says.
+ 
+You turn. The figure’s hood hides most of their face, but you see pale blue eyes and a wry smile.
+ 
+“I’m Kestrel,” they say. “Survivor. Scavenger. Possible hallucination. Hard to tell these days.”
+ 
+Kestrel gestures to two possible routes.
+ 
+“Pick your doom. Ridge or valley?”
+",
+      "options": [
+        {
+          "label": "Travel with Kestrel into the valley”,
+          "to": "S07"
+        },
+        {
+          "label": "Travel with Kestrel toward the ridge",
+          "to": "S06"
+        }
+      ]
+    },
+    "S04": {
+      "text": "The Everpath trembles again. Something in the sky groans, as though reality itself is tired.
+ 
+You check your supplies — then realize you don’t have any. Good start.
+ 
+You hear footsteps. A four-legged creature emerges from the burnt brush — a fox with crystalline fur and ember-bright eyes. It watches you curiously.
+ 
+The creature tilts its head. It seems unafraid.
+",
+      "options": [
+        {
+          "label": “Attempt to befriend the creature",
+          "to": "S10"
+        },
+        {
+          "label": "Slowly back away and avoid provoking it",
+          "to": "S11"
+        }
+      ]
+    },
+    "S05": {
+      "text": "A thunderous crack echoes across the ruins. You look up — a piece of the sky detaches, spinning downward like a falling mirror.
+ 
+It crashes into the earth with a blast of shimmering dust.
+ 
+Inside the crater, you glimpse an object: a glowing obsidian shard.
+ 
+You scramble down the loose rocks.
+ 
+The shard hums softly. Its surface reflects not your face… but a future version of yourself.
+ 
+A version wearing blackened armor, wielding a sword forged of pure light.
+ 
+You stagger back.
+",
+      "options": [
+        {
+          "label": "Reach for the shard",
+          "to": "S12"
+        },
+        {
+          "label": "Retreat from the crater”,
+          "to": "S13"
+        }
+      ]
+    },
+    "S06": {
+      "text": "The ridge path rises steeply. Burnt leaves flutter around you like black snow.
+ 
+When you reach the top, a breathtaking — and terrifying — scene spreads before you.
+ 
+A valley of ruins stretches for miles. Ancient towers lie broken, split by violet lightning. Rivers glow neon blue. A massive floating disc of cracked stone slowly rotates in the sky — likely a fragment of a city.
+ 
+Kestrel (if with you) whistles. “Well. That’s… not normal.”
+ 
+A stone obelisk stands at the ridge’s edge. Its surface shimmers with runes.
+",
+      "options": [
+        {
+          "label": "Examine the obelisk",
+          "to": "S14"
+        },
+        {
+          "label": "Ignore the obelisk and descend into the ruins",
+          "to": "S15"
+        }
+      ]
+    },
+    "S07": {
+      "text": "The valley is smothered in violet fog. The air tastes metallic, like you’ve been licking spoons.
+ 
+A faint humming echoes from deeper inside the valley. Shapes move through the mist — tall, slender, and carrying long weapons.
+ 
+A signpost half-buried in mud reads: WELCOME TO BRAMBLEVALE. POPULATION: DON’T ASK.
+ 
+Lovely.
+",
+      "options": [
+        {
+          "label": "Follow the humming",
+          "to": "S16"
+        },
+        {
+          "label": "Avoid the shadows and stick to the path",
+          "to": "S17"
+        },
+   
+    },
+    "S08": {
+      "text": "The charm pulses unexpectedly. The warmth becomes heat — not painful, but intense.
+ 
+A soft voice whispers near your ear: “Bearer chosen. Path awakening.”
+ 
+You freeze.
+ 
+“Who said that?” you whisper.
+ 
+“The Everpath,” the voice replies calmly.
+ 
+Of course. Totally normal.
+",
+      "options": [
+        {
+          "label": "Continue listening",
+          "to": "S18"
+        }
+       {
+          "label": “Drop the charm in shock",
+          "to": "S19"
+        },
+      ]
+    },
+    "S09": {
+      "text": "You close your fist around the charm.
+ 
+Light bursts upward — a column of shimmering gold.
+ 
+A vision floods your mind:
+ 
+A fortress of crystal. A queen with burning wings. A throne of fractured stone.
+ 
+“You will choose which world survives,” a voice says.
+ 
+You gasp.
+",
+      "options": [
+        {
+          "label": "Investigate the source of the voice",
+          "to": "S20"
+        },
+        {
+          "label": "Try to break the connection",
+          "to": "S21"
+        }
+      ]
+    },
+    "S10": {
+      "text": “The crystalline fox sniffs your hand. Its fur jingles like delicate glass.
+ 
+It lets out a soft chirp.
+ 
+Then it sits.
+ 
+You blink.
+ 
+It sits harder.
+ 
+It wants something.
+",
+      "options": [
+        {
+          "label": "Offer it a piece of charred food",
+          "to": "S22"
+        },
+        {
+          "label": "Attempt to pet it",
+          "to": "S23"
+        }
+      ]
+    },
+    "S11": {
+      "text": "You take slow steps backward.
+ 
+The fox watches. Then it nods — yes, nods — and darts away, leaving faint glowing pawprints.
+ 
+Left alone again, you turn toward two potential exits from the clearing.
+ 
+A narrow path winding deeper into the woods.
+A cracked stone staircase leading down to a ravine.
+",
+      "options": [
+        {
+          "label": "Take the forest path",
+          "to": "S24"
+        },
+        {
+          "label": "Climb down the ravine staircase",
+          "to": "S25"
+        }
+      ]
+    },
+    "S12": {
+      "text": "Your fingers brush the obsidian shard.
+ 
+White-hot pain flashes in your skull — but only for an instant.
+ 
+Then you see everything.
+ 
+The past. The future. The Everpath. The End.
+ 
+A million branching possibilities swirl around you.
+ 
+“You are a Warden,” the shard whispers. “One who decides the fate of realms.”
+ 
+Great. No pressure.
+",
+      "options": [
+        {
+          "label": "Accept the shard’s power”,
+          "to": "S26"
+        },
+        {
+          "label": "Resist the shard and flee",
+          "to": "S27"
+        }
+      ]
+    },
+    "S13": {
+      "text": "You scramble away from the crater.
+ 
+The shard pulses, almost disappointed.
+ 
+You turn and run.
+ 
+Only when you reach a ridge do you stop for breath. The land stretches ahead in ruin, yet a faint glimmer of civilization remains — a cluster of lights in the distance.
+ 
+A settlement? A trap?",
+      "options": [
+        {
+          "label": "Approach the distant lights",
+          "to": "S28"
+        },
+        {
+          "label": "Avoid potential danger and skirt the ruins",
+          "to": "S29"
+        }
+      ]
+    },
+    "S14": {
+      "text": "You approach the obelisk.
+ 
+Its runes rearrange themselves as you watch.
+ 
+A deep voice rumbles: “IDENTITY: UNKNOWN SURVIVOR. STATUS: MOSTLY INTACT.”
+ 
+Rude.
+ 
+The obelisk offers two options:
+ 
+1. “REQUEST GUIDANCE.”
+ 
+ 
+2. “REQUEST WARNING.”
+",
+      "options": [
+        {
+          "label": "Request guidance",
+          "to": "S30"
+        },
+        {
+          "label": “Request warning",
+          "to": "S31"
+        }
+      ]
+    },
+    "S15": {
+      "text": "You descend into the shattered ruins.
+ 
+Streets are cracked. Something huge has clawed through the pavement. Windows are blown out. The air is thick with floating sparks — not embers, but fragments of fractured magic.
+ 
+You find a collapsed tavern with a sign barely hanging: THE LAST SIP.
+",
+      "options": [
+        {
+          "label": "Explore the tavern",
+          "to": "S32"
+        },
+        {
+          "label": "Fall back and use the environment",
+          "to": "S20"
+        }
+      ]
+    },
+    "S16": {
+      "text": "The humming grows louder as you follow the narrow path through the violet fog. Shapes flicker past — tall silhouettes with elongated limbs and slow, floating steps. Their weapons glow faintly, curved like sickles but made of light rather than metal.
+ 
+You consider turning back, but the humming deepens, resonating inside your chest like a second heartbeat.
+ 
+The fog parts.
+ 
+A colossal stone archway rises before you, engraved with swirling runes and half-covered in creeping violet moss. The source of the hum stands at its center: a floating orb of crystal, pulsing rhythmically.
+ 
+A whisper curls into your mind.
+ 
+“Touch the Keystone.”
+ 
+You swallow.
+",
+      "options": [
+        {
+          "label": "Touch the Keystone",
+          "to": "S34"
+        },
+        {
+          "label": “Retreat and circle around it",
+          "to": "S35”
+        }
+      ]
+    },
+    "S17": {
+      "text": "You stick to the path, keeping a healthy distance between yourself and the ominous shapes drifting through the mist.
+ 
+The fog thins as you descend into a hollow. Fireflies blink lazily, their bodies glowing a gentle teal. It should be peaceful — except fireflies don’t usually hum in perfect unison.
+ 
+A wooden bridge stretches across a chasm so deep you can’t see the bottom. Halfway across the bridge hangs a lantern, swinging slowly in a wind you don’t feel.
+ 
+A sign reads: “USE AT YOUR OWN PERIL.” Beneath it, someone scribbled: “But like… maybe don’t.”
+",
+      "options": [
+        {
+          "label": "Cross the bridge",
+          "to": "S36"
+        },
+        {
+          "label": "Search the area before crossing",
+          "to": "S37"
+        }
+      ]
+    },
+    "S18": {
+      "text": "You hold the charm close as the Everpath’s voice whispers into your thoughts.
+ 
+“Chosen bearer… The realms are breaking. You walk between ruin and rebirth.”
+ 
+The charm vibrates. Golden threads of light weave around your fingers.
+ 
+“You must decide what becomes of the Shattered Vale.”
+ 
+The air ripples — and suddenly, choices unfold before you.
+ 
+A road of light stretches eastward. Another spirals downward into a pit of shadow.
+",
+      "options": [
+        {
+          "label": "Follow the road of light",
+          "to": "S38"
+        },
+        {
+          "label": "Follow the spiral path into shadow.",
+          "to": "S39"
+        }
+      ]
+    },
+    "S19": {
+      "text": "You drop the charm like it’s a cursed potato.
+ 
+It hits the dirt and promptly sinks straight into the ground.
+ 
+“Okay,” you mutter. “Normal things definitely don’t do that.”
+ 
+The earth beneath your feet shudders. A circular stone plate rises where the charm vanished, covered in glowing runes.
+ 
+It pulses once.
+ 
+Then again.
+ 
+A third time.
+ 
+“CHOSEN ANYWAY,” a deep voice booms.
+ 
+You groan.",
+      "options": [
+        {
+          "label": "Step onto the stone plate",
+          "to": "S40"
+        },
+        {
+          "label": "Sprint away from this nonsense",
+          "to": "S41"
+        }
+      ]
+    },
+    "S20": {
+      "text": "You follow the voice.
+ 
+It leads you through smoke and drifting embers until you reach a clearing where the air feels… thick. Like reality is trying too hard.
+ 
+A shimmering figure stands ahead — a tall humanoid shape outlined in gold. Its features blur, but you sense ancient authority.
+ 
+“You hold the Crownshard,” it says. “One piece of the fractured throne. The last Queen entrusted it to fate… and fate has chosen poorly, but we’ll manage.”
+ 
+The figure raises a hand.
+ 
+A vision forms: armies marching, realms falling, a monstrous being of smoke and teeth rising from the Everpath.
+ 
+“You must decide which forces you will support.”
+",
+      "options": [
+        {
+          "label": "Ask about the Queen",
+          "to": "S42"
+        },
+        {
+          "label": "Ask about the monster",
+          "to": "S43"
+        }
+      ]
+    },
+    "S21": {
+      "text": "You try to break the connection.
+ 
+It does not break.
+ 
+Instead, it snaps back harder — a slingshot of divine energy that knocks you flat into a puddle of glowing mud.
+ 
+The voice sighs.
+ 
+“Mortals,” it mutters.
+ 
+The charm reappears in your hand, pulsing demanding.
+ 
+“Whether you like it or not, your choices bind the worlds.”
+ 
+You groan.
+",
+      "options": [
+        {
+          "label": "Reluctantly accept the connection",
+          "to": "S44"
+        }
+{
+          "label": "Stubbornly keep resisting",
+          "to": "S45"
+        },
+      ]
+    },
+    "S22": {
+      "text": “You offer what might once have been food.
+ 
+The fox sniffs it.
+ 
+It chirps.
+ 
+Then its crystal fur brightens — and with a delighted trill, it eats the charcoal chunk in one enthusiastic crunch.
+ 
+Sparkles explode.
+ 
+You cough.
+ 
+The fox hops in a circle and nudges your leg. It clearly wants you to follow.
+",
+      "options": [
+        {
+          "label": "Follow the fox",
+          "to": "S46"
+        },
+        {
+          "label": "Stay and search the area more",
+          "to": "S47"
+        }
+      ]
+    },
+    "S23": {
+      "text": “You reach out slowly
+ 
+The fox leans in.
+ 
+Then it headbutts your hand with surprising force.
+ 
+You yelp.
+ 
+It chirps smugly.
+ 
+Apparently that means you’re friends.
+ 
+The fox darts toward a hidden path you didn’t notice before, carved between two leaning boulders.
+",
+      "options": [
+        {
+          "label": "Chase after the fox”
+          "to": "S48"
+        }
+        {
+          "label": "Stay to examine the boulders for carvings”
+          "to": "S49"
+        }
+      ]
+    },
+    "S24": {
+      "text": "The forest darkens as you follow the narrow path. Branches twist overhead, forming arches that seem too deliberate to be natural.
+ 
+The ground glows faintly with bioluminescent moss.
+ 
+After several minutes, you find a shattered carriage overturned in the underbrush, its contents scattered — tools, a map, and a cracked lantern filled with swirling light.
+ 
+The lantern pulses when you touch it.",
+      "options": [
+        {
+          "label": "Take the lantern",
+          "to": “S50"
+        },
+        {
+          "label":"Inspect the tools instead",
+          "to": "S51"
+        },
+      ]
+    },
+    "S25": {
+      "text": "The stone steps lead you down into a ravine carved by centuries of strange magic.
+ 
+Water flows upward along the walls, drifting like curtains. You touch a stream and watch droplets float around your fingers.
+ 
+At the bottom lie two exits: a tunnel glowing with soft blue light, and a narrow passage choked with overgrown roots.
+",
+      "options": [
+        {
+          "label": "Enter the glowing tunnel",
+          "to": "S52"
+        },
+        {
+          "label": "Push through the root-choked passage”,
+          "to": "S53"
+        }
+      ]
+    },
+    "S26": {
+      "text": "Power floods your body as you accept the shard.
+ 
+Your breath comes out shimmering. Your vision sharpens. Something ancient awakens inside you.
+ 
+You see threads of fate stretching across the Vale.
+ 
+The Everpath whispers:
+ 
+“You are a Warden. You will decide which destiny survives.”
+ 
+Ahead, three paths unravel:
+ 
+A tower of broken stars rising above the forest.
+ 
+A battlefield of smoldering ruins.
+ 
+A glimmering river flowing backward.
+",
+      "options": [
+        {
+          "label": "Head for the tower",
+          "to": “S54"
+        },
+        {
+          "label": "Walk toward the battlefield”,
+          "to": "S55"
+        }
+        {
+          "label": "Approach the reverse-flowing river”,
+          "to": "S56"
+        }
+      ]
+    },
+    "S27": {
+      "text": “You flee the crater.
+ 
+The shard’s whispers fade.
+ 
+Your heartbeat slows.
+ 
+But something follows.
+ 
+The ground trembles lightly, as though something large walks beneath the surface.
+ 
+A fissure cracks open ahead, releasing a gust of freezing mist.
+”
+
+,
+      "options": [
+        {
+          "label": "Jump over the fissure",
+          "to": "S57"
+        },
+        {
+          "label": Climb down into it",
+          "to": “S58"
+        }
+      ]
+    },
+"S28": {
+      "text": "You approach the distant lights.
+ 
+A small encampment comes into view — lanterns strung between wagons, guarded by figures in mismatched armor. A banner flaps overhead: “THE EMBERWALKERS.”
+ 
+Survivors.
+ 
+A woman with braided silver hair greets you.
+ 
+“If you’re alive, you’re welcome,” she says. “But don’t cause trouble. We have enough of that.”
+",
+      "options": [
+        {
+          "label": "Enter the camp",
+          "to": “S59"
+        },
+        {
+          "label": "Ask about the Emberwalkers.”,
+          "to": "S60"
+      ]
+    },
+"S61": {
+      "text": "The Emberwalker camp bustles with activity as dusk settles in. Torches crackle. Someone bangs pots together in what might be cooking or might be combat—honestly unclear. The air smells of stew, smoke, and exhausted hope.
+ 
+A tall man with soot-streaked cheeks approaches. “Name’s Briar. Quartermaster. You look like you’ve fought the sun and lost, but we’ve all been there.” He hands you a steaming cup of something thick and brown. “Drink. It’s edible. Mostly.”
+ 
+You sip it.
+ 
+It is not edible.
+ 
+Briar watches expectantly.
+",
+      "options": [
+        {
+          "label": "Pretend to like it, to impress the Emberwalkers",
+          "to": “81"
+        },
+        {
+          "label": "Tell Briar the truth.”,
+          "to": "S82"
+        }
+        {
+      ]
+    },
+"S62": {
+      "text": “Night creeps over the ruins as you sit beside the Emberwalkers’ fire, listening to their stories. They speak of fractured realities, roaming Everbeasts, and a creature called the Hollow King, whose presence is heralded by walls of whispering smoke.
+ 
+A scout rushes in. “Movement in the east! Something big!”
+ 
+Briar curses. “We can’t defend this many people if it’s the Hollow King.”
+ 
+He looks at you.
+ 
+“You came from that direction. Did you see anything?”,
+      "options": [
+        {
+          "label": "Warn them about what you glimpsed before",
+          "to": “S83"
+        },
+        {
+          "label": "Approach the reverse-flowing river”,
+          "to": "S56"
+        }
+      ]
+    },
+"S63": {
+      "text": "You climb onto an overturned wagon for a better view. The plains ripple with shadows. For a brief moment, you spot a towering silhouette with curling horns and smoke trailing from its hands.
+ 
+Then it vanishes.
+ 
+The Emberwalkers debate whether to relocate or prepare defenses.",
+      "options": [
+        {
+          "label": “Suggest reinforcing the camp",
+          "to": “S85"
+        },
+        {
+          "label": "Push for immediate evacuation”,
+          "to": "S86"
+        }
+        {
+          "label": "Approach the reverse-flowing river”,
+          "to": "S56"
+        }
+      ]
+    },
+"S64": {
+      "text": "The camp quiets as night deepens. A child begins humming a trembling melody—something about the moon being cracked. People cling to comfort wherever they can find it.
+ 
+You wander to the camp’s edge, where a row of wagons forms a makeshift barricade. A lantern flickers strangely, cycling through colors not known to mortal physics.
+ 
+The lantern’s flame twists into a symbol—a crown split in half.
+ 
+The same mark as your charm.
+",
+      "options": [
+        {
+          "label": "Approach the lantern",
+          "to": “S87"
+        },
+        {
+          "label": "Step back and observe instead”,
+          "to": "S88"
+    ]
+    },
+"S65": {
+      "text": "You join a group of Emberwalker scouts preparing for a nighttime patrol. Their leader, a stern man named Talon, hands you a curved dagger of shimmering metal.
+ 
+“This blade can cut through illusions,” Talon says. “And through some realities, if you swing hard enough.”
+ 
+A chill runs through you.
+ 
+The patrol heads into the darkened ruins.
+ 
+Halfway through, you hear scraping behind you.
+",
+      "options": [
+        {
+          "label": “If you investigate the sound, go to S89",
+          "to": “S89"
+        },
+        {
+          "label": "Urge the patrol to move faster”,
+          "to": "S90"
+        }
+        {
+          "label": "Approach the reverse-flowing river”,
+          "to": "S56"
+        }
+      ]
+    },
+"S66": {
+      "text": “The patrol returns safely—mostly. One scout swears he saw an Everbeast stalking the rooftops. Another claims he saw his own reflection following him.
+ 
+You settle near a low fire and examine the dagger Talon gave you. Its edge hums faintly when you run your thumb along it.
+ 
+Kestrel sits beside you. “You ever think the Everpath is just messing with us for fun?”
+ 
+Before you can answer, someone screams.
+",
+      "options": [
+        {
+          "label": "Run toward the scream",
+          "to": “S91"
+        },
+        {
+          "label": "Search for Kestrel’s reaction first”,
+          "to": "S92"
+        }
+        {
+          "label": "Approach the reverse-flowing river”,
+          "to": "S56"
+        }
+      ]
+    },
+"S67": {
+      "text": " 
+A healer named Lira beckons you into her tent. “You’re carrying unstable magic,” she whispers. “It clings to you like smoke.” She waves a hand, conjuring a faint blue glow.
+ 
+The glow surrounds you—then sputters, pops, and vanishes.
+ 
+Lira frowns. “That’s… not supposed to happen.”
+ 
+She gives you a choice:
+ 
+“Let me try something stronger. Or you can walk out now and hope reality doesn’t collapse around you.”
+",
+      "options": [
+        {
+          "label": "Let her proceed",
+          "to": “S93"
+        },
+        {
+          "label": "You decline”,
+          "to": "S94"
+        }
+        {
+          "label": "Approach the reverse-flowing river”,
+          "to": "S56"
+        }
+      ]
+    },
+"S68": {
+      "text": "You stroll past the camp perimeter, needing a moment alone. Stars shine overhead—but they’re wrong. Constellations swirl into new shapes as you watch.
+ 
+One star detaches, drifting downward.
+ 
+It stops inches from your face, glowing intensely.
+ 
+A voice speaks from within it: “The Crownshard calls to its bearer.”
+",
+      "options": [
+        {
+          "label": "Reach for the star",
+          "to": “S95"
+        },
+        {
+          "label": "Retreat back into camp”,
+          "to": "S96"
+        ]
+        },
+"S69": {
+      "text": "A caravan of travelers arrives—exhausted, frightened, and dragging carts of scavenged goods.
+ 
+Their leader, a woman with a staff carved from living wood, bows to you.
+ 
+“You carry the scent of the Everpath,” she says. “And only those marked by it can guide us.”
+ 
+People begin gathering behind her, murmuring.
+ 
+“Please. Will you lead us to somewhere safe?”
+
+You didn’t sign up for leadership. And yet…
+ 
+",
+      "options": [
+        {
+          "label": "Accept leadership of the caravan",
+          "to": “S97"
+        },
+        {
+          "label": “You refuse”,
+          "to": "S98"
+         ]
+         },
+"S70": {
+      "text": "The Emberwalkers’ leader, Mara, summons you.
+ 
+“We’ve confirmed reports of Everbeasts near the ridge. We can’t stay here much longer.” She eyes you with unsettling intensity.
+ 
+“You have a connection to the Everpath. I can sense it. We need your insight. Which direction gives us a fighting chance?”
+ 
+She points to three options:
+ 
+The ashen plains to the north.
+ 
+The glimmering caves to the east.
+ 
+The rootbound forest to the south.
+",
+      "options": [
+        {
+          "label": "Choose the ashen plains",
+          "to": “S99"
+        },
+        {
+          "label": “Choose the glimmering caves”,
+          "to": "S100"
+        }
+        {
+          "label": "Choose the rootbound forest”,
+          "to": "S101"
+        }
+      ]
+    },
+"S71": {
+      "text": "Night winds howl across the camp. A few Emberwalkers huddle around a cracked crystal brazier whose flames burn cold blue.
+ 
+You notice someone watching you—a hooded stranger leaning on a wagon wheel.
+ 
+When you approach, the stranger lifts their hood.
+ 
+It’s the crystalline fox.
+ 
+But much bigger.
+ 
+And standing upright.
+ 
+It bows.
+ 
+“I believe we began on the wrong paw,” it says.
+ 
+You stare.
+",
+      "options": [
+        {
+          "label": "Talk to the fox-being",
+          "to": “S102"
+        },
+        {
+          "label": "Run back to the main camp”,
+          "to": "S103"
+           ]
+           },
+
+"S72": {
+"text": "You wake in the middle of the night to a soft tapping.
+ 
+Tap. Tap. Tap.
+ 
+A shadowy figure stands outside your tent, its outline shimmering like heat haze.
+ 
+It points toward the woods.
+ 
+“Follow,” it whispers.
+ 
+You do not love this.",
+      "options": [
+        {
+          "label": "Follow the figure",
+          "to": “S104"
+        },
+        {
+          "label": "Shout for help instead”,
+          "to": "S105"
+           ]
+           },
+"S73": {
+      "text": "A group of Emberwalkers gather around a strange object—an orb made of swirling mist locked within a metal cage.
+ 
+“It’s an Evercore,” someone whispers. “Powerful. Dangerous.”
+ 
+You feel drawn to it.
+ 
+The mist inside swirls faster as you approach.
+",
+      "options": [
+        {
+          "label": "Touch the Evercore”,
+          "to": “S106"
+        },
+        {
+          "label": "Ask them where they found it”,
+          "to": "S107"
+           ]
+           },
+"S74": {
+      "text": "The camp’s alarm horns blare.
+ 
+Everbeasts storm the outer wagons—massive creatures shaped like wolves made of smoke and broken glass.
+ 
+Kestrel shouts, “Cover the east side! They’re flanking!”
+ 
+Chaos erupts.
+",
+      "options": [
+        {
+          "label": "Join the fight”,
+          "to": “S108"
+        },
+        {
+          "label": "Focus on evacuating civilians”,
+          "to": "S109"
+        }
+        {
+          "label": "Approach the reverse-flowing river”,
+          "to": "S56"
+        }
+      ]
+    },
+"S75": {
+      "text": "As dawn breaks, the Emberwalker camp smolders. Fires die down. Survivors tend to their wounded.
+ 
+Mara approaches, limping but determined.
+ 
+“Whatever is coming,” she says, “we can’t face it alone. We need allies. Strong ones. And I’ll wager the Everpath has been guiding you toward them.”
+ 
+She points toward the horizon.
+ 
+Three distant landmarks pulse faintly:
+ 
+A floating citadel of stone fragments.
+ 
+A forest of glowing roots.
+ 
+A canyon filled with burning fog.
+ 
+ 
+Your destiny lies with one of them.
+",
+      "options": [
+        {
+          "label": "Travel to the floating citadel”
+          "to": “SS110"
+        },
+        {
+          "label": "Travel to the glowing root-forest”,
+          "to": "S111"
+        }
+        {
+          "label": "Travel to the burning-fog canyon”,
+          "to": "S112"
+        }
+      ]
+    },
+"S76": {
+      "text": "You push aside a curtain of dangling crystal vines as you descend into the cavern beneath the fractured plaza. The air is cool here—cooler than anything aboveground—and your breath rolls from your lips in pale ribbons. The faint hum of something ancient echoes from deeper in the dark. At first it sounds like distant wind. But then, as your ears adjust, you realize it’s more like chanting.
+ 
+Or worse… humming. Cheerfully.
+ 
+It doesn’t take long to discover the source. A cluster of Glimmer Sprites—small luminescent creatures no larger than a cat—float in a circle around a cracked monolith. They’re humming some kind of work tune while tapping the stone with tiny chisels, as though conducting repairs.
+ 
+One of them notices you, gasps loudly, and drops its tool. “INTRUDER!” it squeaks. The others scatter like startled stars.
+ 
+Do you:
+",
+      "options": [
+        {
+          "label": "Approach slowly and try to calm them",
+          "to": “S82"
+        },
+        {
+          "label": "Examine the monolith while they flee”,
+          "to": "S84"
+        }
+        {
+          "label": "Retreat and return to the surface”,
+          "to": "S91"
+        }
+      ]
+    },
+"S77": {
+      "text": "The floor trembles as you enter the twisting hall of broken archways. Someone—and by someone you mean something—has carved the walls with violent gashes. Claw marks rake across the ancient stone in patterns that almost look like writing.
+ 
+The raven on your shoulder ruffles its feathers. “Whatever made these wasn’t housebroken. Or friendly. Or small.”
+ 
+A distant growl reverberates. Not the kind that warns. The kind that promises.
+ 
+Do you:
+",
+      "options": [
+        {
+          "label": "Stand your ground and prepare for combat",
+          "to": “S92"
+        },
+        {
+          "label": “Hide behind a fallen column”,
+          "to": "S93"
+        }
+        {
+          "label": “Run back the way you came”,
+          "to": "S94"
+        }
+      ]
+    },
+"S78": {
+      "text": "",
+      "optionThe corridor opens into a broad underground rotunda. Or it once was. Now half the ceiling has collapsed, letting a shaft of sunlight pour down onto a pool of shimmering water. Not normal water. Not even magical water. This water moves as though thinking.
+ 
+The pool rises up, forming a vaguely humanoid silhouette. It bows politely.
+ 
+“Greetings, traveler. I am Nyssarion, the Echoing Reflection. I can show you truths you seek… but truth has a cost.”
+ 
+Your hand instinctively moves toward your shard. The figure seems to sense it.
+ 
+“Ah. The Living Shard. Then your truths are deeper than most.”
+ 
+Do you: [
+        {
+          "label": "Accept its offer",
+          "to": “S95"
+        },
+        {
+          "label": "Refuse and leave respectfully”,
+          "to": "S96"
+        }
+        {
+          "label": "Attack the entity preemptively”,
+          "to": "S97"
+        }
+      ]
+    },
+"S79": {
+      "text": "The chamber reeks of sulfur and old parchment. Strange combination. But the source becomes clear when you spot dozens of scorched textbooks scattered across the floor, each one still faintly glowing.
+ 
+A trio of Unfinished Spell Students sit around a bubbling cauldron. They turn toward you with eyes full of caffeine and regret.
+ 
+“Hey! You’re not supposed to be here! We reserved this disaster zone for study hours!” protests one.
+ 
+Another whispers, “Do we… do we hex them?”
+ 
+The third shrugs helplessly.
+",
+      "options": [
+        {
+          "label": "Ask what spell they’re working on",
+          "to": “S98"
+        },
+        {
+          "label": "Offer to help them”,
+          "to": "S99"
+        }
+        {
+          "label": "Back away slowly”,
+          "to": "S100"
+        }
+      ]
+    },
+"S81": {
+      "text": "You climb a spiral stair of luminous stone only to emerge in a vast chamber insulated with vines that pulse like veins. Bioluminescent flowers bloom in slow motion, petals expanding and contracting like lungs. The air tastes sweet, almost intoxicating.
+ 
+At the center sits a massive cocoon. Something moves inside it.
+ 
+You swallow.
+",
+      "options": [
+        {
+          "label": "Touch the cocoon",
+          "to": “S101"
+        },
+        {
+          "label": "Wait and observe”,
+          "to": "S102"
+        },
+        {
+          "label": "Burn it before it hatches”,
+          "to": "S103"
+        },
+      ]
+    },
+"S82": {
+      "text": "You lower your hands, palms open, and speak softly. “I’m not here to hurt you.” The Glimmer Sprites peek out from behind stalagmites. One floats closer, wings flickering nervously.
+ 
+“Are… are you a Spire Keeper?” it asks.
+ 
+You shake your head. “Just a survivor.”
+ 
+The sprite circles you slowly, examining your gear, your shard, your scars. “You look like someone who needs guidance.”
+ 
+Several of the others giggle from hiding.
+“If you want… we can show you what we’re repairing.",
+      "options": [
+        {
+          "label": "If you accept",
+          "to": “S104"
+        },
+        {
+          "label": "If you decline”,
+          "to": "S85"
+        },
+        {
+          "label": "Approach the reverse-flowing river”,
+          "to": "S56"
+        },
+      ]
+    },
+"S83": {
+      "text": "You draw your weapon, bracing as the shadow lunges from the darkness. But at the last possible moment, the creature skids to a halt.
+ 
+It’s… a dog.
+ 
+A very large, very horned, very apocalypse-mutated dog.
+ 
+It drops a bone at your feet and barks once, as if expecting praise.
+",
+      "options": [
+        {
+          "label": "Pet the mutated dog",
+          "to": “S105"
+        },
+        {
+          "label": "Attempt to domesticate”,
+          "to": "S106"
+        },
+        {
+          "label": "Back away slowly”,
+          "to": "S94"
+        },
+      ]
+    },
+"S84": {
+      "text": "While the sprites cower, you approach the cracked monolith. The etched runes flicker erratically—sometimes glowing blue, sometimes green, sometimes fuchsia, as though indecisive.
+ 
+Your shard vibrates.
+ 
+A whisper threads through your mind: “The Spire can be restored… but not without cost.”
+ 
+A vision forms: a branching path, dozens of fates, countless possible outcomes. You see yourself alive, dead, triumphant, ascendant, absurdly wealthy, crowned as a Decor God, and—strangely—running a small café.
+",
+      "options": [
+        {
+          "label": "Touch the monolith",
+          "to": “S107"
+        },
+        {
+          "label": "Break a piece off”,
+          "to": "S108"
+        },
+        {
+          "label": "Step away”,
+          "to": "S85"
+        },
+      ]
+    },
+"S85": {
+      "text": "You leave the monolith area. The Glimmer Sprites cautiously resume their humming—quieter this time, like they’re gossiping about you.
+ 
+You follow a tunnel leading upward until you reach a fork.
+",
+      "options": [
+        {
+          "label": "Take the left path toward warm air",
+          "to": “S109"
+        },
+        {
+          "label": “Take the right path toward faint chanting”
+           "to": "S110"
+         },
+           ]
+         },
+"S86": {
+      "text": "You enter a circular chamber covered in ancient murals depicting the rise of the Emerald Spire. One mural shows a figure holding a glowing shard that looks unsettlingly similar to yours.
+ 
+At the mural’s base lies a pedestal with a crystalline slot.
+",
+      "options": [
+        {
+          "label": "Insert your Living Shard",
+          "to": “S111"
+        },
+        {
+          "label": “Pocket the mural’s loose fragments”,
+          "to": “S112"
+         },
+        {
+          "label": “Leave the room untouched”,
+          "to": “S113"
+         },
+           ]
+         },
+"S87": {
+      "text": "You steady your breath as you cross a fractured stone bridge over a chasm. The bridge groans with every step. Halfway across, wind gusts upward, carrying the faint echo of distant dragon wings.
+ 
+A silhouette circles high above.
+",
+      "options": [
+        {
+          "label": "Wave to it",
+          "to": “S114"
+        },
+        {
+          "label": “Hide”,
+          "to": “S115"
+         },
+        {
+          "label": “Shout for help”,
+          "to": “S116"
+         },
+           ]
+         },
+"S88": {
+      "text": "A corridor lined with broken lanterns leads into a hall of mirrors—hundreds of reflective panels shattered and reassembled into mismatched patterns. Some reflections move independently from you.
+ 
+One reflection steps out of the mirror.
+ 
+“I am the version of you who made better life choices,” it says smugly.
+ 
+Do you:
+",
+      "options": [
+        {
+          "label": "Ask for advice",
+          "to": “S117"
+        },
+        {
+          "label": “Challenge them”,
+          "to": “S118"
+         },
+        {
+          "label": “Flee”,
+          "to": “S119"
+        },
+           ]
+         },
+"S89": {
+      "text": "You find a supply chamber filled with crates labeled in ancient script. Most have already been looted, but one crate remains sealed.",
+      "options": [
+        {
+          "label": "Open it",
+          "to": “S120"
+        },
+        {
+          "label": “Smash it”,
+          "to": “S121"
+         },
+        {
+          "label": “Leave it”,
+          "to": “S113"
+        },
+           ]
+         },
+"S90": {
+      "text": "A gentle glow emanates from ahead. You step into a crystal garden—towering flowers carved from gemstone, each pulsing with soft light. A gentle melody plays through the air like the garden itself is singing.
+ 
+At the center sits a Crystal Guardian, a being made of facets and refracted radiance.
+ 
+“Welcome, traveler,” it says. “You walk the early paths of destiny.”
+",
+      "options": [
+        {
+          "label": "Hear its prophecy",
+          "to": “S122"
+        },
+        {
+          "label": “Ask for guidance”,
+          "to": “123"
+         },
+        {
+          "label": “Attack (why would you? but okay)”,
+          "to": “S124"
+         },
+           ]
+         },
+"S91": {
+      "text": "You retrace your steps to the cavern mouth, the cooler air trailing behind you like a sigh relieved to let you go. As you emerge onto the broken plaza above, sunlight dazzles your eyes, forcing you to blink away momentary blindness.
+ 
+The raven on your shoulder exhales sharply. “Good, you’re back. I was just about to consider rescuing you. Very emotionally taxing for a mentor figure, you know.”
+ 
+Across the plaza, dust swirls upward into a small whirlwind—unnaturally small, unnaturally controlled. As it clears, a figure appears: a cloaked traveler carrying an ornate staff.
+ 
+They raise a hand.
+ 
+“You survived the lower hollows,” the stranger says. “Then your path intersects with choices far older than you.”
+",
+      "options": [
+        {
+          "label": "Approach the traveler",
+          "to": “S126"
+        },
+        {
+          "label": “Hide and observe”,
+          "to": “S127"
+         },
+        {
+          "label": “Ignore them and head toward the Stormspire trail”,
+          "to": “S128"
+         },
+           ]
+         },
+"S92": {
+      "text": "You plant your feet, grip your weapon, and stare into the darkness. The growl comes again—closer. The air thickens with hot breath.
+ 
+Then the creature emerges: a massive Chasm Stalker, its body all sinew and claw and horn. Its eyes glow with molten gold. It sniffs, confused, as though uncertain whether you’re prey, threat, or disappointment.
+ 
+The raven mutters, “Definitely disappointment.”
+",
+      "options": [
+        {
+          "label": "Strike first",
+          "to": “S129"
+        },
+        {
+          "label": “Attempt to scare it off”,
+          "to": “S130"
+         },
+        {
+          "label": “Offer food”,
+          "to": “S131“
+         },
+           ]
+         },
+"S93": {
+      "text": "You slip behind a fallen column just as the beast rounds the corner. Your heart hammers, your breath stills. The Chasm Stalker prowls past, its claws scraping the floor in slow, rhythmic taps.
+ 
+It pauses.
+ 
+Sniffs.
+ 
+Turns.
+ 
+Your muscles freeze as its molten eyes lock onto your hiding spot.
+",
+      "options": [
+        {
+          "label": "Stay perfectly still",
+          "to": “S132"
+        },
+        {
+          "label": “Bolt”,
+          "to": “S94"
+         },
+        {
+          "label": “Throw something to distract it”,
+          "to": “133"
+         },
+           ]
+         },
+"S94": {
+      "text": "You run—no hesitation, no strategy, only instinct. The corridor twists behind you in a blur as distant snarling follows your retreat.
+ 
+At last you burst into a broad chamber filled with towering columns. The echoes confuse whatever hunts you. Silence settles.
+ 
+Your lungs burn, but you’re alive.
+",
+      "options": [
+        {
+          "label": "Explore the chamber",
+          "to": “S134"
+        },
+        {
+          "label": “Take the exit tunnel”,
+          "to": “S110"
+         },
+        {
+          "label": “”,
+          "to": “"
+         },
+           ]
+         },
+"S95": {
+      "text": "You nod to Nyssarion. The watery figure extends a hand shaped from ripples.
+ 
+“Then gaze, traveler.”
+ 
+The pool rises, enfolding your vision in shimmering folds. Images form: the Spire whole again, its halls alive with purpose. Another view: the world fractured further, magic turning feral, societies collapsing.
+ 
+Then—you—standing atop the restored tower, holding the Living Shard above your head. Below, thousands cheer… or flee.
+ 
+“Your choices are rivers,” Nyssarion murmurs. “I show you the ocean they may reach.”
+",
+      "options": [
+        {
+          "label": "Ask how to restore the Spire",
+          "to": “S135"
+        },
+        {
+          "label": “Ask about the Sundering’s cause”,
+          "to": “S136"
+         },
+        {
+          "label": “Break free from the vision”,
+          "to": “S96"
+         },
+           ]
+         },
+"S96": {
+      "text": "You pull back from the watery figure, shaking off the last ripples of its vision.
+ 
+“Wise,” Nyssarion says softly. “Truth is heavy. Not all can carry it.”
+ 
+It dissolves into mist, leaving the chamber dim and silent. You’re alone—but no longer unchanged.
+",
+      "options": [
+        {
+          "label": "Return to the rotunda entrance",
+          "to": S85“"
+         ]
+         },
+"S97": {
+      "text": "Your strike cleaves straight through Nyssarion’s watery torso.
+ 
+It reforms instantly.
+ 
+“Ah. Violence,” it says. “A classic mortal greeting.”
+ 
+The figure expands, towering above you, its voice deepening into something ancient.
+ 
+“You have chosen a river whose ocean is ruin.”
+ 
+A tidal wave of force slams into you.
+ 
+Lose 2 Health.
+",
+      "options": [
+        {
+          "label": "Stumble back",
+          "to": “S85"
+        },
+        ]
+         },
+"S98": {
+      "text": "“What spell are you working on?” you ask.
+ 
+The three students exchange looks.
+ 
+“Uh… a containment field?”
+ 
+“A teleportation kettle?”
+ 
+“Explosion-resistant trousers?”
+ 
+You arch a brow.
+ 
+“…All at once?”
+ 
+They nod sheepishly.
+",
+      "options": [
+        {
+          "label": "Offer advice",
+          "to": “S137"
+        },
+        {
+          "label": “Suggest abandoning the project”,
+          "to": “S138"
+         },
+        {
+          "label": “Leave before someone explodes — go to S100”,
+          "to": “S100"
+        },
+           ]
+         },
+"S99": {
+      "text": "You roll up your sleeves. “Move over.”
+ 
+The students brighten instantly.
+ 
+Most of the next hour is spent extinguishing fires, rewriting runes drawn backward, and confiscating three different objects labeled "Not a Bomb." By the end, the cauldron glows a stable emerald.
+ 
+The students cheer.
+ 
+“You’re amazing! Here—take this.”
+ 
+They hand you a Stabilized Spell Core, warm to the touch.
+ 
+Add item: Stabilized Spell Core.
+ 
+Return to S85.
+",
+      "options": [
+        {
+          "label": "Rest",
+          "to": “85”
+           ]
+         },
+"S100": {
+      "text": "You back away, hands raised in universal “I want no part of this” fashion.
+ 
+A moment later, the cauldron erupts in glitter. Literal glitter. You flee the chamber as the students shout in panic.
+",
+      "options": [
+        {
+          "label": "Run away in embarrassment",
+          "to": “S85"
+        },
+        ]
+         },
+"S101": {
+      "text": "Your fingers brush the cocoon.
+ 
+It pulses.
+ 
+Cracks spiral across its surface. The raven squawks. “Oh great. You poked it. Why does everyone poke mysterious things?”
+ 
+The cocoon splits open.
+ 
+A creature unfurls—half-human, half-silken moth, its wings shimmering with prismatic dust.
+ 
+“Thank you… rescuer,” it whispers.
+ 
+Do you:
+",
+      "options": [
+        {
+          "label": "Help the moth-being stand",
+          "to": “S139"
+        },
+        {
+          "label": “Question it”,
+          "to": “S140"
+         },
+        {
+          "label": “Flee”,
+          "to": “S113"
+         },
+           ]
+         },
+"S102": {
+      "text": "You crouch in silence, watching the cocoon.
+ 
+It twitches.
+ 
+Shudders.
+ 
+Then slowly… settles.
+ 
+Whatever’s inside isn’t ready to emerge. Or perhaps it sensed your hesitation.
+ 
+You step back quietly.
+",
+      "options": [
+        {
+          "label": "Face a new challenge",
+          "to": “85"
+        },
+        ]
+         },
+"S103": {
+      "text": "You ignite a small flame and set it to the cocoon.
+ 
+It burns fast—too fast.
+ 
+A piercing shriek fills the chamber. The vines withdraw violently, recoiling as though betrayed.
+ 
+The raven stares. “Well. That was… bold.”",
+      "options": [
+        {
+          "label": "Wallow in incompetence ",
+          "to": “85"
+        },
+         ]
+         },
+"S104": {
+      "text": "The lead Glimmer Sprite hovers closer. “Come. We’ll show you.”
+ 
+They guide you around the monolith to a hidden recess. Inside lies a fractured heartstone, pulsing weakly.
+ 
+“This powered parts of the Spire,” the sprite whispers. “If restored, it could light many halls once more.”",
+      "options": [
+        {
+          "label": " Offer your Living Shard to help",
+          "to": “S141"
+        },
+        {
+          "label": “Ask how it broke”,
+          "to": “S142"
+         },
+        {
+          "label": “Decline involvement”,
+          "to": “S85"
+         },
+           ]
+         },
+"S105": {
+      "text": "You slowly extend a hand.
+ 
+The mutated dog sniffs it.
+ 
+Then slobbers across your entire forearm.
+ 
+The raven recoils in disgust.
+ 
+“Ugh. You’ve made a friend.”
+ 
+The dog wags its barbed tail eagerly.
+ 
+Add companion: Mutated Dog (Friendly, Chaotic).
+",
+      "options": [
+        {
+          "label": "If you want to explore with your new companion",
+          "to": “S134"
+        },
+        {
+          "label": “If you want to return to safer tunnels”,
+          "to": “S85"
+         },
+         ]
+         },
+"S106": {
+      "text": "You crouch and whistle softly, hoping the mutated dog understands the universal language of “Be my friend and don’t eat me.”
+ 
+The beast tilts its horned head, considering the concept of obedience. It snorts once, then circles you, sniffing at your pack, your boots, your soul. Finally, it sits—massive, patient, expectant.
+ 
+The raven flaps irritably. “Congratulations. You’re now the proud owner of a dog that could bench-press a wagon.”
+ 
+The creature nudges you forward.
+ 
+Add companion: Mutated Dog (Semi-Trained, Unpredictable).
+",
+      "options": [
+        {
+          "label": "Take it into the deeper tunnels",
+          "to": “S134"
+        },
+        {
+          "label": “Attempt further training”,
+          "to": “S143"
+         },
+        {
+         ]
+         },
+"S107": {
+      "text": "Your fingertips brush the monolith’s cracked surface.
+ 
+A jolt runs through you—not pain, but recognition. The Living Shard in your possession vibrates in reply. Runes blaze to life, flooding the chamber with shifting hues.
+ 
+A voice hums inside your skull:
+ 
+“You are a fragment seeking its whole. A choice seeking its consequence.”
+ 
+Images bloom: the world before the Sundering, the Spire crowned in light, the moment it broke—shattered into timelines.
+ 
+You gasp as reality folds.",
+      "options": [
+        {
+          "label": "Let the vision deepen",
+          "to": “S144"
+        },
+        {
+          "label": “Tear free from the monolith”,
+          "to": “S85"
+         },
+        {
+         ]
+         },
+"S108": {
+      "text": "You wedge your blade into a crack and pry.
+ 
+A chunk of gemstone snaps loose with a sharp CRACK.
+ 
+The monolith flickers violently.
+ 
+The chamber groans.
+ 
+Your raven sighs dramatically. “Well, we’re dead.”
+ 
+But instead of collapsing, the monolith stabilizes—and the gem in your hand glows like a newborn star.
+ 
+Add item: Shard Fragment (Volatile).
+ 
+You gain +1 Arcane Influence, but you have no idea what that means.
+",
+      "options": [
+        {
+          "label": "Back to energize",
+          "to": “S85"
+        },
+        ]
+         },
+"S109": {
+      "text": "Warm air flows from the left passage. You follow it until you emerge into a cavern warmed by molten channels running beneath crystal plates.
+ 
+The plates chime when stepped on—beautiful but loud.
+ 
+The ground trembles.
+ 
+Something massive is waking below.
+",
+      "options": [
+        {
+          "label": "Cross the plates quickly",
+          "to": “S145"
+        },
+        {
+          "label": “Move slowly and quietly”,
+          "to": “S146"
+         },
+        {
+          "label": “Turn back”,
+          "to": “S85"
+         },
+           ]
+         },
+"S110": {
+      "text": "The tunnel narrows, forcing you to duck. The chanting grows louder—rhythmic, ritualistic, unsettlingly cheerful.
+ 
+Eventually you reach a vast chamber where a ring of robed figures dance around a floating boulder.
+ 
+They spot you instantly.
+ 
+“JOIN US!” one shouts, far too excited.
+ 
+Do you:",
+      "options": [
+        {
+          "label": "Join the dance",
+          "to": “S147"
+        },
+        {
+          "label": “
+Demand an explanation”,
+          "to": “S148"
+         },
+        {
+          "label": “Flee”,
+          "to": “S94"
+         },
+           ]
+         },
+"S111": {
+      "text": " You place the Living Shard into the pedestal’s slot.
+ 
+It clicks perfectly.
+ 
+The mural glows. Stone grinds as long-dormant mechanisms awaken. The chamber trembles, and ancient symbols realign.
+ 
+The shard hums, pulling energy from everywhere—and into you.
+ 
+A surge of visions floods your mind: past, future, possible, impossible.
+ 
+Gain +1 Insight.
+",
+      "options": [
+        {
+          "label": "Let the vision continue",
+          "to": “S149"
+        },
+        {
+          "label": “Pull the shard free”,
+          "to": “S150"
+         },
+         ]
+         },
+"S112": {
+      "text": " 
+You pocket a few loose mural fragments. They’re heavier than they look and warm to the touch.
+ 
+The raven whistles. “Stealing archaeology. You truly are an adventurer.”
+ 
+Add item: Historic Runes (Illicit).
+",
+      "options": [
+        {
+          "label": "Return to your search",
+          "to": “S86"
+         },
+         ]
+         },
+"S113": {
+      "text": "You walk away from the strange room, choosing preservation over meddling. The corridor ahead slopes upward, eventually opening into a broad hall lit by flickering lantern fungi.
+ 
+A breeze brushes your cheek.
+ 
+The scent of fresh air.
+ 
+Do you:
+",
+      "options": [
+        {
+          "label": "Follow the breeze",
+          "to": “S151"
+        },
+        {
+          "label": “Explore a side passage”,
+          "to": “S152"
+         },
+         ]
+         },
+"S114": {
+      "text": "You wave at the dragon.
+ 
+The dragon swoops closer.
+ 
+The raven shrieks. “WHY WOULD YOU DO THAT?”
+ 
+But instead of attacking, the dragon hovers before you, eyes narrowing in curiosity. It sniffs.
+ 
+Decides you are not a snack.",
+      "options": [
+        {
+          "label": "Attempt communication",
+          "to": “S153"
+        },
+        {
+          "label": “Offer food”,
+          "to": “S131"
+         },
+         ]
+         },
+"S115": {
+      "text": "You duck behind a pillar. The dragon circles once… twice… then moves on.
+ 
+Your heartbeat slows.
+ 
+But new footprints lead deeper into the canyon. Human ones. Recently made.
+ 
+Do you:
+",
+      "options": [
+        {
+          "label": "Follow the footprints",
+          "to": “S154"
+        },
+        {
+          "label": “Return across the bridge”,
+          "to": “87"
+         },
+         ]
+         },
+"S116": {
+      "text": "Your shout echoes across the canyon.
+ 
+The dragon circles back.
+ 
+“Friend or foe?” it booms.
+ 
+The raven whispers, “Say friend. ALWAYS say friend.”
+",
+      "options": [
+        {
+          "label": "Declare friendship",
+          "to": “S153"
+        },
+        {
+          "label": “Declare neutrality”,
+          "to": “S155"
+         },
+        {
+          "label": “
+Declare dominance”,
+          "to": “S156"
+         },
+           ]
+         },
+"S117": {
+      "text": "Advice?” your reflection says smugly. “Oh, I have plenty. For starters: moisturize. And stop trusting mysterious chambers.”
+ 
+You grit your teeth.
+ 
+But the reflection softens. “Listen… I made choices you didn’t. But we’re both still you. If you want to know where the Spire’s core truly lies… I can show you.”
+",
+      "options": [
+        {
+          "label": "Accept its help",
+          "to": “S157"
+        },
+        {
+          "label": “Challenge its authority”,
+          "to": “S118"
+         ]
+         },
+"S118": {
+      "text": "“Better life choices, huh?” you mutter.
+ 
+You punch your reflection.
+ 
+It punches back.
+ 
+The next few moments involve two versions of yourself wrestling across shattered mirrors while the raven provides extremely unhelpful commentary.
+ 
+Finally, your reflection dissipates into dust.
+ 
+Gain +1 Grit.",
+      "options": [
+        {
+          "label": "Retreat to count you loot",
+          "to": “S88"
+         ]
+         },
+"S119": {
+      "text": "You run.
+ 
+The mirrors scream. Literally. Their reflections ripple and twist, trying to grab you.
+ 
+You burst into a side corridor, gasping.",
+      "options": [
+        {
+          "label": "Keep running",
+          "to": “S152"
+        },
+        {
+          "label": “Hide”,
+          "to": “S115"
+         },
+        {
+          "label": “”,
+          "to": “"
+         },
+           ]
+         },
+"S120": {
+      "text": "You pry open the crate.
+ 
+Inside is a glowing orb labeled: “Do Not Activate Unless You Like Surprises”.
+ 
+The raven groans. “Put it back.”
+ 
+Do you:
+",
+      "options": [
+        {
+          "label": "Activate it",
+          "to": “S158”
+        },
+        {
+          "label": “Pocket it for later — add item Surprise Orb”,
+          "to": “S89"
+         },
+         ]
+         },
+"S121": {
+      "text": "The desert wind cuts at your cheeks as you approach the shattered monolith known only as the Crown. Once, it was the epicenter of the world’s magical flow—now fractured into hovering shards, each piece humming with unstable energy. You sense immediately that nothing about this place is safe: the air flickers, reality bends, and your shadow moves independently.
+ 
+You press your palm against the largest floating shard. It thrums in response, sending heat rushing up your arm. The Crown recognizes you—and it doesn’t seem to care whether you live through the next few minutes.
+ 
+A voice echoes around you, though no mouth speaks it: “The world breaks not by force, but by choice. Choose well.”
+",
+      "options": [
+        {
+          "label": "Reach into the shard",
+          "to": “S122"
+        },
+        {
+          "label": “Call for allies to your side”,
+          "to": “S123"
+         },
+        {
+          "label": “Try to stabilize the Crown with logic and wit”,
+          "to": “S124"
+         },
+           ]
+         },
+"S122": {
+      "text": "Your hand slips into the shard as though it were liquid fire. You are dragged inward—not physically, but mentally—into a labyrinth built from your own memories. The corridors shift with every step, each corner showing a version of the apocalypse that might have happened.
+ 
+You walk past a burning cityscape, your name written in ash across the sky. You pass a vision of yourself kneeling before an obsidian throne. You pass a moment where you died.
+ 
+You can feel the shard searching you, peeling back your intentions.
+ 
+A fork in the memory-path appears.
+",
+      "options": [
+        {
+          "label": "Confront the darkest version of yourself",
+          "to": “S125"
+        },
+        {
+          "label": “Reject the illusions entirely”,
+          "to": “S126"
+         },
+         ]
+         },
+"S123": {
+      "text": "The wind tears at you as you call out—not with your voice, but with your bond. Moments later, the world cracks open and your allies step through: The Trickster Fox, The Iron Sentinel, and the Bard of Dust. Each carries scars of their own journeys, but all stand ready.
+ 
+The Crown reacts instantly. Shards orbit faster, singing with chaotic energy.
+ 
+The Iron Sentinel places a hand on your shoulder. “This thing is older than time. We must stabilize it or destroy it.”
+",
+      "options": [
+        {
+          "label": "Attempt stabilization as a team",
+          "to": “S127"
+        },
+        {
+          "label": “Command a full assault”,
+          "to": “S128"
+         },
+        {
+          "label": “Ask the Bard to rewrite the Crown’s story”,
+          "to": “S129"
+         },
+           ]
+         },
+"S124": {
+      "text": "You square your shoulders and attempt something no hero has tried in centuries: applying basic reasoning to a magical cataclysm.
+ 
+The shards swirl. You speak slowly, clearly. “It is irrational to collapse a reality that sustains you. Therefore, stop.”
+ 
+The shards pause.
+ 
+You continue: “You exist because the world exists. Destroying the world eliminates your own purpose.”
+ 
+The Crown vibrates in what you think might be confusion.",
+      "options": [
+        {
+          "label": "Push your argument further",
+          "to": “S130"
+        },
+        {
+          "label": “Carefully withdraw, hoping the Crown calms”,
+          "to": “S131"
+         },
+         ]
+         },
+"S125": {
+      "text": "The darkest version of you stands tall: armored, horned, crowned—a tyrant forged in apocalypse. Its voice is your own but sharper.
+ 
+“You could have been me,” it says.
+ 
+You grip your weapon. “But I’m not.”
+ 
+The duel begins, echoing across every memory you’ve ever held.
+",
+      "options": [
+        {
+          "label": "Overwhelm your shadow with compassion",
+          "to": “S132"
+        },
+        {
+          "label": “Defeat it through sheer will”,
+          "to": “S133"
+         },
+         ]
+         },
+"S126": {
+      "text": "You close your eyes. “None of this is real.”
+ 
+The illusions twitch, distort, collapse.
+ 
+The shard screams—a keening psychic wail—and suddenly you are expelled from the memory maze, landing hard in the desert.
+ 
+The Crown appears weaker now, its glow sputtering.
+",
+      "options": [
+        {
+          "label": "Attack while it’s weakened",
+          "to": “S134"
+        },
+        {
+          "label": “Attempt to heal it”,
+          "to": “S135"
+         },
+         ]
+         },
+"S127": {
+      "text": "Your group forms a circle around the Crown. The Trickster Fox weaves binding sigils through the air. The Iron Sentinel anchors the ground. You channel your own strange, unpredictable energy.
+ 
+The shards begin to slow.
+ 
+But something is wrong—one piece refuses to cooperate.
+",
+      "options": [
+        {
+          "label": "Sacrifice a memory to complete the ritual",
+          "to": “S136"
+        },
+        {
+          "label": “If you force the shard into compliance: Go to S137.”,
+          "to": “137"
+         },
+         ]
+         },
+"S128": {
+      "text": "You shout the command. Your companions unleash everything they have.
+ 
+The Sentinel’s hammer cracks a shard. The Bard’s voice becomes a weapon. The Fox darts between beams of chaotic magic.
+ 
+But the Crown grows furious.
+ 
+The ground splits beneath you.",
+      "options": [
+        {
+          "label": "Leap into the chasm",
+          "to": “S138"
+        },
+        {
+          "label": “Climb onto a floating shard”,
+          "to": “S139"
+         },
+         ]
+         },
+"S129": {
+      "text": "The Bard raises her instrument, plucks a trembling chord, and begins to sing a new history.
+ 
+“The Crown was once gentle,” she intones. “A guardian. A friend.”
+ 
+The shards slow… soften… reshape.
+ 
+But rewriting reality is extremely dangerous.
+",
+      "options": [
+        {
+          "label": "Join the song",
+          "to": “S140"
+        },
+        {
+          "label": “Guard the Bard from backlash”,
+          "to": “S141"
+         },
+         ]
+         },
+"S130": {
+      "text": "You continue lecturing the ancient magical entity like it’s a malfunctioning toaster.
+ 
+“The apocalypse is an error state. Please reboot.”
+ 
+The Crown actually pauses. You sense it considering your request.
+",
+      "options": [
+        {
+          "label": "Initiate the reboot",
+          "to": “S142"
+        },
+        {
+          "label": “Cancel and attempt a softer approach”,
+          "to": “S143"
+         },
+         ]
+         },
+"S131": {
+      "text": "You bow your head and slowly withdraw.
+ 
+The Crown mirrors your movement, calming slightly. The desert wind stills.
+ 
+You may have earned its respect.",
+      "options": [
+        {
+          "label": "Attempt communion",
+          "to": “S144"
+        },
+        {
+          "label": “Leave the Crown behind”,
+          "to": “S145"
+         },
+         ]
+         },
+"S132": {
+      "text": "You disarm yourself. Your shadow-self hesitates.
+ 
+“I forgive you,” you say.
+ 
+It shatters—dissolving into a storm of starlight. Power floods you.",
+      "options": [
+        {
+          "label": "If you use this new power to heal the Crown: Go to S146.",
+          "to": “S146"
+        },
+        {
+          "label": “If you use it to destroy the Crown: Go to S147.”,
+          "to": “S147"
+         },
+        {
+          "label": “”,
+          "to": “"
+         },
+           ]
+         },
+"S133": {
+      "text": "You overpower your dark twin and absorb its strength.
+ 
+You become something more.",
+      "options": [
+        {
+          "label": "Ascend as the new guardian of the Crown",
+          "to": “S148"
+        },
+        {
+          "label": “Walk away from destiny entirely”,
+          "to": “S149"
+         },
+        {
+         ]
+         },
+"S134": {
+      "text": "Your strike pierces the weakened core.
+ 
+The Crown explodes in a storm of light.",
+      "options": [
+        {
+          "label": "Accept your fate",
+          "to": “NEUTRAL_END"
+         },
+         ]
+         },
+"S135": {
+      "text": "You pour gentle energy into the fractured monolith.
+ 
+Slowly, impossibly, it mends.",
+      "options": [
+        {
+          "label": "Accept your fate",
+          "to": “GOOD_END"
+        },
+         ]
+         },
+"S136": {
+"text": "A cherished memory fades from you forever as the ritual completes.
+ 
+The Crown stabilizes.",
+      "options": [
+        {
+          "label": "Accept your fate",
+          "to": “NEUTRAL _END2”
+           ]
+           },
+"S137": {
+      "text": "You dominate the shard.
+ 
+The Crown kneels.",
+      "options": [
+        {
+          "label": "Accep tyour fate",
+          "to": “BAD_END"
+         },
+         ]
+         },
+"S138": {
+      "text": "You fall into darkness… then rise as something else.",
+      "options": [
+        {
+          "label": "Accept your fate",
+          "to": “BAD_END2"
+         },
+         ]
+         },
+"S139": {
+      "text": "You gain mastery of the Crown’s fragments.",
+      "options": [
+        {
+          "label": "Accept your fate",
+          "to": “GOOD_END2"
+        },
+        ]
+        },
+"S140": {
+      "text": "Your voice merges with the Bard’s.
+ 
+The world rewrites itself.",
+      "options": [
+        {
+          "label": "Accept your fate",
+          "to": “NEUTRAL _END3"
+        },
+        ]
+        },
+"S141": {
+      "text": "You protect the Bard as the universe reboots.",
+      "options": [
+        {
+          "label": "Accept your fate",
+          "to": “GOOD _END3"
+        },
+         {
+         ]
+         },
+"S142": {
+"text": "System Reset
+
+Everything goes dark.
+Then light.
+
+The world reboots to its pre-apocalypse state. You awaken in a quiet meadow.",
+      "options": [
+        {
+          "label": "Play again",
+          "to": “S01"
+         },
+         ]
+         },
+"S143": {
+"text": "Gentle Logic Prevails
+ 
+You reasoned with chaos—and it worked. Diplomacy saves the world.
+",
+      "options": [
+        {
+          "label": "Play again",
+          "to": “S01"
+        },
+        {
+         ]
+         },
+"S144": {
+"text": "You merge minds with the Crown.",
+      "options": [
+        {
+          "label": "Congratulations are in order",
+          "to": “SPECIAL_END"
+        },
+        {
+         ]
+         },
+"S145": {
+      "text": "The Wanderer
+ 
+You simply walk away. The Crown",
+      "options": [
+        {
+          "label": "Play again",
+          "to": “S01"
+        },
+        {
+         ]
+         },
+"S146": {
+      "text": "With compassion, you restore balance.",
+      "options": [
+        {
+          "label": "Accept your fate",
+          "to": “GOOD_END"
+        },
+         ]
+         },
+"S147": {
+"text": "The world survives, but barely. Your strike saved millions and doomed thousands. You walk the Evergrove as a reluctant legend.",
+      "options": [
+        {
+          "label": "Play again",
+          "to": “S01"
+        },
+        {
+         ]
+         },
+"S148": {
+      "text": "You become the new Crown. In the abyss, you transform. A new underworld kingdom rises, with you as its mythic ruler.",
+      "options": [
+        {
+          "label": "Play again",
+          "to": “S01"
+        },
+        {
+         ]
+         },
+"S149": {
+      "text": "You reject every destiny. You simply walk away from The Crown",
+      "options": [
+        {
+          "label": "Play again",
+          "to": “S01"
+        },
+        {
+         ]
+         },
+“GOOD_END": {
+"text": "The Healed Crown
+ 
+Peace returns. Magic stabilizes. The apocalypse unwrites itself. You become a celebrated hero.
+",
+      "options": [
+        {
+          "label": "Play Again",
+          "to": "S01"
+        }
+      ]
+    },
+“GOOD_END2": {
+"text": “Shardmaster
+ 
+You ride the shards into the sky, becoming a cosmic nomad.
+",
+      "options": [
+        {
+          "label": "Play Again",
+          "to": "S01"
+        }
+      ]
+    },
+“GOOD_END3": {
+"text": “Guardian of the Song
+ 
+Your sacrifice keeps the music pure. You fade from memory, but your influence shapes generations.",
+      "options": [
+        {
+          "label": "Play Again",
+          "to": "S01"
+        }
+      ]
+    },
+"BAD_END": {
+"text": "The Crownbound Tyrant
+ 
+You master the Crown. All kneel. Order is maintained… but freedom dies.",
+      "options": [
+        {
+          "label": "Play Again",
+          "to": "S01"
+        }
+      ]
+    },
+"BAD_END2": {
+"text": "The Chasm King/Queen
+ 
+In the abyss, you transform. A new underworld kingdom rises, with you as its mythic ruler.",
+      "options": [
+        {
+          "label": "Play Again",
+          "to": "S01"
+        }
+      ]
+    },
+“NEUTRAL _END”: {
+“text”: “The Shattered Dawn
+ 
+The world survives, but barely. Your strike saved millions and doomed thousands. You walk the Evergrove as a reluctant legend.”,
+       “options”: [
+        {
+        “label”: “Play Again”
+        “to”: “S01”
+        }
+      ]
+    },
+“NEUTRAL _END2”: {
+“text”: “The Memory Price
+ 
+You saved the world but lost something precious. People cheer your name—yet you no longer remember why.”,
+       “options”: [
+        {
+        “label”: “Play Again”
+        “to”: “S01”
+        }
+      ]
+    },
+    "SPECIAL_END": {
+      "text": "Mindmeld Monarch
+ 
+You and the Crown merge, forming a dual consciousness. Harmony follows. You have earned a special place in VerseCraft history and discovered the SPECIAL ENDING!",
+      "options": [
+        {
+          "label": "Play Again",
+          "to": "S01"
+        }
+      ]
+    },
+“NEUTRAL _END3”: {
+“text”: “The Rewritten World
+ 
+History itself changes. Only you and the Bard recall the old timelines.”,
+       “options”: [
+        {
+        “label”: “Play Again”
+        “to”: “S01”
+        }
+      ]
+    },
+    "SPECIAL_END": {
+      "text": "SPECIAL_END narrative text placeholder.",
+      "options": [
+        {
+          "label": "Play Again",
+          "to": "S01"
+        }
+      ]
+    },
+    "DEATH": {
+      "text": "DEATH narrative text placeholder.",
+      "options": [
+        {
+          "label": "Play Again",
+          "to": "S01"
+        }
+      ]
+    }
+  }
+}
