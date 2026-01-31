@@ -1,0 +1,164 @@
+{
+  "story_id": "world_of_lorecraft",
+  "title": "World Of Lorecraft",
+  "scenes": [
+    {
+      "id": "S01",
+      "subtitle": "Vagabond Intro",
+      "text": "The road was supposed to be simple.\nOne town to the next. A roof, maybe a fire, then gone again before morning. That was the deal you made with yourself when you left the last place behind.\nThe storm came faster than expected.\nRain lashes sideways, soaking through your clothes until every step feels heavier than the last. The road ahead dissolves into mud and broken stone, the path barely visible through sheets of water and wind.\nThen the lightning hits.\nFor a split second, the tower reveals itself—vast, looming, impossible to miss once seen. Its doors hang shattered, blasted outward as if something inside fled in desperation.\nYou slow your pace.\nShelter is shelter.\nBut you’ve learned the hard way that the places that promise safety often charge more than they give.\nThe wind screams louder. The cold bites deeper.\nStaying out here is no longer an option.",
+      "choices": [
+        { "text": "Attempt to leave", "go": "S06" },
+        { "text": "Enter the tower", "go": "S07" },
+        { "text": "Find another entrance", "go": "S08" }
+      ]
+    },
+    {
+      "id": "S02",
+      "subtitle": "Lawbringer Intro",
+      "text": "The report was thin.\nA disappearance. No witnesses. No body. Just a name and a location scratched into a ledger already heavy with unfinished business.\nYou didn’t want this assignment.\nThe rain hammers against your armor as you stand before the tower, its silhouette cutting through the storm like a wound in the world. The doors are destroyed—iron twisted, stone fractured outward. Not forced entry.\nSomething left.\nYou scan the ground despite the rain, eyes trained to pick out patterns in chaos. Tracks, half-erased. Signs of struggle. Or flight.\nEvery instinct tells you this place is wrong.\nBut duty doesn’t care about instinct.\nSomeone came here and didn’t return.\nThat makes it your problem.",
+      "choices": [
+        { "text": "Forget duty and leave", "go": "S06" },
+        { "text": "Arm yourself and enter the tower", "go": "S07" },
+        { "text": "Call out and look for clues", "go": "S09" }
+      ]
+    },
+    {
+      "id": "S03",
+      "subtitle": "Lightbringer Intro",
+      "text": "You felt it long before the tower came into view.\nA pressure behind the eyes. A tightening in the chest. The unmistakable sensation of something unclean being allowed to persist.\nThe storm does nothing to drown it out.\nThe tower rises ahead, ancient and scarred, its doors shattered outward in violent defiance. Whatever darkness once dwelled within did not seal itself away—it tried to escape.\nThat alone is enough.\nIf corruption festers here, it does so because no one has challenged it.\nYou could turn away. Convince yourself that another will answer the call.\nBut you know better.\nEvil thrives in hesitation as much as malice.",
+      "choices": [
+        { "text": "Abandon duty and leave", "go": "S06" },
+        { "text": "Say a prayer and enter the tower", "go": "S11" },
+        { "text": "Attempt divination to sense dangers", "go": "S10" }
+      ]
+    },
+    {
+      "id": "S04",
+      "subtitle": "Thief Intro",
+      "text": "People talk.\nIn taverns. In alleyways. In the quiet moments when they think no one important is listening.\nOld wizard. Forbidden work. A tower left standing after everything else fell apart.\nMost hear that and think curse.\nYou think profit.\nThe storm isn’t ideal, but it does one thing well—it keeps others away. Lightning flashes, revealing the tower’s broken doors, iron peeled back like they were torn open from the inside.\nThat’s the obvious way in.\nObvious ways are usually trapped.\nYour eyes drift upward, tracing the tower’s face. Cracks. Ledges. Old stonework that wasn’t meant to be climbed—but could be.\nA familiar unease settles in your gut.\nYou’ve ignored worse.",
+      "choices": [
+        { "text": "Feel dread and flee", "go": "S06" },
+        { "text": "Find an alternate entrance", "go": "S12" },
+        { "text": "Take the main entrance cautiously", "go": "S07" }
+      ]
+    },
+    {
+      "id": "S05",
+      "subtitle": "Arcane Scholar Intro",
+      "text": "The damage is wrong.\n\nThat’s the first thing you notice.\n\nThe tower’s doors were not breached from the outside. The stone bears stress fractures that radiate outward, not in. Something escaped. Or attempted to.\n\nRain streaks over etched symbols along the threshold — not decorative, but functional. Residue lingers in the air, the faint hum of magic held in suspension.\n\nThe storm feels… reactive.\n\nAs though the world itself is pushing you forward.\n\nYou should walk away.\n\nBut knowledge like this does not present itself twice.",
+      "choices": [
+        { "text": "Don’t tempt fate — leave", "go": "S06" },
+        { "text": "Cast a protective ward and enter", "go": "S07" },
+        { "text": "Levitate to a second-story entrance", "go": "S16" }
+      ]
+    },
+
+    {
+      "id": "S06",
+      "subtitle": "Attempt to Leave",
+      "text": "You turn away from the tower.\n\nThe rain greets you like a wall.\n\nWind howls across the road, louder than before, bending the world sideways. Water surges down the path you arrived on, swallowing the ruts and stones beneath it. Each step back feels heavier, slower—like the ground itself is resisting you.\n\nYou make it only a short distance before the road gives way.\n\nMud collapses underfoot. The path you followed here is gone, torn open by the storm and dragged downhill into the dark. What remains is impassable—a slick, churning slope that leads nowhere.\n\nYou look back.\n\nThe tower stands unchanged.\n\nIts doors hang open, blasted outward, as if something inside once fled in desperation. Light flickers faintly within—not inviting, not welcoming—but present.\n\nThe storm presses closer behind you.\n\nWhatever choice brought you here, the world has decided something else.\n\nThere is only one way forward now.",
+      "choices": [
+        { "text": "Return to the tower", "go": "S07" }
+      ]
+    },
+
+    {
+      "id": "S07",
+      "subtitle": "Take the Main Entrance",
+      "text": "You cross the threshold.\nThe change is immediate.\nThe storm does not fade—it cuts off. Rain still lashes the shattered doors behind you, but the sound arrives late and distant, muffled by layers of stone that should not exist.\nThe tower does not welcome you.\nIt accepts you.\nInside, the air is dry and stale, carrying the faint scent of dust and old ash. Pale seams of light glow between the stones beneath your feet, dim but deliberate, like embers buried under the floor.\nThe doors behind you hang twisted and broken, blasted outward with violent force. Whatever came through them did not hesitate.\nAhead, the interior opens into a vast chamber. Stairways spiral upward along the walls, vanishing into shadow. Corridors slope downward into darker depths. Side halls branch away, their purposes unclear.\nThis place is old.\nNot abandoned.\nWaiting.\nFor a brief moment, you have the distinct impression that something is aware of you.\nWatching.\nMeasuring.\nThe feeling slips away before it can take shape.\nThe storm surges once more against the doors—then falls silent again.\nWhatever happens next will not happen on the road.\nIt will happen here.",
+      "choices": [
+        { "text": "Move deeper into the tower", "go": "S20_pre_antechamber" }
+      ]
+    },
+
+    {
+      "id": "S08",
+      "subtitle": "Find Another Entrance",
+      "text": "You stay in the rain longer than you should.\nCircling the tower’s base, you search for anything that might pass for a safer way inside. The stone walls are slick and uneven, the mortar crumbling beneath years of neglect. Water runs in thin streams down the surface, blurring old carvings and half-erased symbols.\nYou look up.\nThe second story is too high. The windows are narrow, their edges fractured and unstable. No ledges you’d trust. No clear handholds. Whatever force broke the doors below did not bother with subtlety above.\nThe wind cuts harder now, driving the rain into your face. Cold settles into your bones.\nThere’s no way in except the obvious one.",
+      "choices": [
+        { "text": "Give up and return to the front entrance", "go": "S07" },
+        { "text": "Keep searching despite the storm", "go": "S06" }
+      ]
+    },
+
+    {
+      "id": "S09",
+      "subtitle": "Call Out and Look for Clues",
+      "text": "You raise your voice, calling out over the storm.\nNo answer comes back—only thunder and the hiss of rain against stone. Still, you press on, lowering yourself near the entrance despite the weather, scanning the ground for signs the storm hasn’t erased.\nFootprints are scarce. Whatever happened here didn’t linger.\nCloser to the doorway, you find gouges carved deep into the stone. Long, uneven scratches that tear outward from the entrance. Iron hinges are twisted in the same direction, bent as though wrenched free by brute force.\nNot an intrusion.\nAn escape.\nYou straighten slowly, unease settling in your chest. Whoever disappeared here wasn’t the first thing through these doors.",
+      "choices": [
+        { "text": "Enter the tower, weapon ready", "go": "S07" },
+        { "text": "Withdraw and reconsider your approach", "go": "S06" }
+      ]
+    },
+
+    {
+      "id": "S10",
+      "subtitle": "Sense the Dangers Within",
+      "text": "You draw in a steady breath and focus.\nLight gathers around you, pushing back the storm’s chill as you reach outward with your senses. You search for corruption, for the familiar stain of wickedness that demands cleansing.\nSomething answers.\nNot violently. Not eagerly.\nAware.\nA presence brushes against your thoughts, immense and distant, like standing too close to a vast structure and realizing it is listening. A voice forms at the edge of perception—uncertain, incomplete.\nYou do not belong here.\nThe sensation vanishes. The light fades. The rain crashes back in full force.\nYour heart pounds harder than before.\nWhatever waits inside the tower is not what you expected.",
+      "choices": [
+        { "text": "Enter the tower and confront the source", "go": "S07" },
+        { "text": "Turn away from the tower", "go": "S06" }
+      ]
+    },
+
+    {
+      "id": "S11",
+      "subtitle": "Say a Prayer and Enter",
+      "text": "You bow your head as the storm rages around you.\n\nRain soaks into your cloak, cold and heavy, but you steady yourself and speak the words you were taught long ago. Not loudly. Not defiantly. A prayer meant for resolve, not protection.\n\nFor a moment, nothing happens.\n\nThen the air shifts.\n\nThe pressure behind your eyes returns, sharper now, as if something has leaned closer to listen. The rain seems to hesitate, droplets hanging just a fraction longer before striking stone.\n\nYou feel warmth—faint, restrained—gathering in your chest.\n\nAnd beneath it, something else.\n\nA presence.\n\nNot holy. Not unholy.\n\nAware.\n\nA whisper brushes against your thoughts, too distant to understand, but unmistakably real. You cannot tell whether it comes from above, below, or all around you.\n\nThe sensation fades as quickly as it came.\n\nThe storm resumes its fury. The cold returns.\n\nYou lift your head, unsettled but resolute.\n\nWhatever waits inside the tower heard you.",
+      "choices": [
+        { "text": "Step through the shattered doors with renewed resolve", "go": "S07" },
+        { "text": "Hesitate, then enter cautiously", "go": "S07" }
+      ]
+    },
+
+    {
+      "id": "S12",
+      "subtitle": "Find an Alternate Way In",
+      "text": "You move around the back of the tower, keeping low and quiet.\nHere, the stone shows its age—cracks in the masonry, repairs long abandoned, edges softened by time and weather. Your eyes trace a narrow route upward toward a first-story window, half-shattered and dark beyond.\nYou start climbing.\nRain slicks the stone beneath your fingers, but the footholds hold—until they don’t. With a sharp crack, part of the window frame crumbles away. You lunge forward, barely catching yourself as debris falls into the darkness below.\nYou’re stuck.\nThe ground is too far down to drop safely. The way back is gone. Above you, the tower rises higher, unforgiving and wet.",
+      "choices": [
+        { "text": "Attempt to climb higher", "go": "S13" },
+        { "text": "Drop down and limp to the main entrance", "go": "S07" }
+      ]
+    },
+
+    {
+      "id": "S13",
+      "subtitle": "Climb Higher",
+      "text": "You look up.\nThe tower stretches above you, its stone slick with rain and age. The window you aimed for is gone now, crumbled away into darkness below. Your arms tremble as you cling to what remains, fingers numb, muscles burning.\nGoing down isn’t an option anymore.\nYou shift your weight carefully, testing the stone above you. Some holds feel solid. Others flake away at the slightest pressure. Water runs down the wall, blurring edges and making every movement uncertain.\nFor a moment, doubt creeps in.\nThen you push it aside.\nYou’ve climbed worse. Broken into tighter places. Bet your life on thinner margins.\nYou pull yourself upward.\nThe stone gives way without warning.\nYour grip slips. Your feet lose purchase. The world lurches violently as gravity takes hold.\nYou fall.",
+      "choices": [
+        { "text": "Try to catch yourself before falling", "go": "S14" },
+        { "text": "Brace for impact and take the fall", "go": "S15" }
+      ]
+    },
+
+    {
+      "id": "S14",
+      "subtitle": "Catch the Fall",
+      "text": "Your hands react before your mind does.\nAs the stone gives way, you twist instinctively, slamming your forearm against the wall and hooking your fingers into a narrow crack you barely noticed before. Pain shoots up your arm as skin tears and muscles strain, but the momentum breaks.\nYou slam hard against the tower’s face, chest heaving, breath ragged.\nFor a moment, you hang there—soaked, shaking, alive.\nRain stings your eyes as you look around, searching for your next move. Above you, the wall offers one last narrow ledge near a darkened opening. Below you, the drop yawns wide and unforgiving.\nYou’ve bought yourself a chance.\nBut only one.",
+      "choices": [
+        { "text": "Pull yourself up to the higher opening", "go": "S07" },
+        { "text": "Give up and drop down toward the main entrance", "go": "S15" }
+      ]
+    },
+
+    {
+      "id": "S15",
+      "subtitle": "Fall Hard",
+      "text": "You don’t catch yourself in time.\nYour grip slips completely, and the tower vanishes from reach as gravity takes hold. The fall is short—but violent. You hit the ground hard, breath exploding from your lungs as pain rips through your side and leg.\nRain pounds down on you as you lie there, stunned and gasping.\nNothing feels broken.\nBut nothing feels right either.\nEvery movement sends sharp pain through your body, and when you try to stand, your leg buckles beneath you. You manage to stagger upright, leaning heavily on the wall for support.\nClimbing again is impossible.\nWhatever you hoped to gain by avoiding the main entrance, it isn’t worth this.\nYou limp toward the shattered doors, each step slower than the last.",
+      "choices": [
+        { "text": "Hobble toward the main entrance", "go": "S07" },
+        { "text": "Rest briefly before forcing yourself onward", "go": "S07" }
+      ]
+    },
+
+    {
+      "id": "S16",
+      "subtitle": "Levitate to a Higher Entrance",
+      "text": "You steady your breathing and shape the spell in your mind.\nThe magic answers reluctantly. Gravity loosens its grip as you rise, rain sliding past you while the tower’s stone face draws closer. The effort is immense—far more draining than it should be—as though the tower itself resists your ascent.\nYou reach the second-story opening and pull yourself inside just as the spell collapses.\nThe world snaps back into place.\nYour knees buckle. Your chest burns. The magic is gone—utterly spent—leaving a hollow ache behind your eyes.\nYou made it inside.\nBut the cost was greater than expected.",
+      "choices": [
+        { "text": "Press on into the tower, exhausted", "go": "S07" },
+        { "text": "Rest briefly before moving forward", "go": "S07" }
+      ]
+    }
+  ]
+}
