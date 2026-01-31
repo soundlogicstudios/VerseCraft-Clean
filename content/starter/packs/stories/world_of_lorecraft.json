@@ -11,9 +11,9 @@
   "assets": {
     "cover": "content/packs/starter/covers/world-of-lorecraft.png",
     "background": "styles/screens/ui/backgrounds/story-panel/lorecraft-story-panel-narrative.webp",
-    "music": "content/packs/starter/audio/lore_theme.mp3"
+    "music": "content/packs/starter/audio/lore_theme.mp3",
+    "blurb": "There will be other adventures to come. This is the first of many—take your time and choose carefully. No one read is ever the same. You are now part of the VerseCraft universe!",
   },
-  "blurb": "There will be other adventures to come. This is the first of many—take your time and choose carefully. No one read is ever the same. You are now part of the VerseCraft universe!",
   "start": "S01",
   "scenes": {
     "S01": {
