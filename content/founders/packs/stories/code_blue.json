@@ -969,6 +969,15 @@
     { "label": "Confide", "to": "S38" },
     { "label": "Abandon", "to": "S45" }
   ]
-}
+},
+   "S40": {
+  "text": "The conference room smells like burnt coffee and stale air.\n\nEveryone is here.\n\nAttendings along the wall. Residents packed shoulder to shoulder. Interns pretending not to fidget. The hospital administrator stands near the whiteboard, scrolling through slides that no one is really reading.\n\nThis is not a punishment meeting.\n\nThat makes it worse.\n\nYou take a seat near the middle. Close enough to be visible. Far enough to avoid the front row.\n\nAs people settle, you notice small things.\n\nA resident nods to you. Quick. Respectful.\n\nSomeone else avoids your eyes entirely.\n\nThe nurse you worked with earlier takes a sip of coffee and watches you over the rim of the cup, unreadable.\n\nSomeone whispers your name.\n\nThe meeting begins with metrics. Outcomes. Throughput. A case review that feels uncomfortably familiar.\n\nYour case.\n\nNot called out directly. Not yet.\n\nThe attending frames it as a teaching moment. Words like \"initiative\" and \"judgment\" float through the room. Someone mentions how the situation was handled under pressure.\n\nYou feel the room tilt toward you without anyone turning their head.\n\nThen come the questions.\n\nNot accusations.\n\nQuestions.\n\nWhy a chart was amended after the fact.\n\nWhy a call was escalated when it was.\n\nWhy someone stayed late.\n\nWhy someone did not.\n\nEach one lands like a polite blade.\n\nYou realize something important: this meeting is not about what you did.\n\nIt is about who people think you are becoming.\n\n----------------\nCHOICES\n1) SPEAK UP - You address the room directly, framing your past decisions in your own words.\n2) LET OTHERS TALK - You stay quiet and let the interpretations stand.\n3) DEFLECT TO TEAM - You emphasize collective effort and shared responsibility.\n4) READ THE ROOM - You say little, watching who supports you and who does not.",
+  "options": [
+    { "label": "Speak Up", "to": "S41" },
+    { "label": "Stay Quiet", "to": "S42" },
+    { "label": "Deflect Team", "to": "S43" },
+    { "label": "Read Room", "to": "S44" }
+  ]
+} 
   }
 }
