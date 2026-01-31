@@ -1,1022 +1,422 @@
 {
-  "meta": {
-    "id": "code_blue_male",
-    "title": "Code Blue",
-    "route": "male",
-    "protagonist": "Dr. Adrian Cole",
-    "schema": "versecraft_story_canon_v1",
-    "tone": "TV-MA hospital romance / drama",
-    "notes": "Canon layout: long narrative + separator + CHOICES block with pill labels + long descriptions. ASCII-only."
-  },
-  "start": "S01",
-  "scenes": {
-    "S01": {
-      "text": "Your first real shift hits you in layers: antiseptic, burnt coffee, sweat under disposable gowns. The ER is not chaos the way movies sell it. It is controlled violence. Alarms chirp in patterns you do not recognize yet. Wheels squeal. Voices overlap. Everyone moves like the building itself is pushing them forward.\n\nDr. Adrian Cole. Intern. The title feels flimsy compared to the weight of the room. You adjust your badge as if tightening it will tighten you.\n\nA senior resident cuts through the bay like a blade. She does not waste words. Orders land and people obey. She clocks you once, the way a predator clocks distance, then keeps moving.\n\nAn ER nurse threads between bodies and equipment without slowing down. She catches a falling chart with her foot and never breaks eye contact with the patient she is calming. When she hands you gloves, her fingers linger just long enough to be intentional. Her expression says: do not embarrass yourself.\n\nDown the hall, another intern laughs too loudly. Too comfortable. Too quick to treat the shift like a stage. He throws a look your way like you are either competition or entertainment.\n\nNo one welcomes you. No one should.\n\nYou have a choice: be seen, be useful, or be safe. None of those are free.\n\n----------------\nCHOICES\n1) SHADOW RESIDENT - Stay tight to the senior resident and learn how power moves in this place. You will earn respect if you keep up, but you will also get blamed if you slow her down.\n2) HELP NURSE - Jump in beside the ER nurse and let her put you to work. You will learn the real rhythm of the room fast, but she will notice every weakness and every excuse.\n3) MATCH INTERN - Keep pace with the other intern and refuse to be outshined on day one. You may gain social footing, but rivalry here turns personal quickly.\n4) STICK TO PROTOCOL - Start with charts, procedures, and safe tasks. You protect your future, but you risk becoming invisible at exactly the wrong moment.",
-      "options": [
+  "story_id": "code_blue",
+  "title": "Code Blue",
+  "tagline": "medical thriller, night shift, ethical pressure",
+  "version": "placeholder_v2",
+  "start": "s01",
+  "sections": [
+    {
+      "id": "s01",
+      "text": "Code Blue: A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
+      "choices": [
         {
-          "label": "Shadow Resident",
-          "to": "S02"
+          "text": "Move forward",
+          "to": "s02"
         },
         {
-          "label": "Help Nurse",
-          "to": "S03"
-        },
-        {
-          "label": "Match Intern",
-          "to": "S04"
-        },
-        {
-          "label": "Stick Protocol",
-          "to": "S05"
+          "text": "Proceed cautiously",
+          "to": "s02"
         }
       ]
     },
-    "S02": {
-      "text": "You fall in behind the senior resident and immediately regret how long your legs feel. She moves like every hallway belongs to her.\n\nShe does not introduce herself. She does not explain. She hands you a chart mid-stride and keeps talking to a respiratory therapist without slowing down.\n\nYou skim while walking. Vitals. History. Allergies. A note from the attending that reads like a warning. The resident glances back once, not at the paper, at you.\n\nYou keeping up?\n\nIt is not unkind. It is a filter.\n\nA patient groans behind the curtain. The resident pushes it aside, steps in, and takes control in three sentences. When she looks at you again, her face is calm but her eyes are sharp.\n\nYou realize something: she does not care if you like her. She cares if you are useful.\n\nAnd still, there is an edge to her attention that is not purely clinical.\n\n----------------\nCHOICES\n1) KEEP PACE - You answer fast, move fast, and accept that you may be wrong for a second as long as you correct fast. It makes you look fearless, and it might get someone hurt.\n2) ASK CLARITY - You slow just enough to confirm your reasoning. You protect the patient and your credibility, but you risk looking soft under pressure.\n3) TAKE INITIATIVE - You propose the next step before she asks. If you are right, you earn her respect. If you are wrong, you earn her memory.\n4) STAY QUIET - You watch and absorb without pushing. You avoid mistakes in public, but you also give up the chance to stand out.",
-      "options": [
+    {
+      "id": "s02",
+      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes.",
+      "choices": [
         {
-          "label": "Keep Pace",
-          "to": "S06"
+          "text": "Move forward",
+          "to": "s03"
         },
         {
-          "label": "Ask Clarity",
-          "to": "S06"
-        },
-        {
-          "label": "Take Initiative",
-          "to": "S07"
-        },
-        {
-          "label": "Stay Quiet",
-          "to": "S05"
+          "text": "Proceed cautiously",
+          "to": "s03"
         }
       ]
     },
-    "S03": {
-      "text": "You choose the nurse.\n\nShe does not slow down to teach. She teaches by throwing you into the current and seeing whether you drown.\n\nIntern, she says, already moving. Gloves. Gauze. IV kit. If you faint, aim away from the sterile field.\n\nYou do not know if she is joking. The way she says it makes everyone nearby smile like this is a ritual.\n\nA patient starts yelling. The nurse leans in, voice low, and the shouting drops to a ragged whisper. She is good at this. Not just medicine. People.\n\nYou help restrain, clean, steady. Then you notice a charting shortcut on the computer: a time stamp that is not exact, a box checked because it will be checked later. Not dangerous, but not clean.\n\nYour eyes flick to her. Her eyes flick to you.\n\nShe knows you saw it. The question is what you do with that knowledge.\n\n----------------\nCHOICES\n1) COVER FOR HER - You quietly fix the entry later without making it a scene. No one gets hurt, but she learns you will bend rules to protect her, and that has a price.\n2) SAY SOMETHING - You flag it now, in the moment, even if it slows care. You protect the record and your ethics, but you risk her trust and her patience.\n3) LET IT GO - You pretend you did not see it. You keep the peace, but you also teach yourself what you are willing to ignore.\n4) ASK PRIVATELY - You pull her aside away from eyes and ask what happened. You keep her dignity intact, but you still step onto a line that she may push back against.",
-      "options": [
+    {
+      "id": "s03",
+      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+      "choices": [
         {
-          "label": "Cover For Her",
-          "to": "S06"
+          "text": "Move forward",
+          "to": "s04"
         },
         {
-          "label": "Say Something",
-          "to": "S08"
-        },
-        {
-          "label": "Let It Go",
-          "to": "S05"
-        },
-        {
-          "label": "Ask Privately",
-          "to": "S06"
+          "text": "Proceed cautiously",
+          "to": "s04"
         }
       ]
     },
-    "S04": {
-      "text": "You fall in alongside the other intern and immediately feel the social physics of the place. He is already orbiting attention.\n\nFirst shift? he says, grinning. Relax. They only eat the nervous ones.\n\nHe talks while walking, like the hospital is a runway. He drops a diagnosis loud enough for two nurses and an attending to hear. It is mostly right. Mostly is not comforting.\n\nYou catch the missing piece. The part that could matter. The part that could make you look smart or make you look like an enemy.\n\nThe attending looks your way, waiting to see who claims the room.\n\nYour rival does not look worried. That worries you.\n\n----------------\nCHOICES\n1) CORRECT QUIETLY - You pull him aside and fix the call without humiliating him. You protect the patient and avoid a public fight, but he may resent you anyway.\n2) LET HIM RUN - You stay out of it and let the system correct him. You keep your hands clean, but you gamble with someone else's outcome.\n3) OUTPERFORM HIM - You step in with the better answer in front of everyone. You gain status fast and make an enemy faster.\n4) BACK HIM UP - You support his call despite doubt. If it goes well, you gain an ally. If it goes wrong, you share the fall.",
-      "options": [
+    {
+      "id": "s04",
+      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+      "choices": [
         {
-          "label": "Correct Quietly",
-          "to": "S06"
+          "text": "Move forward",
+          "to": "s05"
         },
         {
-          "label": "Let Him Run",
-          "to": "S05"
-        },
-        {
-          "label": "Outperform Him",
-          "to": "S09"
-        },
-        {
-          "label": "Back Him Up",
-          "to": "S06"
+          "text": "Investigate further",
+          "to": "s06"
         }
       ]
     },
-    "S05": {
-      "text": "You choose the safe route.\n\nCharts. Protocols. Orders that do not require you to raise your voice.\n\nNo one criticizes you for it. No one praises you either.\n\nFrom the edge, you see how this place really works. Who bends rules. Who enforces them. Who pretends not to notice. You see the resident's gaze track the room like a weapon. You see the nurse hide a smile when someone makes gallows humor about the coffee being stronger than the pain meds.\n\nYou also see the downside: people stop looking for you when things get loud.\n\nSafe becomes invisible.\n\nInvisible becomes replaceable.\n\n----------------\nCHOICES\n1) STEP IN - You choose visibility now, even if you make mistakes in public. It might win respect, or it might paint a target on you.\n2) KEEP OBSERVING - You keep collecting patterns and leverage. Information is power, but waiting too long can turn into cowardice.\n3) CHOOSE A SIDE - You align with someone and accept their enemies with them. It builds loyalty fast and traps you faster.\n4) STAY NEUTRAL - You protect your reputation on paper, but neutrality reads like weakness in a room full of predators.",
-      "options": [
+    {
+      "id": "s05",
+      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+      "choices": [
         {
-          "label": "Step In",
-          "to": "S06"
+          "text": "Move forward",
+          "to": "s06"
         },
         {
-          "label": "Keep Observing",
-          "to": "S10"
-        },
-        {
-          "label": "Choose A Side",
-          "to": "S06"
-        },
-        {
-          "label": "Stay Neutral",
-          "to": "S10"
+          "text": "Proceed cautiously",
+          "to": "s06"
         }
       ]
     },
-    "S06": {
-      "text": "It happens fast.\n\nA patient decompensates. A monitor flips from annoying to screaming. Someone calls for help and suddenly there are too many hands and not enough space.\n\nOrders overlap. Two people talk at once. A nurse swears under her breath. The resident snaps a single command and the noise reshapes around it.\n\nYou move.\n\nNot perfectly. Not elegantly. But decisively.\n\nYou do what you know, and when you do not know, you do not freeze. You ask the right question at the right time. You catch something small before it becomes fatal.\n\nThe patient stabilizes.\n\nAfterward, the break room feels too quiet. Adrenaline lingers in your fingers. Your shirt sticks to your back. Someone laughs, sharp and relieved.\n\nThe resident looks at you like she is recalculating. The nurse looks at you like she is deciding whether to trust you. Your rival looks at you like he just learned your name matters.\n\n----------------\nCHOICES\n1) DEBRIEF OPENLY - You talk the case through with the team. It shows leadership and humility, but it exposes every mistake you made.\n2) THANK SOMEONE - You single out support and build a bond. It is human, and it creates obligation you cannot take back.\n3) DEFLECT CREDIT - You push attention away from yourself. It is safe politics, and it wastes momentum.\n4) SAY NOTHING - You keep your face neutral and let the moment pass. It reads as control to some, and fear to others.",
-      "options": [
+    {
+      "id": "s06",
+      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options.",
+      "choices": [
         {
-          "label": "Debrief Openly",
-          "to": "S07"
+          "text": "Move forward",
+          "to": "s07"
         },
         {
-          "label": "Thank Someone",
-          "to": "S08"
-        },
-        {
-          "label": "Deflect Credit",
-          "to": "S10"
-        },
-        {
-          "label": "Say Nothing",
-          "to": "S10"
+          "text": "Proceed cautiously",
+          "to": "s07"
         }
       ]
     },
-    "S07": {
-      "text": "The resident pulls you into a side room and closes the door.\n\nFor a beat, neither of you speaks. The silence is intimate in a way the ER never allows.\n\nDo not do that again, she says.\n\nThen she pauses, eyes on you like she hates that she respects you.\n\nActually... do. Just warn me first.\n\nIt is the closest thing to praise she gives.\n\nHer gaze drops to your mouth for half a second and returns to your eyes like it never happened.\n\nThe air shifts. Professional still, but thinner. A line you both see.\n\n----------------\nCHOICES\n1) EARNED TRUST - You promise competence, not romance. You build something solid, and you keep the risk quiet for now.\n2) STAY CLEAN - You steer away from subtext and keep it strictly professional. You protect both careers, and you may lose the spark.\n3) LET IT LINGER - You do not break the tension. You let the moment breathe, inviting danger without saying a word.\n4) CHANGE TOPIC - You crack a dry joke and move on. You keep control, and you may miss what she was offering.",
-      "options": [
+    {
+      "id": "s07",
+      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself. A wrong move here won\u2019t be forgiven easily.",
+      "choices": [
         {
-          "label": "Earned Trust",
-          "to": "S10"
+          "text": "Move forward",
+          "to": "s08"
         },
         {
-          "label": "Stay Clean",
-          "to": "S10"
-        },
-        {
-          "label": "Let It Linger",
-          "to": "S11"
-        },
-        {
-          "label": "Change Topic",
-          "to": "S10"
+          "text": "Proceed cautiously",
+          "to": "s08"
         }
       ]
     },
-    "S08": {
-      "text": "The nurse finds you near the supply room, away from the main flow.\n\nThanks, she says. Quiet. Real.\n\nThen, with a smirk: just do not make a habit of it.\n\nYou are not sure if she means the shortcut you noticed, the way you stepped in, or the fact that you looked for her eyes during the worst moment and found them.\n\nShe leans on the doorframe like she belongs there. Like she belongs in your space.\n\nIf you say the wrong thing, this becomes messy.\n\nIf you say nothing, it becomes a question that hangs.\n\n----------------\nCHOICES\n1) PLAY IT OFF - You joke and keep it light. It preserves the moment and hides how much it hit you.\n2) NAME THE RISK - You admit it could have gone wrong. Honesty in this place is rare and it can deepen trust fast.\n3) ASK FOR COFFEE - You keep it casual: one coffee, one conversation. It is a doorway that can turn into a habit.\n4) SET BOUNDARY - You create distance now. It protects you later, and it may sting her pride immediately.",
-      "options": [
+    {
+      "id": "s08",
+      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+      "choices": [
         {
-          "label": "Play It Off",
-          "to": "S10"
+          "text": "Move forward",
+          "to": "s09"
         },
         {
-          "label": "Name The Risk",
-          "to": "S10"
-        },
-        {
-          "label": "Ask For Coffee",
-          "to": "S11"
-        },
-        {
-          "label": "Set Boundary",
-          "to": "S10"
+          "text": "Investigate further",
+          "to": "s10"
         }
       ]
     },
-    "S09": {
-      "text": "Your rival laughs it off in public.\n\nGood save, Doc, he says, too loud, too casual.\n\nHis eyes do not match the smile.\n\nYou feel it: the shift from friendly competition to personal scorekeeping. This hospital runs on reputation as much as it runs on blood.\n\nYou do not know who noticed. You only know they did.\n\nSome people will admire you.\n\nSome will wait for you to slip.\n\n----------------\nCHOICES\n1) STAND BY IT - You do not apologize for being right. You gain backbone in the eyes of some and arrogance in the eyes of others.\n2) SMOOTH IT OVER - You speak privately and cool the temperature. You keep the war cold, and you may look weaker publicly.\n3) BLAME PRESSURE - You claim the moment made you act. It shields you and stains you, because excuses become a pattern.\n4) ESCALATE - You bring it to a superior. That is power and it is poison, and it will follow you.",
-      "options": [
+    {
+      "id": "s09",
+      "text": "The silence here feels intentional. You slow your breathing and assess your options.",
+      "choices": [
         {
-          "label": "Stand By It",
-          "to": "S10"
+          "text": "Move forward",
+          "to": "s10"
         },
         {
-          "label": "Smooth It Over",
-          "to": "S10"
-        },
-        {
-          "label": "Blame Pressure",
-          "to": "S10"
-        },
-        {
-          "label": "Escalate",
-          "to": "S12"
+          "text": "Proceed cautiously",
+          "to": "s10"
         }
       ]
     },
-    "S10": {
-      "text": "Your shift ends on paper. In your head, it keeps running.\n\nYou wash your hands until your skin tightens. You replay the case, the looks, the words that landed and the words you swallowed.\n\nThis hospital will remember you by the stories other people tell about you.\n\nThe resident will remember whether you are reliable.\n\nThe nurse will remember whether you are loyal.\n\nYour rival will remember whether you are a threat.\n\nAnd you will remember the first time you realized how easy it would be to become someone you did not plan to be.\n\nOutside, the night air feels unreal.\n\nYour phone buzzes once. Maybe it is nothing.\n\nMaybe it is the first hook.\n\n----------------\nCHOICES\n1) STAY LATE - You linger and see what happens after the official shift ends. Late hours breed secrets and invitations.\n2) LEAVE NOW - You go home and reset. It protects your head and costs you whatever happens when you are not watching.\n3) CHECK MESSAGES - You look and respond. Whoever reached out first gets the first chance to pull you closer.\n4) THINK IT THROUGH - You sit with the risk and choose your next move carefully. Careful choices build reputation and can starve desire.",
-      "options": [
+    {
+      "id": "s10",
+      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+      "choices": [
         {
-          "label": "Stay Late",
-          "to": "S11"
+          "text": "Move forward",
+          "to": "s11"
         },
         {
-          "label": "Leave Now",
-          "to": "S12"
-        },
-        {
-          "label": "Check Messages",
-          "to": "S11"
-        },
-        {
-          "label": "Think It Through",
-          "to": "S12"
+          "text": "Proceed cautiously",
+          "to": "s11"
         }
       ]
     },
-    "S11": {
-      "text": "You stay after the shift ends.\n\nThe hospital changes once the day crowd thins. The noise lowers, but the tension does not. Conversations slow down. People say what they actually think.\n\nIn the residents lounge, a male intern flips between channels, half watching a game, half watching the room. He nods when you enter.\n\n\"Hell of a shift,\" he says.\n\nYou talk about the case. Then the fight. Then nothing in particular. The conversation loosens.\n\nEventually, he mentions someone by name. Casual. Offhand. Then with a grin, he adds that they do not do subtle. They like who they like, and they do not pretend otherwise.\n\n\"If they are into you,\" he says, \"you will know.\"\n\nIt is not an offer. It is information.\n\nYou file it away.\n\n---\n\nCHOICES\n1) Express interest - You ask a little more, curious but careful.\n2) Joke it off - You laugh and change the subject.\n3) Ask details - You press for specifics and reputation.\n4) Shut it down - You keep things professional.",
-      "options": [
+    {
+      "id": "s11",
+      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+      "choices": [
         {
-          "label": "Express Interest",
-          "to": "S12"
+          "text": "Move forward",
+          "to": "s12"
         },
         {
-          "label": "Joke It Off",
-          "to": "S13"
-        },
-        {
-          "label": "Ask Details",
-          "to": "S14"
-        },
-        {
-          "label": "Shut It Down",
-          "to": "S15"
+          "text": "Proceed cautiously",
+          "to": "s12"
         }
       ]
     },
-    "S12": {
-      "text": "You keep your tone light, but you do not hide your curiosity.\n\nThe intern notices. He always does.\n\nHe tells you enough to matter and not enough to be useful. Who flirts. Who does not. Who talks. Who listens.\n\nHe does not warn you. He does not encourage you.\n\n\"Just saying,\" he adds, leaning back. \"Some people do not separate work from the rest of their life.\"\n\nThe room hums with the game again.\n\n---\n\nCHOICES\n1) Change subject - You steer away before it gets personal.\n2) Remember names - You quietly commit the information to memory.\n3) Ask risks - You ask what happened to others.\n4) End night - You call it and head out.",
-      "options": [
+    {
+      "id": "s12",
+      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
+      "choices": [
         {
-          "label": "Change Subject",
-          "to": "S16"
+          "text": "Move forward",
+          "to": "s13"
         },
         {
-          "label": "Remember Names",
-          "to": "S17"
-        },
-        {
-          "label": "Ask Risks",
-          "to": "S18"
-        },
-        {
-          "label": "End Night",
-          "to": "S19"
+          "text": "Investigate further",
+          "to": "s14"
         }
       ]
     },
-    "S13": {
-      "text": "You laugh it off.\n\nIf there is one thing you have learned already, it is that rumors travel faster than test results.\n\nThe intern smirks but lets it go. The conversation drifts back to work, to exhaustion, to gallows humor.\n\nYou leave without making a move.\n\nIt feels safe.\n\n---\n\nCHOICES\n1) Leave hospital - You head out for the night.\n2) Grab food - You stop by the kitchen first.\n3) Stay longer - You linger and listen.\n4) Text someone - You check your phone.",
-      "options": [
+    {
+      "id": "s13",
+      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+      "choices": [
         {
-          "label": "Leave Hospital",
-          "to": "S19"
+          "text": "Move forward",
+          "to": "s14"
         },
         {
-          "label": "Grab Food",
-          "to": "S20"
-        },
-        {
-          "label": "Stay Longer",
-          "to": "S16"
-        },
-        {
-          "label": "Text Someone",
-          "to": "S17"
+          "text": "Proceed cautiously",
+          "to": "s14"
         }
       ]
     },
-    "S14": {
-      "text": "You ask for details.\n\nThe intern studies you for a moment, deciding how much to say.\n\n\"They get what they want,\" he finally says. \"Sometimes they get burned. Sometimes other people do.\"\n\nThat is not a warning. It is a history lesson.\n\n---\n\nCHOICES\n1) Ask more - You want names and stories.\n2) Thank him - You stop before it goes too far.\n3) Play it cool - You pretend it does not matter.\n4) Change topic - You redirect the conversation.",
-      "options": [
+    {
+      "id": "s14",
+      "text": "A detail you missed now clicks into place. You commit to action before doubt can set in. A wrong move here won\u2019t be forgiven easily.",
+      "choices": [
         {
-          "label": "Ask More",
-          "to": "S18"
+          "text": "Move forward",
+          "to": "s15"
         },
         {
-          "label": "Thank Him",
-          "to": "S16"
-        },
-        {
-          "label": "Play It Cool",
-          "to": "S17"
-        },
-        {
-          "label": "Change Topic",
-          "to": "S15"
+          "text": "Proceed cautiously",
+          "to": "s15"
         }
       ]
     },
-    "S15": {
-      "text": "You shut it down cleanly.\n\nThe intern respects it. Or at least pretends to.\n\nThe message is clear. You are here to work. Anything else is noise.\n\nIt costs you nothing.\n\nIt gains you nothing.\n\n---\n\nCHOICES\n1) Leave now - You end the night.\n2) Stay focused - You review charts.\n3) Get food - You head to the kitchen.\n4) Text home - You disconnect.",
-      "options": [
+    {
+      "id": "s15",
+      "text": "The silence here feels intentional. You slow your breathing and assess your options. A revelation reframes everything you thought you understood.",
+      "choices": [
         {
-          "label": "Leave Now",
-          "to": "S19"
+          "text": "Move forward",
+          "to": "s16"
         },
         {
-          "label": "Stay Focused",
-          "to": "S16"
-        },
-        {
-          "label": "Get Food",
-          "to": "S20"
-        },
-        {
-          "label": "Text Home",
-          "to": "S17"
+          "text": "Proceed cautiously",
+          "to": "s16"
         }
       ]
     },
-    "S16": {
-      "text": "Time passes.\n\nConversations overlap. People come and go. You listen more than you speak.\n\nThis place runs on patterns. On favors. On who owes who.\n\nYou begin to see it.\n\n---\n\nCHOICES\n1) Head out - You leave before fatigue wins.\n2) Kitchen stop - You grab something to eat.\n3) Check phone - Messages pile up.\n4) Stay late - You wait and watch.",
-      "options": [
+    {
+      "id": "s16",
+      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
+      "choices": [
         {
-          "label": "Head Out",
-          "to": "S19"
+          "text": "Move forward",
+          "to": "s17"
         },
         {
-          "label": "Kitchen Stop",
-          "to": "S20"
-        },
-        {
-          "label": "Check Phone",
-          "to": "S17"
-        },
-        {
-          "label": "Stay Late",
-          "to": "S18"
+          "text": "Investigate further",
+          "to": "s18"
         }
       ]
     },
-    "S17": {
-      "text": "Your phone buzzes.\n\nMessages from people already home. From people still here. From people watching.\n\nYou realize something.\n\nEven when you are not present, the hospital still has opinions about you.\n\n---\n\nCHOICES\n1) Respond - You engage.\n2) Ignore - You keep distance.\n3) Leave now - You shut it all off.\n4) Get food - You ground yourself.",
-      "options": [
+    {
+      "id": "s17",
+      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+      "choices": [
         {
-          "label": "Respond",
-          "to": "S18"
+          "text": "Move forward",
+          "to": "s18"
         },
         {
-          "label": "Ignore",
-          "to": "S19"
-        },
-        {
-          "label": "Leave Now",
-          "to": "S19"
-        },
-        {
-          "label": "Get Food",
-          "to": "S20"
+          "text": "Proceed cautiously",
+          "to": "s18"
         }
       ]
     },
-    "S18": {
-      "text": "The night deepens.\n\nPeople are tired enough to be honest. Or careless.\n\nYou hear things you probably were not meant to.\n\nNone of it feels accidental.\n\n---\n\nCHOICES\n1) Act now - You make a move.\n2) File it away - You remember everything.\n3) Leave quietly - You avoid being seen.\n4) Get food - You break away.",
-      "options": [
+    {
+      "id": "s18",
+      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+      "choices": [
         {
-          "label": "Act Now",
-          "to": "S21"
+          "text": "Move forward",
+          "to": "s19"
         },
         {
-          "label": "File Away",
-          "to": "S19"
-        },
-        {
-          "label": "Leave Quietly",
-          "to": "S19"
-        },
-        {
-          "label": "Get Food",
-          "to": "S20"
+          "text": "Proceed cautiously",
+          "to": "s19"
         }
       ]
     },
-    "S19": {
-      "text": "You leave the hospital.\n\nThe doors slide shut behind you. The noise fades.\n\nTomorrow will remember what you did today.\n\nWhether you want it to or not.\n\n---\n\nCHOICES\n1) Go home - You reset.\n2) Stay out - You avoid sleep.\n3) Reflect - You think it through.\n4) Check phone - You reconnect.",
-      "options": [
+    {
+      "id": "s19",
+      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
+      "choices": [
         {
-          "label": "Go Home",
-          "to": "S22"
+          "text": "Move forward",
+          "to": "s20"
         },
         {
-          "label": "Stay Out",
-          "to": "S23"
-        },
-        {
-          "label": "Reflect",
-          "to": "S24"
-        },
-        {
-          "label": "Check Phone",
-          "to": "S17"
+          "text": "Proceed cautiously",
+          "to": "s20"
         }
       ]
     },
-    "S20": {
-      "text": "The kitchen is quiet.\n\nNight staff move slower. Speak lower.\n\nSomeone recognizes you and nods.\n\nThen they ask for something.\n\nNot a lot.\n\nJust enough to matter.\n\n---\n\nCHOICES\n1) Agree now - You help without hesitation.\n2) Ask details - You want context first.\n3) Decline politely - You draw a line.\n4) Set terms - You accept with limits.",
-      "options": [
+    {
+      "id": "s20",
+      "text": "The silence here feels intentional. You slow your breathing and assess your options.",
+      "choices": [
         {
-          "label": "Agree Now",
-          "to": "S27"
+          "text": "Move forward",
+          "to": "s21"
         },
         {
-          "label": "Ask Details",
-          "to": "S28"
-        },
-        {
-          "label": "Decline",
-          "to": "S29"
-        },
-        {
-          "label": "Set Terms",
-          "to": "S30"
+          "text": "Investigate further",
+          "to": "s22"
         }
       ]
     },
-    "S21": {
-      "text": "The hospital changes after hours.\n\nLights dim in places no one thinks to turn off. Voices drop. The urgency softens into something more personal.\n\nYou find yourself lingering instead of leaving. Not because you were asked to, but because something in you wanted to see what happens when the pace slows.\n\nA fellow intern falls into step beside you, talking about the game, the fight, the noise of the city waiting outside these walls.\n\nHe mentions someone in passing. Casual. Almost careless.\n\nSomeone who never seems to settle.\n\n---\n\nCHOICES\n1) Ask about them - You show interest without committing.\n2) Joke it off - You keep things light and deflect.\n3) Press for details - You want to know more.\n4) Change subject - You steer away from gossip.",
-      "options": [
+    {
+      "id": "s21",
+      "text": "A detail you missed now clicks into place. You commit to action before doubt can set in. A wrong move here won\u2019t be forgiven easily.",
+      "choices": [
         {
-          "label": "Ask About Them",
-          "to": "S22"
+          "text": "Move forward",
+          "to": "s22"
         },
         {
-          "label": "Joke It Off",
-          "to": "S23"
-        },
-        {
-          "label": "Press Details",
-          "to": "S24"
-        },
-        {
-          "label": "Change Subject",
-          "to": "S25"
+          "text": "Proceed cautiously",
+          "to": "s22"
         }
       ]
     },
-    "S22": {
-      "text": "You ask casually, like it does not matter.\n\nThe intern smirks. He notices everything.\n\nHe tells you just enough to paint a picture. Availability. Reputation. Choices made loudly and without apology.\n\nIt sounds tempting. It also sounds messy.\n\n---\n\nCHOICES\n1) Express interest - You admit curiosity.\n2) Downplay it - You pretend it means nothing.\n3) Ask where to find them - You lean in.\n4) Shift focus - You pull back.",
-      "options": [
+    {
+      "id": "s22",
+      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+      "choices": [
         {
-          "label": "Express Interest",
-          "to": "S26"
+          "text": "Move forward",
+          "to": "s23"
         },
         {
-          "label": "Downplay It",
-          "to": "S23"
-        },
-        {
-          "label": "Ask Where",
-          "to": "S24"
-        },
-        {
-          "label": "Shift Focus",
-          "to": "S25"
+          "text": "Proceed cautiously",
+          "to": "s23"
         }
       ]
     },
-    "S23": {
-      "text": "You joke. Deflect. Keep it moving.\n\nThe intern laughs and drops it.\n\nBut the idea stays.\n\nLater, hunger creeps in. The cafeteria is quieter now, mostly staff finishing long shifts.\n\nA familiar face behind the counter nods when they see you.\n\n---\n\nCHOICES\n1) Grab food - You stop before heading out.\n2) Skip it - You decide to leave now.\n3) Make conversation - You linger.\n4) Observe quietly - You stay unnoticed.",
-      "options": [
+    {
+      "id": "s23",
+      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+      "choices": [
         {
-          "label": "Grab Food",
-          "to": "S26"
+          "text": "Move forward",
+          "to": "s24"
         },
         {
-          "label": "Leave Now",
-          "to": "S25"
-        },
-        {
-          "label": "Make Conversation",
-          "to": "S26"
-        },
-        {
-          "label": "Observe Quietly",
-          "to": "S25"
+          "text": "Proceed cautiously",
+          "to": "s24"
         }
       ]
     },
-    "S24": {
-      "text": "You ask questions.\n\nThe intern studies you, then answers. Not just about them, but about how this place works after dark.\n\nWho helps who. Who owes favors. Who pretends they do not.\n\nBy the time the conversation ends, you realize something important.\n\nOpportunities here do not announce themselves.\n\n---\n\nCHOICES\n1) Seek it out - You decide to follow a lead.\n2) Stay cautious - You do not chase it.\n3) Ask for intro - You want a connection.\n4) Walk away - You disengage.",
-      "options": [
+    {
+      "id": "s24",
+      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+      "choices": [
         {
-          "label": "Seek It Out",
-          "to": "S26"
+          "text": "Move forward",
+          "to": "s25"
         },
         {
-          "label": "Stay Cautious",
-          "to": "S25"
-        },
-        {
-          "label": "Ask Intro",
-          "to": "S26"
-        },
-        {
-          "label": "Walk Away",
-          "to": "S25"
+          "text": "Investigate further",
+          "to": "s26"
         }
       ]
     },
-    "S25": {
-      "text": "You leave the hospital behind.\n\nAt home, the silence feels heavier than expected.\n\nYour phone buzzes. Messages trickle in. Snippets of what you missed.\n\nSomeone stayed late. Someone crossed a line. Someone noticed.\n\nYou are not removed from it.\n\nYou are just choosing how close you want to be.\n\n---\n\nCHOICES\n1) Respond - You engage from a distance.\n2) Ignore it - You keep your space.\n3) Ask questions - You want clarity.\n4) Go back - You change your mind.",
-      "options": [
+    {
+      "id": "s25",
+      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+      "choices": [
         {
-          "label": "Respond",
-          "to": "S31"
+          "text": "Move forward",
+          "to": "s26"
         },
         {
-          "label": "Ignore It",
-          "to": "S34"
-        },
-        {
-          "label": "Ask Questions",
-          "to": "S31"
-        },
-        {
-          "label": "Go Back",
-          "to": "S26"
+          "text": "Proceed cautiously",
+          "to": "s26"
         }
       ]
     },
-    "S26": {
-      "text": "You find yourself in a quiet corner of the hospital.\n\nSomeone you have seen before approaches you differently now. Less formal. More direct.\n\nThey ask for something small.\n\nNothing official.\n\nNothing dangerous.\n\nJust help.\n\nThe way they ask tells you this is not about the task.\n\nIt is about what kind of person you are going to be.\n\n---\n\nCHOICES\n1) Agree quickly - You help without hesitation.\n2) Ask questions - You want details first.\n3) Decline politely - You refuse cleanly.\n4) Set conditions - You agree on your terms.",
-      "options": [
+    {
+      "id": "s26",
+      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+      "choices": [
         {
-          "label": "Agree Quickly",
-          "to": "S27"
+          "text": "Move forward",
+          "to": "s27"
         },
         {
-          "label": "Ask Questions",
-          "to": "S28"
-        },
-        {
-          "label": "Decline",
-          "to": "S29"
-        },
-        {
-          "label": "Set Conditions",
-          "to": "S30"
+          "text": "Proceed cautiously",
+          "to": "s27"
         }
       ]
     },
-    "S27": {
-      "text": "You say yes without pausing.\n\nThe favor is small. Mundane. Something that would never make a report.\n\nYou do it quickly and keep your head down. The staff member thanks you like this was expected, like you were always going to help.\n\nAs you finish, you notice movement nearby. A shadow passing the doorway. Someone glancing in and then moving on.\n\nProbably nothing.\n\nStill, the feeling sticks.\n\nYou did not break a rule. But you did cross a line.\n\n---\n\nCHOICES\n1) Leave quickly - You step out before anyone can ask questions.\n2) Ask who knows - You quietly ask if anyone else saw.\n3) Stay nearby - You linger to read the room.\n4) Downplay it - You tell yourself it meant nothing.",
-      "options": [
+    {
+      "id": "s27",
+      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+      "choices": [
         {
-          "label": "Leave Quickly",
-          "to": "S31"
+          "text": "Move forward",
+          "to": "s28"
         },
         {
-          "label": "Ask Who Knows",
-          "to": "S32"
-        },
-        {
-          "label": "Stay Nearby",
-          "to": "S33"
-        },
-        {
-          "label": "Downplay It",
-          "to": "S34"
+          "text": "Proceed cautiously",
+          "to": "s28"
         }
       ]
     },
-    "S28": {
-      "text": "You ask questions before agreeing.\n\nThe staff member hesitates, then explains. Not everything. Just enough.\n\nIt is not urgent. It is not dangerous. It does help them more than it helps anyone else.\n\nThey watch your reaction closely.\n\nThis is the moment where trust forms or dissolves.\n\n---\n\nCHOICES\n1) Do it anyway - You help, knowing exactly what it means.\n2) Decline now - You step back after hearing the details.\n3) Offer alternative - You suggest a cleaner solution.\n4) Ask for time - You delay the decision.",
-      "options": [
+    {
+      "id": "s28",
+      "text": "A detail you missed now clicks into place. You commit to action before doubt can set in. This choice will echo farther than you expect.",
+      "choices": [
         {
-          "label": "Do It Anyway",
-          "to": "S27"
+          "text": "Move forward",
+          "to": "s29"
         },
         {
-          "label": "Decline Now",
-          "to": "S29"
-        },
-        {
-          "label": "Offer Alternative",
-          "to": "S30"
-        },
-        {
-          "label": "Ask For Time",
-          "to": "S31"
+          "text": "Investigate further",
+          "to": "s30"
         }
       ]
     },
-    "S29": {
-      "text": "You decline, calmly and without judgment.\n\nThe staff member nods and accepts it. Too smoothly.\n\nThe conversation ends. The moment passes.\n\nNothing bad happens.\n\nNothing good happens either.\n\nYou leave knowing you drew a line. You just do not know yet what it cost you.\n\n---\n\nCHOICES\n1) Leave kitchen - You walk away clean.\n2) Reconsider - You stop yourself before exiting.\n3) Make small talk - You soften the refusal.\n4) Reflect alone - You sit with the choice.",
-      "options": [
+    {
+      "id": "s29",
+      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself. This is the last point where retreat is still possible.",
+      "choices": [
         {
-          "label": "Leave Kitchen",
-          "to": "S31"
+          "text": "See it through to the end",
+          "to": "s30"
         },
         {
-          "label": "Reconsider",
-          "to": "S28"
-        },
-        {
-          "label": "Small Talk",
-          "to": "S33"
-        },
-        {
-          "label": "Reflect",
-          "to": "S34"
+          "text": "Pull back at the last second",
+          "to": "s27"
         }
       ]
     },
-    "S30": {
-      "text": "You agree, but only with conditions.\n\nThe staff member pauses. Then nods.\n\nNothing is written down. Nothing is promised. But something has changed.\n\nThis is not a favor anymore. It is an exchange.\n\nYou both know it.\n\n---\n\nCHOICES\n1) Follow through - You complete the favor carefully.\n2) Ask return - You state what you want back.\n3) Delay action - You wait before acting.\n4) Back out - You decide against it.",
-      "options": [
-        {
-          "label": "Follow Through",
-          "to": "S27"
-        },
-        {
-          "label": "Ask Return",
-          "to": "S35"
-        },
-        {
-          "label": "Delay Action",
-          "to": "S31"
-        },
-        {
-          "label": "Back Out",
-          "to": "S29"
-        }
-      ]
-    },
-    "S31": {
-      "text": "You step away from the moment before it can harden into something permanent.\n\nThe hospital does not protest. It rarely does. It simply absorbs decisions and remembers them.\n\nAs you move down the hallway, you catch fragments of conversations. Someone is being paged. Someone is being warned. Someone is laughing too loudly for how tired they look.\n\nYou realize that tonight did not hinge on one choice.\n\nIt hinged on how visible you made yourself while making it.\n\nYou feel eyes on you that you cannot locate.\n\nNot judgment.\n\nAssessment.\n\n----------------\nCHOICES\n1) SEEK DISTRACTION - You find something else to focus on and let the tension dissipate.\n2) CHECK IN - You look for someone familiar and ground yourself.\n3) HEAD HOME - You leave before the night writes more into you.\n4) STAY ALERT - You remain present and watch what unfolds.",
-      "options": [
-        {
-          "label": "Seek Distraction",
-          "to": "S32"
-        },
-        {
-          "label": "Check In",
-          "to": "S33"
-        },
-        {
-          "label": "Head Home",
-          "to": "S34"
-        },
-        {
-          "label": "Stay Alert",
-          "to": "S32"
-        }
-      ]
-    },
-    "S32": {
-      "text": "You keep moving.\n\nNot aimless. Just uncommitted.\n\nIn a place like this, that is a choice in itself.\n\nYou pass through spaces meant for rest that never quite allow it. Chairs angled wrong. Coffee burned hours ago. A television muttering to no one.\n\nYou overhear a name you recognize.\n\nThen another.\n\nYou start to see how stories form here. Not from facts. From proximity.\n\nSomeone will connect tonight to tomorrow.\n\nYou decide whether that someone is you.\n\n----------------\nCHOICES\n1) INSERT YOURSELF - You step into the conversation and make yourself known.\n2) LISTEN ONLY - You stay silent and learn.\n3) MOVE ON - You choose not to be part of this story.\n4) MESSAGE SOMEONE - You reach out before someone reaches you.",
-      "options": [
-        {
-          "label": "Insert Yourself",
-          "to": "S35"
-        },
-        {
-          "label": "Listen Only",
-          "to": "S33"
-        },
-        {
-          "label": "Move On",
-          "to": "S34"
-        },
-        {
-          "label": "Message Someone",
-          "to": "S33"
-        }
-      ]
-    },
-    "S33": {
-      "text": "You find someone you trust enough to stand near.\n\nThe conversation is normal on the surface. Complaints. Jokes. Fatigue worn like armor.\n\nUnderneath it, you sense calculation.\n\nThey ask how your shift went.\n\nNot what you did.\n\nHow it went.\n\nYou realize that your answer will travel.\n\n----------------\nCHOICES\n1) BE HONEST - You speak plainly and let the truth land where it may.\n2) BE STRATEGIC - You shape the story before it spreads.\n3) DEFLECT - You keep it vague and noncommittal.\n4) TURN QUESTION - You redirect and learn instead.",
-      "options": [
-        {
-          "label": "Be Honest",
-          "to": "S35"
-        },
-        {
-          "label": "Be Strategic",
-          "to": "S35"
-        },
-        {
-          "label": "Deflect",
-          "to": "S34"
-        },
-        {
-          "label": "Turn Question",
-          "to": "S32"
-        }
-      ]
-    },
-    "S34": {
-      "text": "You leave.\n\nNot dramatically. Not hurried.\n\nJust enough to make it clear you chose distance.\n\nOutside, the night feels wider than the hospital ever did. The city hums without urgency. No alarms. No eyes measuring your worth.\n\nYour phone stays quiet longer than you expect.\n\nThen it buzzes.\n\nOne message.\n\nNo context.\n\nJust enough to pull you back if you let it.\n\n----------------\nCHOICES\n1) RESPOND - You open the door again.\n2) IGNORE - You keep the night to yourself.\n3) SAVE IT - You do not answer now, but you do not delete it.\n4) TURN BACK - You change your mind and return.",
-      "options": [
-        {
-          "label": "Respond",
-          "to": "S35"
-        },
-        {
-          "label": "Ignore",
-          "to": "S36"
-        },
-        {
-          "label": "Save It",
-          "to": "S36"
-        },
-        {
-          "label": "Turn Back",
-          "to": "S31"
-        }
-      ]
-    },
-    "S35": {
-  "text": "The favor does not end when you finish it.\n\nThat is the part no one tells you.\n\nThe hospital has a long memory, and it remembers patterns better than moments. Who helps without asking. Who hesitates. Who asks for something back. Who pretends none of it mattered.\n\nYou feel it the next day. Not in anything anyone says outright, but in the way eyes linger half a second longer. In the way your name is used more casually. In the way a door that used to close now stays open.\n\nSomeone benefited from what you did. Someone else noticed.\n\nThat does not mean you are in trouble.\n\nIt means you are on a map now.\n\nYou pass the nurse in the hall. She gives you a look that says she heard something, but not enough to know what to believe.\n\nThe resident acknowledges you with a nod that carries weight. Not approval. Recognition.\n\nYour rival watches you from across the bay, measuring. Always measuring.\n\nNothing has exploded.\n\nThat might be worse.\n\nThis is the point where you decide what kind of reputation you are building. Not with words. With momentum.\n\n----------------\nCHOICES\n1) LEAN IN - You accept that you have crossed into influence and use it deliberately. This could accelerate your career and entangle you deeper in favors and expectations.\n2) SET BOUNDARIES - You pull back, limit access, and make it clear the favor was a one-time thing. You protect your integrity, but you may frustrate people who assumed otherwise.\n3) SEEK ALLY - You confide in someone you trust and bring them into the loop. You gain support and risk exposure if they judge you or mishandle the truth.\n4) WITHDRAW - You disengage, focus strictly on work, and let the moment fade. You avoid escalation, but you may lose leverage you did not realize you had.",
-  "options": [
-    { "label": "Lean In", "to": "S36" },
-    { "label": "Set Boundaries", "to": "S37" },
-    { "label": "Seek Ally", "to": "S38" },
-    { "label": "Withdraw", "to": "S39" }
+    {
+      "id": "s30",
+      "text": "Something shifts, subtle but irreversible. You move with care, knowing haste invites mistakes.",
+      "choices": [],
+      "ending": true,
+      "ending_type": "resolution"
+    }
   ]
-},
-    "S36": {
-  "text": "You decide not to pretend this was an accident.\n\nIf you are on the map now, then you may as well read it.\n\nYou stop minimizing what happened. You stop treating the favor like a fluke. You pay attention to who suddenly makes time for you and who no longer does. You notice how certain requests come your way quietly, always framed as optional, always paired with an expectation.\n\nYou do not chase them.\n\nYou let them come to you.\n\nIt works.\n\nYour name circulates. Not loudly. Not formally. But enough. You get looped into conversations you used to overhear from the hall. You are asked opinions instead of given instructions. Nothing illegal. Nothing explicit. Just influence.\n\nThe resident starts trusting you with cases that matter. The nurse watches you carefully now, like she is deciding whether you are dangerous or useful or both.\n\nYour rival notices the shift. He does not comment. That makes it worse.\n\nThis path is efficient.\n\nIt is also slippery.\n\nEvery time you say yes, it gets easier to say it again.\n\n----------------\nCHOICES\n1) DOUBLE DOWN - You continue leveraging the momentum and accept bigger asks. This accelerates status but compounds risk and moral erosion.\n2) CONTROL DAMAGE - You slow the pace and start choosing only favors that cannot burn you later. You keep power while limiting exposure.\n3) LOOP SOMEONE IN - You quietly bring one person into your confidence to stabilize the situation. Shared knowledge can protect or destroy you.\n4) STEP BACK - You deliberately reduce visibility before things escalate further. You lose momentum but regain control.",
-  "options": [
-    { "label": "Double Down", "to": "S40" },
-    { "label": "Control Damage", "to": "S41" },
-    { "label": "Loop Someone In", "to": "S38" },
-    { "label": "Step Back", "to": "S39" }
-  ]
-},
-
-"S37": {
-  "text": "You draw the line.\n\nNot dramatically. Not publicly.\n\nYou become precise.\n\nYou stop doing favors that feel vague. You ask questions that make people uncomfortable. You document more carefully. You keep your tone neutral and your actions boring.\n\nSome people respect it immediately.\n\nOthers react like you broke an unspoken agreement.\n\nYou feel the shift in small ways. Fewer side conversations. Fewer casual invitations. A faint cooling in the air when you enter certain rooms.\n\nBut there is something else too.\n\nTrust.\n\nThe kind that does not ask for shortcuts. The kind that comes with heavier responsibility instead of quieter leverage.\n\nThe resident gives you a look one afternoon that says she knows exactly what you are doing. She does not comment.\n\nThe nurse seems relieved. Or disappointed. You cannot tell which.\n\nThis path is slower.\n\nIt is cleaner.\n\n----------------\nCHOICES\n1) HOLD THE LINE - You maintain strict boundaries and let consequences fall where they may. You protect integrity at the cost of influence.\n2) EXPLAIN YOURSELF - You clarify your stance to someone important. You risk misunderstanding but may preserve key relationships.\n3) REASSERT VALUE - You prove your worth through excellence instead of favors. It takes time but builds durable respect.\n4) RECONSIDER - You question whether this rigidity is costing you too much and consider easing up.",
-  "options": [
-    { "label": "Hold Line", "to": "S42" },
-    { "label": "Explain", "to": "S38" },
-    { "label": "Reassert Value", "to": "S41" },
-    { "label": "Reconsider", "to": "S36" }
-  ]
-},
-
-"S38": {
-  "text": "You choose an ally.\n\nNot out of panic. Out of calculation.\n\nYou pick someone you believe understands the difference between confidence and confession. You do not spill everything. You tell just enough to test the ground.\n\nTheir reaction matters more than their words.\n\nThey listen.\n\nThey ask the right questions.\n\nThey do not rush to judge.\n\nYou feel the weight shift off your chest slightly. Shared knowledge changes the geometry of risk. You are no longer the only one holding the shape of the truth.\n\nBut trust is never neutral.\n\nWho you tell defines who you are becoming.\n\nIf this goes wrong, it will not be because you were careless.\n\nIt will be because you chose.\n\n----------------\nCHOICES\n1) FULL DISCLOSURE - You tell them everything and accept the consequences. You gain deep trust or catastrophic exposure.\n2) PARTIAL TRUTH - You keep details vague and protect yourself. You gain limited support and preserve deniability.\n3) ASK ADVICE - You step back and let them guide your next move. You surrender some control for perspective.\n4) PULL BACK - You regret opening up and reduce contact. You contain risk but damage the bond.",
-  "options": [
-    { "label": "Full Disclosure", "to": "S43" },
-    { "label": "Partial Truth", "to": "S41" },
-    { "label": "Ask Advice", "to": "S42" },
-    { "label": "Pull Back", "to": "S39" }
-  ]
-},
-
-"S39": {
-  "text": "You withdraw.\n\nNot abruptly. Not obviously.\n\nYou become harder to reach.\n\nYou stop lingering. You leave on time. You decline invitations with polite excuses that sound reasonable and feel hollow.\n\nAt first, nothing happens.\n\nThen things adjust.\n\nOpportunities stop presenting themselves. Conversations close before you enter them. People assume you are not interested and move on without you.\n\nYou sleep better.\n\nYou also feel smaller.\n\nSafety has a cost, and it is not always visible on paper.\n\nYou are still competent. Still respected.\n\nBut you are no longer shaping anything.\n\n----------------\nCHOICES\n1) STAY WITHDRAWN - You commit to distance and prioritize stability. You avoid risk and accept stagnation.\n2) RE-ENGAGE SLOWLY - You return selectively and test the waters. You risk reopening old doors carefully.\n3) CHANGE TRACK - You look for fulfillment outside hospital politics. You redefine success on your terms.\n4) REVERSE COURSE - You decide withdrawal was a mistake and step back into the current fully.",
-  "options": [
-    { "label": "Stay Withdrawn", "to": "S42" },
-    { "label": "Re-Engage", "to": "S36" },
-    { "label": "Change Track", "to": "S44" },
-    { "label": "Reverse Course", "to": "S36" }
-  ]
-},
-"S40": {
-  "text": "Momentum has a sound.\n\nIt is subtle. A shift in how doors open for you. A pause before someone answers you. The way people wait to see what you will say before they speak.\n\nYou feel it now.\n\nYou are no longer reacting. You are shaping.\n\nRequests escalate. Nothing illegal. Nothing explicit. Just situations where your judgment quietly tips outcomes. A schedule adjusted. A note delayed. A conversation redirected.\n\nYou tell yourself you are still helping patients. That this is how the system actually works.\n\nYou might even be right.\n\nBut you also feel the pressure building. The sense that if you stop pushing, something will snap back.\n\n----------------\nCHOICES\n1) PUSH HARDER - You lean fully into influence and accept that power always collects interest.\n2) SELECTIVE POWER - You choose only the moves that protect patients and yourself.\n3) BRING SOMEONE CLOSE - You involve a trusted person to share the weight.\n4) PULL THE BRAKE - You deliberately disrupt the momentum before it runs away.",
-  "options": [
-    { "label": "Push Harder", "to": "S45" },
-    { "label": "Selective Power", "to": "S41" },
-    { "label": "Bring Close", "to": "S38" },
-    { "label": "Pull Brake", "to": "S39" }
-  ]
-},
-
-"S41": {
-  "text": "You refine your approach.\n\nNot every door needs to be opened. Not every favor needs to be taken.\n\nYou start saying no in ways that still sound like yes. You redirect instead of refusing. You let people save face while quietly protecting your own position.\n\nIt works.\n\nYour reputation stabilizes. You become reliable without being predictable.\n\nThe resident trusts you more. The nurse stops watching for traps and starts watching for intent.\n\nYour rival notices the balance. He cannot decide whether to respect it or resent it.\n\nThis path is sustainable.\n\nIt is also exhausting.\n\n----------------\nCHOICES\n1) MAINTAIN BALANCE - You keep walking the line and accept the constant vigilance.\n2) DEEPEN ALLIANCE - You solidify one key relationship and let others fade.\n3) TAKE A STAND - You make a visible ethical choice that clarifies who you are.\n4) CASH OUT - You use your position to secure something tangible now.",
-  "options": [
-    { "label": "Maintain", "to": "S46" },
-    { "label": "Deepen Alliance", "to": "S47" },
-    { "label": "Take A Stand", "to": "S42" },
-    { "label": "Cash Out", "to": "S48" }
-  ]
-},
-
-"S42": {
-  "text": "You choose clarity.\n\nA situation arises that demands a decision in front of witnesses. No back rooms. No quiet adjustments.\n\nYou speak.\n\nYou choose the clean option. The one that cannot be misread.\n\nThe room reacts immediately. Some relief. Some frustration. A few unreadable expressions.\n\nThe resident nods once.\n\nThe nurse exhales.\n\nSomeone else leaves the room without looking at you.\n\nYou feel lighter.\n\nYou also feel exposed.\n\n----------------\nCHOICES\n1) ACCEPT FALLOUT - You let reactions settle without defending yourself.\n2) EXPLAIN MOTIVE - You clarify your reasoning to preserve relationships.\n3) DOUBLE DOWN - You reinforce the stance and make it unmistakable.\n4) STEP AWAY - You remove yourself before emotions escalate.",
-  "options": [
-    { "label": "Accept Fallout", "to": "S46" },
-    { "label": "Explain Motive", "to": "S47" },
-    { "label": "Double Down", "to": "S45" },
-    { "label": "Step Away", "to": "S39" }
-  ]
-},
-
-"S43": {
-  "text": "You tell the truth.\n\nAll of it.\n\nNot dramatically. Not apologetically.\n\nYou lay out the choices you made and why. You name the risks. You admit where you were tempted.\n\nThe silence afterward is heavy.\n\nWhen they finally speak, it is measured.\n\nThey do not condemn you.\n\nThey do not absolve you either.\n\nThey tell you something important: the hospital forgives results more easily than intentions.\n\nThat knowledge changes everything.\n\n----------------\nCHOICES\n1) ALIGN STRATEGIES - You plan your next moves together.\n2) KEEP SECRETS - You thank them and compartmentalize from here on.\n3) SEEK PROTECTION - You ask for cover if things go wrong.\n4) RECONSIDER PATH - You rethink whether this road is worth it.",
-  "options": [
-    { "label": "Align", "to": "S41" },
-    { "label": "Keep Secrets", "to": "S36" },
-    { "label": "Seek Protection", "to": "S48" },
-    { "label": "Reconsider", "to": "S39" }
-  ]
-},
-
-"S44": {
-  "text": "You look outward.\n\nFor the first time, you imagine a version of yourself that is not defined by hospital politics.\n\nTeaching. Research. Community work. Something quieter.\n\nThe idea is calming.\n\nIt is also dangerous.\n\nOnce you imagine a way out, it becomes harder to justify compromises made to stay.\n\n----------------\nCHOICES\n1) EXPLORE OPTIONS - You quietly investigate alternative paths.\n2) STAY COMMITTED - You reject distraction and recommit fully.\n3) TALK IT THROUGH - You discuss the thought with someone you trust.\n4) IGNORE IT - You bury the idea and move on.",
-  "options": [
-    { "label": "Explore", "to": "S49" },
-    { "label": "Stay Committed", "to": "S45" },
-    { "label": "Talk It Through", "to": "S38" },
-    { "label": "Ignore It", "to": "S41" }
-  ]
-},
-
-"S45": {
-  "text": "You choose ambition.\n\nNot recklessly. Not blindly.\n\nBut without apology.\n\nYou accept that advancement requires friction and that some people will always get burned.\n\nYou start being decisive in ways that leave marks.\n\nYour name rises.\n\nSo do the whispers.\n\n----------------\nCHOICES\n1) EMBRACE REPUTATION - You let the whispers become legend.\n2) MANAGE DAMAGE - You actively contain fallout.\n3) PICK A SIDE - You align openly with power.\n4) HIDE NOTHING - You act transparently and dare anyone to challenge you.",
-  "options": [
-    { "label": "Embrace", "to": "S50" },
-    { "label": "Manage", "to": "S46" },
-    { "label": "Pick Side", "to": "S48" },
-    { "label": "Hide Nothing", "to": "S42" }
-  ]
-},
-
-"S46": {
-  "text": "Stability returns.\n\nNot excitement. Not triumph.\n\nBalance.\n\nYour days become predictable. Your nights quieter.\n\nYou are trusted. You are respected.\n\nYou are also watched.\n\n----------------\nCHOICES\n1) HOLD COURSE - You stay steady and let time work.\n2) SEEK CHANGE - You look for a deliberate shift.\n3) CONNECT PERSONALLY - You deepen a personal relationship.\n4) WAIT - You do nothing and observe.",
-  "options": [
-    { "label": "Hold Course", "to": "S51" },
-    { "label": "Seek Change", "to": "S44" },
-    { "label": "Connect", "to": "S47" },
-    { "label": "Wait", "to": "S39" }
-  ]
-},
-
-"S47": {
-  "text": "You invest in one person.\n\nNot as leverage.\n\nAs choice.\n\nTime spent becomes intentional. Conversations deepen. Boundaries blur.\n\nIt feels grounding.\n\nIt also creates vulnerability.\n\n----------------\nCHOICES\n1) COMMIT - You let it grow openly.\n2) KEEP IT QUIET - You protect it from scrutiny.\n3) SET BOUNDARIES - You define limits now.\n4) STEP BACK - You decide it is too risky.",
-  "options": [
-    { "label": "Commit", "to": "S52" },
-    { "label": "Keep Quiet", "to": "S46" },
-    { "label": "Set Boundaries", "to": "S42" },
-    { "label": "Step Back", "to": "S39" }
-  ]
-},
-
-"S48": {
-  "text": "You trade.\n\nNot crudely.\n\nBut clearly.\n\nYou secure something concrete: protection, opportunity, advancement.\n\nThe cost is invisible for now.\n\nIt will not stay that way.\n\n----------------\nCHOICES\n1) CONSOLIDATE - You lock in gains and prepare for backlash.\n2) EXPAND - You push for more while you can.\n3) HIDE THE TRADE - You bury evidence and limit exposure.\n4) REGRET IT - You immediately question the decision.",
-  "options": [
-    { "label": "Consolidate", "to": "S46" },
-    { "label": "Expand", "to": "S45" },
-    { "label": "Hide It", "to": "S36" },
-    { "label": "Regret", "to": "S39" }
-  ]
-},
-
-"S49": {
-  "text": "You research quietly.\n\nOpportunities exist.\n\nThey just require you to want them.\n\nThe question is whether you are running toward something or away from this.\n\n----------------\nCHOICES\n1) PURSUE EXIT - You seriously prepare to leave this track.\n2) KEEP OPTIONS OPEN - You stay without committing either way.\n3) CONFIDE - You tell someone what you are considering.\n4) ABANDON IDEA - You decide this was fear talking.",
-  "options": [
-    { "label": "Pursue Exit", "to": "S53" },
-    { "label": "Keep Open", "to": "S41" },
-    { "label": "Confide", "to": "S38" },
-    { "label": "Abandon", "to": "S45" }
-  ]
-},
-    "S40": {
-  "text": "Momentum has a sound.\n\nIt is subtle. A shift in how doors open for you. A pause before someone answers you. The way people wait to see what you will say before they speak.\n\nYou feel it now.\n\nYou are no longer reacting. You are shaping.\n\nRequests escalate. Nothing illegal. Nothing explicit. Just situations where your judgment quietly tips outcomes. A schedule adjusted. A note delayed. A conversation redirected.\n\nYou tell yourself you are still helping patients. That this is how the system actually works.\n\nYou might even be right.\n\nBut you also feel the pressure building. The sense that if you stop pushing, something will snap back.\n\n----------------\nCHOICES\n1) PUSH HARDER - You lean fully into influence and accept that power always collects interest.\n2) SELECTIVE POWER - You choose only the moves that protect patients and yourself.\n3) BRING SOMEONE CLOSE - You involve a trusted person to share the weight.\n4) PULL THE BRAKE - You deliberately disrupt the momentum before it runs away.",
-  "options": [
-    { "label": "Push Harder", "to": "S45" },
-    { "label": "Selective Power", "to": "S41" },
-    { "label": "Bring Close", "to": "S38" },
-    { "label": "Pull Brake", "to": "S39" }
-  ]
-},
-
-"S41": {
-  "text": "You refine your approach.\n\nNot every door needs to be opened. Not every favor needs to be taken.\n\nYou start saying no in ways that still sound like yes. You redirect instead of refusing. You let people save face while quietly protecting your own position.\n\nIt works.\n\nYour reputation stabilizes. You become reliable without being predictable.\n\nThe resident trusts you more. The nurse stops watching for traps and starts watching for intent.\n\nYour rival notices the balance. He cannot decide whether to respect it or resent it.\n\nThis path is sustainable.\n\nIt is also exhausting.\n\n----------------\nCHOICES\n1) MAINTAIN BALANCE - You keep walking the line and accept the constant vigilance.\n2) DEEPEN ALLIANCE - You solidify one key relationship and let others fade.\n3) TAKE A STAND - You make a visible ethical choice that clarifies who you are.\n4) CASH OUT - You use your position to secure something tangible now.",
-  "options": [
-    { "label": "Maintain", "to": "S46" },
-    { "label": "Deepen Alliance", "to": "S47" },
-    { "label": "Take A Stand", "to": "S42" },
-    { "label": "Cash Out", "to": "S48" }
-  ]
-},
-
-"S42": {
-  "text": "You choose clarity.\n\nA situation arises that demands a decision in front of witnesses. No back rooms. No quiet adjustments.\n\nYou speak.\n\nYou choose the clean option. The one that cannot be misread.\n\nThe room reacts immediately. Some relief. Some frustration. A few unreadable expressions.\n\nThe resident nods once.\n\nThe nurse exhales.\n\nSomeone else leaves the room without looking at you.\n\nYou feel lighter.\n\nYou also feel exposed.\n\n----------------\nCHOICES\n1) ACCEPT FALLOUT - You let reactions settle without defending yourself.\n2) EXPLAIN MOTIVE - You clarify your reasoning to preserve relationships.\n3) DOUBLE DOWN - You reinforce the stance and make it unmistakable.\n4) STEP AWAY - You remove yourself before emotions escalate.",
-  "options": [
-    { "label": "Accept Fallout", "to": "S46" },
-    { "label": "Explain Motive", "to": "S47" },
-    { "label": "Double Down", "to": "S45" },
-    { "label": "Step Away", "to": "S39" }
-  ]
-},
-
-"S43": {
-  "text": "You tell the truth.\n\nAll of it.\n\nNot dramatically. Not apologetically.\n\nYou lay out the choices you made and why. You name the risks. You admit where you were tempted.\n\nThe silence afterward is heavy.\n\nWhen they finally speak, it is measured.\n\nThey do not condemn you.\n\nThey do not absolve you either.\n\nThey tell you something important: the hospital forgives results more easily than intentions.\n\nThat knowledge changes everything.\n\n----------------\nCHOICES\n1) ALIGN STRATEGIES - You plan your next moves together.\n2) KEEP SECRETS - You thank them and compartmentalize from here on.\n3) SEEK PROTECTION - You ask for cover if things go wrong.\n4) RECONSIDER PATH - You rethink whether this road is worth it.",
-  "options": [
-    { "label": "Align", "to": "S41" },
-    { "label": "Keep Secrets", "to": "S36" },
-    { "label": "Seek Protection", "to": "S48" },
-    { "label": "Reconsider", "to": "S39" }
-  ]
-},
-
-"S44": {
-  "text": "You look outward.\n\nFor the first time, you imagine a version of yourself that is not defined by hospital politics.\n\nTeaching. Research. Community work. Something quieter.\n\nThe idea is calming.\n\nIt is also dangerous.\n\nOnce you imagine a way out, it becomes harder to justify compromises made to stay.\n\n----------------\nCHOICES\n1) EXPLORE OPTIONS - You quietly investigate alternative paths.\n2) STAY COMMITTED - You reject distraction and recommit fully.\n3) TALK IT THROUGH - You discuss the thought with someone you trust.\n4) IGNORE IT - You bury the idea and move on.",
-  "options": [
-    { "label": "Explore", "to": "S49" },
-    { "label": "Stay Committed", "to": "S45" },
-    { "label": "Talk It Through", "to": "S38" },
-    { "label": "Ignore It", "to": "S41" }
-  ]
-},
-
-"S45": {
-  "text": "You choose ambition.\n\nNot recklessly. Not blindly.\n\nBut without apology.\n\nYou accept that advancement requires friction and that some people will always get burned.\n\nYou start being decisive in ways that leave marks.\n\nYour name rises.\n\nSo do the whispers.\n\n----------------\nCHOICES\n1) EMBRACE REPUTATION - You let the whispers become legend.\n2) MANAGE DAMAGE - You actively contain fallout.\n3) PICK A SIDE - You align openly with power.\n4) HIDE NOTHING - You act transparently and dare anyone to challenge you.",
-  "options": [
-    { "label": "Embrace", "to": "S50" },
-    { "label": "Manage", "to": "S46" },
-    { "label": "Pick Side", "to": "S48" },
-    { "label": "Hide Nothing", "to": "S42" }
-  ]
-},
-
-"S46": {
-  "text": "Stability returns.\n\nNot excitement. Not triumph.\n\nBalance.\n\nYour days become predictable. Your nights quieter.\n\nYou are trusted. You are respected.\n\nYou are also watched.\n\n----------------\nCHOICES\n1) HOLD COURSE - You stay steady and let time work.\n2) SEEK CHANGE - You look for a deliberate shift.\n3) CONNECT PERSONALLY - You deepen a personal relationship.\n4) WAIT - You do nothing and observe.",
-  "options": [
-    { "label": "Hold Course", "to": "S51" },
-    { "label": "Seek Change", "to": "S44" },
-    { "label": "Connect", "to": "S47" },
-    { "label": "Wait", "to": "S39" }
-  ]
-},
-
-"S47": {
-  "text": "You invest in one person.\n\nNot as leverage.\n\nAs choice.\n\nTime spent becomes intentional. Conversations deepen. Boundaries blur.\n\nIt feels grounding.\n\nIt also creates vulnerability.\n\n----------------\nCHOICES\n1) COMMIT - You let it grow openly.\n2) KEEP IT QUIET - You protect it from scrutiny.\n3) SET BOUNDARIES - You define limits now.\n4) STEP BACK - You decide it is too risky.",
-  "options": [
-    { "label": "Commit", "to": "S52" },
-    { "label": "Keep Quiet", "to": "S46" },
-    { "label": "Set Boundaries", "to": "S42" },
-    { "label": "Step Back", "to": "S39" }
-  ]
-},
-
-"S48": {
-  "text": "You trade.\n\nNot crudely.\n\nBut clearly.\n\nYou secure something concrete: protection, opportunity, advancement.\n\nThe cost is invisible for now.\n\nIt will not stay that way.\n\n----------------\nCHOICES\n1) CONSOLIDATE - You lock in gains and prepare for backlash.\n2) EXPAND - You push for more while you can.\n3) HIDE THE TRADE - You bury evidence and limit exposure.\n4) REGRET IT - You immediately question the decision.",
-  "options": [
-    { "label": "Consolidate", "to": "S46" },
-    { "label": "Expand", "to": "S45" },
-    { "label": "Hide It", "to": "S36" },
-    { "label": "Regret", "to": "S39" }
-  ]
-},
-
-"S49": {
-  "text": "You research quietly.\n\nOpportunities exist.\n\nThey just require you to want them.\n\nThe question is whether you are running toward something or away from this.\n\n----------------\nCHOICES\n1) PURSUE EXIT - You seriously prepare to leave this track.\n2) KEEP OPTIONS OPEN - You stay without committing either way.\n3) CONFIDE - You tell someone what you are considering.\n4) ABANDON IDEA - You decide this was fear talking.",
-  "options": [
-    { "label": "Pursue Exit", "to": "S53" },
-    { "label": "Keep Open", "to": "S41" },
-    { "label": "Confide", "to": "S38" },
-    { "label": "Abandon", "to": "S45" }
-  ]
-},
-   "S40": {
-  "text": "The conference room smells like burnt coffee and stale air.\n\nEveryone is here.\n\nAttendings along the wall. Residents packed shoulder to shoulder. Interns pretending not to fidget. The hospital administrator stands near the whiteboard, scrolling through slides that no one is really reading.\n\nThis is not a punishment meeting.\n\nThat makes it worse.\n\nYou take a seat near the middle. Close enough to be visible. Far enough to avoid the front row.\n\nAs people settle, you notice small things.\n\nA resident nods to you. Quick. Respectful.\n\nSomeone else avoids your eyes entirely.\n\nThe nurse you worked with earlier takes a sip of coffee and watches you over the rim of the cup, unreadable.\n\nSomeone whispers your name.\n\nThe meeting begins with metrics. Outcomes. Throughput. A case review that feels uncomfortably familiar.\n\nYour case.\n\nNot called out directly. Not yet.\n\nThe attending frames it as a teaching moment. Words like \"initiative\" and \"judgment\" float through the room. Someone mentions how the situation was handled under pressure.\n\nYou feel the room tilt toward you without anyone turning their head.\n\nThen come the questions.\n\nNot accusations.\n\nQuestions.\n\nWhy a chart was amended after the fact.\n\nWhy a call was escalated when it was.\n\nWhy someone stayed late.\n\nWhy someone did not.\n\nEach one lands like a polite blade.\n\nYou realize something important: this meeting is not about what you did.\n\nIt is about who people think you are becoming.\n\n----------------\nCHOICES\n1) SPEAK UP - You address the room directly, framing your past decisions in your own words.\n2) LET OTHERS TALK - You stay quiet and let the interpretations stand.\n3) DEFLECT TO TEAM - You emphasize collective effort and shared responsibility.\n4) READ THE ROOM - You say little, watching who supports you and who does not.",
-  "options": [
-    { "label": "Speak Up", "to": "S41" },
-    { "label": "Stay Quiet", "to": "S42" },
-    { "label": "Deflect Team", "to": "S43" },
-    { "label": "Read Room", "to": "S44" }
-  ]
-},
-    "S41": {
-  "text": "You clear your throat before anyone else can fill the silence.\n\nAll eyes turn. Not sharply. Expectantly.\n\nYou keep your voice steady. You do not apologize. You explain.\n\nYou talk about pressure. About incomplete information. About choosing momentum over hesitation when a patient was spiraling.\n\nYou acknowledge the chart correction without dramatizing it. You own the escalation without framing it as heroics.\n\nYou do not name anyone else.\n\nThe room listens.\n\nThe attending nods once. A resident scribbles something down. The administrator stops scrolling.\n\nYou feel it shift. Not approval. Legitimacy.\n\nWhen you finish, there is a pause. Then someone asks a follow-up question. Not a trap. A real one.\n\nYou answer it.\n\nWhen the meeting adjourns, people do not rush past you.\n\nThey stop. Briefly. Intentionally.\n\nYou are no longer just the intern from that case.\n\n----------------\nCHOICES\n1) FOLLOW UP WITH ATTENDING - You continue the conversation privately and reinforce your reasoning.\n2) CHECK ON NURSE - You find the nurse involved and read her reaction.\n3) AVOID SPOTLIGHT - You exit quickly before attention turns into expectation.\n4) DEBRIEF WITH PEER - You compare notes with another intern.",
-  "options": [
-    { "label": "Follow Attending", "to": "S45" },
-    { "label": "Check Nurse", "to": "S46" },
-    { "label": "Avoid Spotlight", "to": "S47" },
-    { "label": "Debrief Peer", "to": "S48" }
-  ]
-},
-
-"S42": {
-  "text": "You stay quiet.\n\nYou let the questions pass over you without stepping in.\n\nOthers fill the space. A resident reframes the decision. An attending clarifies protocol. Someone else softens the language.\n\nNo one throws you under the bus.\n\nNo one pulls you onto the stage either.\n\nThe meeting ends with consensus and no conclusion.\n\nAs people stand, you feel the difference immediately.\n\nA few glances linger. Measuring. Curious.\n\nSomeone whispers, then stops when you look up.\n\nYou were not judged.\n\nYou were categorized.\n\n----------------\nCHOICES\n1) SEEK CLARITY - You ask an attending afterward how it landed.\n2) TALK TO RESIDENT - You check in with the resident who spoke for you.\n3) DISAPPEAR - You leave before anyone can follow up.\n4) OBSERVE REACTIONS - You stay nearby and listen.",
-  "options": [
-    { "label": "Seek Clarity", "to": "S45" },
-    { "label": "Talk Resident", "to": "S48" },
-    { "label": "Disappear", "to": "S47" },
-    { "label": "Observe", "to": "S49" }
-  ]
-},
-
-"S43": {
-  "text": "You redirect.\n\nYou talk about teamwork. About how nothing in the ER happens alone. About how outcomes belong to systems, not individuals.\n\nIt is the correct answer.\n\nIt is also evasive.\n\nThe attending nods. The administrator smiles. Someone in the back exhales like they were holding tension.\n\nBut you notice who does not relax.\n\nThe nurse involved tilts her head slightly. The resident does not meet your eyes.\n\nYou protected people.\n\nYou also blurred responsibility.\n\nWhen the meeting breaks, the reactions are mixed.\n\nSome appreciate the shield.\n\nSome wanted you to stand.\n\n----------------\nCHOICES\n1) CHECK DAMAGE - You speak privately with the resident or nurse affected.\n2) DOUBLE DOWN - You reinforce the team narrative with leadership.\n3) CHANGE SUBJECT - You steer future conversations away from the case.\n4) WATCH QUIETLY - You say nothing more and see who distances themselves.",
-  "options": [
-    { "label": "Check Damage", "to": "S46" },
-    { "label": "Double Down", "to": "S45" },
-    { "label": "Change Subject", "to": "S47" },
-    { "label": "Watch Quietly", "to": "S49" }
-  ]
-},
-
-"S44": {
-  "text": "You say little.\n\nNot because you are afraid, but because you are watching.\n\nWho leans forward.\n\nWho takes notes.\n\nWho looks relieved when certain details are glossed over.\n\nYou catch a glance from the rival intern. Sharp. Appraising.\n\nYou catch a nod from someone you did not expect.\n\nPatterns emerge.\n\nWhen the meeting ends, you already know more than you did walking in.\n\nYou also know something else.\n\nWhatever you do next will be interpreted through what people think they saw today.\n\n----------------\nCHOICES\n1) APPROACH SUPPORTER - You talk to someone who seemed aligned.\n2) TEST A RIVAL - You engage the intern watching you closely.\n3) EXIT CLEANLY - You leave without feeding speculation.\n4) FOLLOW THE CROWD - You blend into a group conversation.",
-  "options": [
-    { "label": "Approach Ally", "to": "S48" },
-    { "label": "Test Rival", "to": "S49" },
-    { "label": "Exit Cleanly", "to": "S47" },
-    { "label": "Follow Crowd", "to": "S46" }
-  ]
-}
-  }
 }

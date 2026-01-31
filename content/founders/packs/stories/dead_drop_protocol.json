@@ -1,40 +1,422 @@
 {
-  "meta": {
-    "id": "dead_drop_protocol",
-    "title": "Dead Drop Protocol",
-    "author": "VerseCraft",
-    "version": "1.0.0"
-  },
-  "blurb": "A covert exchange. A ticking clock. Dead Drop Protocol throws you into the shadows where trust is lethal and hesitation is fatal.",
-  "assets": {
-    "cover": "dead-drop-protocol",
-    "theme": "espionage"
-  },
-  "start": "S01",
-  "scenes": {
-    "S01": {
-      "id": "S01",
-      "text": "Rain streaks across the pavement as you approach the drop site. You are not alone.",
+  "story_id": "dead_drop_protocol",
+  "title": "Dead Drop Protocol",
+  "tagline": "espionage thriller, couriers, burn notices",
+  "version": "placeholder_v2",
+  "start": "s01",
+  "sections": [
+    {
+      "id": "s01",
+      "text": "Dead Drop Protocol: You realize this moment has been building for a while. You commit to action before doubt can set in.",
       "choices": [
         {
-          "label": "Proceed with the drop",
-          "to": "S02"
+          "text": "Move forward",
+          "to": "s02"
         },
         {
-          "label": "Abort and disappear",
-          "to": "S03"
+          "text": "Proceed cautiously",
+          "to": "s02"
         }
       ]
     },
-    "S02": {
-      "id": "S02",
-      "text": "The exchange is swift, but eyes are watching from the dark.",
-      "ending": "BAD_END"
+    {
+      "id": "s02",
+      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s03"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s03"
+        }
+      ]
     },
-    "S03": {
-      "id": "S03",
-      "text": "You melt into the crowd. The mission fails, but you live to fight another day.",
-      "ending": "NEUTRAL_END"
+    {
+      "id": "s03",
+      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s04"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s04"
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s05"
+        },
+        {
+          "text": "Investigate further",
+          "to": "s06"
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "text": "Something shifts, subtle but irreversible. You move with care, knowing haste invites mistakes.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s06"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s06"
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s07"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s07"
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "text": "The environment responds as if aware of you. You commit to action before doubt can set in. There\u2019s no neutral ground anymore.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s08"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s08"
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s09"
+        },
+        {
+          "text": "Investigate further",
+          "to": "s10"
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s10"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s10"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s11"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s11"
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "text": "You realize this moment has been building for a while. You slow your breathing and assess your options.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s12"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s12"
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s13"
+        },
+        {
+          "text": "Investigate further",
+          "to": "s14"
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s14"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s14"
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "text": "The environment responds as if aware of you. You commit to action before doubt can set in. This choice will echo farther than you expect.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s15"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s15"
+        }
+      ]
+    },
+    {
+      "id": "s15",
+      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in. A revelation reframes everything you thought you understood.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s16"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s16"
+        }
+      ]
+    },
+    {
+      "id": "s16",
+      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s17"
+        },
+        {
+          "text": "Investigate further",
+          "to": "s18"
+        }
+      ]
+    },
+    {
+      "id": "s17",
+      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s18"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s18"
+        }
+      ]
+    },
+    {
+      "id": "s18",
+      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s19"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s19"
+        }
+      ]
+    },
+    {
+      "id": "s19",
+      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s20"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s20"
+        }
+      ]
+    },
+    {
+      "id": "s20",
+      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s21"
+        },
+        {
+          "text": "Investigate further",
+          "to": "s22"
+        }
+      ]
+    },
+    {
+      "id": "s21",
+      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself. A wrong move here won\u2019t be forgiven easily.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s22"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s22"
+        }
+      ]
+    },
+    {
+      "id": "s22",
+      "text": "Something shifts, subtle but irreversible. You move with care, knowing haste invites mistakes.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s23"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s23"
+        }
+      ]
+    },
+    {
+      "id": "s23",
+      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s24"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s24"
+        }
+      ]
+    },
+    {
+      "id": "s24",
+      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s25"
+        },
+        {
+          "text": "Investigate further",
+          "to": "s26"
+        }
+      ]
+    },
+    {
+      "id": "s25",
+      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s26"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s26"
+        }
+      ]
+    },
+    {
+      "id": "s26",
+      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s27"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s27"
+        }
+      ]
+    },
+    {
+      "id": "s27",
+      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s28"
+        },
+        {
+          "text": "Proceed cautiously",
+          "to": "s28"
+        }
+      ]
+    },
+    {
+      "id": "s28",
+      "text": "The silence here feels intentional. You slow your breathing and assess your options. There\u2019s no neutral ground anymore.",
+      "choices": [
+        {
+          "text": "Move forward",
+          "to": "s29"
+        },
+        {
+          "text": "Investigate further",
+          "to": "s30"
+        }
+      ]
+    },
+    {
+      "id": "s29",
+      "text": "The silence here feels intentional. You slow your breathing and assess your options. This is the last point where retreat is still possible.",
+      "choices": [
+        {
+          "text": "See it through to the end",
+          "to": "s30"
+        },
+        {
+          "text": "Pull back at the last second",
+          "to": "s27"
+        }
+      ]
+    },
+    {
+      "id": "s30",
+      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
+      "choices": [],
+      "ending": true,
+      "ending_type": "resolution"
     }
-  }
+  ]
 }
