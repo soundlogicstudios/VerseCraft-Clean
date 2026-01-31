@@ -978,6 +978,45 @@
     { "label": "Deflect Team", "to": "S43" },
     { "label": "Read Room", "to": "S44" }
   ]
-} 
+},
+    "S41": {
+  "text": "You clear your throat before anyone else can fill the silence.\n\nAll eyes turn. Not sharply. Expectantly.\n\nYou keep your voice steady. You do not apologize. You explain.\n\nYou talk about pressure. About incomplete information. About choosing momentum over hesitation when a patient was spiraling.\n\nYou acknowledge the chart correction without dramatizing it. You own the escalation without framing it as heroics.\n\nYou do not name anyone else.\n\nThe room listens.\n\nThe attending nods once. A resident scribbles something down. The administrator stops scrolling.\n\nYou feel it shift. Not approval. Legitimacy.\n\nWhen you finish, there is a pause. Then someone asks a follow-up question. Not a trap. A real one.\n\nYou answer it.\n\nWhen the meeting adjourns, people do not rush past you.\n\nThey stop. Briefly. Intentionally.\n\nYou are no longer just the intern from that case.\n\n----------------\nCHOICES\n1) FOLLOW UP WITH ATTENDING - You continue the conversation privately and reinforce your reasoning.\n2) CHECK ON NURSE - You find the nurse involved and read her reaction.\n3) AVOID SPOTLIGHT - You exit quickly before attention turns into expectation.\n4) DEBRIEF WITH PEER - You compare notes with another intern.",
+  "options": [
+    { "label": "Follow Attending", "to": "S45" },
+    { "label": "Check Nurse", "to": "S46" },
+    { "label": "Avoid Spotlight", "to": "S47" },
+    { "label": "Debrief Peer", "to": "S48" }
+  ]
+},
+
+"S42": {
+  "text": "You stay quiet.\n\nYou let the questions pass over you without stepping in.\n\nOthers fill the space. A resident reframes the decision. An attending clarifies protocol. Someone else softens the language.\n\nNo one throws you under the bus.\n\nNo one pulls you onto the stage either.\n\nThe meeting ends with consensus and no conclusion.\n\nAs people stand, you feel the difference immediately.\n\nA few glances linger. Measuring. Curious.\n\nSomeone whispers, then stops when you look up.\n\nYou were not judged.\n\nYou were categorized.\n\n----------------\nCHOICES\n1) SEEK CLARITY - You ask an attending afterward how it landed.\n2) TALK TO RESIDENT - You check in with the resident who spoke for you.\n3) DISAPPEAR - You leave before anyone can follow up.\n4) OBSERVE REACTIONS - You stay nearby and listen.",
+  "options": [
+    { "label": "Seek Clarity", "to": "S45" },
+    { "label": "Talk Resident", "to": "S48" },
+    { "label": "Disappear", "to": "S47" },
+    { "label": "Observe", "to": "S49" }
+  ]
+},
+
+"S43": {
+  "text": "You redirect.\n\nYou talk about teamwork. About how nothing in the ER happens alone. About how outcomes belong to systems, not individuals.\n\nIt is the correct answer.\n\nIt is also evasive.\n\nThe attending nods. The administrator smiles. Someone in the back exhales like they were holding tension.\n\nBut you notice who does not relax.\n\nThe nurse involved tilts her head slightly. The resident does not meet your eyes.\n\nYou protected people.\n\nYou also blurred responsibility.\n\nWhen the meeting breaks, the reactions are mixed.\n\nSome appreciate the shield.\n\nSome wanted you to stand.\n\n----------------\nCHOICES\n1) CHECK DAMAGE - You speak privately with the resident or nurse affected.\n2) DOUBLE DOWN - You reinforce the team narrative with leadership.\n3) CHANGE SUBJECT - You steer future conversations away from the case.\n4) WATCH QUIETLY - You say nothing more and see who distances themselves.",
+  "options": [
+    { "label": "Check Damage", "to": "S46" },
+    { "label": "Double Down", "to": "S45" },
+    { "label": "Change Subject", "to": "S47" },
+    { "label": "Watch Quietly", "to": "S49" }
+  ]
+},
+
+"S44": {
+  "text": "You say little.\n\nNot because you are afraid, but because you are watching.\n\nWho leans forward.\n\nWho takes notes.\n\nWho looks relieved when certain details are glossed over.\n\nYou catch a glance from the rival intern. Sharp. Appraising.\n\nYou catch a nod from someone you did not expect.\n\nPatterns emerge.\n\nWhen the meeting ends, you already know more than you did walking in.\n\nYou also know something else.\n\nWhatever you do next will be interpreted through what people think they saw today.\n\n----------------\nCHOICES\n1) APPROACH SUPPORTER - You talk to someone who seemed aligned.\n2) TEST A RIVAL - You engage the intern watching you closely.\n3) EXIT CLEANLY - You leave without feeding speculation.\n4) FOLLOW THE CROWD - You blend into a group conversation.",
+  "options": [
+    { "label": "Approach Ally", "to": "S48" },
+    { "label": "Test Rival", "to": "S49" },
+    { "label": "Exit Cleanly", "to": "S47" },
+    { "label": "Follow Crowd", "to": "S46" }
+  ]
+}
   }
 }
