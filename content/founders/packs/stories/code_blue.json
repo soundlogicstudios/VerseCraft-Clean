@@ -1,13 +1,14 @@
 {
   "meta": {
-    "id": "code_blue_male",
-    "title": "Code Blue",
-    "route": "male",
-    "protagonist": "Dr. Adrian Cole",
-    "schema": "versecraft_story_canon_v1",
-    "tone": "TV-MA hospital romance / drama",
-    "notes": "Canon layout: long narrative + separator + CHOICES block with pill labels + long descriptions. ASCII-only."
-  },
+  "id": "code_blue_male",
+  "title": "Code Blue",
+  "route": "male",
+  "protagonist": "Dr. Adrian Cole",
+  "schema": "versecraft_story_canon_v1",
+  "tone": "TV-MA hospital romance / drama",
+  "notes": "Canon layout: long narrative + separator + CHOICES block with pill labels + long descriptions. ASCII-only.",
+  "blurb": "Inside the hospital, every second matters--and so does every relationship. Code Blue is an intense medical drama where love, ambition, and moral compromise collide under fluorescent lights. Navigate romances, rivalries, and life-or-death decisions that follow you long after the shift ends. Saving lives is only half the story."
+},
   "start": "S01",
   "scenes": {
     "S01": {
