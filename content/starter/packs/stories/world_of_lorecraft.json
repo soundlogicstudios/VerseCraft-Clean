@@ -1,13 +1,17 @@
 {
   "meta": {
-    "title": "World of LoreCraft V1.0",
-    "subtitle": "The World That Notices"
+    "title": "World of Lorecraft: Ashes of the Everpath",
+    "subtitle": "The World That Notices",
+    "author": "Sound Logic Studios",
+    "version": "1.1.0",
+    "checkpoint": "S01–S30",
+    "buildTimestamp": "2026-01-17T00:00:00Z"
   },
-  "start": "S01",
   "packId": "world_of_lorecraft",
-  "blurb": "An epic first run into a ruin that watches you back. Learn VerseCraft’s rules through choices, consequences, and loot—survive long enough to discover what the world remembers.",
   "assets": {
-    "cover": "content/packs/starter/covers/world-of-lorecraft.png"
+    "cover": "content/packs/starter/covers/world-of-lorecraft.png",
+    "background": "styles/screens/ui/backgrounds/story-panel/lorecraft-story-panel-narrative.webp",
+    "music": "content/packs/starter/audio/lore_theme.mp3"
   },
   "scenes": {
     "S01": {
