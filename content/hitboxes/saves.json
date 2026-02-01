@@ -1,9 +1,40 @@
 {
   "hitboxes": [
-    { "id": "back", "x": 4, "y": 4, "w": 22, "h": 8, "action": "go", "arg": "menu" },
-
-    { "id": "slot_0", "x": 10, "y": 22, "w": 80, "h": 14, "action": "go", "arg": "menu" },
-    { "id": "slot_1", "x": 10, "y": 40, "w": 80, "h": 14, "action": "go", "arg": "menu" },
-    { "id": "slot_2", "x": 10, "y": 58, "w": 80, "h": 14, "action": "go", "arg": "menu" }
+    {
+      "id": "back",
+      "x": 4,
+      "y": 4,
+      "w": 22,
+      "h": 8,
+      "action": "go",
+      "arg": "menu"
+    },
+    {
+      "id": "slot_0",
+      "x": 10,
+      "y": 22,
+      "w": 80,
+      "h": 14,
+      "action": "go",
+      "arg": "menu"
+    },
+    {
+      "id": "slot_1",
+      "x": 10,
+      "y": 40,
+      "w": 80,
+      "h": 14,
+      "action": "go",
+      "arg": "menu"
+    },
+    {
+      "id": "slot_2",
+      "x": 10,
+      "y": 58,
+      "w": 80,
+      "h": 14,
+      "action": "go",
+      "arg": "menu"
+    }
   ]
 }
