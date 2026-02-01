@@ -5,6 +5,9 @@
     "splash",
     "tos",
     "menu",
+
+    "saves",
+
     "library",
     "library1",
     "library2",
@@ -93,6 +96,13 @@
       "hitboxes": "content/hitboxes/menu.json",
       "controller": null
     },
+
+    "saves": {
+      "css": "styles/screens/saves.css",
+      "hitboxes": "content/hitboxes/saves.json",
+      "controller": null
+    },
+
     "settings": {
       "css": "styles/screens/settings.css",
       "hitboxes": "content/hitboxes/settings.json",
@@ -150,7 +160,7 @@
       "hitboxes": "content/hitboxes/character.json",
       "controller": null
     },
-        "character_oregon_trail": {
+    "character_oregon_trail": {
       "css": "styles/screens/character_oregon_trail.css",
       "hitboxes": "content/hitboxes/character_oregon_trail.json",
       "controller": null
@@ -237,21 +247,22 @@
       "hitboxes": "content/hitboxes/inventory_dead_drop_protocol.json",
       "controller": null
     },
+
     "inventory": {
       "css": "styles/screens/inventory.css",
       "hitboxes": "content/hitboxes/inventory.json",
       "controller": null
     },
     "character_backrooms": {
-  "css": "styles/screens/character_backrooms.css",
-  "hitboxes": "content/hitboxes/character_backrooms.json",
-  "controller": null
-},
-"inventory_backrooms": {
-  "css": "styles/screens/inventory_backrooms.css",
-  "hitboxes": "content/hitboxes/inventory_backrooms.json",
-  "controller": null
-},
+      "css": "styles/screens/character_backrooms.css",
+      "hitboxes": "content/hitboxes/character_backrooms.json",
+      "controller": null
+    },
+    "inventory_backrooms": {
+      "css": "styles/screens/inventory_backrooms.css",
+      "hitboxes": "content/hitboxes/inventory_backrooms.json",
+      "controller": null
+    },
 
     "character_relic_of_cylara": {
       "css": "styles/screens/character_relic_of_cylara.css",
