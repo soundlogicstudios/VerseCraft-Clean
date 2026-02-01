@@ -1,13 +1,14 @@
 /* styles/screens/saves.css */
-/* Save State Menu screen */
+/* Save State Menu screen (mounted on settings_clear_save) */
 
+.screen[data-screen="settings_clear_save"],
 .screen[data-screen="saves"] {
   position: relative;
   width: 100%;
   height: 100%;
 
-  /* Placeholder background (confirmed path) */
-  background-image: url("../../ui/global/ui/settings-clear-save.webp");
+  /* Real background (confirmed path) */
+  background-image: url("../../ui/global/ui/clear-save-settings.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
