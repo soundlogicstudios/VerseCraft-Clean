@@ -2,30 +2,11 @@
 // VerseCraft Clean — Story Runtime (Catalog-first)
 // FULL FILE REPLACEMENT
 //
-// Supports multiple story JSON dialects:
-//
-// A) Canon (new):
-//   start: "S01"
-//   scenes: { "S01": { text:"...", options:[{label,to}...] } }
-//
-// B) Legacy:
-//   start: "S01"
-//   sections: [ { id:"S01", text:"...", choices:[{label,to/next/...}] } ]
-//
-// C) Alternate legacy:
-//   nodes: { "S01": { text:"...", choices/options:[...] } }
-//
-// Runtime rules:
-// - Reuse existing choice pills (#choice0–#choice3) if present
-// - If missing, CREATE them once (so pills never disappear again)
-// - Disable missing options: show "Not a choice" and do NOT allow forward navigation
-// - Lock page scroll; only narrative container scrolls (iOS-friendly)
-// - No story title injection into the narrative panel
-// - Cache loaded story JSON to reduce repeated fetch slowness
-//
-// FIX (critical):
-// - Prevent iOS double-fire by binding ONLY ONE pointer event for pills
-//   (removes click + pointerup double dispatch)
+// Phase 1 hardening add-ons:
+// - Save/resume is INTERNAL to story runtime
+// - Launcher "Start" still navigates to story_* as usual
+// - No new hitbox actions, no new navigation targets
+// - Story choices are NOT navigation; they only advance node state
 
 import { resolve_story } from "./catalog.js";
 
@@ -37,6 +18,31 @@ const BOUND_PILLS = new WeakSet(); // prevent rebinding listeners
 const BOUND_SCREENS = new WeakSet(); // prevent rebinding screen listener
 
 const LOG_PREFIX = "[story-runtime]";
+
+// Save keys (Phase 1)
+function save_key(story_id) {
+  return `vc_save_${String(story_id || "").trim()}`;
+}
+
+function safe_read_save(story_id) {
+  try {
+    const raw = localStorage.getItem(save_key(story_id));
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    const nodeId = String(data?.nodeId || "").trim();
+    if (!nodeId) return null;
+    return { nodeId, updatedAt: data?.updatedAt || 0 };
+  } catch (_) {
+    return null;
+  }
+}
+
+function safe_write_save(story_id, nodeId) {
+  try {
+    const payload = { nodeId: String(nodeId || "").trim(), updatedAt: Date.now() };
+    localStorage.setItem(save_key(story_id), JSON.stringify(payload));
+  } catch (_) {}
+}
 
 // Your calibrated defaults (Option B) — used only if pills are missing and we must create them
 const DEFAULT_PILL_GEOM = [
@@ -105,7 +111,6 @@ function ensure_runtime_css() {
       pointer-events: none;
     }
 
-    /* Lock page scroll (only narrative scrolls) */
     body.vc-story-scrolllock {
       overflow: hidden !important;
       height: 100% !important;
@@ -113,7 +118,6 @@ function ensure_runtime_css() {
       touch-action: manipulation;
     }
 
-    /* Narrative scroller (safe default; tune later) */
     .vc-story-scroll {
       position: absolute;
       left: 6%;
@@ -141,7 +145,6 @@ function ensure_runtime_css() {
     .vc-story-body p { margin: 0 0 12px 0; }
     .vc-story-body strong { font-weight: 800; }
 
-    /* Fallback-created pills (only used when #choice0–3 are missing) */
     .vc-choice-pill {
       position: absolute;
       z-index: 60;
@@ -306,7 +309,6 @@ function create_choice_pills_if_missing(screen_el) {
   screen_el.dataset.vcChoicePillsCreated = "1";
 
   DEFAULT_PILL_GEOM.forEach((g) => {
-    // FIX: scope pill existence to THIS screen, not the whole document
     if (screen_el.querySelector(`#${g.id}`)) return;
 
     const btn = document.createElement("button");
@@ -362,9 +364,7 @@ function bind_pill_click(pill, get_to) {
     pill.dispatchEvent(new CustomEvent("vc:storychoice", { bubbles: true, detail: { to } }));
   };
 
-  // FIX: bind ONLY ONE event to avoid iOS double-fire (click + pointerup)
   pill.addEventListener("pointerup", handler, true);
-
   BOUND_PILLS.add(pill);
 }
 
@@ -442,6 +442,9 @@ function render(screen_el, layer, story_id, story, node_id) {
         state.nodeId = to;
         STATE_BY_STORY.set(story_id, state);
 
+        // Phase 1: persist on every node advance
+        safe_write_save(story_id, to);
+
         render(screen_el, layer, story_id, story, to);
 
         try {
@@ -488,7 +491,9 @@ async function mount_story(screen_id) {
 
   let state = STATE_BY_STORY.get(story_id);
   if (!state) {
-    state = { nodeId: story.start || "S01" };
+    // Phase 1: attempt resume from localStorage before default start
+    const saved = safe_read_save(story_id);
+    state = { nodeId: saved?.nodeId || (story.start || "S01") };
     STATE_BY_STORY.set(story_id, state);
   }
 
@@ -518,7 +523,6 @@ export function init_story_runtime() {
   window.addEventListener("vc:screenchange", (e) => {
     const screen = e?.detail?.screen;
 
-    // Unmount runtime layers from inactive story screens
     document.querySelectorAll(".ui-layer.story-runtime-layer").forEach((layer) => {
       const parent = layer.closest(".screen");
       const sid = parent?.dataset?.screen || "";
@@ -528,7 +532,6 @@ export function init_story_runtime() {
     });
 
     if (is_story_screen(screen)) {
-      // wait for screen + css/layout to settle
       requestAnimationFrame(() => requestAnimationFrame(() => mount_story(screen)));
     } else {
       document.body.classList.remove("vc-story-scrolllock");
