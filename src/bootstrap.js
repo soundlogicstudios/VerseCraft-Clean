@@ -98,4 +98,3 @@ if (document.readyState === "loading") {
 } else {
   boot_once();
 }
-     
