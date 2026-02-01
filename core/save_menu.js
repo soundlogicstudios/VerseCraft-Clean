@@ -1,24 +1,25 @@
 // core/save_menu.js
 // Save Menu overlay — temporary "library-like rows" using existing slot hitboxes
 //
+// CANONICAL SCREEN ID: settings_clear_save
+//
 // REQUIREMENTS MET:
 // - Does NOT change hitbox positioning/geometry
 // - Does NOT change launcher labels or launcher hitboxes
-// - Aligns save rows to the existing hitboxes (slot_0/1/2) so it "eyeballs" correctly
+// - Aligns save rows to the existing hitboxes (slot_0/1/2)
 // - Pulls cover images via catalog (launcher-like behavior)
 // - Shows simple save metadata text (storyId + scene + timestamp if available)
-// - Safe if saves are missing: shows "Empty Slot" and leaves slot routing to menu
+// - Safe if saves are missing: shows "Empty Slot" and keeps slot routing as menu placeholder
 //
 // NOTE:
 // This is VISUAL hydration + safe slot binding only.
-// It does NOT invent new save logic.
 // It reads best-effort from localStorage if present.
 
 import { preload_catalog, resolve_story } from "./catalog.js";
 
 let _inited = false;
 
-const SCREEN_ID = "saves";
+const SCREEN_ID = "settings_clear_save";
 const SLOT_IDS = ["slot_0", "slot_1", "slot_2"];
 const EMPTY_TARGET = "menu";
 
@@ -29,11 +30,6 @@ const CANDIDATE_KEYS = [
   "versecraft_saves",
   "versecraft_state_by_story"
 ];
-
-function cache_mode() {
-  const params = new URLSearchParams(location.search);
-  return params.has("nocache") ? "no-store" : "default";
-}
 
 function get_active_screen_el(screen_id) {
   return document.querySelector(`.screen.is-active[data-screen="${screen_id}"]`);
@@ -66,7 +62,7 @@ function ensure_css() {
       display: flex;
       align-items: center;
       gap: 12px;
-      pointer-events: none; /* do NOT intercept hitbox taps */
+      pointer-events: none; /* never intercept taps */
       z-index: 1;
     }
 
@@ -107,7 +103,6 @@ function ensure_css() {
       text-overflow: ellipsis;
     }
 
-    /* light scrim behind text for readability on bright art */
     .vc-save-scrim {
       position: absolute;
       inset: 0;
@@ -126,11 +121,7 @@ function ensure_css() {
 }
 
 function safe_json_parse(s) {
-  try {
-    return JSON.parse(s);
-  } catch (_) {
-    return null;
-  }
+  try { return JSON.parse(s); } catch (_) { return null; }
 }
 
 function normalize_save_record(storyId, obj) {
@@ -146,7 +137,6 @@ function normalize_save_record(storyId, obj) {
 function collect_saves_from_storage() {
   const out = [];
 
-  // Map-style keys
   for (const k of CANDIDATE_KEYS) {
     const raw = localStorage.getItem(k);
     if (!raw) continue;
@@ -160,7 +150,6 @@ function collect_saves_from_storage() {
     }
   }
 
-  // Per-story keys (best-effort)
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     if (!key) continue;
@@ -180,16 +169,11 @@ function collect_saves_from_storage() {
     if (rec) out.push(rec);
   }
 
-  // De-dupe by storyId (keep newest ts)
   const best = new Map();
   for (const r of out) {
     const prev = best.get(r.storyId);
     if (!prev) best.set(r.storyId, r);
-    else {
-      const a = Number(prev.ts || 0);
-      const b = Number(r.ts || 0);
-      if (b >= a) best.set(r.storyId, r);
-    }
+    else if (Number(r.ts || 0) >= Number(prev.ts || 0)) best.set(r.storyId, r);
   }
 
   const list = Array.from(best.values());
@@ -214,11 +198,7 @@ function rect_to_pct(screen_rect, rect) {
 function fmt_time(ts) {
   const n = Number(ts || 0);
   if (!n) return "";
-  try {
-    return new Date(n).toLocaleString();
-  } catch (_) {
-    return "";
-  }
+  try { return new Date(n).toLocaleString(); } catch (_) { return ""; }
 }
 
 async function cover_for_story(storyId) {
@@ -226,7 +206,6 @@ async function cover_for_story(storyId) {
   return resolved?.coverUrl || "";
 }
 
-// Only change binding target, never geometry
 function bind_slot_target(screen_el, slotId, target) {
   const hb = find_hitbox(screen_el, slotId);
   if (!hb) return;
@@ -244,7 +223,6 @@ function render_row(layer, pct, slotIndex, slotData) {
   row.style.width = `${pct.width}%`;
   row.style.height = `${pct.height}%`;
 
-  // Scrim behind the whole row (library-like separation)
   const scrim = document.createElement("div");
   scrim.className = "vc-save-scrim";
   row.appendChild(scrim);
@@ -265,7 +243,6 @@ function render_row(layer, pct, slotIndex, slotData) {
   if (slotData?.storyId) {
     if (slotData.coverUrl) img.src = slotData.coverUrl;
 
-    // keep it simple for now; we can upgrade to real story titles later if desired
     title.textContent = slotData.storyId;
 
     const parts = [];
@@ -274,7 +251,6 @@ function render_row(layer, pct, slotIndex, slotData) {
     if (t) parts.push(`Last: ${t}`);
     detail.textContent = parts.join("  •  ") || "In progress";
   } else {
-    // Empty slot visuals
     title.textContent = "Empty Slot";
     detail.textContent = "No save found";
   }
@@ -301,32 +277,21 @@ async function hydrate() {
   const screen_rect = screen_el.getBoundingClientRect();
   if (!screen_rect.width || !screen_rect.height) return;
 
-  // Pull up to 3 saves, newest first
   const saves = collect_saves_from_storage();
 
-  // Build slot payloads
   const slots = [];
   for (let i = 0; i < SLOT_IDS.length; i++) {
     const rec = saves[i] || null;
 
     if (rec?.storyId) {
       let coverUrl = "";
-      try {
-        coverUrl = await cover_for_story(rec.storyId);
-      } catch (_) {}
-
-      slots.push({
-        storyId: rec.storyId,
-        nodeId: rec.nodeId || "",
-        ts: rec.ts || 0,
-        coverUrl
-      });
+      try { coverUrl = await cover_for_story(rec.storyId); } catch (_) {}
+      slots.push({ storyId: rec.storyId, nodeId: rec.nodeId || "", ts: rec.ts || 0, coverUrl });
     } else {
       slots.push(null);
     }
   }
 
-  // Render each row aligned to the existing hitbox rect (temporary “library row” vibe)
   for (let i = 0; i < SLOT_IDS.length; i++) {
     const hb = find_hitbox(screen_el, SLOT_IDS[i]);
     if (!hb) continue;
@@ -334,17 +299,12 @@ async function hydrate() {
     const pct = rect_to_pct(screen_rect, hb.getBoundingClientRect());
     render_row(layer, pct, i, slots[i]);
 
-    // Bind hitbox target: if slot has a story save, go to story_<id>; else keep menu
-    if (slots[i]?.storyId) {
-      bind_slot_target(screen_el, SLOT_IDS[i], `story_${slots[i].storyId}`);
-    } else {
-      bind_slot_target(screen_el, SLOT_IDS[i], EMPTY_TARGET);
-    }
+    if (slots[i]?.storyId) bind_slot_target(screen_el, SLOT_IDS[i], `story_${slots[i].storyId}`);
+    else bind_slot_target(screen_el, SLOT_IDS[i], EMPTY_TARGET);
   }
 }
 
 function schedule_hydrate() {
-  // Allow layout to settle (iOS-friendly)
   requestAnimationFrame(() => requestAnimationFrame(() => hydrate()));
 }
 
@@ -358,7 +318,6 @@ export function init_save_menu() {
     schedule_hydrate();
   });
 
-  // Keep aligned on device rotation/resize
   window.addEventListener("resize", () => {
     const active = document.querySelector(".screen.is-active");
     if (active?.dataset?.screen === SCREEN_ID) schedule_hydrate();
@@ -369,7 +328,6 @@ export function init_save_menu() {
     if (active?.dataset?.screen === SCREEN_ID) schedule_hydrate();
   });
 
-  // If user lands directly on #saves, hydrate after first paint
   try {
     const hash = String(location.hash || "").replace("#", "");
     if (hash === SCREEN_ID) schedule_hydrate();
