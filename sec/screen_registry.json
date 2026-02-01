@@ -8,7 +8,6 @@
     "library",
     "library1",
     "library2",
-
     "launcher",
     "launcher_backrooms",
     "launcher_timecop",
@@ -22,7 +21,6 @@
     "launcher_king_solomon",
     "launcher_cosmos",
     "launcher_dead_drop_protocol",
-
     "story",
     "story_backrooms",
     "story_timecop",
@@ -36,10 +34,8 @@
     "story_king_solomon",
     "story_cosmos",
     "story_dead_drop_protocol",
-
     "character",
     "inventory",
-
     "character_oregon_trail",
     "inventory_oregon_trail",
     "character_wastelands",
@@ -64,13 +60,10 @@
     "inventory_world_of_lorecraft",
     "character_timecop",
     "inventory_timecop",
-
     "settings",
     "settings_text_audio",
     "settings_theme",
-    "settings_clear_save",
-
-    "saves"
+    "settings_clear_save"
   ],
   "screens": {
     "splash": {
@@ -88,32 +81,44 @@
       "hitboxes": "content/hitboxes/menu.json",
       "controller": null
     },
-
     "library": {
       "css": "styles/screens/library.css",
       "hitboxes": "content/hitboxes/library.json",
       "controller": null,
-      "library_slots": [0, 1, 2, 3]
+      "library_slots": [
+        0,
+        1,
+        2,
+        3
+      ]
     },
     "library1": {
       "css": "styles/screens/library1.css",
       "hitboxes": "content/hitboxes/library1.json",
       "controller": null,
-      "library_slots": [4, 5, 6, 7]
+      "library_slots": [
+        4,
+        5,
+        6,
+        7
+      ]
     },
     "library2": {
       "css": "styles/screens/library2.css",
       "hitboxes": "content/hitboxes/library2.json",
       "controller": null,
-      "library_slots": [8, 9, 10, 11]
+      "library_slots": [
+        8,
+        9,
+        10,
+        11
+      ]
     },
-
     "launcher": {
       "css": "styles/screens/launcher.css",
       "hitboxes": "content/hitboxes/launcher.json",
       "controller": null
     },
-
     "launcher_backrooms": {
       "css": "styles/screens/launcher_backrooms.css",
       "hitboxes": "content/hitboxes/launcher_backrooms.json",
@@ -174,13 +179,11 @@
       "hitboxes": "content/hitboxes/launcher_dead_drop_protocol.json",
       "controller": null
     },
-
     "story": {
       "css": "styles/screens/story.css",
       "hitboxes": "content/hitboxes/story.json",
       "controller": null
     },
-
     "story_backrooms": {
       "css": "styles/screens/story_backrooms.css",
       "hitboxes": "content/hitboxes/story_backrooms.json",
@@ -241,7 +244,6 @@
       "hitboxes": "content/hitboxes/story_dead_drop_protocol.json",
       "controller": null
     },
-
     "character": {
       "css": "styles/screens/character.css",
       "hitboxes": "content/hitboxes/character.json",
@@ -252,7 +254,6 @@
       "hitboxes": "content/hitboxes/inventory.json",
       "controller": null
     },
-
     "character_oregon_trail": {
       "css": "styles/screens/character_oregon_trail.css",
       "hitboxes": "content/hitboxes/character_oregon_trail.json",
@@ -263,7 +264,6 @@
       "hitboxes": "content/hitboxes/inventory_oregon_trail.json",
       "controller": null
     },
-
     "character_wastelands": {
       "css": "styles/screens/character_wastelands.css",
       "hitboxes": "content/hitboxes/character_wastelands.json",
@@ -274,7 +274,6 @@
       "hitboxes": "content/hitboxes/inventory_wastelands.json",
       "controller": null
     },
-
     "character_tale_of_icarus": {
       "css": "styles/screens/character_tale_of_icarus.css",
       "hitboxes": "content/hitboxes/character_tale_of_icarus.json",
@@ -285,7 +284,6 @@
       "hitboxes": "content/hitboxes/inventory_tale_of_icarus.json",
       "controller": null
     },
-
     "character_crimson_seagull": {
       "css": "styles/screens/character_crimson_seagull.css",
       "hitboxes": "content/hitboxes/character_crimson_seagull.json",
@@ -296,7 +294,6 @@
       "hitboxes": "content/hitboxes/inventory_crimson_seagull.json",
       "controller": null
     },
-
     "character_code_blue": {
       "css": "styles/screens/character_code_blue.css",
       "hitboxes": "content/hitboxes/character_code_blue.json",
@@ -307,7 +304,6 @@
       "hitboxes": "content/hitboxes/inventory_code_blue.json",
       "controller": null
     },
-
     "character_king_solomon": {
       "css": "styles/screens/character_king_solomon.css",
       "hitboxes": "content/hitboxes/character_king_solomon.json",
@@ -318,7 +314,6 @@
       "hitboxes": "content/hitboxes/inventory_king_solomon.json",
       "controller": null
     },
-
     "character_cosmos": {
       "css": "styles/screens/character_cosmos.css",
       "hitboxes": "content/hitboxes/character_cosmos.json",
@@ -329,7 +324,6 @@
       "hitboxes": "content/hitboxes/inventory_cosmos.json",
       "controller": null
     },
-
     "character_dead_drop_protocol": {
       "css": "styles/screens/character_dead_drop_protocol.css",
       "hitboxes": "content/hitboxes/character_dead_drop_protocol.json",
@@ -340,7 +334,6 @@
       "hitboxes": "content/hitboxes/inventory_dead_drop_protocol.json",
       "controller": null
     },
-
     "character_backrooms": {
       "css": "styles/screens/character_backrooms.css",
       "hitboxes": "content/hitboxes/character_backrooms.json",
@@ -351,7 +344,6 @@
       "hitboxes": "content/hitboxes/inventory_backrooms.json",
       "controller": null
     },
-
     "character_relic_of_cylara": {
       "css": "styles/screens/character_relic_of_cylara.css",
       "hitboxes": "content/hitboxes/character_relic_of_cylara.json",
@@ -362,7 +354,6 @@
       "hitboxes": "content/hitboxes/inventory_relic_of_cylara.json",
       "controller": null
     },
-
     "character_world_of_lorecraft": {
       "css": "styles/screens/character_world_of_lorecraft.css",
       "hitboxes": "content/hitboxes/character_world_of_lorecraft.json",
@@ -373,7 +364,6 @@
       "hitboxes": "content/hitboxes/inventory_world_of_lorecraft.json",
       "controller": null
     },
-
     "character_timecop": {
       "css": "styles/screens/character_timecop.css",
       "hitboxes": "content/hitboxes/character_timecop.json",
@@ -384,7 +374,6 @@
       "hitboxes": "content/hitboxes/inventory_timecop.json",
       "controller": null
     },
-
     "settings": {
       "css": "styles/screens/settings.css",
       "hitboxes": "content/hitboxes/settings.json",
@@ -400,18 +389,10 @@
       "hitboxes": "content/hitboxes/settings_theme.json",
       "controller": null
     },
-
     "settings_clear_save": {
-      "css": "styles/screens/saves.css",
-      "hitboxes": "content/hitboxes/saves.json",
-      "controller": null
-    },
-
-    "saves": {
       "css": "styles/screens/saves.css",
       "hitboxes": "content/hitboxes/saves.json",
       "controller": null
     }
   }
 }
-
