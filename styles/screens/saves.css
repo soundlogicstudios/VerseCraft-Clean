@@ -1,0 +1,14 @@
+/* styles/screens/saves.css */
+/* Save State Menu screen */
+
+.screen[data-screen="saves"] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  /* Placeholder background (confirmed path) */
+  background-image: url("../../ui/global/ui/settings-clear-save.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
