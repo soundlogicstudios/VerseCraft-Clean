@@ -1,14 +1,14 @@
 // core/launcher_labels.js
 // Launcher labels (hitbox-bound) + Phase B polish
-// FULL FILE REPLACEMENT
+// FIXES (kept as-is):
+// 1) Scrim actually visible (stronger opacity + border + blur)
+// 2) Back To Library centered (no flex-start, no padding)
+// 3) Start label bigger
 //
-// Phase 1 hardening (per constraints):
-// - Do NOT change hitbox positioning (no hitbox JSON edits here)
-// - Do NOT change launcher label positioning or sizing rules already in place
-// - Remove noisy warnings for optional/missing launcher hitbox IDs so nobody "fixes" them by adding new hitboxes
-// - Continue/Exit/Character/Inventory labels render ONLY if their hitboxes exist; otherwise silently skip
-//
-// NOTE: This file is visual-only. It does not handle taps (pointer-events: none).
+// CHANGE (requested):
+// - REMOVE launcher-only label binding for Exit / Character / Inventory
+//   because those hitboxes do not exist on launcher screens.
+// - REMOVE Continue lookup/warn/render because Continue is menu-only.
 
 let _inited = false;
 
@@ -148,58 +148,10 @@ function render_launcher_labels(screen_id) {
   layer.appendChild(title);
 
   // ==========================================================
-  // TOP BAR (hitbox-bound, OPTIONAL): Exit Story / Character / Inventory
-  // These are not required on launcher screens. Render only if present.
-  // ==========================================================
-  const hbExit = find_hitbox(screen_el, "exit_story");
-  const hbChar = find_hitbox(screen_el, "open_character");
-  const hbInv = find_hitbox(screen_el, "open_inventory");
-
-  if (hbExit) {
-    const pct = rect_to_pct(screen_rect, hbExit.getBoundingClientRect());
-    const scrim = make_scrim(pct, { bg: "rgba(0,0,0,0.52)", radius: "12px" });
-
-    const el = document.createElement("div");
-    el.className = "launcher-label launcher-exit";
-    el.textContent = "Exit Story";
-    style_label(el, pct, { fontSize: "clamp(14px, 2.0vh, 22px)" });
-
-    layer.appendChild(scrim);
-    layer.appendChild(el);
-  }
-
-  if (hbChar) {
-    const pct = rect_to_pct(screen_rect, hbChar.getBoundingClientRect());
-    const scrim = make_scrim(pct, { bg: "rgba(0,0,0,0.52)", radius: "12px" });
-
-    const el = document.createElement("div");
-    el.className = "launcher-label launcher-character";
-    el.textContent = "Character";
-    style_label(el, pct, { fontSize: "clamp(14px, 2.0vh, 22px)" });
-
-    layer.appendChild(scrim);
-    layer.appendChild(el);
-  }
-
-  if (hbInv) {
-    const pct = rect_to_pct(screen_rect, hbInv.getBoundingClientRect());
-    const scrim = make_scrim(pct, { bg: "rgba(0,0,0,0.52)", radius: "12px" });
-
-    const el = document.createElement("div");
-    el.className = "launcher-label launcher-inventory";
-    el.textContent = "Inventory";
-    style_label(el, pct, { fontSize: "clamp(14px, 2.0vh, 22px)" });
-
-    layer.appendChild(scrim);
-    layer.appendChild(el);
-  }
-
-  // ==========================================================
-  // HITBOX-BOUND: back/start/continue (continue is OPTIONAL)
+  // HITBOX-BOUND: back/start (launcher navigation)
   // ==========================================================
   const hbBack = find_hitbox(screen_el, "back");
   const hbStart = find_hitbox(screen_el, "start");
-  const hbContinue = find_hitbox(screen_el, "continue");
 
   if (hbBack) {
     const pct = rect_to_pct(screen_rect, hbBack.getBoundingClientRect());
@@ -217,6 +169,8 @@ function render_launcher_labels(screen_id) {
 
     layer.appendChild(scrim);
     layer.appendChild(back);
+  } else {
+    console.warn("[launcher_labels] back hitbox not found (data-hitbox-id contains 'back')");
   }
 
   if (hbStart) {
@@ -231,20 +185,8 @@ function render_launcher_labels(screen_id) {
 
     layer.appendChild(scrim);
     layer.appendChild(start);
-  }
-
-  if (hbContinue) {
-    const pct = rect_to_pct(screen_rect, hbContinue.getBoundingClientRect());
-
-    const scrim = make_scrim(pct, { bg: "rgba(0,0,0,0.52)", radius: "14px" });
-
-    const cont = document.createElement("div");
-    cont.className = "launcher-label launcher-continue";
-    cont.textContent = "Continue";
-    style_label(cont, pct, { fontSize: "clamp(18px, 2.8vh, 34px)" });
-
-    layer.appendChild(scrim);
-    layer.appendChild(cont);
+  } else {
+    console.warn("[launcher_labels] start hitbox not found (data-hitbox-id contains 'start')");
   }
 }
 
