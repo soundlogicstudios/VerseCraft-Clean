@@ -120,10 +120,11 @@
       "controller": null
     },
     "settings_clear_save": {
-      "css": "styles/screens/settings_clear_save.css",
-      "hitboxes": "content/hitboxes/settings_clear_save.json",
-      "controller": null
-    },
+"settings_clear_save": {
+  "css": "styles/screens/saves.css",
+  "hitboxes": "content/hitboxes/saves.json",
+  "controller": null
+},
 
     "library": {
       "css": "styles/screens/library.css",
