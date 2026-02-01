@@ -2,12 +2,12 @@
   "hitboxes": [
     {
       "id": "back",
-      "x": 4,
-      "y": 4,
-      "w": 22,
+      "x": 25,
+      "y": 90,
+      "w": 50,
       "h": 8,
       "action": "go",
-      "arg": "menu"
+      "arg": "settings"
     },
     {
       "id": "slot_0",
