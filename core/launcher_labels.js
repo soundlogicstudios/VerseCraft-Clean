@@ -1,10 +1,14 @@
 // core/launcher_labels.js
 // Launcher labels (hitbox-bound) + Phase B polish
-// FIXES:
-// 1) Scrim actually visible (stronger opacity + border + blur)
-// 2) Back To Library centered (no flex-start, no padding)
-// 3) Start label bigger
-// 4) ADD: Exit / Character / Inventory labels bound to their hitboxes (launcher top row)
+// FULL FILE REPLACEMENT
+//
+// Phase 1 hardening (per constraints):
+// - Do NOT change hitbox positioning (no hitbox JSON edits here)
+// - Do NOT change launcher label positioning or sizing rules already in place
+// - Remove noisy warnings for optional/missing launcher hitbox IDs so nobody "fixes" them by adding new hitboxes
+// - Continue/Exit/Character/Inventory labels render ONLY if their hitboxes exist; otherwise silently skip
+//
+// NOTE: This file is visual-only. It does not handle taps (pointer-events: none).
 
 let _inited = false;
 
@@ -144,7 +148,8 @@ function render_launcher_labels(screen_id) {
   layer.appendChild(title);
 
   // ==========================================================
-  // TOP BAR (hitbox-bound): Exit Story / Character / Inventory
+  // TOP BAR (hitbox-bound, OPTIONAL): Exit Story / Character / Inventory
+  // These are not required on launcher screens. Render only if present.
   // ==========================================================
   const hbExit = find_hitbox(screen_el, "exit_story");
   const hbChar = find_hitbox(screen_el, "open_character");
@@ -161,8 +166,6 @@ function render_launcher_labels(screen_id) {
 
     layer.appendChild(scrim);
     layer.appendChild(el);
-  } else {
-    console.warn("[launcher_labels] exit_story hitbox not found (data-hitbox-id must be 'exit_story')");
   }
 
   if (hbChar) {
@@ -176,8 +179,6 @@ function render_launcher_labels(screen_id) {
 
     layer.appendChild(scrim);
     layer.appendChild(el);
-  } else {
-    console.warn("[launcher_labels] open_character hitbox not found (data-hitbox-id must be 'open_character')");
   }
 
   if (hbInv) {
@@ -191,12 +192,10 @@ function render_launcher_labels(screen_id) {
 
     layer.appendChild(scrim);
     layer.appendChild(el);
-  } else {
-    console.warn("[launcher_labels] open_inventory hitbox not found (data-hitbox-id must be 'open_inventory')");
   }
 
   // ==========================================================
-  // HITBOX-BOUND: back/start/continue (existing)
+  // HITBOX-BOUND: back/start/continue (continue is OPTIONAL)
   // ==========================================================
   const hbBack = find_hitbox(screen_el, "back");
   const hbStart = find_hitbox(screen_el, "start");
@@ -218,8 +217,6 @@ function render_launcher_labels(screen_id) {
 
     layer.appendChild(scrim);
     layer.appendChild(back);
-  } else {
-    console.warn("[launcher_labels] back hitbox not found (data-hitbox-id contains 'back')");
   }
 
   if (hbStart) {
@@ -234,8 +231,6 @@ function render_launcher_labels(screen_id) {
 
     layer.appendChild(scrim);
     layer.appendChild(start);
-  } else {
-    console.warn("[launcher_labels] start hitbox not found (data-hitbox-id contains 'start')");
   }
 
   if (hbContinue) {
@@ -250,8 +245,6 @@ function render_launcher_labels(screen_id) {
 
     layer.appendChild(scrim);
     layer.appendChild(cont);
-  } else {
-    console.warn("[launcher_labels] continue hitbox not found (data-hitbox-id contains 'continue')");
   }
 }
 
