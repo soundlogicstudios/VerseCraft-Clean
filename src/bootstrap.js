@@ -76,15 +76,9 @@ async function boot_once() {
       console.warn("[bootstrap] story runtime not loaded", e);
     }
 
-    await init_screen_manager();
-  } catch (e) {
-    console.error("[bootstrap] init failed", e);
-    _booted = false;
-  }
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", boot_once, { once: true });
-} else {
-  boot_once();
-}
+    // ADDITIVE: Save Menu overlay (3-slot save state screen)
+    try {
+      const modSaves = await import("../core/save_menu.js");
+      modSaves?.init_save_menu?.();
+    } catch (e) {
+     
