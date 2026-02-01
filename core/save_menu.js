@@ -3,17 +3,10 @@
 //
 // CANONICAL SCREEN ID: settings_clear_save
 //
-// REQUIREMENTS MET:
-// - Does NOT change hitbox positioning/geometry
-// - Does NOT change launcher labels or launcher hitboxes
-// - Aligns save rows to the existing hitboxes (slot_0/1/2)
-// - Pulls cover images via catalog (launcher-like behavior)
-// - Shows simple save metadata text (storyId + scene + timestamp if available)
-// - Safe if saves are missing: shows "Empty Slot" and keeps slot routing as menu placeholder
-//
-// NOTE:
-// This is VISUAL hydration + safe slot binding only.
-// It reads best-effort from localStorage if present.
+// Updates:
+// - Display proper story titles (instead of storyId) using story JSON meta.title when available,
+//   with a safe title-map fallback.
+// - Back positioning/targets are controlled by hitbox JSON (this file does not move hitboxes).
 
 import { preload_catalog, resolve_story } from "./catalog.js";
 
@@ -23,13 +16,27 @@ const SCREEN_ID = "settings_clear_save";
 const SLOT_IDS = ["slot_0", "slot_1", "slot_2"];
 const EMPTY_TARGET = "menu";
 
-// Best-effort discovery keys (non-breaking)
 const CANDIDATE_KEYS = [
   "vc_state_by_story",
   "vc_saves",
   "versecraft_saves",
   "versecraft_state_by_story"
 ];
+
+const TITLE_MAP = {
+  world_of_lorecraft: "World of Lorecraft",
+  crimson_seagull: "Crimson Seagull",
+  oregon_trail: "Oregon Trail",
+  backrooms: "Backrooms",
+  wastelands: "Wastelands",
+  tale_of_icarus: "Tale of Icarus",
+  code_blue: "Code Blue",
+  relic_of_cylara: "Relic of Cylara",
+  timecop: "Time Cop",
+  king_solomon: "King Solomon",
+  cosmos: "Cosmos",
+  dead_drop_protocol: "Dead Drop Protocol"
+};
 
 function get_active_screen_el(screen_id) {
   return document.querySelector(`.screen.is-active[data-screen="${screen_id}"]`);
@@ -62,7 +69,7 @@ function ensure_css() {
       display: flex;
       align-items: center;
       gap: 12px;
-      pointer-events: none; /* never intercept taps */
+      pointer-events: none;
       z-index: 1;
     }
 
@@ -81,6 +88,7 @@ function ensure_css() {
       min-width: 0;
       color: rgba(255,255,255,0.98);
       text-shadow: 0 2px 6px rgba(0,0,0,0.85);
+      text-transform: none;
     }
 
     .vc-save-title {
@@ -91,6 +99,7 @@ function ensure_css() {
       overflow: hidden;
       text-overflow: ellipsis;
       line-height: 1.05;
+      text-transform: none;
     }
 
     .vc-save-detail {
@@ -101,6 +110,7 @@ function ensure_css() {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      text-transform: none;
     }
 
     .vc-save-scrim {
@@ -201,9 +211,28 @@ function fmt_time(ts) {
   try { return new Date(n).toLocaleString(); } catch (_) { return ""; }
 }
 
+async function story_json_for_story(storyId) {
+  const resolved = await resolve_story(storyId);
+  return resolved?.storyJsonUrl || "";
+}
+
 async function cover_for_story(storyId) {
   const resolved = await resolve_story(storyId);
   return resolved?.coverUrl || "";
+}
+
+async function safe_fetch_title(storyJsonUrl, storyId) {
+  if (storyJsonUrl) {
+    try {
+      const res = await fetch(storyJsonUrl, { cache: "default" });
+      if (res.ok) {
+        const raw = await res.json();
+        const t = String(raw?.meta?.title || raw?.title || "").trim();
+        if (t) return t;
+      }
+    } catch (_) {}
+  }
+  return TITLE_MAP[storyId] || storyId;
 }
 
 function bind_slot_target(screen_el, slotId, target) {
@@ -229,7 +258,7 @@ function render_row(layer, pct, slotIndex, slotData) {
 
   const img = document.createElement("img");
   img.className = "vc-save-cover";
-  img.alt = slotData?.storyId ? `${slotData.storyId} cover` : "Empty slot";
+  img.alt = slotData?.title ? `${slotData.title} cover` : "Empty slot";
 
   const textWrap = document.createElement("div");
   textWrap.className = "vc-save-text";
@@ -243,7 +272,7 @@ function render_row(layer, pct, slotIndex, slotData) {
   if (slotData?.storyId) {
     if (slotData.coverUrl) img.src = slotData.coverUrl;
 
-    title.textContent = slotData.storyId;
+    title.textContent = slotData.title || slotData.storyId;
 
     const parts = [];
     if (slotData.nodeId) parts.push(`Scene: ${slotData.nodeId}`);
@@ -285,8 +314,14 @@ async function hydrate() {
 
     if (rec?.storyId) {
       let coverUrl = "";
+      let storyJsonUrl = "";
+      let title = rec.storyId;
+
       try { coverUrl = await cover_for_story(rec.storyId); } catch (_) {}
-      slots.push({ storyId: rec.storyId, nodeId: rec.nodeId || "", ts: rec.ts || 0, coverUrl });
+      try { storyJsonUrl = await story_json_for_story(rec.storyId); } catch (_) {}
+      try { title = await safe_fetch_title(storyJsonUrl, rec.storyId); } catch (_) {}
+
+      slots.push({ storyId: rec.storyId, title, nodeId: rec.nodeId || "", ts: rec.ts || 0, coverUrl });
     } else {
       slots.push(null);
     }
