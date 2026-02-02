@@ -1,422 +1,463 @@
 {
-  "story_id": "dead_drop_protocol",
-  "title": "Dead Drop Protocol",
-  "tagline": "espionage thriller, couriers, burn notices",
-  "version": "placeholder_v2",
-  "start": "s01",
-  "sections": [
-    {
-      "id": "s01",
-      "text": "Dead Drop Protocol: You realize this moment has been building for a while. You commit to action before doubt can set in.",
+  "meta": {
+    "id": "dead_drop_protocol",
+    "title": "Dead Drop Protocol",
+    "route": "story_dead_drop_protocol",
+    "schema": "versecraft-1.0",
+    "tone": "modern espionage thriller",
+    "notes": "30 sections (S01–S30) with deep prose and meaningful choices in every section. Casino poker showdown, boss henchmen fight, jet-powered car escape. Good/Bad/Special endings loop to S01.",
+    "blurb": "A dead drop gone wrong drags you into surveillance, a casino trap, and a jet-speed escape where one hand of poker can decide who lives."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "The city never announces surveillance. It just tightens.\n\nA sedan idles too long at the curb. A pedestrian pauses at the same corner twice. Reflections in glass keep the wrong faces for half a second longer than they should.\n\nThe dead drop was supposed to be clean: a microcard taped under a park bench, lifted at dusk, gone before the streetlights settled into their nightly hum.\n\nBut the tape is gone. In its place sits a coin, cold and ordinary, except for a shallow scratch cut into the rim: a mark only field agents are trained to recognize.\n\nDead Drop Protocol.\n\nThe message isn't written in ink. It's written in intent: someone has taken your drop, and they want you to know they did.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s02"
+          "label": "LEAVE THE PARK",
+          "to": "S02"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s02"
+          "label": "CHECK YOUR SIX",
+          "to": "S03"
         }
       ]
     },
-    {
-      "id": "s02",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+    "S02": {
+      "text": "You walk away at an unhurried pace. Running is a confession.\n\nTraffic noise swallows you. Neon turns faces into anonymous color. A city is a thousand hiding places if you treat it like geometry instead of emotion.\n\nYour comm buzzes once -- a silent ping, no voice, no text. Confirmation only: you are still connected, and someone is watching the line for weakness.\n\nYou feel the weight of the missing microcard like a small gravity in your pocket, even though it's not there.\n\nIf the protocol is active, the next instruction will be either a lifeline or bait. Sometimes both.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s03"
+          "label": "CALL YOUR HANDLER",
+          "to": "S04"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s03"
+          "label": "GO OFF-GRID",
+          "to": "S05"
         }
       ]
     },
-    {
-      "id": "s03",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+    "S03": {
+      "text": "You slow near a storefront and pretend to scroll your phone.\n\nIn the reflection you catch him: gray jacket, blank expression, eyes trained forward the way professionals do when they're trying to look casual.\n\nHe notices your pause. His focus sharpens. That half-second of mutual recognition is the moment the operation becomes personal.\n\nThere may be others. The first tail is rarely alone. The first tail is the test: do you panic, or do you make the city your ally?\n\nYou shift your direction slightly, a gentle curve toward a busier street, and listen for the footstep that adjusts to match.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s04"
+          "label": "LOSE THE TAIL",
+          "to": "S05"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s04"
+          "label": "FACE HIM",
+          "to": "S06"
         }
       ]
     },
-    {
-      "id": "s04",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in.",
+    "S04": {
+      "text": "You place the call through a low-band channel that sounds like static even when it's clean.\n\nNo names. No greetings. Your handler answers with a single exhale, as if they were expecting the call more than you were.\n\n'Drop is burned,' you say. 'Coin mark confirmed. Protocol is active.'\n\nSilence on the line, then a voice that has been trained to carry no emotion: 'Casino Meridian. VIP floor. Table at twenty-two hundred. You will be seated.'\n\nYou don't ask who runs the table. If they are inviting you, they already know you.\n\nThe line clicks dead. No goodbye. No reassurance. Only an address.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s05"
+          "label": "HEAD TO MERIDIAN",
+          "to": "S07"
         },
         {
-          "text": "Investigate further",
-          "to": "s06"
+          "label": "VERIFY THE LEAD",
+          "to": "S08"
         }
       ]
     },
-    {
-      "id": "s05",
-      "text": "Something shifts, subtle but irreversible. You move with care, knowing haste invites mistakes.",
+    "S05": {
+      "text": "You disappear the old way: stairwells, service corridors, quick changes, borrowed anonymity.\n\nYou cut across a pedestrian overpass, double back through a food court, and use the glare of digital billboards to blind anyone relying too heavily on cameras.\n\nThree blocks later your breathing is steady again. The tail is gone, or smarter than you are. Either option is dangerous.\n\nWhen you emerge, the skyline answers with the same location your handler named: Casino Meridian. A vertical crown of light, loud enough to be seen from anywhere in the district.\n\nIt feels like a magnet. You hate magnets.\n\nThe protocol isn't asking. It's steering.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s06"
+          "label": "ENTER THE CASINO",
+          "to": "S07"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s06"
+          "label": "WATCH THE DOORS",
+          "to": "S09"
         }
       ]
     },
-    {
-      "id": "s06",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+    "S06": {
+      "text": "You pivot and close the distance like you're simply changing lanes in a crowd.\n\nUp close, the gray jacket isn't cheap. The earpiece isn't subtle. His hand moves toward his coat, and you see the tension in his wrist -- a practiced draw.\n\nYou move first. Not dramatic. Efficient. Wrist control, shoulder turn, a shove that sends him into a street vendor's cart with a crash loud enough to draw eyes.\n\nToo loud. Too public. It buys you seconds but costs you invisibility.\n\nYou melt into the flow of pedestrians before his backup can converge, but you feel it: the city has now filed your presence under 'problem.'\n\nIf there was any doubt about where this is going, it's gone.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s07"
+          "label": "GO TO MERIDIAN",
+          "to": "S07"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s07"
+          "label": "CHANGE YOUR COVER",
+          "to": "S10"
         }
       ]
     },
-    {
-      "id": "s07",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in. There\u2019s no neutral ground anymore.",
+    "S07": {
+      "text": "The Casino Meridian smells like polished metal and expensive mistakes.\n\nVelvet rope lines, mirrored pillars, and a ceiling of lights designed to make everyone look like they belong. The sound is a soft roar: chips, laughter, and the constant whisper of cameras.\n\nYou pass security on your cover identity: clean suit, clean smile, clean pockets. The scanner lingers half a second too long, then lets you through.\n\nInside, you realize the casino isn't just entertainment. It's a sorting machine. It separates the reckless from the careful, and it keeps records on both.\n\nSomewhere above, the VIP floor waits like a trap that charges rent.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s08"
+          "label": "GO VIP ELEVATOR",
+          "to": "S11"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s08"
+          "label": "RECON THE FLOOR",
+          "to": "S09"
         }
       ]
     },
-    {
-      "id": "s08",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
+    "S08": {
+      "text": "You slow your approach and verify the lead the way a living agent survives bad intelligence.\n\nA quick search in your internal directory confirms it: Meridian is flagged. Not for crime -- for meetings. Diplomatic handshakes. Corporate favors. Quiet disappearances.\n\nYour handler wouldn't send you here unless the protocol demanded it. That doesn't make it safe. It makes it necessary.\n\nYou check your gear: a slim ceramic blade, a burner phone, and a single panic beacon you hope never to trigger because beacons are promises to owe someone later.\n\nThe coin in your pocket feels heavier now. Not weight -- meaning.\n\nWhen you step toward Meridian, you feel the city tilt, like all the small risks are aligning into one big one.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s09"
+          "label": "ENTER MERIDIAN",
+          "to": "S07"
         },
         {
-          "text": "Investigate further",
-          "to": "s10"
+          "label": "APPROACH FROM REAR",
+          "to": "S10"
         }
       ]
     },
-    {
-      "id": "s09",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
+    "S09": {
+      "text": "You read the casino floor as if it's a battlefield with better lighting.\n\nHenchmen aren't always muscular. Sometimes they're clean-shaven men with polite smiles, positioned where sightlines overlap. Sometimes they're dealers who look up too often. Sometimes they're a bartender who never drinks water.\n\nYou spot three likely watchers. One near the cashier. One near the lounge entrance. One by the private elevator with the gold trim and no buttons.\n\nThey aren't staring at you. They're staring through you, measuring the way you move.\n\nOn the far wall, a mirrored panel catches your reflection -- and behind it, a woman in a red dress watching the room like she's counting exits.\n\nYou can go up openly, or you can try to slip around and reduce how many eyes follow.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s10"
+          "label": "TAKE THE ELEVATOR",
+          "to": "S11"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s10"
+          "label": "USE SERVICE ROUTE",
+          "to": "S10"
         }
       ]
     },
-    {
-      "id": "s10",
-      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options.",
+    "S10": {
+      "text": "You slip toward the service corridors behind a curtain of slot machines and noise.\n\nA door marked STAFF ONLY yields to a copied badge code you keep for places that pretend they are secure. The hallway behind it smells like bleach and ductwork.\n\nSecurity is tighter here. Cameras are fewer, but the ones that exist are pointed like weapons. You move between blind spots and keep your face angled down when you must cross open sightlines.\n\nAt the end of the corridor, you find the service elevator. The panel requires a keycard. Above it, a small lens blinks.\n\nThe woman in the red dress appears at the corner as if she grew from the wall. 'You're late,' she says. Not angry. Observational.\n\nShe holds up a keycard between two fingers like a choice.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s11"
+          "label": "TAKE HER KEYCARD",
+          "to": "S11"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s11"
+          "label": "REFUSE HER HELP",
+          "to": "S12"
         }
       ]
     },
-    {
-      "id": "s11",
-      "text": "You realize this moment has been building for a while. You slow your breathing and assess your options.",
+    "S11": {
+      "text": "The elevator rises with a soft, expensive hum.\n\nFloor numbers glide past without clicking. When the doors open, the casino noise dies like it hit a wall. Carpet absorbs sound. Air conditioning feels colder. The lighting is dimmer and more deliberate.\n\nA single poker table sits under a pendant lamp. One dealer. One player already seated: a man in a charcoal suit with hands folded as if he is waiting for a confession.\n\nHe looks up and smiles without warmth. 'Agent,' he says, like it's your real name and always has been.\n\nA chair waits for you. The buy-in isn't money. It's compliance.\n\nThe dealer slides a deck into their hands and shuffles like this is a ceremony.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s12"
+          "label": "SIT AND PLAY",
+          "to": "S13"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s12"
+          "label": "STALL AND TALK",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s12",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S12": {
+      "text": "You refuse the keycard and move anyway, because pride is a stubborn type of fear.\n\nThe woman doesn't chase you. She simply watches as you try to improvise. That tells you she's confident you will fail.\n\nYou attempt the card panel with a bypass tool. The reader flashes red. A soft alarm chirps once -- not loud enough for guests, just loud enough for security.\n\nFootsteps answer in the hallway behind you. Heavy, coordinated.\n\nWhen they reach you, they don't draw guns. They don't need to. A hand clamps your shoulder with practiced certainty.\n\n'VIP wants you upstairs,' the guard says. 'Don't make this messy.'\n\nThe protocol is taking you to the table whether you sit willingly or not.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s13"
+          "label": "GO QUIETLY",
+          "to": "S11"
         },
         {
-          "text": "Investigate further",
-          "to": "s14"
+          "label": "FIGHT FREE",
+          "to": "S15"
         }
       ]
     },
-    {
-      "id": "s13",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+    "S13": {
+      "text": "You sit. The chair is comfortable in the way handcuffs can be comfortable if they fit well.\n\nThe boss doesn't look at the cards as the dealer deals. He looks at you. He studies your breathing, your fingers, the tiny movements you make when you decide something is important.\n\nEarly hands are small. Chips move like polite conversation. He lets you win a little, then takes it back. It's control disguised as sport.\n\nYou realize the truth: this isn't about money. It's a calibration. He's learning how you react under pressure and how easily you lie to yourself.\n\nBetween hands, he says, almost casually, 'Do you know why we use dead drops? Because trust doesn't scale.'\n\nThe dealer places the next hand down with a slow, deliberate motion. The pot is suddenly large. The room feels smaller.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s14"
+          "label": "PLAY STRAIGHT",
+          "to": "S16"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s14"
+          "label": "CHEAT QUIETLY",
+          "to": "S17"
         }
       ]
     },
-    {
-      "id": "s14",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in. This choice will echo farther than you expect.",
+    "S14": {
+      "text": "You don't sit immediately. You lean on the chair back and let silence do work.\n\n'You took my drop,' you say.\n\nThe boss nods as if you're discussing weather. 'I took what was going to get you killed. Now I'm offering you a chance to die with purpose instead.'\n\nHis eyes flick to the dealer. The cards keep moving. The table keeps demanding participation.\n\n'The microcard contains a list,' he continues. 'Accounts. Transfers. Names. If you deliver it to your handler, you end careers. If you deliver it to me, you prevent a war.'\n\nYou've heard this kind of justification before. Everyone claims they're the one preventing catastrophe. It is the easiest lie to say with a straight face.\n\nThe chair still waits. The boss's smile suggests patience, but his posture suggests he doesn't expect to wait long.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s15"
+          "label": "SIT AND PLAY",
+          "to": "S13"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s15"
+          "label": "REFUSE AND LEAVE",
+          "to": "S15"
         }
       ]
     },
-    {
-      "id": "s15",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in. A revelation reframes everything you thought you understood.",
+    "S15": {
+      "text": "You choose resistance: either a fight or a refusal that becomes one.\n\nSecurity closes in with the quiet confidence of people used to moving bodies without paperwork. The dealer's hands freeze. The boss doesn't move at all.\n\nThis is where the casino reveals its true function. It is not a place to win. It is a place to trap.\n\nYou strike first. A quick elbow, a sharp turn, a shove that uses the guard's momentum against him. Your blade stays hidden until the last second.\n\nThe hallway outside is a funnel. You sprint, hearing boots behind you, hearing radios crackle with codes that sound like casual words but mean violence.\n\nYou need an exit and a vehicle and about sixty seconds of luck.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s16"
+          "label": "RUN FOR GARAGE",
+          "to": "S19"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s16"
+          "label": "HIDE IN SERVICE",
+          "to": "S18"
         }
       ]
     },
-    {
-      "id": "s16",
-      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes.",
+    "S16": {
+      "text": "You play straight, because sometimes honesty is the best disguise.\n\nThe boss watches you place your bets with measured calm. You don't chase losses. You don't celebrate wins. You treat chips like numbers, not hope.\n\nThe dealer's hands are flawless. The cards slide like they know where they are going before they arrive.\n\nMidway through the hand, the boss speaks again: 'We both know your handler will burn you if the list is real.'\n\nThat line lands because it's plausible. It's too plausible. It forces you to imagine betrayal, which is exactly what a manipulator wants.\n\nThe river card drops. The hand is now a knife edge.\n\nYou must decide how to handle the final moment: stay conservative, or take control and force the boss to react.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s17"
+          "label": "BET CONSERVATIVE",
+          "to": "S20"
         },
         {
-          "text": "Investigate further",
-          "to": "s18"
+          "label": "PUSH ALL-IN",
+          "to": "S21"
         }
       ]
     },
-    {
-      "id": "s17",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+    "S17": {
+      "text": "You cheat quietly, because you're not here to be moral. You're here to survive.\n\nA small mirror angle, a fingertip under the felt, the kind of trick you learned from people who never wrote it down. You don't need a perfect advantage. You need a nudge.\n\nFor one moment, you see a card you shouldn't see. It tells you enough to shape the bet.\n\nThe boss notices something. Not the trick exactly -- the change in your confidence. His eyes narrow by a millimeter.\n\nHe leans forward. 'Careful,' he says softly. 'I enjoy skill. I dislike disrespect.'\n\nThe dealer deals the next card. The pot swells. The room waits.\n\nIf you push, you might win. If you hesitate, he might punish the attempt.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s18"
+          "label": "PUSH THE BLUFF",
+          "to": "S21"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s18"
+          "label": "BACK OFF NOW",
+          "to": "S20"
         }
       ]
     },
-    {
-      "id": "s18",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself.",
+    "S18": {
+      "text": "You duck into the service corridors, using staff doors and maintenance rooms to break sightlines.\n\nThe casino's back end is a maze of linen carts, electrical panels, and security checkpoints. It's built like this on purpose: guests are guided, staff are controlled.\n\nVoices echo behind you. Not panicked. Coordinated. They are hunting you with a map you don't have.\n\nYou find a junction where three corridors split. One smells like fuel and damp concrete -- likely the parking structure. One hums with transformers -- electrical room. One is quiet and carpeted -- that one leads back toward guests and cameras.\n\nYou press a hand to your comm. Static. Someone is jamming short-range signals inside the building.\n\nThis is now just you and architecture.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s19"
+          "label": "GO TO GARAGE",
+          "to": "S19"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s19"
+          "label": "HIT ELECTRICAL",
+          "to": "S22"
+        },
+        {
+          "label": "BLEND WITH GUESTS",
+          "to": "S23"
         }
       ]
     },
-    {
-      "id": "s19",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
+    "S19": {
+      "text": "You burst into the parking structure and inhale exhaust and concrete dust like it's freedom.\n\nRows of cars sit under fluorescent lights. Security vehicles idle near a stairwell. Two henchmen scan the lanes, not searching randomly but tightening a net.\n\nAcross the structure, under a tarp, your contingency waits: a prototype vehicle disguised as a sleek sports car. Your agency called it a 'jet-assisted pursuit platform.' You called it a bad idea with a steering wheel.\n\nThe keyfob is in your pocket because paranoia is sometimes rewarded.\n\nFootsteps close in. Radios chirp.\n\nIf you want out, you have to commit fast.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s20"
+          "label": "UNVEIL THE CAR",
+          "to": "S24"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s20"
+          "label": "STEAL A SEDAN",
+          "to": "S25"
+        },
+        {
+          "label": "SET AN AMBUSH",
+          "to": "S26"
         }
       ]
     },
-    {
-      "id": "s20",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
+    "S20": {
+      "text": "You take the conservative line, keeping your bets small and your expression flat.\n\nThe boss smiles like he's disappointed in the universe. Conservative players are predictable, and predictable players are controllable.\n\nThe hand resolves. You win a little, lose a little. Nothing decisive. That's the problem. Nothing forces the moment to break.\n\nThe boss taps the table once. The dealer slides a single chip toward you, different from the rest -- heavier, marked, with a seam that suggests it opens.\n\nInside that chip, if you choose to open it, is likely the microcard you came for. A prize that is also a leash.\n\nThe boss's eyes hold yours. 'Take it,' he says. 'Then leave. You'll be chased either way. The difference is what you choose to carry.'",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s21"
+          "label": "OPEN THE CHIP",
+          "to": "S27"
         },
         {
-          "text": "Investigate further",
-          "to": "s22"
+          "label": "POCKET IT CLOSED",
+          "to": "S28"
+        },
+        {
+          "label": "REFUSE IT",
+          "to": "S15"
         }
       ]
     },
-    {
-      "id": "s21",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself. A wrong move here won\u2019t be forgiven easily.",
+    "S21": {
+      "text": "You push all-in, forcing the table to reveal its teeth.\n\nFor the first time, the boss reacts. Not with anger. With interest. He studies you like a scientist watching a reaction.\n\nThe dealer completes the hand. For a heartbeat, the room is silent enough that you can hear the air conditioning cycle.\n\nThen the boss either folds or calls. The moment feels prewritten, like the casino has rehearsed it.\n\nIf you win, you win something he intended you to win. If you lose, you lose something he intended you to lose.\n\nThe boss's fingers tap once on the felt. A signal.\n\nSecurity shifts outside the room. The trap is now active.\n\nThe dealer slides a chip toward you anyway, seam-lined, heavier than the rest.\n\n'Run,' the boss says quietly. 'Make it entertaining.'",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s22"
+          "label": "TAKE THE CHIP",
+          "to": "S28"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s22"
+          "label": "LEAVE IT",
+          "to": "S15"
         }
       ]
     },
-    {
-      "id": "s22",
-      "text": "Something shifts, subtle but irreversible. You move with care, knowing haste invites mistakes.",
+    "S22": {
+      "text": "You slip into the electrical room and meet the casino's heartbeat.\n\nTransformers hum. Panels glow with tiny LEDs. Thick cables run upward like arteries. If you cut the right thing, lights go out. If you cut the wrong thing, you die without anyone having to shoot you.\n\nYou spot a network rack with a security label and a maintenance terminal left logged in. Someone assumed only staff would come here. Assumptions are exploitable.\n\nA quick glance shows the casino's internal cameras and access controls are routed through this node. If you blind them for even thirty seconds, you can move like a ghost again.\n\nBut tampering will trigger alarms that bring guards faster.\n\nYou can go subtle or loud.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s23"
+          "label": "BLIND CAMERAS",
+          "to": "S29"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s23"
+          "label": "TRIP THE ALARM",
+          "to": "S30"
+        },
+        {
+          "label": "LEAVE NOW",
+          "to": "S18"
         }
       ]
     },
-    {
-      "id": "s23",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S23": {
+      "text": "You step back into guest space and put on a smile.\n\nMusic thumps. Glass clinks. A drunk man laughs too loudly at a joke that wasn't funny. Ordinary life continues inches from the violence hunting you.\n\nYou adjust your posture, slow your breathing, and become the kind of person who belongs in expensive places: bored, unafraid, slightly irritated.\n\nIt works, for a moment. Then you see them -- henchmen in suits moving against the flow, eyes scanning faces with the patience of predators.\n\nThey are close enough that you can smell cologne and gun oil.\n\nYou can try to slip past, or you can cause a scene big enough to break their pattern.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s24"
+          "label": "SLIP PAST THEM",
+          "to": "S19"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s24"
+          "label": "START A SCENE",
+          "to": "S15"
         }
       ]
     },
-    {
-      "id": "s24",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S24": {
+      "text": "You rip the tarp off the prototype and the car looks ridiculous and perfect.\n\nLow profile. Reinforced frame. Hidden intakes. The rear housing is bulkier than it should be because that's where the jet module lives. A bad idea pretending to be a sports car.\n\nYou slide in, hit the ignition, and the engine purrs like a lie. The dash lights up with warnings you don't have time to read.\n\nA security SUV swings into the lane, blocking your exit. Two men step out with guns pointed low -- professional, cautious.\n\nBehind you, more footsteps. The net is closing.\n\nYou decide whether to take the normal way out or the way the prototype was built for.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s25"
+          "label": "TAKE THE RAMP",
+          "to": "S25"
         },
         {
-          "text": "Investigate further",
-          "to": "s26"
+          "label": "IGNITE THE JET",
+          "to": "S26"
         }
       ]
     },
-    {
-      "id": "s25",
-      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes.",
+    "S25": {
+      "text": "You drive hard toward the ramp, tires screaming against painted concrete.\n\nThe security SUV tries to angle in. You clip it just enough to push it wide without spinning yourself. Metal shrieks. Someone yells.\n\nOn the ramp, you see daylight and rain-slick asphalt beyond. The city waits like an ocean.\n\nBehind you, a second vehicle gives chase. They stay back, waiting for a clean shot or a mistake.\n\nThe prototype's dash flashes a warning: JET READY. You can use it now for distance, or save it for a last-second escape if they box you in later.\n\nYour lungs burn. Your hands stay steady. That's how you know you're still in control.\n\nFor now.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s26"
+          "label": "USE JET NOW",
+          "to": "S26"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s26"
+          "label": "SAVE THE JET",
+          "to": "S27"
         }
       ]
     },
-    {
-      "id": "s26",
-      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+    "S26": {
+      "text": "You trigger the jet module.\n\nThe car lurches forward as if the city itself shoved you. Acceleration compresses your ribs. The world narrows into a tunnel of light and road markers.\n\nYour mirrors show the chase falling behind in an instant. One pursuing car swerves, unable to match the sudden speed, and slams into a barrier with a bloom of sparks.\n\nBut the jet isn't magic. It's a tool with limits. Heat builds. Fuel drains. Warning lights turn from suggestion to threat.\n\nAhead, an intersection approaches too fast. Red lights. Cross traffic. People who have no idea your war is passing through their evening.\n\nSpeed can save you or kill you. The difference is timing.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s27"
+          "label": "THREAD TRAFFIC",
+          "to": "S28"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s27"
+          "label": "TAKE THE RIVERWAY",
+          "to": "S29"
         }
       ]
     },
-    {
-      "id": "s27",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+    "S27": {
+      "text": "You keep the jet in reserve and drive like someone who expects the road to betray them.\n\nThe prototype behaves at normal speed like a high-end sports car, which is exactly what it needs to look like to vanish in plain sight.\n\nYou take a hard right into a tunnel, then another into a road lined with construction barriers. The city provides cover if you move like you belong to it.\n\nThe seam-lined chip in your pocket is a pulse. You can open it now and see what you're risking your life for, or you can wait until you're safer and risk being ambushed before you know what you have.\n\nEither way, someone is going to want that microcard. If it's real, it isn't just data. It's leverage.\n\nYour comm vibrates again: one short ping. Then two. A pattern. An extraction signal.\n\nYour handler is calling you to a meet -- or calling you into a second trap.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s28"
+          "label": "OPEN THE CHIP",
+          "to": "S28"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s28"
+          "label": "GO TO EXTRACTION",
+          "to": "S29"
+        },
+        {
+          "label": "DITCH THE CHIP",
+          "to": "END_SPECIAL"
         }
       ]
     },
-    {
-      "id": "s28",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options. There\u2019s no neutral ground anymore.",
+    "S28": {
+      "text": "You crack the chip open with a thumbnail and a twist.\n\nInside sits a microcard no larger than a fingernail, wrapped in a thin film to keep it dry. The kind of thing that can topple companies and start wars if it's pointed the right direction.\n\nYour training screams at you to verify, but you can't verify without equipment. You can only decide who gets it.\n\nThe boss's voice echoes in your head: your handler will burn you if it's real. You hate that the line sounds plausible.\n\nYou merge onto a main avenue and spot a black sedan sliding into your blind spot. Another on your left. The chase isn't over. It's just organized now.\n\nYou have three options: outrun them, outthink them, or trade the microcard for breathing room.\n\nThe jet module is still ready, but it won't solve everything.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s29"
+          "label": "BURN THE JET",
+          "to": "S26"
         },
         {
-          "text": "Investigate further",
-          "to": "s30"
+          "label": "CALL THE HANDLER",
+          "to": "S30"
+        },
+        {
+          "label": "GO DARK AGAIN",
+          "to": "S29"
         }
       ]
     },
-    {
-      "id": "s29",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options. This is the last point where retreat is still possible.",
+    "S29": {
+      "text": "You go dark -- not invisible, just harder to model.\n\nYou cut into back streets, underpasses, and service roads where GPS gets sloppy and cameras are fewer. You keep the prototype's speed normal, letting your pursuers guess instead of confirm.\n\nYou reach a riverside industrial stretch where warehouses squat like tired animals. This area is where meetings happen when people don't want witnesses or paperwork.\n\nA signal beacon blinks from a lamppost: your extraction marker. A van idles beneath it with lights off. Perfect. Too perfect.\n\nYou scan the roofs. You scan the shadows. You scan the van's rear panel for fresh dust marks where a door has been opened recently.\n\nThis is the moment you decide what kind of survival you believe in: trust the system, trust yourself, or trust no one and vanish.\n\nBecause the protocol isn't finished until the last witness is accounted for.",
       "choices": [
         {
-          "text": "See it through to the end",
-          "to": "s30"
+          "label": "APPROACH THE VAN",
+          "to": "S30"
         },
         {
-          "text": "Pull back at the last second",
-          "to": "s27"
+          "label": "CIRCLE AND WATCH",
+          "to": "S22"
+        },
+        {
+          "label": "RUN THE RIVERWAY",
+          "to": "S26"
         }
       ]
     },
-    {
-      "id": "s30",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
-      "choices": [],
-      "ending": true,
-      "ending_type": "resolution"
+    "S30": {
+      "text": "You make contact -- with your handler, the extraction team, or the trap pretending to be both.\n\nThe van door slides open just enough to show a face you recognize. That should be relief. It isn't. Relief is for civilians.\n\n'Give us the card,' the voice says. 'Now.'\n\nIn the shadow behind them, you glimpse another figure: not agency. Different posture. Different shoes. Someone the boss would hire.\n\nSo the rumor was real. Someone inside your chain is compromised. Or your handler has decided you are the loose end the protocol requires them to cut.\n\nYou can hand over the microcard and hope, or you can force a break and run, or you can play the highest-risk move: expose everything at once.\n\nThe next ten seconds decide whether you become a success report or a blank space in an archive.",
+      "choices": [
+        {
+          "label": "HAND IT OVER",
+          "to": "END_BAD"
+        },
+        {
+          "label": "FIGHT AND RUN",
+          "to": "END_GOOD"
+        },
+        {
+          "label": "BROADCAST THE DATA",
+          "to": "END_SPECIAL"
+        }
+      ]
+    },
+    "END_GOOD": {
+      "text": "GOOD ENDING -- CLEAN EXTRACTION\n\nYou don't negotiate with a compromised chain. You break it.\n\nYou move first, fast and final: a shoulder into the door, a strike to the wrist, the microcard secured. The jet car screams as you punch the ignition and burn away from the riverside like you're outrunning fate itself.\n\nBehind you, the van erupts in confusion and shouted orders. In your rearview, you see muzzle flashes and nothing that lands. The city swallows the noise.\n\nYou reach a second extraction point -- one you choose, not one you were given. You hand the microcard to a contact you trust because you have bled with them before, and they do not ask questions that can be weaponized.\n\nThe protocol ends the way it should: with the truth in the right hands and you still breathing.\n\nIn a quiet moment later, you realize the only reason you survived is because you stopped believing in perfect systems.",
+      "choices": [
+        {
+          "label": "RESTART",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_BAD": {
+      "text": "BAD ENDING -- BURN NOTICE\n\nYou hand over the microcard and watch the moment your fate becomes administrative.\n\nThere's no dramatic betrayal. Just a quiet nod, a practiced smile, and the cold certainty of someone who has already written the report.\n\nA suppressed shot sounds like a cough. The world tilts. The riverside lights smear into long lines. The van door closes, and your name becomes a problem that is now solved.\n\nThe protocol completes its loop: the loose end is cut, the data is controlled, and the city continues as if nothing happened.\n\nSomewhere, someone files your badge number under 'resolved.'\n\nDead drops are for people who expect the messenger to be expendable.",
+      "choices": [
+        {
+          "label": "RESTART",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_SPECIAL": {
+      "text": "SPECIAL ENDING -- DEAD DROP REVERSAL\n\nYou choose the move nobody expects: you refuse to let any single hand own the truth.\n\nYou trigger a broadcast burst -- encrypted, segmented, timed to release to multiple independent caches. The microcard becomes a seed, not a prize.\n\nThe compromised team lunges for you too late. Even if they take your life, they cannot take back what is already in motion.\n\nYou vanish into the riverway at jet speed and don't return to agency housing, agency contacts, or agency rules. You become a ghost on purpose.\n\nIn the weeks that follow, quiet resignations ripple through powerful offices. Accounts freeze. Names leak. Deals collapse. The system convulses and reforms around the damage you released.\n\nYou are officially dead. Unofficially, you are free.\n\nAnd the next time someone tries to activate the protocol, they will remember that dead drops work both ways.",
+      "choices": [
+        {
+          "label": "RESTART",
+          "to": "S01"
+        }
+      ]
     }
-  ]
+  }
 }
