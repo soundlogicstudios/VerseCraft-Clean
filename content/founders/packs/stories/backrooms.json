@@ -1,422 +1,457 @@
 {
-  "story_id": "backrooms",
-  "title": "Backrooms",
-  "tagline": "liminal horror, fluorescent halls, reality glitches",
-  "version": "placeholder_v2",
-  "start": "s01",
-  "sections": [
-    {
-      "id": "s01",
-      "text": "Backrooms: A detail you missed now clicks into place. You observe first, letting the pattern reveal itself.",
+  "meta": {
+    "id": "backrooms_exit_protocol_30",
+    "title": "The Backrooms: Exit Protocol",
+    "route": "story_backrooms",
+    "schema": "versecraft-1.0",
+    "tone": "liminal horror",
+    "notes": "30-section sample with good/bad/special endings that loop back to start.",
+    "blurb": "You slipped into the Backrooms. Map fragments point to a powered storage facility and a working terminal—if you can rewrite the rules, you can leave."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "You were walking down a hallway you’ve walked a thousand times.\n\nThen your foot found nothing—no step, no floor—just a soft give, like reality shrugged.\n\nYou dropped through a bad frame of the world and landed on damp carpet under buzzing fluorescent lights.\n\nYellow walls. Low ceiling. Endless right angles that feel like they were measured by someone who hates you.\n\nYou don’t need to say the name out loud to know it.\n\nThe Backrooms.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s02"
+          "label": "GET UP AND MOVE",
+          "to": "S02"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s02"
+          "label": "STAY STILL AND LISTEN",
+          "to": "S03"
         }
       ]
     },
-    {
-      "id": "s02",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+    "S02": {
+      "text": "You stand. Your knees complain. The carpet squishes like it’s been wet for years.\n\nYou pick a direction and walk. The hum follows you like a thought you can’t shake.\n\nAfter a few turns, you notice the worst part:\n\nNothing here feels random. It feels permitted.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s03"
+          "label": "KEEP WALKING",
+          "to": "S04"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s03"
+          "label": "MARK YOUR PATH",
+          "to": "S05"
         }
       ]
     },
-    {
-      "id": "s03",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S03": {
+      "text": "You sit and listen. The hum isn’t steady. It rises and falls like breathing.\n\nFar away—too far for this to make sense—footsteps echo once, then stop.\n\nStillness doesn’t hide you. It announces you.\n\nYou taste panic and swallow it.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s04"
+          "label": "STAND AND MOVE",
+          "to": "S02"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s04"
+          "label": "CLOSE YOUR EYES",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s04",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
+    "S04": {
+      "text": "You walk long enough for time to lose meaning.\n\nThen you find something that doesn’t belong: torn paper taped to a wall at eye level.\n\nA map fragment. Smudged ink. A crude box labeled STORAGE and a line labeled POWER NODE.\n\nSomeone else tried to solve this place with planning instead of screaming.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s05"
+          "label": "TAKE THE MAP FRAGMENT",
+          "to": "S06"
         },
         {
-          "text": "Investigate further",
-          "to": "s06"
+          "label": "LEAVE IT AND MOVE ON",
+          "to": "S07"
         }
       ]
     },
-    {
-      "id": "s05",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
+    "S05": {
+      "text": "You scrape a line into the wall with a loose screw you found in the carpet.\n\nIt’s ugly, but it’s yours.\n\nTen minutes later, you see the same mark again—same scratch, same height—around a corner that should have been new.\n\nYou’re not navigating space.\n\nYou're navigating a loop.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s06"
+          "label": "FOLLOW THE LOOP",
+          "to": "S06"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s06"
+          "label": "BREAK THE PATTERN",
+          "to": "S07"
         }
       ]
     },
-    {
-      "id": "s06",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
+    "S07": {
+      "text": "You push faster. Faster feels like control.\n\nThe lights flicker once, and the hum drops lower, like the building disapproves.\n\nA soft scrape follows behind you—something adjusting its pace to match yours.\n\nYou force yourself to breathe through your nose. Slow. Quiet. Human.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s07"
+          "label": "SLOW DOWN AND THINK",
+          "to": "S06"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s07"
+          "label": "RUN",
+          "to": "S08"
         }
       ]
     },
-    {
-      "id": "s07",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself. A wrong move here won\u2019t be forgiven easily.",
+    "S06": {
+      "text": "The fragment shows a route: three turns, a long corridor, a dead end that isn’t a dead end.\n\nIn the margin, someone wrote a note so faint you can barely read it:\n\n“POWER FIRST. EXIT SECOND.”\n\nYou don’t know who wrote it, but it reads like a warning from someone who learned the hard way.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s08"
+          "label": "FOLLOW THE FRAGMENT ROUTE",
+          "to": "S09"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s08"
+          "label": "SEARCH FOR MORE FRAGMENTS",
+          "to": "S10"
         }
       ]
     },
-    {
-      "id": "s08",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+    "S08": {
+      "text": "You run.\n\nYour footfalls slap wet carpet. Your breath gets loud.\n\nThe hum spikes until it feels like it’s inside your teeth.\n\nSomething down the hall moves when you move—fast enough to stay out of sight, close enough to be real.\n\nYou don’t see it.\n\nYou don’t need to.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s09"
+          "label": "DUCK INTO A SIDE HALL",
+          "to": "S11"
         },
         {
-          "text": "Investigate further",
-          "to": "s10"
+          "label": "KEEP RUNNING",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s09",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
+    "S09": {
+      "text": "You follow the fragment’s turns exactly. Left. Right. Right. Straight.\n\nThe world resists you in small ways: corners that feel longer than they should, doors that appear where you don’t remember them.\n\nAt the end of the corridor you find a metal service door set into concrete walls.\n\nIt’s too industrial for this place.\n\nWhich makes it feel like truth.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s10"
+          "label": "TRY THE HANDLE",
+          "to": "S12"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s10"
+          "label": "LOOK FOR A KEYPAD OR PANEL",
+          "to": "S13"
         }
       ]
     },
-    {
-      "id": "s10",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself.",
+    "S10": {
+      "text": "You drift off-route and hunt for more paper. You find two more fragments under a loose baseboard.\n\nThey don’t make a map so much as a system diagram: corridors grouped into zones, and a note: “STORAGE FEEDS TERMINAL.”\n\nSomeone wasn’t just lost here. Someone was mapping infrastructure.\n\nThat means there is infrastructure to map.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s11"
+          "label": "ASSEMBLE THE FRAGMENTS",
+          "to": "S14"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s11"
+          "label": "GO TO THE SERVICE DOOR",
+          "to": "S09"
         }
       ]
     },
-    {
-      "id": "s11",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in.",
+    "S11": {
+      "text": "You duck into a side hall and press your back to the wall.\n\nThe hum softens, like the building is listening.\n\nSomething passes the end of the hallway. You see only a shadow smear across yellow paint, too tall and too thin.\n\nIt pauses. You hold your breath.\n\nThen it moves on.\n\nYou don’t move for a full minute after it’s gone.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s12"
+          "label": "RETURN TO THE MAIN ROUTE",
+          "to": "S06"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s12"
+          "label": "FOLLOW THE SHADOW’S DIRECTION",
+          "to": "S15"
         }
       ]
     },
-    {
-      "id": "s12",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
+    "S12": {
+      "text": "The handle turns—barely—and then stops like it hit a lock that doesn’t exist.\n\nThe door is real metal. Cold. Heavy. Honest.\n\nBut it won’t open.\n\nYou feel a childish urge to kick it, and you hate yourself for it.\n\nThen you see it: a tiny green LED in the corner of a panel.\n\nPower is near. Not here.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s13"
+          "label": "SEARCH FOR POWER FEED",
+          "to": "S13"
         },
         {
-          "text": "Investigate further",
-          "to": "s14"
+          "label": "FORCE THE DOOR ANYWAY",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s13",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S13": {
+      "text": "You find a breaker box recessed into the wall a few feet away.\n\nMost switches are down. Some are missing entirely.\n\nOne is labeled in faded marker: ZONE C / STORAGE.\n\nIt’s the first label you’ve seen that feels like it came from a world with rules.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s14"
+          "label": "FLIP THE SWITCH",
+          "to": "S16"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s14"
+          "label": "DON'T TOUCH IT YET",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s14",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes. There\u2019s no neutral ground anymore.",
+    "S14": {
+      "text": "You spread the fragments on the carpet and press them together like a puzzle.\n\nA path forms—messy but readable—leading from ENTRY LOOP to STORAGE to TERMINAL ROOM.\n\nIn the corner, a warning is underlined three times:\n\n“DO NOT EXECUTE EXIT WITHOUT BACKUP.”\n\nYou laugh once, sharp and tired.\n\nBackup is a fantasy in a place that doesn’t exist.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s15"
+          "label": "COMMIT TO THE STORAGE ROUTE",
+          "to": "S09"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s15"
+          "label": "HUNT FOR THE TERMINAL FIRST",
+          "to": "S15"
         }
       ]
     },
-    {
-      "id": "s15",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself. A revelation reframes everything you thought you understood.",
+    "S15": {
+      "text": "The hallway changes. The carpet becomes less wet. The walls look freshly painted, as if the Backrooms is trying to convince you it’s normal.\n\nThen you find a sign bolted to the ceiling: TERMINAL ACCESS — AUTHORIZED PERSONNEL.\n\nA joke. Or a clue.\n\nBelow it, a locked door and a dead keypad.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s16"
+          "label": "RETURN TO STORAGE FOR POWER",
+          "to": "S13"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s16"
+          "label": "PRY OPEN THE TERMINAL DOOR",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s16",
-      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes.",
+    "S16": {
+      "text": "You flip the switch.\n\nThe lights stutter like they’re waking up from a long sleep.\n\nA low mechanical whir starts behind the service door.\n\nThe green LED brightens. The keypad beside the door comes to life with a faint beep.\n\nFor the first time since you fell in, something responds to you like a machine instead of a nightmare.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s17"
+          "label": "ENTER THE CODE FROM THE FRAGMENT",
+          "to": "S17"
         },
         {
-          "text": "Investigate further",
-          "to": "s18"
+          "label": "TRY RANDOM CODES",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s17",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+    "S17": {
+      "text": "The fragment had a sequence scribbled in the margin. You type it in slowly, hands steady.\n\nThe keypad chirps.\n\nThe lock clicks.\n\nThe heavy door swings inward on oiled hinges that should not be this well maintained.\n\nBeyond it: shelving, crates, and a smell like cardboard and old plastic.\n\nA storage facility inside a place that shouldn’t have supplies.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s18"
+          "label": "ENTER THE STORAGE FACILITY",
+          "to": "S18"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s18"
+          "label": "PAUSE AND LISTEN",
+          "to": "S19"
         }
       ]
     },
-    {
-      "id": "s18",
-      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+    "S19": {
+      "text": "You wait in the doorway, listening.\n\nAt first: only the hum and your heartbeat.\n\nThen: a distant tapping, like fingers on a plastic table.\n\nIt stops when you breathe too loudly.\n\nYou step inside anyway, because the alternative is staying in the corridor where you already know you’re being watched.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s19"
+          "label": "MOVE BETWEEN THE SHELVES",
+          "to": "S18"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s19"
+          "label": "BACK OUT AND RECONSIDER",
+          "to": "S06"
         }
       ]
     },
-    {
-      "id": "s19",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes.",
+    "S18": {
+      "text": "The shelves are stacked with things that look like they were pulled from offices: keyboards, cables, binders, fluorescent tubes.\n\nMap fragments, too—taped to crate lids, stuck under clipboards, folded into drawers like breadcrumbs.\n\nSomeone built a trail.\n\nYou find a rolling cart with a clipboard attached.\n\nOn the top page: “POWER ROUTE CONFIRMED. TERMINAL IN ZONE D.”",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s20"
+          "label": "TAKE MORE MAP FRAGMENTS",
+          "to": "S20"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s20"
+          "label": "FOLLOW THE POWER CABLE RUN",
+          "to": "S21"
         }
       ]
     },
-    {
-      "id": "s20",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes.",
+    "S20": {
+      "text": "You pocket two more fragments. Your hands shake from adrenaline and relief.\n\nThe new pieces show a maintenance corridor labeled ZONE D and a small room icon labeled WORKSTATION.\n\nIn the corner: “If the workstation boots, do not panic. It will try to talk to you.”\n\nYou stare at that line for a long second.\n\nThen you fold the paper carefully and keep moving.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s21"
+          "label": "HEAD TO ZONE D",
+          "to": "S22"
         },
         {
-          "text": "Investigate further",
-          "to": "s22"
+          "label": "SEARCH STORAGE FOR TOOLS",
+          "to": "S23"
         }
       ]
     },
-    {
-      "id": "s21",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself. There\u2019s no neutral ground anymore.",
+    "S21": {
+      "text": "You follow a thick cable run along the base of the wall, like following a vein.\n\nIt snakes through a narrow service corridor where the walls are gray instead of yellow.\n\nThe hum changes here—cleaner, more electrical.\n\nYou pass a label printed on plastic: “NODE D — LIVE.”\n\nLive means power. Power means systems. Systems mean exits can exist.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s22"
+          "label": "FOLLOW THE SERVICE CORRIDOR",
+          "to": "S22"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s22"
+          "label": "TURN BACK BEFORE IT CHANGES MORE",
+          "to": "S06"
         }
       ]
     },
-    {
-      "id": "s22",
-      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes.",
+    "S23": {
+      "text": "You search crates until you find a basic tool kit: a screwdriver set, a headlamp, electrical tape.\n\nNo weapons. No comfort. Just maintenance tools, like the Backrooms expects repairs.\n\nIn the bottom of the kit is a sticky note:\n\n“THE DOOR ISN’T THE EXIT. THE CODE IS.”\n\nYou swallow hard. Your throat feels tight.\n\nYou take the tools.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s23"
+          "label": "GO TO ZONE D",
+          "to": "S22"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s23"
+          "label": "TRY TO MAKE A SIGNAL DEVICE",
+          "to": "S24"
         }
       ]
     },
-    {
-      "id": "s23",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S24": {
+      "text": "You try to build a signal device from spare parts—something that could ping, something that could call.\n\nThe moment you connect the battery, the lights blink twice.\n\nThe hum drops.\n\nA new sound enters the air: a soft modem-like chirp, like laughter made of static.\n\nThe Backrooms doesn’t like you inventing new behavior inside it.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s24"
+          "label": "STOP AND MOVE ON",
+          "to": "S22"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s24"
+          "label": "KEEP BUILDING",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s24",
-      "text": "Something shifts, subtle but irreversible. You observe first, letting the pattern reveal itself.",
+    "S22": {
+      "text": "Zone D begins with a door that’s already ajar, as if someone expected you.\n\nBeyond it: a short hallway and a small operations room with a desk, a chair, and a computer that looks too clean to be real.\n\nThe monitor is dark.\n\nThe tower of the machine is humming quietly.\n\nIt has power.\n\nIt has patience.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s25"
+          "label": "TURN ON THE MONITOR",
+          "to": "S25"
         },
         {
-          "text": "Investigate further",
-          "to": "s26"
+          "label": "SEARCH THE DESK FIRST",
+          "to": "S26"
         }
       ]
     },
-    {
-      "id": "s25",
-      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options.",
+    "S26": {
+      "text": "You search the desk.\n\nA drawer holds a notebook filled with cramped handwriting: attempts, dates, and one repeated phrase: “EXIT DENIED.”\n\nA page is torn out. Another is stained with something brown you don’t want to identify.\n\nIn the back, you find a laminated card:\n\nADMIN LOGIN: GUEST\n\nPASSWORD: (blank)\n\nUnder it, someone wrote: “It lies. It always asks twice.”",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s26"
+          "label": "USE THE LOGIN CARD",
+          "to": "S25"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s26"
+          "label": "LEAVE THE ROOM NOW",
+          "to": "S06"
         }
       ]
     },
-    {
-      "id": "s26",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
+    "S25": {
+      "text": "The monitor flickers on.\n\nA cursor blinks on a black screen.\n\nNo welcome message. No icons. Just a command line like an open mouth waiting to be fed.\n\nText appears on its own, letter by letter:\n\n> IDENTIFY.\n\nYou don’t type. The cursor blinks anyway.\n\n> IDENTIFY.\n\nThe notebook said it would ask twice.\n\nNow you believe it.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s27"
+          "label": "TYPE YOUR NAME",
+          "to": "S27"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s27"
+          "label": "TYPE GUEST",
+          "to": "S28"
         }
       ]
     },
-    {
-      "id": "s27",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S27": {
+      "text": "You type your name.\n\nThe machine pauses, like it’s tasting it.\n\nNew text appears:\n\n> NAME NOT FOUND.\n\n> ASSIGNING TEMPORARY ID.\n\nA new prompt:\n\n> PURPOSE?\n\nThe cursor blinks, patient and cruel.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s28"
+          "label": "TYPE EXIT",
+          "to": "S29"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s28"
+          "label": "TYPE HELP",
+          "to": "S28"
         }
       ]
     },
-    {
-      "id": "s28",
-      "text": "Something shifts, subtle but irreversible. You observe first, letting the pattern reveal itself. This choice will echo farther than you expect.",
+    "S28": {
+      "text": "You type: GUEST.\n\nThe machine replies:\n\n> GUEST ACCEPTED.\n\nThen, like a trap closing:\n\n> EXIT FUNCTIONS RESTRICTED.\n\nA directory list appears—files and folders named like infrastructure: ZONES, NODES, BOUNDARY, PERMISSIONS.\n\nThis is not a haunted computer.\n\nThis is a control panel.\n\nAnd you are in the wrong account.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s29"
+          "label": "SEARCH PERMISSIONS FILES",
+          "to": "S29"
         },
         {
-          "text": "Investigate further",
-          "to": "s30"
+          "label": "TRY TO ELEVATE ACCESS",
+          "to": "S30"
         }
       ]
     },
-    {
-      "id": "s29",
-      "text": "Something shifts, subtle but irreversible. You observe first, letting the pattern reveal itself. This is the last point where retreat is still possible.",
+    "S29": {
+      "text": "You open PERMISSIONS.\n\nLines of code scroll—clean, readable, terrifying.\n\nRules. Flags. Conditions like a checklist for reality.\n\nOne line stands out:\n\nEXIT_ALLOWED = FALSE\n\nAnother line references a key file:\n\nBOUNDARY.KEY\n\nYou don’t know where that key is.\n\nBut you know what you can change.",
       "choices": [
         {
-          "text": "See it through to the end",
-          "to": "s30"
+          "label": "TOGGLE EXIT_ALLOWED",
+          "to": "S31"
         },
         {
-          "text": "Pull back at the last second",
-          "to": "s27"
+          "label": "SEARCH FOR BOUNDARY.KEY",
+          "to": "S30"
         }
       ]
     },
-    {
-      "id": "s30",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes.",
-      "choices": [],
-      "ending": true,
-      "ending_type": "resolution"
+    "S30": {
+      "text": "You attempt to elevate access.\n\nThe machine pauses.\n\n> AUTH REQUIRED.\n\nIt asks again.\n\n> AUTH REQUIRED.\n\nYour skin prickles. The hum shifts as if the walls are leaning in.\n\nYou search directories quickly. In NODES, you find a reference:\n\nBOUNDARY.KEY stored in STORAGE / CRATE 14.\n\nBack where you started.\n\nThe Backrooms loves circular jokes.",
+      "choices": [
+        {
+          "label": "RETURN TO STORAGE FOR THE KEY",
+          "to": "S20"
+        },
+        {
+          "label": "FORCE THE EXIT WITHOUT THE KEY",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "S31": {
+      "text": "You toggle EXIT_ALLOWED from FALSE to TRUE.\n\nThe moment you save the file, the lights in the room dim—not off, just lower, like the building is narrowing its eyes.\n\nThe computer prints a single line:\n\n> WARNING: BOUNDARY INTEGRITY UNVERIFIED.\n\nA new command appears:\n\n> EXECUTE EXIT? (Y/N)\n\nYour mouth goes dry.\n\nThis is it. Or it’s a trap.",
+      "choices": [
+        {
+          "label": "EXECUTE EXIT",
+          "to": "S32"
+        },
+        {
+          "label": "CANCEL AND VERIFY KEY",
+          "to": "S20"
+        }
+      ]
+    },
+    "S32": {
+      "text": "You type: Y.\n\nThe hum drops into silence so complete it hurts.\n\nA door appears in the far wall of the operations room, where there has never been a door.\n\nIt is plain. Unmarked. The kind of door you would ignore in an office building.\n\nThe computer prints one more line:\n\n> STEP THROUGH. DO NOT LOOK BACK.\n\nYour throat tightens.\n\nThe simplest instruction is always the hardest.",
+      "choices": [
+        {
+          "label": "STEP THROUGH THE DOOR",
+          "to": "END_GOOD"
+        },
+        {
+          "label": "WAIT AND WATCH FIRST",
+          "to": "END_SPECIAL"
+        }
+      ]
+    },
+    "END_GOOD": {
+      "text": "GOOD ENDING — EXIT PROTOCOL COMPLETE\n\nYou step through.\n\nFor one breath, everything is white.\n\nThen you’re on cold concrete in a familiar hallway, your own world’s fluorescent lights buzzing overhead.\n\nPeople walk past you without noticing. No one screams. No one points.\n\nYou stand up slowly, expecting the carpet squish. It isn’t there.\n\nBut later—days later—when you stare at a blank terminal, you swear the cursor blinks a little too patiently.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_BAD": {
+      "text": "BAD ENDING — PERMISSION DENIED\n\nYou push the system too hard. Or you get too loud. Or you trust the wrong door.\n\nThe lights flicker, and the corridors rearrange.\n\nThe map fragments in your pocket turn to wet pulp.\n\nThe hum rises until it fills your skull.\n\nYou walk for a long time. Maybe hours. Maybe years.\n\nEventually you realize the worst part:\n\nThe Backrooms didn’t kill you.\n\nIt filed you away.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_SPECIAL": {
+      "text": "SPECIAL ENDING — THE BACKROOMS LET YOU GO\n\nYou wait.\n\nYou watch the door breathe—yes, breathe—like it’s deciding what you are.\n\nThe computer prints a final line on its own:\n\n> ACCEPTED.\n\nThe door opens without a sound.\n\nYou wake up in your bed at home, heart racing, sure it was a nightmare—until you check your laptop.\n\nA new folder sits on the desktop: BOUNDARY.\n\nInside it, a single text file contains one line:\n\n> IDENTIFY.\n\nYou don’t remember typing it.\n\nBut the cursor is blinking, waiting for you to answer.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
     }
-  ]
+  }
 }
