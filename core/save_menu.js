@@ -13,15 +13,10 @@ const SLOT_IDS = ["slot_0", "slot_1", "slot_2"];
 const EMPTY_TARGET = "menu";
 
 // GLOBAL nudge (negative = up). Adjust this one number if needed.
-const ROW_NUDGE_Y_PX_PX = -72;
+const ROW_NUDGE_Y_PX_PX = 144;
 
 // Keep existing spacing
 const ROW_SPREAD_FACTOR = 1.08;
-// Measured 3-frame window on settings_clear_save (visual alignment target)
-// Controls ONLY the visual rows (cover/text). Hitboxes remain unchanged.
-const SAVE_FRAME_TOP_PCT = 14.91;
-const SAVE_FRAME_H_PCT = 58.71;
-const SAVE_ROW_H_PCT = SAVE_FRAME_H_PCT / 3;
 
 // iPhone safety notch approximation (visual only)
 // Used to nudge rows DOWN relative to the evenly-spread layout
