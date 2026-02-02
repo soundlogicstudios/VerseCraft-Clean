@@ -1,81 +1,430 @@
 {
   "meta": {
-    "id": "timecop_grail",
+    "id": "timecop_missing_grail_30",
     "title": "TimeCop: The Missing Grail",
     "route": "story_timecop",
     "schema": "versecraft-1.0",
     "tone": "sci-fi thriller",
-    "blurb": "A career time criminal has slipped into the past. History is missing something sacred."
+    "notes": "30-section sample with good/bad/special endings that loop back to start.",
+    "blurb": "A Mastermind time-criminal is stealing sacred artifacts. Your first mission: recover the Holy Grail before history forgets it ever existed."
   },
   "start": "S01",
   "scenes": {
     "S01": {
-      "text": "The briefing is short.\n\nTemporal theft. High value.\n\nA Mastermind has breached the timeline and vanished somewhere in the medieval era. Artifacts are going missing—objects that should still exist.\n\nOne file flashes on the screen longer than the others:\n\nTHE HOLY GRAIL — STATUS: UNKNOWN\n\nIf the Grail is gone, history isn’t just altered. It’s bleeding.\n\nYour jump window is narrow.",
+      "text": "The briefing room smells like burnt coffee and recycled air.\n\nYour supervisor doesn’t waste time. A timeline grid blooms across the wall—bright threads, clean intersections, the kind of order people assume history has.\n\nThen the grid flickers. Small punctures. Missing nodes. Not explosions—quiet absences.\n\n“Mastermind,” your supervisor says. “Career thief. Not here to kill anyone. Here to steal what makes people *believe*.”\n\nA file hangs at the center of the screen.\n\nTHE HOLY GRAIL — STATUS: UNKNOWN.\n\nA relic like that isn’t just gold and legend. It’s a foundation stone. Remove it, and whole centuries start to feel different.\n\nYou’re new, but you’re not green. You know what happens when people stop trusting the story the world tells them.\n\n\nCHOICES\n\nREVIEW THE CASE FILE\nYou slow down long enough to see how the Mastermind moves, and what they’ve hit before.\n\nSUIT UP AND JUMP\nYou go now, betting speed beats preparation.",
       "choices": [
-        { "label": "JUMP TO THE MEDIEVAL PERIOD", "to": "S02" },
-        { "label": "REVIEW THE MASTERMIND PROFILE", "to": "S03" }
+        {
+          "label": "REVIEW THE CASE FILE",
+          "to": "S02"
+        },
+        {
+          "label": "SUIT UP AND JUMP",
+          "to": "S03"
+        }
       ]
     },
-
     "S02": {
-      "text": "The jump hits hard.\n\nStone replaces steel. Smoke replaces neon.\n\nYou arrive outside a fortified monastery. The air hums with temporal residue—fresh. Someone was here recently.\n\nIf the Grail was taken, this is where history first broke.",
+      "text": "The case file is a list of things that should not be missing.\n\nA crown that vanishes from a coronation painting. A page ripped out of a treaty that still gets signed. A prototype that never makes it into a workshop.\n\nThe pattern is obvious once you see it: the Mastermind steals symbols that hold history together. Not weapons—anchors.\n\nYour supervisor scrolls to a note in red: “They leave decoys. They like to watch us chase the wrong shadow.”\n\nOne more page is tagged with higher clearance. You don’t *have* to open it.\n\nBut you do.\n\nIt’s a grainy image of a jump-signature waveform—two peaks instead of one. Hesitation, like the thief is stepping across a crack in reality and trying not to fall.\n\nStolen stabilizer tech. Old. Dangerous.\n\nIf they jump again, they might not land where they intend.\n\n\nCHOICES\n\nRUN TEMPORAL FORENSICS\nYou take thirty seconds to lock onto the Mastermind’s signature, so you can track them mid-flight.\n\nDEPLOY ANYWAY\nYou jump now, and accept that you may be running blind.",
       "choices": [
-        { "label": "ENTER THE MONASTERY", "to": "S04" },
-        { "label": "SCAN FOR TEMPORAL TRAILS", "to": "S05" }
+        {
+          "label": "RUN TEMPORAL FORENSICS",
+          "to": "S04"
+        },
+        {
+          "label": "DEPLOY ANYWAY",
+          "to": "S03"
+        }
       ]
     },
-
     "S03": {
-      "text": "The Mastermind isn’t a killer.\n\nThey’re worse.\n\nA professional looter of history. They don’t change wars—they steal treasures before anyone notices they mattered.\n\nEvery theft makes their future richer and everyone else’s poorer.\n\nThey never stay long.",
+      "text": "The jump is never graceful.\n\nThe agency’s clean lights smear into a tunnel of motion. Your stomach lifts, your ears pop, and for a heartbeat you feel like a photograph being peeled off a page.\n\nThen mud hits your boots.\n\nRain. Torchlight. Stone walls rising out of the storm.\n\nA monastery sits on a hill like it’s been waiting for centuries—and maybe it has.\n\nYour wrist unit pings once: temporal residue, fresh. Whoever came through, they did it recently.\n\nYou pull your coat tighter and let your eyes do what they were trained to do: look for what doesn’t belong.\n\nA modern scuff in ancient mud.\n\nA handprint where no one would touch.\n\nA whisper of ozone that doesn’t match the weather.\n\n\nCHOICES\n\nENTER THE MONASTERY\nYou go straight in. Faster. Riskier. You might be seen.\n\nSCOUT THE PERIMETER\nYou circle first. The Mastermind had to enter somewhere, and thieves always leave a trail.",
       "choices": [
-        { "label": "PROCEED WITH THE JUMP", "to": "S02" },
-        { "label": "WAIT FOR BACKUP", "to": "BAD_END" }
+        {
+          "label": "ENTER THE MONASTERY",
+          "to": "S05"
+        },
+        {
+          "label": "SCOUT THE PERIMETER",
+          "to": "S06"
+        }
       ]
     },
-
     "S04": {
-      "text": "Inside the monastery, panic has already set in.\n\nMonks whisper of a stranger who spoke strangely and vanished into light.\n\nThe Grail chamber is empty.\n\nHistory has been robbed.",
+      "text": "Forensics is boring until it saves your life.\n\nYou overlay the Mastermind’s waveform against the current era. The double-peak signature stands out like a stutter in music.\n\n“Stabilizer is degrading,” the lab tech says. “They can’t keep doing this. Each jump is rougher than the last.”\n\nRough jumps mean mistakes.\n\nMistakes mean windows.\n\nYou mark the most likely landing points—places where a relic like the Grail would be whispered about, hidden, guarded.\n\nThe monastery on the hill lights up as a probability spike.\n\nYou don’t feel triumphant. You feel the calm that comes right before things go wrong.\n\nBecause if the Mastermind is desperate, they might do something stupid.\n\nAnd stupid in time travel doesn’t just get people killed.\n\nIt gets *forgotten*.\n\n\nCHOICES\n\nJUMP WITH TRACKING ACTIVE\nYou go now, tuned to their signature.\n\nCALL FOR BACKUP\nYou request support and risk arriving late.",
       "choices": [
-        { "label": "CHASE THE MASTERMIND THROUGH TIME", "to": "S06" },
-        { "label": "SECURE THE TIMELINE AND SEAL THE ERA", "to": "GOOD_END" }
+        {
+          "label": "JUMP WITH TRACKING ACTIVE",
+          "to": "S03"
+        },
+        {
+          "label": "CALL FOR BACKUP",
+          "to": "S07"
+        }
       ]
     },
-
     "S05": {
-      "text": "Your scanner lights up.\n\nA temporal jump signature—sloppy, rushed.\n\nThe Mastermind didn’t escape cleanly. They’re wounded or desperate.\n\nYou could follow them… or close the breach now.",
+      "text": "Inside the monastery, the air is warm and thick with candle smoke.\n\nA monk meets you with wary eyes. You can’t show him a badge that means anything here, so you show him urgency instead.\n\nHe leads you down stone halls. Whispers follow.\n\n“A stranger came,” a voice murmurs.\n\n“Light in the corridor,” another says.\n\n“Like a star fell inside,” someone else insists.\n\nAt the reliquary door, the monk stops.\n\nThe iron latch is bent outward.\n\nNot forced in.\n\nForced *open*.\n\nYou step through and feel your stomach drop.\n\nThe pedestal is bare.\n\nThe place where history says the Grail should be… is empty.\n\n\nCHOICES\n\nSEARCH THE RELIQUARY\nYou look for residue, a hidden compartment, anything the thief overlooked.\n\nQUESTION THE WITNESSES\nYou gather details: voice, height, direction, timing. Thieves hate questions.",
       "choices": [
-        { "label": "FOLLOW THE JUMP SIGNATURE", "to": "S06" },
-        { "label": "SEAL THE BREACH IMMEDIATELY", "to": "GOOD_END" }
+        {
+          "label": "SEARCH THE RELIQUARY",
+          "to": "S08"
+        },
+        {
+          "label": "QUESTION THE WITNESSES",
+          "to": "S09"
+        }
       ]
     },
-
     "S06": {
-      "text": "You catch them between moments.\n\nThe Mastermind holds the Grail, awe and greed fighting on their face.\n\n\"You have no idea what this is worth,\" they say.\n\nThey offer you a deal.\n\nOne artifact. One future changed—for you.",
+      "text": "Mud is honest.\n\nYou circle the outer wall, keeping low, scanning for anything that doesn’t match the era.\n\nThere—a set of boot prints with tread too sharp, too uniform.\n\nSomeone climbed here fast.\n\nYou follow the prints to a spot where stone is scraped clean. A handhold. A jump point.\n\nNearby, a faint scorch mark—small, like a portable device venting heat.\n\nThe Mastermind didn’t stroll in.\n\nThey slipped.\n\nThey were in a hurry.\n\nThat’s good for you.\n\nHurried thieves make greedy choices.\n\n\nCHOICES\n\nFOLLOW THE TRAIL\nYou keep tracking along the mud line toward where they exited.\n\nRETURN INSIDE\nYou go back through the monastery to confirm the Grail is truly gone.",
       "choices": [
-        { "label": "ARREST THE MASTERMIND", "to": "GOOD_END" },
-        { "label": "LET THEM ESCAPE WITH THE GRAIL", "to": "BAD_END" },
-        { "label": "TAKE THE GRAIL FOR YOUR AGENCY", "to": "SPECIAL_END" }
+        {
+          "label": "FOLLOW THE TRAIL",
+          "to": "S10"
+        },
+        {
+          "label": "RETURN INSIDE",
+          "to": "S05"
+        }
       ]
     },
-
-    "GOOD_END": {
-      "text": "The Grail is returned.\n\nThe Mastermind is erased from the timeline.\n\nHistory stabilizes.\n\nNo one will ever know how close it came to unraveling.\n\nThat’s the job.",
+    "S07": {
+      "text": "You call for backup.\n\nA sensible move. A professional move.\n\nTime doesn’t care.\n\nYour wrist unit pulses—one sharp spike, then silence.\n\nThe Mastermind jumped.\n\nYou feel the moment like a door slamming in another room.\n\nBackup arrives two minutes later. Too clean. Too calm. Too late.\n\nThey look at you like you’re supposed to say something inspiring.\n\nBut you’re thinking of the double-peak signature.\n\nUnstable.\n\nDesperate.\n\nAnd now moving.\n\n\nCHOICES\n\nPURSUE THROUGH TIME\nYou jump after the spike. You may be walking into a trap.\n\nSTAND DOWN\nYou accept failure. You write the report. You live with it.",
       "choices": [
-        { "label": "RETURN TO START", "to": "S01" }
+        {
+          "label": "PURSUE THROUGH TIME",
+          "to": "S11"
+        },
+        {
+          "label": "STAND DOWN",
+          "to": "END_BAD"
+        }
       ]
     },
-
-    "BAD_END": {
-      "text": "The timeline holds—but barely.\n\nThe Grail is gone.\n\nSome futures are richer. Others poorer.\n\nYour report will never be read aloud.",
+    "S08": {
+      "text": "You kneel by the pedestal.\n\nNothing obvious. No secret latch. No false bottom.\n\nBut the air tastes wrong—like metal and lightning.\n\nTemporal residue.\n\nFresh.\n\nThe Mastermind didn’t just pick up the Grail. They *opened* something to take it.\n\nA small smear of soot marks the stone rim, as if a device kissed it for half a second.\n\nYou trace the mark with a gloved finger.\n\nYour wrist unit chirps.\n\nA directional ping.\n\nThey left a wake.\n\nIf you move fast, you can still catch the ripple before it fades.\n\n\nCHOICES\n\nFOLLOW THE RESIDUE\nYou step into pursuit while the trail is still warm.\n\nSTOP AND LISTEN\nYou slow down and let the monastery tell you what it saw.",
       "choices": [
-        { "label": "RETURN TO START", "to": "S01" }
+        {
+          "label": "FOLLOW THE RESIDUE",
+          "to": "S10"
+        },
+        {
+          "label": "STOP AND LISTEN",
+          "to": "S09"
+        }
       ]
     },
-
-    "SPECIAL_END": {
-      "text": "The Grail vanishes into secure containment.\n\nHistory remains intact—but altered.\n\nSomewhere, someone notices a future that shouldn’t exist.\n\nYou feel like you’ve just become a target.",
+    "S09": {
+      "text": "The monks don’t have your words, but they have eyes.\n\nThey describe the thief as calm, almost respectful. No shouting. No panic.\n\nA stranger who looked at the relic like it was a memory.\n\nOne monk mentions something odd: the thief said, softly, before vanishing—\n\n“People would kill for hope. History should share it.”\n\nThat’s not greed.\n\nThat’s a story the thief tells themselves.\n\nAnd stories are dangerous.\n\nBecause the wrong story can justify anything.\n\n\nCHOICES\n\nINTERCEPT THE NEXT JUMP\nYou use the residue trail to catch them mid-flight.\n\nSEAL THE ERA\nYou contain the damage and accept you may never recover the Grail.",
       "choices": [
-        { "label": "RETURN TO START", "to": "S01" }
+        {
+          "label": "INTERCEPT THE NEXT JUMP",
+          "to": "S11"
+        },
+        {
+          "label": "SEAL THE ERA",
+          "to": "S12"
+        }
+      ]
+    },
+    "S10": {
+      "text": "The trail leads away from the monastery into a narrow path cut through trees.\n\nRain turns everything into the same color, but your scanner sees what your eyes can’t.\n\nA thin thread of temporal distortion—like heat shimmer, except cold.\n\nIt pulls you toward a clearing.\n\nAnd in that clearing:\n\nA ring of scorched earth.\n\nA jump site.\n\nThe Mastermind didn’t leave quietly.\n\nThey left in a hurry.\n\nYou step closer, and the air prickles.\n\nYour unit buzzes.\n\nA residual echo plays, like a recording on a loop: a figure lifting a cup-shaped relic, then turning as if they *heard you coming*.\n\n\nCHOICES\n\nTRIGGER A TRACE BEACON\nYou tag the jump site so you can follow their next tear.\n\nJUMP THROUGH THE ECHO\nYou dive into the unstable corridor now, before it collapses.",
+      "choices": [
+        {
+          "label": "TRIGGER A TRACE BEACON",
+          "to": "S13"
+        },
+        {
+          "label": "JUMP THROUGH THE ECHO",
+          "to": "S14"
+        }
+      ]
+    },
+    "S11": {
+      "text": "You jump after the spike.\n\nThe corridor is wrong. Too jagged. Too loud.\n\nYou land hard in a place that isn’t quite a place—half formed, like the universe didn’t finish loading it.\n\nSomeone is waiting.\n\nNot the Mastermind.\n\nA hired runner from the future, face masked, weapon cheap and loud.\n\nThey don’t say anything.\n\nThey just raise the gun.\n\nYou don’t have time to wonder why the Mastermind sent them.\n\nYou have time to move.\n\n\nCHOICES\n\nTAKE COVER AND DISARM\nYou survive first. Ask questions later.\n\nCHARGE AND END IT\nYou go aggressive. Faster, riskier, messier.",
+      "choices": [
+        {
+          "label": "TAKE COVER AND DISARM",
+          "to": "S15"
+        },
+        {
+          "label": "CHARGE AND END IT",
+          "to": "S16"
+        }
+      ]
+    },
+    "S12": {
+      "text": "Sealing an era is a polite way of saying you’re cleaning up someone else’s mess.\n\nYou mark the monastery timeline with stabilization protocols.\n\nThe missing Grail becomes a controlled absence—a patch on the story.\n\nPeople will still speak of it.\n\nThey’ll just speak differently.\n\nYou can feel it already: the way meaning shifts when the object is gone.\n\nYour supervisor will call it a partial success.\n\nYou’ll call it a loss that doesn’t bleed.\n\nBut it still bleeds.\n\nJust slow.\n\n\nCHOICES\n\nFILE THE REPORT\nYou accept the damage and return to the agency.\n\nCHANGE YOUR MIND\nYou pursue anyway. You refuse to leave history wounded.",
+      "choices": [
+        {
+          "label": "FILE THE REPORT",
+          "to": "END_BAD"
+        },
+        {
+          "label": "CHANGE YOUR MIND",
+          "to": "S11"
+        }
+      ]
+    },
+    "S13": {
+      "text": "You plant the beacon.\n\nA tiny device, smaller than a coin, that clings to the edge of a tear in reality and listens for the next one.\n\nIt’s not glamorous.\n\nIt’s effective.\n\nYour wrist unit ticks.\n\nOne second.\n\nTwo.\n\nThen a soft chime.\n\nThe Mastermind’s signature is back—double peak, unstable, close.\n\nYour beacon caught it.\n\nA new destination bleeds into your display.\n\nA market town.\n\nBusy streets.\n\nToo many innocents.\n\nPerfect cover for a thief.\n\n\nCHOICES\n\nJUMP TO THE MARKET\nYou take the route with the highest chance of contact.\n\nWAIT AND TRIANGULATE\nYou refine the lock for a cleaner jump—at the cost of time.",
+      "choices": [
+        {
+          "label": "JUMP TO THE MARKET",
+          "to": "S17"
+        },
+        {
+          "label": "WAIT AND TRIANGULATE",
+          "to": "S18"
+        }
+      ]
+    },
+    "S14": {
+      "text": "You jump through the echo before it can fade.\n\nThe corridor snaps shut behind you like a trap.\n\nYou land in a medieval market town, rain replaced by damp fog and the stink of animals.\n\nPeople push past you. Traders shout. Children run.\n\nAnd somewhere in the noise, your unit pings.\n\nThe Grail is close.\n\nToo close.\n\nYou can almost feel its weight in the air.\n\nBut you can’t draw a weapon here.\n\nNot without becoming the monster in everyone’s story.\n\n\nCHOICES\n\nBLEND INTO THE CROWD\nYou hide your urgency and hunt like a shadow.\n\nHEAD FOR HIGH GROUND\nYou get a vantage and risk losing the trail in the crowd.",
+      "choices": [
+        {
+          "label": "BLEND INTO THE CROWD",
+          "to": "S19"
+        },
+        {
+          "label": "HEAD FOR HIGH GROUND",
+          "to": "S20"
+        }
+      ]
+    },
+    "S15": {
+      "text": "You dive behind a half-formed stone pillar.\n\nThe runner fires twice. The shots crack like thunder in a world that doesn’t like loud noises.\n\nYou slide, grab their wrist, twist.\n\nThe gun clatters.\n\nThey panic.\n\nYou see it in their eyes: they don’t want to die in a place that might not even exist tomorrow.\n\nYou pin them and speak low.\n\n“Where’s the Mastermind?”\n\nThey laugh once—short, bitter.\n\n“Everywhere.”\n\nAnd then they bite down on something.\n\nTheir body goes limp.\n\nSelf-erase capsule.\n\nCheap insurance.\n\n\nCHOICES\n\nFOLLOW THE RESIDUAL SIGNATURE\nYou use the runner’s fading waveform to find the Mastermind.\n\nRETREAT TO STABILITY\nYou leave before the corridor collapses on you.",
+      "choices": [
+        {
+          "label": "FOLLOW THE RESIDUAL SIGNATURE",
+          "to": "S13"
+        },
+        {
+          "label": "RETREAT TO STABILITY",
+          "to": "S21"
+        }
+      ]
+    },
+    "S16": {
+      "text": "You rush them.\n\nYour shoulder clips the weapon as it fires.\n\nPain blooms—hot, immediate, real.\n\nThe runner stumbles back, startled you’re still standing.\n\nYou grab their mask, yank.\n\nThey’re young.\n\nToo young to be here.\n\nTheir eyes flick to your bleeding side, and you realize what they were hired to do: delay you. Not kill you.\n\nThey smile like they know something.\n\n“Too late,” they whisper.\n\nAnd then they vanish—jump device, cheap and violent.\n\nYour wound pulses.\n\nYour unit screams: corridor collapse imminent.\n\n\nCHOICES\n\nPUSH THROUGH THE PAIN\nYou pursue while you still can.\n\nFALL BACK AND PATCH UP\nYou survive now and risk losing them.",
+      "choices": [
+        {
+          "label": "PUSH THROUGH THE PAIN",
+          "to": "S13"
+        },
+        {
+          "label": "FALL BACK AND PATCH UP",
+          "to": "S21"
+        }
+      ]
+    },
+    "S17": {
+      "text": "The market town is alive with noise.\n\nYou step out of the jump with your coat pulled tight and your face neutral.\n\nYou scan hands.\n\nYou scan pockets.\n\nYou scan eyes.\n\nThieves always look like they’re counting.\n\nYour unit pings.\n\nClose.\n\nThen closer.\n\nA figure slips between stalls—hood up, pace unhurried.\n\nThey aren’t running.\n\nThey’re *sure*.\n\nAnd certainty is the most dangerous thing a criminal can carry.\n\n\nCHOICES\n\nFOLLOW AT A DISTANCE\nYou stay back and wait for a cleaner moment.\n\nCUT THEM OFF\nYou move fast and try to corner them before they vanish again.",
+      "choices": [
+        {
+          "label": "FOLLOW AT A DISTANCE",
+          "to": "S19"
+        },
+        {
+          "label": "CUT THEM OFF",
+          "to": "S22"
+        }
+      ]
+    },
+    "S18": {
+      "text": "You refine your lock.\n\nIt’s clean work. Precise work.\n\nBy the time you jump, you arrive smoothly—almost like you belonged here.\n\nBut the market is already shifting.\n\nThe figure you expected is gone.\n\nThe trail is weaker.\n\nAnd you feel it: the Mastermind wants you just behind them.\n\nWants you tired.\n\nWants you reaching.\n\nYou don’t know why yet.\n\nYou just know it’s true.\n\n\nCHOICES\n\nSEARCH FOR THE TRAIL\nYou hunt the residue like a bloodhound.\n\nASK THE WRONG QUESTIONS\nYou use your badge in a world that doesn’t understand it—and hope fear does the rest.",
+      "choices": [
+        {
+          "label": "SEARCH FOR THE TRAIL",
+          "to": "S20"
+        },
+        {
+          "label": "ASK THE WRONG QUESTIONS",
+          "to": "S23"
+        }
+      ]
+    },
+    "S19": {
+      "text": "You trail them through the crowd.\n\nThey never look back.\n\nThey don’t need to.\n\nThey know you’re there.\n\nThey drift toward a quiet side street where the noise dies and the air smells like wet stone. A place where a jump could happen without witnesses.\n\nThe figure pauses at a door.\n\nNot a shop.\n\nNot a home.\n\nA storage building with a weak lock.\n\nThey slip inside.\n\nYou wait three seconds.\n\nThen follow.\n\n\nCHOICES\n\nENTER QUIETLY\nYou take the careful approach.\n\nKICK THE DOOR\nYou go loud and fast, betting surprise beats subtlety.",
+      "choices": [
+        {
+          "label": "ENTER QUIETLY",
+          "to": "S24"
+        },
+        {
+          "label": "KICK THE DOOR",
+          "to": "S25"
+        }
+      ]
+    },
+    "S20": {
+      "text": "You find the residue again—thin, but real.\n\nIt drifts toward the river road, away from the market.\n\nYour unit pings a second signature too.\n\nNot the Mastermind.\n\nA stabilizer echo.\n\nOld tech.\n\nFailing.\n\nThey can’t keep doing this.\n\nWhich means they’re heading somewhere to finish the job.\n\nSomewhere they can’t risk leaving without the Grail.\n\nYou follow the thread until the town thins.\n\nUntil the fog opens.\n\nUntil you see a lone figure by the river, hood up, holding something close to their chest.\n\n\nCHOICES\n\nAPPROACH AND TALK\nYou risk conversation to learn what they want.\n\nTAKE THE SHOT\nYou go for the arrest immediately.",
+      "choices": [
+        {
+          "label": "APPROACH AND TALK",
+          "to": "S26"
+        },
+        {
+          "label": "TAKE THE SHOT",
+          "to": "S27"
+        }
+      ]
+    },
+    "S21": {
+      "text": "You retreat to a stable pocket of time.\n\nYou press gauze to your side, breathe through the sting, and watch your unit settle.\n\nIt’s the right call.\n\nBut it feels like surrender.\n\nYour supervisor’s voice crackles in your earpiece: “Status?”\n\nYou could lie.\n\nYou could tell the truth.\n\nEither way, the Mastermind is moving.\n\nAnd the longer you wait, the more the story reshapes around the missing Grail.\n\n\nCHOICES\n\nRETURN TO THE HUNT\nYou go back in before you’re fully ready.\n\nREPORT AND STAND DOWN\nYou choose survival and accept the loss.",
+      "choices": [
+        {
+          "label": "RETURN TO THE HUNT",
+          "to": "S13"
+        },
+        {
+          "label": "REPORT AND STAND DOWN",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "S22": {
+      "text": "You cut them off in the street.\n\nThey stop without surprise.\n\nUp close, you see details you didn’t expect: clean hands, calm eyes, no obvious weapon.\n\nJust a device strapped to the wrist.\n\nAnd under the cloak, the faint outline of something cup-shaped.\n\nThe Grail.\n\nTheir mouth curves like they’ve been waiting for you.\n\n“TimeCop,” they say.\n\nYou didn’t tell them your title.\n\nWhich means they’ve done their homework.\n\nOr they’ve met your kind before.\n\n\nCHOICES\n\nDEMAND THE RELIC\nYou keep it simple: give it back.\n\nSTALL FOR A CLEAN ARREST\nYou talk, you keep them calm, you wait for an opening.",
+      "choices": [
+        {
+          "label": "DEMAND THE RELIC",
+          "to": "S27"
+        },
+        {
+          "label": "STALL FOR A CLEAN ARREST",
+          "to": "S26"
+        }
+      ]
+    },
+    "S23": {
+      "text": "You flash a badge no one understands.\n\nPeople stare.\n\nYou raise your voice.\n\nPeople back away.\n\nFear works, but it leaves stains.\n\nA woman clutches a child and runs.\n\nA merchant pulls a knife.\n\nAnd the Mastermind—somewhere in the shifting crowd—moves like water.\n\nYour unit pings wildly.\n\nThen stops.\n\nThe signature is gone.\n\nYou pushed the world too hard.\n\nYou made yourself the story.\n\nAnd the thief slipped away.\n\n\nCHOICES\n\nCHASE THE LAST PING\nYou gamble on instinct.\n\nACCEPT FAILURE\nYou end it here and live with what you did.",
+      "choices": [
+        {
+          "label": "CHASE THE LAST PING",
+          "to": "S20"
+        },
+        {
+          "label": "ACCEPT FAILURE",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "S24": {
+      "text": "Inside the storage building, it’s dark and damp.\n\nThe Mastermind stands near the back wall, the Grail cradled like it’s fragile.\n\nThey don’t run.\n\nThey don’t even flinch.\n\nThey just look at you with the calm of someone who believes they’re right.\n\n“I don’t steal,” they say.\n\n“I recover.”\n\nYou hear the jump-device hum.\n\nIt’s strained.\n\nOverworked.\n\nAnd you realize something: they’re not planning to keep the Grail here.\n\nThey’re planning to take it somewhere you can’t easily follow.\n\n\nCHOICES\n\nARREST THEM NOW\nYou go hands-on. End it.\n\nASK WHY THE GRAIL\nYou risk conversation to find leverage.",
+      "choices": [
+        {
+          "label": "ARREST THEM NOW",
+          "to": "S27"
+        },
+        {
+          "label": "ASK WHY THE GRAIL",
+          "to": "S26"
+        }
+      ]
+    },
+    "S25": {
+      "text": "You kick the door.\n\nWood splinters.\n\nThe Mastermind turns, surprised for the first time.\n\nThe Grail slips—almost falls.\n\nYou lunge.\n\nThey lunge.\n\nFor half a second, you both hold it.\n\nThe air cracks.\n\nYour unit screams.\n\nAnd suddenly you understand: the Grail isn’t just symbolic.\n\nIt’s resonant.\n\nA stabilizing anchor.\n\nTouching it during a jump could rewrite the rules.\n\nThey wrench it free.\n\n“Careful,” they say.\n\nAnd the jump-device flares.\n\n\nCHOICES\n\nDIVE WITH THEM\nYou grab on and ride the jump.\n\nLET THEM GO\nYou refuse to risk tearing the timeline apart.",
+      "choices": [
+        {
+          "label": "DIVE WITH THEM",
+          "to": "S28"
+        },
+        {
+          "label": "LET THEM GO",
+          "to": "S20"
+        }
+      ]
+    },
+    "S26": {
+      "text": "You talk.\n\nIt feels wrong, letting a thief speak. But you’ve learned that the best criminals don’t hide behind silence—they hide behind meaning.\n\n“The Grail,” you say. “Why that?”\n\nTheir eyes flick to the cup.\n\n“Because it changes what people do when they believe,” they answer.\n\n“You protect history. But whose version?”\n\nThey step closer. Not threatening. Intimate, like they want you to share a secret.\n\n“I can show you,” they say. “A future where hope isn’t rationed.”\n\nThe jump-device whines.\n\nThey’re offering you a door.\n\nAnd every door has a price.\n\n\nCHOICES\n\nREFUSE AND ARREST\nYou reject the philosophy and do your job.\n\nHEAR THE OFFER\nYou let them show you what they mean.",
+      "choices": [
+        {
+          "label": "REFUSE AND ARREST",
+          "to": "S27"
+        },
+        {
+          "label": "HEAR THE OFFER",
+          "to": "S29"
+        }
+      ]
+    },
+    "S27": {
+      "text": "You move.\n\nFast. Professional.\n\nThe Mastermind reacts, but not fast enough.\n\nYour cuff-device snaps onto their wrist. The jump-tech sputters.\n\nFor a heartbeat, you think it’s over.\n\nThen the double-peak signature spikes.\n\nTheir stabilizer fails.\n\nReality shudders.\n\nThe Mastermind’s face twists—not fear, not anger—regret.\n\n“Not like this,” they whisper.\n\nThe corridor opens behind them like a mouth.\n\nYou have the Grail in reach.\n\nBut the corridor is pulling.\n\nAnd the market outside is full of people.\n\n\nCHOICES\n\nSECURE THE GRAIL\nYou prioritize the relic and let the Mastermind fall.\n\nSAVE THE CROWD\nYou stabilize the tear to protect civilians—at the cost of pursuit.",
+      "choices": [
+        {
+          "label": "SECURE THE GRAIL",
+          "to": "S30"
+        },
+        {
+          "label": "SAVE THE CROWD",
+          "to": "S20"
+        }
+      ]
+    },
+    "S28": {
+      "text": "You dive with them.\n\nThe jump hits like a punch.\n\nYou see flashes: a cathedral that hasn’t been built yet, a museum that’s already burned down, a vault door with your agency’s seal.\n\nThe Mastermind is dragging the Grail through time like a key.\n\nYour grip slips.\n\nYour unit overloads.\n\nAnd for the first time, you feel what it’s like to be out of control in history’s bloodstream.\n\nYou slam into a clean white room.\n\nNot medieval.\n\nNot modern.\n\nAgency.\n\nBut wrong.\n\nEverything is familiar—just slightly off.\n\nThe Mastermind looks almost relieved.\n\n“We made it,” they say.\n\n\nCHOICES\n\nCALL FOR HELP\nYou alert the agency—even if you’re not sure it’s your agency.\n\nTAKE THE GRAIL AND RUN\nYou grab the relic and flee before the Mastermind can lock the door behind you.",
+      "choices": [
+        {
+          "label": "CALL FOR HELP",
+          "to": "S29"
+        },
+        {
+          "label": "TAKE THE GRAIL AND RUN",
+          "to": "END_SPECIAL"
+        }
+      ]
+    },
+    "S29": {
+      "text": "They show you.\n\nNot with a speech.\n\nWith a window.\n\nThe Mastermind triggers the Grail’s resonance and the room fills with overlapping futures—brief, sharp, painful.\n\nA city where medicine is free.\n\nA century where no one kneels to kings.\n\nA world where the Grail never became a myth because it was shared openly.\n\nThen you see the cost.\n\nThreads snapping.\n\nPeople disappearing from photographs.\n\nA child crying at an empty chair because someone who should exist… doesn’t.\n\nThe Mastermind watches your face.\n\n“Hope,” they say softly. “Is always paid for.”\n\n\nCHOICES\n\nRETURN THE GRAIL TO HISTORY\nYou choose stability over temptation.\n\nKEEP IT FOR THE AGENCY\nYou choose control—your agency’s control.",
+      "choices": [
+        {
+          "label": "RETURN THE GRAIL TO HISTORY",
+          "to": "S30"
+        },
+        {
+          "label": "KEEP IT FOR THE AGENCY",
+          "to": "END_SPECIAL"
+        }
+      ]
+    },
+    "S30": {
+      "text": "You get the Grail back to where it belongs.\n\nThe moment you set it down, the world exhales.\n\nThe noise in your unit settles.\n\nThe air stops prickling.\n\nHistory clicks back into alignment like a lock finding its key.\n\nYou don’t feel heroic.\n\nYou feel tired.\n\nBecause you can’t shake the thought that the Mastermind wasn’t wrong about everything.\n\nAnd that’s the part that will follow you home.\n\n\nCHOICES\n\nFILE IT AS A WIN\nYou close the case and accept that you’ll never know what might have been.\n\nOPEN A QUIET INVESTIGATION\nYou keep digging. Who taught the Mastermind to use the Grail like a key?",
+      "choices": [
+        {
+          "label": "FILE IT AS A WIN",
+          "to": "END_GOOD"
+        },
+        {
+          "label": "OPEN A QUIET INVESTIGATION",
+          "to": "END_SPECIAL"
+        }
+      ]
+    },
+    "END_GOOD": {
+      "text": "GOOD ENDING — HISTORY HOLDS\n\nThe Holy Grail returns to its proper place in the story.\n\nThe timeline stabilizes. Reports are filed. The monastery forgets the details, but keeps the feeling: something sacred was almost taken.\n\nYour supervisor signs off with a curt nod.\n\n“Clean work,” they say.\n\nYou go back to your quarters and stare at the ceiling.\n\nBecause you keep hearing the Mastermind’s question:\n\nWhose version of history are you protecting?\n\n\nCHOICES\n\nRETURN TO START\nYou begin again—because history always does.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_BAD": {
+      "text": "BAD ENDING — THE STORY THINS\n\nThe Grail remains missing.\n\nNothing explodes. No obvious paradox tears the sky.\n\nIt’s worse than that.\n\nOver months, you notice it: old paintings look slightly wrong. Stories people tell at night lose their warmth. Certain songs stop being written.\n\nHistory survives.\n\nBut it feels… less certain.\n\nYou file the report and realize no one wants to read it.\n\nBecause admitting a symbol is gone means admitting the world can be rewritten by anyone with enough nerve.\n\n\nCHOICES\n\nRETURN TO START\nYou try again. Different choices. Different cost.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_SPECIAL": {
+      "text": "SPECIAL ENDING — YOU BECOME THE QUESTION\n\nThe Grail ends up in a place history will never see.\n\nA vault.\n\nA lab.\n\nA hand that isn’t supposed to hold it.\n\nMaybe it’s your agency’s containment.\n\nMaybe it’s something pretending to be.\n\nEither way, the Mastermind’s smile lingers in your mind like a bruise.\n\nBecause now you understand the real threat.\n\nIt wasn’t the thief.\n\nIt was the idea that history can be *managed*.\n\nAnd you’re part of that system.\n\nA message appears on your wrist unit—no sender, no time stamp:\n\n“Welcome to the long game.”\n\n\nCHOICES\n\nRETURN TO START\nYou go back to the beginning—because now you know what to look for.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
       ]
     }
   }
