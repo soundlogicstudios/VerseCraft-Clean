@@ -1,8 +1,12 @@
 // core/save_menu.js
-// Save Menu overlay — GLOBAL UP nudge (visual only)
+// Save Menu overlay — temporary "library-like rows" using existing slot hitboxes
 //
-// Goal: move the whole 3-row visual stack up together, without changing hitboxes.
-// Negative translateY moves UP (px). All rows use the SAME nudge so spacing stays identical.
+// CANONICAL SCREEN ID: settings_clear_save
+//
+// Updates:
+// - Display proper story titles (instead of storyId) using story JSON meta.title when available,
+//   with a safe title-map fallback.
+// - Back positioning/targets are controlled by hitbox JSON (this file does not move hitboxes).
 
 import { preload_catalog, resolve_story } from "./catalog.js";
 
@@ -12,27 +16,12 @@ const SCREEN_ID = "settings_clear_save";
 const SLOT_IDS = ["slot_0", "slot_1", "slot_2"];
 const EMPTY_TARGET = "menu";
 
-// GLOBAL nudge (negative = up). Adjust this one number if needed.
-const ROW_NUDGE_Y_PX_PX = 72;
-
-// Keep existing spacing
-const ROW_SPREAD_FACTOR = 1.08;
-// Measured 3-frame window on settings_clear_save (visual alignment target)
-// Controls ONLY the visual rows (cover/text). Hitboxes remain unchanged.
-const SAVE_FRAME_TOP_PCT = 14.91;
-const SAVE_FRAME_H_PCT = 58.71;
-const SAVE_ROW_H_PCT = SAVE_FRAME_H_PCT / 3;
-
-// iPhone safety notch approximation (visual only)
-// Used to nudge rows DOWN relative to the evenly-spread layout
-const NOTCH_PX = 44; // approx one iPhone notch height
-const SLOT_NOTCH_OFFSETS = [
-  1 * NOTCH_PX,     // slot 0: down 1 notch
-  1.5 * NOTCH_PX,   // slot 1: down 1.5 notches
-  2 * NOTCH_PX      // slot 2: down 2 notches
+const CANDIDATE_KEYS = [
+  "vc_state_by_story",
+  "vc_saves",
+  "versecraft_saves",
+  "versecraft_state_by_story"
 ];
-
-
 
 const TITLE_MAP = {
   world_of_lorecraft: "World of Lorecraft",
@@ -43,185 +32,339 @@ const TITLE_MAP = {
   tale_of_icarus: "Tale of Icarus",
   code_blue: "Code Blue",
   relic_of_cylara: "Relic of Cylara",
-  timecop: "TimeCop",
+  timecop: "Time Cop",
   king_solomon: "King Solomon",
   cosmos: "Cosmos",
   dead_drop_protocol: "Dead Drop Protocol"
 };
 
-function get_active_screen_el(id) {
-  return document.querySelector(`.screen.is-active[data-screen="${id}"]`);
+function get_active_screen_el(screen_id) {
+  return document.querySelector(`.screen.is-active[data-screen="${screen_id}"]`);
 }
 
-function ensure_layer(screen) {
-  let layer = screen.querySelector(".ui-layer.save-menu-layer");
+function ensure_ui_layer(screen_el) {
+  let layer = screen_el.querySelector(".ui-layer.save-menu-layer");
   if (layer) return layer;
+
   layer = document.createElement("div");
   layer.className = "ui-layer save-menu-layer";
   layer.style.position = "absolute";
   layer.style.inset = "0";
   layer.style.pointerEvents = "none";
   layer.style.zIndex = "45";
-  screen.appendChild(layer);
+  screen_el.appendChild(layer);
   return layer;
 }
 
 function ensure_css() {
   if (document.getElementById("vc_save_menu_css")) return;
-  const s = document.createElement("style");
-  s.id = "vc_save_menu_css";
-  s.textContent = `
+
+  const style = document.createElement("style");
+  style.id = "vc_save_menu_css";
+  style.textContent = `
+    .save-menu-layer { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
     .vc-save-row {
       position: absolute;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       pointer-events: none;
+      z-index: 1;
     }
+
     .vc-save-cover {
       height: 100%;
       aspect-ratio: 3 / 4;
       border-radius: 12px;
       object-fit: cover;
       box-shadow: 0 10px 18px rgba(0,0,0,0.35);
+      background: rgba(0,0,0,0.22);
+      flex: 0 0 auto;
     }
+
     .vc-save-text {
-      color: #fff;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.85);
+      flex: 1 1 auto;
       min-width: 0;
+      color: rgba(255,255,255,0.98);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.85);
+      text-transform: none;
     }
+
     .vc-save-title {
-      font-weight: 900;
+      font-weight: 950;
+      letter-spacing: 0.02em;
       font-size: clamp(16px, 2.4vh, 26px);
-      line-height: 1.05;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      line-height: 1.05;
+      text-transform: none;
     }
+
     .vc-save-detail {
       margin-top: 6px;
-      opacity: 0.9;
+      font-weight: 650;
+      opacity: 0.92;
       font-size: clamp(12px, 1.8vh, 18px);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      text-transform: none;
     }
+
+    .vc-save-scrim {
+      position: absolute;
+      inset: 0;
+      border-radius: 14px;
+      background: rgba(0,0,0,0.32);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.25);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .vc-save-row > * { position: relative; z-index: 1; }
   `;
-  document.head.appendChild(s);
+  document.head.appendChild(style);
 }
 
-function find_hitbox(screen, id) {
-  return Array.from(screen.querySelectorAll(".hitbox-layer .hitbox"))
-    .find(b => b.getAttribute("data-hitbox-id") === id);
+function safe_json_parse(s) {
+  try { return JSON.parse(s); } catch (_) { return null; }
 }
 
-function rect_to_pct(sr, r) {
-  return {
-    left: ((r.left - sr.left) / sr.width) * 100,
-    top: ((r.top - sr.top) / sr.height) * 100,
-    width: (r.width / sr.width) * 100,
-    height: (r.height / sr.height) * 100
-  };
+function normalize_save_record(storyId, obj) {
+  const sid = String(storyId || obj?.storyId || obj?.id || "").trim();
+  if (!sid) return null;
+
+  const nodeId = String(obj?.nodeId ?? obj?.node ?? obj?.scene ?? obj?.at ?? obj?.current ?? "").trim();
+  const ts = Number(obj?.ts ?? obj?.time ?? obj?.timestamp ?? obj?.updatedAt ?? obj?.lastPlayed) || 0;
+
+  return { storyId: sid, nodeId, ts };
 }
 
-function collect_saves() {
+function collect_saves_from_storage() {
   const out = [];
+
+  for (const k of CANDIDATE_KEYS) {
+    const raw = localStorage.getItem(k);
+    if (!raw) continue;
+
+    const parsed = safe_json_parse(raw);
+    if (!parsed || typeof parsed !== "object") continue;
+
+    for (const [storyId, obj] of Object.entries(parsed)) {
+      const rec = normalize_save_record(storyId, obj);
+      if (rec) out.push(rec);
+    }
+  }
+
   for (let i = 0; i < localStorage.length; i++) {
-    const k = localStorage.key(i);
-    if (!k) continue;
-    const m = k.match(/^vc_story_state_(.+)$/);
+    const key = localStorage.key(i);
+    if (!key) continue;
+
+    const m =
+      key.match(/^vc_story_state_(.+)$/) ||
+      key.match(/^versecraft_story_state_(.+)$/) ||
+      key.match(/^vc_save_(.+)$/);
+
     if (!m) continue;
-    try {
-      const v = JSON.parse(localStorage.getItem(k));
-      out.push({ storyId: m[1], nodeId: v.nodeId, ts: v.ts || 0 });
-    } catch {}
+
+    const storyId = String(m[1] || "").trim();
+    const parsed = safe_json_parse(localStorage.getItem(key) || "");
+    if (!parsed) continue;
+
+    const rec = normalize_save_record(storyId, parsed);
+    if (rec) out.push(rec);
   }
-  const byId = new Map();
+
+  const best = new Map();
   for (const r of out) {
-    const p = byId.get(r.storyId);
-    if (!p || r.ts > p.ts) byId.set(r.storyId, r);
+    const prev = best.get(r.storyId);
+    if (!prev) best.set(r.storyId, r);
+    else if (Number(r.ts || 0) >= Number(prev.ts || 0)) best.set(r.storyId, r);
   }
-  return Array.from(byId.values()).sort((a,b)=>b.ts-a.ts);
+
+  const list = Array.from(best.values());
+  list.sort((a, b) => Number(b.ts || 0) - Number(a.ts || 0));
+  return list;
+}
+
+function find_hitbox(screen_el, id) {
+  const boxes = Array.from(screen_el.querySelectorAll(".hitbox-layer .hitbox"));
+  const want = String(id || "").toLowerCase();
+  return boxes.find((b) => String(b.getAttribute("data-hitbox-id") || "").toLowerCase() === want) || null;
+}
+
+function rect_to_pct(screen_rect, rect) {
+  const left = ((rect.left - screen_rect.left) / screen_rect.width) * 100;
+  const top = ((rect.top - screen_rect.top) / screen_rect.height) * 100;
+  const width = (rect.width / screen_rect.width) * 100;
+  const height = (rect.height / screen_rect.height) * 100;
+  return { left, top, width, height };
+}
+
+function fmt_time(ts) {
+  const n = Number(ts || 0);
+  if (!n) return "";
+  try { return new Date(n).toLocaleString(); } catch (_) { return ""; }
+}
+
+async function story_json_for_story(storyId) {
+  const resolved = await resolve_story(storyId);
+  return resolved?.storyJsonUrl || "";
+}
+
+async function cover_for_story(storyId) {
+  const resolved = await resolve_story(storyId);
+  return resolved?.coverUrl || "";
+}
+
+async function safe_fetch_title(storyJsonUrl, storyId) {
+  if (storyJsonUrl) {
+    try {
+      const res = await fetch(storyJsonUrl, { cache: "default" });
+      if (res.ok) {
+        const raw = await res.json();
+        const t = String(raw?.meta?.title || raw?.title || "").trim();
+        if (t) return t;
+      }
+    } catch (_) {}
+  }
+  return TITLE_MAP[storyId] || storyId;
+}
+
+function bind_slot_target(screen_el, slotId, target) {
+  const hb = find_hitbox(screen_el, slotId);
+  if (!hb) return;
+  hb.dataset.action = "go";
+  hb.dataset.arg = target || EMPTY_TARGET;
+}
+
+function render_row(layer, pct, slotIndex, slotData) {
+  const row = document.createElement("div");
+  row.className = "vc-save-row";
+  row.dataset.slot = String(slotIndex);
+
+  row.style.left = `${pct.left}%`;
+  row.style.top = `${pct.top}%`;
+  row.style.width = `${pct.width}%`;
+  row.style.height = `${pct.height}%`;
+
+  const scrim = document.createElement("div");
+  scrim.className = "vc-save-scrim";
+  row.appendChild(scrim);
+
+  const img = document.createElement("img");
+  img.className = "vc-save-cover";
+  img.alt = slotData?.title ? `${slotData.title} cover` : "Empty slot";
+
+  const textWrap = document.createElement("div");
+  textWrap.className = "vc-save-text";
+
+  const title = document.createElement("div");
+  title.className = "vc-save-title";
+
+  const detail = document.createElement("div");
+  detail.className = "vc-save-detail";
+
+  if (slotData?.storyId) {
+    if (slotData.coverUrl) img.src = slotData.coverUrl;
+
+    title.textContent = slotData.title || slotData.storyId;
+
+    const parts = [];
+    if (slotData.nodeId) parts.push(`Scene: ${slotData.nodeId}`);
+    const t = fmt_time(slotData.ts);
+    if (t) parts.push(`Last: ${t}`);
+    detail.textContent = parts.join("  •  ") || "In progress";
+  } else {
+    title.textContent = "Empty Slot";
+    detail.textContent = "No save found";
+  }
+
+  textWrap.appendChild(title);
+  textWrap.appendChild(detail);
+
+  row.appendChild(img);
+  row.appendChild(textWrap);
+
+  layer.appendChild(row);
 }
 
 async function hydrate() {
-  const screen = get_active_screen_el(SCREEN_ID);
-  if (!screen) return;
+  const screen_el = get_active_screen_el(SCREEN_ID);
+  if (!screen_el) return;
 
   ensure_css();
   await preload_catalog();
 
-  const layer = ensure_layer(screen);
+  const layer = ensure_ui_layer(screen_el);
   layer.innerHTML = "";
 
-  const sr = screen.getBoundingClientRect();
-  const saves = collect_saves();
+  const screen_rect = screen_el.getBoundingClientRect();
+  if (!screen_rect.width || !screen_rect.height) return;
+
+  const saves = collect_saves_from_storage();
+
+  const slots = [];
+  for (let i = 0; i < SLOT_IDS.length; i++) {
+    const rec = saves[i] || null;
+
+    if (rec?.storyId) {
+      let coverUrl = "";
+      let storyJsonUrl = "";
+      let title = rec.storyId;
+
+      try { coverUrl = await cover_for_story(rec.storyId); } catch (_) {}
+      try { storyJsonUrl = await story_json_for_story(rec.storyId); } catch (_) {}
+      try { title = await safe_fetch_title(storyJsonUrl, rec.storyId); } catch (_) {}
+
+      slots.push({ storyId: rec.storyId, title, nodeId: rec.nodeId || "", ts: rec.ts || 0, coverUrl });
+    } else {
+      slots.push(null);
+    }
+  }
 
   for (let i = 0; i < SLOT_IDS.length; i++) {
-    const hb = find_hitbox(screen, SLOT_IDS[i]);
+    const hb = find_hitbox(screen_el, SLOT_IDS[i]);
     if (!hb) continue;
 
-    const pct = rect_to_pct(sr, hb.getBoundingClientRect());
-// Evenly distribute rows within the measured 3-frame window (top->bottom)
-pct.top = SAVE_FRAME_TOP_PCT + (SAVE_ROW_H_PCT * i);
-pct.height = SAVE_ROW_H_PCT;
+    const pct = rect_to_pct(screen_rect, hb.getBoundingClientRect());
+    render_row(layer, pct, i, slots[i]);
 
-
-    const row = document.createElement("div");
-    row.className = "vc-save-row";
-    row.style.left = pct.left + "%";
-    row.style.top = pct.top + "%";
-    row.style.width = pct.width + "%";
-    row.style.height = pct.height + "%";
-    row.style.transform = `translateY(${ROW_NUDGE_Y_PX_PX}px)`;
-
-    const img = document.createElement("img");
-    img.className = "vc-save-cover";
-
-    const txt = document.createElement("div");
-    txt.className = "vc-save-text";
-
-    const t = document.createElement("div");
-    t.className = "vc-save-title";
-
-    const d = document.createElement("div");
-    d.className = "vc-save-detail";
-
-    const rec = saves[i];
-    if (rec) {
-      const resolved = await resolve_story(rec.storyId);
-      img.src = resolved?.coverUrl || "";
-      t.textContent = TITLE_MAP[rec.storyId] || rec.storyId;
-      d.textContent = rec.nodeId ? `Scene: ${rec.nodeId}` : "In progress";
-      hb.dataset.action = "go";
-      hb.dataset.arg = "story_" + rec.storyId;
-    } else {
-      t.textContent = "Empty Slot";
-      d.textContent = "No save found";
-      hb.dataset.action = "go";
-      hb.dataset.arg = EMPTY_TARGET;
-    }
-
-    txt.appendChild(t);
-    txt.appendChild(d);
-    row.appendChild(img);
-    row.appendChild(txt);
-    layer.appendChild(row);
+    if (slots[i]?.storyId) bind_slot_target(screen_el, SLOT_IDS[i], `story_${slots[i].storyId}`);
+    else bind_slot_target(screen_el, SLOT_IDS[i], EMPTY_TARGET);
   }
 }
 
-function schedule() {
-  requestAnimationFrame(() => requestAnimationFrame(hydrate));
+function schedule_hydrate() {
+  requestAnimationFrame(() => requestAnimationFrame(() => hydrate()));
 }
 
 export function init_save_menu() {
   if (_inited) return;
   _inited = true;
 
-  window.addEventListener("vc:screenchange", e => {
-    if (e?.detail?.screen === SCREEN_ID) schedule();
+  window.addEventListener("vc:screenchange", (e) => {
+    const screen = e?.detail?.screen;
+    if (screen !== SCREEN_ID) return;
+    schedule_hydrate();
   });
 
-  window.addEventListener("resize", schedule);
-  window.addEventListener("orientationchange", schedule);
+  window.addEventListener("resize", () => {
+    const active = document.querySelector(".screen.is-active");
+    if (active?.dataset?.screen === SCREEN_ID) schedule_hydrate();
+  });
+
+  window.addEventListener("orientationchange", () => {
+    const active = document.querySelector(".screen.is-active");
+    if (active?.dataset?.screen === SCREEN_ID) schedule_hydrate();
+  });
+
+  try {
+    const hash = String(location.hash || "").replace("#", "");
+    if (hash === SCREEN_ID) schedule_hydrate();
+  } catch (_) {}
 }
