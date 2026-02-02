@@ -1,24 +1,29 @@
 // core/save_menu.js
-// Save Menu overlay — temporary "library-like rows" using existing slot hitboxes
+// Save Menu overlay — "library-like rows" using existing slot hitboxes
 //
 // REQUIREMENTS MET:
-// - Does NOT change hitbox positioning/geometry
-// - Does NOT change launcher labels or launcher hitboxes
-// - Aligns save rows to the existing hitboxes (slot_0/1/2) so it "eyeballs" correctly
+// - Does NOT change hitbox positioning/geometry (we only read hitbox rects)
+// - Aligns save rows to existing slot hitboxes (slot_0/1/2)
 // - Pulls cover images via catalog (launcher-like behavior)
-// - Shows simple save metadata text (storyId + scene + timestamp if available)
-// - Safe if saves are missing: shows "Empty Slot" and leaves slot routing to menu
+// - Shows save metadata text (storyId + scene + timestamp if available)
+// - Safe if saves are missing: shows "Empty Slot"
 //
-// NOTE:
-// This is VISUAL hydration + safe slot binding only.
-// It does NOT invent new save logic.
-// It reads best-effort from localStorage if present.
+// CRITICAL FIX:
+// - Your actual routed screen id is "settings_clear_save" (not "saves").
+// - This module hydrates on BOTH ids, and also hydrates based on whichever
+//   save screen is currently active.
+//
+// Notes:
+// - Keeps pointer-events:none so it NEVER blocks hitbox taps.
+// - Only updates hitbox dataset target (action/go/arg) for slot routing.
 
 import { preload_catalog, resolve_story } from "./catalog.js";
 
 let _inited = false;
 
-const SCREEN_ID = "saves";
+// Support BOTH possible screen ids (real + legacy)
+const SAVE_SCREENS = new Set(["settings_clear_save", "saves"]);
+
 const SLOT_IDS = ["slot_0", "slot_1", "slot_2"];
 const EMPTY_TARGET = "menu";
 
@@ -30,13 +35,15 @@ const CANDIDATE_KEYS = [
   "versecraft_state_by_story"
 ];
 
-function cache_mode() {
-  const params = new URLSearchParams(location.search);
-  return params.has("nocache") ? "no-store" : "default";
+const LOG = "[save_menu]";
+
+function get_active_screen_id() {
+  const el = document.querySelector(".screen.is-active[data-screen]");
+  return el?.dataset?.screen || "";
 }
 
-function get_active_screen_el(screen_id) {
-  return document.querySelector(`.screen.is-active[data-screen="${screen_id}"]`);
+function get_active_screen_el() {
+  return document.querySelector(".screen.is-active[data-screen]");
 }
 
 function ensure_ui_layer(screen_el) {
@@ -107,7 +114,6 @@ function ensure_css() {
       text-overflow: ellipsis;
     }
 
-    /* light scrim behind text for readability on bright art */
     .vc-save-scrim {
       position: absolute;
       inset: 0;
@@ -185,11 +191,7 @@ function collect_saves_from_storage() {
   for (const r of out) {
     const prev = best.get(r.storyId);
     if (!prev) best.set(r.storyId, r);
-    else {
-      const a = Number(prev.ts || 0);
-      const b = Number(r.ts || 0);
-      if (b >= a) best.set(r.storyId, r);
-    }
+    else if (Number(r.ts || 0) >= Number(prev.ts || 0)) best.set(r.storyId, r);
   }
 
   const list = Array.from(best.values());
@@ -221,9 +223,16 @@ function fmt_time(ts) {
   }
 }
 
-async function cover_for_story(storyId) {
-  const resolved = await resolve_story(storyId);
-  return resolved?.coverUrl || "";
+async function cover_and_title_for_story(storyId) {
+  try {
+    const resolved = await resolve_story(storyId);
+    return {
+      coverUrl: resolved?.coverUrl || "",
+      title: resolved?.title || resolved?.storyId || storyId
+    };
+  } catch (_) {
+    return { coverUrl: "", title: storyId };
+  }
 }
 
 // Only change binding target, never geometry
@@ -244,14 +253,13 @@ function render_row(layer, pct, slotIndex, slotData) {
   row.style.width = `${pct.width}%`;
   row.style.height = `${pct.height}%`;
 
-  // Scrim behind the whole row (library-like separation)
   const scrim = document.createElement("div");
   scrim.className = "vc-save-scrim";
   row.appendChild(scrim);
 
   const img = document.createElement("img");
   img.className = "vc-save-cover";
-  img.alt = slotData?.storyId ? `${slotData.storyId} cover` : "Empty slot";
+  img.alt = slotData?.title ? `${slotData.title} cover` : "Empty slot";
 
   const textWrap = document.createElement("div");
   textWrap.className = "vc-save-text";
@@ -265,8 +273,7 @@ function render_row(layer, pct, slotIndex, slotData) {
   if (slotData?.storyId) {
     if (slotData.coverUrl) img.src = slotData.coverUrl;
 
-    // keep it simple for now; we can upgrade to real story titles later if desired
-    title.textContent = slotData.storyId;
+    title.textContent = slotData.title || slotData.storyId;
 
     const parts = [];
     if (slotData.nodeId) parts.push(`Scene: ${slotData.nodeId}`);
@@ -274,7 +281,6 @@ function render_row(layer, pct, slotIndex, slotData) {
     if (t) parts.push(`Last: ${t}`);
     detail.textContent = parts.join("  •  ") || "In progress";
   } else {
-    // Empty slot visuals
     title.textContent = "Empty Slot";
     detail.textContent = "No save found";
   }
@@ -288,8 +294,11 @@ function render_row(layer, pct, slotIndex, slotData) {
   layer.appendChild(row);
 }
 
-async function hydrate() {
-  const screen_el = get_active_screen_el(SCREEN_ID);
+async function hydrate_active_save_screen() {
+  const activeId = get_active_screen_id();
+  if (!SAVE_SCREENS.has(activeId)) return;
+
+  const screen_el = get_active_screen_el();
   if (!screen_el) return;
 
   ensure_css();
@@ -301,51 +310,47 @@ async function hydrate() {
   const screen_rect = screen_el.getBoundingClientRect();
   if (!screen_rect.width || !screen_rect.height) return;
 
-  // Pull up to 3 saves, newest first
-  const saves = collect_saves_from_storage();
+  const saves = collect_saves_from_storage(); // newest first
 
-  // Build slot payloads
+  // Build up to 3 slot payloads
   const slots = [];
   for (let i = 0; i < SLOT_IDS.length; i++) {
     const rec = saves[i] || null;
-
     if (rec?.storyId) {
-      let coverUrl = "";
-      try {
-        coverUrl = await cover_for_story(rec.storyId);
-      } catch (_) {}
-
+      const meta = await cover_and_title_for_story(rec.storyId);
       slots.push({
         storyId: rec.storyId,
         nodeId: rec.nodeId || "",
         ts: rec.ts || 0,
-        coverUrl
+        coverUrl: meta.coverUrl || "",
+        title: meta.title || rec.storyId
       });
     } else {
       slots.push(null);
     }
   }
 
-  // Render each row aligned to the existing hitbox rect (temporary “library row” vibe)
+  // Render aligned to the existing hitbox rects
   for (let i = 0; i < SLOT_IDS.length; i++) {
     const hb = find_hitbox(screen_el, SLOT_IDS[i]);
-    if (!hb) continue;
+    if (!hb) {
+      console.warn(LOG, "missing hitbox for", SLOT_IDS[i], "on screen", activeId);
+      continue;
+    }
 
     const pct = rect_to_pct(screen_rect, hb.getBoundingClientRect());
     render_row(layer, pct, i, slots[i]);
 
-    // Bind hitbox target: if slot has a story save, go to story_<id>; else keep menu
-    if (slots[i]?.storyId) {
-      bind_slot_target(screen_el, SLOT_IDS[i], `story_${slots[i].storyId}`);
-    } else {
-      bind_slot_target(screen_el, SLOT_IDS[i], EMPTY_TARGET);
-    }
+    // Bind slot routing: if slot has a save, go to story_<id>, else stay menu
+    if (slots[i]?.storyId) bind_slot_target(screen_el, SLOT_IDS[i], `story_${slots[i].storyId}`);
+    else bind_slot_target(screen_el, SLOT_IDS[i], EMPTY_TARGET);
   }
+
+  console.log(LOG, "hydrated", activeId, "slots:", slots.map((s) => s?.storyId || "empty"));
 }
 
 function schedule_hydrate() {
-  // Allow layout to settle (iOS-friendly)
-  requestAnimationFrame(() => requestAnimationFrame(() => hydrate()));
+  requestAnimationFrame(() => requestAnimationFrame(() => hydrate_active_save_screen()));
 }
 
 export function init_save_menu() {
@@ -354,24 +359,23 @@ export function init_save_menu() {
 
   window.addEventListener("vc:screenchange", (e) => {
     const screen = e?.detail?.screen;
-    if (screen !== SCREEN_ID) return;
+    if (!SAVE_SCREENS.has(screen)) return;
     schedule_hydrate();
   });
 
-  // Keep aligned on device rotation/resize
   window.addEventListener("resize", () => {
-    const active = document.querySelector(".screen.is-active");
-    if (active?.dataset?.screen === SCREEN_ID) schedule_hydrate();
+    const activeId = get_active_screen_id();
+    if (SAVE_SCREENS.has(activeId)) schedule_hydrate();
   });
 
   window.addEventListener("orientationchange", () => {
-    const active = document.querySelector(".screen.is-active");
-    if (active?.dataset?.screen === SCREEN_ID) schedule_hydrate();
+    const activeId = get_active_screen_id();
+    if (SAVE_SCREENS.has(activeId)) schedule_hydrate();
   });
 
-  // If user lands directly on #saves, hydrate after first paint
+  // If user lands directly on the save screen hash, hydrate after first paint
   try {
     const hash = String(location.hash || "").replace("#", "");
-    if (hash === SCREEN_ID) schedule_hydrate();
+    if (SAVE_SCREENS.has(hash)) schedule_hydrate();
   } catch (_) {}
 }
