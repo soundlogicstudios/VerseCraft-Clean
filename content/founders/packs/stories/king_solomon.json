@@ -1,422 +1,443 @@
 {
-  "story_id": "king_solomons_mine",
-  "title": "King Solomon\u2019s Mine",
-  "tagline": "lost expedition, ancient traps, obsession",
-  "version": "placeholder_v2",
-  "start": "s01",
-  "sections": [
-    {
-      "id": "s01",
-      "text": "King Solomon\u2019s Mine: The silence here feels intentional. You move with care, knowing haste invites mistakes.",
+  "meta": {
+    "id": "king_solomons_mine_30_deep_v1",
+    "title": "King Solomon's Mine: The Paris Codex",
+    "route": "story_king_solomons_mine",
+    "schema": "versecraft-1.0",
+    "tone": "pulp adventure mystery",
+    "notes": "30 sections (S01–S30) with consistently deep prose. Good/Bad/Special endings. All endings return to S01.",
+    "blurb": "A book with a hidden map draws you to a secret Paris library, then down into catacombs and caverns where King Solomon's treasure waits with teeth."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "You find the book the way trouble always finds you: quietly, and then all at once.\n\nIt sits on the bottom shelf of a cramped estate sale, wedged between hymnals and a water-stained atlas. The cover is cracked leather, the title rubbed nearly smooth, and the pages smell like dust that has had a century to settle.\n\nWhen you open it, you expect sermons or genealogy. Instead, you find margin notes in tight handwriting, ink that looks too deliberate to be idle. The last page holds a pasted pocket, and inside the pocket is something that should not be there.\n\nA folded map, thin as onion skin, inked in red and black. Along the edge, a line of Latin you can barely translate without moving your lips: not a warning exactly, more like an invitation you are supposed to regret accepting.\n\nAnd at the center of the map, a symbol that pulls at your attention like a magnet: a six-pointed seal ringed with tiny marks, and beneath it two words in English, blunt and modern.\n\nKING SOLOMON.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s02"
+          "label": "STUDY THE MAP CLOSELY",
+          "to": "S02"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s02"
+          "label": "CALL A TRUSTED CONTACT",
+          "to": "S03"
         }
       ]
     },
-    {
-      "id": "s02",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+    "S02": {
+      "text": "You spread the map across your kitchen table and weigh it down with whatever is heavy and honest: a mug, a paperweight, your own hands.\n\nThe ink is not decorative. It is instruction. There are rail lines sketched in faint gray, street names in French, and a single building marked with an X that looks like it was stabbed into the paper rather than drawn.\n\nParis. A specific arrondissement. A library that does not appear on tourist lists. The map doesn't say 'go here.' It assumes you will.\n\nIn the margins, a list of symbols repeats, each paired with a number: a key, a torch, a crown, a door, a serpent. You have seen puzzle-notation like this before in field journals and wartime ciphers. It's the language of people who expect to be interrupted.\n\nYou notice a crease pattern that doesn't match the folds. When you tilt the paper under light, the fibers reveal a second layer of ink, faint and ghostlike: a corridor drawn beneath the library outline, spiraling down.\n\nYour pulse speeds up. This isn't a treasure map. It's a descent.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s03"
+          "label": "PACK FOR PARIS",
+          "to": "S04"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s03"
+          "label": "RESEARCH THE BOOK'S OWNER",
+          "to": "S03"
         }
       ]
     },
-    {
-      "id": "s03",
-      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+    "S03": {
+      "text": "You call the only person you trust to tell you the truth without trying to own it: a contact who lives half in universities and half in back rooms.\n\nThey answer on the second ring, voice clipped. You can hear papers moving, a keyboard, the faint hum of a life spent digging through archives.\n\nYou describe the book. The map. The seal. The words King Solomon. There's a pause that lasts just long enough to be bad news.\n\n'That seal shows up in a handful of private collections,' your contact says. 'Mostly rumors. Mostly stolen. It's tied to a set of travel notes from the early 1900s. A French bibliophile named Laurent Vauclair. He vanished. So did his research.'\n\nYou ask what Vauclair was chasing. Your contact exhales. 'A legend inside a legend. That Solomon's treasure wasn't just gold. That it was a system. A vault with rules.'\n\nAnd then the part that tightens your throat: 'If you have a real map, you're not the first one to touch it. Someone will come looking.'\n\nYour kitchen feels smaller. The book feels heavier.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s04"
+          "label": "GO TO PARIS FAST",
+          "to": "S04"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s04"
+          "label": "HIDE THE MAP AND WAIT",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s04",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+    "S04": {
+      "text": "Paris hits you like it always does: beauty on top, machinery underneath.\n\nThe city smells of coffee, exhaust, rain on stone. You cross bridges built by kings and walk past tourists who think history is only what sits above ground.\n\nThe map leads you to a narrow street where the buildings lean inward like conspirators. A small brass plate marks the place: a private reading society, invitation only. The kind of 'library' that collects forbidden books the way other people collect art.\n\nYou step inside and the air changes. It is quieter, thicker, saturated with paper and polish. The front desk clerk looks you over the way a customs officer does: not judging, assessing.\n\nYou show the book. Not the map. The clerk's eyes flick to the cracked leather like they've seen it before. They say nothing, only lift a finger and point down a side corridor lined with portraits that stare too hard.\n\nYou walk past those eyes and feel the city above you vanish. Whatever is under this place is what the map wants you to find.\n\nAnd you are now committed in the way that matters: not by a signature, but by proximity.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s05"
+          "label": "ASK FOR ACCESS TO RESTRICTED STACKS",
+          "to": "S05"
         },
         {
-          "text": "Investigate further",
-          "to": "s06"
+          "label": "SNEAK TOWARD THE BACK ROOMS",
+          "to": "S06"
         }
       ]
     },
-    {
-      "id": "s05",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
+    "S05": {
+      "text": "You play the respectable angle. You approach the clerk with calm hands and a calm voice, the way you approach a guard dog you intend to pet and pass.\n\n'I'm looking for Laurent Vauclair,' you say, letting the name land like a test.\n\nThe clerk's face doesn't change, but something in the room tightens. A subtle shift: a book closing somewhere, a footstep pausing, a breath held.\n\n'We don't keep membership records for strangers,' the clerk replies. Their politeness is not kindness. It is a wall.\n\nYou slide the book across the counter and open it to the back pocket, letting a corner of the map show. Not enough to be stolen in a blink. Enough to be recognized.\n\nFor the first time, the clerk's eyes show interest. Not greed. Recognition. A careful professional interest, like a locksmith seeing a rare key.\n\n'Follow me,' they say softly.\n\nThey lead you through a door that should not be there, into a stairwell that descends in a spiral, the walls lined with plaques naming donors who never existed. The library has layers. You are being allowed into one.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s06"
+          "label": "FOLLOW THE CLERK DOWN",
+          "to": "S07"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s06"
+          "label": "BACK OUT AND TRY ANOTHER WAY",
+          "to": "S06"
         }
       ]
     },
-    {
-      "id": "s06",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options.",
+    "S06": {
+      "text": "You choose motion over permission. In places like this, permission is often a leash.\n\nYou drift toward the back rooms with the practiced casualness of someone looking for a restroom. The corridor narrows. The carpet becomes older. The lights dim.\n\nA locked door blocks you. The keyhole is antique, the kind that expects a thin piece of metal and patience. You produce a pick set you promised yourself you'd never need again.\n\nThe lock yields with a soft, satisfying click. Inside is a cramped storage room stacked with archival boxes and rolled rugs. It smells like mothballs and secrets.\n\nAt the far end, behind a hanging tapestry, you find another door—iron, modern, out of place. A keypad beside it glows faintly.\n\nA keypad in a library is a confession: something valuable is hidden below.\n\nYou press your ear to the door. You hear nothing. That's the worst kind of silence. It means the place is designed to swallow sound.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s07"
+          "label": "TRY THE KEYPAD",
+          "to": "S07"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s07"
+          "label": "SEARCH THE ROOM FOR A CODE",
+          "to": "S08"
         }
       ]
     },
-    {
-      "id": "s07",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in. A wrong move here won\u2019t be forgiven easily.",
+    "S07": {
+      "text": "The door opens the way a mouth opens: reluctant, then wide.\n\nStone steps descend into cold air. The walls are older than the building above, older than the street. Your flashlight beam catches damp limestone and faint chalk marks that could be centuries old or yesterday's.\n\nThe secret chamber at the bottom is small and precise, like a workshop for quiet crimes. A reading table stands in the center, its surface scarred by blades and ink. Shelves hold ledgers bound in black cloth, titles written in codes instead of letters.\n\nIn the far corner, a metal grate covers a shaft. Warm air rises from below, smelling of earth and mineral, deeper and different than the library's paper-smell.\n\nThere is a plaque on the wall with a simple phrase in French: 'Knowledge has weight.' Someone scratched a second phrase beneath it with a knife: 'So does greed.'\n\nYour map's symbols start to make sense. Key. Torch. Door. Serpent. Crown. This is not a single puzzle. It's a sequence.\n\nAnd you feel it—the first real warning in your bones. You're not alone in the hunt. You are just early.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s08"
+          "label": "OPEN THE GRATE AND DESCEND",
+          "to": "S09"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s08"
+          "label": "READ THE LEDGERS FIRST",
+          "to": "S08"
         }
       ]
     },
-    {
-      "id": "s08",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
+    "S08": {
+      "text": "You open the ledgers with the reverence of a thief handling a relic.\n\nThe handwriting inside matches the book's margin notes. Laurent Vauclair. Dates. Coordinates. Sketches of tunnels that spiral beneath Paris like veins beneath skin.\n\nThe entries are not romantic. They are terrified. 'The library is a mask,' one line reads. 'Beneath it, the city becomes an organ. It digests.'\n\nYou find references to a 'second library' in the depths, a place where symbols were carved into stone and the air felt wrong, as if the earth itself remembered something it wished to forget.\n\nIn the final pages, Vauclair writes about 'Solomon's Mines' not as a location but as a concept: a hidden corridor of wealth and traps built by a man who understood that thieves are inevitable. The vault isn't meant to be sealed. It's meant to test.\n\nLoose in the ledger is a paper strip with numbers arranged like a poem. It looks like a keypad code. You slip it into your pocket.\n\nOutside the chamber, you hear a faint sound. A footstep above. Someone else is in the library now, and they are moving with purpose.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s09"
+          "label": "DESCEND NOW",
+          "to": "S09"
         },
         {
-          "text": "Investigate further",
-          "to": "s10"
+          "label": "HIDE AND WAIT FOR THEM TO PASS",
+          "to": "S10"
         }
       ]
     },
-    {
-      "id": "s09",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
+    "S09": {
+      "text": "You lift the grate and the shaft breathes up at you, warm and damp.\n\nA ladder descends into darkness. The metal rungs are slick, and each one feels like a decision being made again. Paris recedes above you, replaced by the slow, ancient pressure of stone.\n\nHalfway down, your light catches graffiti—names, dates, crude drawings—proof that people have always wanted to mark the underworld. Then the graffiti stops, and the walls become clean again. That boundary is deliberate.\n\nYou step off into a tunnel that smells of wet chalk and old bone. The catacombs have a particular flavor of dread: an orderly death, stacked and labeled, a city storing its past where it can't be seen.\n\nThis tunnel isn't the tourist route. It is narrower, rougher, purposeful. Your beam glints off small metal plates set into the floor like scales.\n\nThe map's serpent symbol repeats in your mind. Scales. Sequence. A lock disguised as a threat.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s10"
+          "label": "STEP AROUND THE PLATES",
+          "to": "S11"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s10"
+          "label": "TEST THE PLATES CAREFULLY",
+          "to": "S12"
         }
       ]
     },
-    {
-      "id": "s10",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
+    "S10": {
+      "text": "You kill your light and become part of the stone.\n\nA door opens above. Someone steps down into the stairwell. The footfalls are measured, not rushed—professional. A flashlight beam sweeps the chamber, pausing on the ledgers, then the grate.\n\nA low voice murmurs, amused: 'Vauclair wasn't wrong. The map always finds another hand.'\n\nThe beam moves away. Steps retreat. Only then do you breathe again, lungs aching from restraint.\n\nWhen you relight your flashlight, the room feels smaller. Your hunt now has a shadow, and shadows make every choice sharper.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s11"
+          "label": "DESCEND AFTER THEM",
+          "to": "S09"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s11"
+          "label": "TAKE A DIFFERENT TUNNEL",
+          "to": "S12"
         }
       ]
     },
-    {
-      "id": "s11",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes.",
+    "S11": {
+      "text": "You step around the plates, keeping your weight on rough stone. Your heel brushes one by accident. A tiny click answers.\n\nDust sifts down. Somewhere ahead, a chain rattles once. Still no explosion, no dart, no obvious punishment. That is the worst kind of mercy.\n\nThen you notice thin slits in the wall at knee and shoulder height. Inside one slit, something metallic glints—points waiting.\n\nThe plates aren't a trap in themselves. They're a pattern. Step wrong, and the slits speak.\n\nYou pull out the map and match the serpent symbol to its number. A sequence. You can do sequences. You can do rules.\n\nYou kneel, steady your breath, and commit to solving what a paranoid king built to punish thieves with manners.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s12"
+          "label": "SOLVE THE PLATE PATTERN",
+          "to": "S13"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s12"
+          "label": "RETREAT AND FIND ANOTHER WAY",
+          "to": "S12"
         }
       ]
     },
-    {
-      "id": "s12",
-      "text": "A detail you missed now clicks into place. You commit to action before doubt can set in.",
+    "S12": {
+      "text": "You decide not to gamble with a floor designed by someone who thought cruelty was craft.\n\nYou backtrack and search the walls for seams. In underground places, there are always seams—patches, repairs, admissions.\n\nYour light catches a cleaner line of mortar. You press your fingers to it and feel air: a draft. Promise.\n\nYou pry the mortar away and reveal a crawl space barely wide enough for shoulders. Tight spaces turn bravery into panic, but they also dodge the proud traps.\n\nYou slide in, stone scraping your jacket. The air warms as you descend. The rock changes color. Timber supports appear like ribs.\n\nWhen the crawl space opens, you are no longer in the catacombs. You are in an older cut—dark rock, reinforced, mined.\n\nYou have crossed from Paris's underworld into something that was built to keep history in a box.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s13"
+          "label": "FOLLOW THE TIMBERED TUNNEL",
+          "to": "S14"
         },
         {
-          "text": "Investigate further",
-          "to": "s14"
+          "label": "MARK YOUR WAY AND REST",
+          "to": "S15"
         }
       ]
     },
-    {
-      "id": "s13",
-      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+    "S13": {
+      "text": "You study the plates like a chessboard. Each bears a tiny mark: torch, key, door, serpent, crown.\n\nIt reads like a story: light, access, passage, danger, reward. You step onto torch. Nothing. Key. Click. Door. Another click.\n\nWhen you step onto serpent, the floor's tension shifts as if satisfied. Crown locks last. The wall slits grind closed, quietly, like a judge putting away a knife.\n\nAhead, the tunnel slopes down into a cavern where old rail tracks gleam faintly. Heat shimmers in the air.\n\nBehind you, you swear you hear another footfall echoing your sequence. Someone is following, and they learned from you.\n\nYou move anyway. The mine doesn't care who is clever. It cares who survives.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s14"
+          "label": "MOVE DEEPER QUICKLY",
+          "to": "S14"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s14"
+          "label": "SET A SIMPLE AMBUSH",
+          "to": "S16"
         }
       ]
     },
-    {
-      "id": "s14",
-      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself. There\u2019s no neutral ground anymore.",
+    "S14": {
+      "text": "The corridor opens into a cavern so large your light can't find its edges.\n\nOld rails cut through silt. Timber supports rise like ribs. Tool marks in the walls speak of hand chisels and stubborn patience.\n\nYou dig a coin from rubble—thick, heavy, stamped with a seal you now recognize. Not a souvenir. A marker of ownership.\n\nThe air tastes metallic, mineral-rich, like blood after you bite your tongue. A faint smoke smell rides it, impossible unless something still burns deeper down.\n\nIn the cavern's center is a descending shaft ringed with steps. Above it, the seal repeats. Your map points down with the confidence of a trap that expects you to obey.\n\nTreasure below. Danger below. The mine doesn't care which you came for.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s15"
+          "label": "DESCEND THE CENTRAL SHAFT",
+          "to": "S17"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s15"
+          "label": "FOLLOW THE RAILS SIDE TUNNEL",
+          "to": "S15"
         }
       ]
     },
-    {
-      "id": "s15",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in. A revelation reframes everything you thought you understood.",
+    "S15": {
+      "text": "You follow the rails because rails mean someone once expected to carry heavy things out of here.\n\nThe tunnel curves. Warmth pulses in waves like a furnace breathing. You pass rusted carts and shattered lanterns half-buried in dust.\n\nYou see footprints. Fresh. Not yours. The sight tightens your stomach more than any trap ever could.\n\nA side alcove holds a broken camp: torn pack, smashed canteen, a blood smear across stone. No body. The mine took what it wanted and left the rest unresolved.\n\nDeeper in, you hear a scrape—metal on stone—then silence. Either a person hiding, or a mechanism waking.\n\nYour light feels suddenly loud. You lower it and listen with your skin.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s16"
+          "label": "CALL OUT AND IDENTIFY YOURSELF",
+          "to": "S16"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s16"
+          "label": "MOVE SILENTLY AND FOLLOW",
+          "to": "S18"
         }
       ]
     },
-    {
-      "id": "s16",
-      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options.",
+    "S16": {
+      "text": "You set a choke point with loose stones, a crude barrier meant to slow someone rushing through.\n\nYou wait in shadow, blade in hand. Patience is an ugly kind of courage, but it works.\n\nA figure approaches in a climbing harness, face half-covered. Their flashlight sweeps the tunnel like they're reading it.\n\nThey sigh at your stones, step aside, and slip through a second passage you didn't notice, moving around your trap like water around a rock.\n\nBefore you can react, they strike your wrist, clean and practiced. Your blade drops. A weapon presses to your ribs.\n\nTheir whisper is almost friendly: 'You're late. And you're in my mine.'",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s17"
+          "label": "NEGOTIATE A TRUCE",
+          "to": "S19"
         },
         {
-          "text": "Investigate further",
-          "to": "s18"
+          "label": "FIGHT AND RUN",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s17",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+    "S17": {
+      "text": "You descend the central shaft, stone slick beneath your boots. The temperature rises in waves, like lungs breathing you in.\n\nInscriptions line the inner wall: names and symbols. Torch. Key. Crown. A roster of attempts, recorded with blunt honesty.\n\nAt the bottom, the chamber glows dim orange from mineral veins in the rock, ember-light without flame.\n\nA metal door stands there, ancient and patterned, sealed with the same six-pointed mark. No handle. Only rotating rings etched with the symbols from your map.\n\nThis is a vault built by someone who expected thieves. And expected them to believe they deserved what was inside.\n\nYou place your hands on the rings and feel how cold they are, like a promise that doesn't care about your warmth.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s18"
+          "label": "WORK THE RING PUZZLE",
+          "to": "S20"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s18"
+          "label": "SEARCH FOR A BYPASS",
+          "to": "S18"
         }
       ]
     },
-    {
-      "id": "s18",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options.",
+    "S18": {
+      "text": "You drift into a natural cavern where water drips into a pool that reflects your light like an eye.\n\nA narrow stone bridge crosses the pool. Along its sides are evenly spaced holes—vents or dart ports. The bridge is too neat to trust.\n\nOn the far side, amber glow leaks from a corridor. The vault chamber is close enough to warm your face.\n\nThen a whisper rises behind you: 'Don't step on the third stone. It drops you into the pool.'\n\nYour pulse spikes. Someone is here with you—helping, hunting, or both. In a place like this, motives change as fast as grip.\n\nYou swallow, and decide whether to trust the warning or trust only yourself.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s19"
+          "label": "TRUST THE WARNING AND CROSS CAREFULLY",
+          "to": "S19"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s19"
+          "label": "IGNORE IT AND CROSS FAST",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s19",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
+    "S19": {
+      "text": "You meet the other explorer in torchlight and realize they're real, steady, and dangerous in the quiet way.\n\nThey call themselves Sable, like it's a mask they've worn long enough to forget the face underneath.\n\nThey tell you Vauclair mapped the descent, not the exit. They want proof, and an artifact small enough to pocket.\n\nThey offer a deal with gambler ease: open it together, split what makes sense, and don't stab each other until daylight.\n\nA deal in the dark is always a blade with velvet on it, but it might be the only way you open the vault without dying alone.\n\nYou nod once, and feel the mine watch your agreement like it cares about contracts.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s20"
+          "label": "ACCEPT THE DEAL",
+          "to": "S20"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s20"
+          "label": "REFUSE AND GO SOLO",
+          "to": "S17"
         }
       ]
     },
-    {
-      "id": "s20",
-      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options.",
+    "S20": {
+      "text": "The vault door's rings are cold under your fingers despite the heat in the chamber.\n\nYou align torch with key. Click. Door with serpent. Deeper click. The mineral veins brighten as if the mine is paying attention.\n\nThe last alignment is crown. You hesitate, because crowns change people. Then you turn the ring.\n\nThe door exhales ancient air and begins to open with a groan like something waking from a long sleep.\n\nWarm shimmer spills from within, reflecting off surfaces you can't fully see yet. Your mouth goes dry, not from fear, but from wanting.\n\nYou step forward and feel the mine's patience tighten, as if it expects you to hurry and be punished for it.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s21"
+          "label": "ENTER THE VAULT",
+          "to": "S21"
         },
         {
-          "text": "Investigate further",
-          "to": "s22"
+          "label": "CHECK FOR TRAPS FIRST",
+          "to": "S22"
         }
       ]
     },
-    {
-      "id": "s21",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in. There\u2019s no neutral ground anymore.",
+    "S21": {
+      "text": "The vault is a cathedral built for greed.\n\nShelves carved into stone hold chalices, sealed jars, scroll cases, coins stacked into careful towers. Gold is everywhere, but it isn't the first thing you notice.\n\nThe first thing you notice is the smell: cedar, resin, old metal, and something faintly sweet like incense burned for show.\n\nAt the center is a dais and a smaller chest banded in metal. The seal repeats on it like a command.\n\nA thin boundary line circles the dais. Cross it and you accept terms. The vault is offering you a fair chance to ruin yourself.\n\nYou step closer and feel the orange glow pulse in slow rhythm, like a heartbeat deciding whether you deserve to keep yours.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s22"
+          "label": "OPEN THE SEALED CHEST",
+          "to": "S23"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s22"
+          "label": "GRAB GOLD AND RUN",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s22",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
+    "S22": {
+      "text": "You pause at the threshold and force yourself to do the boring thing: look.\n\nThe floor is too clean. Hair-thin grooves lead from the boundary line toward the walls, channels designed to carry something worse than water.\n\nNear the doorframe you find a counterweight mechanism hidden behind carved stone. Cross too fast and the door begins to close. Cross with care and it stays open.\n\nYou step over the line slowly. The vault does not move. The grooves stay quiet. The room accepts restraint like a lion accepts a handler who doesn't smell like panic.\n\nIf Sable is with you, they give a quiet nod. If you're alone, the silence is heavier, but your decision is the same: survive first, marvel second.\n\nThe sealed chest waits on the dais like a question that only has expensive answers.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s23"
+          "label": "OPEN THE SEALED CHEST",
+          "to": "S23"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s23"
+          "label": "EXAMINE SIDE ARTIFACTS",
+          "to": "S24"
         }
       ]
     },
-    {
-      "id": "s23",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself.",
+    "S23": {
+      "text": "The seal on the chest is not wax. It's metal, fused into the banding, etched with the mark and tiny letters around it.\n\nThere is a keyhole shaped like a ring. You remember the brass ring fused into stone in the shaft. You remember Vauclair's note about weight.\n\nIf Sable is with you, they produce a ring from a pocket and roll it across their knuckles. 'Found it on a corpse,' they say, with a smile that doesn't ask forgiveness.\n\nYou insert the ring. It fits like fate. You twist. The seal releases with a soft snap, almost relieved.\n\nInside is not a mountain of gold. It's a single signet ring set with a stone that looks like cooled fire, engraved with the seal.\n\nThe ring radiates authority, like a key that doesn't just open doors but makes doors want to open.\n\nYou understand: this is the real treasure. Not wealth. Power over passage. A key to vaults. And keys create more problems than gold ever does.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s24"
+          "label": "TAKE THE SIGNET RING",
+          "to": "S25"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s24"
+          "label": "LEAVE IT AND TAKE GOLD",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s24",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes.",
+    "S24": {
+      "text": "You scan the shelves like a scholar pretending not to be a thief.\n\nArtifacts don't belong together here: a Roman torque beside a Persian dagger, coins with Chinese characters next to an idol carved by hands from another continent.\n\nThis isn't only Solomon's mine. It's a funnel for plundered history, stored like trophies and tax.\n\nBehind a curtain of stone beads you find another doorway, carved with a relief of a man holding a ring and a key. The ring opens. The key closes forever.\n\nThe lesson is clear: choose your ending before you touch the object that decides it.\n\nYou return your attention to the sealed chest. Curiosity wins, because it always does.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s25"
+          "label": "OPEN THE SEALED CHEST",
+          "to": "S23"
         },
         {
-          "text": "Investigate further",
-          "to": "s26"
+          "label": "INVESTIGATE THE HIDDEN DOOR",
+          "to": "S26"
         }
       ]
     },
-    {
-      "id": "s25",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
+    "S25": {
+      "text": "You take the signet ring and the vault seems to breathe out.\n\nThe mineral veins dim slightly, satisfied or disappointed, you can't tell. The ring is warm in your palm like a living thing curled against your skin.\n\nWhen you slide it onto your finger, it fits perfectly, which should be impossible. Your skin tingles. The hair on your arms rises.\n\nA quiet click answers from somewhere in the vault door mechanism. Time starts moving again. The mine doesn't like lingering once a choice is made.\n\nIf Sable is with you, their eyes lock on your hand. 'That's the key,' they whisper. Awe in their voice makes the ring feel hungry.\n\nA thin vapor curls from the floor grooves, not lethal yet, just a warning: leave now.\n\nYou don't run. You move fast and steady, because running is what traps expect.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s26"
+          "label": "ESCAPE THROUGH THE TUNNELS",
+          "to": "S27"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s26"
+          "label": "CONFRONT SABLE NOW",
+          "to": "S28"
         }
       ]
     },
-    {
-      "id": "s26",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in.",
+    "S26": {
+      "text": "You slip through the hidden doorway, because you're an adventurer and that means you negotiate with your worst instincts daily.\n\nThe passage is smoother, built later. The air is hotter. The amber glow becomes steadier, like a lamp that never goes out.\n\nIt leads to a small chamber holding a clay tablet under a glass dome. The tablet is ringed with the seal repeated like a chant.\n\nIt isn't treasure. It's instruction. A manual for the ring, for the vault, for the system Solomon built to protect wealth by making the protection itself valuable.\n\nAs you lean in, the glass fogs with your breath and the script seems to shift, reflecting your expectations back at you. A psychological trap designed to keep you staring until the door seals.\n\nBehind you, stone grinds softly. The doorway is closing.\n\nStay and learn, or leave and live. The mine tests curiosity as much as greed.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s27"
+          "label": "BREAK THE GLASS AND TAKE THE TABLET",
+          "to": "END_BAD"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s27"
+          "label": "BACK OUT BEFORE IT SEALS",
+          "to": "S27"
         }
       ]
     },
-    {
-      "id": "s27",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes.",
+    "S27": {
+      "text": "You move the tunnels without sprinting, the way you move when you know panic will kill you faster than any blade.\n\nThe mine shifts behind you, not collapsing—adjusting. Cooler air returns in increments as you climb.\n\nYou pass the bridge and the pool's eye-like reflection. You pass timbers and rails and the places where other people left blood as punctuation.\n\nOn the ladder, your hands shake. The ring warms against your skin as if it recognizes the ascent.\n\nAt the boundary where graffiti ends and clean stone begins, you realize how thin the line is between a tourist underworld and a vault built to punish ambition.\n\nYou seal the grate above and taste paper and safety again, then remember you still have to escape the library and the city that sits innocently over this machine.\n\nThe ring feels heavy, not in weight, but in attention. You are now carrying a reason for other people to kill.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s28"
+          "label": "ESCAPE THE LIBRARY QUIETLY",
+          "to": "S29"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s28"
+          "label": "TURN BACK FOR THE PURSUER",
+          "to": "S28"
         }
       ]
     },
-    {
-      "id": "s28",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself. This choice will echo farther than you expect.",
+    "S28": {
+      "text": "You stop and turn back because you can't stand being hunted by a faceless threat.\n\nSable steps into your light like they were always going to, calm as a banker, dangerous as a blade.\n\n'Hand it over,' they say, nodding at your hand. Their tone is almost gentle, which is what makes it terrifying.\n\nThey tell you a half-truth dressed as kindness: they can use it without being eaten alive by it, and you want to go back to normal life even if you pretend you don't.\n\nThe ring warms, reacting to threat, and with that warmth comes capability—command—shortcut power that tempts you toward a version of yourself you might hate.\n\nYou can fight, bargain, or use the ring on a hidden seal you suddenly notice on the rock, faint and waiting.\n\nIn this mine, every confrontation has a mechanism.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s29"
+          "label": "FIGHT SABLE",
+          "to": "END_BAD"
         },
         {
-          "text": "Investigate further",
-          "to": "s30"
+          "label": "BARGAIN A SPLIT DEAL",
+          "to": "S29"
+        },
+        {
+          "label": "USE THE RING ON A HIDDEN SEAL",
+          "to": "S30"
         }
       ]
     },
-    {
-      "id": "s29",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself. This is the last point where retreat is still possible.",
+    "S29": {
+      "text": "You return to the secret chamber beneath the library with the ring hidden and your nerves stretched thin as wire.\n\nUpstairs, the library feels quiet but not empty. You sense someone near the front desk pretending to browse, waiting for you to make a mistake.\n\nYou tuck the book under your arm and keep your pace steady. Running makes you memorable. And in a city like this, being memorable to the wrong people is a death sentence with paperwork.\n\nAt the exit, the clerk's eyes flick to your hand. The pause is half a second too long. They say, 'Enjoy your reading,' and the words land like a message for someone listening.\n\nOutside, Paris is bright and indifferent. Cafes chatter. Scooters buzz. The city doesn't care what is under it, and that ignorance feels like a gift.\n\nYou walk three blocks before you let yourself breathe. You have something that belongs to a story older than this city, and now you decide whether you keep it, hide it, or use it.\n\nThe ring warms on your finger like a heartbeat asking for permission.",
       "choices": [
         {
-          "text": "See it through to the end",
-          "to": "s30"
+          "label": "HIDE THE RING AND DISAPPEAR",
+          "to": "END_GOOD"
         },
         {
-          "text": "Pull back at the last second",
-          "to": "s27"
+          "label": "SELL IT TO A COLLECTOR",
+          "to": "END_BAD"
+        },
+        {
+          "label": "USE IT TO OPEN THE NEXT DOOR",
+          "to": "END_SPECIAL"
         }
       ]
     },
-    {
-      "id": "s30",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
-      "choices": [],
-      "ending": true,
-      "ending_type": "resolution"
+    "S30": {
+      "text": "You press the signet ring to a faint seal hidden on the wall, and heat surges through the metal like a breath taken too deep.\n\nThe rock vibrates. A seam appears where there was none. The mine isn't just a vault. It's a network.\n\nSable stares, their practiced calm cracking. 'You didn't tell me it could do that,' they say, and you hear addiction in the word 'could.'\n\nThe wall opens onto a narrow passage lit by steady amber light that doesn't come from torches. The air beyond smells cleaner, colder, like paper kept in a room no one has breathed in for years.\n\nYou step to the threshold and feel the world tilt in concept. The ring isn't only a key to treasure. It's a key to hidden places built by people who believed in systems of secrecy and power.\n\nBehind you, the mine settles, satisfied you learned the lesson. Ahead, a new corridor waits, and you sense a lifetime of doors you could open if you choose to become that person.\n\nThis is the moment legends are born: not when you take gold, but when you decide you will keep walking even after you should have stopped.",
+      "choices": [
+        {
+          "label": "STEP THROUGH THE NEW PASSAGE",
+          "to": "END_SPECIAL"
+        },
+        {
+          "label": "CLOSE IT AND LEAVE",
+          "to": "END_GOOD"
+        },
+        {
+          "label": "HESITATE UNTIL IT SHIFTS",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "END_GOOD": {
+      "text": "GOOD ENDING — YOU ESCAPE WITH THE REAL TREASURE: YOUR LIFE\n\nYou leave Paris with the signet ring hidden where no one would think to look, and you do something rare for your profession: you stop.\n\nYou disappear into ordinary routines on purpose. You change flights. You change names. You let the book become just another object on a shelf, and the ring become a secret you carry like a scar.\n\nSome nights you wake thinking you hear the mine breathing. Other nights you dream of doors opening at the touch of your hand. The hardest lesson is living with a key you refuse to use.\n\nBut you also learn something calmer: you can choose not to be owned by what you found. You can let a legend stay buried.\n\nSomewhere beneath Paris, the vault waits for the next thief. This time, it doesn't get you.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_BAD": {
+      "text": "BAD ENDING — THE MINE COLLECTS ITS DUE\n\nSomething goes wrong in the way things always go wrong when greed meets mechanism.\n\nA trap breathes poison. A doorway seals while you're still inside it. A rival's blade finds you in a corridor that doesn't echo screams back to the surface.\n\nParis keeps moving above you, unaware. Tourists sip coffee. Lovers argue on bridges. The city shrugs off your disappearance the way it shrugs off rain.\n\nDown below, the mine folds your story into itself. Your footprints become another line in the roster, another symbol carved beside a name no one will pronounce correctly again.\n\nSomeone will find a book someday and feel the same spark you felt. The map will unfold. The descent will begin again. Legends stay alive because they feed.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_SPECIAL": {
+      "text": "SPECIAL ENDING — THE KEY TO THE NEXT VAULT\n\nYou keep the signet ring on your finger and feel it settle into you like a decision made permanent.\n\nYou don't sell it. You don't bury it. You learn it. You test it. You find the faint seals hidden in old places and realize the world is stitched together with doors most people never see.\n\nThe mine under Paris was not the destination. It was the first chapter in a system built to outlive empires: locked rooms, sealed archives, and vaults that protect knowledge people were willing to kill to keep secret.\n\nOne night, you return to the hidden chamber and press the ring to a mark you never noticed before. The wall opens without complaint, as if it has been waiting years for you specifically.\n\nThe air beyond is cold and clean. The amber light is steady. Somewhere far ahead, you hear a soft turning sound like a lock opening in a different world.\n\nYou step through and the passage closes behind you with gentle certainty. You are not just chasing treasure anymore. You are chasing the architecture of myth.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
     }
-  ]
+  }
 }
