@@ -1,422 +1,507 @@
 {
-  "story_id": "relic_of_cylara",
-  "title": "Relic Of Cylara",
-  "tagline": "space fantasy, crystalline relic, ancient machines",
-  "version": "placeholder_v2",
-  "start": "s01",
-  "sections": [
-    {
-      "id": "s01",
-      "text": "Relic Of Cylara: The environment responds as if aware of you. You slow your breathing and assess your options.",
+  "meta": {
+    "id": "relic_of_cylara_awakening_30",
+    "title": "Relic of Cylara: Awakening",
+    "route": "story_relic_of_cylara",
+    "schema": "versecraft-1.0",
+    "tone": "fantasy mystery",
+    "notes": "30 sections (S01–S30) plus 3 endings. All endings loop to S01.",
+    "blurb": "A single shard awakened your curiosity. The full Relic of Cylara may awaken something far more dangerous."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "The wizard did not explain what the shard was.\n\nHe pressed it into your palm like a guilty secret and closed your fingers around it before you could ask.\n\nThe fragment was warm. Not burning—alive.\n\nThat night, you dreamed of stone arches, broken stars, and a voice whispering a single name:\n\nCylara.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s02"
+          "label": "STUDY THE SHARD",
+          "to": "S02"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s02"
+          "label": "HIDE IT AND SLEEP",
+          "to": "S03"
         }
       ]
     },
-    {
-      "id": "s02",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself.",
+    "S02": {
+      "text": "In the morning light, the shard looks ordinary. Dull crystal. Jagged edge.\n\nThen it pulses once, reacting to your attention.\n\nMagic leaks from it like breath on cold glass.\n\nThe wizard watches you carefully.\n\n“You felt it,” he says. “That means the relic is not done with you.”",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s03"
+          "label": "ASK ABOUT CYLARA",
+          "to": "S04"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s03"
+          "label": "LEAVE WITH THE SHARD",
+          "to": "S05"
         }
       ]
     },
-    {
-      "id": "s03",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
+    "S03": {
+      "text": "You hide the shard beneath your bedroll.\n\nSleep does not come easily.\n\nYour dreams twist into visions of a ruined sanctum and a relic shattered by force, not accident.\n\nYou wake with the name Cylara burning behind your eyes.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s04"
+          "label": "CONFRONT THE WIZARD",
+          "to": "S02"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s04"
+          "label": "LEAVE BEFORE DAWN",
+          "to": "S05"
         }
       ]
     },
-    {
-      "id": "s04",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in.",
+    "S04": {
+      "text": "The wizard sighs, old and tired.\n\n“Cylara was not a goddess,” he says. “She was a guardian.”\n\n“The relic was her anchor. Her promise. Her prison.”\n\nHe looks at the shard in your hand.\n\n“Now you hold a key.”",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s05"
+          "label": "ACCEPT THE QUEST",
+          "to": "S06"
         },
         {
-          "text": "Investigate further",
-          "to": "s06"
+          "label": "REFUSE AND WALK AWAY",
+          "to": "S07"
         }
       ]
     },
-    {
-      "id": "s05",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
+    "S05": {
+      "text": "You leave the tower behind.\n\nThe shard grows heavier with every mile.\n\nBy nightfall, it hums softly, tugging you off the road toward ancient ruins you swear weren’t there yesterday.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s06"
+          "label": "FOLLOW THE PULL",
+          "to": "S06"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s06"
+          "label": "THROW THE SHARD AWAY",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s06",
-      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+    "S06": {
+      "text": "You reach a collapsed waystone etched with faded runes.\n\nThe shard vibrates violently near it, as if it recognizes the stone.\n\nWhatever Cylara was, her influence still marks the land.\n\nA faint path reveals itself in the grass, bent into a curve that leads away from the road.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s07"
+          "label": "ACTIVATE THE WAYSTONE",
+          "to": "S08"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s07"
+          "label": "SEARCH THE RUINS",
+          "to": "S09"
+        },
+        {
+          "label": "FOLLOW THE FAINT PATH",
+          "to": "S19"
         }
       ]
     },
-    {
-      "id": "s07",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options. There\u2019s no neutral ground anymore.",
+    "S07": {
+      "text": "You try to walk away.\n\nThe shard cracks—just a little.\n\nThe land itself seems to notice your refusal.\n\nStorm clouds gather where there were none before, and the wind keeps pushing you back toward the waystone.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s08"
+          "label": "RETURN TO THE QUEST",
+          "to": "S06"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s08"
+          "label": "KEEP RUNNING",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s08",
-      "text": "You realize this moment has been building for a while. You slow your breathing and assess your options.",
+    "S08": {
+      "text": "The waystone responds to the shard.\n\nLight spills across broken stone, revealing a path hidden from the unmarked.\n\nDown that path: the shape of a sanctum half-buried in ivy and time.\n\nThe air there feels colder, like the world is holding its breath.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s09"
+          "label": "ENTER THE SANCTUM",
+          "to": "S10"
         },
         {
-          "text": "Investigate further",
-          "to": "s10"
+          "label": "OBSERVE FROM AFAR",
+          "to": "S11"
+        },
+        {
+          "label": "CHECK THE SIDE STEPS",
+          "to": "S20"
         }
       ]
     },
-    {
-      "id": "s09",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
+    "S09": {
+      "text": "You find old journals scattered among the rubble.\n\nThey speak of Cylara as a protector bound willingly—until fear turned reverence into chains.\n\nThe relic was shattered to keep her contained, and the shards were scattered so no one person could undo it.\n\nOne line repeats across multiple pages: “A guardian becomes a weapon when the faithful become afraid.”",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s10"
+          "label": "CONTINUE TO THE SANCTUM",
+          "to": "S10"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s10"
+          "label": "DESTROY THE SHARD",
+          "to": "END_SPECIAL"
+        },
+        {
+          "label": "FOLLOW A NOTE ABOUT 'THE RELIQUARY'",
+          "to": "S24"
         }
       ]
     },
-    {
-      "id": "s10",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S10": {
+      "text": "The sanctum doors open at your touch.\n\nInside, the air is dust-dry and heavy, like a room that has waited centuries to be entered again.\n\nFaintly glowing lines run across the floor, leading deeper.\n\nFrom somewhere ahead, you feel a tug—not at your hand, but at your thoughts.\n\nThe shard wants you to finish what it started.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s11"
+          "label": "FOLLOW THE GLOWING LINES",
+          "to": "S21"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s11"
+          "label": "SEARCH A SIDE HALL",
+          "to": "S20"
+        },
+        {
+          "label": "TURN BACK",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s11",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
+    "S11": {
+      "text": "You hesitate at the threshold.\n\nThe air thickens. A presence stirs, not angry—awake.\n\n“You already chose,” a voice whispers. “The moment you touched me.”\n\nYour skin prickles as if the sanctum is reading you the way a lock reads a key.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s12"
+          "label": "PROCEED INTO THE SANCTUM",
+          "to": "S10"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s12"
+          "label": "FLEE",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s12",
-      "text": "A detail you missed now clicks into place. You commit to action before doubt can set in.",
+    "S12": {
+      "text": "You place the shard into a hollow notch in the pedestal.\n\nPower surges through the sanctum like water filling a basin.\n\nFragments of the relic—stone and light—begin to shift, knitting toward a single shape.\n\nThe air brightens, then dims, like the sanctum is deciding whether to allow this.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s13"
+          "label": "COMPLETE THE RELIC",
+          "to": "S13"
         },
         {
-          "text": "Investigate further",
-          "to": "s14"
+          "label": "INTERRUPT THE RITUAL",
+          "to": "S14"
+        },
+        {
+          "label": "LOOK FOR BINDING RUNES",
+          "to": "S22"
         }
       ]
     },
-    {
-      "id": "s13",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+    "S13": {
+      "text": "The relic reforms with a slow, deliberate final click—like a door closing.\n\nA figure of radiant stone emerges: Cylara, bound yet aware.\n\nHer eyes are not glowing gems. They’re steady, human, and tired.\n\n“You seek power,” she says. “But power always seeks a price.”",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s14"
+          "label": "FREE CYLARA",
+          "to": "S15"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s14"
+          "label": "BIND HER AGAIN",
+          "to": "S16"
+        },
+        {
+          "label": "ASK WHAT SHE GUARDED",
+          "to": "S26"
         }
       ]
     },
-    {
-      "id": "s14",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in. A wrong move here won\u2019t be forgiven easily.",
+    "S14": {
+      "text": "You disrupt the flow.\n\nThe relic fractures violently, and energy lashes outward, warping the sanctum walls into impossible angles.\n\nFor a moment you see the relic’s true function—an anchor pinning something in place.\n\nThen the vision snaps shut and leaves you with ringing ears and a burning smell in the air.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s15"
+          "label": "CONTAIN THE BLAST",
+          "to": "S23"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s15"
+          "label": "RUN",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s15",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options. A revelation reframes everything you thought you understood.",
+    "S15": {
+      "text": "You break the final bindings.\n\nCylara’s shoulders relax as if she’s been carrying a mountain for too long.\n\n“I was never meant to rule,” she says. “Only to guard.”\n\nShe looks at you—not as an enemy, not as a savior, but as the next choice the world might make.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s16"
+          "label": "ASK FOR HER AID",
+          "to": "S17"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s16"
+          "label": "LET HER GO",
+          "to": "S18"
+        },
+        {
+          "label": "HEAR HER BARGAIN",
+          "to": "S27"
         }
       ]
     },
-    {
-      "id": "s16",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options.",
+    "S16": {
+      "text": "You reinforce the seals.\n\nCylara’s expression hardens—not rage, but disappointment that cuts deeper.\n\n“Then you choose fear,” she says. “And fear always asks for more.”\n\nThe relic’s light becomes colder, sharper.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s17"
+          "label": "CLAIM THE RELIC’S POWER",
+          "to": "END_BAD"
         },
         {
-          "text": "Investigate further",
-          "to": "s18"
+          "label": "RECONSIDER",
+          "to": "S15"
+        },
+        {
+          "label": "STUDY THE SEALS",
+          "to": "S22"
         }
       ]
     },
-    {
-      "id": "s17",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+    "S17": {
+      "text": "Cylara touches your brow.\n\nVisions flood you—worlds protected, worlds ruined, cities saved by small choices and destroyed by proud ones.\n\n“Choose where my power flows,” she says. “Into the world… or into you.”\n\nThe sanctum’s floor lines pulse, awaiting a final decision.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s18"
+          "label": "RESTORE THE BALANCE",
+          "to": "S29"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s18"
+          "label": "CHANNEL POWER FOR YOURSELF",
+          "to": "S28"
         }
       ]
     },
-    {
-      "id": "s18",
-      "text": "Something shifts, subtle but irreversible. You observe first, letting the pattern reveal itself.",
+    "S18": {
+      "text": "You step aside.\n\nCylara dissolves into light, leaving the relic inert, like a sword set down after a long war.\n\nThe world exhales. Even the sanctum seems less tense.\n\nYou feel lighter—until you realize the shard’s warmth is still on your palm like a brand.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s19"
+          "label": "RETURN TO THE WAYSTONE",
+          "to": "S30"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s19"
+          "label": "STAY AND SEARCH THE SANCTUM",
+          "to": "S24"
         }
       ]
     },
-    {
-      "id": "s19",
-      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options.",
+    "S19": {
+      "text": "The faint path leads to a small camp sheltered under a crooked stone arch.\n\nA traveler sits by a low fire—cloak pulled tight, face half-hidden.\n\nThey don’t startle when you arrive. They look like someone who has been startled too many times already.\n\n“You’ve got the hum,” they say, nodding at your hand. “The relic’s hum.”\n\nThey slide you a scrap of parchment—another fragment.\n\n“Don’t go in blind. The sanctum tests what you are, not what you want.”",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s20"
+          "label": "ACCEPT THE FRAGMENT",
+          "to": "S10"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s20"
+          "label": "ASK WHO THEY ARE",
+          "to": "S25"
+        },
+        {
+          "label": "REFUSE AND GO ANYWAY",
+          "to": "S08"
         }
       ]
     },
-    {
-      "id": "s20",
-      "text": "Something shifts, subtle but irreversible. You observe first, letting the pattern reveal itself.",
+    "S20": {
+      "text": "You find a side hall choked with ivy and fallen stone.\n\nBehind it, a small chapel space—empty altar, cracked mosaic, and the faint outline of a guardian with hands raised.\n\nAt the mosaic’s center is a missing piece shaped exactly like your shard.\n\nThis was never random. Your shard fits because it was made to fit.\n\nIn the dust, you find a thin band of silver engraved with a single word:\n\nANCHOR.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s21"
+          "label": "TAKE THE SILVER BAND",
+          "to": "S21"
         },
         {
-          "text": "Investigate further",
-          "to": "s22"
+          "label": "LEAVE IT AND CONTINUE",
+          "to": "S21"
+        },
+        {
+          "label": "RETURN OUTSIDE",
+          "to": "S06"
         }
       ]
     },
-    {
-      "id": "s21",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options. There\u2019s no neutral ground anymore.",
+    "S21": {
+      "text": "Deeper in, the sanctum opens into a circular chamber.\n\nA hollow pedestal stands at the center.\n\nAround it, fragments float in slow orbit—stone, crystal, and pale light stitched into shape by invisible force.\n\nThe shard in your palm tugs toward the pedestal like a compass needle.\n\nA wrong move here could finish the relic—or shatter you instead.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s22"
+          "label": "PLACE THE SHARD",
+          "to": "S12"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s22"
+          "label": "STUDY THE ORBITING FRAGMENTS",
+          "to": "S24"
+        },
+        {
+          "label": "INSPECT THE PEDESTAL RUNES",
+          "to": "S22"
         }
       ]
     },
-    {
-      "id": "s22",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
+    "S22": {
+      "text": "You kneel beside the pedestal and trace the runes with your eyes.\n\nThey’re not decoration. They’re instructions—binding clauses carved into stone.\n\nYou can read enough to understand the shape of it:\n\nAnchor. Seal. Release.\n\nSomeone built this sanctum like a contract.\n\nYou can tighten the contract… or loosen it.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s23"
+          "label": "TIGHTEN THE BINDING",
+          "to": "S16"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s23"
+          "label": "LOOSEN THE BINDING",
+          "to": "S15"
+        },
+        {
+          "label": "LEAVE THE RUNES ALONE",
+          "to": "S12"
         }
       ]
     },
-    {
-      "id": "s23",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in.",
+    "S23": {
+      "text": "You try to contain the blast.\n\nYou grab the shard and slam it into the nearest groove in the floor, as if you can ground magic like lightning.\n\nThe chamber answers with a deep, stone-throated groan.\n\nA spectral figure rises—thin as smoke, wearing the shape of a long-dead priest.\n\n“Proof,” it says. “Not desire. Proof.”\n\nThe sanctum demands a trial before it will allow the relic to reform.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s24"
+          "label": "SUBMIT TO THE TRIAL",
+          "to": "S26"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s24"
+          "label": "REFUSE AND FORCE IT",
+          "to": "END_BAD"
+        },
+        {
+          "label": "RETREAT AND TRY AGAIN",
+          "to": "S21"
         }
       ]
     },
-    {
-      "id": "s24",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+    "S24": {
+      "text": "You look closely at the orbiting fragments.\n\nOne piece is different: darker stone veined with faint silver lines, like a night sky trapped in rock.\n\nIt drifts near the pedestal, then away, as if it’s avoiding being chosen.\n\nOn the floor beneath it is a hidden latch.\n\nYou pull it open and find a narrow reliquary drawer containing a scroll tube and a shard-sized socket.\n\nInside the tube: a confession written in a trembling hand.\n\n“We shattered her to feel safe. We became the threat we feared.”",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s25"
+          "label": "READ THE CONFESSION ALOUD",
+          "to": "S26"
         },
         {
-          "text": "Investigate further",
-          "to": "s26"
+          "label": "POCKET THE SCROLL AND PROCEED",
+          "to": "S12"
+        },
+        {
+          "label": "TAKE THE DARK FRAGMENT",
+          "to": "S28"
         }
       ]
     },
-    {
-      "id": "s25",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
+    "S25": {
+      "text": "“Names don’t matter much in places like this,” the traveler says.\n\nBut they answer anyway, because you asked like a person, not a threat.\n\n“I was one of the ones who chased power,” they admit. “I made it to the sanctum. I touched the relic. I survived.”\n\nThey hold up their hand. Their palm is scarred in the shape of a shard.\n\n“Surviving is not the same as winning.”\n\nThey nod toward the sanctum.\n\n“If you free her, be ready to be offered a substitute.”",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s26"
+          "label": "THANK THEM AND ENTER",
+          "to": "S10"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s26"
+          "label": "ASK ABOUT THE SUBSTITUTE",
+          "to": "S27"
+        },
+        {
+          "label": "IGNORE THEM AND RUSH IN",
+          "to": "S08"
         }
       ]
     },
-    {
-      "id": "s26",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
+    "S26": {
+      "text": "The trial is not a fight.\n\nIt’s a memory the sanctum makes you stand inside.\n\nYou see people kneeling before Cylara—grateful, trembling, hopeful.\n\nThen you see the fear that follows: kings demanding protection, councils demanding obedience, priests demanding certainty.\n\nChains are forged from prayers.\n\nCylara’s gaze meets yours through the memory.\n\n“They called it devotion,” she says quietly. “It was possession.”\n\nWhen the vision ends, the sanctum gives you a single choice, heavy as stone:",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s27"
+          "label": "FREE THE GUARDIAN",
+          "to": "S15"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s27"
+          "label": "KEEP THE CHAINS",
+          "to": "S16"
+        },
+        {
+          "label": "WALK AWAY FROM BOTH",
+          "to": "S30"
         }
       ]
     },
-    {
-      "id": "s27",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options.",
+    "S27": {
+      "text": "Cylara’s bargain is simple, and that’s what makes it terrifying.\n\n“A relic is an anchor,” she says. “If I am released, the anchor must remain.”\n\nYou start to speak, but she lifts a hand.\n\n“Not another prison. Not another chain. A choice.”\n\nHer voice softens.\n\n“If you take the anchor into yourself, you can steer it. You can prevent the next fearful hands from using it.”\n\n“But you will never be entirely alone again.”",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s28"
+          "label": "ACCEPT THE ANCHOR",
+          "to": "S28"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s28"
+          "label": "REFUSE AND LET HER GO",
+          "to": "S18"
+        },
+        {
+          "label": "DEMAND POWER WITHOUT COST",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s28",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in. A wrong move here won\u2019t be forgiven easily.",
+    "S28": {
+      "text": "The dark fragment warms in your hand like a heartbeat.\n\nThe sanctum’s lines flare, and for a moment you see yourself from a distance—eyes lit with relic-light, voice echoing like stone in a vault.\n\nThis is what it means to become an anchor.\n\nNot a crown. Not glory.\n\nA weight you carry so others don’t have to.\n\nYou can still stop now.\n\nOr you can step into the role the world keeps trying to force onto someone.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s29"
+          "label": "TAKE THE POWER FOR YOURSELF",
+          "to": "END_SPECIAL"
         },
         {
-          "text": "Investigate further",
-          "to": "s30"
+          "label": "TAKE THE ANCHOR TO PROTECT OTHERS",
+          "to": "S29"
+        },
+        {
+          "label": "DROP THE FRAGMENT AND RUN",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s29",
-      "text": "A detail you missed now clicks into place. You commit to action before doubt can set in. This is the last point where retreat is still possible.",
+    "S29": {
+      "text": "The sanctum shudders as if it’s relieved—or afraid.\n\nLight pours through the floor lines and rushes outward, threading into the land beyond.\n\nYou feel the relic’s presence settle into a stable shape: either in Cylara’s freed steps, or in your own chest like a second pulse.\n\nOutside, the storm clouds thin.\n\nThe world doesn’t cheer. It simply continues.\n\nAnd that might be the best outcome of all.\n\nThe question now is what you do with what you’ve become.",
       "choices": [
         {
-          "text": "See it through to the end",
-          "to": "s30"
+          "label": "RETURN TO THE WAYSTONE",
+          "to": "S30"
         },
         {
-          "text": "Pull back at the last second",
-          "to": "s27"
+          "label": "SEEK THE WIZARD AGAIN",
+          "to": "S30"
         }
       ]
     },
-    {
-      "id": "s30",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
-      "choices": [],
-      "ending": true,
-      "ending_type": "resolution"
+    "S30": {
+      "text": "You stand by the waystone as dawn breaks.\n\nThe shard’s heat is gone, replaced by a calm that feels earned.\n\nYou think about the wizard’s silence, the traveler’s scar, Cylara’s tired eyes.\n\nPower was never the point.\n\nThe point was what people do when they can touch it.\n\nYou can walk away and let the world settle.\n\nOr you can pull at the next thread and find who shattered the relic in the first place.",
+      "choices": [
+        {
+          "label": "WALK AWAY",
+          "to": "END_GOOD"
+        },
+        {
+          "label": "HUNT THE ONES WHO SHATTERED IT",
+          "to": "END_SPECIAL"
+        },
+        {
+          "label": "TURN BACK FOR MORE POWER",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "END_GOOD": {
+      "text": "GOOD ENDING — THE GUARDIAN RELEASED\n\nCylara’s influence fades gently into the world, not as a ruler, but as a quiet protection woven into the land.\n\nMagic stabilizes. The relic becomes legend once more—something spoken of, not exploited.\n\nYou walk away changed, but unburdened.\n\nNot because you found power.\n\nBecause you refused to let fear decide what power becomes.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_BAD": {
+      "text": "BAD ENDING — POWER WITHOUT WISDOM\n\nThe relic answers you.\n\nSo does the cost.\n\nYour will pushes the world like a hand pushing glass—until the glass cracks.\n\nThe first time you feel it break, you tell yourself it’s worth it.\n\nThe second time, there isn’t anyone left to argue with you.\n\nPower is easy.\n\nLiving with it is not.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_SPECIAL": {
+      "text": "SPECIAL ENDING — THE NEW ANCHOR\n\nCylara’s power settles into you like a stone dropped into deep water.\n\nYou feel her awareness retreat—but not vanish.\n\nYou have not freed her.\n\nYou have replaced her.\n\nThe world grows safer in small, invisible ways… and you begin to understand why guardians become prisons when people are afraid.\n\nSome nights, you catch your reflection and don’t recognize the stillness in your own eyes.\n\nAnd yet, you keep holding the line.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
     }
-  ]
+  }
 }

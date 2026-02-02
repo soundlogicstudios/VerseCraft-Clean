@@ -1,422 +1,427 @@
 {
-  "story_id": "oregon_trail",
-  "title": "Oregon Trail",
-  "tagline": "wagon journey, frontier survival, river crossings",
-  "version": "placeholder_v2",
-  "start": "s01",
-  "sections": [
-    {
-      "id": "s01",
-      "text": "Oregon Trail: You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+  "meta": {
+    "id": "oregon_trail_westward_30",
+    "title": "Oregon Trail: Westward",
+    "route": "story_oregon_trail",
+    "schema": "versecraft-1.0",
+    "tone": "frontier survival",
+    "notes": "30 sections (S01–S30) plus Good/Bad/Special endings. All endings loop to S01.",
+    "blurb": "You load a wagon, gather your family, and point west. The trail does not care why you travel—only whether you endure."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "You stand at the edge of the eastern frontier with your family gathered close.\n\nA covered wagon creaks under the weight of everything you own—and everything you hope to become.\n\nThe trail west stretches farther than you can see.\n\nSomewhere beyond plains and rivers and graves lies Oregon.\n\nOnce you leave, turning back will not be easy.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s02"
+          "label": "BEGIN THE JOURNEY",
+          "to": "S02"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s02"
+          "label": "RECHECK SUPPLIES",
+          "to": "S03"
         }
       ]
     },
-    {
-      "id": "s02",
-      "text": "Something shifts, subtle but irreversible. You observe first, letting the pattern reveal itself.",
+    "S02": {
+      "text": "The wagon rolls forward, wheels groaning like they already regret the decision.\n\nThe road east fades behind you, replaced by dust and grass.\n\nYour family looks to you for reassurance.\n\nYou nod, even if you are not sure.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s03"
+          "label": "SET A STEADY PACE",
+          "to": "S04"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s03"
+          "label": "PUSH HARD TO MAKE DISTANCE",
+          "to": "S05"
         }
       ]
     },
-    {
-      "id": "s03",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
+    "S03": {
+      "text": "You take inventory.\n\nFood is packed tight. Ammunition is counted twice. Spare parts are limited.\n\nA cracked wagon wheel catches your eye.\n\nIt will hold—for now.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s04"
+          "label": "REPLACE THE WHEEL NOW",
+          "to": "S04"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s04"
+          "label": "RISK IT AND SAVE TIME",
+          "to": "S05"
         }
       ]
     },
-    {
-      "id": "s04",
-      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+    "S04": {
+      "text": "The days settle into rhythm: roll, stop, cook, sleep.\n\nThe land opens wide, beautiful and unforgiving.\n\nYou pass other wagons heading the same direction, each family carrying their own quiet fears.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s05"
+          "label": "TRAVEL WITH ANOTHER PARTY",
+          "to": "S06"
         },
         {
-          "text": "Investigate further",
-          "to": "s06"
+          "label": "KEEP TO YOURSELF",
+          "to": "S07"
         }
       ]
     },
-    {
-      "id": "s05",
-      "text": "Something shifts, subtle but irreversible. You move with care, knowing haste invites mistakes.",
+    "S05": {
+      "text": "You push the wagon hard.\n\nThe extra miles come at a cost.\n\nOne morning, the wheel gives out with a sharp crack.\n\nThe wagon lurches violently to one side.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s06"
+          "label": "STOP AND REPAIR",
+          "to": "S08"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s06"
+          "label": "ABANDON THE WAGON",
+          "to": "S09"
         }
       ]
     },
-    {
-      "id": "s06",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
+    "S06": {
+      "text": "Traveling together brings comfort and shared labor.\n\nYou trade stories around the fire at night.\n\nOne family warns you about bandits farther west.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s07"
+          "label": "HEED THE WARNING",
+          "to": "S10"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s07"
+          "label": "DISMISS IT AS RUMOR",
+          "to": "S11"
         }
       ]
     },
-    {
-      "id": "s07",
-      "text": "Something shifts, subtle but irreversible. You move with care, knowing haste invites mistakes. There\u2019s no neutral ground anymore.",
+    "S07": {
+      "text": "You keep your distance from others.\n\nThe trail feels lonelier, but quieter.\n\nAt night, coyotes howl close enough to unsettle your children.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s08"
+          "label": "KEEP MOVING",
+          "to": "S10"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s08"
+          "label": "MAKE CAMP EARLY",
+          "to": "S12"
         }
       ]
     },
-    {
-      "id": "s08",
-      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes.",
+    "S08": {
+      "text": "You spend a full day repairing the wheel.\n\nProgress halts, but the wagon is sturdy again.\n\nYour family rests, grateful for the pause.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s09"
+          "label": "RESUME AT DAWN",
+          "to": "S10"
         },
         {
-          "text": "Investigate further",
-          "to": "s10"
+          "label": "REST AN EXTRA DAY",
+          "to": "S12"
         }
       ]
     },
-    {
-      "id": "s09",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
+    "S09": {
+      "text": "You abandon the wagon, loading what you can onto your backs.\n\nIt is a desperate choice.\n\nThe trail does not forgive desperation.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s10"
+          "label": "TURN BACK",
+          "to": "END_BAD"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s10"
+          "label": "PRESS ON AFOOT",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s10",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options.",
+    "S10": {
+      "text": "The plains stretch endlessly.\n\nYou pass weathered grave markers—names, dates, warnings.\n\nEach one reminds you what failure looks like.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s11"
+          "label": "SAY A PRAYER AND MOVE ON",
+          "to": "S13"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s11"
+          "label": "SEARCH THE AREA",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s11",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
+    "S11": {
+      "text": "You ignore the warnings.\n\nOne night, shadows move near camp.\n\nBandits test your defenses, watching for weakness.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s12"
+          "label": "STAND YOUR GROUND",
+          "to": "S15"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s12"
+          "label": "FLEE IN THE NIGHT",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s12",
-      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes.",
+    "S12": {
+      "text": "You rest longer than planned.\n\nIllness moves through your family, slow but dangerous.\n\nRest may save them—or delay you into winter.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s13"
+          "label": "CONTINUE AFTER RECOVERY",
+          "to": "S13"
         },
         {
-          "text": "Investigate further",
-          "to": "s14"
+          "label": "PUSH ON DESPITE ILLNESS",
+          "to": "S16"
         }
       ]
     },
-    {
-      "id": "s13",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S13": {
+      "text": "Your family regains strength.\n\nThe trail grows rockier as hills rise in the distance.\n\nYou feel both hope and dread.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s14"
+          "label": "PRESS TOWARD THE MOUNTAINS",
+          "to": "S17"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s14"
+          "label": "HUNT FOR SUPPLIES",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s14",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options. A wrong move here won\u2019t be forgiven easily.",
+    "S14": {
+      "text": "You hunt and gather.\n\nThe land provides, but not without effort.\n\nA rifle misfires, narrowly missing disaster.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s15"
+          "label": "RETURN TO THE TRAIL",
+          "to": "S17"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s15"
+          "label": "HUNT LONGER",
+          "to": "S16"
         }
       ]
     },
-    {
-      "id": "s15",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself. A revelation reframes everything you thought you understood.",
+    "S15": {
+      "text": "You confront the bandits.\n\nA tense standoff ends with them retreating, empty-handed.\n\nYour supplies are intact—but nerves are frayed.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s16"
+          "label": "MOVE ON QUICKLY",
+          "to": "S17"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s16"
+          "label": "REST AND RECOVER",
+          "to": "S12"
         }
       ]
     },
-    {
-      "id": "s16",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+    "S16": {
+      "text": "Pushing too hard takes its toll.\n\nA family member collapses with fever.\n\nYou must decide between speed and survival.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s17"
+          "label": "STOP AND CARE FOR THEM",
+          "to": "S12"
         },
         {
-          "text": "Investigate further",
-          "to": "s18"
+          "label": "CONTINUE AT RISK",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s17",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+    "S17": {
+      "text": "You reach a wide river.\n\nThe current is fast and cold.\n\nOther wagons lie broken along the bank.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s18"
+          "label": "FORD THE RIVER",
+          "to": "S18"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s18"
+          "label": "FIND ANOTHER CROSSING",
+          "to": "S19"
         }
       ]
     },
-    {
-      "id": "s18",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself.",
+    "S18": {
+      "text": "You guide the wagon into the water.\n\nThe current pulls hard.\n\nThe wagon tilts dangerously.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s19"
+          "label": "PUSH THROUGH",
+          "to": "S20"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s19"
+          "label": "ABANDON THE WAGON",
+          "to": "S09"
         }
       ]
     },
-    {
-      "id": "s19",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
+    "S19": {
+      "text": "You follow the river for days.\n\nTime slips away, but you find a calmer crossing.\n\nThe delay weighs on your mind.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s20"
+          "label": "CROSS CAREFULLY",
+          "to": "S20"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s20"
+          "label": "TURN BACK",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s20",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
+    "S20": {
+      "text": "The wagon reaches the far bank.\n\nSoaked but intact.\n\nYour family cheers, exhausted and alive.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s21"
+          "label": "CONTINUE WEST",
+          "to": "S21"
         },
         {
-          "text": "Investigate further",
-          "to": "s22"
+          "label": "REST BY THE RIVER",
+          "to": "S12"
         }
       ]
     },
-    {
-      "id": "s21",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself. A wrong move here won\u2019t be forgiven easily.",
+    "S21": {
+      "text": "The land changes again—thick forests, steeper climbs.\n\nWinter whispers in the wind.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s22"
+          "label": "PUSH TO OREGON",
+          "to": "S22"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s22"
+          "label": "TAKE A CAUTIOUS ROUTE",
+          "to": "S23"
         }
       ]
     },
-    {
-      "id": "s22",
-      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+    "S22": {
+      "text": "You race the season.\n\nSnow dusts the peaks ahead.\n\nEvery mile feels stolen from fate.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s23"
+          "label": "KEEP GOING",
+          "to": "S24"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s23"
+          "label": "STOP AND BUILD SHELTER",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s23",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+    "S23": {
+      "text": "You slow your pace.\n\nThe safer path costs time but saves lives.\n\nFood grows scarce.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s24"
+          "label": "RISK HUNTING",
+          "to": "S14"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s24"
+          "label": "RATION STRICTLY",
+          "to": "S24"
         }
       ]
     },
-    {
-      "id": "s24",
-      "text": "Something shifts, subtle but irreversible. You move with care, knowing haste invites mistakes.",
+    "S24": {
+      "text": "The mountains give way to rolling green valleys.\n\nThe air smells different—cleaner.\n\nOregon is close.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s25"
+          "label": "MAKE THE FINAL PUSH",
+          "to": "S25"
         },
         {
-          "text": "Investigate further",
-          "to": "s26"
+          "label": "REST ONE LAST TIME",
+          "to": "S12"
         }
       ]
     },
-    {
-      "id": "s25",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options.",
+    "S25": {
+      "text": "You see fertile land stretching to the horizon.\n\nYour family weeps with relief.\n\nThe journey has changed all of you.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s26"
+          "label": "CLAIM LAND AND SETTLE",
+          "to": "END_GOOD"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s26"
+          "label": "CONTINUE WANDERING",
+          "to": "END_SPECIAL"
         }
       ]
     },
-    {
-      "id": "s26",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
+    "S26": {
+      "text": "You linger too long between choices.\n\nSupplies dwindle.\n\nThe trail closes in around you.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s27"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s27"
+          "label": "TRY AGAIN",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s27",
-      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+    "S27": {
+      "text": "A sudden storm batters the wagon.\n\nYou barely keep control.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s28"
+          "label": "SURVIVE AND MOVE ON",
+          "to": "S21"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s28"
+          "label": "LOSE THE WAGON",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s28",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in. There\u2019s no neutral ground anymore.",
+    "S28": {
+      "text": "You find an abandoned wagon.\n\nLeft behind. Supplies intact.\n\nA silent gift—or a warning.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s29"
+          "label": "TAKE WHAT YOU NEED",
+          "to": "S21"
         },
         {
-          "text": "Investigate further",
-          "to": "s30"
+          "label": "LEAVE IT UNTOUCHED",
+          "to": "S23"
         }
       ]
     },
-    {
-      "id": "s29",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself. This is the last point where retreat is still possible.",
+    "S29": {
+      "text": "A child asks if the trail ever ends.\n\nYou don’t answer right away.",
       "choices": [
         {
-          "text": "See it through to the end",
-          "to": "s30"
+          "label": "TELL THEM THE TRUTH",
+          "to": "S25"
         },
         {
-          "text": "Pull back at the last second",
-          "to": "s27"
+          "label": "LIE FOR COMFORT",
+          "to": "S25"
         }
       ]
     },
-    {
-      "id": "s30",
-      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options.",
-      "choices": [],
-      "ending": true,
-      "ending_type": "resolution"
+    "S30": {
+      "text": "You look back at the miles behind you.\n\nGraves. Rivers. Broken wheels.\n\nYou understand now: the trail was never about Oregon.\n\nIt was about who survived the journey.",
+      "choices": [
+        {
+          "label": "SETTLE IN OREGON",
+          "to": "END_GOOD"
+        },
+        {
+          "label": "TURN BACK EAST",
+          "to": "END_SPECIAL"
+        }
+      ]
+    },
+    "END_GOOD": {
+      "text": "GOOD ENDING — YOU MADE IT\n\nYou settle in Oregon.\n\nThe land is rich. The future uncertain.\n\nBut your family lives.\n\nAnd that is enough.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_BAD": {
+      "text": "BAD ENDING — THE TRAIL CLAIMS YOU\n\nThe journey ends without ceremony.\n\nThe trail takes what it is owed.\n\nOnly weathered markers remain.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_SPECIAL": {
+      "text": "SPECIAL ENDING — THE JOURNEY CHANGED YOU\n\nYou survive—but you never truly arrive.\n\nThe road becomes part of who you are.\n\nHome is no longer a place.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
     }
-  ]
+  }
 }
