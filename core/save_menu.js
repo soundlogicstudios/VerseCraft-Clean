@@ -23,6 +23,16 @@ const SAVE_FRAME_TOP_PCT = 14.91;
 const SAVE_FRAME_H_PCT = 58.71;
 const SAVE_ROW_H_PCT = SAVE_FRAME_H_PCT / 3;
 
+// iPhone safety notch approximation (visual only)
+// Used to nudge rows DOWN relative to the evenly-spread layout
+const NOTCH_PX = 44; // approx one iPhone notch height
+const SLOT_NOTCH_OFFSETS = [
+  1 * NOTCH_PX,     // slot 0: down 1 notch
+  1.5 * NOTCH_PX,   // slot 1: down 1.5 notches
+  2 * NOTCH_PX      // slot 2: down 2 notches
+];
+
+
 
 const TITLE_MAP = {
   world_of_lorecraft: "World of Lorecraft",
