@@ -1,422 +1,435 @@
 {
-  "story_id": "crimson_seagull",
-  "title": "Crimson Seagull",
-  "tagline": "pirate gothic, storm seas, burning crown rumors",
-  "version": "placeholder_v2",
-  "start": "s01",
-  "sections": [
-    {
-      "id": "s01",
-      "text": "Crimson Seagull: A detail you missed now clicks into place. You commit to action before doubt can set in.",
+  "meta": {
+    "id": "crimson_seagull_ember_crown_30_deep_v1",
+    "title": "Crimson Seagull: The Burning Ember Crown",
+    "route": "story_crimson_seagull",
+    "schema": "versecraft-1.0",
+    "tone": "swashbuckling adventure",
+    "notes": "30 sections (S01–S30) with consistently deep prose. Good/Bad/Special endings. All endings return to S01.",
+    "blurb": "A young pirate on Captain Blackknife's ship discovers a secret map to the Burning Ember Crown. Loyalty, battle, and an island of traps stand between you and legend."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "The Crimson Seagull never sleeps. Even when the wind goes soft, the ship keeps talking—planks creaking, rigging tapping the mast like impatient fingers, the sea slapping the hull as if it wants to be let aboard.\n\nYou are the newest kind of pirate: not born to it, not famous for it, just hungry enough to risk it. Your hands smell of rope and tar. Your nails stay black no matter how hard you scrub. And your ears, you have learned, are worth more than your sword arm.\n\nCaptain Blackknife stands at the wheel with the moon behind him, a hard silhouette that sailors avoid looking at too long. He is not loud. He does not need to be. The crew obeys him the way men obey weather—because refusing does not change the outcome.\n\nNear the foremast, two sailors argue in low voices. One of them laughs like he's trying to keep the sound from escaping. A name slips out anyway, bright and dangerous as a spark in a powder magazine: the Burning Ember Crown.\n\nYou feel it in your chest, that old pull stories have. The kind that turns an ordinary night into the beginning of trouble.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s02"
+          "label": "ASK A DECKHAND",
+          "to": "S02"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s02"
+          "label": "KEEP QUIET AND LISTEN",
+          "to": "S03"
         }
       ]
     },
-    {
-      "id": "s02",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes.",
+    "S02": {
+      "text": "You sidle up to Cobb, a deckhand with scarred knuckles and a face permanently set in suspicion. He doesn't like questions from green hands. Questions make ripples, and ripples become waves.\n\nWhen you mention the Ember Crown, Cobb's eyes flick toward the quarterdeck, then away. He spits over the rail and watches the sea swallow it. \"Old fire-king treasure,\" he mutters. \"Supposed to burn without wood. Supposed to make a captain into something bigger than a captain.\"\n\nHe tells you the part sailors always tell last: the price. \"Every tale that shines that bright comes with a shadow,\" he says. \"Men who go looking don't just lose their lives. Sometimes they lose who they are before they die.\"\n\nYou ask who started the rumor. Cobb shrugs. \"Rumors start the way storms start. Somebody feels a pressure change and pretends they predicted it.\"\n\nAnd then he adds, quieter: \"If you're hearing it on deck, it means someone wants you hearing it.\"",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s03"
+          "label": "PRESS FOR DETAILS",
+          "to": "S03"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s03"
+          "label": "LET IT GO FOR NOW",
+          "to": "S04"
         }
       ]
     },
-    {
-      "id": "s03",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+    "S03": {
+      "text": "You keep your mouth shut and let the ship speak around you. Whispered wagers. Quiet prayers. A laugh that dies too fast. The Seagull feels like a room where someone dropped a coin and everyone is pretending they didn't hear it.\n\nBootsteps cross the deck above you—measured, confident. You know that rhythm. The first mate, Rook, walks like he owns every corridor he passes through. He doesn't. But he acts like it, and acting like it is sometimes enough.\n\nLater, below deck, you catch the smell of oilskin and ink, the scent of maps and secrets. Lantern light trembles in the gun deck, painting the cannon mouths like open throats. Rook appears in the passageway as if he was waiting for your curiosity to lead you here.\n\n\"You've got listening ears,\" he says, calm as a man offering a drink. \"And I've got something worth hearing.\"\n\nHe doesn't show it yet. He doesn't have to. The way he watches you says the offer is already on the table.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s04"
+          "label": "HEAR ROOK OUT",
+          "to": "S05"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s04"
+          "label": "AVOID HIM AND WALK AWAY",
+          "to": "S04"
         }
       ]
     },
-    {
-      "id": "s04",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
+    "S04": {
+      "text": "You focus on work because work is safe. Work doesn't ask you to pick sides. Work doesn't put you on the wrong end of a knife in the dark.\n\nBut the rumor doesn't go away. It rides the air like smoke. You hear it in the galley. You hear it near the powder room. You hear it in the way men stop talking when the captain walks by.\n\nCaptain Blackknife runs his ship like a blade—kept sharp, kept clean, used without hesitation. He hates disorder, and rumors are disorder with teeth.\n\nRook, on the other hand, thrives in the spaces between rules. He smiles too politely. He remembers every favor. He speaks to the crew like he is collecting them, one by one, for later use.\n\nThat night, the sea turns unnaturally calm. Old sailors say calm water listens better. You find yourself wondering who is listening now.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s05"
+          "label": "SEEK ROOK",
+          "to": "S05"
         },
         {
-          "text": "Investigate further",
-          "to": "s06"
+          "label": "GO TO THE CAPTAIN",
+          "to": "S06"
         }
       ]
     },
-    {
-      "id": "s05",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in.",
+    "S05": {
+      "text": "Rook leads you to the spare sail canvas where the lantern light thins and words can fall without echo. He doesn't crowd you. He doesn't have to. Confidence fills space better than muscle.\n\nHe pulls a scrap of oilskin from inside his coat. The edges are blackened, as if fire tried to eat it and failed. The markings aren't drawn in ink. They look branded—lines like old burns, symbols that feel warmer than they should when you stare at them.\n\n\"Map fragment,\" Rook says. \"One piece of many. Enough to point. Not enough to finish.\" He taps a spot near the corner where a coastline is suggested by a curve and a set of notches. \"This is where the Crown sleeps.\"\n\nYou ask the question that matters more than treasure. \"Does Captain Blackknife know?\"\n\nRook's smile is thin. \"If he knows, it becomes his. If he doesn't… it becomes ours. I need a hand I can trust. I think you're hungry enough to be useful.\"",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s06"
+          "label": "SIDE WITH ROOK",
+          "to": "S07"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s06"
+          "label": "TELL THE CAPTAIN",
+          "to": "S06"
         }
       ]
     },
-    {
-      "id": "s06",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes.",
+    "S06": {
+      "text": "You choose the wheel over the whisper. You bring what you know to Captain Blackknife because you still believe loyalty can be simple.\n\nThe captain listens without interrupting, fingers resting lightly on the spokes as if he is feeling the ship's pulse through the wood. When you mention Rook and the map fragment, something in his eyes sharpens—like a blade being drawn.\n\n\"A crown,\" Blackknife says, tasting the word. \"A crown is a fine thing for fools to chase. But fools can be steered.\" He looks past you, out into darkness, as if he can already see a future shipwreck.\n\nThen he turns his gaze back to you. \"You did right bringing this to me. Now do right again: keep your head down and your ears open. If my first mate is playing games, we'll end them.\"\n\nOrders come fast after that. Course adjusted. Watch doubled. The Seagull changes direction like a predator turning toward fresh blood.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s07"
+          "label": "RETURN TO YOUR POST",
+          "to": "S08"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s07"
+          "label": "KEEP WATCH ON ROOK",
+          "to": "S08"
         }
       ]
     },
-    {
-      "id": "s07",
-      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes. There\u2019s no neutral ground anymore.",
+    "S07": {
+      "text": "You keep Rook's secret. The choice tastes like salt and risk.\n\nRook nods once, satisfied, like a man receiving payment. \"Good,\" he says. \"Secrets keep ships afloat—until they don't. If you get cold feet, remember: the sea doesn't care about regret.\"\n\nAs you walk away, you feel eyes on your back. Maybe his. Maybe someone else's. On a ship, secrecy is a leak. It spreads through wood and rope, quiet at first, then everywhere.\n\nYou tell yourself you're doing this for your future. For your share. For the chance to be more than a name scratched into a roster.\n\nBut the truth is simpler and more dangerous: you want to see if the stories are real.\n\nAnd if they are… you want to hold something that burns and doesn't go out.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s08"
+          "label": "STAY ALERT ON DECK",
+          "to": "S08"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s08"
+          "label": "QUESTION ROOK ABOUT THE REST",
+          "to": "S09"
         }
       ]
     },
-    {
-      "id": "s08",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
+    "S08": {
+      "text": "Dawn comes hard and bright, the sea turning from black to hammered silver. That's when sails appear on the horizon—multiple, moving with intent.\n\nBlack and red banners snap in the wind like open wounds. The rival fleet of Captain Ashfall, a name spoken in taverns with the same tone used for plague and betrayal.\n\nThe crew of the Seagull shifts into battle without being told. Cannons are uncovered. Powder is carried. Blades are checked and tucked into belts. Men who were laughing last night stop laughing now.\n\nCaptain Blackknife's voice carries across the deck. \"Stand fast. Make them remember us.\" He doesn't promise survival. He promises reputation, and pirates will die for that.\n\nYou feel the ship gather itself like a fist. The sea between fleets becomes a narrow corridor, and you realize: whatever the Ember Crown is, it just found you a war.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s09"
+          "label": "MAN THE CANNONS",
+          "to": "S10"
         },
         {
-          "text": "Investigate further",
-          "to": "s10"
+          "label": "PREPARE TO BOARD",
+          "to": "S11"
         }
       ]
     },
-    {
-      "id": "s09",
-      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+    "S09": {
+      "text": "You corner Rook near the companionway, away from the captain's line of sight. He looks annoyed, like you interrupted something important—because you did.\n\n\"There are more fragments,\" you say. \"Where?\"\n\nRook's eyes flick toward the horizon where sails are forming. \"Timing,\" he answers. \"Treasure doesn't matter if we're dead. Help me survive this, and I'll tell you what I know.\"\n\nThen he leans in, voice tight. \"Ashfall didn't find us by luck. Someone talked. Maybe your captain. Maybe my crew. Maybe the sea itself. Either way, if Ashfall wins, the map won't matter.\"\n\nBefore you can press him further, the first cannon booms, and the argument turns into action. Rook flashes you a grin that doesn't reach his eyes. \"Now,\" he says, \"earn your place.\"",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s10"
+          "label": "RUN TO THE CANNONS",
+          "to": "S10"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s10"
+          "label": "JOIN THE BOARDING CREW",
+          "to": "S11"
         }
       ]
     },
-    {
-      "id": "s10",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+    "S10": {
+      "text": "You brace behind the cannon as the gunner shouts the rhythm: swab, load, ram, prime.\n\nThe first shot tears across the water and slams into an enemy hull with a sound like a tree splitting. Men cheer, then choke on the smoke. Powder stings your throat and coats your tongue in bitterness.\n\nThe enemy answers. A cannonball screams past the rail and takes a chunk out of the mast, spraying splinters like knives. Someone near you drops without a sound, and the sea takes his blood as casually as it takes rain.\n\nThe deck becomes chaos with rules. You learn quickly: keep low, move fast, don't stand where the ship can throw you into the air. The Seagull bucks under impact, but she holds, stubborn as her captain.\n\nIn the smoke, you spot Captain Ashfall's flagship turning to angle for a raking shot. The enemy wants your spine. If they break it, the rest is easy.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s11"
+          "label": "KEEP FIRING ON ASHFALL'S FLAGSHIP",
+          "to": "S12"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s11"
+          "label": "ABANDON POST AND HIDE",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s11",
-      "text": "Something shifts, subtle but irreversible. You observe first, letting the pattern reveal itself.",
+    "S11": {
+      "text": "Grappling lines fly, hooks biting into enemy rails with ugly certainty. The ships draw close enough that you can hear the other crew shouting curses that sound like your own, just spoken by different mouths.\n\nYou climb the line hand over hand, sea spray cutting your face, and leap onto the enemy deck as blades rise to greet you. For a moment, it's all steel and noise and the taste of fear.\n\nBoarding is intimate violence. Cannons are distant thunder. Boarding is elbows, teeth, breath, the wet slip of blood underfoot. You shove a man back and realize he's just as young as you are, eyes wide with the same surprise.\n\nSomewhere behind you, someone screams the captain's name—yours or theirs, it doesn't matter. Names blend in battle. Only survival stays distinct.\n\nYou see an officer with a fine coat and a cruel smile cutting his way toward you. If you drop him, you buy your crew breathing room.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s12"
+          "label": "DUEL THE OFFICER",
+          "to": "S12"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s12"
+          "label": "SABOTAGE THEIR RIGGING",
+          "to": "S13"
         }
       ]
     },
-    {
-      "id": "s12",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S12": {
+      "text": "A lucky shot, or a smart one, finds Ashfall's flagship where it hurts—near the waterline. The ship shudders, listing as the sea begins its patient work.\n\nOn deck, the enemy's confidence cracks. Men glance toward their sinking pride and falter. That's all pirates need: one heartbeat of hesitation.\n\nCaptain Blackknife takes that heartbeat and turns it into a command. \"Press!\" he roars, and the Seagull surges forward like a beast smelling an artery.\n\nThe fight becomes a rout. Some enemies throw down blades and beg. Others jump into the sea, preferring drowning to the captain's mercy. The water turns dark with bodies and broken wood.\n\nWhen the smoke thins, you realize you're still standing. Your hands shake, not from weakness but from the sudden absence of immediate death.\n\nThe horizon is empty again—except for drifting wreckage and the knowledge that you have made more enemies than you started with.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s13"
+          "label": "SEARCH THE WRECKS FOR CLUES",
+          "to": "S14"
         },
         {
-          "text": "Investigate further",
-          "to": "s14"
+          "label": "TAKE PRISONERS AND QUESTION THEM",
+          "to": "S15"
         }
       ]
     },
-    {
-      "id": "s13",
-      "text": "Something shifts, subtle but irreversible. You observe first, letting the pattern reveal itself.",
+    "S13": {
+      "text": "You cut their rigging with a sailor's efficiency, hacking through rope as if you're chopping down a tree. The enemy mast groans, then collapses in a roar of snapping fibers.\n\nMen fall. Some hit deck. Some vanish overboard. The chaos is immediate and brutal, and you learn an ugly truth: sabotage kills faster than courage.\n\nThe crippled ship drifts, unable to maneuver. Your crew uses the advantage like a knife under ribs, pressing hard until the enemy breaks.\n\nBy the time you swing back to your own deck, the Seagull is already moving on, leaving the crippled vessel behind like a lesson carved into the sea.\n\nYour arms burn. Your ears ring. You look at your hands and wonder how many small choices it took to turn you into this.\n\nThen you remember the Ember Crown and realize you can't pretend innocence anymore.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s14"
+          "label": "RETURN AND SEARCH WRECKAGE",
+          "to": "S14"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s14"
+          "label": "STAY WITH PRISONERS",
+          "to": "S15"
         }
       ]
     },
-    {
-      "id": "s14",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes. This choice will echo farther than you expect.",
+    "S14": {
+      "text": "You and a few others take a boat out among the splintered remains. The sea here is crowded with debris that bumps the hull like grasping hands.\n\nYou pry open half-submerged chests, cut away tangled canvas, and find the usual: coin, cheap jewelry, letters that will never be delivered. The sea is full of unfinished lives.\n\nThen you find oilskin. Charred edges. Burned markings that make your stomach drop. Another fragment, tucked in a waterproof roll as if someone expected death and packed this for it.\n\nThe lines on the fragment match Rook's. The island outline is clearer now, and a symbol near its center looks like a crown made of flame.\n\nYou glance back at the Seagull. From this distance, the ship looks calm, almost peaceful, like it isn't full of knives and ambition.\n\nYou hide the fragment inside your shirt before anyone can see your face change.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s15"
+          "label": "SHOW ROOK THE NEW FRAGMENT",
+          "to": "S16"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s15"
+          "label": "BRING IT TO THE CAPTAIN",
+          "to": "S17"
         }
       ]
     },
-    {
-      "id": "s15",
-      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes. A revelation reframes everything you thought you understood.",
+    "S15": {
+      "text": "The prisoners sit in a tight cluster, wrists bound, eyes darting like trapped animals. Pirates fear capture because they know what pirates do to captives.\n\nYou crouch in front of one with a split lip and ask about the Ember Crown. His laugh is short and ugly. \"So it's true,\" he says. \"Ashfall was right.\"\n\n\"What do you know?\" you demand.\n\nHis grin widens despite the blood. \"Island of fire and water. Cliffs that sweat steam. Waterfalls that hide teeth. Caves that eat men who rush.\"\n\nHe leans forward as far as the rope allows. \"The Crown doesn't just sit there. It waits. It tests. And it makes captains into monsters or martyrs, depending how hungry they are.\"\n\nBehind you, someone calls for you to report to the quarterdeck. The captain wants answers, and the sea doesn't wait.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s16"
+          "label": "REPORT TO BLACKKNIFE",
+          "to": "S17"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s16"
+          "label": "TAKE THIS TO ROOK QUIETLY",
+          "to": "S16"
         }
       ]
     },
-    {
-      "id": "s16",
-      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes.",
+    "S16": {
+      "text": "You find Rook alone for once, near the stern where the wind is loud enough to swallow secrets. He watches the water as if he can read futures in its ripples.\n\nWhen you show him the new fragment, his composure cracks just enough for you to see something real: relief, greed, fear—maybe all three.\n\n\"Good,\" he whispers. \"That's the confirmation. That's the direction.\" He presses the fragments together in his hands, aligning burn-marks like puzzle pieces. \"We're close.\"\n\nYou ask again whether the captain knows. Rook's jaw tightens. \"He suspects. He always suspects. But suspicion isn't proof.\"\n\nAnd then he says the part that makes your stomach go cold: \"Ashfall didn't come for nothing. If he had a fragment too, then others do. Which means we're racing more than the sea.\"\n\nRook pockets the pieces and claps you on the shoulder like you're already his. \"Now we get to the island before the story does.\"",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s17"
+          "label": "FOLLOW ROOK'S PLAN",
+          "to": "S18"
         },
         {
-          "text": "Investigate further",
-          "to": "s18"
+          "label": "CHANGE YOUR MIND AND WARN BLACKKNIFE",
+          "to": "S17"
         }
       ]
     },
-    {
-      "id": "s17",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes.",
+    "S17": {
+      "text": "Captain Blackknife hears you out with the same stillness he uses for storms. The man doesn't waste emotion on what he can control.\n\nWhen you mention the prisoners' description of the island, his gaze drifts to the horizon where clouds pile like dark mountains. \"Fire and water,\" he repeats, as if tasting the phrase.\n\nYou decide in that moment whether you trust him with the fragment. Either way, he knows enough now to steer the ship toward trouble on purpose.\n\n\"Rook,\" Blackknife says at last, quiet. \"Always with his little games.\" Then he looks at you. \"And you? What game are you in?\"\n\nThe question is not a threat. It's an invitation to be honest—and a reminder that honesty on a pirate ship is a kind of bravery.\n\nBlackknife orders a course set toward the island. The crew cheers without knowing why. They cheer because they feel the ship turning toward legend.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s18"
+          "label": "STAY CLOSE TO THE CAPTAIN",
+          "to": "S18"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s18"
+          "label": "KEEP AN EYE ON ROOK",
+          "to": "S18"
         }
       ]
     },
-    {
-      "id": "s18",
-      "text": "A detail you missed now clicks into place. You commit to action before doubt can set in.",
+    "S18": {
+      "text": "The island rises from the sea two days later, and it looks wrong from the first glance.\n\nBlack rock cliffs cut up out of the water like broken teeth. Steam curls from vents in the stone, drifting across the treeline like breath. Waterfalls pour down the cliffs in white ribbons that vanish into dark pools below.\n\nThe Crimson Seagull circles at a distance. Even the crew's jokes come out quieter here, like the air itself is listening. Superstitions bloom fast around places like this.\n\nCaptain Blackknife selects a landing party. Rook insists on being included. You are included whether you volunteered or not. Your knowledge makes you valuable, and pirates hate wasting value.\n\nAs the longboat hits the shore, you feel the island's heat through your boots. The sand is coarse, mixed with black grit that stains your soles like soot.\n\nSomewhere inland, something cracks like wood in a fire, and the jungle answers with a rustle that sounds too much like laughter.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s19"
+          "label": "FOLLOW THE WATERFALL PATH",
+          "to": "S19"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s19"
+          "label": "ENTER THE CAVE MOUTH",
+          "to": "S20"
         }
       ]
     },
-    {
-      "id": "s19",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S19": {
+      "text": "You take the path that follows the waterfalls because water feels honest. Water doesn't lie about what it is. It just drowns you if you underestimate it.\n\nThe jungle along the river is thick and wet, leaves broad enough to hide a man crouching. Insects scream. Birds flash red and blue through the canopy like thrown jewels.\n\nYou spot old signs—cut marks on stone, a broken spear shaft, rope fibers caught on a thorn. Others came this way. Some made it farther. The island keeps its count in bones.\n\nThe waterfall ahead roars louder as you climb. Mist coats your skin, turning sweat to chill. The rock underfoot is slick, and every step asks you to trust your weight to something that wants you to fall.\n\nRook keeps glancing at the map fragment. Captain Blackknife—if he's here—keeps glancing at Rook. And you keep glancing at both, realizing the real trap might not be carved into stone at all.\n\nAt the base of the largest waterfall, you find a narrow crack behind the falling water—an entrance hidden by noise and spray, like the island is daring you to notice.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s20"
+          "label": "PUSH THROUGH THE FALLS INTO THE CRACK",
+          "to": "S21"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s20"
+          "label": "SCOUT THE RIDGE ABOVE FOR SAFETY",
+          "to": "S22"
         }
       ]
     },
-    {
-      "id": "s20",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself.",
+    "S20": {
+      "text": "You choose the cave because caves are where secrets live. The mouth is wide, black, and warm, breathing out air that smells like wet stone and old smoke.\n\nInside, the light dies quickly. Your torch becomes the only sun, and the shadows crowd close like curious thieves. Water drips from stalactites with a steady patience that feels like a countdown.\n\nYou find marks on the walls—scratches that might be deliberate symbols or might be the work of desperate hands trying to leave messages behind. Either way, you can't read them without feeling watched.\n\nFurther in, the floor changes from natural stone to something shaped. The path is smoother, almost polished, as if countless feet wore it down. Or as if someone wanted it to look inviting.\n\nAhead, your torchlight catches something thin across the passage—wire, nearly invisible. A tripline. And beside it, a shallow groove in the wall that suggests something heavy swings when the line is touched.\n\nThe island doesn't want you running. It wants you choosing carefully.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s21"
+          "label": "DISARM THE TRIPLINE AND PROCEED",
+          "to": "S23"
         },
         {
-          "text": "Investigate further",
-          "to": "s22"
+          "label": "RISK IT AND RUSH THROUGH",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s21",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself. There\u2019s no neutral ground anymore.",
+    "S21": {
+      "text": "You step through the waterfall and immediately lose your breath. The water hits like a fist, cold and loud, blinding you for a heartbeat.\n\nOn the other side is darkness and sudden quiet, the roar muffled to a distant thunder as if the rock itself is swallowing the sound. You cough and wipe water from your eyes, torch sputtering but alive.\n\nThe passage is narrow, sloping upward, and the air is warmer here, carrying the faint scent of sulfur. Your boots scrape on stone that feels worn—used—like this isn't the first hidden entrance someone discovered.\n\nYou notice shallow indentations along the walls at shoulder height, evenly spaced. Handholds. Someone expected people to climb through here, soaked and desperate.\n\nBehind you, the landing party filters in one by one, faces pale in torchlight. You watch them and realize: the island chooses who keeps their head. Panic is how it feeds.\n\nAt the top of the slope, the passage opens into a chamber where the floor is marked with faint lines—circles and angles like a compass rose burned into the stone.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s22"
+          "label": "STUDY THE FLOOR MARKINGS",
+          "to": "S24"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s22"
+          "label": "CROSS THE CHAMBER QUICKLY",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s22",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+    "S22": {
+      "text": "You climb the ridge above the waterfall because you don't trust hidden entrances without seeing the ground around them.\n\nThe ascent is brutal. Loose rock slips underfoot, and the drop to the river below is far enough to make your stomach tighten every time you glance down.\n\nFrom the ridge, you get a view of the island's interior—steam vents like scars, dark gullies, and a jagged peak that pierces the clouds. The place feels shaped, not natural, like an old fortress that melted into jungle.\n\nYou spot something else: old wooden stakes driven into stone in a line, half-rotted. A warning, or a boundary. Beyond it, the vegetation thins, replaced by bare rock stained with soot.\n\nRook doesn't like waiting. He urges you forward, tapping the map like it owes him speed. If Blackknife is here, he says nothing, but his silence weighs like armor.\n\nNear the ridge line, you find a second entrance—an opening that exhales warm air and smells like smoke. Not hidden by water. Hidden by height.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s23"
+          "label": "ENTER THE HIGH OPENING",
+          "to": "S23"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s23"
+          "label": "GO BACK AND TRY THE WATERFALL PASSAGE",
+          "to": "S21"
         }
       ]
     },
-    {
-      "id": "s23",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
+    "S23": {
+      "text": "Whether you come from the cave mouth or the high opening, the island makes one thing clear: the path is built, and it is meant to hurt the careless.\n\nYou take slow steps, searching for wires, pressure plates, seams in the stone. The torchlight makes shadows out of every crack, and you learn to distrust your eyes while trusting your gut.\n\nYou find a deadfall trap before it finds you—stones suspended overhead, held by a rope braided so tight it looks like a vein. One wrong touch and the roof becomes a weapon.\n\nDisarming it takes patience and trembling hands. The rope fibers bite your fingers. Sweat drips into your eyes. Somewhere behind you, someone whispers that you should hurry, and you hate them for it.\n\nWhen you finally lower the stones safely, the group exhales as one. Even pirates forget to breathe sometimes.\n\nBeyond the trap is a corridor carved with crude images: a crown, a flame, and figures kneeling. The message is simple. Power demands posture.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s24"
+          "label": "FOLLOW THE CARVINGS DEEPER",
+          "to": "S24"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s24"
+          "label": "TAKE A SIDE PASSAGE THAT LOOKS SAFER",
+          "to": "S25"
         }
       ]
     },
-    {
-      "id": "s24",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+    "S24": {
+      "text": "You study the markings like you'd study a map in a storm—slowly, fully, refusing to be rushed.\n\nThe lines on the floor form paths. Some lead through the chamber cleanly. Others loop back. A few cut straight across to a doorway but pass through the center circle where the stone is darker, as if burned.\n\nYou test the stone with the tip of your blade. The dark center feels warmer than it should. Heat without fire. The kind of heat that says a trap isn't mechanical. It's something older.\n\nRook shifts impatiently behind you. If Blackknife is present, he watches without speaking, as if he wants to see whether you're clever or lucky. You feel the weight of eyes and decide you don't want to be either. You want to be right.\n\nYou choose a path that skirts the burn circle. As you step across the last line, the chamber hums—quiet, deep—like the island acknowledging your restraint.\n\nThe doorway ahead opens into a hall where the air smells like smoke and wet stone, and you realize you're getting close to something that never stopped burning.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s25"
+          "label": "ENTER THE SMOKE-SCENTED HALL",
+          "to": "S26"
         },
         {
-          "text": "Investigate further",
-          "to": "s26"
+          "label": "PAUSE AND CHECK ON YOUR CREW",
+          "to": "S25"
         }
       ]
     },
-    {
-      "id": "s25",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
+    "S25": {
+      "text": "You check the group because treasure hunts don't fail only from traps. They fail from people breaking.\n\nOne of the crew has a cut on his palm from the rope. Another is limping, ankle twisted on the climb. Their eyes keep drifting toward the darkness ahead like it's pulling them by the throat.\n\nRook tries to keep everyone moving with sharp words and sharper looks. He talks like a man already spending his share. That kind of certainty is contagious—and dangerous.\n\nIf the captain is here, you see the calculation in his face: how many bodies can he afford to lose and still bring the prize home? Pirates talk about loyalty, but they measure it in outcomes.\n\nYou share water. You tighten a bandage. You tell the limping man to fall back and stop trying to impress anyone. Small mercies. They buy you something that gold can't: steadier hands when it matters.\n\nWhen you're ready, you look down the hall and see it clearly now—faint orange light pulsing ahead, like a heartbeat behind stone.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s26"
+          "label": "ADVANCE TOWARD THE LIGHT",
+          "to": "S26"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s26"
+          "label": "TURN BACK WHILE YOU CAN",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s26",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
+    "S26": {
+      "text": "The hall narrows and the air grows warmer with every step. The walls are slick with condensation, and in the torchlight you see soot streaks that never washed away.\n\nAt the end of the hall is a set of stone doors carved with a crown motif. Not delicate, not royal—violent. Flames licking up the sides, figures below with arms raised in worship or surrender.\n\nRook breathes like he's trying to keep from laughing. You hear it in the way he whispers the words, almost tender: \"Ember.\"\n\nYou press a hand to the stone. It's warm. Not sun-warm. Hearth-warm. Alive-warm. The kind of warmth that makes you think of fever.\n\nSomewhere behind you, the island makes a sound—stone settling, or maybe something shifting deeper. A reminder that you're not alone and never were.\n\nYou pull on the door seam. The stone grinds open with a noise like a throat clearing.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s27"
+          "label": "STEP INTO THE CHAMBER",
+          "to": "S27"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s27"
+          "label": "LET SOMEONE ELSE GO FIRST",
+          "to": "S28"
         }
       ]
     },
-    {
-      "id": "s27",
-      "text": "You realize this moment has been building for a while. You slow your breathing and assess your options.",
+    "S27": {
+      "text": "The chamber is wide and dark except for one thing: a pedestal at the center holding a crown that glows from within.\n\nThe Burning Ember Crown looks like blackened gold hammered into jagged points, each one catching light like a blade edge. In the hollows, ember-red fire coils slowly, as if breathing. No smoke. No fuel. Just heat that refuses to die.\n\nThe air tastes metallic, like you've bitten your tongue. Your skin prickles. You realize, with a sudden cold certainty, that the crown isn't just an object. It's a presence.\n\nBehind you, you hear Rook's breath hitch. If Blackknife is here, you feel his attention tighten like a drawn bowstring. Everyone in the chamber is thinking the same thought, and that thought is a weapon: Who gets it?\n\nYou step closer and the glow brightens, responding. The pedestal has no chains, no locks, no obvious trap. That alone is terrifying. Easy treasures are the ones that cost later.\n\nIn the crown's light, you see reflections in the polished stone—faces that look like yours, but older, crueler, crowned in fire. The island is offering you a future.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s28"
+          "label": "TAKE THE CROWN",
+          "to": "S29"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s28"
+          "label": "REFUSE AND SEEK ANOTHER WAY",
+          "to": "S28"
         }
       ]
     },
-    {
-      "id": "s28",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options. This choice will echo farther than you expect.",
+    "S28": {
+      "text": "You don't move toward the crown. You move toward the people around it.\n\nBecause the real danger isn't only what the crown does. It's what it makes men believe they deserve. A room full of pirates is a room full of hunger, and hunger always turns toward whoever is closest.\n\nYou watch hands drift to hilts. You watch eyes sharpen. Someone whispers that the crown should belong to the captain. Someone else mutters that the captain will kill anyone who touches it first.\n\nRook's gaze is fixed on the pedestal like he's already wearing the thing. His mouth curls into a smile that looks like relief and grief at once. He has wanted this for too long to share it cleanly.\n\nIf Blackknife is present, you feel the authority in his stillness. He hasn't ordered anyone to move. He hasn't needed to. The crew is waiting to see whose will breaks first.\n\nYou speak into the tension. A simple sentence, steady as a plank underfoot: \"We leave together, or we die here.\"\n\nThe chamber seems to listen. The crown's glow pulses once, as if amused.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s29"
+          "label": "TRY TO TAKE CONTROL OF THE GROUP",
+          "to": "S30"
         },
         {
-          "text": "Investigate further",
-          "to": "s30"
+          "label": "BACK DOWN AND LET THEM FIGHT",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s29",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes. This is the last point where retreat is still possible.",
+    "S29": {
+      "text": "You reach for the Burning Ember Crown and the heat meets you halfway.\n\nIt doesn't burn your skin. It burns through your thoughts, through your memories, through the soft places you keep hidden. For a heartbeat, you are nine years old again, starving, watching a fire you couldn't approach. For another, you're on deck, dreaming of being more than a name.\n\nThe crown is heavier than it looks, not in weight but in consequence. When you lift it, the chamber's light changes, sharpening edges, deepening shadows. The air feels thinner, like the room wants you to kneel.\n\nVoices rise behind you. Rook says your name like it's a curse. If Blackknife is there, he says nothing at all, and that silence is more frightening than shouting.\n\nYou have a choice that will define you faster than any sword fight: put it on, hand it over, or drop it and run. The crown's glow crawls up your arms like warm honey, patient and possessive.\n\nSomewhere deep in the island, stone shifts. The place is responding to ownership, like a beast recognizing a new rider.",
       "choices": [
         {
-          "text": "See it through to the end",
-          "to": "s30"
+          "label": "PUT THE CROWN ON",
+          "to": "END_SPECIAL"
         },
         {
-          "text": "Pull back at the last second",
-          "to": "s27"
+          "label": "HAND IT TO CAPTAIN BLACKKNIFE",
+          "to": "S30"
+        },
+        {
+          "label": "DROP IT AND RUN",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s30",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options.",
-      "choices": [],
-      "ending": true,
-      "ending_type": "resolution"
+    "S30": {
+      "text": "Whatever you choose, the chamber doesn't stay calm. It never was calm. It was waiting.\n\nIf you hand the crown toward Blackknife, you see his eyes catch the ember-light and reflect it. He looks older in that glow, more like a king than a captain, and you realize the crown isn't changing him. It's revealing him.\n\nRook's hand flashes. A blade, quick as a thought. The crew shouts. Someone grabs someone else. The room becomes a storm of bodies and steel, the kind of storm that doesn't care who started it.\n\nThen the island answers. The floor trembles. Dust falls from the ceiling in soft sheets. The orange glow flares, and the carved doors behind you begin to close on their own, stone grinding like teeth.\n\nYou shout for everyone to move, because treasure isn't worth being buried with. Some listen. Some don't. Pirates die all the time for less than this.\n\nYou run, dragging whoever you can, and the heat behind you grows hotter, not like fire—like anger.\n\nWhen you burst back into the open air, the jungle feels cold. The sea looks like salvation. And the Crimson Seagull waits offshore like a question: what did you bring back with you?",
+      "choices": [
+        {
+          "label": "ESCAPE TO THE SHORE",
+          "to": "END_GOOD"
+        },
+        {
+          "label": "TURN BACK FOR SOMEONE LEFT BEHIND",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "END_GOOD": {
+      "text": "GOOD ENDING — YOU LIVE TO SAIL ANOTHER DAY\n\nYou make it back to the longboat with lungs burning and hands shaking. The island behind you settles into silence as if it never moved at all, as if it never tried to swallow you.\n\nOn the deck of the Crimson Seagull, the crew watches your return with eyes that measure more than survival. They measure what you lost. They measure what you gained. Pirates don't ask how you feel. They ask what you brought back.\n\nWhether the crown remains hidden on the island or ends up in someone else's hands, you learned the truth behind every legend: the real treasure is the chance to choose what kind of person you are when power is within reach.\n\nCaptain Blackknife gives a short nod—approval or warning, you can't tell which. The Seagull turns away from the island, sails catching wind, and you feel the story closing its fist around you less tightly than before.\n\nYou are still alive. On this ship, that is a kind of victory.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_BAD": {
+      "text": "BAD ENDING — FIRE TAKES ITS SHARE\n\nOne wrong step, one greedy rush, one moment of hesitation in a place that punishes all three, and the island collects what it is owed.\n\nThe sea hears the screams and keeps moving anyway. The jungle closes over the noise. The stone remembers your footsteps, then forgets them.\n\nBack on the Crimson Seagull, someone will tell the tale with a grin and a shiver: traps, waterfalls, caves, and a crown that burns without fuel. They'll leave out your name if it makes the story cleaner.\n\nLegends love to eat people. That's how they stay alive.\n\nAnd somewhere in the dark, the Burning Ember Crown waits for the next hungry hand.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_SPECIAL": {
+      "text": "SPECIAL ENDING — THE BURNING EMBER CROWN\n\nYou set the crown on your head and the world changes color.\n\nHeat blooms behind your eyes like dawn breaking inside your skull. The chamber's shadows deepen and then kneel. You feel the island's attention lock onto you, not as prey, but as something recognized—an owner, a bearer, a problem.\n\nVoices around you become distant, like you're listening from underwater. You can still see them: Rook's shock, Blackknife's stillness, the crew's fear. But you also see something else—paths, possibilities, the shape of storms before they form.\n\nThe crown does not promise kindness. It promises power. And power always asks the same question: what will you burn to keep it?\n\nWhen you leave the chamber, the jungle parts easier than it should, and the sea wind feels warm on your face. The Crimson Seagull waits, but it no longer feels like home. It feels like a tool.\n\nSomewhere out in the world, other captains will feel a pressure change and pretend they predicted it. They will not know your name yet. They will soon.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
     }
-  ]
+  }
 }
