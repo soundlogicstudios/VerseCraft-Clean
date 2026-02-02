@@ -1,0 +1,423 @@
+{
+  "meta": {
+    "id": "tale_of_icarus_30_deep",
+    "title": "The Tale of Icarus: Wings Against Fate",
+    "route": "story_tale_of_icarus",
+    "schema": "versecraft-1.0",
+    "tone": "mythic tragedy",
+    "notes": "30 sections (S01–S30) with deeper prose. Good/Bad/Special endings loop to S01. Special ending: Icarus lives.",
+    "blurb": "Imprisoned by a king, hunted by a monster, and tempted by the sun—this time, your choices decide whether the myth repeats."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "The first thing you learn in the Labyrinth is that sound lies.\n\nFootsteps echo from passages you never walked. Your own breathing returns to you from angles that make no sense. Even the drip of water seems to move, as if the maze is shifting its mouth to speak from different corners.\n\nYou keep Icarus close. He is all sharp elbows and stubborn courage, but his hand shakes when the darkness deepens and the torch gutters low.\n\nAbove you, somewhere beyond layers of stone, King Minos sleeps in a palace built on other people's obedience. He calls you asset, criminal, genius. He never calls you man.\n\nHere below, none of those names matter.\n\nOnly one name matters—the name of the thing that hunts.\n\nThe Minotaur.",
+      "choices": [
+        {
+          "label": "STUDY THE MAZE",
+          "to": "S02"
+        },
+        {
+          "label": "MOVE QUICKLY",
+          "to": "S03"
+        }
+      ]
+    },
+    "S02": {
+      "text": "You slow your steps and let your mind do what it has always done best: measure the world until it gives up its secrets.\n\nStone blocks repeat in patterns. Mortar lines tilt, then correct. Air currents breathe out of certain cracks—fresh air from above, stale air from deeper within. The maze isn't random. It is an argument carved into rock: you cannot leave.\n\nIcarus watches you work, trying to imitate the calm in your face. He wants to be brave for you. That makes you want to be brave for him.\n\nYou tear a strip from your cloak and tie it to a protruding stone, a small flag of stubbornness. The cloth flutters in a draft that insists there is a way forward.",
+      "choices": [
+        {
+          "label": "MARK A SAFE ROUTE",
+          "to": "S04"
+        },
+        {
+          "label": "SEARCH FOR TOOLS",
+          "to": "S05"
+        }
+      ]
+    },
+    "S03": {
+      "text": "You push the torch higher and move, because stillness feels like surrender.\n\nThe corridor narrows, then widens into a room that smells of wet fur and old blood. Icarus inhales sharply and clamps a hand over his mouth, eyes wide.\n\nSomewhere ahead, something exhales—slow, heavy, satisfied. The sound is too close and too patient, like the monster knows you will eventually have to pass through its territory.\n\nYour instinct screams to run. Your mind whispers that running makes you loud. Loud makes you found.\n\nYou pull Icarus into the shadow of a collapsed pillar and wait until the torch stops shaking.",
+      "choices": [
+        {
+          "label": "HIDE AND LISTEN",
+          "to": "S05"
+        },
+        {
+          "label": "RUN FOR DISTANCE",
+          "to": "S06"
+        }
+      ]
+    },
+    "S04": {
+      "text": "You move with intention now, leaving small signs only you would recognize: a knot in twine, a chalk scratch, a pebble stack that looks accidental until it doesn't.\n\nEvery few turns, you find proof of others who came before. A broken sandal strap. A bronze clasp. A child's bead, dull with grime.\n\nIcarus doesn't ask questions about those things. He just grips your sleeve tighter.\n\nThen you find a corridor where the walls bear long gouges—horn marks dragged at speed. The Minotaur has charged here. It has killed here.\n\nYou steer away from it, not out of cowardice, but out of love.",
+      "choices": [
+        {
+          "label": "CONTINUE THE QUIET ROUTE",
+          "to": "S06"
+        },
+        {
+          "label": "CHECK A SIDE PASSAGE",
+          "to": "S05"
+        }
+      ]
+    },
+    "S05": {
+      "text": "A niche in the wall holds remnants of offerings—someone tried to bargain with the monster, as if hunger could be reasoned with.\n\nYou find rope stiff with salt, an oil flask half-full, a handful of bronze scraps, and a torch that still smells faintly of resin.\n\nNot weapons, exactly. But tools. And in a place designed to strip you of options, tools are a kind of mercy.\n\nIcarus watches you wrap the rope around your forearm and tie a loop, making a crude snare. His eyes brighten at the sight of a plan.\n\nYou hand him the oil flask and whisper a promise you aren't sure you can keep: Stay close. Do what I say. We will see the sky again.",
+      "choices": [
+        {
+          "label": "ARM YOURSELF",
+          "to": "S06"
+        },
+        {
+          "label": "SET A DISTRACTION",
+          "to": "S07"
+        }
+      ]
+    },
+    "S06": {
+      "text": "The Minotaur finds you the way storms find ships—by inevitability.\n\nIt steps into the torchlight like a nightmare given bone. Bull head, human torso, breath steaming in the cool air. Its eyes are not mindless. They are old with rage, trained by years of being fed men like meat.\n\nIcarus freezes. For one terrible heartbeat, you see him as Minos intended: a helpless offering, a lesson carved into flesh.\n\nYou break that picture with your own body, stepping between your son and the beast, torch raised high so the monster looks at you first.\n\nThe Minotaur lowers its horns and snorts. The sound shakes dust from the ceiling.\n\nIt charges.",
+      "choices": [
+        {
+          "label": "FIGHT WITH BRONZE AND FIRE",
+          "to": "S08"
+        },
+        {
+          "label": "OUTSMART IT WITH THE MAZE",
+          "to": "S07"
+        }
+      ]
+    },
+    "S07": {
+      "text": "You sprint—not away, but through—leading the beast where you want it to go.\n\nThe corridor ahead narrows into a choke point you noticed earlier, a place where the ceiling dips and the walls pinch tight. A place built for humans, not monsters.\n\nYou toss the oil flask behind you. It shatters. The scent blooms sharp and bitter.\n\nWith a flick of the torch, fire crawls across the slick stone like a living thing. The Minotaur bellows, momentum carrying it straight into flame and smoke.\n\nIt stumbles, confused. You yank the rope loop up and around a jutting stone, turning it into a barrier, a line the beast cannot cross without pain.\n\nIcarus follows your steps, gasping but alive.\n\nAnd then the Labyrinth does something you have never heard it do before: it falls silent, as if impressed.",
+      "choices": [
+        {
+          "label": "ESCAPE TOWARD AIR AND MOONLIGHT",
+          "to": "S09"
+        }
+      ]
+    },
+    "S08": {
+      "text": "You wait until the last possible moment, then step aside, letting the Minotaur's charge slam into stone.\n\nShock ripples up the corridor. Dust explodes in a pale cloud. The beast staggers, confused by the sudden absence of a target.\n\nYou strike with the bronze scrap at its flank—more pain than damage—but pain changes the shape of a fight. The Minotaur turns, horns cutting air, missing you by inches.\n\nIcarus, shaking, does what you taught him: he stays behind you, keeps low, watches for your signal.\n\nYou use the torch like a weapon. Fire is older than kings. Fire does not negotiate.\n\nFinally, with one desperate feint and a shove into a broken pillar, the Minotaur collapses into rubble, pinned and roaring until the roar becomes exhausted breath.\n\nYou do not celebrate. You grab Icarus and run for the smell of fresher air.",
+      "choices": [
+        {
+          "label": "ESCAPE TOWARD AIR AND MOONLIGHT",
+          "to": "S09"
+        }
+      ]
+    },
+    "S09": {
+      "text": "Stone gives way to night.\n\nYou burst from a hidden exit and stumble onto the rocky hillside outside the palace grounds. Above you, the sky is a dark bowl scattered with stars. You have not seen stars in what feels like a lifetime.\n\nIcarus laughs once—too loud, too bright—then clamps his hands over his mouth like he can push the sound back inside.\n\nFrom the palace, distant torches move like angry fireflies. Minos's guards will notice the disturbance. They will search. They will punish.\n\nCrete is an island. Minos believes that makes it a cage.\n\nYou know cages are only real if you accept them.",
+      "choices": [
+        {
+          "label": "HIDE IN THE CLIFFS",
+          "to": "S10"
+        },
+        {
+          "label": "PLAN AN ESCAPE NOW",
+          "to": "S11"
+        }
+      ]
+    },
+    "S10": {
+      "text": "You find a shallow sea cave tucked beneath jagged stone. The air tastes of salt and damp limestone.\n\nInside, you make a small fire that smokes more than it burns. Icarus shivers and wraps his arms around his knees, trying to be smaller than fear.\n\nAbove, the search begins. Boots on rock. Voices barking orders. The occasional clatter of metal that tells you Minos sent soldiers, not fishermen.\n\nYou press your palm to the cave wall and feel the vibration of footsteps—faint, but present.\n\nYou have time. Not much, but enough for a mind like yours.\n\nEnough to build something impossible.",
+      "choices": [
+        {
+          "label": "BEGIN BUILDING AN ESCAPE",
+          "to": "S11"
+        },
+        {
+          "label": "RISK SURRENDER FOR MERCY",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "S11": {
+      "text": "The idea arrives the way lightning arrives: sudden, violent, and obvious in hindsight.\n\nIf Minos guards the sea, you will take the sky.\n\nYou gather what the island offers. Feathers from seabirds caught in nets. Wax from stolen candles and honeycomb taken from cliffside hives. Thin reeds and light wood for frame.\n\nIcarus helps, hands sticky with wax, eyes shining with the kind of hope that is almost dangerous.\n\nHe whispers, Will it work?\n\nYou answer honestly, because he deserves that much: It must.",
+      "choices": [
+        {
+          "label": "BUILD CAREFULLY AND SLOW",
+          "to": "S12"
+        },
+        {
+          "label": "BUILD FAST BEFORE GUARDS FIND YOU",
+          "to": "S13"
+        }
+      ]
+    },
+    "S12": {
+      "text": "You shape the first wing like you shape an invention: with patience, with measurement, with respect for failure.\n\nThe frame is light but strong, ribs spaced for balance. Wax warmed just enough to bind without cracking. Feathers layered so air can catch them instead of tearing them away.\n\nIcarus watches every step, trying to memorize your hands the way some boys memorize heroes.\n\nBy dawn, two sets of wings lie beside the cave like sleeping birds.\n\nThey look beautiful.\n\nBeauty is not the same as safety.",
+      "choices": [
+        {
+          "label": "TEST THE WINGS IN SMALL JUMPS",
+          "to": "S14"
+        },
+        {
+          "label": "SAVE TIME AND TRUST YOUR WORK",
+          "to": "S15"
+        }
+      ]
+    },
+    "S13": {
+      "text": "You work like a man pursued, because you are.\n\nWax drips down your fingers, hardening in ridges. Feathers stick to your skin and to Icarus's hair until he looks half-bird already.\n\nOutside, the search noises grow closer. Once, a torch passes across the cave mouth and you hold your breath until your lungs burn.\n\nYou finish the wings with less precision than you prefer, but precision is a luxury prisoners seldom have.\n\nWhen you lift the frames, they flex too much. Not broken—just uncertain.\n\nThe sky will test them without mercy.",
+      "choices": [
+        {
+          "label": "DO A QUICK TEST ANYWAY",
+          "to": "S14"
+        },
+        {
+          "label": "RISK FLIGHT IMMEDIATELY",
+          "to": "S16"
+        }
+      ]
+    },
+    "S14": {
+      "text": "You strap the wings on and take short runs along the cave's edge, feeling for balance.\n\nThe first hop catches a breath of air—just enough lift to make your stomach drop and your mind race.\n\nThe second hop goes better. The wing surface pulls at your shoulders like a living thing, wanting to open fully.\n\nIcarus's turn is worse. He laughs when he stumbles, but his eyes flick to the rocks below.\n\nYou adjust his straps, tighten the binding, add one more layer of feathers where the frame threatens to bend.\n\nThis is what fatherhood feels like: fastening a boy into danger and praying the knots hold.",
+      "choices": [
+        {
+          "label": "GIVE ICARUS A WARNING",
+          "to": "S15"
+        },
+        {
+          "label": "LET HIM FEEL INVINCIBLE",
+          "to": "S16"
+        }
+      ]
+    },
+    "S15": {
+      "text": "You take Icarus by the shoulders and force him to meet your eyes.\n\nListen to me, you say. The sky is not a playground. It is a law.\n\nYou point to the horizon. Fly a middle path. Too low and the sea will drink you. Too high and the sun will melt what holds you.\n\nIcarus nods quickly, eager to please. But you see it—behind the nod, behind the boyhood bravado.\n\nHe wants to prove something. To you. To Minos. To the gods.\n\nYou soften your voice. We do not need to impress the sun. We only need to survive it.",
+      "choices": [
+        {
+          "label": "TAKE FLIGHT AT FIRST LIGHT",
+          "to": "S16"
+        }
+      ]
+    },
+    "S16": {
+      "text": "You climb to the cliff's edge as the day brightens, the sea below a sheet of hammered metal.\n\nThe wings on your back shift with each step, whispering against your cloak. Icarus stands beside you, face turned toward the open air like it is calling his name.\n\nFor a moment, fear rises so sharply you almost step back.\n\nThen you remember the Labyrinth. You remember stone walls designed to keep you small.\n\nYou refuse to be small.\n\nYou leap.\n\nThe air catches you, and suddenly the world is enormous and quiet and full of possibility.",
+      "choices": [
+        {
+          "label": "FLY LOW OVER THE SEA",
+          "to": "S17"
+        },
+        {
+          "label": "CLIMB INTO THE OPEN SKY",
+          "to": "S18"
+        }
+      ]
+    },
+    "S17": {
+      "text": "You choose the safer-looking route, skimming above the waves where the sun feels distant and harmless.\n\nThe sea is loud here, and its breath is cold. Spray rises and kisses the feathers. Not much at first—just dampness.\n\nThen more. The wings gain weight the way guilt gains weight—slowly, then all at once.\n\nIcarus stays near you, but you can see the thrill in him. He dips closer to the water, laughs when the spray hits his face.\n\nYou shout for him to keep altitude. Your voice gets stolen by wind.\n\nYour shoulders ache from fighting the drag. Your hands sting from gripping the frame.\n\nLow is safer—until it isn't.",
+      "choices": [
+        {
+          "label": "CLIMB TO DRY THE WINGS",
+          "to": "S19"
+        },
+        {
+          "label": "STAY LOW AND POWER THROUGH",
+          "to": "S20"
+        }
+      ]
+    },
+    "S18": {
+      "text": "You climb into cleaner air where the wind is steady and the sea becomes a distant idea.\n\nThe sun feels warm here. Not threatening—inviting.\n\nIcarus laughs, a sound that is pure joy, and the sound does something terrible: it makes him feel chosen.\n\nHe banks upward, chasing the light. Wax begins to soften. You smell it faintly—sweet and wrong.\n\nIcarus! you shout, and your throat tightens around panic.\n\nHe turns, grinning, as if you are the only audience that matters.\n\nYou see a string of wax slip free and fall, glittering, toward the sea like a tear.",
+      "choices": [
+        {
+          "label": "CALL ICARUS BACK DOWN",
+          "to": "S21"
+        },
+        {
+          "label": "FOLLOW HIM HIGHER",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "S19": {
+      "text": "You climb gradually, searching for the middle band of sky where neither sea nor sun can easily claim you.\n\nThe wings lighten as the spray dries. The frame creaks, but it holds.\n\nYou glance at Icarus. His face is flushed with triumph. He looks older up here, like the wind is sculpting him into a man too quickly.\n\nThen his wing tip wobbles. One feather shears away and spirals downward.\n\nIcarus's laughter stops. For the first time since you left the cliff, he looks afraid.\n\nFear is useful if it teaches.\n\nYou edge closer, letting your shadow fall across his shoulder like a steadying hand.",
+      "choices": [
+        {
+          "label": "GUIDE HIM TO STABILITY",
+          "to": "S21"
+        },
+        {
+          "label": "FOCUS ON YOUR OWN FLIGHT",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "S20": {
+      "text": "You stay low.\n\nThe sea keeps reaching, and the wings keep drinking it. Feathers clump. Wax stiffens in places it shouldn't, then cracks when the frame flexes.\n\nYour arms burn from constant correction. Each gust feels like a fist.\n\nIcarus dips again, careless. His wing brushes spray and the feathers darken with water.\n\nYou shout. He waves, laughing—still thinking this is a story about bravery, not physics.\n\nThen the sea grabs him with a sudden upward gust, and his body lurches sideways.\n\nThe wing bends.\n\nThe bend becomes a tear.",
+      "choices": [
+        {
+          "label": "DIVE TO GRAB HIM",
+          "to": "S22"
+        },
+        {
+          "label": "ABANDON HIM TO SAVE YOURSELF",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "S21": {
+      "text": "Icarus is drifting upward again—slow, almost absent-minded—like a child stepping closer to a fire to see if it really burns.\n\nYou close the distance between you. Your voice becomes a rope you throw into the wind.\n\nDown, you command. Now.\n\nHe hears the tone more than the words. He flinches and banks toward you.\n\nFor a breath, relief blooms.\n\nThen the sun catches the edge of his wing. Wax softens at the seam. Feathers loosen like a poorly held promise.\n\nIcarus's eyes widen as he feels it happening.\n\nFalling does not wait for permission.",
+      "choices": [
+        {
+          "label": "CATCH HIM AND SHARE YOUR LIFT",
+          "to": "S22"
+        },
+        {
+          "label": "TRY TO STEER HIM TO LAND",
+          "to": "S23"
+        }
+      ]
+    },
+    "S22": {
+      "text": "You dive and hook an arm around Icarus's chest as he drops, the impact jolting your shoulder so hard you see stars in daylight.\n\nYour wings shudder under double weight. Wax groans. The frame complains like an old door forced open.\n\nIcarus clings to you, sobbing, not from pain but from shock—shock that the sky has rules he cannot charm.\n\nYou cannot carry him far like this. You can carry him long enough to choose where you both hit.\n\nBelow, the sea looks hungry.\n\nTo the side, a smear of coastline appears—rocks, yes, but rocks are at least a place.",
+      "choices": [
+        {
+          "label": "ANGLE FOR THE SHORELINE",
+          "to": "S24"
+        },
+        {
+          "label": "SLOW THE DESCENT INTO WATER",
+          "to": "S25"
+        }
+      ]
+    },
+    "S23": {
+      "text": "You shout for Icarus to follow you toward land, toward the darker strip of coast where cliffs break the waves.\n\nHe tries. He truly tries. But panic makes his movements violent, and violence breaks fragile things.\n\nA feather rains away. Then another. Wax beads drip from the frame.\n\nIcarus's eyes lock on yours. In them, you see the boy he was and the man he might have been.\n\nYou push your own wing close, offering him your slipstream, a pocket of calmer air.\n\nFor a moment, it helps.\n\nThen the wing fails at the shoulder joint with a crack like a snapped bone.",
+      "choices": [
+        {
+          "label": "DIVE AND GRAB HIM AT THE LAST SECOND",
+          "to": "S22"
+        },
+        {
+          "label": "WATCH HIM FALL AND SURVIVE ALONE",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "S24": {
+      "text": "You hit the rocky shore in a skid of pain and grit, wings exploding into feathers that whirl like startled birds.\n\nYour ribs scream. Your hands scrape raw on stone.\n\nIcarus tumbles from your grip and lies still for a heartbeat so long your mind tries to break.\n\nThen he coughs—sharp, wet—and inhales like a man who has been drowning in prophecy.\n\nYou crawl to him, and your vision blurs with relief and salt.\n\nThis is not how the myth is supposed to go.\n\nThat thought is both terrifying and beautiful.",
+      "choices": [
+        {
+          "label": "CHECK HIS WOUNDS",
+          "to": "S26"
+        },
+        {
+          "label": "HIDE BEFORE MINOS FINDS YOU",
+          "to": "S27"
+        }
+      ]
+    },
+    "S25": {
+      "text": "You aim for water, because water at least yields.\n\nYou hit with a slap that steals your breath and turns the world into cold, thrashing noise.\n\nWings dissolve around you. Wax breaks away in floating chunks. Feathers drift like dead leaves.\n\nIcarus surfaces beside you, coughing and choking, eyes wild.\n\nYou grab him by the collar and kick toward shore, every movement heavy, every breath stolen by salt.\n\nBehind you, the open sea stretches toward Crete.\n\nBefore you is unknown land and the small miracle of your son's breathing.",
+      "choices": [
+        {
+          "label": "DRAG YOURSELVES TO SHORE",
+          "to": "S26"
+        },
+        {
+          "label": "FLOAT AND REST TOO LONG",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "S26": {
+      "text": "You find shelter under a bent rock shelf. Wind howls above it, but here the air is calm enough to think.\n\nIcarus shivers uncontrollably. His skin is scraped, bruised, but intact. Alive.\n\nYou wrap him in your cloak and press your forehead to his. For a moment, you allow yourself to be nothing but a father.\n\nThen the world returns with its questions.\n\nWhere are you? What shore is this? Who rules here? How long until Minos sends ships to drag you back?\n\nIcarus whispers, barely audible: I'm sorry.\n\nYou answer with the only truth that matters: You are here.",
+      "choices": [
+        {
+          "label": "MAKE A FIRE AND RECOVER",
+          "to": "S28"
+        },
+        {
+          "label": "MOVE INLAND IMMEDIATELY",
+          "to": "S29"
+        }
+      ]
+    },
+    "S27": {
+      "text": "You force your body to move despite pain, because pain is preferable to chains.\n\nAlong the coast, you spot distant sails—small, far, but real.\n\nMinos's reach is not infinite, but it is persistent. If you linger, the sea will deliver you back like a washed-up offering.\n\nIcarus limps beside you, eyes lowered, shame heavier than his injuries.\n\nYou put a hand on his shoulder—not gentle, not angry, simply steady.\n\nWalk, you tell him. Not because you must. Because you choose.",
+      "choices": [
+        {
+          "label": "FIND A PATH INLAND",
+          "to": "S29"
+        },
+        {
+          "label": "HIDE UNTIL NIGHT",
+          "to": "S28"
+        }
+      ]
+    },
+    "S28": {
+      "text": "You make a small fire from driftwood and dried seaweed. The smoke smells wrong, but it's warmth.\n\nIcarus's shaking slows. Color returns to his face in hesitant waves.\n\nNight comes. The stars appear again, sharp and indifferent.\n\nYou stare at them and feel the weight of every story told about you—stories you haven't lived yet, stories other people think are inevitable.\n\nIcarus leans against you. Was it worth it? he asks.\n\nYou think of the Labyrinth. The Minotaur. The king's cold certainty.\n\nYou think of this fire, this shore, this living boy.\n\nYes, you say. But the sky does not forgive arrogance. Remember that.",
+      "choices": [
+        {
+          "label": "PROMISE A NEW LIFE",
+          "to": "S30"
+        },
+        {
+          "label": "SWEAR NEVER TO FLY AGAIN",
+          "to": "S30"
+        }
+      ]
+    },
+    "S29": {
+      "text": "Inland, the land rises into scrub and stone. You find a footpath used by shepherds—human signs, human possibility.\n\nYour lungs fill with air that doesn't taste like Crete's cages.\n\nStill, the fear remains, because escape is not a single action. It is a life-long habit.\n\nIcarus walks with his head down at first, then slowly lifts his gaze toward the horizon.\n\nYou see something new there: humility, yes—but also resolve.\n\nThat resolve is dangerous in one way and saving in another.\n\nIt can chase the sun. Or it can build a home.",
+      "choices": [
+        {
+          "label": "TEACH HIM DISCIPLINE",
+          "to": "S30"
+        },
+        {
+          "label": "LET HIM CHOOSE HIS OWN PATH",
+          "to": "S30"
+        }
+      ]
+    },
+    "S30": {
+      "text": "Days later, you stand on a ridge and look back at the sea.\n\nCrete is a line on the horizon. The palace is a rumor. The Labyrinth is a scar you carry in memory, not in chains.\n\nIcarus stands beside you, still bruised, still alive, watching the sun without worshiping it.\n\nThe myth you were born into tries to close around you like a net.\n\nBut nets can be cut. Stories can be rewritten.\n\nYou cannot control the gods.\n\nBut you can control the choices you make under their gaze.",
+      "choices": [
+        {
+          "label": "LIVE QUIETLY AND FREE",
+          "to": "END_GOOD"
+        },
+        {
+          "label": "SEEK A LIFE OF LEGENDS",
+          "to": "END_SPECIAL"
+        },
+        {
+          "label": "RETURN TO CHALLENGE MINOS",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "END_GOOD": {
+      "text": "GOOD ENDING — ESCAPE WITHOUT TRAGEDY\n\nYou and Icarus disappear into the ordinary world—villages, fields, work, and meals eaten without fear of horns in the dark.\n\nPeople will still tell stories about wings made of wax and feathers. They will still argue about pride and punishment.\n\nBut your version is quieter: a father who refused to let a king decide his son's ending.\n\nYears later, Icarus will look at the sun and remember the heat on his face—then turn his eyes back to earth, where living happens.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_BAD": {
+      "text": "BAD ENDING — THE MYTH CLAIMS ITS PRICE\n\nWhether by arrogance, panic, or cruelty, the sky takes what it always waits to take: certainty.\n\nA wing fails. A body falls. The sea receives.\n\nYou survive long enough to understand the true cruelty of prophecy: it doesn't need to be true. It only needs to be repeated.\n\nMinos will sleep soundly again, convinced the world still obeys its old stories.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_SPECIAL": {
+      "text": "SPECIAL ENDING — ICARUS LIVES, AND THE WORLD REMEMBERS\n\nIcarus survives, and that survival becomes its own kind of legend.\n\nNot the legend of a boy punished for reaching too high, but the legend of a boy who learned the shape of danger and chose wisdom anyway.\n\nSomeday, when someone asks him about the wings, he will smile—not with pride, but with gratitude.\n\nThe sky, he will say, is beautiful. And it is not owed to you.\n\nAnd the gods, if they are listening, will find no easy lesson to extract from a story that refused to end the way it was supposed to.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    }
+  }
+}
