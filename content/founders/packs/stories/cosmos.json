@@ -1,422 +1,431 @@
 {
-  "story_id": "creation_of_the_cosmos",
-  "title": "Creation Of The Cosmos",
-  "tagline": "primordial myth, cosmic forces, genesis",
-  "version": "placeholder_v2",
-  "start": "s01",
-  "sections": [
-    {
-      "id": "s01",
-      "text": "Creation Of The Cosmos: The silence here feels intentional. You observe first, letting the pattern reveal itself.",
+  "meta": {
+    "id": "cosmos",
+    "title": "Creation of the Cosmos",
+    "route": "story_cosmos",
+    "schema": "versecraft-1.0",
+    "tone": "hard science cosmology, reflective but rigorous",
+    "notes": "Hard-science tone. 30 sections (S01–S30) with deep prose in every scene. Includes nebulae, galaxy formation, star lifecycles, solar system architecture, Kuiper Belt and Oort Cloud. Good/Bad/Special endings. All endings return to S01.",
+    "blurb": "You set the initial conditions and watch physics do the rest: expansion, cooling, galaxies, stars, planets, and the long road to minds that can measure the sky."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "Nothing begins with a story. It begins with parameters.\n\nThere is no space yet, no time, no distance to measure. There is only a state that can be described, in principle, by numbers that have not been assigned. If you want a universe, you do not speak it into being. You choose a set of initial conditions and allow equations to unfold.\n\nCreation here is not a gesture. It is a constraint: a decision about how much energy, how smooth, how curved, how asymmetric, how many degrees of freedom are permitted. The rest will be consequence.\n\nThe first choice is the one that lasts the longest: do you start with a universe that is almost perfectly uniform, or one that is slightly lumpy, with tiny irregularities that can later grow into structure?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s02"
+          "label": "SMOOTH START",
+          "to": "S02"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s02"
+          "label": "LUMPY START",
+          "to": "S03"
         }
       ]
     },
-    {
-      "id": "s02",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
+    "S02": {
+      "text": "You set the early universe nearly uniform, with only the faintest statistical fluctuations.\n\nThat choice buys predictability. Density variations exist, but they are minimal, like a barely rippled surface. In such a universe, gravity has less to amplify. Structure will form, but it will take longer, and it will be more fragile against later disruption.\n\nUniformity also reduces early turbulence in the radiation field. Temperature differences smooth out quickly. The cosmic microwave background, when it eventually forms, will be almost featureless except for a whisper of anisotropy.\n\nThis is a quiet seed. If anything interesting happens later, it will be because time was generous and the laws were stable.\n\nNow you must decide how the earliest expansion behaves: do you allow a rapid inflation-like phase that stretches space enormously, or do you begin with a slower expansion that leaves more curvature and chaos behind?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s03"
+          "label": "RAPID INFLATION",
+          "to": "S04"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s03"
+          "label": "SLOW EXPANSION",
+          "to": "S05"
         }
       ]
     },
-    {
-      "id": "s03",
-      "text": "A detail you missed now clicks into place. You commit to action before doubt can set in.",
+    "S03": {
+      "text": "You allow slightly stronger primordial fluctuations: small density differences distributed like a field of imperfect noise.\n\nIn a strict sense, the universe remains remarkably smooth. The lumps are not mountains; they are parts-per-hundred-thousand variations in energy density. But gravity is patient and multiplicative. Tiny advantages compound over billions of years.\n\nWith stronger fluctuations, matter will find itself earlier. Dark matter halos will assemble sooner. Gas will have wells to fall into. The first stars can appear earlier, and the universe can transition from darkness to light on a shorter schedule.\n\nThe trade is that early structure is more violent. Collisions are harsher. Feedback is stronger. Some regions become overactive, while others remain empty.\n\nYou still must choose the expansion history: do you drive an inflation-like phase to flatten the universe and set the spectrum of fluctuations, or do you allow a less dramatic beginning with more residual curvature?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s04"
+          "label": "RAPID INFLATION",
+          "to": "S04"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s04"
+          "label": "SLOW EXPANSION",
+          "to": "S05"
         }
       ]
     },
-    {
-      "id": "s04",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
+    "S04": {
+      "text": "You initiate a rapid inflation-like phase: space expands exponentially for a brief interval.\n\nThe effect is not a push on matter; it is the stretching of the metric itself. Regions that were once microscopically close become separated by astronomical distances. Curvature flattens. Any pre-existing debris of initial irregularity becomes diluted to irrelevance.\n\nQuantum-scale fluctuations are not erased. They are promoted: stretched beyond the horizon and frozen as classical perturbations. Later, those perturbations become the scaffold for galaxies and clusters.\n\nInflation ends. Reheating fills the universe with a hot plasma of particles. The temperature is high enough that matter cannot persist in familiar forms. Everything is interaction.\n\nNext you must decide the balance of components that dominate the universe over time: will matter dominate earlier, making structure easier, or will dark energy-like behavior assert itself sooner, accelerating expansion and starving gravity?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s05"
+          "label": "MATTER DOMINANCE",
+          "to": "S06"
         },
         {
-          "text": "Investigate further",
-          "to": "s06"
+          "label": "EARLY ACCELERATION",
+          "to": "S07"
         }
       ]
     },
-    {
-      "id": "s05",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in.",
+    "S05": {
+      "text": "You allow a slower early expansion: no dramatic inflation-like flattening, no enormous stretching of horizons.\n\nThe universe remains more curved and more sensitive to its starting geometry. Causal regions are smaller. Thermal irregularities can persist longer. The early plasma is less homogenized.\n\nStructure can still form, but the price is unpredictability. Some regions may recollapse. Others may expand too quickly. The overall distribution of matter becomes less uniform on the largest scales.\n\nReheating still occurs as interactions redistribute energy into particles, but the resulting universe carries more memory of its initial asymmetries.\n\nYou must decide whether you will stabilize this memory by favoring matter dominance later on, or whether you allow acceleration to take hold early, pulling regions apart before gravity can do much with them.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s06"
+          "label": "MATTER DOMINANCE",
+          "to": "S06"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s06"
+          "label": "EARLY ACCELERATION",
+          "to": "S07"
         }
       ]
     },
-    {
-      "id": "s06",
-      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes.",
+    "S06": {
+      "text": "You bias the cosmic budget toward matter dominance after the initial hot phase.\n\nAs the universe expands and cools, radiation energy density drops quickly. Matter, scaling more gently with expansion, takes over. Gravity gets a long interval where it can amplify small density contrasts into halos.\n\nDark matter, interacting weakly with radiation, decouples early and begins to clump first. Baryonic matter follows later, falling into those gravitational wells once the pressure of the photon-baryon fluid relaxes.\n\nFrom this point forward, structure formation is not a question of 'if' but 'where' and 'how fast.' You have set up a universe that wants to build.\n\nNow you must decide the spectrum of initial fluctuations on different scales: do you favor many small halos that later merge, or fewer large-scale overdensities that create giant structures early?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s07"
+          "label": "SMALL HALOS",
+          "to": "S08"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s07"
+          "label": "LARGE STRUCTURE",
+          "to": "S09"
         }
       ]
     },
-    {
-      "id": "s07",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself. This choice will echo farther than you expect.",
+    "S07": {
+      "text": "You allow a stronger early acceleration component, dark energy-like in effect, to assert itself sooner.\n\nExpansion begins to outpace the growth of structure earlier in cosmic time. Gravity still works, but it has less time to gather material into deep wells before distances inflate and peculiar velocities damp.\n\nGalaxies can form, but clusters are rarer. Voids become larger. The cosmic web is thinner, more fragile, with long filaments that never fully knot into massive nodes.\n\nFrom the perspective of life, such a universe can be lonely. Not empty, but separated. The sky holds islands of light, fewer mergers, fewer opportunities for enrichment in some regions.\n\nYou must decide whether to counterbalance this by strengthening the small-scale fluctuation spectrum, giving gravity more seeds to work with, or whether you accept a quieter cosmos as the dominant outcome.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s08"
+          "label": "STRENGTHEN SMALL-SCA",
+          "to": "S08"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s08"
+          "label": "ACCEPT A QUIETER COS",
+          "to": "S10"
         }
       ]
     },
-    {
-      "id": "s08",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
+    "S08": {
+      "text": "You favor a spectrum that produces many small halos early on.\n\nThese halos assemble hierarchically. They merge and accrete, building larger structures over time. The cosmic web becomes richly textured: filaments, sheets, nodes, and expanding voids. It is not random; it is the statistical outcome of gravity acting on noise.\n\nGas falls into these halos, shocks, and cools. The cooling pathways matter: hydrogen line cooling, helium, and eventually molecular cooling in dense pockets. Where cooling is efficient, baryons condense into the first luminous objects.\n\nThe first galaxies in this scenario are small and messy. They interact frequently. They pollute their surroundings with heavy elements earlier, because there are many sites of star formation and death.\n\nNow decide the earliest star formation mode: do you allow a top-heavy initial mass function (many massive first stars), or a more moderate distribution that makes fewer extreme stars early on?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s09"
+          "label": "MASSIVE STARS",
+          "to": "S11"
         },
         {
-          "text": "Investigate further",
-          "to": "s10"
+          "label": "MODERATE STARS",
+          "to": "S12"
         }
       ]
     },
-    {
-      "id": "s09",
-      "text": "Something shifts, subtle but irreversible. You observe first, letting the pattern reveal itself.",
+    "S09": {
+      "text": "You favor initial conditions that emphasize larger-scale overdensities.\n\nInstead of many small halos, the universe produces fewer, more massive structures earlier. The web is coarser: thick filaments feeding large nodes. Mergers happen, but the dominant feature is early assembly of big gravitational wells.\n\nGas infall into such wells is energetic. Shocks heat plasma to high temperatures. Cooling can be inhibited, delaying star formation in the largest halos while allowing it in smaller substructures embedded within them.\n\nThis path can produce impressive galaxy clusters early, but it can also postpone the gentle, widespread enrichment that later helps planet formation.\n\nDecide how efficient cooling becomes in dense regions: do you enhance cooling through molecular pathways, or do you restrict it so that only the densest pockets ignite stars?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s10"
+          "label": "ENHANCE COOLING",
+          "to": "S11"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s10"
+          "label": "RESTRICT COOLING",
+          "to": "S12"
         }
       ]
     },
-    {
-      "id": "s10",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options.",
+    "S10": {
+      "text": "You accept a quieter cosmos: fewer deep wells, less frequent mergers, a thinner web.\n\nLarge-scale structure still forms, because gravity never fully loses, but it forms slowly and in fewer places. The universe becomes a set of separated archipelagos rather than a tightly connected continent.\n\nStar formation proceeds in bursts within isolated halos. Feedback from the first stars can evacuate gas more easily, because halos are shallower. Some regions go dark for long intervals after a single energetic episode.\n\nFrom a distance, this universe has a certain elegance: long dark spans punctuated by careful light. From within, the sky can be sparse.\n\nYou decide whether to compensate by making star formation more sustained inside the halos that do form, or to keep the brief, violent burst pattern that tends to sterilize neighborhoods before they mature.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s11"
+          "label": "SUSTAINED STARS",
+          "to": "S12"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s11"
+          "label": "BURST CYCLES",
+          "to": "S11"
         }
       ]
     },
-    {
-      "id": "s11",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S11": {
+      "text": "You allow a top-heavy early star formation mode: many massive stars in the first generation.\n\nMassive stars burn hot and fast. They emit intense ultraviolet radiation that ionizes surrounding gas and can halt local star formation by heating and dispersing the material. Their lives are brief: millions of years, not billions.\n\nBut their deaths are transformative. Supernovae inject heavy elements and stir gas. They create metal-rich shells and cavities that later become star-forming nebulae. They also seed magnetic fields and turbulence.\n\nThis path accelerates chemical enrichment. Carbon, oxygen, silicon, iron: the ingredients for rocky planets arrive earlier. The universe becomes habitable sooner in some regions, at the cost of early violence.\n\nYour next decision: do you allow black holes from these massive stars to grow aggressively, shaping galaxies through energetic feedback, or do you keep early black hole growth modest?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s12"
+          "label": "AGGRESSIVE BH",
+          "to": "S13"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s12"
+          "label": "MODEST BH",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s12",
-      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options.",
+    "S12": {
+      "text": "You favor a more moderate early star formation mode.\n\nStars still form, but the distribution leans toward longer-lived objects. Fewer hyper-energetic ultraviolet sources appear at once, and gas has a better chance to remain bound to small halos after initial star formation episodes.\n\nEnrichment happens more gradually. Nebulae form as feedback from ordinary supernovae and stellar winds shapes clouds into filaments and pillars. Star formation can proceed in sequential waves rather than one overwhelming flash.\n\nThis produces calmer neighborhoods and longer timescales for disks around stars to evolve without being blasted by nearby massive companions.\n\nNext you decide the role of black holes in early galaxies: do you allow rapid central black hole growth and quasar phases, or do you keep most galaxies in a slow-accretion regime?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s13"
+          "label": "QUASAR PHASES",
+          "to": "S13"
         },
         {
-          "text": "Investigate further",
-          "to": "s14"
+          "label": "QUIETER GALAXIES",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s13",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
+    "S13": {
+      "text": "You allow early black holes to grow rapidly in some galaxies, producing quasar-like phases.\n\nAccretion disks convert gravitational potential energy into radiation with extreme efficiency. Jets and winds push on surrounding gas. In some systems, this feedback regulates star formation by ejecting gas or heating it so it cannot cool.\n\nThe result is a complex ecosystem: black holes do not merely consume; they sculpt. They can shut down star formation in a galaxy's core while compressing gas in outer regions, triggering new nebulae along shock fronts.\n\nOn cosmic scales, this feedback changes the distribution of baryons and can delay the formation of delicate disks around stars in certain environments.\n\nNow choose your signature galaxy morphology: do you favor many spiral galaxies with stable disks, or do you favor more ellipticals formed by frequent mergers?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s14"
+          "label": "SPIRAL GALAXIES",
+          "to": "S15"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s14"
+          "label": "ELLIPTICALS",
+          "to": "S16"
         }
       ]
     },
-    {
-      "id": "s14",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself. There\u2019s no neutral ground anymore.",
+    "S14": {
+      "text": "You keep black hole growth modest for most of cosmic history, avoiding widespread quasar feedback.\n\nGalaxies remain more gas-rich for longer. Star formation can continue in disks without being repeatedly quenched by powerful central engines. The cosmic environment is less hostile to fragile structures like planetary disks.\n\nClusters still form, mergers still happen, but the most extreme radiative episodes are rarer. The universe is still energetic; it is simply less prone to galaxy-wide sterilization events.\n\nWith calmer conditions, you can favor the slow assembly of ordered structures: thin disks, long-lived stars, and stable orbital architectures.\n\nNow choose your signature galaxy morphology: do you favor many spiral galaxies with stable disks, or do you favor more ellipticals formed by frequent mergers?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s15"
+          "label": "SPIRAL GALAXIES",
+          "to": "S15"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s15"
+          "label": "ELLIPTICALS",
+          "to": "S16"
         }
       ]
     },
-    {
-      "id": "s15",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself. A revelation reframes everything you thought you understood.",
+    "S15": {
+      "text": "You tilt the outcome toward disk galaxies: spirals with ordered rotation.\n\nAngular momentum matters. Gas cools while conserving it, settling into disks. Density waves produce spiral arms, not as permanent structures but as patterns that sweep through and compress gas, forming nebulae and young star clusters.\n\nWithin these galaxies, you see the characteristic cycle: molecular clouds form, stars ignite, winds and supernovae sculpt new cavities, and enriched material falls back to form the next generation. Nebulae are the visible boundary layer between gravity and feedback.\n\nDisk galaxies are good at sustaining star formation over long timescales. They produce a steady supply of heavy elements without exhausting themselves too quickly.\n\nNow you choose a target: focus on building one exemplary star system with a stable habitable zone, or distribute habitable candidates broadly across many systems with less fine-tuning.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s16"
+          "label": "ONE SYSTEM",
+          "to": "S17"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s16"
+          "label": "MANY SYSTEMS",
+          "to": "S18"
         }
       ]
     },
-    {
-      "id": "s16",
-      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes.",
+    "S16": {
+      "text": "You tilt the outcome toward merger-built ellipticals and spheroids.\n\nMergers scramble disks. Stars are thrown into random orbits. Gas can be heated and consumed quickly in starbursts, then depleted, leaving galaxies that are bright but aging, with little cold gas for continued star formation.\n\nEllipticals can still host planetary systems around long-lived stars, especially if they formed earlier and retained enriched material, but their late-time environment is often quieter and less replenished. Star formation becomes episodic and localized.\n\nClusters of galaxies in this scenario are more prominent, and gravitational interactions are frequent. The sky in such regions can be crowded with light, but the conditions for stable, undisturbed disks can be rarer near dense cores.\n\nNow choose a target: focus on building one exemplary star system with a stable habitable zone, or distribute habitable candidates broadly across many systems with less fine-tuning.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s17"
+          "label": "ONE SYSTEM",
+          "to": "S17"
         },
         {
-          "text": "Investigate further",
-          "to": "s18"
+          "label": "MANY SYSTEMS",
+          "to": "S18"
         }
       ]
     },
-    {
-      "id": "s17",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
+    "S17": {
+      "text": "You choose to focus on one system and get the architecture right.\n\nSelect a star: not too massive, not too dim. A G-type star is familiar, but not required; K-type stars offer longer stable lifetimes, while M-dwarfs complicate habitability with flares and tidal locking. You choose stability and time.\n\nA protoplanetary disk forms: gas and dust orbiting a young star. In this disk, dust grains collide and stick, becoming pebbles, then planetesimals. Gravity takes over from chemistry. The disk is a factory, but it is also a battlefield.\n\nNow the first hard choice of planetary design: do you place a massive giant planet early, which can shepherd material and protect inner worlds from impacts, or do you keep giant planets small and distant to avoid destabilizing the inner system?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s18"
+          "label": "EARLY GIANT",
+          "to": "S19"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s18"
+          "label": "DISTANT GIANTS",
+          "to": "S20"
         }
       ]
     },
-    {
-      "id": "s18",
-      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
+    "S18": {
+      "text": "You distribute habitable candidates broadly: many systems, many chances.\n\nThis is not fine-tuning. It is statistical engineering. You allow a wide range of stellar types and disk compositions, accepting that most candidates will fail but some will succeed for reasons no one anticipated at the start.\n\nIn this path, you emphasize robust chemical enrichment across the galaxy and a steady pace of star formation so that rocky planets and volatile delivery can occur in many places.\n\nThe result is a cosmos with many potential cradles, each with its own hazards: flares, radiation, tidal forces, impacts, and chemical dead ends.\n\nNow decide whether you will bias toward quieter stellar neighborhoods (farther from galactic centers and dense clusters) or toward crowded regions with more enrichment and more disruption.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s19"
+          "label": "QUIET REGIONS",
+          "to": "S20"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s19"
+          "label": "CROWDED REGIONS",
+          "to": "S19"
         }
       ]
     },
-    {
-      "id": "s19",
-      "text": "Something shifts, subtle but irreversible. You move with care, knowing haste invites mistakes.",
+    "S19": {
+      "text": "You lean into enrichment and dynamism: giant planets, crowded regions, or both.\n\nIn a planetary system, a massive giant can shape the impact history. It can eject comets, capture them, or redirect them. It can also destabilize inner orbits if placed poorly. The same object can be shield or executioner.\n\nIn a crowded galactic region, nearby supernovae and interactions can deliver heavy elements and compress gas, but they can also strip atmospheres and raise radiation backgrounds.\n\nComplexity thrives on ingredients, but ingredients arrive attached to hazards. You are not choosing 'safe' versus 'dangerous.' You are choosing which dangers dominate.\n\nNow decide how you handle volatile delivery to rocky worlds: do you rely primarily on early in-disk chemistry and migration, or do you emphasize later delivery via icy bodies from the outer system?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s20"
+          "label": "ICE DELIVERY",
+          "to": "S21"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s20"
+          "label": "DISK WATER",
+          "to": "S22"
         }
       ]
     },
-    {
-      "id": "s20",
-      "text": "Something shifts, subtle but irreversible. You move with care, knowing haste invites mistakes.",
+    "S20": {
+      "text": "You bias toward stability: quieter neighborhoods, less disruptive giants, longer timescales.\n\nStability does not mean stagnation. It means the disk and its planets can evolve without being reset repeatedly by close stellar passages or violent bombardment episodes that never end.\n\nQuiet neighborhoods reduce the chance of nearby supernova sterilization and reduce gravitational perturbations that can strip away Oort clouds or destabilize comet reservoirs prematurely.\n\nIn such systems, habitability is a long experiment. The risk is that without enough perturbations, volatile delivery can be insufficient, or key evolutionary pressure can be too weak to drive complexity.\n\nNow decide how you handle volatile delivery to rocky worlds: do you emphasize outer-system delivery via icy bodies, or do you favor in-disk chemistry and migration that places water and organics early?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s21"
+          "label": "ICE DELIVERY",
+          "to": "S21"
         },
         {
-          "text": "Investigate further",
-          "to": "s22"
+          "label": "DISK WATER",
+          "to": "S22"
         }
       ]
     },
-    {
-      "id": "s21",
-      "text": "Something shifts, subtle but irreversible. You observe first, letting the pattern reveal itself. There\u2019s no neutral ground anymore.",
+    "S21": {
+      "text": "You emphasize late volatile delivery from the outer system.\n\nBeyond the snow line, water ice is stable. Icy planetesimals form with organics and volatiles. Over time, gravitational interactions scatter them inward. Some strike rocky worlds, delivering water and carbon. Some miss. Some are ejected entirely.\n\nThis mechanism naturally creates reservoirs: a Kuiper Belt-like region of icy bodies and, farther out, an Oort Cloud-like swarm that can extend tens of thousands of astronomical units from the star.\n\nThe Oort Cloud is not a ring you build by hand. It is a statistical halo assembled by scattering and weak perturbations from passing stars and the galactic tide. It is a memory of early chaos stored far away.\n\nNow decide whether you include a late heavy bombardment-like epoch: a period of increased impacts that can sterilize early life but also deliver critical chemistry and reset climates.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s22"
+          "label": "LATE BOMBARDMENT",
+          "to": "S23"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s22"
+          "label": "AVOID BOMBARDMENT",
+          "to": "S24"
         }
       ]
     },
-    {
-      "id": "s22",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
+    "S22": {
+      "text": "You favor early in-disk chemistry and migration.\n\nWater can form in the disk and be transported inward on grains and planetesimals. Planet migration can bring volatile-rich material into the inner system earlier, sometimes violently, sometimes gently, depending on disk dynamics and resonance capture.\n\nThis approach can produce wet rocky worlds without requiring a long period of comet impacts. It can also create volatile-rich super-Earths or mini-Neptunes if the timing is off, worlds with thick atmospheres that may or may not allow surface habitability.\n\nOuter reservoirs still form, but the Oort Cloud becomes less central to the story. The system's habitability depends more on the early disk's temperature gradients, chemistry, and the timing of gas dispersal.\n\nNow decide whether you allow significant planet migration through the inner system, which can mix material dramatically, or whether you restrict migration to preserve stable, widely spaced rocky orbits.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s23"
+          "label": "STRONG MIGRATION",
+          "to": "S23"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s23"
+          "label": "STABLE ORBITS",
+          "to": "S24"
         }
       ]
     },
-    {
-      "id": "s23",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself.",
+    "S23": {
+      "text": "You allow a dramatic reshaping event: either a bombardment epoch or strong migration.\n\nIn a bombardment-like scenario, outer bodies are destabilized and sent inward in waves. Impacts can boil oceans and erase early biospheres, but they also deliver water, organics, and new mineral surfaces. Habitability becomes a delayed property, earned after the noise subsides.\n\nIn a migration scenario, giant planets move through resonances, scattering planetesimals and redistributing material. The inner system can be scrubbed clean and rebuilt. Some rocky worlds are lost. Others are delivered into perfect places by accident and resonance.\n\nThis is a universe where outcomes are not gentle. They are selected by survival through upheaval. If life emerges, it will do so on worlds that endured a gauntlet.\n\nNow decide whether you provide a large, stabilizing moon for the primary habitable world, which can affect axial tilt stability and tides, or whether you leave the system without such a companion and accept higher climatic variability.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s24"
+          "label": "STABILIZING MOON",
+          "to": "S25"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s24"
+          "label": "VARIABLE TILT",
+          "to": "S26"
         }
       ]
     },
-    {
-      "id": "s24",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in.",
+    "S24": {
+      "text": "You favor stability: avoid a major late bombardment and restrict violent migration.\n\nVolatile delivery still occurs, but it is smoother, spread across long timescales. Impacts are smaller, more frequent, less catastrophic. Climate can settle earlier. Oceans can persist without repeated boiling.\n\nStable spacing of planets reduces the chance of chaotic resonance crossings. The inner system becomes a quiet laboratory where chemistry can build complexity without being reset by asteroid-scale violence every few million years.\n\nThe risk is complacency: fewer resets can mean fewer evolutionary bottlenecks, but that is not a rule, only a possibility. Complexity is not guaranteed by turmoil; it is only shaped by it.\n\nNow decide whether you provide a large, stabilizing moon for the primary habitable world, or whether you accept a more variable axial tilt and let climate swings act as a long-term driver of change.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s25"
+          "label": "STABILIZING MOON",
+          "to": "S25"
         },
         {
-          "text": "Investigate further",
-          "to": "s26"
+          "label": "VARIABLE TILT",
+          "to": "S26"
         }
       ]
     },
-    {
-      "id": "s25",
-      "text": "You realize this moment has been building for a while. You slow your breathing and assess your options.",
+    "S25": {
+      "text": "You allow a large moon to form via a giant impact-like event.\n\nAngular momentum is redistributed. A debris disk forms and coalesces into a satellite. Over time, tides dissipate energy, affecting rotation rates and ocean mixing. Axial tilt becomes more stable against chaotic perturbations.\n\nSuch a moon is not a prerequisite for habitability, but it can shape it. It moderates seasons, influences tides, and may contribute to long-term climate stability. It also provides a constant gravitational companion that can influence plate tectonics indirectly through tidal dissipation.\n\nThis world now has a stable rhythm. Day length evolves. Seasons become predictable. Shorelines pulse with tides. Chemistry gets repetition, and repetition is a kind of advantage.\n\nNow decide whether you encourage long-term geologic activity: plate tectonics and a carbon cycle that can regulate climate, or whether you allow the planet to become geologically quiet sooner, relying on initial conditions alone.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s26"
+          "label": "PLATE TECTONICS",
+          "to": "S27"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s26"
+          "label": "QUIET GEOLOGY",
+          "to": "S28"
         }
       ]
     },
-    {
-      "id": "s26",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
+    "S26": {
+      "text": "You leave axial tilt more variable, without a large stabilizing moon.\n\nClimate becomes more chaotic on long timescales. The planet can swing between extremes. Ice ages may be deeper. Warm intervals may be more intense. Coastal zones shift. Habitats fragment and reconnect.\n\nVariability can be destructive, but it also creates selection pressure and ecological diversity. Systems adapt to change or fail. If intelligence emerges, it may do so in a world that trained it to plan and anticipate.\n\nWithout a large moon, tides may be weaker and less structured, but other factors can compensate: orbital resonances, ocean basin geometry, and atmospheric dynamics. There is no single knob that sets complexity. There is only a landscape of constraints.\n\nNow decide whether you encourage long-term geologic activity: plate tectonics and a carbon cycle that can regulate climate, or whether you allow the planet to become geologically quiet sooner, relying on initial conditions alone.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s27"
+          "label": "PLATE TECTONICS",
+          "to": "S27"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s27"
+          "label": "QUIET GEOLOGY",
+          "to": "S28"
         }
       ]
     },
-    {
-      "id": "s27",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
+    "S27": {
+      "text": "You encourage sustained geologic activity.\n\nHeat flow persists. Mantle convection continues. Plates recycle crust, exposing fresh minerals and driving a long-term carbon-silicate cycle. Volcanoes outgas. Weathering draws down greenhouse gases. Climate becomes a dynamic equilibrium rather than a fixed state.\n\nHydrothermal systems provide chemical gradients. Continents drift, collide, erode, and re-form. Nutrients cycle between land and sea. The planet remains chemically awake.\n\nIn such conditions, life has more pathways to increase complexity. Not because tectonics creates intelligence, but because it maintains environmental variety over deep time and prevents early stagnation.\n\nNow decide how the first replicators arise: do you allow a rapid origin of life once conditions permit, or do you require rare catalytic circumstances so that biogenesis is delayed and more contingent?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s28"
+          "label": "RAPID LIFE",
+          "to": "S29"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s28"
+          "label": "RARE LIFE",
+          "to": "S30"
         }
       ]
     },
-    {
-      "id": "s28",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes. This choice will echo farther than you expect.",
+    "S28": {
+      "text": "You allow geologic activity to fade sooner.\n\nHeat flow declines. Without robust plate tectonics, carbon cycling becomes less responsive. Volcanism becomes sporadic. Continents, if they exist, become stable. Ocean chemistry can drift toward steady states that are hard to escape.\n\nLife can still arise and persist, but evolutionary innovation can be constrained by fewer geochemical gradients and fewer planetary-scale cycles that keep nutrient fluxes and climate in motion.\n\nThis is a world where habitability can be long but narrow: stable conditions that support persistence, yet may not encourage frequent leaps in complexity.\n\nNow decide how the first replicators arise: do you allow rapid biogenesis once conditions permit, or do you require rare catalytic circumstances so that biogenesis is delayed and more contingent?",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s29"
+          "label": "RAPID LIFE",
+          "to": "S29"
         },
         {
-          "text": "Investigate further",
-          "to": "s30"
+          "label": "RARE LIFE",
+          "to": "S30"
         }
       ]
     },
-    {
-      "id": "s29",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes. This is the last point where retreat is still possible.",
+    "S29": {
+      "text": "You allow life to begin once chemistry has enough time and structure.\n\nReplication emerges from networks of reactions. Membranes form. Metabolism appears as a set of constraints that harvest gradients. Error and variation become features, not bugs. Natural selection begins without announcement.\n\nOver time, photosynthesis evolves and changes the atmosphere. Oxygen accumulates slowly, then faster. Complex cells appear. Multicellularity arises. Ecosystems become layered with predators, symbionts, and the long mathematics of competition and cooperation.\n\nEventually, nervous systems evolve. Then language. Then instruments. A mind looks up, not to worship, but to measure. It infers expansion. It reconstructs nucleosynthesis. It discovers the cosmic microwave background and writes down the same kinds of equations you began with.\n\nThe universe becomes self-aware locally. Not everywhere, not permanently, but enough for the cosmos to ask about itself.\n\nNow decide the long-term fate: do you allow civilizations time to spread and preserve knowledge across stars, or do you keep the cosmic hazards high so that intelligence remains rare and transient?",
       "choices": [
         {
-          "text": "See it through to the end",
-          "to": "s30"
+          "label": "LONG CIV",
+          "to": "END_GOOD"
         },
         {
-          "text": "Pull back at the last second",
-          "to": "s27"
+          "label": "HIGH HAZARDS",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s30",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
-      "choices": [],
-      "ending": true,
-      "ending_type": "resolution"
+    "S30": {
+      "text": "You require rare catalytic conditions for life to begin.\n\nChemistry runs for a long time without crossing the threshold into replication. Oceans churn. Hydrothermal vents breathe. Organic molecules form and break. The planet is habitable in the narrow physical sense, but biologically silent.\n\nEventually, in one place, with one set of mineral surfaces and one improbable alignment of gradients, replication starts. It is later than it could have been, and the window of planetary habitability is narrower because geologic clocks keep ticking.\n\nLife appears, but it begins under pressure: less time before the star brightens, less time before atmospheric escape, less time before tectonic slowdown or climate drift. Evolution accelerates where it can and fails where it must.\n\nThis universe can still produce minds, but it does so with fewer attempts and less margin for error. The story becomes more contingent, more fragile, more precious.\n\nNow decide the long-term fate: do you grant enough time for intelligence to stabilize and spread, or do you let the late start be the limiting factor that keeps awareness brief?",
+      "choices": [
+        {
+          "label": "GRANT TIME",
+          "to": "END_SPECIAL"
+        },
+        {
+          "label": "LATE LIMIT",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "END_GOOD": {
+      "text": "GOOD ENDING -- A MEASURABLE UNIVERSE\n\nYour initial conditions produced a cosmos that builds structure and then holds it long enough for observers to appear in multiple places. They measure redshifts, map the cosmic web, and learn that atoms in their bodies were forged in stars that died billions of years before they were born.\n\nAcross long time, knowledge becomes distributed rather than local. When one world fails, another remembers. Signals travel. Archives persist. The universe does not become 'safe,' but it becomes resilient to local catastrophe.\n\nThe most important outcome is not comfort. It is continuity: the ability for complexity to survive long enough to understand what made it possible.\n\nIn this ending, you do not need to intervene. Physics runs. Life adapts. The cosmos is, in a limited but real sense, awake.",
+      "choices": [
+        {
+          "label": "RESTART",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_BAD": {
+      "text": "BAD ENDING -- A BEAUTIFUL SILENCE\n\nStructure forms, but the timeline is unfavorable. Expansion accelerates too soon, or hazards remain too high, or biogenesis begins too late and collapses under narrow margins. Galaxies glow. Stars burn. Planets turn in the dark.\n\nThere may be microbes. There may be brief, local intelligence that rises and falls without spreading. But long-lived, distributed awareness never takes hold. The universe remains mostly unobserved from within.\n\nThis is not a failure of physics. It is an outcome of constraints. The equations ran honestly. The parameters you chose produced a cosmos where meaning is rare and easily erased.\n\nFrom the outside, it is still magnificent: nebulae, supernova remnants, spiral arms, and the quiet geometry of expansion. From the inside, it is mostly empty of questions.\n\nThe universe exists. It just does not remember itself.",
+      "choices": [
+        {
+          "label": "RESTART",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_SPECIAL": {
+      "text": "SPECIAL ENDING -- A LATE-SPARK CIVILIZATION\n\nLife begins late and under pressure, but it refuses to stay small. Intelligence emerges in a tighter window and learns quickly because it must. It treats time as the scarce resource it is and builds outward with urgency rather than comfort.\n\nInstead of slowly expanding over millions of years, it compacts progress: automated probes, self-replicating factories, archives seeded across the outer system and beyond. It uses long-lived stars and stable orbits as libraries for information.\n\nIn this ending, the Oort Cloud and Kuiper-like reservoirs become not only debris fields but infrastructure: waystations, fuel sources, and distant, cold vaults for memory. The outer system becomes a ring of persistence around a fragile inner world.\n\nAwareness spreads not because the universe was gentle, but because a late start forced efficiency. The cosmos becomes self-measuring in fewer places, but those places endure.\n\nThe universe does not give them much. They take just enough time to matter.",
+      "choices": [
+        {
+          "label": "RESTART",
+          "to": "S01"
+        }
+      ]
     }
-  ]
+  }
 }
