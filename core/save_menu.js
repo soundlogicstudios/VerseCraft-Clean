@@ -1,11 +1,11 @@
 // core/save_menu.js
-// Save Menu overlay — visual polish pass (row spacing + centering)
+// Save Menu overlay — FINAL slot alignment
 //
-// Canonical screen: settings_clear_save
-// This pass:
-// - Does NOT touch hitboxes
-// - Spreads rows slightly farther apart top → bottom
-// - Applies per-row upward nudges for centering inside frames
+// slot_0 = TOP    -> move up 15px
+// slot_1 = MIDDLE -> move up 10px
+// slot_2 = BOTTOM -> move up 6px
+//
+// Visual overlay ONLY. Hitboxes untouched.
 
 import { preload_catalog, resolve_story } from "./catalog.js";
 
@@ -15,10 +15,10 @@ const SCREEN_ID = "settings_clear_save";
 const SLOT_IDS = ["slot_0", "slot_1", "slot_2"];
 const EMPTY_TARGET = "menu";
 
-// Per-row vertical adjustments (px)
-const ROW_NUDGE_Y = [-5, -15, -20];
+// Per-slot vertical nudges (negative = up)
+const ROW_NUDGE_Y = [-15, -10, -6];
 
-// Stretch rows apart visually (top → bottom)
+// Keep existing breathing room
 const ROW_SPREAD_FACTOR = 1.08;
 
 const TITLE_MAP = {
@@ -75,17 +75,23 @@ function ensure_css() {
     .vc-save-text {
       color: #fff;
       text-shadow: 0 2px 6px rgba(0,0,0,0.85);
-      text-transform: none;
+      min-width: 0;
     }
     .vc-save-title {
       font-weight: 900;
       font-size: clamp(16px, 2.4vh, 26px);
       line-height: 1.05;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .vc-save-detail {
       margin-top: 6px;
       opacity: 0.9;
       font-size: clamp(12px, 1.8vh, 18px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   `;
   document.head.appendChild(s);
@@ -93,7 +99,7 @@ function ensure_css() {
 
 function find_hitbox(screen, id) {
   return Array.from(screen.querySelectorAll(".hitbox-layer .hitbox"))
-    .find(b => b.dataset.hitboxId === id);
+    .find(b => b.getAttribute("data-hitbox-id") === id);
 }
 
 function rect_to_pct(sr, r) {
@@ -143,8 +149,6 @@ async function hydrate() {
     if (!hb) continue;
 
     const pct = rect_to_pct(sr, hb.getBoundingClientRect());
-
-    // widen spacing progressively
     pct.top *= ROW_SPREAD_FACTOR;
 
     const row = document.createElement("div");
@@ -153,7 +157,7 @@ async function hydrate() {
     row.style.top = pct.top + "%";
     row.style.width = pct.width + "%";
     row.style.height = pct.height + "%";
-    row.style.transform = `translateY(${ROW_NUDGE_Y[i] || 0}px)`;
+    row.style.transform = `translateY(${ROW_NUDGE_Y[i]}px)`;
 
     const img = document.createElement("img");
     img.className = "vc-save-cover";
@@ -172,7 +176,7 @@ async function hydrate() {
       const resolved = await resolve_story(rec.storyId);
       img.src = resolved?.coverUrl || "";
       t.textContent = TITLE_MAP[rec.storyId] || rec.storyId;
-      d.textContent = `Scene: ${rec.nodeId}`;
+      d.textContent = rec.nodeId ? `Scene: ${rec.nodeId}` : "In progress";
       hb.dataset.action = "go";
       hb.dataset.arg = "story_" + rec.storyId;
     } else {
