@@ -2,6 +2,11 @@
 // BOOT IMPORT AUDIT (Layout B: /core at repo root)
 // - No static imports (static import failure = total black screen)
 // - Dynamic imports so we can SEE which file is missing in Network/Console
+//
+// CANON CHANGE (Option A):
+// - Remove debug_ui.js completely (no second debug panel)
+// - Unified debug HUD lives in core/debug_tools.js (gear icon bottom-right)
+// - Keeps debug_tools HARD-GATED behind ?debug=1
 
 let _booted = false;
 
@@ -47,7 +52,6 @@ async function boot_once() {
     // Core required (if this fails, nothing else matters)
     const modScreen = await safe_import(`${CORE_BASE}/screen-manager.js`);
     const modInput = await safe_import(`${CORE_BASE}/input.js`);
-    const modDebugUI = await safe_import(`${CORE_BASE}/debug_ui.js`);
     const modLibraryLabels = await safe_import(`${CORE_BASE}/library_labels.js`);
 
     if (!modScreen?.init_screen_manager) {
@@ -55,19 +59,19 @@ async function boot_once() {
       return;
     }
 
+    // Unified debug HUD (HARD GATE)
+    if (has_debug_flag()) {
+      const modDbgTools = await safe_import(`${CORE_BASE}/debug_tools.js`);
+      try { modDbgTools?.init_debug_tools?.(); } catch (e) { console.warn("[boot] debug_tools init failed", e); }
+    }
+
     // Initialize what we have (each optional)
-    try { modDebugUI?.init_debug_ui?.(); } catch (e) { console.warn("[boot] debug_ui init failed", e); }
     try { modInput?.init_input?.(); } catch (e) { console.warn("[boot] input init failed", e); }
     try { modLibraryLabels?.init_library_labels?.(); } catch (e) { console.warn("[boot] library_labels init failed", e); }
 
     if (ENABLE_AUDIO) {
       const modAudio = await safe_import(`${CORE_BASE}/audio_manager.js`);
       try { modAudio?.init_audio_manager?.(); } catch (e) { console.warn("[boot] audio init failed", e); }
-    }
-
-    if (has_debug_flag()) {
-      const modDbgTools = await safe_import(`${CORE_BASE}/debug_tools.js`);
-      try { modDbgTools?.init_debug_tools?.(); } catch (e) { console.warn("[boot] debug_tools init failed", e); }
     }
 
     // Optional overlays (safe)
