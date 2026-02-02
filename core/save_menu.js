@@ -1,11 +1,12 @@
 // core/save_menu.js
-// Save Menu overlay — FINAL slot alignment
+// Save Menu overlay — REVERSED slot alignment (visual only)
 //
-// slot_0 = TOP    -> move up 15px
-// slot_1 = MIDDLE -> move up 10px
-// slot_2 = BOTTOM -> move up 6px
+// slot_0 = TOP    -> move DOWN 15px
+// slot_1 = MIDDLE -> move DOWN 10px
+// slot_2 = BOTTOM -> move DOWN 6px
 //
-// Visual overlay ONLY. Hitboxes untouched.
+// Exact reverse of the previous patch.
+// Hitboxes untouched. Logic untouched.
 
 import { preload_catalog, resolve_story } from "./catalog.js";
 
@@ -15,10 +16,10 @@ const SCREEN_ID = "settings_clear_save";
 const SLOT_IDS = ["slot_0", "slot_1", "slot_2"];
 const EMPTY_TARGET = "menu";
 
-// Per-slot vertical nudges (negative = up)
-const ROW_NUDGE_Y = [-15, -10, -6];
+// Reversed nudges (positive = down)
+const ROW_NUDGE_Y = [15, 10, 6];
 
-// Keep existing breathing room
+// Keep existing spacing
 const ROW_SPREAD_FACTOR = 1.08;
 
 const TITLE_MAP = {
