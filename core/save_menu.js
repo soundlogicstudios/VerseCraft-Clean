@@ -1,12 +1,8 @@
 // core/save_menu.js
-// Save Menu overlay — REVERSED slot alignment (visual only)
+// Save Menu overlay — GLOBAL UP nudge (visual only)
 //
-// slot_0 = TOP    -> move DOWN 15px
-// slot_1 = MIDDLE -> move DOWN 10px
-// slot_2 = BOTTOM -> move DOWN 6px
-//
-// Exact reverse of the previous patch.
-// Hitboxes untouched. Logic untouched.
+// Goal: move the whole 3-row visual stack up together, without changing hitboxes.
+// Negative translateY moves UP (px). All rows use the SAME nudge so spacing stays identical.
 
 import { preload_catalog, resolve_story } from "./catalog.js";
 
@@ -16,11 +12,27 @@ const SCREEN_ID = "settings_clear_save";
 const SLOT_IDS = ["slot_0", "slot_1", "slot_2"];
 const EMPTY_TARGET = "menu";
 
-// Reversed nudges (positive = down)
-const ROW_NUDGE_Y = [15, 10, 6];
+// GLOBAL nudge (negative = up). Adjust this one number if needed.
+const ROW_NUDGE_Y_PX_PX = 72;
 
 // Keep existing spacing
 const ROW_SPREAD_FACTOR = 1.08;
+// Measured 3-frame window on settings_clear_save (visual alignment target)
+// Controls ONLY the visual rows (cover/text). Hitboxes remain unchanged.
+const SAVE_FRAME_TOP_PCT = 14.91;
+const SAVE_FRAME_H_PCT = 58.71;
+const SAVE_ROW_H_PCT = SAVE_FRAME_H_PCT / 3;
+
+// iPhone safety notch approximation (visual only)
+// Used to nudge rows DOWN relative to the evenly-spread layout
+const NOTCH_PX = 44; // approx one iPhone notch height
+const SLOT_NOTCH_OFFSETS = [
+  1 * NOTCH_PX,     // slot 0: down 1 notch
+  1.5 * NOTCH_PX,   // slot 1: down 1.5 notches
+  2 * NOTCH_PX      // slot 2: down 2 notches
+];
+
+
 
 const TITLE_MAP = {
   world_of_lorecraft: "World of Lorecraft",
@@ -150,7 +162,10 @@ async function hydrate() {
     if (!hb) continue;
 
     const pct = rect_to_pct(sr, hb.getBoundingClientRect());
-    pct.top *= ROW_SPREAD_FACTOR;
+// Evenly distribute rows within the measured 3-frame window (top->bottom)
+pct.top = SAVE_FRAME_TOP_PCT + (SAVE_ROW_H_PCT * i);
+pct.height = SAVE_ROW_H_PCT;
+
 
     const row = document.createElement("div");
     row.className = "vc-save-row";
@@ -158,7 +173,7 @@ async function hydrate() {
     row.style.top = pct.top + "%";
     row.style.width = pct.width + "%";
     row.style.height = pct.height + "%";
-    row.style.transform = `translateY(${ROW_NUDGE_Y[i]}px)`;
+    row.style.transform = `translateY(${ROW_NUDGE_Y_PX_PX}px)`;
 
     const img = document.createElement("img");
     img.className = "vc-save-cover";
