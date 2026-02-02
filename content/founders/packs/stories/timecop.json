@@ -1,422 +1,82 @@
 {
-  "story_id": "timecop",
-  "title": "TimeCop",
-  "tagline": "time enforcement, paradox cases, neon chronology",
-  "version": "placeholder_v2",
-  "start": "s01",
-  "sections": [
-    {
-      "id": "s01",
-      "text": "TimeCop: A detail you missed now clicks into place. You observe first, letting the pattern reveal itself.",
+  "meta": {
+    "id": "timecop_grail",
+    "title": "TimeCop: The Missing Grail",
+    "route": "story_timecop",
+    "schema": "versecraft-1.0",
+    "tone": "sci-fi thriller",
+    "blurb": "A career time criminal has slipped into the past. History is missing something sacred."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "The briefing is short.\n\nTemporal theft. High value.\n\nA Mastermind has breached the timeline and vanished somewhere in the medieval era. Artifacts are going missing—objects that should still exist.\n\nOne file flashes on the screen longer than the others:\n\nTHE HOLY GRAIL — STATUS: UNKNOWN\n\nIf the Grail is gone, history isn’t just altered. It’s bleeding.\n\nYour jump window is narrow.",
       "choices": [
-        {
-          "text": "Move forward",
-          "to": "s02"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s02"
-        }
+        { "label": "JUMP TO THE MEDIEVAL PERIOD", "to": "S02" },
+        { "label": "REVIEW THE MASTERMIND PROFILE", "to": "S03" }
       ]
     },
-    {
-      "id": "s02",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+
+    "S02": {
+      "text": "The jump hits hard.\n\nStone replaces steel. Smoke replaces neon.\n\nYou arrive outside a fortified monastery. The air hums with temporal residue—fresh. Someone was here recently.\n\nIf the Grail was taken, this is where history first broke.",
       "choices": [
-        {
-          "text": "Move forward",
-          "to": "s03"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s03"
-        }
+        { "label": "ENTER THE MONASTERY", "to": "S04" },
+        { "label": "SCAN FOR TEMPORAL TRAILS", "to": "S05" }
       ]
     },
-    {
-      "id": "s03",
-      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options.",
+
+    "S03": {
+      "text": "The Mastermind isn’t a killer.\n\nThey’re worse.\n\nA professional looter of history. They don’t change wars—they steal treasures before anyone notices they mattered.\n\nEvery theft makes their future richer and everyone else’s poorer.\n\nThey never stay long.",
       "choices": [
-        {
-          "text": "Move forward",
-          "to": "s04"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s04"
-        }
+        { "label": "PROCEED WITH THE JUMP", "to": "S02" },
+        { "label": "WAIT FOR BACKUP", "to": "BAD_END" }
       ]
     },
-    {
-      "id": "s04",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+
+    "S04": {
+      "text": "Inside the monastery, panic has already set in.\n\nMonks whisper of a stranger who spoke strangely and vanished into light.\n\nThe Grail chamber is empty.\n\nHistory has been robbed.",
       "choices": [
-        {
-          "text": "Move forward",
-          "to": "s05"
-        },
-        {
-          "text": "Investigate further",
-          "to": "s06"
-        }
+        { "label": "CHASE THE MASTERMIND THROUGH TIME", "to": "S06" },
+        { "label": "SECURE THE TIMELINE AND SEAL THE ERA", "to": "GOOD_END" }
       ]
     },
-    {
-      "id": "s05",
-      "text": "Something shifts, subtle but irreversible. You observe first, letting the pattern reveal itself.",
+
+    "S05": {
+      "text": "Your scanner lights up.\n\nA temporal jump signature—sloppy, rushed.\n\nThe Mastermind didn’t escape cleanly. They’re wounded or desperate.\n\nYou could follow them… or close the breach now.",
       "choices": [
-        {
-          "text": "Move forward",
-          "to": "s06"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s06"
-        }
+        { "label": "FOLLOW THE JUMP SIGNATURE", "to": "S06" },
+        { "label": "SEAL THE BREACH IMMEDIATELY", "to": "GOOD_END" }
       ]
     },
-    {
-      "id": "s06",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
+
+    "S06": {
+      "text": "You catch them between moments.\n\nThe Mastermind holds the Grail, awe and greed fighting on their face.\n\n\"You have no idea what this is worth,\" they say.\n\nThey offer you a deal.\n\nOne artifact. One future changed—for you.",
       "choices": [
-        {
-          "text": "Move forward",
-          "to": "s07"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s07"
-        }
+        { "label": "ARREST THE MASTERMIND", "to": "GOOD_END" },
+        { "label": "LET THEM ESCAPE WITH THE GRAIL", "to": "BAD_END" },
+        { "label": "TAKE THE GRAIL FOR YOUR AGENCY", "to": "SPECIAL_END" }
       ]
     },
-    {
-      "id": "s07",
-      "text": "A detail you missed now clicks into place. You commit to action before doubt can set in. There\u2019s no neutral ground anymore.",
+
+    "GOOD_END": {
+      "text": "The Grail is returned.\n\nThe Mastermind is erased from the timeline.\n\nHistory stabilizes.\n\nNo one will ever know how close it came to unraveling.\n\nThat’s the job.",
       "choices": [
-        {
-          "text": "Move forward",
-          "to": "s08"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s08"
-        }
+        { "label": "RETURN TO START", "to": "S01" }
       ]
     },
-    {
-      "id": "s08",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+
+    "BAD_END": {
+      "text": "The timeline holds—but barely.\n\nThe Grail is gone.\n\nSome futures are richer. Others poorer.\n\nYour report will never be read aloud.",
       "choices": [
-        {
-          "text": "Move forward",
-          "to": "s09"
-        },
-        {
-          "text": "Investigate further",
-          "to": "s10"
-        }
+        { "label": "RETURN TO START", "to": "S01" }
       ]
     },
-    {
-      "id": "s09",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
+
+    "SPECIAL_END": {
+      "text": "The Grail vanishes into secure containment.\n\nHistory remains intact—but altered.\n\nSomewhere, someone notices a future that shouldn’t exist.\n\nYou feel like you’ve just become a target.",
       "choices": [
-        {
-          "text": "Move forward",
-          "to": "s10"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s10"
-        }
+        { "label": "RETURN TO START", "to": "S01" }
       ]
-    },
-    {
-      "id": "s10",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s11"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s11"
-        }
-      ]
-    },
-    {
-      "id": "s11",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s12"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s12"
-        }
-      ]
-    },
-    {
-      "id": "s12",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s13"
-        },
-        {
-          "text": "Investigate further",
-          "to": "s14"
-        }
-      ]
-    },
-    {
-      "id": "s13",
-      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s14"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s14"
-        }
-      ]
-    },
-    {
-      "id": "s14",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself. This choice will echo farther than you expect.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s15"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s15"
-        }
-      ]
-    },
-    {
-      "id": "s15",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself. A revelation reframes everything you thought you understood.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s16"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s16"
-        }
-      ]
-    },
-    {
-      "id": "s16",
-      "text": "The environment responds as if aware of you. You slow your breathing and assess your options.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s17"
-        },
-        {
-          "text": "Investigate further",
-          "to": "s18"
-        }
-      ]
-    },
-    {
-      "id": "s17",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s18"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s18"
-        }
-      ]
-    },
-    {
-      "id": "s18",
-      "text": "Something shifts, subtle but irreversible. You move with care, knowing haste invites mistakes.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s19"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s19"
-        }
-      ]
-    },
-    {
-      "id": "s19",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s20"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s20"
-        }
-      ]
-    },
-    {
-      "id": "s20",
-      "text": "You realize this moment has been building for a while. You observe first, letting the pattern reveal itself.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s21"
-        },
-        {
-          "text": "Investigate further",
-          "to": "s22"
-        }
-      ]
-    },
-    {
-      "id": "s21",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes. This choice will echo farther than you expect.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s22"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s22"
-        }
-      ]
-    },
-    {
-      "id": "s22",
-      "text": "You realize this moment has been building for a while. You move with care, knowing haste invites mistakes.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s23"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s23"
-        }
-      ]
-    },
-    {
-      "id": "s23",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s24"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s24"
-        }
-      ]
-    },
-    {
-      "id": "s24",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s25"
-        },
-        {
-          "text": "Investigate further",
-          "to": "s26"
-        }
-      ]
-    },
-    {
-      "id": "s25",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s26"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s26"
-        }
-      ]
-    },
-    {
-      "id": "s26",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s27"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s27"
-        }
-      ]
-    },
-    {
-      "id": "s27",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s28"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s28"
-        }
-      ]
-    },
-    {
-      "id": "s28",
-      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options. A wrong move here won\u2019t be forgiven easily.",
-      "choices": [
-        {
-          "text": "Move forward",
-          "to": "s29"
-        },
-        {
-          "text": "Investigate further",
-          "to": "s30"
-        }
-      ]
-    },
-    {
-      "id": "s29",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options. This is the last point where retreat is still possible.",
-      "choices": [
-        {
-          "text": "See it through to the end",
-          "to": "s30"
-        },
-        {
-          "text": "Pull back at the last second",
-          "to": "s27"
-        }
-      ]
-    },
-    {
-      "id": "s30",
-      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options.",
-      "choices": [],
-      "ending": true,
-      "ending_type": "resolution"
     }
-  ]
+  }
 }
