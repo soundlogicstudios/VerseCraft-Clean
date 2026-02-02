@@ -1,12 +1,8 @@
 // core/save_menu.js
-// Save Menu overlay — REVERSED slot alignment (visual only)
+// Save Menu overlay — GLOBAL UP nudge (visual only)
 //
-// slot_0 = TOP    -> move DOWN 15px
-// slot_1 = MIDDLE -> move DOWN 10px
-// slot_2 = BOTTOM -> move DOWN 6px
-//
-// Exact reverse of the previous patch.
-// Hitboxes untouched. Logic untouched.
+// Goal: move the whole 3-row visual stack up together, without changing hitboxes.
+// Negative translateY moves UP (px). All rows use the SAME nudge so spacing stays identical.
 
 import { preload_catalog, resolve_story } from "./catalog.js";
 
@@ -16,8 +12,8 @@ const SCREEN_ID = "settings_clear_save";
 const SLOT_IDS = ["slot_0", "slot_1", "slot_2"];
 const EMPTY_TARGET = "menu";
 
-// Reversed nudges (positive = down)
-const ROW_NUDGE_Y = [15, 10, 6];
+// GLOBAL nudge (negative = up). Adjust this one number if needed.
+const ROW_NUDGE_Y_PX_PX = -72;
 
 // Keep existing spacing
 const ROW_SPREAD_FACTOR = 1.08;
@@ -158,7 +154,7 @@ async function hydrate() {
     row.style.top = pct.top + "%";
     row.style.width = pct.width + "%";
     row.style.height = pct.height + "%";
-    row.style.transform = `translateY(${ROW_NUDGE_Y[i]}px)`;
+    row.style.transform = `translateY(${ROW_NUDGE_Y_PX_PX}px)`;
 
     const img = document.createElement("img");
     img.className = "vc-save-cover";
