@@ -17,6 +17,12 @@ const ROW_NUDGE_Y_PX_PX = -72;
 
 // Keep existing spacing
 const ROW_SPREAD_FACTOR = 1.08;
+// Measured 3-frame window on settings_clear_save (visual alignment target)
+// Controls ONLY the visual rows (cover/text). Hitboxes remain unchanged.
+const SAVE_FRAME_TOP_PCT = 14.91;
+const SAVE_FRAME_H_PCT = 58.71;
+const SAVE_ROW_H_PCT = SAVE_FRAME_H_PCT / 3;
+
 
 const TITLE_MAP = {
   world_of_lorecraft: "World of Lorecraft",
@@ -146,7 +152,10 @@ async function hydrate() {
     if (!hb) continue;
 
     const pct = rect_to_pct(sr, hb.getBoundingClientRect());
-    pct.top *= ROW_SPREAD_FACTOR;
+// Evenly distribute rows within the measured 3-frame window (top->bottom)
+pct.top = SAVE_FRAME_TOP_PCT + (SAVE_ROW_H_PCT * i);
+pct.height = SAVE_ROW_H_PCT;
+
 
     const row = document.createElement("div");
     row.className = "vc-save-row";
