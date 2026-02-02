@@ -1,422 +1,427 @@
 {
-  "story_id": "wastelands",
-  "title": "Wastelands",
-  "tagline": "post-apocalyptic dust, scavenging, factions",
-  "version": "placeholder_v2",
-  "start": "s01",
-  "sections": [
-    {
-      "id": "s01",
-      "text": "Wastelands: The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+  "meta": {
+    "id": "wastelands_breakaway_30",
+    "title": "Wastelands: Breakaway",
+    "route": "story_wastelands",
+    "schema": "versecraft-1.0",
+    "tone": "post-apocalyptic survival",
+    "notes": "30 sections (S01–S30) plus Good/Bad/Special endings. All endings loop to S01.",
+    "blurb": "You were forged by the Brotherhood of Steel. Now you’re running from it—into a wasteland that does not forgive weakness."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "The Brotherhood taught you discipline, order, and obedience.\n\nThey did not teach you how to live without permission.\n\nThe bunker hums with generators and old-world machines.\n\nTonight, you make your choice.\n\nYou leave.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s02"
+          "label": "STEAL A POWER ARMOR CORE",
+          "to": "S02"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s02"
+          "label": "SLIP OUT QUIETLY",
+          "to": "S03"
         }
       ]
     },
-    {
-      "id": "s02",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in.",
+    "S02": {
+      "text": "You rip the fusion core free.\n\nAlarms wail instantly.\n\nThe bunker erupts into motion—boots pounding steel, voices shouting orders.\n\nYou run with the weight of betrayal burning in your chest.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s03"
+          "label": "FIGHT YOUR WAY OUT",
+          "to": "S04"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s03"
+          "label": "SEAL THE BLAST DOOR",
+          "to": "S05"
         }
       ]
     },
-    {
-      "id": "s03",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S03": {
+      "text": "You move carefully, avoiding patrol routes burned into your memory.\n\nA guard nearly catches you.\n\nYou hold your breath.\n\nHe passes.\n\nYou reach the outer hatch.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s04"
+          "label": "EXIT INTO THE WASTELAND",
+          "to": "S06"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s04"
+          "label": "DOUBLE BACK FOR GEAR",
+          "to": "S02"
         }
       ]
     },
-    {
-      "id": "s04",
-      "text": "The silence here feels intentional. You commit to action before doubt can set in.",
+    "S04": {
+      "text": "You fire first.\n\nThe corridor fills with smoke and sparks.\n\nYou don’t look back when someone screams your name.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s05"
+          "label": "ESCAPE THROUGH MAINTENANCE TUNNEL",
+          "to": "S06"
         },
         {
-          "text": "Investigate further",
-          "to": "s06"
+          "label": "GET PINNED DOWN",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s05",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+    "S05": {
+      "text": "You slam the blast door controls.\n\nThe door grinds shut behind you.\n\nThe Brotherhood will not forget this.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s06"
-        },
-        {
-          "text": "Proceed cautiously",
-          "to": "s06"
+          "label": "RUN INTO THE NIGHT",
+          "to": "S06"
         }
       ]
     },
-    {
-      "id": "s06",
-      "text": "The environment responds as if aware of you. You move with care, knowing haste invites mistakes.",
+    "S06": {
+      "text": "The wasteland stretches endless and ruined.\n\nDead highways. Rusted cars. Wind carrying radioactive dust.\n\nYou are free.\n\nYou are alone.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s07"
+          "label": "HEAD TOWARD SMOKE ON THE HORIZON",
+          "to": "S07"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s07"
+          "label": "FOLLOW AN OLD ROAD",
+          "to": "S08"
         }
       ]
     },
-    {
-      "id": "s07",
-      "text": "The silence here feels intentional. You move with care, knowing haste invites mistakes. There\u2019s no neutral ground anymore.",
+    "S07": {
+      "text": "You approach a scavenger camp.\n\nArmed men and women eye you carefully.\n\nThey don’t trust Brotherhood deserters.\n\nNot at first.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s08"
+          "label": "OFFER YOUR SKILLS",
+          "to": "S09"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s08"
+          "label": "TRY TO STEAL SUPPLIES",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s08",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S08": {
+      "text": "The road leads you to a slaver outpost.\n\nCages line the perimeter.\n\nScreams carry on the wind.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s09"
+          "label": "ATTACK THE CAMP",
+          "to": "S10"
         },
         {
-          "text": "Investigate further",
-          "to": "s10"
+          "label": "AVOID IT AND MOVE ON",
+          "to": "S07"
         }
       ]
     },
-    {
-      "id": "s09",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options.",
+    "S09": {
+      "text": "You demonstrate your training.\n\nWeapon maintenance. Tactics. Discipline.\n\nThe scavengers accept you—for now.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s10"
+          "label": "JOIN THEIR RAID",
+          "to": "S10"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s10"
+          "label": "LEAVE AT DAWN",
+          "to": "S11"
         }
       ]
     },
-    {
-      "id": "s10",
-      "text": "You realize this moment has been building for a while. You slow your breathing and assess your options.",
+    "S10": {
+      "text": "The raid is brutal.\n\nGunfire. Blood. Chains breaking.\n\nThe slavers fall.\n\nSurvivors scatter into the wastes.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s11"
+          "label": "FREE THE CAPTIVES",
+          "to": "S12"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s11"
+          "label": "LOOT THE CAMP",
+          "to": "S13"
         }
       ]
     },
-    {
-      "id": "s11",
-      "text": "Something shifts, subtle but irreversible. You slow your breathing and assess your options.",
+    "S11": {
+      "text": "You travel alone again.\n\nYour Brotherhood armor draws attention.\n\nSome good. Some bad.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s12"
+          "label": "DISGUISE YOUR ARMOR",
+          "to": "S13"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s12"
+          "label": "KEEP MOVING",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s12",
-      "text": "Something shifts, subtle but irreversible. You move with care, knowing haste invites mistakes.",
+    "S12": {
+      "text": "The freed captives thank you.\n\nOne warns you of Legion patrols nearby.\n\nRoman armor. Red banners.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s13"
+          "label": "PREPARE FOR LEGION CONTACT",
+          "to": "S15"
         },
         {
-          "text": "Investigate further",
-          "to": "s14"
+          "label": "MOVE QUICKLY AWAY",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s13",
-      "text": "The silence here feels intentional. You slow your breathing and assess your options.",
+    "S13": {
+      "text": "You scavenge useful gear.\n\nA map marked with faction territory catches your eye.\n\nBrotherhood. NCR. Legion. Institute.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s14"
+          "label": "HEAD NCR TERRITORY",
+          "to": "S16"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s14"
+          "label": "AVOID ALL FACTIONS",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s14",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself. A wrong move here won\u2019t be forgiven easily.",
+    "S14": {
+      "text": "The wasteland punishes hesitation.\n\nRadiation storms roll in.\n\nYou take shelter among ruins.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s15"
+          "label": "WAIT IT OUT",
+          "to": "S15"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s15"
+          "label": "MOVE THROUGH THE STORM",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s15",
-      "text": "Something shifts, subtle but irreversible. You commit to action before doubt can set in. A revelation reframes everything you thought you understood.",
+    "S15": {
+      "text": "Roman Legion soldiers march into view.\n\nDiscipline. Cruelty. Order through fear.\n\nThey see your armor and smile.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s16"
+          "label": "FIGHT THE LEGION",
+          "to": "S17"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s16"
+          "label": "FEIGN ALLIANCE",
+          "to": "S18"
         }
       ]
     },
-    {
-      "id": "s16",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
+    "S16": {
+      "text": "You reach NCR land.\n\nRangers question you harshly.\n\nThey distrust the Brotherhood—but hate the Legion more.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s17"
+          "label": "WORK WITH NCR",
+          "to": "S19"
         },
         {
-          "text": "Investigate further",
-          "to": "s18"
+          "label": "MOVE ON",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s17",
-      "text": "The environment responds as if aware of you. You commit to action before doubt can set in.",
+    "S17": {
+      "text": "You ambush the Legion patrol.\n\nIt’s fast and violent.\n\nTheir commander falls at your feet.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s18"
+          "label": "TAKE THEIR BANNER",
+          "to": "S20"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s18"
+          "label": "LEAVE BEFORE REINFORCEMENTS",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s18",
-      "text": "You realize this moment has been building for a while. You slow your breathing and assess your options.",
+    "S18": {
+      "text": "You play along.\n\nThey talk freely—plans to raid NCR settlements.\n\nInformation is a weapon.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s19"
+          "label": "BETRAY THEM",
+          "to": "S17"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s19"
+          "label": "ESCAPE QUIETLY",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s19",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+    "S19": {
+      "text": "NCR officers offer you protection.\n\nIn exchange, they want intel on the Brotherhood.\n\nYou feel the old chains tug again.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s20"
+          "label": "REFUSE AND LEAVE",
+          "to": "S14"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s20"
+          "label": "AGREE TO HELP",
+          "to": "S21"
         }
       ]
     },
-    {
-      "id": "s20",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+    "S20": {
+      "text": "The banner makes you a target.\n\nBoth feared and hunted.\n\nWhispers follow you across the wasteland.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s21"
+          "label": "LEAN INTO THE REPUTATION",
+          "to": "S22"
         },
         {
-          "text": "Investigate further",
-          "to": "s22"
+          "label": "BURN THE BANNER",
+          "to": "S14"
         }
       ]
     },
-    {
-      "id": "s21",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes. There\u2019s no neutral ground anymore.",
+    "S21": {
+      "text": "Your missions for NCR bring stability.\n\nBut rumors spread of an underground faction.\n\nCold. Precise. Watching.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s22"
+          "label": "INVESTIGATE THE RUMORS",
+          "to": "S23"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s22"
+          "label": "IGNORE THEM",
+          "to": "S24"
         }
       ]
     },
-    {
-      "id": "s22",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S22": {
+      "text": "Raiders rally behind you.\n\nYou become a symbol—of freedom or fear.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s23"
+          "label": "LEAD A MAJOR ASSAULT",
+          "to": "S25"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s23"
+          "label": "DISBAND THE GROUP",
+          "to": "S24"
         }
       ]
     },
-    {
-      "id": "s23",
-      "text": "A detail you missed now clicks into place. You observe first, letting the pattern reveal itself.",
+    "S23": {
+      "text": "You find a hidden facility.\n\nSynthetic guards. Clean steel.\n\nThe Institute reveals itself.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s24"
+          "label": "ENTER THE FACILITY",
+          "to": "S26"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s24"
+          "label": "REPORT TO NCR",
+          "to": "S24"
         }
       ]
     },
-    {
-      "id": "s24",
-      "text": "The silence here feels intentional. You observe first, letting the pattern reveal itself.",
+    "S24": {
+      "text": "You survive, but remain hunted.\n\nThe wasteland never forgets.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s25"
+          "label": "KEEP MOVING",
+          "to": "S25"
         },
         {
-          "text": "Investigate further",
-          "to": "s26"
+          "label": "TRY TO DISAPPEAR",
+          "to": "END_SPECIAL"
         }
       ]
     },
-    {
-      "id": "s25",
-      "text": "The environment responds as if aware of you. You observe first, letting the pattern reveal itself.",
+    "S25": {
+      "text": "A massive conflict erupts.\n\nFactions clash.\n\nYou must choose who you become.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s26"
+          "label": "FIGHT FOR YOURSELF",
+          "to": "END_SPECIAL"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s26"
+          "label": "DIE FOR A CAUSE",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s26",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in.",
+    "S26": {
+      "text": "The Institute offers you a place.\n\nOrder without chaos.\n\nControl without freedom.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s27"
+          "label": "ACCEPT THEIR OFFER",
+          "to": "END_SPECIAL"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s27"
+          "label": "SABOTAGE THE FACILITY",
+          "to": "S27"
         }
       ]
     },
-    {
-      "id": "s27",
-      "text": "A detail you missed now clicks into place. You commit to action before doubt can set in.",
+    "S27": {
+      "text": "You cripple the Institute’s operations.\n\nAlarms scream.\n\nSynths fall.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s28"
+          "label": "ESCAPE INTO THE WASTELAND",
+          "to": "S28"
         },
         {
-          "text": "Proceed cautiously",
-          "to": "s28"
+          "label": "STAY AND FINISH IT",
+          "to": "END_BAD"
         }
       ]
     },
-    {
-      "id": "s28",
-      "text": "You realize this moment has been building for a while. You commit to action before doubt can set in. This choice will echo farther than you expect.",
+    "S28": {
+      "text": "You vanish into the ruins.\n\nYour legend grows.",
       "choices": [
         {
-          "text": "Move forward",
-          "to": "s29"
+          "label": "BUILD A NEW LIFE",
+          "to": "S29"
         },
         {
-          "text": "Investigate further",
-          "to": "s30"
+          "label": "KEEP FIGHTING",
+          "to": "S25"
         }
       ]
     },
-    {
-      "id": "s29",
-      "text": "A detail you missed now clicks into place. You slow your breathing and assess your options. This is the last point where retreat is still possible.",
+    "S29": {
+      "text": "You find a settlement willing to trust you.\n\nThey ask for leadership.",
       "choices": [
         {
-          "text": "See it through to the end",
-          "to": "s30"
+          "label": "ACCEPT",
+          "to": "END_GOOD"
         },
         {
-          "text": "Pull back at the last second",
-          "to": "s27"
+          "label": "DECLINE",
+          "to": "S30"
         }
       ]
     },
-    {
-      "id": "s30",
-      "text": "A detail you missed now clicks into place. You move with care, knowing haste invites mistakes.",
-      "choices": [],
-      "ending": true,
-      "ending_type": "resolution"
+    "S30": {
+      "text": "You look back at the Brotherhood bunker on the horizon.\n\nYou were forged by steel.\n\nBut you were not meant to stay caged.",
+      "choices": [
+        {
+          "label": "WALK INTO THE WASTELAND",
+          "to": "END_SPECIAL"
+        },
+        {
+          "label": "TURN BACK",
+          "to": "END_BAD"
+        }
+      ]
+    },
+    "END_GOOD": {
+      "text": "GOOD ENDING — A NEW ORDER\n\nYou build something better.\n\nNot perfect. Not clean.\n\nBut free.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_BAD": {
+      "text": "BAD ENDING — THE WASTELAND WINS\n\nThe wasteland claims another name.\n\nSteel rusts. Bones bleach.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
+    },
+    "END_SPECIAL": {
+      "text": "SPECIAL ENDING — A LIVING LEGEND\n\nYou belong nowhere.\n\nStories follow you across the wastes.\n\nSome call you hero.\n\nOthers curse your name.",
+      "choices": [
+        {
+          "label": "RETURN TO START",
+          "to": "S01"
+        }
+      ]
     }
-  ]
+  }
 }
