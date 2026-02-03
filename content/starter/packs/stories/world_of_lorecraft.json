@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "id": "world_of_lorecraft",
+    "title": "World of VerseCraft",
+    "route": "story_world_of_lorecraft",
+    "schema": "versecraft.story.v1",
+    "blurb": "Welcome to the world of VerseCraft! Enjoy the story and immerse yourself in the deep storytelling, meaningful choices and RPG elements to create worlds of enjoyment."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "The road was supposed to be simple.\nOne town to the next. A roof, maybe a fire, then gone again before morning. \nThat was the deal you made with yourself when you left the last place behind.\nThe storm came faster than expected.\n\nRain lashes sideways, soaking through your clothes until every step feels heavier than the last. \nThe road ahead dissolves into mud and broken stone, the path barely visible through sheets of water and wind.\nThen the lightning hits.\nFor a split second, the tower reveals itself—vast, looming, impossible to miss once seen. \nIts doors hang shattered, blasted outward as if something inside fled in desperation.\n\nYou slow your pace.\nShelter is shelter.\nBut you’ve learned the hard way that the places that promise safety often charge more than they give.\nThe wind screams louder. The cold bites deeper.\n\nStaying out here is no longer an option.\n\n\nATTEMPT TO LEAVE -- You decide there must be a better option than trying to take refuge in this hastily abandoned tower.\n\nENTER THE TOWER -- Despite your trepidation about the tower, you enter seeking shelter.\n\nFIND ANOTHER ENTRANCE -- Attempt to find another way in to the tower, avoiding the main entrance entirely.\n",
+      "choices": [
+        {
+          "label": "ATTEMPT TO LEAVE",
+          "to": "S02"
+        },
+        {
+          "label": "ENTER THE TOWER",
+          "to": "S03"
+        },
+        {
+          "label": "FIND ANOTHER ENTRANCE",
+          "to": "S04"
+        }
+      ],
+      "type": "normal"
+    },
+    "S02": {
+      "text": "You turn away from the tower.\n\nThe rain greets you like a wall.\n\nWind howls across the road, louder than before, bending the world sideways. \nWater surges down the path you arrived on, swallowing the ruts and stones beneath it. \nEach step back feels heavier, slower—like the ground itself is resisting you.\n\nYou make it only a short distance before the road gives way.\n\nMud collapses underfoot. The path you followed here is gone, torn open by the storm \nand dragged downhill into the dark. What remains is impassable—a slick, churning slope \nthat leads nowhere.\n\nYou look back.\n\nThe tower stands unchanged.\n\nIts doors hang open, blasted outward, as if something inside once fled in desperation. \nLight flickers faintly within—not inviting, not welcoming—but present.\n\nThe storm presses closer behind you.\n\nWhatever choice brought you here, the world has decided something else.\n\nThere is only one way forward now.",
+      "choices": [
+        {
+          "label": "RETURN TO THE TOWER",
+          "to": "S01"
+        }
+      ],
+      "type": "normal"
+    },
+    "S03": {
+      "text": "You cross the threshold.\nThe change is immediate.\nThe storm does not fade—it cuts off. Rain still lashes the shattered doors behind you, \nbut the sound arrives late and distant, muffled by layers of stone that should not exist.\nThe tower does not welcome you.\nIt accepts you.\nInside, the air is dry and stale, carrying the faint scent of dust and old ash. \nPale seams of light glow between the stones beneath your feet, dim but deliberate, \nlike embers buried under the floor.\nThe doors behind you hang twisted and broken, blasted outward with violent force. \nWhatever came through them did not hesitate.\n\nAhead, the interior opens into a vast chamber. Stairways spiral upward along the walls, \nvanishing into shadow. Corridors slope downward into darker depths. Side halls branch away, \ntheir purposes unclear.\nThis place is old.\nNot abandoned.\nWaiting.\nFor a brief moment, you have the distinct impression that something is aware of you.\n\nWatching.\n\nMeasuring.\n\nThe feeling slips away before it can take shape.\nThe storm surges once more against the doors—then falls silent again.\nWhatever happens next will not happen on the road.\nIt will happen here.\n\nDEEPER INTO TOWER -- Move deeper into the tower cautiously.\n\nSEARCH SIDE CHAMBER -- Check around to see if there may be something of use nearby.\n\nGO UP STAIRS -- Head towards te stairwell. Another decision looms.\n",
+      "choices": [
+        {
+          "label": "DEEPER INTO TOWER",
+          "to": "S04"
+        },
+        {
+          "label": "SEARCH SIDE CHAMBER",
+          "to": "S05"
+        },
+        {
+          "label": "GO UP STAIRS",
+          "to": "S06"
+        }
+      ],
+      "type": "normal"
+    },
+    "S04": {
+      "text": "You stay in the rain longer than you should.\nCircling the tower’s base, you search for anything that might pass for a safer way inside. \nThe stone walls are slick and uneven, the mortar crumbling beneath years of neglect. \nWater runs in thin streams down the surface, blurring old carvings and half-erased symbols.\nYou look up.\nThe second story is too high. The windows are narrow, their edges fractured and unstable. \nNo ledges you’d trust. No clear handholds. Whatever force broke the doors below did not \nbother with subtlety above.\nThe wind cuts harder now, driving the rain into your face. Cold settles into your bones.\nThere’s no way in except the obvious one.\n\nGIVE UP AND RETURN -- Go back to the front entrance of the tower.\n\nKEEP SEACRHING -- See if maybe you can climb up the stony tower sides, but they are slippery.\n",
+      "choices": [
+        {
+          "label": "GIVE UP AND RETURN",
+          "to": "S03"
+        },
+        {
+          "label": "KEEP SEACRHING",
+          "to": "S05"
+        }
+      ],
+      "type": "normal"
+    },
+    "S05": {
+      "text": "You move around the back of the tower, keeping low and quiet.\nHere, the stone shows its age—cracks in the masonry, repairs long abandoned, \nedges softened by time and weather. Your eyes trace a narrow route upward toward a first-story window, \nhalf-shattered and dark beyond.\nYou start climbing.\nRain slicks the stone beneath your fingers, but the footholds hold—until they don’t. \nWith a sharp crack, part of the window frame crumbles away. You lunge forward, \nbarely catching yourself as debris falls into the darkness below.\nYou’re stuck.\nThe ground is too far down to drop safely. The way back is gone. Above you, the tower rises higher, \nunforgiving and wet.\n\nATTEMPT TO CLIMB HIGHER -- Press your luck and try to reach the next story up.\n\nSEARCH CHAMBER -- Take a moment to look around and find something useful.\n\nTRY TO GET DOWN -- Attempt to drop down and get back to the front entrance.",
+      "choices": [
+        {
+          "label": "ATTEMPT TO CLIMB HIGHER",
+          "to": "S06"
+        },
+        {
+          "label": "SEARCH CHAMBER",
+          "to": "S07"
+        },
+        {
+          "label": "TRY TO GET DOWN",
+          "to": "S08"
+        }
+      ],
+      "type": "normal"
+    },
+    "S06": {
+      "text": "You look up.\nThe tower stretches above you, its stone slick with rain and age. \nThe window you aimed for is gone now, crumbled away into darkness below. \nYour arms tremble as you cling to what remains, fingers numb, muscles burning.\n\nGoing down isn’t an option anymore.\nYou shift your weight carefully, testing the stone above you. Some holds feel solid. \nOthers flake away at the slightest pressure. Water runs down the wall, blurring edges \nand making every movement uncertain.\nFor a moment, doubt creeps in.\nThen you push it aside.\n\nYou’ve climbed worse. Broken into tighter places. Bet your life on thinner margins.\nYou pull yourself upward.\nThe stone gives way without warning.\n\nTRY TO CATCH YOURSELF -- Attempt to grab something solid and not fall.\n\nBRACE FOR IMPACT --  Cover and tuck and roll.\n",
+      "choices": [
+        {
+          "label": "TRY TO CATCH YOURSELF",
+          "to": "S07"
+        },
+        {
+          "label": "BRACE FOR IMPACT",
+          "to": "S08"
+        }
+      ],
+      "type": "normal"
+    },
+    "S07": {
+      "text": "You emerge into darkness and stone.\nThe opening you pulled yourself through is narrow and broken, \nits edges worn smooth by years of weather and neglect. Behind you, rain still lashes the tower’s outer wall, \nbut the sound fades quickly, swallowed by the thickness of the stone. \nWhatever storm rages outside does not fully exist in here.\nThe air is different.\n\nDry. Still. Heavy in a way that settles against your senses rather than your lungs. \nOld magic lingers here—not active, not fading, simply present. \nYour own power doesn’t rest easily. It hums beneath your skin, unsettled, \nas if something nearby is paying closer attention than it should.\nYou pause to steady yourself.\nThe climb—or the spell—has taken more from you than you expected. \nYour muscles ache. Your breath comes shallow and slow. \nWhatever force governs this tower does not reward cleverness. \nIt demands payment before allowing progress.\nFaint light traces the seams between the stones beneath your feet. \nIt doesn’t brighten the chamber, only outlines it enough for you to understand its shape. \nThe space is small. Enclosed. From it, a corridor curves away along the tower’s interior, \nfollowing its circular spine.\n\nNo windows.\n\nNo obvious exits beyond the passage ahead.\n\nThen, a voice.\nNot loud. Not whispered. Simply there.\n“You came in through the wrong place.”\nThe words settle into your thoughts as if they belong there. The tone isn’t hostile—just tired. \nFlat. As though this is an observation it has made too many times to care anymore.\n\nA brief pause follows.\n“Most of them don’t try that.”\n\nThe air tightens, almost imperceptibly. Not a threat. More like attention being focused. \nYou get the sense that something has adjusted—not rushed, not alarmed, but deliberate.\nThe light beneath your feet pulses once, then settles again. Somewhere deeper in the tower, stone shifts against stone. Slow. Controlled.\nWhatever rules this place knows where you are now.\nThe corridor ahead opens toward a wider space, its curve easing as the ceiling rises out of sight. The pressure in the air deepens as you look on—not heavier, just more complete. Whatever lies further inside is no longer hidden.\nIt is waiting.\n",
+      "choices": [
+        {
+          "label": "PLAY AGAIN",
+          "to": "S01"
+        }
+      ],
+      "type": "ending"
+    },
+    "S08": {
+      "text": "You don’t catch yourself in time.\nYour grip slips completely, and the tower vanishes from reach as gravity takes hold. \n\nThe fall is short—but violent. You hit the ground hard, breath exploding from your lungs \nas pain rips through your side and leg.\nRain pounds down on you as you lie there, stunned and gasping.\nNothing feels broken.\n\nBut nothing feels right either.\n\nEvery movement sends sharp pain through your body, and when you try to stand, \nyour leg buckles beneath you. You manage to stagger upright, leaning heavily on the wall for support.\nClimbing again is impossible.\nWhatever you hoped to gain by avoiding the main entrance, it isn’t worth this.\nYou limp toward the shattered doors, each step slower than the last.\n",
+      "choices": [],
+      "type": "ending_bad"
+    },
+    "S09": {
+      "text": "Scene S09 text...\n\n**CHOICES**\n\nFIRST CHOICE — ...\n\nSECOND CHOICE — ...",
+      "choices": [],
+      "type": "normal"
+    },
+    "S10": {
+      "text": "Scene S10 text...\n\n**CHOICES**\n\nFIRST CHOICE — ...\n\nSECOND CHOICE — ...",
+      "choices": [],
+      "type": "normal"
+    },
+    "S11": {
+      "text": "Ending (Normal)\n\nWrap up this path.\n\n**CHOICES**\n\nRESTART — Return to the beginning.",
+      "choices": [
+        {
+          "label": "Restart",
+          "to": "S01"
+        }
+      ],
+      "type": "ending"
+    },
+    "S12": {
+      "text": "Ending (Special)\n\nA rarer outcome.\n\n**CHOICES**\n\nRESTART — Return to the beginning.",
+      "choices": [
+        {
+          "label": "Restart",
+          "to": "S01"
+        }
+      ],
+      "type": "ending_bad"
+    },
+    "S13": {
+      "text": "Ending (Bad)\n\nA grim conclusion.\n\n**CHOICES**\n\nRESTART — Return to the beginning.",
+      "choices": [
+        {
+          "label": "Restart",
+          "to": "S01"
+        }
+      ],
+      "type": "ending_special"
+    }
+  }
+}
