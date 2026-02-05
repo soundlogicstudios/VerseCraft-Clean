@@ -2,19 +2,19 @@
   "hitboxes": [
     {
       "id": "back",
-      "x": 25,
-      "y": 90,
-      "w": 50,
-      "h": 8,
+      "x": 25.87,
+      "y": 82.89,
+      "w": 48.53,
+      "h": 5.49,
       "action": "go",
       "arg": "settings"
     },
     {
       "id": "clear_saves",
-      "x": 25,
-      "y": 75,
-      "w": 50,
-      "h": 10,
+      "x": 25.87,
+      "y": 73.63,
+      "w": 50.4,
+      "h": 5.49,
       "action": "clear_saves",
       "arg": "all"
     },
