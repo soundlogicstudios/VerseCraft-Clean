@@ -9,6 +9,15 @@
       "action": "go",
       "arg": "settings"
     },
+   {
+  "id": "clear_all",
+  "x": 25,
+  "y": 75,
+  "w": 50,
+  "h": 10,
+  "action": "clear_all_saves",
+  "arg": ""
+}, 
     {
       "id": "slot_0",
       "x": 10,
