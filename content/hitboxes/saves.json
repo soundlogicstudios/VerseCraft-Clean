@@ -10,13 +10,13 @@
       "arg": "settings"
     },
    {
-  "id": "clear_all",
+  "id": "clear_saves",
   "x": 25,
   "y": 75,
   "w": 50,
   "h": 10,
   "action": "clear_all_saves",
-  "arg": ""
+  "arg": "all"
 }, 
     {
       "id": "slot_0",
