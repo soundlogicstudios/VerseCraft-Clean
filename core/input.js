@@ -1,18 +1,47 @@
 // core/input.js
-// phase 1: ios-safe delegated hitbox actions (go only + additive clear_all_saves)
-//
-// ADDITIVE:
-// - Supports action: "clear_all_saves" (arg ignored)
-// - Calls core/save_manager.js which owns destructive storage operations
-//
-// NOTE:
-// - Keeps existing "go" behavior unchanged.
-// - Uses capture phase pointerup for iOS reliability.
+// phase 1: ios-safe delegated hitbox actions (go + clear_saves)
 
 import { go } from "./screen-manager.js";
-import { clear_all_saves } from "./save_manager.js";
 
 let _bound = false;
+
+function clear_all_saves() {
+  // Remove known map keys (safe)
+  const MAP_KEYS = [
+    "vc_state_by_story",
+    "vc_saves",
+    "versecraft_saves",
+    "versecraft_state_by_story"
+  ];
+
+  try {
+    MAP_KEYS.forEach((k) => localStorage.removeItem(k));
+  } catch (_) {}
+
+  // Remove per-story save keys (Phase 1 uses vc_save_<storyId>)
+  try {
+    const toRemove = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (!key) continue;
+
+      // Keep this list conservative to avoid nuking unrelated stuff.
+      if (
+        key.startsWith("vc_save_") ||
+        key.startsWith("vc_story_state_") ||
+        key.startsWith("versecraft_story_state_")
+      ) {
+        toRemove.push(key);
+      }
+    }
+    toRemove.forEach((k) => localStorage.removeItem(k));
+  } catch (_) {}
+
+  // Notify overlays to rehydrate (save menu, etc.)
+  try {
+    window.dispatchEvent(new CustomEvent("vc:savescleared"));
+  } catch (_) {}
+}
 
 function on_pointerup(e) {
   const hb = e.target?.closest?.(".hitbox");
@@ -30,14 +59,15 @@ function on_pointerup(e) {
     return;
   }
 
-  // ADDITIVE: destructive action (arg ignored)
-  if (action === "clear_all_saves") {
-    try {
-      const result = clear_all_saves();
-      console.log("[input] clear_all_saves ok", result);
-    } catch (err) {
-      console.error("[input] clear_all_saves FAILED", err);
+  // ADDITIVE: clear all saves
+  if (action === "clear_saves") {
+    // arg convention: "all"
+    if (!arg || arg === "all") {
+      clear_all_saves();
+      return;
     }
+    console.warn("[input] clear_saves unknown arg:", arg);
+    clear_all_saves();
     return;
   }
 
@@ -57,8 +87,10 @@ export function init_input() {
     (e) => {
       const hb = e.target?.closest?.(".hitbox");
       if (!hb) return;
+
       e.preventDefault();
       e.stopPropagation();
+
       const action = (hb.dataset.action || "").trim().toLowerCase();
       const arg = (hb.dataset.arg || "").trim();
 
@@ -67,13 +99,12 @@ export function init_input() {
         return;
       }
 
-      if (action === "clear_all_saves") {
-        try {
-          const result = clear_all_saves();
-          console.log("[input] clear_all_saves ok", result);
-        } catch (err) {
-          console.error("[input] clear_all_saves FAILED", err);
+      if (action === "clear_saves") {
+        if (!arg || arg === "all") {
+          clear_all_saves();
+          return;
         }
+        clear_all_saves();
       }
     },
     true
