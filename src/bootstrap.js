@@ -59,6 +59,10 @@ async function boot_once() {
       return;
     }
 
+    // ADDITIVE: save manager (destructive operations live here)
+    const modSaveMgr = await safe_import(`${CORE_BASE}/save_manager.js`);
+    try { modSaveMgr?.init_save_manager?.(); } catch (e) { console.warn("[boot] save_manager init failed", e); }
+
     // Unified debug HUD (HARD GATE)
     if (has_debug_flag()) {
       const modDbgTools = await safe_import(`${CORE_BASE}/debug_tools.js`);
