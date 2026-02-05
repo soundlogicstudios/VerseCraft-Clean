@@ -8,14 +8,8 @@
 // - Shows save metadata text (storyId + scene + timestamp if available)
 // - Safe if saves are missing: shows "Empty Slot"
 //
-// CRITICAL FIX:
-// - Your actual routed screen id is "settings_clear_save" (not "saves").
-// - This module hydrates on BOTH ids, and also hydrates based on whichever
-//   save screen is currently active.
-//
-// Notes:
-// - Keeps pointer-events:none so it NEVER blocks hitbox taps.
-// - Only updates hitbox dataset target (action/go/arg) for slot routing.
+// ADDITIVE FIX:
+// - Auto rehydrate after Clear All Saves by listening for "vc:savescleared"
 
 import { preload_catalog, resolve_story } from "./catalog.js";
 
@@ -92,6 +86,7 @@ function ensure_css() {
       min-width: 0;
       color: rgba(255,255,255,0.98);
       text-shadow: 0 2px 6px rgba(0,0,0,0.85);
+      text-transform: uppercase; /* ADDITIVE: titles/details uppercase */
     }
 
     .vc-save-title {
@@ -361,6 +356,12 @@ export function init_save_menu() {
     const screen = e?.detail?.screen;
     if (!SAVE_SCREENS.has(screen)) return;
     schedule_hydrate();
+  });
+
+  // ADDITIVE: instant refresh after clear
+  window.addEventListener("vc:savescleared", () => {
+    const activeId = get_active_screen_id();
+    if (SAVE_SCREENS.has(activeId)) schedule_hydrate();
   });
 
   window.addEventListener("resize", () => {
