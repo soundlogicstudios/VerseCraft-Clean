@@ -1,0 +1,446 @@
+{
+  "meta": {
+    "id": "wastelands",
+    "title": "Wastelands: The Shadow Tower",
+    "route": "story_wastelands",
+    "schema": "versecraft.story.v1",
+    "blurb": "You are a survivor. You have nedured the apocalyptic wastelands and have done what was neccesary. Now you must choose to shape your own destiny in this survival RPG.."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "The sun doesn’t rise over Old Junktown — it interrogates it.\n\nLight pours across cracked asphalt and shattered storefronts, turning broken glass into tiny fires that wink out one by one as the wind pushes dust through the streets. Rusted vehicles sit frozen where their drivers abandoned them decades ago, skeletal frames half-buried in drifting sand. Somewhere far off, wind turbines groan like tired giants, their slow rotation a reminder that someone — somewhere — still clings to the idea of a future.\n\nYou stand alone at the edge of the ruins.\n\nBehind you, what remains of your caravan smolders — blackened metal, ash drifting upward like ghosts that refuse to settle. The smell of burnt rubber clings to your throat. A few hours ago, you had people. Direction. Hope.\n\nNow you have a Rusty Pipe… and the long road ahead.\n\nYou roll your shoulders, tug your Torn Leather Vest tighter, and sweep your gaze across the horizon. Out here, hesitation gets you buried. Movement keeps you alive.\n\nA faint radio signal crackles through your handheld receiver — static, broken words, maybe a call for help… maybe a trap. The tower stands crooked in the distance, silhouetted against the pale sky like a promise that might still be breathing.\n\nBut Junktown itself whispers too. Collapsed buildings hide secrets, and secrets mean caps, meds, maybe a weapon that lasts longer than your luck.\n\nYou exhale slowly.\n\n“Alright,” you mutter to no one. “One step at a time.”\n\nHEAD TOWARDS RADIO SIGNAL — Head toward the faint radio signal coming from the distant tower.\n\nSCAVENGE THE OUTSKIRTS — Scavenge the outskirts of the ruins for supplies first.",
+      "choices": [
+        {
+          "label": "HEAD TOWARDS RADIO SIGNAL",
+          "to": "S02"
+        },
+        {
+          "label": "SCAVENGE THE OUTSKIRTS",
+          "to": "S03"
+        }
+      ],
+      "type": "normal"
+    },
+    "S02": {
+      "text": "The radio tower rises like a broken spine against the pale sky, its twisted metal ribs whining softly as the desert wind threads through them. Rust flakes drift down like red snow. Loose cables sway and slap against the frame, each hollow clang echoing farther than it should in the empty wasteland. Long shadows stretch across cracked earth, turning the ground into a maze of dark lines that seem to move when you’re not looking straight at them.\n\nA wrecked van lies half-buried in drifting ash nearby, its windows shattered, its doors hanging open like a warning. Smoke coils lazily from beneath the hood, thin and gray, carrying a bitter chemical tang that burns your throat even from a distance. Something pops inside the engine block — a slow, uneven tick — and for a moment you wonder if it’s heat… or movement.\n\nYour grip tightens around your weapon. Out here, nothing smokes without a reason, and nothing survives long without someone — or something — watching.\n\nThe tower looms ahead, promising answers… or another grave.\n\nOutcome: (add inventory) +rusty_pipe, rough_leather_vest, pip_boy_special\n\nINVESTIGATE SMOKE -- Investigate the smoke before proceeding. \n\nIGNORE SMOKE -- Ignore the smoke and push toward the tower. ",
+      "choices": [
+        {
+          "label": "INVESTIGATE SMOKE",
+          "to": "S04"
+        },
+        {
+          "label": "IGNORE SMOKE",
+          "to": "S05"
+        }
+      ],
+      "type": "normal"
+    },
+    "S03": {
+      "text": "You pick your way through the shattered bones of the old buildings, boots crunching softly over broken glass and sun-bleached plaster. Every movement is careful, deliberate — one wrong step could bring half a wall down on your head. The air smells of dust, rust, and something older, like memories baked into concrete by decades of heat. Twisted beams jut from the rubble like ribs, casting jagged shadows that shift with the wind.\n\nYou crouch low, brushing aside splintered wood and peeling insulation. A faint metallic glint catches your eye beneath a collapsed shelf — the kind of shine that means survival in the wastes. Your pulse quickens. Out here, even the smallest find can mean another day breathing instead of bleeding out in the sand. You find a Medkit and 8 caps.\n\nOutcome (background): Wisdom and Agility influence success. \nSuccess: (add iventory) Medkit, 8 caps, (+5 XP). ",
+      "choices": [
+        {
+          "label": "TAKE LOOT AND GO",
+          "to": "S06"
+        }
+      ],
+      "type": "normal"
+    },
+    "S04": {
+      "text": "The road stretches out in front of you like a scar cut straight through the wasteland. Heat shimmers above the cracked pavement, turning the horizon into a wavering mirage. Somewhere behind you, the last embers of your destroyed caravan fade into silence — no voices, no engines, just wind dragging ash across the ground.\n\nYou keep moving.\n\nEvery step feels heavier than the last, boots crunching over grit and broken metal. Ahead, the radio tower rises crooked against the sky, its silhouette wrapped in thin spirals of smoke. The signal on your receiver crackles again — half words, static, maybe a warning — and your grip tightens around the Rusty Pipe.\n\n“Please don’t be another trap…” you mutter under your breath.\n\nAs you draw closer, the source of the smoke comes into focus — a wrecked van slumped against the roadside, doors hanging open like broken wings. And there — movement.\n\nA lone traveler crouches beside it, clutching their side, eyes wide with panic. Circling them are rad-wolves — lean, scarred creatures with patchy fur and glowing eyes that catch the light like shattered glass. Their low growls ripple through the air, a vibration you feel more than hear. One snaps its jaws, teeth flashing wet in the sun.\n\nThe traveler spots you, relief and fear colliding in their expression.\n\n“Don’t… don’t come closer,” they rasp. “They’ll turn on you too…”\n\nThe wolves shift, heads lowering, attention flicking toward you — new prey, new threat.\n\nThe heat presses down. The tower looms behind them. And for a moment, the entire wasteland holds its breath, waiting to see what you’ll do next.\n\nCONFRONT WOLVES — Confront the rad-wolves head-on.\n\nSHOUT AND SCARE — Attempt to scare them away with a loud shout.\n\nTRY TO SKIP PAST — Slip past the pack with the traveler unnoticed.",
+      "choices": [
+        {
+          "label": "CONFRONT WOLVES",
+          "to": "S07"
+        },
+        {
+          "label": "SHOUT AND SCARE",
+          "to": "S08"
+        },
+        {
+          "label": "TRY TO SKIP PAST",
+          "to": "S09"
+        }
+      ],
+      "type": "normal"
+    },
+    "S05": {
+      "text": "You keep your eyes fixed on the tower, letting the smoke behind you fade into memory. Whatever was burning back there — trouble, bait, or someone else’s bad luck — it’s no longer your concern. The signal grows stronger with every step, a thin thread of static pulling you forward across the broken road.\n\nBut the wasteland never gives you a straight path.\n\nThe asphalt dips suddenly, fractured by years of neglect. A dark ribbon of irradiated runoff cuts across the road, shimmering faintly under the harsh sunlight. The air smells metallic, sharp enough to sting your nose. You try to step over it — careful, balanced — but your boot catches on a jagged pipe jutting from the ground.\n\nThe world tilts.\n\nYou slam into the ditch hard, metal scraping against your arms and legs as you tumble through rusted debris. Pain flares, hot and immediate. For a moment all you hear is the ringing in your ears and the slow trickle of tainted water sliding past your boots.\n\n“Damn it…” you hiss, pushing yourself upright.\n\nYour sleeves are torn, skin scraped raw beneath streaks of dust and old rust. It’s not enough to stop you — nothing out here ever is — but the wasteland has claimed another small piece of you.\n\nYou glance back up at the road, then toward the tower looming closer now. At the edge of the ditch, a narrow drainage pipe yawns open, its interior swallowed by shadow. A faint draft seeps out from within, cool and unsettling — a whisper of something hidden beneath the surface.\n\nYou wipe the grit from your hands, weighing your options.\n\nOutcome: -2 HP, 1 XP.\n\nCLIMB OUT — Climb out and continue toward the tower.\n\nEXPLORE DRAIN PIPE — Explore the drainage pipe leading to darkness. ",
+      "choices": [
+        {
+          "label": "CLIMB OUT",
+          "to": "S21"
+        },
+        {
+          "label": "EXPLORE DRAIN PIPE",
+          "to": "S11"
+        },
+        {
+          "label": "New Choice",
+          "to": "S20"
+        }
+      ],
+      "type": "normal"
+    },
+    "S06": {
+      "text": "You take stock of what you have gathered and have experienced. The wasteland stretches endlessly. \nYour lungs burn from dust, but your pockets feel a little heavier.  A little worse for the wiser. \n\nMOVE TOWARDS TOWER -- Move on toward the tower. \n\nSEARCH NEARBY BUILDINGS -- Check the surrounding area for resources.\n\n",
+      "choices": [
+        {
+          "label": "MOVE TOWARDS TOWER",
+          "to": "S05"
+        },
+        {
+          "label": "SEARCH NEARBY BUILDINGS",
+          "to": "S12"
+        }
+      ],
+      "type": "normal"
+    },
+    "S07": {
+      "text": "Rad-wolves lunge at you. Metal clashes, claws scrape, and the smell of blood fills the air. \nThe fight is fierce and unforgiving. You are unable to reach for your weapon as the animal bites down on your wrist.\nPain shoots through your body and blood trickles down your arm. This getting away from you fast. \nYou start to panic and reach around the area for anything within grasp. You come up with your metal pipe. \nYou wedge into the wolfs mouth and pry it from your arm enough to wield it properly bringing it down on it's head with a sickening thud. \nThe rad wolf slumps to the ground. You swing your weapon towards the pack.\n\nOutcome (background): -10HP, combat modifiers Agility, and timing affect victory. \nSYSTEM NOTES: \nVictory: Wolves scatter. +20 XP, _10 caps, and wastelands_rep. → Section 13\nNear-Death: Wolves bite deep, leaving you weakened (-25HP loss). If HP ≤ 0 → Bad Ending 1\nOtherwise → Section 13",
+      "choices": [
+        {
+          "label": "SCREAM IN VICTORY",
+          "to": "S13"
+        },
+        {
+          "label": "FOR TESTING_BAD ENDING",
+          "to": "S26"
+        }
+      ],
+      "type": "normal"
+    },
+    "S08": {
+      "text": "You plant your feet between the traveler and the circling pack, lungs burning, \nheart hammering loud enough to drown out the wind. The rad-wolves fan out, \nclaws scratching across cracked asphalt, yellow eyes fixed on you with hungry calculation.\n\n“Hey!” you roar, voice ripping through the hot air.\n\nYou slam the Rusty Pipe against a rusted panel of the van — CLANG — the sound exploding \nacross the empty road like a gunshot. Dust erupts around your boots as you stomp forward, \nshoulders squared, making yourself bigger than you feel. Every instinct screams at you to back away, \nbut you push harder, louder, wilder.\n\n“Come on then!” you shout, baring your teeth like you belong here — \nlike you own this stretch of wasteland.\n\nThe wolves hesitate.\n\nOne lowers its head, ears pinned flat, testing you with a low growl. Another circles wider, \nuncertain now, its confidence cracking under your sudden ferocity. You take another step forward, \nkicking a plume of ash into the air, eyes locked on the lead wolf.\n\nThe traveler behind you coughs weakly, trying to stay low, but you don’t look back. You can’t. \nOut here, fear is a scent predators follow — and you refuse to let them smell it.\n\nFor a long, tense moment, nothing moves.\n\nThen the lead wolf snarls — not in attack, but in warning — and takes a slow step backward. \nThe others follow, retreating one pace at a time, muscles coiled, eyes never leaving you. \nYou keep shouting, keep stomping, driving them farther away until the pack finally breaks formation, \nvanishing into drifting haze with angry, frustrated howls.\n\nSilence rushes back in.\n\nYour chest heaves as adrenaline drains from your veins. The traveler exhales a shaky breath behind you.\n\n“…I thought they had me,” they whisper.\n\nYou glance toward the empty road where the wolves disappeared, then back at the tower \nlooming in the distance.\n\nOut here, strength isn’t just about winning fights. Sometimes it’s about convincing the \nwasteland you’re too dangerous to bother with — even when your hands are still shaking. \n\n\nOutcome: Success (Timing high): Wolves retreat. +8 XP. +12 caps, +Traveler’s Token (special item), \nFailure: They snap and leap, biting you. -5 HP. ",
+      "choices": [
+        {
+          "label": "CLAIM YOUR VICTORY",
+          "to": "S13"
+        }
+      ],
+      "type": "normal"
+    },
+    "S09": {
+      "text": "You press yourself against the broken frame of a collapsed wall, breath shallow, movements slow and deliberate. The wind shifts, carrying the sharp scent of blood and dust. Every instinct screams at you to stay hidden — to survive, no matter the cost.\n\nThe traveler looks toward you, eyes wide, waiting for a signal… waiting for help that never comes.\n\nYou raise a hand, motioning silently — stay low. Your fingers cut through the air in quick, careful gestures as you edge away, slipping deeper into the shadows cast by the looming tower. Each step is measured, heel to toe, careful not to disturb the gravel beneath your boots.\n\nBehind you, the rad-wolves circle tighter.\n\nA low growl rises, then another. The traveler’s breathing turns ragged, panic creeping into every movement. For a moment you hesitate — just a flicker — but the tower stands ahead, and the road forward is yours alone.\n\nYou keep moving.\n\nThe first snarl erupts into chaos. Claws scrape against metal, a shout choked off too quickly, the sound of struggle swallowed by the dry wind. You don’t look back. Out here, looking back gets you killed.\n\nYour shadow stretches long across the cracked asphalt as you slip past the danger zone, heart pounding in your ears. The wolves are distracted now — focused on easier prey — and that’s the opening you needed.\n\nGuilt presses at the edges of your thoughts, but the wasteland doesn’t reward hesitation. Survival means hard choices… and sometimes, it means walking away.\n\nThe tower looms larger with every step, smoke curling around its twisted frame like a silent witness to what you left behind.\n\nOutcome: Success (Agility check): You pass unseen. Gain 10 XP. → Section to be renumbered.\nFailure: A twig snaps. The wolves attack. Lose 6 HP. → Section to be renumbered.\n\nMOVE TOWARDS TOWER -- Head towards tower looming in the distance.",
+      "choices": [
+        {
+          "label": "MOVE TOWARDS TOWER",
+          "to": "S05"
+        },
+        {
+          "label": "DOUBLE BACK AND LOOT",
+          "to": "S22"
+        }
+      ],
+      "type": "normal"
+    },
+    "S10": {
+      "text": "The climb to the ridge feels longer than it should, every step heavy with dust and unspoken thoughts. Loose stones skitter down the slope behind you, disappearing into the silence you left in your wake. By the time you crest the rise, the wind hits you full force — dry, restless, carrying the smell of rust and distant smoke.\n\nYou stop.\n\nFrom up here, the wasteland stretches forever — cracked earth bleeding into pale sky — but the radio tower dominates everything. Its skeletal frame leans like a wounded giant, cables swaying and clattering softly as if whispering secrets to anyone desperate enough to listen. Static crackles faintly from your receiver, the signal stronger now, pulling you closer.\n\nBelow the ridge, a small shack crouches at the tower’s base.\n\nIt looks fragile, half-buried in drifting sand, its metal walls patched with mismatched plates scavenged from a dozen different ruins. One shutter hangs crooked, tapping rhythmically in the wind. A faint trail of footprints circles the area — too fresh to ignore, too scattered to trust.\n\nThe breeze shifts, brushing across your face like a warning. Something about the place feels off. Too quiet. Too still. Opportunity and danger wear the same mask out here, and you’ve learned the hard way how thin the line between them can be.\n\nYou rest a hand on your weapon, eyes scanning the shack’s shadowed doorway, then flicking back to the tower’s towering silhouette above it. Every path forward carries weight — supplies, answers, or another fight waiting just beyond the dust.\n\nThe wasteland holds its breath, waiting for your next move\n\nINSPECT SHACK -- Inspect the shack for supplies. \n\nPROCEED TO TOWER  -- Proceed directly to the tower. ",
+      "choices": [
+        {
+          "label": "INSPECT SHACK",
+          "to": "S14"
+        },
+        {
+          "label": "PROCEED TO TOWER",
+          "to": "S15"
+        }
+      ],
+      "type": "normal"
+    },
+    "S11": {
+      "text": "Somewhere deep inside the pipe, a faint mechanical hum echoes upward — steady, deliberate. Not wind. Not debris. Something still running beneath the surface of the world.\n\nYour hand brushes against a corroded hatch set into the pipe’s side. The metal is cold, almost alive with vibration. Dust drifts into the darkness beyond, swallowed instantly.\n\nBehind you, the open road leads back toward the tower and the safety of sunlight. Down here, the shadows promise secrecy… and risk.\n\nYou flex your sore shoulder, considering your next move.\n\nOPEN HATCH — Open the hatch and enter.\n\nRETREAT AND RETURN — Retreat from the pipe and return to the road.",
+      "choices": [
+        {
+          "label": "OPEN HATCH",
+          "to": "S16"
+        },
+        {
+          "label": "RETREAT AND RETURN",
+          "to": "S18"
+        }
+      ],
+      "type": "normal"
+    },
+    "S12": {
+      "text": "You slow to a stop among the broken husks of old buildings, letting the wind settle around you. Dust clings to your throat, turning every breath into a dry scrape. Somewhere behind you, metal creaks, and the sound carries too far across the empty streets — a reminder that the wasteland never truly sleeps.\n\nYou take a moment to look at what you’ve gathered.\n\nA few caps clink softly in your palm. Scraps of gear hang heavier from your belt than they did this morning. Nothing glamorous. Nothing clean. Just enough to keep you moving — to keep you alive. Your hands are rougher now, knuckles scabbed and dust-stained, proof of lessons learned the hard way.\n\nThe horizon stretches forever in every direction, a pale sea of cracked earth and skeletal ruins. The radio tower still looms ahead, its jagged silhouette cutting into the sky like a promise that refuses to fade. Static whispers through your Pip-Boy, faint but steady — a thread pulling you forward.\n\nYou exhale slowly.\n\n“A little worse… a little wiser,” you murmur, rolling your shoulders as fatigue settles into your bones. The road has already taken more than it’s given, but your pockets are heavier now, and that counts for something out here.\n\nThe wind shifts, stirring loose paper across the ground and rattling broken window frames nearby. Opportunity hides in the ruins around you — but so does danger. The unmistakable sound of engines in the distance.\n\nYou adjust your grip on your weapon and make your choice.\n\nOutcome: (add inventory) +6 Caps, _water_unradiated",
+      "choices": [
+        {
+          "label": "HIDE AND OBSERVE",
+          "to": "S17"
+        },
+        {
+          "label": "CONFRONT AND SIGNAL",
+          "to": "S18"
+        }
+      ],
+      "type": "normal"
+    },
+    "S13": {
+      "text": "The last of the rad-wolves disappears into the haze, their snarls fading into the dry wind. Silence settles over the road again — heavy, uneasy, broken only by the distant creak of the tower above you. Your side burns where claws caught flesh, and you taste dust and iron as you steady yourself against the wrecked van.\n\nThe traveler slowly rises from their crouched position, brushing ash from their coat. Their hands tremble, but their eyes hold a stubborn kind of gratitude — the kind you only see from people who didn’t expect to survive another hour out here.\n\n“Thought that was it for me,” they mutter, voice rough. “You… you didn’t have to step in.”\n\nThey glance around at the scattered remains of the fight. A few caps glint in the dirt where a torn pouch must have burst open during the struggle. You kneel, scooping up the small metal discs — twelve in total — each one clinking softly against the others, a familiar sound that almost feels like victory.\n\nSomething else catches your eye near the traveler’s boot: a small, weathered token etched with faded markings. The metal is worn smooth from years of handling.\n\nThe traveler notices you holding it and gives a tired half-smile.\n“Keep it,” they say. “A Traveler’s Token… means more than caps in some places. Might even open doors.”\n\nAs if on cue, your Pip-Boy crackles to life, the speaker sputtering through static before a fragmented voice pushes through:\n\n“—any survivors in range… this is Refuge Point… repeat, Refuge Point broadcasting… clean water, trade routes, shelter… coordinates transmitting…”\n\nThe message repeats, faint but steady, cutting through the emptiness like a lifeline.\n\nThe traveler meets your gaze.\n“Refuge Point,” they whisper. “If that signal’s real… it might be the closest thing to hope left out here.”\n\nThe wind shifts, carrying the smell of dust and distant smoke as the tower looms overhead — and for the first time since the caravan burned, the road ahead feels like it might lead somewhere worth fighting for.\n\nOutcome: (add inventory) +12 caps, +Traveler’s Token (special item), +5 XP \n\nASK ABOUT REFUGE POINT -- Ask the traveler about Refuge Point.\n\nPREPARE FOR THE DANGER? -- Try to prepare yourself ahead of time. ",
+      "choices": [
+        {
+          "label": "ASK ABOUT REFUGE POINT",
+          "to": "S19"
+        }
+      ],
+      "type": "normal"
+    },
+    "S14": {
+      "text": "The shack groans softly as you push the door inward, its hinges protesting after years of neglect. Dust spills across the floor in slow drifting clouds, disturbed only by your footsteps. The inside smells of rust, old paper, and the faint bite of chemical residue — a scavenger’s graveyard left untouched just long enough to feel promising.\n\nBroken crates lie scattered across the room, their lids splintered and contents spilled like forgotten memories. Shattered glass crunches beneath your boots, catching the pale sunlight filtering through cracked window slats. Faded posters cling to the walls, edges curling, reminders of a world that once believed it would last forever.\n\nYou kneel beside a half-collapsed crate, brushing aside debris.\n\nThere — tucked beneath a rusted cloth — a Scrap Pistol.\n\nIt’s not pretty. The grip is worn smooth, metal scratched and patched with mismatched parts, but it’s functional… and out here, functional is everything. Nearby, a small pile of caps glints in the dust — five in total — likely abandoned in a hurry by whoever last used this place.\n\nYou pocket the caps and weigh the pistol in your hand, feeling a flicker of confidence settle into your chest. Every scrap of gear pushes the odds a little more in your favor.\n\nOutside, the wind rattles the shack’s metal siding, carrying distant echoes from the tower — a low metallic clang that reminds you how close you are now. Through a cracked window, you spot a nearby hill rising above the ruins, offering a clear vantage point. Alternatively, the dry brush and scattered wreckage near the tower’s base create shadows deep enough for someone careful to slip through unseen.\n\nYou steady your breath, deciding how to move forward.\n\nOutcome: (add inventory) scrap_pistol, +5 .38_ammo +5 caps. +3 XP.\n\nCLIMB HILL TO OBSERVE TOWER — Climb the nearby hill to observe the tower.\n\nTRY TO USE STEALTH — Approach the tower stealthily.",
+      "choices": [
+        {
+          "label": "CLIMB HILL TO OBSERVE TOWER",
+          "to": "S24"
+        },
+        {
+          "label": "TRY TO USE STEALTH",
+          "to": "S25"
+        }
+      ],
+      "type": "normal"
+    },
+    "S15": {
+      "text": "You step through the bustle of the scavenger streets and stop at the shadow of the tower itself. Up close, it feels less like a ruin and more like a fortress stitched together from decades of survival. Rusted plates groan as the wind pushes against them, and somewhere high above, heavy machinery hums — steady, powerful, alive. The sound vibrates down through the metal frame, echoing through your boots.\n\nArmed guards stand at the main entrance, rifles slung but ready, eyes sharp behind worn visors. They don’t move as you approach, but you can feel their attention settle on you like weight pressing against your shoulders. A massive door seals the tower interior, reinforced with layers of scrap armor and old-world locking mechanisms. Whatever lies beyond it isn’t meant for just anyone.\n\nA metallic clang rings out overhead.\n\nYou glance up, catching the faint silhouette of someone watching from an upper walkway. Out here, being watched is normal — but this feels different. Intentional.\n\nYou slow your steps, mind racing.\n\nIf Refuge Point is real, someone inside runs it. Someone with authority. Walking straight up and asking for permission might be the safest play… but safety has a price in places like this. You feel the caps in your pocket, the familiar weight of negotiation. A quick bribe could open doors faster than words ever will.\n\nThen again… towers this big always have more than one way in. Supply routes. Maintenance hatches. Shadows for those willing to take risks.\n\nThe guards shift slightly, waiting to see what you’ll do.\n\nASK FOR PERMISSION — Approach the guards openly and request an audience with whoever is in charge.\n\nBRIBE THE GUARD — Flash a handful of caps and test whether greed outweighs protocol.\n\nFIND ANOTHER WAY IN — Slip away from the main gate and search for a quieter entrance.",
+      "choices": [
+        {
+          "label": "ASK FOR PERMISSION",
+          "to": ""
+        },
+        {
+          "label": "BRIBE THE GUARD_TESTING_- CAPS",
+          "to": ""
+        },
+        {
+          "label": "FIND ANOTHER WAY IN",
+          "to": ""
+        }
+      ],
+      "type": "normal"
+    },
+    "S16": {
+      "text": "The hatch groans as you force it open, rust grinding against rust with a sound that echoes too loudly in the empty wasteland. A breath of stale, cool air rushes out to meet you — a welcome relief from the heat above. You lower yourself carefully inside, boots touching metal steps worn smooth by time.\n\nA bunker.\n\nOut here, that word carries weight.\n\nMost survivors spend entire lifetimes chasing rumors of intact shelters — places untouched by sandstorms and scavengers. Finding one isn’t just luck; it feels like uncovering a secret the wasteland tried to bury forever.\n\nDim emergency lights flicker along the walls, their weak glow painting everything in faded amber. Dust motes drift lazily through a narrow shaft of light cutting down from the open hatch above, swirling like ghosts caught in slow motion. Old control panels line one wall, screens long dead but wires still humming faintly beneath the surface — proof that something down here still has power.\n\nIn the center of the room sits a sealed crate.\n\nIt’s intact. Untouched.\n\nThe metal casing bears old-world markings, edges reinforced with heavy clasps that have somehow survived decades of decay. Your pulse quickens as you step closer. Bunkers rarely hold junk — and crates like this? They’re the kind of find scavengers whisper about over weak drinks and dying campfires.\n\nYou kneel beside it, running a hand across the lid. Solid. Heavy. Worth the risk.\n\nThe hum of distant machinery echoes softly through the bunker, a reminder that you’re not entirely alone beneath the surface. Shadows stretch across the walls, shifting with every flicker of light.\n\nYou weigh your options.\n\nPRY OPEN CRATE — Pry open the crate.\n\nRETURN TO DRAINAGE PIPE — Leave the bunker and return to the drainage pipe. ",
+      "choices": [
+        {
+          "label": "PRY OPEN CRATE",
+          "to": "S25"
+        },
+        {
+          "label": "RETURN TO DRAINGE PIPE",
+          "to": "S18"
+        }
+      ],
+      "type": "normal"
+    },
+    "S17": {
+      "text": "Faint at first. A low rumble that grows into the snarling roar of engines tearing across cracked pavement. You freeze, head tilting toward the open hatch as dust trickles down from the rim. Shadows flicker across the shaft of light.\n\nRaiders.\n\nA convoy blasts past nearby — you catch glimpses of spiked dirt-bikes and armored wheels through the sliver of daylight, engines howling like beasts let loose. Their laughter carries on the wind, harsh and careless. For a tense moment you hold your breath, waiting for one of them to notice the open hatch.\n\nBut they keep moving.\n\nThe roar fades into the distance, leaving only the quiet hum of the bunker behind you.\n\nNow the silence feels heavier.\n\nOutcome: +5 XP\n\nTAIL CAUTIOUSLY -- Tail them cautiously. \n\nGO OPPOSITE DIRECTION -- Move away in the opposite direction. ",
+      "choices": [
+        {
+          "label": "TAIL CAUTIOUSLY",
+          "to": "S30"
+        },
+        {
+          "label": "GO OPPOSITE DIRECTION",
+          "to": "S10"
+        }
+      ],
+      "type": "normal"
+    },
+    "S18": {
+      "text": "You climb back through the drainage pipe, hauling yourself up the rusted ladder until harsh sunlight spills across your vision. The hatch slams shut behind you with a dull clang, sealing the bunker’s secrets back into the earth. For a moment you pause at the roadside, letting the heat chase away the bunker’s chill, lungs filling with dry air that tastes of dust and metal.\n\nThe road stretches ahead once more, cracked but familiar. Whatever lay beneath the surface is behind you now — another story buried in the wastes. Your boots crunch against gravel as you step back onto the asphalt, eyes lifting toward the looming tower in the distance. From here you can make out movement around its base — shapes shifting, metal glinting, the faint murmur of a settlement carried by the wind.\n\nThe signal on your Pip-Boy flickers stronger.\n\nYou adjust your gear and keep moving, the hum of distant generators growing louder with every step as the road pulls you toward the tower-town waiting ahead.\n\nCONTINUE TO TOWER -- Continue on the road to the tower looming in the distance.\n\nSTOP TO ADJUST GEAR -- Wait for a moment and take stock.",
+      "choices": [
+        {
+          "label": "CONTINUE TO TOWER",
+          "to": "S29"
+        },
+        {
+          "label": "STOP TO ADJUST GEAR",
+          "to": "S20"
+        }
+      ],
+      "type": "normal"
+    },
+    "S19": {
+      "text": "The static fades into a low hiss as your Pip-Boy settles, the coordinates blinking faintly across the cracked screen. The traveler watches the tower in the distance, jaw tight, like someone staring at an old memory they’re not sure they trust anymore.\n\nThey pull their coat tighter around themselves and nod toward the crooked silhouette rising against the sky.\n\n“Yeah… that tower,” they say quietly. “That’s Refuge Point. Not just a signal beacon — a whole settlement built around it.”\n\nYou follow their gaze. From here it still looks abandoned — rusted ribs clawing at the horizon — but now you notice movement. Faint glints of metal. Shadows crossing the upper platforms. The slow spin of patched solar panels catching the sun.\n\n“They’ve got working water filters up top,” the traveler continues, voice gaining strength. “Real clean water — not the recycled sludge most places call a luxury. Trade caravans stop there when they can. Medical tents. A comms relay strong enough to reach half the wasteland.” They pause, expression darkening slightly. “But nothing that valuable stays simple.”\n\nA gust of wind carries distant echoes — metal clanging, voices faint enough to sound like ghosts.\n\n“There’s factions inside,” they add. “Tower Council runs the tech — engineers, traders, old-world techheads who think they can rebuild something better. The gate guards answer to them… mostly.”\n\nThey glance down the road, as if expecting trouble to crest the ridge at any moment.\n\n“And then there’s the Acolytes.”\n\nThe name hangs heavy in the air.\n\n“Big scavenger group. Heavily armed. They believe the tower’s tech is sacred — relics meant to be protected, not traded off piece by piece. Some folks call them protectors. Others call them fanatics.” A faint smirk crosses their face. “Either way, you don’t want to walk into Refuge Point without knowing they’re watching.”\n\nYour Pip-Boy crackles again, repeating the broadcast — clean water… shelter… trade routes…\n\nThe traveler shifts their weight, wincing slightly from their wounds but standing straighter now.\n\n“Refuge Point can be salvation,” they say. “Or a powder keg waiting for someone to strike the wrong match.”\n\nThe tower looms closer than ever, its silhouette promising safety, danger, and choices that will reach far beyond this dusty road.\n\nHEAD TOWARDS TOWER -- Thank the traveler for his advice and token, then head towards Refuge Point.",
+      "choices": [
+        {
+          "label": "HEAD TOWARDS TOWER",
+          "to": "S29"
+        }
+      ],
+      "type": "normal"
+    },
+    "S20": {
+      "text": "“A little worse… a little wiser,” you murmur, rolling your shoulders as fatigue settles into your bones. The road has already taken more than it’s given, but your pockets are heavier now, and that counts for something out here.\n\nThe wind shifts, stirring loose paper across the ground and rattling broken window frames nearby. Opportunity hides in the ruins around you — but so does danger. The unmistakable sound of engines in the distance. \n\nFaint at first. A low rumble that grows into the snarling roar of engines tearing across cracked pavement. You freeze, head tilting toward the open hatch as dust trickles down from the rim. Shadows flicker across the shaft of light.\n\nRaiders.\n\nA convoy blasts past nearby — you catch glimpses of spiked dirt-bikes and armored wheels through the sliver of daylight, engines howling like beasts let loose. Their laughter carries on the wind, harsh and careless. For a tense moment you hold your breath, waiting for one of them to notice the open hatch.\n\nBut they keep moving.\n\n",
+      "choices": [
+        {
+          "label": "TAIL CAUTIOUSLY",
+          "to": "S30"
+        },
+        {
+          "label": "GO OPPOSITE DIRECTION",
+          "to": "S10"
+        }
+      ],
+      "type": "normal"
+    },
+    "S21": {
+      "text": "You grit your teeth and haul yourself upright, fingers digging into cracked asphalt as you climb out of the ditch. Rust flakes crumble beneath your palms, and the sting along your ribs reminds you the fall wasn’t free. For a moment you just stand there, catching your breath while dust settles around you in slow drifting clouds.\n\nThe drainage pipe gapes behind you, dark and cold, but the road ahead is brighter — open, leading straight toward the tower that looms larger with every passing minute.\n\nYou brush grit from your sleeves, flex your sore shoulder, and steady your footing. The wind carries distant echoes now — faint voices, the hum of generators, the metallic clang of something alive at the tower’s base. It’s no longer just a silhouette on the horizon; it feels real. Busy. Dangerous.\n\nYour Pip-Boy crackles softly at your wrist, the signal stronger than before.\n\nYou step back onto the road.\n\nBoots crunch. Heart steady. Eyes forward.\n\nWhatever waits at the tower-town, you’re close enough to see the details now — patched structures clinging to its base, movement along the walkways, guards pacing like shadows against the rusted metal. The wasteland stretches behind you, but the future — for better or worse — stands ahead.\n\nAnd you keep walking.",
+      "choices": [
+        {
+          "label": "HEAD TOWARDS TOWER",
+          "to": "S29"
+        }
+      ],
+      "type": "normal"
+    },
+    "S22": {
+      "text": "You slow your steps… then stop.\n\nThe wind shifts behind you, carrying silence where there should have been movement. No growls. No snapping jaws. Just the dry hiss of dust sliding across broken pavement.\n\nYou turn back.\n\nThe road feels longer on the return, heavier somehow. Your boots scrape against the ground as you approach the wrecked van again, the tower looming over everything like a silent witness. The place where you left the traveler is still — too still — and the absence of the wolves is almost worse than their presence.\n\nWhat remains is scattered across the asphalt.\n\nA torn pack lies half-open, contents spilled into the dust. A few caps glint faintly in the sunlight. Drag marks streak away toward the ruins, already fading under drifting sand. You don’t look at them for long. Out here, hesitation doesn’t change anything — it only slows you down.\n\nYou kneel and sift through what’s left.\n\nThe traveler’s gear was light but practical: a handful of caps, a worn utility pouch, maybe something overlooked in the chaos. The metal discs clink softly as you gather them, the sound hollow against the quiet road. The air smells faintly of iron and dry earth, but the wind is already erasing the moment, smoothing the scene back into the endless wasteland.\n\nYour jaw tightens.\n\n“Survival,” you mutter under your breath, though the word feels heavier now.\n\nThere’s no movement. No sign of the pack returning. Just the tower ahead, waiting — and the road stretching forward like nothing ever happened.\n\nYou rise slowly, pockets a little heavier, the silence pressing in around you as you turn back toward Refuge Point once more.\n\nOutcome: (add inventory)+5 Caps, utility_pouch\n\nCONTINUE TOWARDS TOWER -- Continue on your journey to the tower.\n\nCHECK YOUR PIP BOY -- Take a moment to see if you can pick up a signal.",
+      "choices": [
+        {
+          "label": "CONTINUE TOWARDS TOWER",
+          "to": "S29"
+        },
+        {
+          "label": "CHECK YOUR PIP BOY",
+          "to": "S23"
+        }
+      ],
+      "type": "normal"
+    },
+    "S23": {
+      "text": "You glance down at your wrist as your Pip-Boy crackles to life, the speaker sputtering through layers of static. The screen flickers, green text scrolling unevenly as if the signal is fighting its way through miles of dust and broken airwaves.\n\nAt first it’s nothing but noise — a hiss, a pop — then a voice cuts through.\n\n“—all travelers within broadcast range… this is Refuge Point Tower… repeat, Refuge Point Tower…”\n\nThe transmission stabilizes for a moment, the tone calm but worn, like someone who has repeated the message a thousand times.\n\n“Refuge Point is operational. Clean water available. Trade caravans welcome under guard supervision. Medical assistance limited but active. Approach with weapons holstered. Unauthorized aggression will be met with force.”\n\nYour Pip-Boy pings softly as coordinates flash across the screen, aligning perfectly with the looming tower ahead.\n\nThe voice continues, quieter now, almost human beneath the formality.\n\n“If you can hear this… you made it farther than most.”\n\nThe signal fades into static again, leaving only the steady hum of the device and the distant silhouette of the tower rising against the sky. For the first time since the caravan burned, the road feels less like wandering — and more like arriving somewhere that still remembers what survival looks like.\n\nYou tighten your grip on your gear and lift your gaze toward Refuge Point.",
+      "choices": [
+        {
+          "label": "HEAD TOWARDS REFUGE POINT",
+          "to": "S29"
+        }
+      ],
+      "type": "normal"
+    },
+    "S24": {
+      "text": "You climb the hill slowly, boots slipping against loose gravel as you pull yourself higher for a better look at the looming tower. From the ridge, Refuge Point spreads out below — a maze of scrap-built stalls and moving figures clustered around the rusted skeleton of the radio tower. Smoke drifts lazily upward, and the faint hum of generators reaches your ears. For a moment, it almost looks like hope.\n\nYou step forward to get a clearer view.\n\nToo far forward.\n\nThe engine noise hits you before the realization does — a low rumble rolling across the flats behind you. Dust plumes rise on the horizon, growing larger by the second. By the time you turn, it’s already too late. Raider vehicles crest the opposite slope, spiked frames glinting in the harsh light as they fan out across the ridge.\n\nEngines idle like growling beasts around you, heat waves rising from rusted hoods and spinning tires. The raiders spread out slowly, boots crunching over loose stone as they circle. One of them taps a blade against a shoulder plate in a slow, taunting rhythm. Another adjusts a cracked visor, studying you like a prize they haven’t decided how to claim yet.\n\nThe tower stands behind you — close enough to see, too far to save you.\n\nYou tighten your grip on your weapon, heart hammering. The wind dies for a moment, leaving only the low rumble of engines and the metallic creak of their gear. Every instinct screams that this won’t end cleanly.\n\nA raider steps forward, voice distorted behind a mask.\n“Well now… look what climbed the hill.”\n\nLaughter ripples through the group.\n\nDust swirls at your feet as you weigh your options, every second stretching thinner than the last. The wasteland doesn’t give you perfect choices — only chances.\n\nSTAND AND FIGHT — You brace yourself, ready to strike and carve a path through them, even if it means bleeding for every step toward escape.\n\nTRY TO BARGAIN — You slowly raise a hand, caps glinting in your palm, hoping greed outweighs violence.\n\nDISTRACT AND FLEE — You point suddenly past them, voice sharp and urgent — “Look over there!” — gambling everything on a moment of chaos to break away.",
+      "choices": [
+        {
+          "label": "STAND AND FIGHT",
+          "to": ""
+        },
+        {
+          "label": "TRY TO BARGAIN",
+          "to": ""
+        },
+        {
+          "label": "DISTRACT AND FLEE",
+          "to": ""
+        }
+      ],
+      "type": "normal"
+    },
+    "S25": {
+      "text": "The engine noise hits you before the realization does — a low rumble rolling across the flats behind you. Dust plumes rise on the horizon, growing larger by the second. By the time you turn, it’s already too late. Raider vehicles crest the opposite slope, spiked frames glinting in the harsh light as they fan out across the ridge.\n\nEngines idle like growling beasts around you, heat waves rising from rusted hoods and spinning tires. The raiders spread out slowly, boots crunching over loose stone as they circle. One of them taps a blade against a shoulder plate in a slow, taunting rhythm. Another adjusts a cracked visor, studying you like a prize they haven’t decided how to claim yet.\n\nThe tower stands behind you — close enough to see, too far to save you.\n\nYou tighten your grip on your weapon, heart hammering. The wind dies for a moment, leaving only the low rumble of engines and the metallic creak of their gear. Every instinct screams that this won’t end cleanly.\n\nA raider steps forward, voice distorted behind a mask.\n“Well now… look what climbed the hill.”\n\nLaughter ripples through the group.\n\nDust swirls at your feet as you weigh your options, every second stretching thinner than the last. The wasteland doesn’t give you perfect choices — only chances.\n\nSTAND AND FIGHT — You brace yourself, ready to strike and carve a path through them, even if it means bleeding for every step toward escape.\n\nTRY TO BARGAIN — You slowly raise a hand, caps glinting in your palm, hoping greed outweighs violence.\n\nDISTRACT AND FLEE — You point suddenly past them, voice sharp and urgent — “Look over there!” — gambling everything on a moment of chaos to break away.",
+      "choices": [
+        {
+          "label": "STAND AND FIGHT",
+          "to": "S27"
+        },
+        {
+          "label": "TRY TO BARGAIN",
+          "to": "S28"
+        },
+        {
+          "label": "DISTRACT AND FLEE",
+          "to": ""
+        }
+      ],
+      "type": "normal"
+    },
+    "S26": {
+      "text": "The world grows quiet in a way you’ve never heard before.\n\nNot silent — just… distant. Like everything is slipping away from you one sound at a time.\n\nYour knees hit the ground first. Dust rises around you, drifting slowly through the red haze of the dying sun. The wasteland stretches out in every direction — broken towers, shattered roads, empty sky — but it all feels farther away now, as if you’re watching it through cracked glass.\n\nYour weapon slips from your hand.\n\nYou try to reach for it… but your fingers won’t listen.\n\nBreath comes shallow, each inhale thinner than the last. The wind brushes against your torn jacket, carrying whispers of places you never reached — Refuge Point’s promise, hidden vaults buried beneath sand, roads that forked into choices you never had time to make.\n\nYour Pip-Boy flickers weakly.\n\nA broken transmission sputters through the static.\n\n“…traveler… respond… are you still—”\n\nThe voice fades before it finishes.\n\nMemories blur together.\n\nThe sky darkens at the edges of your vision.\n\nYou try to stand — stubborn, defiant — but your strength dissolves into the dust beneath you. The wasteland doesn’t stop. The wind keeps moving. Somewhere far away, metal creaks, a lonely reminder that the world keeps turning even when you can’t.\n\nYour heartbeat slows.\n\nOne…\nmore…\nstep…\n\nBut there are no more choices.\n\nThe horizon dims, colors draining into gray. The last thing you feel is the warmth of sunlight slipping away as the desert night rises to claim what remains.\n\nYour story ends here.\n\nNo path forward.\nNo turning back.\nOnly silence — and the faint echo of roads that might have been.",
+      "choices": [
+        {
+          "label": "PLAY AGAIN",
+          "to": "S01"
+        }
+      ],
+      "type": "ending_bad"
+    },
+    "S27": {
+      "text": "A raider steps forward, voice distorted behind a cracked mask.\n\n“Well now… look what climbed the hill.”\n\nLaughter ripples through the group, sharp and hungry.\n\nYou don’t answer.\n\nYour hand moves faster than thought — the Scrap Pistol clears its holster in one smooth motion, the first shot cracking across the ridge like a lightning strike. The nearest raider drops before the others even realize what’s happening. Chaos erupts instantly — engines rev, boots scrape against stone, voices shouting over one another.\n\nYou keep firing.\n\nEach round counts. You move sideways across the ridge, forcing them to adjust while dust kicks up around your boots. The pistol bucks in your grip — loud, desperate — but surprise is on your side. Two more raiders fall before the rest manage to bring their weapons up.\n\nA shot grazes past your shoulder. Another ricochets off rock behind you.\n\nYour magazine runs dry with a hollow click.\n\nNo time to think.\n\nYou dive forward, grabbing a fallen raider’s pipe rifle as you roll across the gravel. The weapon is heavier, rougher — but it works. You rack the bolt and fire, the report deeper and harsher than your pistol. One raider stumbles backward off a bike, another drops behind a rusted hood too late.\n\nThe fight ends as suddenly as it began.\n\nEngines idle without riders. Dust settles slowly across scattered gear and silent bodies. The ridge falls quiet again — only the wind moving through the wreckage.\n\nYou stand there for a moment, breathing hard, the empty Scrap Pistol hanging useless at your side.\nBut the wasteland gives and takes in equal measure. You search the fallen raiders quickly — hands moving out of habit, eyes scanning the horizon for reinforcements.\n\nOutcome: Pipe Rifle ,+20 22_ammo, Med kits x2, Radiation Pills x1\n\nYou sling the rifle over your shoulder, feeling its weight settle into place. Below the hill, the tower-town waits — closer now, louder, promising both refuge and new danger.\n\nThe road forward is yours again… at least for now.",
+      "choices": [
+        {
+          "label": "CONTINUE TOWARDS TOWER",
+          "to": "S29"
+        }
+      ],
+      "type": "normal"
+    },
+    "S28": {
+      "text": "Laughter ripples through the group — low, hungry, the kind that never means anything good. Engines idle around you, heat rolling off metal and exhaust curling into the dry air. You feel the weight of their eyes, measuring you, judging what you’re worth.\n\nYou make a choice.\n\nSlowly, carefully, you lower your weapon hand and reach into your pocket. Caps clink softly as you pull them free, metal catching the harsh sunlight.\n\n“Look,” you say, forcing your voice steady. “No trouble. Just passing through. We can make this easy.”\n\nFor a heartbeat, the raiders go still.\n\nOne of them steps closer, tilting their head like they’re actually considering it. Another leans against a spiked bike, watching with quiet amusement. The leader’s gaze drops to the caps in your hand — and then back to you.\n\nThe laughter starts again.\n\nNot surprised. Not grateful.\n\nCruel.\n\n“You think we trade out here?” the masked raider sneers. “Caps are easier to take when the owner’s not breathing.”\n\nYour stomach drops.\n\nYou realize too late what you’ve done — by reaching for your caps, you lowered your guard. The moment of surprise is gone. Weapons shift in their hands, and the circle tightens around you.\n\nOne raider steps behind you, voice low enough that only you can hear.\n\n“Dead men don’t spend,” they mutter. “And live ones pull carts just fine.”\n\nThe implication hangs heavy.\n\nThey weren’t going to bargain.\n\nThey were deciding whether you’d die here… or be dragged behind one of those machines as property.\n\nThe wind cuts across the ridge, carrying dust between you and the tower in the distance — so close, and suddenly impossibly far.\n\nYour gamble has failed.\n\nAnd now you have to survive the consequences.",
+      "choices": [],
+      "type": "normal"
+    },
+    "S29": {
+      "text": "You crest the final stretch of broken roadway and the tower rises before you — not silent and abandoned like you expected, but alive.\n\nThe base of the tower has grown into something unexpected: a scavenger hub stitched together from scrap metal, canvas tarps, and stubborn survivors who refuse to disappear. Makeshift stalls line the cracked streets, vendors shouting over one another as they hawk ammo, patched armor, dried meat, and relics pulled from the bones of the old world. Lanterns swing from bent poles, casting shifting shadows across piles of salvaged tech. The air smells of hot metal, dust, and the faint sweetness of ration-brewed alcohol.\n\nPeople move quickly here. Eyes sharp. Hands never far from weapons.\n\nA mechanic argues with a trader over a cracked power cell. A child darts between tables clutching a handful of caps. Somewhere, a generator coughs to life, its low hum blending with the constant murmur of conversation. It feels almost like civilization — but thinner, harder, balanced on the edge of violence.\n\nAbove it all, the tower looms.\n\nIts massive doors are sealed tight, layers of rust and reinforced plating bolted over whatever secrets lie inside. Armed guards stand at attention near the entrance — armored figures with patched gear and steady hands resting on well-maintained rifles. They watch the crowd without blinking, letting some pass through side checkpoints while turning others away with cold, practiced gestures.\n\nAs you step into the flow of the market, the tower groans overhead. A long metallic clang echoes from somewhere high above, vibrating down through the structure like a warning bell.\n\nYou feel it before you see it — that weight in the air.\n\nSomeone is watching you.\n\nA silhouette shifts along an upper walkway, barely visible through drifting dust. The feeling crawls across your skin, equal parts opportunity and threat. Out here, nothing this busy stays safe for long… and nothing guarded this heavily is without value.\n\nYou adjust your grip on your gear, eyes moving between the bustling streets and the sealed tower doors, knowing that whatever comes next will change the course of your journey.\n\nTALK TO TOWNSPEOPLE -- See what info you might gather about the power players in town and who might be looking for a courier.\n\nTRY TO ENTER TOWER -- Approach the guards and see if you can talk to who is in charge.\n\nVISIT VENDOR_TESTING -- Conceptual test for in-game store.",
+      "choices": [
+        {
+          "label": "TALK TO TOWNSPEOPLE",
+          "to": "S32"
+        },
+        {
+          "label": "TRY TO ENTER TOWER",
+          "to": "S15"
+        },
+        {
+          "label": "VISIT_VENDOR_TESTING",
+          "to": "S31"
+        }
+      ],
+      "type": "normal"
+    },
+    "S30": {
+      "text": "The laughter of the raiders fades into the wind, careless and cruel, and something inside you shifts. Opportunity. Information. Maybe supplies. You keep your distance at first, moving along the edges of the road, using broken wreckage and dunes for cover as you begin to tail them.\n\nTheir tracks are easy to follow — deep grooves carved into ash and sand — and the closer you get, the louder their voices become. Snatches of conversation drift back to you: talk of Refuge Point, rumors of guarded water shipments, the promise of a “big score” waiting ahead.\n\nYou push your luck.\n\nA little closer.\n\nToo close.\n\nOne of the bikes slows unexpectedly, its rider glancing back just as you step out from behind a slab of concrete. The engine whines as they swerve sideways, kicking up a wave of dust that catches the sunlight like smoke.\n\n“Hey!” a voice shouts.\n\nThe convoy grinds to a halt.\n\nEngines idle. Weapons shift. Masks turn toward you in unison.\n\nThe road goes quiet except for the low rumble of machinery and the sharp click of safeties being released. Whatever advantage you had vanishes in an instant — and now you’re standing in open ground with every raider’s attention locked on you.\n\nOne of them revs their bike slowly, circling closer.\n\n“Well now,” they sneer through a cracked visor, “looks like we picked up a shadow.”\n\nThe confrontation is inevitable.\n\nSTAND AND FIGHT — You brace yourself, ready to strike and carve a path through them, even if it means bleeding for every step toward escape.\n\nTRY TO BARGAIN — You slowly raise a hand, caps glinting in your palm, hoping greed outweighs violence.\n\nDISTRACT AND FLEE — You point suddenly past them, voice sharp and urgent — “Look over there!” — gambling everything on a moment of chaos to break away.",
+      "choices": [
+        {
+          "label": "STAND AND FIGHT",
+          "to": ""
+        },
+        {
+          "label": "TRY TO BARGAIN",
+          "to": ""
+        },
+        {
+          "label": "DISTRACT AND FLEE",
+          "to": ""
+        }
+      ],
+      "type": "normal"
+    },
+    "S31": {
+      "text": "STORE PLACEHOLDER\n\n(Rad Pills) x2\n(Clean Water) x4\n(.22 Ammo) x 20\n\nVENDOR SELL\nBuy Items (50 caps left)",
+      "choices": [
+        {
+          "label": "PURCHASE_rad_pills",
+          "to": ""
+        },
+        {
+          "label": "PURCHASE_clean_water",
+          "to": ""
+        },
+        {
+          "label": "PURCHASE_22_ammo",
+          "to": ""
+        },
+        {
+          "label": "SELL_item",
+          "to": ""
+        }
+      ],
+      "type": "normal"
+    },
+    "S32": {
+      "text": "New scene text…",
+      "choices": [],
+      "type": "normal"
+    }
+  }
+}
