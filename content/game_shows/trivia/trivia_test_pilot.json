@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "id": "music_trivia_pilot",
+    "title": "Music Trivia Pilot Episode",
+    "route": "story_music_trivia_pilot",
+    "schema": "versecraft_story_v1",
+    "tone": "game_show_trivia",
+    "notes": "Music trivia pilot: 20 questions. Each question routes to a Correct or Incorrect reveal scene, then returns to the next question. Strict ASCII, strict JSON.",
+    "blurb": "A 20-question music trivia pilot episode spanning eras, genres, artist bios, the music business, and instruments. One question at a time. Choose the correct answer and keep moving."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "MUSIC TRIVIA PILOT EPISODE\n\nQ1 - ERA\nWhich decade is commonly considered the birth of rock and roll?\n\nCHOICES\n1950s - Pick this if you believe rock and roll first hit mainstream identity in this decade.\n1940s - Pick this if you think the origin is earlier than most popular histories.\n1960s - Pick this if you think rock and roll was born alongside the British Invasion era.\n1970s - Pick this if you think the genre did not fully form until later stadium rock years.",
+      "choices": [
+        { "label": "1950s", "to": "S02" },
+        { "label": "1940s", "to": "S03" },
+        { "label": "1960s", "to": "S03" },
+        { "label": "1970s", "to": "S03" }
+      ]
+    },
+    "S02": {
+      "text": "CORRECT.\n\nRock and roll emerged in the 1950s, blending blues, country, and rhythm and blues into a new mainstream sound.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S04" },
+        { "label": "CONTINUE", "to": "S04" },
+        { "label": "MOVE ON", "to": "S04" },
+        { "label": "PROCEED", "to": "S04" }
+      ]
+    },
+    "S03": {
+      "text": "INCORRECT.\n\nThe correct answer is 1950s. Rock and roll emerged in the 1950s, blending blues, country, and rhythm and blues into a new mainstream sound.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S04" },
+        { "label": "CONTINUE", "to": "S04" },
+        { "label": "MOVE ON", "to": "S04" },
+        { "label": "PROCEED", "to": "S04" }
+      ]
+    },
+
+    "S04": {
+      "text": "Q2 - GENRE\nWhich genre is most closely associated with artists like Miles Davis and John Coltrane?\n\nCHOICES\nJAZZ - Pick this if you associate both artists with the same core genre.\nBLUES - Pick this if you think their work is primarily rooted in blues tradition.\nFUNK - Pick this if you think groove-driven funk defines their best-known era.\nROCK - Pick this if you think their influence is mainly within rock music history.",
+      "choices": [
+        { "label": "JAZZ", "to": "S05" },
+        { "label": "BLUES", "to": "S06" },
+        { "label": "FUNK", "to": "S06" },
+        { "label": "ROCK", "to": "S06" }
+      ]
+    },
+    "S05": {
+      "text": "CORRECT.\n\nMiles Davis and John Coltrane are foundational figures in jazz, particularly modal and hard bop styles.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S07" },
+        { "label": "CONTINUE", "to": "S07" },
+        { "label": "MOVE ON", "to": "S07" },
+        { "label": "PROCEED", "to": "S07" }
+      ]
+    },
+    "S06": {
+      "text": "INCORRECT.\n\nThe correct answer is Jazz. Miles Davis and John Coltrane are foundational figures in jazz, particularly modal and hard bop styles.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S07" },
+        { "label": "CONTINUE", "to": "S07" },
+        { "label": "MOVE ON", "to": "S07" },
+        { "label": "PROCEED", "to": "S07" }
+      ]
+    },
+
+    "S07": {
+      "text": "Q3 - ARTIST BIO\nWhich band originally featured Freddie Mercury as its lead singer?\n\nCHOICES\nQUEEN - Pick this if you know Mercury as the original frontman of this band.\nROLLING STONES - Pick this if you think Mercury led a major British rock peer band.\nLED ZEPPELIN - Pick this if you think Mercury fronted a different classic rock giant.\nPINK FLOYD - Pick this if you think Mercury was tied to progressive rock history.",
+      "choices": [
+        { "label": "QUEEN", "to": "S08" },
+        { "label": "ROLLING STONES", "to": "S09" },
+        { "label": "LED ZEPPELIN", "to": "S09" },
+        { "label": "PINK FLOYD", "to": "S09" }
+      ]
+    },
+    "S08": {
+      "text": "CORRECT.\n\nFreddie Mercury was the iconic lead singer of Queen, joining the band in the early 1970s.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to
