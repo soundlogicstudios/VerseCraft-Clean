@@ -1,0 +1,583 @@
+{
+  "meta": {
+    "id": "music_trivia_pilot",
+    "title": "Music Trivia Pilot Episode",
+    "route": "story_music_trivia_pilot",
+    "schema": "versecraft_story_v1",
+    "tone": "game_show_trivia",
+    "notes": "Music trivia pilot: 20 questions. Each question routes to a Correct or Incorrect reveal scene, then returns to the next question. Strict ASCII, strict JSON.",
+    "blurb": "A 20-question music trivia pilot episode spanning eras, genres, artist bios, the music business, and instruments. One question at a time. Choose the correct answer and keep moving."
+  },
+  "start": "S01",
+  "scenes": {
+    "S01": {
+      "text": "MUSIC TRIVIA PILOT EPISODE\n\nQ1 - ERA\nWhich decade is commonly considered the birth of rock and roll?\n\nCHOICES\n1950s - Pick this if you believe rock and roll first hit mainstream identity in this decade.\n1940s - Pick this if you think the origin is earlier than most popular histories.\n1960s - Pick this if you think rock and roll was born alongside the British Invasion era.\n1970s - Pick this if you think the genre did not fully form until later stadium rock years.",
+      "choices": [
+        { "label": "1950s", "to": "S02" },
+        { "label": "1940s", "to": "S03" },
+        { "label": "1960s", "to": "S03" },
+        { "label": "1970s", "to": "S03" }
+      ]
+    },
+    "S02": {
+      "text": "CORRECT.\n\nRock and roll emerged in the 1950s, blending blues, country, and rhythm and blues into a new mainstream sound.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S04" },
+        { "label": "CONTINUE", "to": "S04" },
+        { "label": "MOVE ON", "to": "S04" },
+        { "label": "PROCEED", "to": "S04" }
+      ]
+    },
+    "S03": {
+      "text": "INCORRECT.\n\nThe correct answer is 1950s. Rock and roll emerged in the 1950s, blending blues, country, and rhythm and blues into a new mainstream sound.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S04" },
+        { "label": "CONTINUE", "to": "S04" },
+        { "label": "MOVE ON", "to": "S04" },
+        { "label": "PROCEED", "to": "S04" }
+      ]
+    },
+
+    "S04": {
+      "text": "Q2 - GENRE\nWhich genre is most closely associated with artists like Miles Davis and John Coltrane?\n\nCHOICES\nJAZZ - Pick this if you associate both artists with the same core genre.\nBLUES - Pick this if you think their work is primarily rooted in blues tradition.\nFUNK - Pick this if you think groove-driven funk defines their best-known era.\nROCK - Pick this if you think their influence is mainly within rock music history.",
+      "choices": [
+        { "label": "JAZZ", "to": "S05" },
+        { "label": "BLUES", "to": "S06" },
+        { "label": "FUNK", "to": "S06" },
+        { "label": "ROCK", "to": "S06" }
+      ]
+    },
+    "S05": {
+      "text": "CORRECT.\n\nMiles Davis and John Coltrane are foundational figures in jazz, particularly modal and hard bop styles.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S07" },
+        { "label": "CONTINUE", "to": "S07" },
+        { "label": "MOVE ON", "to": "S07" },
+        { "label": "PROCEED", "to": "S07" }
+      ]
+    },
+    "S06": {
+      "text": "INCORRECT.\n\nThe correct answer is Jazz. Miles Davis and John Coltrane are foundational figures in jazz, particularly modal and hard bop styles.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S07" },
+        { "label": "CONTINUE", "to": "S07" },
+        { "label": "MOVE ON", "to": "S07" },
+        { "label": "PROCEED", "to": "S07" }
+      ]
+    },
+
+    "S07": {
+      "text": "Q3 - ARTIST BIO\nWhich band originally featured Freddie Mercury as its lead singer?\n\nCHOICES\nQUEEN - Pick this if you know Mercury as the original frontman of this band.\nROLLING STONES - Pick this if you think Mercury led a major British rock peer band.\nLED ZEPPELIN - Pick this if you think Mercury fronted a different classic rock giant.\nPINK FLOYD - Pick this if you think Mercury was tied to progressive rock history.",
+      "choices": [
+        { "label": "QUEEN", "to": "S08" },
+        { "label": "ROLLING STONES", "to": "S09" },
+        { "label": "LED ZEPPELIN", "to": "S09" },
+        { "label": "PINK FLOYD", "to": "S09" }
+      ]
+    },
+    "S08": {
+      "text": "CORRECT.\n\nFreddie Mercury was the iconic lead singer of Queen, joining the band in the early 1970s.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S10" },
+        { "label": "CONTINUE", "to": "S10" },
+        { "label": "MOVE ON", "to": "S10" },
+        { "label": "PROCEED", "to": "S10" }
+      ]
+    },
+    "S09": {
+      "text": "INCORRECT.\n\nThe correct answer is Queen. Freddie Mercury was the iconic lead singer of Queen, joining the band in the early 1970s.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S10" },
+        { "label": "CONTINUE", "to": "S10" },
+        { "label": "MOVE ON", "to": "S10" },
+        { "label": "PROCEED", "to": "S10" }
+      ]
+    },
+
+    "S10": {
+      "text": "Q4 - INSTRUMENTS\nHow many strings does a standard electric guitar have?\n\nCHOICES\nSIX - Pick this if you know the standard configuration.\nFOUR - Pick this if you are thinking of bass guitar.\nFIVE - Pick this if you are thinking of less common configurations.\nSEVEN - Pick this if you are thinking of extended-range guitars.",
+      "choices": [
+        { "label": "SIX", "to": "S11" },
+        { "label": "FOUR", "to": "S12" },
+        { "label": "FIVE", "to": "S12" },
+        { "label": "SEVEN", "to": "S12" }
+      ]
+    },
+    "S11": {
+      "text": "CORRECT.\n\nA standard electric guitar has six strings, typically tuned E-A-D-G-B-E.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S13" },
+        { "label": "CONTINUE", "to": "S13" },
+        { "label": "MOVE ON", "to": "S13" },
+        { "label": "PROCEED", "to": "S13" }
+      ]
+    },
+    "S12": {
+      "text": "INCORRECT.\n\nThe correct answer is Six. A standard electric guitar has six strings, typically tuned E-A-D-G-B-E.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S13" },
+        { "label": "CONTINUE", "to": "S13" },
+        { "label": "MOVE ON", "to": "S13" },
+        { "label": "PROCEED", "to": "S13" }
+      ]
+    },
+
+    "S13": {
+      "text": "Q5 - MUSIC BUSINESS\nWhat does \"LP\" stand for in music releases?\n\nCHOICES\nLONG PLAY - Pick this if you know the standard release-format meaning.\nLONG PERFORMANCE - Pick this if you think it refers to playback or runtime.\nLIVE PRESSING - Pick this if you think it is tied to live recording pressings.\nLIMITED PRODUCTION - Pick this if you think it refers to scarcity of copies.",
+      "choices": [
+        { "label": "LONG PLAY", "to": "S14" },
+        { "label": "LONG PERFORMANCE", "to": "S15" },
+        { "label": "LIVE PRESSING", "to": "S15" },
+        { "label": "LIMITED PRODUCTION", "to": "S15" }
+      ]
+    },
+    "S14": {
+      "text": "CORRECT.\n\nLP stands for Long Play, originally referring to full-length vinyl records.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S16" },
+        { "label": "CONTINUE", "to": "S16" },
+        { "label": "MOVE ON", "to": "S16" },
+        { "label": "PROCEED", "to": "S16" }
+      ]
+    },
+    "S15": {
+      "text": "INCORRECT.\n\nThe correct answer is Long Play. LP stands for Long Play, originally referring to full-length vinyl records.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S16" },
+        { "label": "CONTINUE", "to": "S16" },
+        { "label": "MOVE ON", "to": "S16" },
+        { "label": "PROCEED", "to": "S16" }
+      ]
+    },
+
+    "S16": {
+      "text": "Q6 - ERA\nWhich decade saw the rise of MTV as a major force in popular music?\n\nCHOICES\n1980s - Pick this if you know when MTV reshaped the industry.\n1970s - Pick this if you think MTV-era influence starts earlier.\n1990s - Pick this if you think MTV becomes dominant later.\n2000s - Pick this if you think the biggest impact arrives in the digital era.",
+      "choices": [
+        { "label": "1980s", "to": "S17" },
+        { "label": "1970s", "to": "S18" },
+        { "label": "1990s", "to": "S18" },
+        { "label": "2000s", "to": "S18" }
+      ]
+    },
+    "S17": {
+      "text": "CORRECT.\n\nMTV launched in 1981, making the 1980s the decade when music videos reshaped the industry.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S19" },
+        { "label": "CONTINUE", "to": "S19" },
+        { "label": "MOVE ON", "to": "S19" },
+        { "label": "PROCEED", "to": "S19" }
+      ]
+    },
+    "S18": {
+      "text": "INCORRECT.\n\nThe correct answer is 1980s. MTV launched in 1981, making the 1980s the decade when music videos reshaped the industry.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S19" },
+        { "label": "CONTINUE", "to": "S19" },
+        { "label": "MOVE ON", "to": "S19" },
+        { "label": "PROCEED", "to": "S19" }
+      ]
+    },
+
+    "S19": {
+      "text": "Q7 - GENRE\nWhich genre is most associated with DJs, synthesizers, and electronic beats?\n\nCHOICES\nELECTRONIC - Pick this if you associate the description with electronic music culture.\nPUNK - Pick this if you think it is mainly guitar-driven minimalism.\nFOLK - Pick this if you think it is acoustic song tradition.\nREGGAE - Pick this if you think it is rooted in Jamaican rhythms.",
+      "choices": [
+        { "label": "ELECTRONIC", "to": "S20" },
+        { "label": "PUNK", "to": "S21" },
+        { "label": "FOLK", "to": "S21" },
+        { "label": "REGGAE", "to": "S21" }
+      ]
+    },
+    "S20": {
+      "text": "CORRECT.\n\nElectronic music centers around synthesizers, drum machines, and digital production.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S22" },
+        { "label": "CONTINUE", "to": "S22" },
+        { "label": "MOVE ON", "to": "S22" },
+        { "label": "PROCEED", "to": "S22" }
+      ]
+    },
+    "S21": {
+      "text": "INCORRECT.\n\nThe correct answer is Electronic. Electronic music centers around synthesizers, drum machines, and digital production.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S22" },
+        { "label": "CONTINUE", "to": "S22" },
+        { "label": "MOVE ON", "to": "S22" },
+        { "label": "PROCEED", "to": "S22" }
+      ]
+    },
+
+    "S22": {
+      "text": "Q8 - ARTIST BIO\nWhich artist released the album Purple Rain in 1984?\n\nCHOICES\nPRINCE - Pick this if you know the artist behind Purple Rain.\nMICHAEL JACKSON - Pick this if you think it was a different 1980s megastar.\nDAVID BOWIE - Pick this if you think it was tied to a different icon.\nELTON JOHN - Pick this if you think it was from a classic piano-rock legend.",
+      "choices": [
+        { "label": "PRINCE", "to": "S23" },
+        { "label": "MICHAEL JACKSON", "to": "S24" },
+        { "label": "DAVID BOWIE", "to": "S24" },
+        { "label": "ELTON JOHN", "to": "S24" }
+      ]
+    },
+    "S23": {
+      "text": "CORRECT.\n\nPurple Rain was released by Prince, alongside the film of the same name.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S25" },
+        { "label": "CONTINUE", "to": "S25" },
+        { "label": "MOVE ON", "to": "S25" },
+        { "label": "PROCEED", "to": "S25" }
+      ]
+    },
+    "S24": {
+      "text": "INCORRECT.\n\nThe correct answer is Prince. Purple Rain was released by Prince, alongside the film of the same name.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S25" },
+        { "label": "CONTINUE", "to": "S25" },
+        { "label": "MOVE ON", "to": "S25" },
+        { "label": "PROCEED", "to": "S25" }
+      ]
+    },
+
+    "S25": {
+      "text": "Q9 - INSTRUMENTS\nWhich instrument family does the saxophone belong to?\n\nCHOICES\nWOODWIND - Pick this if you know the classification based on how sound is produced.\nBRASS - Pick this if you classify by the material rather than the method.\nSTRING - Pick this if you think it belongs with bowed or plucked instruments.\nPERCUSSION - Pick this if you think it is struck or shaken to produce sound.",
+      "choices": [
+        { "label": "WOODWIND", "to": "S26" },
+        { "label": "BRASS", "to": "S27" },
+        { "label": "STRING", "to": "S27" },
+        { "label": "PERCUSSION", "to": "S27" }
+      ]
+    },
+    "S26": {
+      "text": "CORRECT.\n\nDespite being made of metal, the saxophone is classified as a woodwind instrument.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S28" },
+        { "label": "CONTINUE", "to": "S28" },
+        { "label": "MOVE ON", "to": "S28" },
+        { "label": "PROCEED", "to": "S28" }
+      ]
+    },
+    "S27": {
+      "text": "INCORRECT.\n\nThe correct answer is Woodwind. Despite being made of metal, the saxophone is classified as a woodwind instrument.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S28" },
+        { "label": "CONTINUE", "to": "S28" },
+        { "label": "MOVE ON", "to": "S28" },
+        { "label": "PROCEED", "to": "S28" }
+      ]
+    },
+
+    "S28": {
+      "text": "Q10 - MUSIC BUSINESS\nWhich chart tracks the most popular songs in the United States?\n\nCHOICES\nBILLBOARD HOT 100 - Pick this if you know the primary US singles chart.\nUK SINGLES CHART - Pick this if you think the UK chart is the one being referenced.\nROLLING STONE 100 - Pick this if you think this is the core industry standard.\nTOP OF THE POPS - Pick this if you think a TV brand is the chart name.",
+      "choices": [
+        { "label": "BILLBOARD HOT 100", "to": "S29" },
+        { "label": "UK SINGLES CHART", "to": "S30" },
+        { "label": "ROLLING STONE 100", "to": "S30" },
+        { "label": "TOP OF THE POPS", "to": "S30" }
+      ]
+    },
+    "S29": {
+      "text": "CORRECT.\n\nThe Billboard Hot 100 ranks the most popular songs in the US based on sales, radio play, and streaming.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S31" },
+        { "label": "CONTINUE", "to": "S31" },
+        { "label": "MOVE ON", "to": "S31" },
+        { "label": "PROCEED", "to": "S31" }
+      ]
+    },
+    "S30": {
+      "text": "INCORRECT.\n\nThe correct answer is Billboard Hot 100. The Billboard Hot 100 ranks the most popular songs in the US based on sales, radio play, and streaming.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S31" },
+        { "label": "CONTINUE", "to": "S31" },
+        { "label": "MOVE ON", "to": "S31" },
+        { "label": "PROCEED", "to": "S31" }
+      ]
+    },
+
+    "S31": {
+      "text": "Q11 - ERA\nWhich decade is most associated with the rise of grunge music?\n\nCHOICES\n1990s - Pick this if you connect grunge to early 90s Seattle.\n1980s - Pick this if you think grunge peaks before the 90s.\n2000s - Pick this if you think grunge emerges later.\n2010s - Pick this if you think it is a modern revival era.",
+      "choices": [
+        { "label": "1990s", "to": "S32" },
+        { "label": "1980s", "to": "S33" },
+        { "label": "2000s", "to": "S33" },
+        { "label": "2010s", "to": "S33" }
+      ]
+    },
+    "S32": {
+      "text": "CORRECT.\n\nGrunge emerged in the early 1990s, centered around Seattle bands like Nirvana and Pearl Jam.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S34" },
+        { "label": "CONTINUE", "to": "S34" },
+        { "label": "MOVE ON", "to": "S34" },
+        { "label": "PROCEED", "to": "S34" }
+      ]
+    },
+    "S33": {
+      "text": "INCORRECT.\n\nThe correct answer is 1990s. Grunge emerged in the early 1990s, centered around Seattle bands like Nirvana and Pearl Jam.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S34" },
+        { "label": "CONTINUE", "to": "S34" },
+        { "label": "MOVE ON", "to": "S34" },
+        { "label": "PROCEED", "to": "S34" }
+      ]
+    },
+
+    "S34": {
+      "text": "Q12 - GENRE\nWhich genre did James Brown help pioneer?\n\nCHOICES\nFUNK - Pick this if you know the genre most linked to James Brown.\nDISCO - Pick this if you think his core impact is disco-era dance music.\nSOUL - Pick this if you think the correct label is soul rather than funk.\nHIP-HOP - Pick this if you think he pioneered hip-hop directly as a genre.",
+      "choices": [
+        { "label": "FUNK", "to": "S35" },
+        { "label": "DISCO", "to": "S36" },
+        { "label": "SOUL", "to": "S36" },
+        { "label": "HIP-HOP", "to": "S36" }
+      ]
+    },
+    "S35": {
+      "text": "CORRECT.\n\nJames Brown is widely regarded as the father of funk, emphasizing rhythm and groove.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S37" },
+        { "label": "CONTINUE", "to": "S37" },
+        { "label": "MOVE ON", "to": "S37" },
+        { "label": "PROCEED", "to": "S37" }
+      ]
+    },
+    "S36": {
+      "text": "INCORRECT.\n\nThe correct answer is Funk. James Brown is widely regarded as the father of funk, emphasizing rhythm and groove.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S37" },
+        { "label": "CONTINUE", "to": "S37" },
+        { "label": "MOVE ON", "to": "S37" },
+        { "label": "PROCEED", "to": "S37" }
+      ]
+    },
+
+    "S37": {
+      "text": "Q13 - ARTIST BIO\nWhich artist is known for the alter ego Ziggy Stardust?\n\nCHOICES\nDAVID BOWIE - Pick this if you know the artist behind Ziggy Stardust.\nLOU REED - Pick this if you think the persona is linked to another icon.\nIGGY POP - Pick this if you think it belongs to a different proto-punk legend.\nMARC BOLAN - Pick this if you think it belongs to glam peers instead.",
+      "choices": [
+        { "label": "DAVID BOWIE", "to": "S38" },
+        { "label": "LOU REED", "to": "S39" },
+        { "label": "IGGY POP", "to": "S39" },
+        { "label": "MARC BOLAN", "to": "S39" }
+      ]
+    },
+    "S38": {
+      "text": "CORRECT.\n\nZiggy Stardust was a fictional persona created by David Bowie in the early 1970s.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S40" },
+        { "label": "CONTINUE", "to": "S40" },
+        { "label": "MOVE ON", "to": "S40" },
+        { "label": "PROCEED", "to": "S40" }
+      ]
+    },
+    "S39": {
+      "text": "INCORRECT.\n\nThe correct answer is David Bowie. Ziggy Stardust was a fictional persona created by David Bowie in the early 1970s.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S40" },
+        { "label": "CONTINUE", "to": "S40" },
+        { "label": "MOVE ON", "to": "S40" },
+        { "label": "PROCEED", "to": "S40" }
+      ]
+    },
+
+    "S40": {
+      "text": "Q14 - INSTRUMENTS & GEAR\nWhich device is primarily used to modify an electric guitar's tone with distortion?\n\nCHOICES\nEFFECTS PEDAL - Pick this if you know how most players get distortion live.\nCOMPRESSOR - Pick this if you think compression is the main source of distortion.\nTUNER - Pick this if you think tuning changes create distortion effects.\nEQUALIZER - Pick this if you think EQ alone creates distortion tone.",
+      "choices": [
+        { "label": "EFFECTS PEDAL", "to": "S41" },
+        { "label": "COMPRESSOR", "to": "S42" },
+        { "label": "TUNER", "to": "S42" },
+        { "label": "EQUALIZER", "to": "S42" }
+      ]
+    },
+    "S41": {
+      "text": "CORRECT.\n\nDistortion and other tonal effects are typically produced using effects pedals.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S43" },
+        { "label": "CONTINUE", "to": "S43" },
+        { "label": "MOVE ON", "to": "S43" },
+        { "label": "PROCEED", "to": "S43" }
+      ]
+    },
+    "S42": {
+      "text": "INCORRECT.\n\nThe correct answer is Effects pedal. Distortion and other tonal effects are typically produced using effects pedals.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S43" },
+        { "label": "CONTINUE", "to": "S43" },
+        { "label": "MOVE ON", "to": "S43" },
+        { "label": "PROCEED", "to": "S43" }
+      ]
+    },
+
+    "S43": {
+      "text": "Q15 - MUSIC BUSINESS\nWhich format largely replaced CDs as the dominant form of music consumption in the 2010s?\n\nCHOICES\nSTREAMING - Pick this if you know what overtook physical formats.\nCASSETTE - Pick this if you think tape had a full comeback as the main format.\nVINYL - Pick this if you think vinyl became the dominant format overall.\nDOWNLOADS - Pick this if you think downloads stayed on top longer than streaming.",
+      "choices": [
+        { "label": "STREAMING", "to": "S44" },
+        { "label": "CASSETTE", "to": "S45" },
+        { "label": "VINYL", "to": "S45" },
+        { "label": "DOWNLOADS", "to": "S45" }
+      ]
+    },
+    "S44": {
+      "text": "CORRECT.\n\nMusic streaming services became dominant in the 2010s, overtaking physical formats and downloads.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S46" },
+        { "label": "CONTINUE", "to": "S46" },
+        { "label": "MOVE ON", "to": "S46" },
+        { "label": "PROCEED", "to": "S46" }
+      ]
+    },
+    "S45": {
+      "text": "INCORRECT.\n\nThe correct answer is Streaming. Music streaming services became dominant in the 2010s, overtaking physical formats and downloads.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S46" },
+        { "label": "CONTINUE", "to": "S46" },
+        { "label": "MOVE ON", "to": "S46" },
+        { "label": "PROCEED", "to": "S46" }
+      ]
+    },
+
+    "S46": {
+      "text": "Q16 - ERA\nWhich year is commonly cited as the start of the punk movement in the UK?\n\nCHOICES\n1976 - Pick this if you associate the UK punk breakout with this year.\n1973 - Pick this if you think it began earlier as a defined movement.\n1975 - Pick this if you think it started just before the breakout.\n1979 - Pick this if you think it began later after it was already mainstream.",
+      "choices": [
+        { "label": "1976", "to": "S47" },
+        { "label": "1973", "to": "S48" },
+        { "label": "1975", "to": "S48" },
+        { "label": "1979", "to": "S48" }
+      ]
+    },
+    "S47": {
+      "text": "CORRECT.\n\nThe UK punk movement is often dated to 1976, with bands like the Sex Pistols gaining attention.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S49" },
+        { "label": "CONTINUE", "to": "S49" },
+        { "label": "MOVE ON", "to": "S49" },
+        { "label": "PROCEED", "to": "S49" }
+      ]
+    },
+    "S48": {
+      "text": "INCORRECT.\n\nThe correct answer is 1976. The UK punk movement is often dated to 1976, with bands like the Sex Pistols gaining attention.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S49" },
+        { "label": "CONTINUE", "to": "S49" },
+        { "label": "MOVE ON", "to": "S49" },
+        { "label": "PROCEED", "to": "S49" }
+      ]
+    },
+
+    "S49": {
+      "text": "Q17 - GENRE\nWhich subgenre is characterized by blast beats, tremolo picking, and shrieked vocals?\n\nCHOICES\nBLACK METAL - Pick this if you recognize the classic style markers.\nDEATH METAL - Pick this if you think the defining traits point here.\nDOOM METAL - Pick this if you think slow, heavy doom fits this description.\nTHRASH METAL - Pick this if you think fast riffing thrash is the match.",
+      "choices": [
+        { "label": "BLACK METAL", "to": "S50" },
+        { "label": "DEATH METAL", "to": "S51" },
+        { "label": "DOOM METAL", "to": "S51" },
+        { "label": "THRASH METAL", "to": "S51" }
+      ]
+    },
+    "S50": {
+      "text": "CORRECT.\n\nThese elements are hallmarks of black metal, particularly in its early Norwegian scene.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S52" },
+        { "label": "CONTINUE", "to": "S52" },
+        { "label": "MOVE ON", "to": "S52" },
+        { "label": "PROCEED", "to": "S52" }
+      ]
+    },
+    "S51": {
+      "text": "INCORRECT.\n\nThe correct answer is Black metal. These elements are hallmarks of black metal, particularly in its early Norwegian scene.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S52" },
+        { "label": "CONTINUE", "to": "S52" },
+        { "label": "MOVE ON", "to": "S52" },
+        { "label": "PROCEED", "to": "S52" }
+      ]
+    },
+
+    "S52": {
+      "text": "Q18 - ARTIST BIO\nWhich artist famously changed his name to an unpronounceable symbol in the 1990s?\n\nCHOICES\nPRINCE - Pick this if you remember the symbol-era name change.\nDAVID BOWIE - Pick this if you think it was tied to another shape-shifting icon.\nMADONNA - Pick this if you think it was a pop persona move.\nTRENT REZNOR - Pick this if you think it was a industrial-era identity shift.",
+      "choices": [
+        { "label": "PRINCE", "to": "S53" },
+        { "label": "DAVID BOWIE", "to": "S54" },
+        { "label": "MADONNA", "to": "S54" },
+        { "label": "TRENT REZNOR", "to": "S54" }
+      ]
+    },
+    "S53": {
+      "text": "CORRECT.\n\nPrince temporarily changed his name to a symbol, often called \"The Artist Formerly Known as Prince.\"\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S55" },
+        { "label": "CONTINUE", "to": "S55" },
+        { "label": "MOVE ON", "to": "S55" },
+        { "label": "PROCEED", "to": "S55" }
+      ]
+    },
+    "S54": {
+      "text": "INCORRECT.\n\nThe correct answer is Prince. Prince temporarily changed his name to a symbol, often called \"The Artist Formerly Known as Prince.\"\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S55" },
+        { "label": "CONTINUE", "to": "S55" },
+        { "label": "MOVE ON", "to": "S55" },
+        { "label": "PROCEED", "to": "S55" }
+      ]
+    },
+
+    "S55": {
+      "text": "Q19 - INSTRUMENTS & GEAR\nWhich keyboard instrument uses vibrating metal tines and pickups?\n\nCHOICES\nRHODES PIANO - Pick this if you know the classic electric piano design.\nORGAN - Pick this if you think the sound comes from tonewheels or pipes.\nHARPSICHORD - Pick this if you think the sound comes from plucked strings.\nSYNTHESIZER - Pick this if you think it is purely electronic oscillators.",
+      "choices": [
+        { "label": "RHODES PIANO", "to": "S56" },
+        { "label": "ORGAN", "to": "S57" },
+        { "label": "HARPSICHORD", "to": "S57" },
+        { "label": "SYNTHESIZER", "to": "S57" }
+      ]
+    },
+    "S56": {
+      "text": "CORRECT.\n\nThe Rhodes piano produces sound via metal tines and electromagnetic pickups.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S58" },
+        { "label": "CONTINUE", "to": "S58" },
+        { "label": "MOVE ON", "to": "S58" },
+        { "label": "PROCEED", "to": "S58" }
+      ]
+    },
+    "S57": {
+      "text": "INCORRECT.\n\nThe correct answer is Rhodes piano. The Rhodes piano produces sound via metal tines and electromagnetic pickups.\n\nCHOICES\nNEXT - Continue to the next question.\nCONTINUE - Keep the game moving.\nMOVE ON - Advance to the next question.\nPROCEED - On to the next one.",
+      "choices": [
+        { "label": "NEXT", "to": "S58" },
+        { "label": "CONTINUE", "to": "S58" },
+        { "label": "MOVE ON", "to": "S58" },
+        { "label": "PROCEED", "to": "S58" }
+      ]
+    },
+
+    "S58": {
+      "text": "Q20 - MUSIC BUSINESS\nWhich company launched the iTunes Store in 2003?\n\nCHOICES\nAPPLE - Pick this if you know who launched iTunes Store.\nSONY - Pick this if you think it was a legacy music hardware company.\nMICROSOFT - Pick this if you think it was tied to a competing ecosystem.\nAMAZON - Pick this if you think it was the first major online retail launch.",
+      "choices": [
+        { "label": "APPLE", "to": "S59" },
+        { "label": "SONY", "to": "S60" },
+        { "label": "MICROSOFT", "to": "S60" },
+        { "label": "AMAZON", "to": "S60" }
+      ]
+    },
+    "S59": {
+      "text": "CORRECT.\n\nThe iTunes Store was launched by Apple, reshaping digital music distribution.\n\nCHOICES\nFINISH - See your results and restart options.\nRESULTS - End the episode and show restart.\nWRAP UP - Close out the run.\nEND - Go to the end screen.",
+      "choices": [
+        { "label": "FINISH", "to": "S61" },
+        { "label": "RESULTS", "to": "S61" },
+        { "label": "WRAP UP", "to": "S61" },
+        { "label": "END", "to": "S61" }
+      ]
+    },
+    "S60": {
+      "text": "INCORRECT.\n\nThe correct answer is Apple. The iTunes Store was launched by Apple, reshaping digital music distribution.\n\nCHOICES\nFINISH - See your results and restart options.\nRESULTS - End the episode and show restart.\nWRAP UP - Close out the run.\nEND - Go to the end screen.",
+      "choices": [
+        { "label": "FINISH", "to": "S61" },
+        { "label": "RESULTS", "to": "S61" },
+        { "label": "WRAP UP", "to": "S61" },
+        { "label": "END", "to": "S61" }
+      ]
+    },
+
+    "S61": {
+      "text": "END OF EPISODE\n\nThat is the full 20-question Music Trivia Pilot.\n\nYour engine should calculate the total score from correct picks, then hard-reset any run flags so the next restart is a clean run.\n\nCHOICES\nRESTART - Start a new run from Question 1.\nPLAY AGAIN - Loop back to the beginning.\nNEW MODE - Restart and pick a different challenge mode.\nRUN IT BACK - Fresh run, same episode.",
+      "choices": [
+        { "label": "RESTART", "to": "S01" },
+        { "label": "PLAY AGAIN", "to": "S01" },
+        { "label": "NEW MODE", "to": "S01" },
+        { "label": "RUN IT BACK", "to": "S01" }
+      ]
+    }
+  }
+}
