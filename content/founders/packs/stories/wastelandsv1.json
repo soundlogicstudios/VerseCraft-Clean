@@ -1,426 +1,173 @@
 {
   "meta": {
-    "id": "wastelands_breakaway_30",
-    "title": "Wastelands: Breakaway",
-    "route": "story_wastelands",
-    "schema": "versecraft-1.0",
-    "tone": "post-apocalyptic survival",
-    "notes": "30 sections (S01–S30) plus Good/Bad/Special endings. All endings loop to S01.",
-    "blurb": "You were forged by the Brotherhood of Steel. Now you’re running from it—into a wasteland that does not forgive weakness."
+    "id": "combat_beat_demo",
+    "title": "Beat Combat Demo",
+    "route": "combat_beat_demo",
+    "protagonist": "You",
+    "schema": "versecraft_story_v1",
+    "tone": "Action, tactical, fast-paced",
+    "notes": "Prototype: 4-beat combat encounter using only scene text + 4 choices per beat. No stats required. Built to drop into VerseCraft-Clean as a test story file.",
+    "blurb": "A quick 4-beat combat prototype. Make four tactical choices. Your momentum shifts between Advantage, Neutral, and Danger. Win or lose at the end."
   },
   "start": "S01",
   "scenes": {
     "S01": {
-      "text": "The Brotherhood taught you discipline, order, and obedience.\n\nThey did not teach you how to live without permission.\n\nThe bunker hums with generators and old-world machines.\n\nTonight, you make your choice.\n\nYou leave.",
+      "text": "A rusted corridor. Flickering light. Your boot scrapes grit and metal as you step around a toppled locker.\n\nA raider steps into view, pipe-blade in hand, grin sharp as broken glass.\n\nThere is no time to talk. This is a fast fight: four beats. Each decision changes momentum.\n\nCHOICES\n\nOPENING STRIKE\nYou hit first. If you land cleanly, you seize the rhythm and control the exchange.\n\nCONTROL THE RANGE\nYou back-step and angle your body, forcing the raider to commit before you do.\n\nFEINT AND DRAW\nYou sell a fake weakness to bait a swing, hoping to punish the overreach.\n\nHOLD YOUR GROUND\nYou plant your feet and brace. Strong if timed right, disastrous if you guess wrong.",
       "choices": [
-        {
-          "label": "STEAL A POWER ARMOR CORE",
-          "to": "S02"
-        },
-        {
-          "label": "SLIP OUT QUIETLY",
-          "to": "S03"
-        }
+        { "label": "OPENING STRIKE", "to": "S02" },
+        { "label": "CONTROL THE RANGE", "to": "S03" },
+        { "label": "FEINT AND DRAW", "to": "S03" },
+        { "label": "HOLD YOUR GROUND", "to": "S04" }
       ]
     },
+
     "S02": {
-      "text": "You rip the fusion core free.\n\nAlarms wail instantly.\n\nThe bunker erupts into motion—boots pounding steel, voices shouting orders.\n\nYou run with the weight of betrayal burning in your chest.",
+      "text": "ADVANTAGE - BEAT 1\n\nYour first move lands with purpose. The raider flinches and shifts weight backward. You can feel it: you have the tempo.\n\nThe corridor is narrow. The locker wreckage limits lateral movement. The raider is breathing harder than they want to admit.\n\nCHOICES\n\nPRESS THE ATTACK\nKeep the rhythm. Force them to defend until they make a mistake.\n\nDISARM ATTEMPT\nYou risk a technical move to strip the pipe-blade away and end this clean.\n\nCREATE SPACE\nYou step off-line to avoid a counter. Smart, but it gives them room to reset.\n\nTAKE A HIT\nYou trade pain for position, letting them clip you so you can deliver a bigger blow.",
       "choices": [
-        {
-          "label": "FIGHT YOUR WAY OUT",
-          "to": "S04"
-        },
-        {
-          "label": "SEAL THE BLAST DOOR",
-          "to": "S05"
-        }
+        { "label": "PRESS THE ATTACK", "to": "S05" },
+        { "label": "DISARM ATTEMPT", "to": "S05" },
+        { "label": "CREATE SPACE", "to": "S06" },
+        { "label": "TAKE A HIT", "to": "S07" }
       ]
     },
+
     "S03": {
-      "text": "You move carefully, avoiding patrol routes burned into your memory.\n\nA guard nearly catches you.\n\nYou hold your breath.\n\nHe passes.\n\nYou reach the outer hatch.",
+      "text": "NEUTRAL - BEAT 1\n\nYou avoid the worst of the opening exchange, but nothing decisive happens. The raider circles, testing you.\n\nYour breathing is steady. Their eyes keep dropping to your hands. They are looking for a tell.\n\nCHOICES\n\nJAB AND MOVE\nSmall strikes to probe. You aim to build momentum without committing.\n\nGRAB THE ARM\nYou shoot for control: wrist, elbow, shoulder. If it sticks, you can turn the tide.\n\nBACKSTEP HARD\nYou retreat quickly, trying to force a chase and punish the lunge.\n\nSWING WIDE\nA big attack. High payoff if it lands, but it risks giving them a clean counter.",
       "choices": [
-        {
-          "label": "EXIT INTO THE WASTELAND",
-          "to": "S06"
-        },
-        {
-          "label": "DOUBLE BACK FOR GEAR",
-          "to": "S02"
-        }
+        { "label": "JAB AND MOVE", "to": "S05" },
+        { "label": "GRAB THE ARM", "to": "S05" },
+        { "label": "BACKSTEP HARD", "to": "S06" },
+        { "label": "SWING WIDE", "to": "S07" }
       ]
     },
+
     "S04": {
-      "text": "You fire first.\n\nThe corridor fills with smoke and sparks.\n\nYou don’t look back when someone screams your name.",
+      "text": "DANGER - BEAT 1\n\nYour timing is off. The raider crowds you, pipe-blade scraping sparks off the locker shell as they herd you toward the wall.\n\nYour options narrow fast. You need space, control, or a hard reversal.\n\nCHOICES\n\nDESPERATE SHOVE\nYou slam forward with your shoulder to disrupt their balance and steal a breath.\n\nROLL OUT LEFT\nYou drop low and try to slip past their weapon side. Tight, risky, but possible.\n\nEYE LINE BREAK\nYou raise an arm and twist your body, breaking their sightline for a half-second.\n\nPANIC SWING\nYou flail for distance. It might work, but it is exactly what they want you to do.",
       "choices": [
-        {
-          "label": "ESCAPE THROUGH MAINTENANCE TUNNEL",
-          "to": "S06"
-        },
-        {
-          "label": "GET PINNED DOWN",
-          "to": "END_BAD"
-        }
+        { "label": "DESPERATE SHOVE", "to": "S06" },
+        { "label": "ROLL OUT LEFT", "to": "S06" },
+        { "label": "EYE LINE BREAK", "to": "S06" },
+        { "label": "PANIC SWING", "to": "S07" }
       ]
     },
+
     "S05": {
-      "text": "You slam the blast door controls.\n\nThe door grinds shut behind you.\n\nThe Brotherhood will not forget this.",
+      "text": "ADVANTAGE - BEAT 2\n\nYou win the exchange. The raider is reacting instead of acting. Their blade hand is late. Their steps are sloppy.\n\nYou have a window to end this or set up a clean finish.\n\nCHOICES\n\nTARGET THE HAND\nYou strike at the weapon hand. Disarm or disable, then finish.\n\nBODY SHOT\nYou drive into ribs or gut. It breaks their breath and collapses posture.\n\nRESET YOUR FEET\nYou reposition for safety. You keep control, but you delay the finish.\n\nGO FOR THE HEAD\nHigh risk. High reward. If you miss, you pay for it.",
       "choices": [
-        {
-          "label": "RUN INTO THE NIGHT",
-          "to": "S06"
-        }
+        { "label": "TARGET THE HAND", "to": "S08" },
+        { "label": "BODY SHOT", "to": "S08" },
+        { "label": "RESET YOUR FEET", "to": "S09" },
+        { "label": "GO FOR THE HEAD", "to": "S10" }
       ]
     },
+
     "S06": {
-      "text": "The wasteland stretches endless and ruined.\n\nDead highways. Rusted cars. Wind carrying radioactive dust.\n\nYou are free.\n\nYou are alone.",
+      "text": "NEUTRAL - BEAT 2\n\nYou stabilize. The raider no longer has you pinned, but they are still dangerous.\n\nThe corridor hums with electricity and distant machinery. Your senses narrow to motion and breath.\n\nCHOICES\n\nCUT THE ANGLE\nYou step to the side and force them to turn. Good way to steal momentum.\n\nCLINCH AND KNEE\nYou close distance and turn it ugly. Works if you get inside the blade.\n\nBAIT THE LUNGE\nYou offer space, inviting the charge so you can counter.\n\nBACK UP AGAIN\nYou retreat too much. You risk losing ground and letting them set pace.",
       "choices": [
-        {
-          "label": "HEAD TOWARD SMOKE ON THE HORIZON",
-          "to": "S07"
-        },
-        {
-          "label": "FOLLOW AN OLD ROAD",
-          "to": "S08"
-        }
+        { "label": "CUT THE ANGLE", "to": "S08" },
+        { "label": "CLINCH AND KNEE", "to": "S08" },
+        { "label": "BAIT THE LUNGE", "to": "S09" },
+        { "label": "BACK UP AGAIN", "to": "S10" }
       ]
     },
+
     "S07": {
-      "text": "You approach a scavenger camp.\n\nArmed men and women eye you carefully.\n\nThey don’t trust Brotherhood deserters.\n\nNot at first.",
+      "text": "DANGER - BEAT 2\n\nA mistake costs you. The raider clips you and you feel heat bloom along your arm. Not deep, but enough.\n\nYour focus spikes. You can still win, but you cannot keep trading damage.\n\nCHOICES\n\nHARD COUNTER\nYou commit to a sharp counter the moment they swing again.\n\nTHROW DEBRIS\nYou kick grit and scrap up into their face to interrupt.\n\nGO LOW FAST\nYou attack the legs to topple them. If you fail, you get carved.\n\nFREEZE UP\nYou hesitate. Hesitation is how people bleed out in corridors like this.",
       "choices": [
-        {
-          "label": "OFFER YOUR SKILLS",
-          "to": "S09"
-        },
-        {
-          "label": "TRY TO STEAL SUPPLIES",
-          "to": "END_BAD"
-        }
+        { "label": "HARD COUNTER", "to": "S09" },
+        { "label": "THROW DEBRIS", "to": "S09" },
+        { "label": "GO LOW FAST", "to": "S10" },
+        { "label": "FREEZE UP", "to": "S10" }
       ]
     },
+
     "S08": {
-      "text": "The road leads you to a slaver outpost.\n\nCages line the perimeter.\n\nScreams carry on the wind.",
+      "text": "ADVANTAGE - BEAT 3\n\nYou are in control now. The raider is backing up into their own mess of shattered metal.\n\nTheir grip is failing. Their confidence is gone. One more clean sequence can end it.\n\nCHOICES\n\nLOCK THE ARM\nYou isolate the weapon arm and twist. Break it, disarm, or both.\n\nSWEEP THE LEGS\nYou take their base out. If they hit the ground, the fight ends.\n\nLET THEM RUN\nYou disengage. You keep yourself safe, but you risk them calling friends.\n\nSHOWBOAT HIT\nYou go for style. Style gets you hurt when luck flips.",
       "choices": [
-        {
-          "label": "ATTACK THE CAMP",
-          "to": "S10"
-        },
-        {
-          "label": "AVOID IT AND MOVE ON",
-          "to": "S07"
-        }
+        { "label": "LOCK THE ARM", "to": "S11" },
+        { "label": "SWEEP THE LEGS", "to": "S11" },
+        { "label": "LET THEM RUN", "to": "S12" },
+        { "label": "SHOWBOAT HIT", "to": "S13" }
       ]
     },
+
     "S09": {
-      "text": "You demonstrate your training.\n\nWeapon maintenance. Tactics. Discipline.\n\nThe scavengers accept you—for now.",
+      "text": "NEUTRAL - BEAT 3\n\nThe fight stays balanced. You trade position and space. Neither of you fully commits.\n\nThe raider is angry now, less careful. That can be a weakness you exploit.\n\nCHOICES\n\nFORCE A CLINCH\nYou close distance and smother the blade with body control.\n\nSET A TRAP STEP\nYou lure them into a specific spot and time the counter.\n\nCIRCLE AND WAIT\nYou stall. Safe, but it gives them time to read you.\n\nCHARGE STRAIGHT\nYou rush them head-on. Brave, simple, and sometimes exactly wrong.",
       "choices": [
-        {
-          "label": "JOIN THEIR RAID",
-          "to": "S10"
-        },
-        {
-          "label": "LEAVE AT DAWN",
-          "to": "S11"
-        }
+        { "label": "FORCE A CLINCH", "to": "S11" },
+        { "label": "SET A TRAP STEP", "to": "S11" },
+        { "label": "CIRCLE AND WAIT", "to": "S12" },
+        { "label": "CHARGE STRAIGHT", "to": "S13" }
       ]
     },
+
     "S10": {
-      "text": "The raid is brutal.\n\nGunfire. Blood. Chains breaking.\n\nThe slavers fall.\n\nSurvivors scatter into the wastes.",
+      "text": "DANGER - BEAT 3\n\nYour margin is thin. The raider presses hard. Your arm stings. Your foot catches on the locker edge.\n\nThis is where you either reverse the fight or you go down.\n\nCHOICES\n\nRIPOSTE NOW\nYou bet everything on timing. If you land first, the momentum flips.\n\nSHOVE INTO WALL\nYou slam them into the corridor wall to stall the blade.\n\nDROP AND ROLL\nYou go low and roll away. It might buy time, but it can also expose you.\n\nTURN YOUR BACK\nYou try to flee. In a hallway, turning away is asking for the blade.",
       "choices": [
-        {
-          "label": "FREE THE CAPTIVES",
-          "to": "S12"
-        },
-        {
-          "label": "LOOT THE CAMP",
-          "to": "S13"
-        }
+        { "label": "RIPOSTE NOW", "to": "S12" },
+        { "label": "SHOVE INTO WALL", "to": "S12" },
+        { "label": "DROP AND ROLL", "to": "S13" },
+        { "label": "TURN YOUR BACK", "to": "S13" }
       ]
     },
+
     "S11": {
-      "text": "You travel alone again.\n\nYour Brotherhood armor draws attention.\n\nSome good. Some bad.",
+      "text": "ADVANTAGE - BEAT 4\n\nFinal beat. You have the raider exactly where you want them.\n\nTheir weapon hand is compromised. Their stance is broken. The corridor belongs to you.\n\nCHOICES\n\nFINISH CLEANLY\nYou end it with minimal risk: disarm, strike, done.\n\nKNOCKOUT ONLY\nYou choose restraint. Drop them without killing.\n\nTAKE THE WEAPON\nYou secure the pipe-blade as loot before you move on.\n\nWARN AND LEAVE\nYou make it clear the next move ends them, then you walk.",
       "choices": [
-        {
-          "label": "DISGUISE YOUR ARMOR",
-          "to": "S13"
-        },
-        {
-          "label": "KEEP MOVING",
-          "to": "S14"
-        }
+        { "label": "FINISH CLEANLY", "to": "S14" },
+        { "label": "KNOCKOUT ONLY", "to": "S14" },
+        { "label": "TAKE THE WEAPON", "to": "S14" },
+        { "label": "WARN AND LEAVE", "to": "S14" }
       ]
     },
+
     "S12": {
-      "text": "The freed captives thank you.\n\nOne warns you of Legion patrols nearby.\n\nRoman armor. Red banners.",
+      "text": "NEUTRAL - BEAT 4\n\nFinal beat. It is still contested, but you are not losing.\n\nOne good decision ends it. One sloppy decision turns it into a disaster.\n\nCHOICES\n\nSAFE FINISH\nYou take the boring win: position first, then strike.\n\nALL IN STRIKE\nYou gamble on one big hit to end it instantly.\n\nDISENGAGE NOW\nYou back away and end the fight without closure.\n\nUSE THE ENVIRONMENT\nYou drive them into debris and use the corridor itself as a weapon.",
       "choices": [
-        {
-          "label": "PREPARE FOR LEGION CONTACT",
-          "to": "S15"
-        },
-        {
-          "label": "MOVE QUICKLY AWAY",
-          "to": "S14"
-        }
+        { "label": "SAFE FINISH", "to": "S14" },
+        { "label": "ALL IN STRIKE", "to": "S14" },
+        { "label": "DISENGAGE NOW", "to": "S14" },
+        { "label": "USE THE ENVIRONMENT", "to": "S14" }
       ]
     },
+
     "S13": {
-      "text": "You scavenge useful gear.\n\nA map marked with faction territory catches your eye.\n\nBrotherhood. NCR. Legion. Institute.",
+      "text": "DANGER - BEAT 4\n\nFinal beat. This is bad.\n\nThe raider is inside your guard. The pipe-blade flashes. You feel the cold certainty of a wrong choice.\n\nCHOICES\n\nLAST SECOND BLOCK\nYou try to catch the blade on forearm and bone. It might save you, it might end you.\n\nKICK AND SCRAMBLE\nYou create space with a brutal kick and hope you can stand before they cut you.\n\nGRAB THE BLADE\nA desperate move: hands on steel. Pain for control.\n\nTAKE THE HIT\nYou accept the strike to keep your feet. Sometimes people do this. Sometimes people die.",
       "choices": [
-        {
-          "label": "HEAD NCR TERRITORY",
-          "to": "S16"
-        },
-        {
-          "label": "AVOID ALL FACTIONS",
-          "to": "S14"
-        }
+        { "label": "LAST SECOND BLOCK", "to": "S15" },
+        { "label": "KICK AND SCRAMBLE", "to": "S15" },
+        { "label": "GRAB THE BLADE", "to": "S15" },
+        { "label": "TAKE THE HIT", "to": "S15" }
       ]
     },
+
     "S14": {
-      "text": "The wasteland punishes hesitation.\n\nRadiation storms roll in.\n\nYou take shelter among ruins.",
+      "text": "WIN\n\nYou end it.\n\nThe raider collapses, the corridor goes quiet, and your breathing returns to normal. The flicker of the overhead light feels slower now, less threatening.\n\nThis is what a four-beat fight looks like when you keep momentum.\n\nCHOICES\n\nRESTART ENCOUNTER\nRun it again and test different choices to see how momentum shifts.\n\nEND DEMO\nStop here. This is just a prototype story module.\n\nLOAD MENU\nIf your build routes to menu, use this as your exit.\n\nTRY AGAIN FAST\nSame restart, but imagine you are choosing under pressure.",
       "choices": [
-        {
-          "label": "WAIT IT OUT",
-          "to": "S15"
-        },
-        {
-          "label": "MOVE THROUGH THE STORM",
-          "to": "END_BAD"
-        }
+        { "label": "RESTART ENCOUNTER", "to": "S16" },
+        { "label": "END DEMO", "to": "S16" },
+        { "label": "LOAD MENU", "to": "S16" },
+        { "label": "TRY AGAIN FAST", "to": "S16" }
       ]
     },
+
     "S15": {
-      "text": "Roman Legion soldiers march into view.\n\nDiscipline. Cruelty. Order through fear.\n\nThey see your armor and smile.",
+      "text": "LOSE\n\nThe blade wins.\n\nIt happens in half a second: steel, impact, your balance leaving you. The corridor tilts. The raider is a silhouette against flickering light.\n\nThis is what a four-beat fight looks like when you stay in Danger too long.\n\nCHOICES\n\nRESTART ENCOUNTER\nRun it again and test different choices to climb back into control.\n\nEND DEMO\nStop here. This is just a prototype story module.\n\nLOAD MENU\nIf your build routes to menu, use this as your exit.\n\nTRY NEW PATH\nRestart and pick different options from the first beat.",
       "choices": [
-        {
-          "label": "FIGHT THE LEGION",
-          "to": "S17"
-        },
-        {
-          "label": "FEIGN ALLIANCE",
-          "to": "S18"
-        }
+        { "label": "RESTART ENCOUNTER", "to": "S16" },
+        { "label": "END DEMO", "to": "S16" },
+        { "label": "LOAD MENU", "to": "S16" },
+        { "label": "TRY NEW PATH", "to": "S16" }
       ]
     },
+
     "S16": {
-      "text": "You reach NCR land.\n\nRangers question you harshly.\n\nThey distrust the Brotherhood—but hate the Legion more.",
+      "text": "RESTART HUB\n\nThis scene exists as a hard, obvious anchor so you can verify your runtime can jump cleanly and re-render without leaking prior text.\n\nCHOICES\n\nSTART OVER\nReturn to the intro and replay the full four beats.\n\nSTART FROM ADV\nJump straight into Advantage state for quick testing.\n\nSTART FROM NEUTRAL\nJump straight into Neutral state for quick testing.\n\nSTART FROM DANGER\nJump straight into Danger state for quick testing.",
       "choices": [
-        {
-          "label": "WORK WITH NCR",
-          "to": "S19"
-        },
-        {
-          "label": "MOVE ON",
-          "to": "S14"
-        }
-      ]
-    },
-    "S17": {
-      "text": "You ambush the Legion patrol.\n\nIt’s fast and violent.\n\nTheir commander falls at your feet.",
-      "choices": [
-        {
-          "label": "TAKE THEIR BANNER",
-          "to": "S20"
-        },
-        {
-          "label": "LEAVE BEFORE REINFORCEMENTS",
-          "to": "S14"
-        }
-      ]
-    },
-    "S18": {
-      "text": "You play along.\n\nThey talk freely—plans to raid NCR settlements.\n\nInformation is a weapon.",
-      "choices": [
-        {
-          "label": "BETRAY THEM",
-          "to": "S17"
-        },
-        {
-          "label": "ESCAPE QUIETLY",
-          "to": "S14"
-        }
-      ]
-    },
-    "S19": {
-      "text": "NCR officers offer you protection.\n\nIn exchange, they want intel on the Brotherhood.\n\nYou feel the old chains tug again.",
-      "choices": [
-        {
-          "label": "REFUSE AND LEAVE",
-          "to": "S14"
-        },
-        {
-          "label": "AGREE TO HELP",
-          "to": "S21"
-        }
-      ]
-    },
-    "S20": {
-      "text": "The banner makes you a target.\n\nBoth feared and hunted.\n\nWhispers follow you across the wasteland.",
-      "choices": [
-        {
-          "label": "LEAN INTO THE REPUTATION",
-          "to": "S22"
-        },
-        {
-          "label": "BURN THE BANNER",
-          "to": "S14"
-        }
-      ]
-    },
-    "S21": {
-      "text": "Your missions for NCR bring stability.\n\nBut rumors spread of an underground faction.\n\nCold. Precise. Watching.",
-      "choices": [
-        {
-          "label": "INVESTIGATE THE RUMORS",
-          "to": "S23"
-        },
-        {
-          "label": "IGNORE THEM",
-          "to": "S24"
-        }
-      ]
-    },
-    "S22": {
-      "text": "Raiders rally behind you.\n\nYou become a symbol—of freedom or fear.",
-      "choices": [
-        {
-          "label": "LEAD A MAJOR ASSAULT",
-          "to": "S25"
-        },
-        {
-          "label": "DISBAND THE GROUP",
-          "to": "S24"
-        }
-      ]
-    },
-    "S23": {
-      "text": "You find a hidden facility.\n\nSynthetic guards. Clean steel.\n\nThe Institute reveals itself.",
-      "choices": [
-        {
-          "label": "ENTER THE FACILITY",
-          "to": "S26"
-        },
-        {
-          "label": "REPORT TO NCR",
-          "to": "S24"
-        }
-      ]
-    },
-    "S24": {
-      "text": "You survive, but remain hunted.\n\nThe wasteland never forgets.",
-      "choices": [
-        {
-          "label": "KEEP MOVING",
-          "to": "S25"
-        },
-        {
-          "label": "TRY TO DISAPPEAR",
-          "to": "END_SPECIAL"
-        }
-      ]
-    },
-    "S25": {
-      "text": "A massive conflict erupts.\n\nFactions clash.\n\nYou must choose who you become.",
-      "choices": [
-        {
-          "label": "FIGHT FOR YOURSELF",
-          "to": "END_SPECIAL"
-        },
-        {
-          "label": "DIE FOR A CAUSE",
-          "to": "END_BAD"
-        }
-      ]
-    },
-    "S26": {
-      "text": "The Institute offers you a place.\n\nOrder without chaos.\n\nControl without freedom.",
-      "choices": [
-        {
-          "label": "ACCEPT THEIR OFFER",
-          "to": "END_SPECIAL"
-        },
-        {
-          "label": "SABOTAGE THE FACILITY",
-          "to": "S27"
-        }
-      ]
-    },
-    "S27": {
-      "text": "You cripple the Institute’s operations.\n\nAlarms scream.\n\nSynths fall.",
-      "choices": [
-        {
-          "label": "ESCAPE INTO THE WASTELAND",
-          "to": "S28"
-        },
-        {
-          "label": "STAY AND FINISH IT",
-          "to": "END_BAD"
-        }
-      ]
-    },
-    "S28": {
-      "text": "You vanish into the ruins.\n\nYour legend grows.",
-      "choices": [
-        {
-          "label": "BUILD A NEW LIFE",
-          "to": "S29"
-        },
-        {
-          "label": "KEEP FIGHTING",
-          "to": "S25"
-        }
-      ]
-    },
-    "S29": {
-      "text": "You find a settlement willing to trust you.\n\nThey ask for leadership.",
-      "choices": [
-        {
-          "label": "ACCEPT",
-          "to": "END_GOOD"
-        },
-        {
-          "label": "DECLINE",
-          "to": "S30"
-        }
-      ]
-    },
-    "S30": {
-      "text": "You look back at the Brotherhood bunker on the horizon.\n\nYou were forged by steel.\n\nBut you were not meant to stay caged.",
-      "choices": [
-        {
-          "label": "WALK INTO THE WASTELAND",
-          "to": "END_SPECIAL"
-        },
-        {
-          "label": "TURN BACK",
-          "to": "END_BAD"
-        }
-      ]
-    },
-    "END_GOOD": {
-      "text": "GOOD ENDING — A NEW ORDER\n\nYou build something better.\n\nNot perfect. Not clean.\n\nBut free.",
-      "choices": [
-        {
-          "label": "RETURN TO START",
-          "to": "S01"
-        }
-      ]
-    },
-    "END_BAD": {
-      "text": "BAD ENDING — THE WASTELAND WINS\n\nThe wasteland claims another name.\n\nSteel rusts. Bones bleach.",
-      "choices": [
-        {
-          "label": "RETURN TO START",
-          "to": "S01"
-        }
-      ]
-    },
-    "END_SPECIAL": {
-      "text": "SPECIAL ENDING — A LIVING LEGEND\n\nYou belong nowhere.\n\nStories follow you across the wastes.\n\nSome call you hero.\n\nOthers curse your name.",
-      "choices": [
-        {
-          "label": "RETURN TO START",
-          "to": "S01"
-        }
+        { "label": "START OVER", "to": "S01" },
+        { "label": "START FROM ADV", "to": "S02" },
+        { "label": "START FROM NEUTRAL", "to": "S03" },
+        { "label": "START FROM DANGER", "to": "S04" }
       ]
     }
   }
